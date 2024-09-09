@@ -95,6 +95,7 @@ public class Damageable : MonoBehaviour
             }
         }
     }
+    public int XPReward = 500;
     public bool IsAlive
     {
         get
@@ -108,10 +109,20 @@ public class Damageable : MonoBehaviour
             if (value == false)
             {
                 DropWhenDeath();
+                GiveXPReward();
                 damageableDeath.Invoke();
             }
         }
     }
+    private void GiveXPReward()
+    {
+        XPTracker xpTracker = FindObjectOfType<XPTracker>();
+        if (xpTracker != null)
+        {
+            xpTracker.AddXP(XPReward);
+        }
+    }
+
     public bool LockVelocity
     {
         get

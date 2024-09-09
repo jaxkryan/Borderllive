@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: XPTranslation_Table 1
+  m_EditorClassIdentifier: Assembly-CSharp::XPTranslation_Table
+  Table:
+  - Level: 1
+    XPRequired: 0
+  - Level: 2
+    XPRequired: 100
+  - Level: 3
+    XPRequired: 250
+  - Level: 4
+    XPRequired: 500
+  - Level: 5
+    XPRequired: 800
+  - Level: 6
+    XPRequired: 1100
+  - Level: 7
+    XPRequired: 1500
+  - Level: 8
+    XPRequired: 2000
+  - Level: 9
+    XPRequired: 2500
+  - Level: 10
+    XPRequired: 3000
+  - Level: 11
+    XPRequired: 3500
+  - Level: 12
+    XPRequired: 4000
+  - Level: 13
+    XPRequired: 4800
+  - Level: 14
+    XPRequired: 5600
+  - Level: 15
+    XPRequired: 6400
+  - Level: 16
+    XPRequired: 7200
+  - Level: 17
+    XPRequired: 8000
+  - Level: 18
+    XPRequired: 9000
+  - Level: 19
+    XPRequired: 10000
+  - Level: 20
+    XPRequired: 11000
