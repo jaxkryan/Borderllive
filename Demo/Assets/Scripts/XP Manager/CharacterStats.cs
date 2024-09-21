@@ -24,7 +24,7 @@ public class CharacterStat : MonoBehaviour
 
     // UI elements
     //[SerializeField] TextMeshProUGUI StaminaText;
-    [SerializeField] TextMeshProUGUI HealthText;
+    //[SerializeField] TextMeshProUGUI HealthText;
     //[SerializeField] TextMeshProUGUI DefText; // UI for DEF (if needed)
     //[SerializeField] TextMeshProUGUI SpeedText; // UI for Speed (if needed)
 
@@ -71,7 +71,7 @@ public class CharacterStat : MonoBehaviour
 
         // Update the UI for stamina, health, strength, damage, defense, and speed
         // StaminaText.text = $"Stamina: {Stamina}";
-        HealthText.text = $"Max Health: {MaxHealth}";
+       // HealthText.text = $"Max Health: {MaxHealth}";
         //DefText.text = $"DEF: {DEF}"; // Update DEF value on the UI
        // SpeedText.text = $"Speed: {Speed}"; // Update Speed value on the UI
     }
