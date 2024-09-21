@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 0}
-  m_Name: XPTranslation_Table 1
+  m_Name: XPTranslation_Table
   m_EditorClassIdentifier: Assembly-CSharp::XPTranslation_Table
   Table:
   - Level: 1
@@ -18,38 +18,38 @@ MonoBehaviour:
   - Level: 2
     XPRequired: 100
   - Level: 3
-    XPRequired: 250
+    XPRequired: 200
   - Level: 4
-    XPRequired: 500
+    XPRequired: 300
   - Level: 5
-    XPRequired: 800
+    XPRequired: 400
   - Level: 6
-    XPRequired: 1100
+    XPRequired: 500
   - Level: 7
-    XPRequired: 1500
+    XPRequired: 700
   - Level: 8
-    XPRequired: 2000
+    XPRequired: 900
   - Level: 9
-    XPRequired: 2500
+    XPRequired: 1100
   - Level: 10
-    XPRequired: 3000
+    XPRequired: 1300
   - Level: 11
-    XPRequired: 3500
+    XPRequired: 1500
   - Level: 12
-    XPRequired: 4000
+    XPRequired: 1700
   - Level: 13
-    XPRequired: 4800
+    XPRequired: 2000
   - Level: 14
-    XPRequired: 5600
+    XPRequired: 2400
   - Level: 15
-    XPRequired: 6400
+    XPRequired: 2800
   - Level: 16
-    XPRequired: 7200
+    XPRequired: 3200
   - Level: 17
-    XPRequired: 8000
+    XPRequired: 3600
   - Level: 18
-    XPRequired: 9000
+    XPRequired: 4000
   - Level: 19
-    XPRequired: 10000
+    XPRequired: 4500
   - Level: 20
-    XPRequired: 11000
+    XPRequired: 5000

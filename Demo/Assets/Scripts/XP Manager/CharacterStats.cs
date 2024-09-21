@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
@@ -15,47 +14,53 @@ public class CharacterStat : MonoBehaviour
     [SerializeField] int BaseStrength_Offset = 5;
     [SerializeField] int StrengthToDamageConversion = 2;
 
+    // Endurance variables
+    [SerializeField] int BaseEndurance_PerLevel = 2;  // Endurance increases per level
+    [SerializeField] int BaseEndurance_Offset = 3;    // Fixed offset added to Endurance
+    [SerializeField] int EnduranceToDefConversion = 1; // Conversion rate from Endurance to DEF
+
+    // Speed variable
+    [SerializeField] int BaseSpeed = 5; // Fixed value for Speed
+
     // UI elements
-    [SerializeField] TextMeshProUGUI StaminaText;
+    //[SerializeField] TextMeshProUGUI StaminaText;
     [SerializeField] TextMeshProUGUI HealthText;
-    [SerializeField] TextMeshProUGUI StrengthText;
-    [SerializeField] TextMeshProUGUI DamageText;
+    //[SerializeField] TextMeshProUGUI DefText; // UI for DEF (if needed)
+    //[SerializeField] TextMeshProUGUI SpeedText; // UI for Speed (if needed)
 
     // Reference to the Damageable component
     private Damageable damageable;
 
-    // Properties for stamina and strength
+    // Properties for stamina, strength, endurance, and speed
     public int BaseStamina { get; protected set; } = 0;
     public int BaseStrength { get; protected set; } = 0;
+    public int BaseEndurance { get; protected set; } = 0;
 
     // Stamina-based properties
-    public int Stamina
-    {
-        get { return BaseStamina; }
-    }
+    public int Stamina => BaseStamina;
 
-    public int MaxHealth
-    {
-        get { return Stamina * StaminaToHealthConversion; }
-    }
+    public int MaxHealth => Stamina * StaminaToHealthConversion;
 
     // Strength-based properties
-    public int Strength
-    {
-        get { return BaseStrength; }
-    }
+    public int Strength => BaseStrength;
 
-    public int Damage
-    {
-        get { return Strength * StrengthToDamageConversion; }
-    }
+    public int Damage => Strength * StrengthToDamageConversion;
+
+    // Endurance-based properties
+    public int Endurance => BaseEndurance;
+
+    public int DEF => Endurance * EnduranceToDefConversion;
+
+    // Speed-based property
+    public int Speed => BaseSpeed; // Speed is fixed at 5
 
     // Method to handle level changes
     public void OnUpdateLevel(int previousLevel, int currentLevel)
     {
-        // Update BaseStamina and BaseStrength based on the current level
+        // Update BaseStamina, BaseStrength, and BaseEndurance based on the current level
         BaseStamina = BaseStamina_PerLevel * currentLevel + BaseStamina_Offset;
         BaseStrength = BaseStrength_PerLevel * currentLevel + BaseStrength_Offset;
+        BaseEndurance = BaseEndurance_PerLevel * currentLevel + BaseEndurance_Offset;
 
         // Update the Damageable script's health
         if (damageable != null)
@@ -64,11 +69,11 @@ public class CharacterStat : MonoBehaviour
             damageable.Health = MaxHealth;     // Set current health to MaxHealth
         }
 
-        // Update the UI for stamina, health, strength, and damage
-        StaminaText.text = $"Stamina: {Stamina}";
+        // Update the UI for stamina, health, strength, damage, defense, and speed
+        // StaminaText.text = $"Stamina: {Stamina}";
         HealthText.text = $"Max Health: {MaxHealth}";
-        StrengthText.text = $"Strength: {Strength}";
-        DamageText.text = $"Damage: {Damage}";
+        //DefText.text = $"DEF: {DEF}"; // Update DEF value on the UI
+       // SpeedText.text = $"Speed: {Speed}"; // Update Speed value on the UI
     }
 
     // Start is called before the first frame update
