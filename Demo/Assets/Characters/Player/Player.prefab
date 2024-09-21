@@ -324,7 +324,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd5646a7a629ed0488b96a7d57ea9393, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackDamage: 15
+  AttackBuff: {fileID: 0}
   knockback: {x: 0, y: 0}
 --- !u!1 &1000051857094363089
 GameObject:
@@ -508,7 +508,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd5646a7a629ed0488b96a7d57ea9393, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackDamage: 20
+  AttackBuff: {fileID: 0}
   knockback: {x: 0, y: 0}
 --- !u!1 &1488529538882304967
 GameObject:
@@ -1260,7 +1260,7 @@ MonoBehaviour:
   CurrentLevelText: {fileID: 2567443065960677473}
   CurrentXPText: {fileID: 7984795259678558258}
   XPToNextLevelText: {fileID: 4236803287062583242}
-  XPTranslationType: {fileID: 11400000, guid: 68b427c8ca073f2488d57f4cd0a4b52c, type: 2}
+  XPTranslationType: {fileID: 11400000, guid: 6be2af37c0db5804793cba8efb85eae9, type: 2}
   OnLevelChanged:
     m_PersistentCalls:
       m_Calls:
@@ -1291,8 +1291,16 @@ MonoBehaviour:
   BaseStamina_PerLevel: 5
   BaseStamina_Offset: 10
   StaminaToHealthConversion: 10
-  StaminaText: {fileID: 1309552292396769828}
+  BaseStrength_PerLevel: 3
+  BaseStrength_Offset: 5
+  StrengthToDamageConversion: 2
+  BaseEndurance_PerLevel: 2
+  BaseEndurance_Offset: 3
+  EnduranceToDefConversion: 1
+  BaseSpeed: 5
   HealthText: {fileID: 5352249500302876086}
+  DefText: {fileID: 1309552292396769828}
+  SpeedText: {fileID: 0}
 --- !u!1 &2452288323189747658
 GameObject:
   m_ObjectHideFlags: 0
@@ -1305,7 +1313,7 @@ GameObject:
   - component: {fileID: 8994873135799843674}
   - component: {fileID: 1309552292396769828}
   m_Layer: 5
-  m_Name: Stamina
+  m_Name: Def
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1358,7 +1366,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Stamina
+  m_text: Def
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1794,7 +1802,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd5646a7a629ed0488b96a7d57ea9393, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackDamage: 10
+  AttackBuff: {fileID: 11400000, guid: f13ea904223cc0a4d8464a21739d602a, type: 2}
   knockback: {x: 0, y: 0}
 --- !u!1 &6475025308064497508
 GameObject:
