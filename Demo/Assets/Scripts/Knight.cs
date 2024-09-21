@@ -133,4 +133,14 @@ public class Knight : MonoBehaviour
             FlipDirection();
         }
     }
+
+    internal void ReduceDefense(float defenseReduction)
+    {
+        throw new NotImplementedException();
+    }
+
+    internal void RestoreDefense(float defenseReduction)
+    {
+        throw new NotImplementedException();
+    }
 }
