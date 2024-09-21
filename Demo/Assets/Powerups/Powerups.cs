@@ -11,6 +11,7 @@ public class Powerups
     public TriggerCondition triggerCondition;
     public Effect effect;
 
+    public int Weight;
     public enum TriggerCondition
     {
         Always,
@@ -27,18 +28,20 @@ public class Powerups
         HPIncrease,
         SpeedIncrease,
         EnemyDefReduction,
-        HPRegen
+        HPRegen,
+        BeserkRegen
     }
 
     public enum BuffType
     {
         DefBuff,       // Buff phòng thủ
+        BerserkBuff,
         HpBuff,        // Buff máu
         SpeedBuff,     // Buff tốc độ
         DamageBuff,    // Buff sát thương
         Debuff         // Debuff
     }
-
+    public int BerserkRateIncrease;
     public int cooldown;
     public int duration;
     public bool isActive;

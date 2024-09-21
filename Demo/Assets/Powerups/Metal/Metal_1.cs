@@ -12,7 +12,8 @@ public class Metal_1 : Powerups
         this.duration = 0;
         this.isActive = false;
         this.currentCooldown = 0f;
-
+        this.Weight = 10;
+        this.BerserkRateIncrease = 0;
         this.type = BuffType.DefBuff;
 
         this.triggerCondition = TriggerCondition.Always;
