@@ -4157,6 +4157,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4591734722486170938, guid: 5ea0cd0f740626640b66130558b1eff0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4346159239403606705}
+    - targetCorrespondingSourceObject: {fileID: 4591734722486170938, guid: 5ea0cd0f740626640b66130558b1eff0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4346159239403606714}
+    - targetCorrespondingSourceObject: {fileID: 4591734722486170938, guid: 5ea0cd0f740626640b66130558b1eff0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4346159239403606715}
   m_SourcePrefab: {fileID: 100100000, guid: 5ea0cd0f740626640b66130558b1eff0, type: 3}
 --- !u!1 &4346159239403606704 stripped
 GameObject:
@@ -4170,11 +4176,61 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4346159239403606704}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 014890d2ce28e7547ba1908b9594c217, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4346159239403606714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4346159239403606704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cb504c3918008247b7ce2d7672b2b7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BaseStamina_PerLevel: 10
+  BaseStamina_Offset: 10
+  StaminaToHealthConversion: 10
+  BaseStrength_PerLevel: 10
+  BaseStrength_Offset: 5
+  StrengthToDamageConversion: 2
+  BaseEndurance_PerLevel: 3
+  BaseEndurance_Offset: 3
+  EnduranceToDefConversion: 1
+  BaseSpeed: 5
+--- !u!114 &4346159239403606715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4346159239403606704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ec4154059c5a5145bec9af558e5fd22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  XPTranslationType: {fileID: 11400000, guid: 5af8b4221d4317846896be6e81a39eae, type: 2}
+  OnLevelChanged:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4346159239403606714}
+        m_TargetAssemblyTypeName: CharacterStat, Assembly-CSharp
+        m_MethodName: OnUpdateLevel
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &7698763042238126809
 PrefabInstance:
   m_ObjectHideFlags: 0

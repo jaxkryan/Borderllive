@@ -4,7 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.Events;
 
-public class XPTracker : MonoBehaviour
+public class EnemyXPTracker : MonoBehaviour
 {
     //[SerializeField] TextMeshProUGUI CurrentLevelText;
     //[SerializeField] TextMeshProUGUI CurrentXPText;
