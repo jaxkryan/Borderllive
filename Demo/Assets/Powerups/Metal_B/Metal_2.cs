@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -24,12 +25,14 @@ public class Metal_2 : Powerups
         this.effect = Effect.EnemyDefReduction;
     }
 
-    public void ApplyEffect(Knight target)
+    public Boolean ApplyEffect(Knight target)
     {
-        if (Random.value <= chanceToTrigger)
+        if (UnityEngine.Random.Range(0f, 1f) <= chanceToTrigger)
         {
             ApplyDefenseReduction(target);
+            return true;
         }
+        return false;
     }
 
     private void ApplyDefenseReduction(Knight target)

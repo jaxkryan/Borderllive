@@ -16,6 +16,21 @@ public class OwnedDebuff : MonoBehaviour
         }
         ActivateDebuff();
     }
+
+    public void AddDebuff(BadEffect debuff)
+    {
+        // Check if this debuff is already active
+        BadEffect existingDebuff = activeDebuff.Find(d => d.GetType() == debuff.GetType());
+
+        if (existingDebuff != null)
+        {
+            // Add the new debuff
+            activeDebuff.Add(debuff);
+            ActivateDebuff();
+        }
+    }
+
+
     public void ActivateDebuff()
     {
         foreach (BadEffect p in activeDebuff)

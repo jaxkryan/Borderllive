@@ -45,7 +45,12 @@ public class OwnedPowerups : MonoBehaviour
             {
                 if (isHitEnemy)
                 {
-                    metalPowerup2.ApplyEffect(enemyKnight);
+                    if (metalPowerup2.ApplyEffect(enemyKnight))
+                    {
+                        OwnedDebuff ownedDebuff = knight.GetComponent<OwnedDebuff>();
+                        Metal_2_DB newDebuff = new Metal_2_DB();
+                        ownedDebuff.AddDebuff(newDebuff);
+                    }
                 }
             }
         }
