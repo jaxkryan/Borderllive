@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[CreateAssetMenu(fileName = "Metal_1", menuName = "Powerups/Metal_1")]
 public class Metal_1 : Powerups
 {
     public Metal_1()
@@ -19,5 +20,15 @@ public class Metal_1 : Powerups
         this.triggerCondition = TriggerCondition.Always;
 
         this.effect = Effect.EnemyDefReduction;
+    }
+
+    public void ApplyEffect(PlayerController player)
+    {
+        
+        Debug.Log("dmm chay di: ");
+        if (player != null)
+        {
+            player.IncreaseDef(200f);   
+        }
     }
 }

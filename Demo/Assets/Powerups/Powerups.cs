@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Powerups
+public class Powerups : ScriptableObject
 {
     public int id;
     public BuffType type;  

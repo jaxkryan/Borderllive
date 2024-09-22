@@ -6,6 +6,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D), typeof(TouchingDirection), typeof(Damageable))]
 public class Knight : MonoBehaviour
 {
+    private CharacterStat characterStat;
     public DetectionZone attackZone;
     public DetectionZone cliffDetectionZone;
     public float walkStopRate = 0.05f;
@@ -13,12 +14,16 @@ public class Knight : MonoBehaviour
     Damageable damageable;
     public float walkSpeed = 3f;
     Rigidbody2D rb;
-    public enum WalkableDirection { Right, Left}
+    public enum WalkableDirection { Right, Left }
     TouchingDirection touchingDirection;
 
     private Vector2 walkDirectionVector = Vector2.right;
     private WalkableDirection _walkDirection;
-    public WalkableDirection WalkDirection { get { return _walkDirection; } set {
+    public WalkableDirection WalkDirection
+    {
+        get { return _walkDirection; }
+        set
+        {
             if (_walkDirection != value)
             {
                 gameObject.transform.localScale =
@@ -29,16 +34,22 @@ public class Knight : MonoBehaviour
                 }
                 else if (value == WalkableDirection.Left)
                 {
-                    walkDirectionVector = Vector2.left; 
+                    walkDirectionVector = Vector2.left;
                 }
             }
 
-            _walkDirection = value; 
-        } }
+            _walkDirection = value;
+        }
+    }
 
-    public bool HasTarget { get { return _hasTarget; }
-        private set { _hasTarget = value;
-            animator.SetBool(AnimationStrings.hasTarget, value); } 
+    public bool HasTarget
+    {
+        get { return _hasTarget; }
+        private set
+        {
+            _hasTarget = value;
+            animator.SetBool(AnimationStrings.hasTarget, value);
+        }
     }
 
     private void Awake()
@@ -55,10 +66,11 @@ public class Knight : MonoBehaviour
     void Update()
     {
         HasTarget = attackZone.detectedColliders.Count > 0;
-        if (AttackCooldown > 0 ) { 
-            AttackCooldown -= Time.deltaTime; 
+        if (AttackCooldown > 0)
+        {
+            AttackCooldown -= Time.deltaTime;
         }
-        
+
     }
 
     public bool _hasTarget = false;
@@ -75,7 +87,7 @@ public class Knight : MonoBehaviour
         {
             FlipDirection();
         }
-        if(!damageable.LockVelocity)
+        if (!damageable.LockVelocity)
         {
             if (CanMove && touchingDirection.IsGround)
             {
@@ -87,7 +99,7 @@ public class Knight : MonoBehaviour
 
     private void FlipDirection()
     {
-        if(WalkDirection == WalkableDirection.Right)
+        if (WalkDirection == WalkableDirection.Right)
         {
             WalkDirection = WalkableDirection.Left;
         }
@@ -107,14 +119,19 @@ public class Knight : MonoBehaviour
     }
     public bool CanMove
     {
-        get {
+        get
+        {
             return animator.GetBool(AnimationStrings.canMove);
         }
     }
 
-    public float AttackCooldown { get {
+    public float AttackCooldown
+    {
+        get
+        {
             return animator.GetFloat(AnimationStrings.AttackCooldown);
-        } private set
+        }
+        private set
         {
             animator.SetFloat(AnimationStrings.AttackCooldown, Mathf.Max(0, value));
         }
@@ -134,13 +151,22 @@ public class Knight : MonoBehaviour
         }
     }
 
-    internal void ReduceDefense(float defenseReduction)
+    internal void ReduceDefense(int duration, float defenseReduction)
     {
-        throw new NotImplementedException();
+        characterStat = GetComponentInParent<CharacterStat>();
+        if (characterStat == null)
+        {
+            Debug.LogError("CharacterStat component not found!");
+            return;
+        }
+        float defReducValue = characterStat.Endurance * defenseReduction;
+        characterStat.Endurance -= (int)defReducValue;
+        StartCoroutine(RestoreDefenseAfterDuration(duration));
     }
 
-    internal void RestoreDefense(float defenseReduction)
+    private IEnumerator RestoreDefenseAfterDuration(float duration)
     {
-        throw new NotImplementedException();
+        yield return new WaitForSeconds(duration);
+        characterStat.Endurance = characterStat.BaseEndurance;
     }
 }

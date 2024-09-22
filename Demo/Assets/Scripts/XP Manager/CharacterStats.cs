@@ -32,9 +32,9 @@ public class CharacterStat : MonoBehaviour
     private Damageable damageable;
 
     // Properties for stamina, strength, endurance, and speed
-    public int BaseStamina { get; protected set; } = 0;
-    public int BaseStrength { get; protected set; } = 0;
-    public int BaseEndurance { get; protected set; } = 0;
+    public int BaseStamina { get; set; } = 0;
+    public int BaseStrength { get; set; } = 0;
+    public int BaseEndurance { get; set; } = 0;
 
     // Stamina-based properties
     public int Stamina => BaseStamina;
@@ -47,8 +47,19 @@ public class CharacterStat : MonoBehaviour
     public int Damage => Strength * StrengthToDamageConversion;
 
     // Endurance-based properties
-    public int Endurance => BaseEndurance;
+    [SerializeField]
+    private int _endurance;
 
+    public int Endurance
+    {
+        get => _endurance;
+        set => _endurance = value;
+    }
+
+    //void Start()
+    //{
+    //   // Set default endurance equal to base
+    //}
     public int DEF => Endurance * EnduranceToDefConversion;
 
     // Speed-based property
@@ -79,6 +90,7 @@ public class CharacterStat : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+      
         // Find the Damageable component attached to the player
         damageable = GetComponent<Damageable>();
         if (damageable == null)
@@ -88,11 +100,13 @@ public class CharacterStat : MonoBehaviour
 
         // Initialize stats UI at the start (optional)
         OnUpdateLevel(1, 1);  // Initialize at level 1 for example purposes
+        _endurance = BaseEndurance;
     }
 
     // Update is called once per frame
     void Update()
     {
+        
         // Optional: Can add additional checks or updates here if needed
     }
 }

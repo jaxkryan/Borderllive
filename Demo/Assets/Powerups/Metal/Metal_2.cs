@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[CreateAssetMenu(fileName = "Metal_2", menuName = "Powerups/Metal_2")]
 public class Metal_2 : Powerups
 {
     private float chanceToTrigger = 0.3f;  // 30% xác suất
@@ -23,7 +24,7 @@ public class Metal_2 : Powerups
         this.effect = Effect.EnemyDefReduction;
     }
 
-    public void OnAttack(Knight target)
+    public void ApplyEffect(Knight target)
     {
         if (Random.value <= chanceToTrigger)
         {
@@ -35,24 +36,7 @@ public class Metal_2 : Powerups
     {
         if (target != null)
         {
-            target.ReduceDefense(defenseReduction);
-            effectTimer = this.duration; // Đặt thời gian hiệu ứng (2 giây)
-            isActive = true; // Đánh dấu hiệu ứng đang hoạt động
-        }
-    }
-
-    public void Update(float deltaTime, Knight target)
-    {
-        if (isActive && effectTimer > 0)
-        {
-            effectTimer -= deltaTime; // Giảm thời gian theo deltaTime
-
-            if (effectTimer <= 0)
-            {
-                // Hết thời gian, khôi phục phòng thủ của kẻ địch
-                target.RestoreDefense(defenseReduction);
-                isActive = false;
-            }
+            target.ReduceDefense(duration, defenseReduction);
         }
     }
 }

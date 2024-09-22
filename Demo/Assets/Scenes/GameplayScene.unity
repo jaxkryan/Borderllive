@@ -496,7 +496,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.9916654, y: 0.07915999, z: -10.000715}
+  m_LocalPosition: {x: 7.88, y: -0.2, z: -10.000715}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3580,7 +3580,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1607725449858402806, guid: 0c1ab7f72964dfb428b31ed4560b73c0, type: 3}
   m_PrefabInstance: {fileID: 68966948436644060}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 68966948436644061}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8d1f7ed197dba8a4bbbd57f7edfcfbfc, type: 3}
@@ -3991,8 +3991,28 @@ PrefabInstance:
     m_RemovedGameObjects:
     - {fileID: 2452288323189747658, guid: 0c1ab7f72964dfb428b31ed4560b73c0, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1670572082697007339, guid: 0c1ab7f72964dfb428b31ed4560b73c0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 68966948436644062}
   m_SourcePrefab: {fileID: 100100000, guid: 0c1ab7f72964dfb428b31ed4560b73c0, type: 3}
+--- !u!1 &68966948436644061 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1670572082697007339, guid: 0c1ab7f72964dfb428b31ed4560b73c0, type: 3}
+  m_PrefabInstance: {fileID: 68966948436644060}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &68966948436644062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 68966948436644061}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e18bbe576ad86c48b9752ea6e5c4267, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2574980130917455699
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4215,7 +4235,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ec4154059c5a5145bec9af558e5fd22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  XPTranslationType: {fileID: 11400000, guid: 5af8b4221d4317846896be6e81a39eae, type: 2}
+  XPTranslationType: {fileID: 0}
   OnLevelChanged:
     m_PersistentCalls:
       m_Calls:

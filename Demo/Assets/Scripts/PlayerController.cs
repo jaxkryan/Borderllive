@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 [RequireComponent(typeof(Rigidbody2D), typeof(TouchingDirection), typeof(Damageable))]
 public class PlayerController : MonoBehaviour
 {
+    private CharacterStat characterStat;
     Rigidbody2D rb;
     Animator animator;
     public float walkSpeed = 5f;
@@ -15,6 +16,7 @@ public class PlayerController : MonoBehaviour
     public float jumpImpulse = 10f;
     public float airWalkSpeed = 3f;
     TouchingDirection touchingDirection;
+    OwnedPowerups ownedPowerups;
     Damageable damageable;
     public bool canMove
     {
@@ -117,6 +119,7 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        ownedPowerups = GetComponent<OwnedPowerups>();
         animator = GetComponent<Animator>();
         touchingDirection = GetComponent<TouchingDirection>();
         damageable = GetComponent<Damageable>();
@@ -299,4 +302,20 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(dashingCd);
         canDash = true;
     }
+    internal void IncreaseDef(float value)
+    {
+        Debug.Log("Gia tri value: " + value);
+        characterStat = GetComponent<CharacterStat>();
+        if (characterStat == null)
+        {
+            Debug.LogError("CharacterStat component not found!");
+            return;
+        }
+        Debug.Log(characterStat.Endurance);
+        float defIncrease = characterStat.Endurance * value;
+        Debug.Log("Gia tri defIncrease: " + (int)defIncrease);
+        characterStat.Endurance = (int)defIncrease;
+        Debug.Log("current " + characterStat.Endurance);
+    }
+
 }
