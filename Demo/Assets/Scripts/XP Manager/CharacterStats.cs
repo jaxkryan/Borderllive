@@ -5,22 +5,22 @@ using TMPro;
 public class CharacterStat : MonoBehaviour
 {
     // Stamina variables
-    [SerializeField] int BaseStamina_PerLevel = 5;
-    [SerializeField] int BaseStamina_Offset = 10;
-    [SerializeField] int StaminaToHealthConversion = 10;
+    [SerializeField] float BaseStamina_PerLevel = 5;
+    [SerializeField] float BaseStamina_Offset = 10;
+    [SerializeField] float StaminaToHealthConversion = 10;
 
     // Strength variables
-    [SerializeField] int BaseStrength_PerLevel = 3;
-    [SerializeField] int BaseStrength_Offset = 5;
-    [SerializeField] int StrengthToDamageConversion = 2;
+    [SerializeField] float BaseStrength_PerLevel = 3;
+    [SerializeField] float BaseStrength_Offset = 5;
+    [SerializeField] float StrengthToDamageConversion = 2;
 
     // Endurance variables
-    [SerializeField] int BaseEndurance_PerLevel = 2;  // Endurance increases per level
-    [SerializeField] int BaseEndurance_Offset = 3;    // Fixed offset added to Endurance
-    [SerializeField] int EnduranceToDefConversion = 1; // Conversion rate from Endurance to DEF
+    [SerializeField] float BaseEndurance_PerLevel = 2;  // Endurance increases per level
+    [SerializeField] float BaseEndurance_Offset = 3;    // Fixed offset added to Endurance
+    [SerializeField] float EnduranceToDefConversion = 1; // Conversion rate from Endurance to DEF
 
     // Speed variable
-    [SerializeField] int BaseSpeed = 5; // Fixed value for Speed
+    [SerializeField] float BaseSpeed = 5; // Fixed value for Speed
 
     // UI elements
     //[SerializeField] TextMeshProUGUI StaminaText;
@@ -32,25 +32,25 @@ public class CharacterStat : MonoBehaviour
     private Damageable damageable;
 
     // Properties for stamina, strength, endurance, and speed
-    public int BaseStamina { get; set; } = 0;
-    public int BaseStrength { get; set; } = 0;
-    public int BaseEndurance { get; set; } = 0;
+    public float BaseStamina { get; set; } = 0;
+    public float BaseStrength { get; set; } = 0;
+    public float BaseEndurance { get; set; } = 0;
 
     // Stamina-based properties
-    public int Stamina => BaseStamina;
+    public float Stamina => BaseStamina;
 
-    public int MaxHealth => Stamina * StaminaToHealthConversion;
+    public float MaxHealth => Stamina * StaminaToHealthConversion;
 
     // Strength-based properties
-    public int Strength => BaseStrength;
+    public float Strength => BaseStrength;
 
-    public int Damage => Strength * StrengthToDamageConversion;
+    public float Damage => Strength * StrengthToDamageConversion;
 
     // Endurance-based properties
     [SerializeField]
-    private int _endurance;
+    private float _endurance;
 
-    public int Endurance
+    public float Endurance
     {
         get => _endurance;
         set => _endurance = value;
@@ -60,10 +60,10 @@ public class CharacterStat : MonoBehaviour
     //{
     //   // Set default endurance equal to base
     //}
-    public int DEF => Endurance * EnduranceToDefConversion;
+    public float DEF => Endurance * EnduranceToDefConversion;
 
     // Speed-based property
-    public int Speed => BaseSpeed; // Speed is fixed at 5
+    public float Speed => BaseSpeed; // Speed is fixed at 5
 
     // Method to handle level changes
     public void OnUpdateLevel(int previousLevel, int currentLevel)
@@ -76,8 +76,8 @@ public class CharacterStat : MonoBehaviour
         // Update the Damageable script's health
         if (damageable != null)
         {
-            damageable.MaxHealth = MaxHealth;  // Set the new MaxHealth
-            damageable.Health = MaxHealth;     // Set current health to MaxHealth
+            damageable.MaxHealth = (int)MaxHealth;  // Set the new MaxHealth
+            damageable.Health = (int)MaxHealth;     // Set current health to MaxHealth
         }
 
         // Update the UI for stamina, health, strength, damage, defense, and speed
@@ -99,8 +99,9 @@ public class CharacterStat : MonoBehaviour
         }
 
         // Initialize stats UI at the start (optional)
-        OnUpdateLevel(1, 1);  // Initialize at level 1 for example purposes
+        OnUpdateLevel(1, 5);  // Initialize at level 1 for example purposes
         _endurance = BaseEndurance;
+
     }
 
     // Update is called once per frame

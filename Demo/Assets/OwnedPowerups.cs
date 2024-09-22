@@ -19,7 +19,7 @@ public class OwnedPowerups : MonoBehaviour
 
     public void ActivatePowerup()
     {
-        Debug.Log("so pu: " + activePowerups.Count);
+        //Debug.Log("so pu: " + activePowerups.Count);
         foreach (Powerups p in activePowerups) {
             if (p is Metal_1 metalPowerup)
             {

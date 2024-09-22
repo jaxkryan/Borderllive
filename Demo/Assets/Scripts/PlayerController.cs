@@ -304,18 +304,18 @@ public class PlayerController : MonoBehaviour
     }
     internal void IncreaseDef(float value)
     {
-        Debug.Log("Gia tri value: " + value);
+        
         characterStat = GetComponent<CharacterStat>();
+        //Debug.Log("Gia tri value erd: " + characterStat.Endurance);
         if (characterStat == null)
         {
             Debug.LogError("CharacterStat component not found!");
             return;
         }
-        Debug.Log(characterStat.Endurance);
         float defIncrease = characterStat.Endurance * value;
-        Debug.Log("Gia tri defIncrease: " + (int)defIncrease);
-        characterStat.Endurance = (int)defIncrease;
-        Debug.Log("current " + characterStat.Endurance);
+        //Debug.Log("Gia tri defIncrease: " + (int)defIncrease);
+        characterStat.Endurance += defIncrease;
+        //Debug.Log("current " + characterStat.Endurance);
     }
 
 }

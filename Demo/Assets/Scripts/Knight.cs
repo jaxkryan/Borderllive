@@ -58,10 +58,12 @@ public class Knight : MonoBehaviour
         touchingDirection = GetComponent<TouchingDirection>();
         animator = GetComponent<Animator>();
         damageable = GetComponent<Damageable>();
+        characterStat = GetComponent<CharacterStat>();
+        Debug.Log("current def: "+ characterStat.Endurance);
     }
     void Start()
     {
-
+        
     }
     void Update()
     {
@@ -153,14 +155,18 @@ public class Knight : MonoBehaviour
 
     internal void ReduceDefense(int duration, float defenseReduction)
     {
-        characterStat = GetComponentInParent<CharacterStat>();
+        characterStat = GetComponent<CharacterStat>();
+        Debug.Log("enemy duration def: " + duration + " current def: " 
+            + characterStat.BaseEndurance + "def shred: " + defenseReduction);
         if (characterStat == null)
         {
             Debug.LogError("CharacterStat component not found!");
             return;
         }
-        float defReducValue = characterStat.Endurance * defenseReduction;
-        characterStat.Endurance -= (int)defReducValue;
+        float defReducValue = characterStat.Endurance*defenseReduction;
+        Debug.Log("def shred value: " + defReducValue);
+        characterStat.Endurance -= defReducValue;
+        Debug.Log("enemy current def: " + characterStat.Endurance);
         StartCoroutine(RestoreDefenseAfterDuration(duration));
     }
 

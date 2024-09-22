@@ -28,7 +28,7 @@ public class Metal_1 : Powerups
         Debug.Log("dmm chay di: ");
         if (player != null)
         {
-            player.IncreaseDef(200f);   
+            player.IncreaseDef(0.1f);   
         }
     }
 }

@@ -9,7 +9,7 @@ public class Attack : MonoBehaviour, IBuffable
 
     private ScriptableBuff _buff;
     private CharacterStat characterStat; // Reference to CharacterStat
-    private int attackDamage;
+    private float attackDamage;
     public Vector2 knockback = Vector2.zero;
 
     private void Start()
@@ -27,13 +27,13 @@ public class Attack : MonoBehaviour, IBuffable
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        attackDamage = characterStat.Damage + 10;
+        attackDamage = characterStat.Damage;
         Damageable damageable = collision.GetComponent<Damageable>();
         Debug.Log("Trigger entered with: " + collision.gameObject.name);
         if (damageable != null)
         {
             Vector2 deliveredKnockback = transform.parent.localScale.x > 0 ? knockback : new Vector2(-knockback.x, knockback.y);
-            bool gotHit = damageable.Hit(attackDamage, deliveredKnockback);
+            bool gotHit = damageable.Hit((int)attackDamage, deliveredKnockback);
 
             if (gotHit)
                 Debug.Log(collision.name + " hit for " + attackDamage);
