@@ -6,13 +6,13 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D), typeof(TouchingDirection), typeof(Damageable))]
 public class Knight : MonoBehaviour
 {
-    private CharacterStat characterStat;
+    private EnemyStat enemyStat;
     public DetectionZone attackZone;
     public DetectionZone cliffDetectionZone;
     public float walkStopRate = 0.05f;
     Animator animator;
     Damageable damageable;
-    public float walkSpeed = 3f;
+    //public float walkSpeed = 3f;
     Rigidbody2D rb;
     public enum WalkableDirection { Right, Left }
     TouchingDirection touchingDirection;
@@ -54,16 +54,17 @@ public class Knight : MonoBehaviour
 
     private void Awake()
     {
+        enemyStat = GetComponent<EnemyStat>();
+
+        Debug.Log("erd " + enemyStat.Endurance);
         rb = GetComponent<Rigidbody2D>();
         touchingDirection = GetComponent<TouchingDirection>();
         animator = GetComponent<Animator>();
         damageable = GetComponent<Damageable>();
-        characterStat = GetComponent<CharacterStat>();
-        Debug.Log("current def: "+ characterStat.Endurance);
     }
     void Start()
     {
-        
+
     }
     void Update()
     {
@@ -93,7 +94,7 @@ public class Knight : MonoBehaviour
         {
             if (CanMove && touchingDirection.IsGround)
             {
-                rb.velocity = new Vector2(walkSpeed * walkDirectionVector.x, rb.velocity.y);
+                rb.velocity = new Vector2(enemyStat.Speed * walkDirectionVector.x, rb.velocity.y);
             }
             else rb.velocity = new Vector2(Mathf.Lerp(rb.velocity.x, 0, walkStopRate), rb.velocity.y);
         }
@@ -118,6 +119,7 @@ public class Knight : MonoBehaviour
     public void OnHit(int damage, Vector2 knockback)
     {
         rb.velocity = new Vector2(knockback.x, rb.velocity.y + knockback.y);
+        
     }
     public bool CanMove
     {
@@ -155,24 +157,21 @@ public class Knight : MonoBehaviour
 
     internal void ReduceDefense(int duration, float defenseReduction)
     {
-        characterStat = GetComponent<CharacterStat>();
-        Debug.Log("enemy duration def: " + duration + " current def: " 
-            + characterStat.BaseEndurance + "def shred: " + defenseReduction);
-        if (characterStat == null)
+        if (enemyStat == null)
         {
-            Debug.LogError("CharacterStat component not found!");
+            Debug.LogError("enemyStat component not found!");
             return;
         }
-        float defReducValue = characterStat.Endurance*defenseReduction;
+        float defReducValue = enemyStat.Endurance*defenseReduction;
         Debug.Log("def shred value: " + defReducValue);
-        characterStat.Endurance -= defReducValue;
-        Debug.Log("enemy current def: " + characterStat.Endurance);
+        enemyStat.Endurance -= defReducValue;
+        Debug.Log("enemy current def: " + enemyStat.Endurance);
         StartCoroutine(RestoreDefenseAfterDuration(duration));
     }
 
     private IEnumerator RestoreDefenseAfterDuration(float duration)
     {
         yield return new WaitForSeconds(duration);
-        characterStat.Endurance = characterStat.BaseEndurance;
+        enemyStat.Endurance = enemyStat.BaseEndurance;
     }
 }

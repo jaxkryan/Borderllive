@@ -14,7 +14,7 @@ public class Metal_2 : Powerups
         this.id = 2;
         this.ElementId = 1;
         this.cooldown = 5;
-        this.duration = 2; // Thời gian hiệu lực của hiệu ứng (2 giây)
+        this.duration = 2;
         this.isActive = false;
         this.currentCooldown = 0f;
         this.Weight = 10;

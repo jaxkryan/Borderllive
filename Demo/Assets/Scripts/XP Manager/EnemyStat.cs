@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 using TMPro;
 
-public class CharacterStat : MonoBehaviour
+public class EnemyStat : MonoBehaviour
 {
     // Stamina variables
     [SerializeField] float BaseStamina_PerLevel = 5;
@@ -88,7 +88,7 @@ public class CharacterStat : MonoBehaviour
     }
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
       
         // Find the Damageable component attached to the player
