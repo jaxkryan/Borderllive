@@ -13,7 +13,7 @@ public class Metal_2_DB : BadEffect
         this.id = 2;
         this.ElementId = 1;
         this.cooldown = 5;
-        this.duration = 1; // Thời gian hiệu lực của hiệu ứng (2 giây)
+        this.duration = 1;
         this.isActive = false;
         this.currentCooldown = 0f;
         this.type = DebuffType.DefDebuff;
@@ -21,11 +21,12 @@ public class Metal_2_DB : BadEffect
         this.effect = Effect.EnemyDefReduction;
     }
 
-    public void ApplyDefenseReduction(Knight target)
-    {
-        if (target != null)
-        {
-            target.ReduceDefense(duration, defenseReduction);
-        }
-    }
+
+    //public void ApplyDefenseReduction(Knight target)
+    //{
+    //    if (target != null)
+    //    {
+    //        target.ReduceDefense(duration, defenseReduction);
+    //    }
+    //}
 }

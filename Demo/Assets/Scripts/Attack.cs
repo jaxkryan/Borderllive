@@ -46,7 +46,8 @@ public class Attack : MonoBehaviour, IBuffable
                     if (enemyKnight != null)
                     {
                         ownedPowerups.EnemyHit(); // Set the hit flag
-                        ownedPowerups.CheckPowerupEffects(enemyKnight); // Apply the debuff to the hit enemy
+                        ownedPowerups.CheckPowerupEffects(enemyKnight);
+                        // Apply the debuff to the hit enemy
                     }
                 }
             }

@@ -6,7 +6,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Metal_2", menuName = "Powerups/Metal_2")]
 public class Metal_2 : Powerups
 {
-    private float chanceToTrigger = 0.3f;  // 30% xác suất
+    private float chanceToTrigger = 0.1f;  // 10% xác suất
     private float defenseReduction = 0.1f; // Giảm 10% phòng thủ
     private float effectTimer = 0f;        // Bộ đếm thời gian cho hiệu ứng
 
@@ -15,7 +15,7 @@ public class Metal_2 : Powerups
         this.id = 2;
         this.ElementId = 1;
         this.cooldown = 5;
-        this.duration = 2;
+        this.duration = 1;
         this.isActive = false;
         this.currentCooldown = 0f;
         this.Weight = 10;

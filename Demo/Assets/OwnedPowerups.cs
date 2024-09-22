@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class OwnedPowerups : MonoBehaviour
@@ -8,6 +9,10 @@ public class OwnedPowerups : MonoBehaviour
     private Knight knight;
     private bool isHitEnemy = false; // Biến cờ để kiểm tra khi tấn công trúng kẻ địch
 
+    //private void Awake()
+    //{
+ 
+    //}
     void Start()
     {
         playerController = GetComponent<PlayerController>();
@@ -30,13 +35,6 @@ public class OwnedPowerups : MonoBehaviour
             }
         }
     }
-
-    void Update()
-    {
-        CheckPowerupEffects(knight);
-        ResetHit();
-    }
-
     public void CheckPowerupEffects(Knight enemyKnight)
     {
         foreach (Powerups p in activePowerups)
@@ -47,13 +45,30 @@ public class OwnedPowerups : MonoBehaviour
                 {
                     if (metalPowerup2.ApplyEffect(enemyKnight))
                     {
-                        OwnedDebuff ownedDebuff = knight.GetComponent<OwnedDebuff>();
                         Metal_2_DB newDebuff = new Metal_2_DB();
-                        ownedDebuff.AddDebuff(newDebuff);
+                        Debug.Log("duration of debuff: " + newDebuff.duration);
+                        GameObject enemyKnightGameObject = enemyKnight.gameObject;
+                        OwnedDebuff ownedDebuff = enemyKnightGameObject.GetComponent<OwnedDebuff>();
+
+                        if (ownedDebuff != null)
+                        {
+                            ownedDebuff.AddDebuff(newDebuff);
+                            ResetHit();
+                            StartCoroutine(RemoveDebuffAfterDuration(ownedDebuff, newDebuff.id, newDebuff.duration));
+                        }
+                        else
+                        {
+                            Debug.LogError("OwnedDebuff component not found on enemyKnight!");
+                        }
                     }
                 }
             }
         }
+    }
+    private IEnumerator RemoveDebuffAfterDuration(OwnedDebuff ownedDebuff, int debuffId, float duration)
+    {
+        yield return new WaitForSeconds(duration);
+        ownedDebuff.RemoveDebuff(debuffId);
     }
 
     public void EnemyHit()

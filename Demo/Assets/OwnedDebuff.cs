@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,39 +7,57 @@ public class OwnedDebuff : MonoBehaviour
 {
     public List<BadEffect> activeDebuff = new List<BadEffect>();
     private Knight knight;
-    void Start()
+
+    void Awake()
     {
         knight = GetComponent<Knight>();
 
         if (knight == null)
         {
-            Debug.LogError("PlayerController not found!");
+            Debug.LogError("Knight component not found!");
         }
-        ActivateDebuff();
     }
 
-    public void AddDebuff(BadEffect debuff)
+    void Start()
+    {
+        if (knight == null)
+        {
+            Debug.LogError("PlayerController not found!");
+        }
+        //ActivateDebuff();
+    }
+
+    public Boolean AddDebuff(BadEffect debuff)
     {
         // Check if this debuff is already active
-        BadEffect existingDebuff = activeDebuff.Find(d => d.GetType() == debuff.GetType());
+        BadEffect existingDebuff = activeDebuff.Find(d => d.id == debuff.id);
 
-        if (existingDebuff != null)
+        if (existingDebuff == null)
         {
             // Add the new debuff
             activeDebuff.Add(debuff);
-            ActivateDebuff();
+            return true;
+            //ActivateDebuff();
         }
+        return false;
     }
 
-
-    public void ActivateDebuff()
+    public void RemoveDebuff(int debuffId)
     {
-        foreach (BadEffect p in activeDebuff)
+        BadEffect debuffToRemove = activeDebuff.Find(d => d.id == debuffId);
+        if (debuffToRemove != null)
         {
-            if (p is Metal_2_DB metalDebuff)
-            {
-                metalDebuff.ApplyDefenseReduction(knight);
-            }
+            activeDebuff.Remove(debuffToRemove);
         }
     }
+    //public void ActivateDebuff()
+    //{
+    //    foreach (BadEffect p in activeDebuff)
+    //    {
+    //        if (p is Metal_2_DB metalDebuff)
+    //        {
+    //            metalDebuff.ApplyDefenseReduction(knight);
+    //        }
+    //    }
+    //}
 }

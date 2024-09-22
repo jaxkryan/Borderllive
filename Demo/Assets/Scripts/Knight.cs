@@ -7,6 +7,7 @@ using UnityEngine;
 public class Knight : MonoBehaviour
 {
     private EnemyStat enemyStat;
+    private OwnedDebuff ownedDebuff;
     public DetectionZone attackZone;
     public DetectionZone cliffDetectionZone;
     public float walkStopRate = 0.05f;
@@ -55,8 +56,8 @@ public class Knight : MonoBehaviour
     private void Awake()
     {
         enemyStat = GetComponent<EnemyStat>();
-
-        Debug.Log("erd " + enemyStat.Endurance);
+        ownedDebuff = GetComponent<OwnedDebuff>();
+        //Debug.Log("erd " + enemyStat.Endurance);
         rb = GetComponent<Rigidbody2D>();
         touchingDirection = GetComponent<TouchingDirection>();
         animator = GetComponent<Animator>();

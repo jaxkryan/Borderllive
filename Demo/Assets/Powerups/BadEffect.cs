@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BadEffect : ScriptableObject
 {
-    public int id;
+    public int id {get; set;}
     public DebuffType type;
     public int ElementId;
     public TriggerCondition triggerCondition;
