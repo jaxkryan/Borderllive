@@ -7,7 +7,6 @@ public class OwnedDebuff : MonoBehaviour
 {
     public List<BadEffect> activeDebuff = new List<BadEffect>();
     private Knight knight;
-
     void Awake()
     {
         knight = GetComponent<Knight>();
@@ -27,6 +26,18 @@ public class OwnedDebuff : MonoBehaviour
         //ActivateDebuff();
     }
 
+    //private void Update()
+    //{
+    //    foreach (BadEffect debuff in activeDebuff)
+    //    {
+    //        debuff.currentCooldown -= Time.deltaTime;
+    //        if (debuff.currentCooldown <= 0)
+    //        {
+    //            debuff.currentCooldown = 0;
+    //        }
+    //    }
+    //}   
+
     public Boolean AddDebuff(BadEffect debuff)
     {
         // Check if this debuff is already active
@@ -34,12 +45,16 @@ public class OwnedDebuff : MonoBehaviour
 
         if (existingDebuff == null)
         {
+            //if (debuff.currentCooldown > 0)
+            //{
+            //    return false;
+            //}
             // Add the new debuff
             activeDebuff.Add(debuff);
+            //debuff.currentCooldown = debuff.cooldown;
             return true;
-            //ActivateDebuff();
         }
-        return false;
+        else return false;
     }
 
     public void RemoveDebuff(int debuffId)

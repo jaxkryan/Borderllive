@@ -6,7 +6,6 @@ public class OwnedPowerups : MonoBehaviour
 {
     public List<Powerups> activePowerups = new List<Powerups>();
     private PlayerController playerController;
-    private Knight knight;
     private bool isHitEnemy = false; // Biến cờ để kiểm tra khi tấn công trúng kẻ địch
 
     //private void Awake()
@@ -16,8 +15,6 @@ public class OwnedPowerups : MonoBehaviour
     void Start()
     {
         playerController = GetComponent<PlayerController>();
-        knight = GetComponent<Knight>();
-
         if (playerController == null)
         {
             Debug.LogError("PlayerController not found!");
@@ -25,6 +22,7 @@ public class OwnedPowerups : MonoBehaviour
         ActivatePowerup();
     }
 
+    //direct buff without condition go here 
     public void ActivatePowerup()
     {
         foreach (Powerups p in activePowerups)
@@ -35,6 +33,8 @@ public class OwnedPowerups : MonoBehaviour
             }
         }
     }
+
+    //condition buff/debuff go here
     public void CheckPowerupEffects(Knight enemyKnight)
     {
         foreach (Powerups p in activePowerups)
@@ -54,7 +54,7 @@ public class OwnedPowerups : MonoBehaviour
                         {
                             ownedDebuff.AddDebuff(newDebuff);
                             ResetHit();
-                            StartCoroutine(RemoveDebuffAfterDuration(ownedDebuff, newDebuff.id, newDebuff.duration));
+                            StartCoroutine(RemoveDebuffAfterDuration(ownedDebuff, newDebuff.id, newDebuff.duration + newDebuff.cooldown));
                         }
                         else
                         {
@@ -67,7 +67,7 @@ public class OwnedPowerups : MonoBehaviour
     }
     private IEnumerator RemoveDebuffAfterDuration(OwnedDebuff ownedDebuff, int debuffId, float duration)
     {
-        yield return new WaitForSeconds(duration);
+        yield return new WaitForSeconds((float)(duration * 2));
         ownedDebuff.RemoveDebuff(debuffId);
     }
 

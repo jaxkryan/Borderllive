@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D), typeof(TouchingDirection), typeof(Damageable))]
@@ -156,8 +157,13 @@ public class Knight : MonoBehaviour
         }
     }
 
-    internal void ReduceDefense(int duration, float defenseReduction)
+    internal void ReduceDefense(int id, int duration, float defenseReduction)
     {
+        if (ownedDebuff.activeDebuff.Any(debuff => debuff.id == id))
+        {
+            Debug.Log("Debuff with id " + id + " is already active. Skipping.");
+            return;
+        }
         if (enemyStat == null)
         {
             Debug.LogError("enemyStat component not found!");

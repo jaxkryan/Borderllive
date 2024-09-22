@@ -45,5 +45,5 @@ public class Powerups : ScriptableObject
     public int cooldown;
     public int duration;
     public bool isActive;
-    public float currentCooldown;
+    public float currentCooldown = 0f;
 }

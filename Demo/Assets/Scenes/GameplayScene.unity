@@ -515,7 +515,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.1206665, y: 0.014290005, z: -10.000715}
+  m_LocalPosition: {x: 7.952154, y: 0.049349993, z: -10.000715}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4044,7 +4044,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e18bbe576ad86c48b9752ea6e5c4267, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activePowerups: []
+  activePowerups:
+  - {fileID: 11400000, guid: d63635d5ab802ba438d623dfd74729e6, type: 2}
+  - {fileID: 11400000, guid: 81cdece8f84405b40aa507cdd5e43cd6, type: 2}
 --- !u!1001 &2574980130917455699
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4303,8 +4305,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47f118a333aae9742901328be57f65e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeDebuff:
-  - {fileID: 11400000, guid: 84dba4c469114ae4d91bf42e76fe746b, type: 2}
+  activeDebuff: []
 --- !u!1001 &7698763042238126809
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -8,13 +8,12 @@ public class Metal_2 : Powerups
 {
     private float chanceToTrigger = 0.1f;  // 10% xác suất
     private float defenseReduction = 0.1f; // Giảm 10% phòng thủ
-    private float effectTimer = 0f;        // Bộ đếm thời gian cho hiệu ứng
 
     public Metal_2()
     {
         this.id = 2;
         this.ElementId = 1;
-        this.cooldown = 5;
+        this.cooldown = 10;
         this.duration = 1;
         this.isActive = false;
         this.currentCooldown = 0f;
@@ -39,7 +38,7 @@ public class Metal_2 : Powerups
     {
         if (target != null)
         {
-            target.ReduceDefense(duration, defenseReduction);
+            target.ReduceDefense(this.id, this.duration, defenseReduction);
         }
     }
 }
