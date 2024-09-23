@@ -6,9 +6,9 @@ using UnityEngine.Events;
 
 public class XPTracker : MonoBehaviour
 {
-    //[SerializeField] TextMeshProUGUI CurrentLevelText;
-    //[SerializeField] TextMeshProUGUI CurrentXPText;
-    //[SerializeField] TextMeshProUGUI XPToNextLevelText;
+    [SerializeField] TextMeshProUGUI CurrentLevelText;
+    [SerializeField] TextMeshProUGUI CurrentXPText;
+    [SerializeField] TextMeshProUGUI XPToNextLevelText;
 
     [SerializeField] BaseXPTranslation XPTranslationType;
 
@@ -61,11 +61,11 @@ public class XPTracker : MonoBehaviour
 
     void RefreshDisplays()
     {
-        //CurrentLevelText.text = $"Current Level: {XPTranslation.CurrentLevel}";
-        //CurrentXPText.text = $"Current XP: {XPTranslation.CurrentXP}";
-        //if (!XPTranslation.AtLevelCap)
-        //    XPToNextLevelText.text = $"XP To Next Level: {XPTranslation.XPRequiredForNextLevel}";
-        //else
-        //    XPToNextLevelText.text = $"XP To Next Level: At Max";
+        CurrentLevelText.text = $"Current Level: {XPTranslation.CurrentLevel}";
+        CurrentXPText.text = $"Current XP: {XPTranslation.CurrentXP}";
+        if (!XPTranslation.AtLevelCap)
+            XPToNextLevelText.text = $"XP To Next Level: {XPTranslation.XPRequiredForNextLevel}";
+        else
+            XPToNextLevelText.text = $"XP To Next Level: At Max";
     }
 }
