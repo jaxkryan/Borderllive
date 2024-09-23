@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -79,5 +80,21 @@ public class OwnedPowerups : MonoBehaviour
     public void ResetHit()
     {
         isHitEnemy = false;
+    }
+
+    internal void TriggerMetal3Buff()
+    {
+        Metal_3 metal_3 = new Metal_3();
+        metal_3.ApplyEffect(playerController);
+    }
+
+    internal void RemoveMetal3Buff()
+    {
+        PlayerController playerController = GetComponent<PlayerController>();
+        if (playerController != null)
+        {
+            playerController.DecreaseDef(0.1f);
+            Debug.Log("Metal_3 buff removed as health is above 50%!");
+        }
     }
 }

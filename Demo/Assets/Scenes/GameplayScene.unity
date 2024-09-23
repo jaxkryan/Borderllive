@@ -515,7 +515,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.952154, y: 0.049349993, z: -10.000715}
+  m_LocalPosition: {x: 8.977706, y: 0.025670007, z: -10.000715}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3995,6 +3995,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: f13ea904223cc0a4d8464a21739d602a, type: 2}
     - target: {fileID: 8485756263172064667, guid: 0c1ab7f72964dfb428b31ed4560b73c0, type: 3}
+      propertyPath: _health
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 8485756263172064667, guid: 0c1ab7f72964dfb428b31ed4560b73c0, type: 3}
       propertyPath: dropItem
       value: 
       objectReference: {fileID: 2169320341939109797, guid: 0a412343c13056b4fb66b0d30ac72f52, type: 3}
@@ -4047,6 +4051,7 @@ MonoBehaviour:
   activePowerups:
   - {fileID: 11400000, guid: d63635d5ab802ba438d623dfd74729e6, type: 2}
   - {fileID: 11400000, guid: 81cdece8f84405b40aa507cdd5e43cd6, type: 2}
+  - {fileID: 11400000, guid: e2f1f435659c6d54ea7ca2f9993c171e, type: 2}
 --- !u!1001 &2574980130917455699
 PrefabInstance:
   m_ObjectHideFlags: 0

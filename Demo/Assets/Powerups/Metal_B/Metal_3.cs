@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Metal_1", menuName = "Powerups/Metal_1")]
-public class Metal_1 : Powerups
+[CreateAssetMenu(fileName = "Metal_3", menuName = "Powerups/Metal_3")]
+public class Metal_3 : Powerups
 {
-    public Metal_1()
+    public Metal_3()
     {
         this.id = 1;
         this.ElementId = 1;
@@ -26,7 +26,7 @@ public class Metal_1 : Powerups
     {
         if (player != null)
         {
-            player.IncreaseDef(0.1f);   
+            player.IncreaseDefLowHP(0.1f);
         }
     }
 }
