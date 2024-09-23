@@ -73,7 +73,7 @@ public class CharacterStat : MonoBehaviour
         BaseStamina = BaseStamina_PerLevel * currentLevel + BaseStamina_Offset;
         BaseStrength = BaseStrength_PerLevel * currentLevel + BaseStrength_Offset;
         BaseEndurance = BaseEndurance_PerLevel * currentLevel + BaseEndurance_Offset;
-
+        _endurance = BaseEndurance;
         // Update the Damageable script's health
         if (damageable != null)
         {
