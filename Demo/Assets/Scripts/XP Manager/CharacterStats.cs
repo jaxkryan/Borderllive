@@ -31,6 +31,7 @@ public class CharacterStat : MonoBehaviour
     // Reference to the Damageable component
     private Damageable damageable;
 
+    private BuffSelectionUI buffSelectionUI;
     // Properties for stamina, strength, endurance, and speed
     public float BaseStamina { get; set; } = 0;
     public float BaseStrength { get; set; } = 0;
@@ -79,18 +80,32 @@ public class CharacterStat : MonoBehaviour
             damageable.MaxHealth = (int)MaxHealth;  // Set the new MaxHealth
             damageable.Health = (int)MaxHealth;     // Set current health to MaxHealth
         }
+        for (int i = previousLevel; i < currentLevel; i++) {
+            if (buffSelectionUI == null)
+            {
+                buffSelectionUI = FindObjectOfType<BuffSelectionUI>();
+            }
 
+            if (buffSelectionUI != null)
+            {
+                buffSelectionUI.ShowBuffChoices();
+            }
+            else
+            {
+                Debug.LogError("BuffSelectionUI not found!");
+            }
+        }
         // Update the UI for stamina, health, strength, damage, defense, and speed
         // StaminaText.text = $"Stamina: {Stamina}";
-       // HealthText.text = $"Max Health: {MaxHealth}";
+        // HealthText.text = $"Max Health: {MaxHealth}";
         //DefText.text = $"DEF: {DEF}"; // Update DEF value on the UI
-       // SpeedText.text = $"Speed: {Speed}"; // Update Speed value on the UI
+        // SpeedText.text = $"Speed: {Speed}"; // Update Speed value on the UI
     }
 
     // Start is called before the first frame update
     void Start()
     {
-      
+        buffSelectionUI = FindObjectOfType<BuffSelectionUI>();
         // Find the Damageable component attached to the player
         damageable = GetComponent<Damageable>();
         if (damageable == null)
@@ -101,13 +116,13 @@ public class CharacterStat : MonoBehaviour
         // Initialize stats UI at the start (optional)
         OnUpdateLevel(1, 1);  // Initialize at level 1 for example purposes
         _endurance = BaseEndurance;
-        Debug.Log("Character stat endurance at start: " +  Endurance);
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
         // Optional: Can add additional checks or updates here if needed
     }
 }

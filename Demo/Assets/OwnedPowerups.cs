@@ -34,6 +34,16 @@ public class OwnedPowerups : MonoBehaviour
             }
         }
     }
+    //activate a buff
+    public void ActivateAPowerup(Powerups p)
+    {
+
+        if (p is Metal_1 metalPowerup)
+        {
+            metalPowerup.ApplyEffect(playerController);
+        }
+
+    }
 
     //condition buff/debuff go here
     public void CheckPowerupEffects(Knight enemyKnight)
