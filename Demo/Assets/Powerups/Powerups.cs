@@ -1,11 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Powerups : ScriptableObject
 {
     public int id;
-    public BuffType type;  
+    public BuffType type;
     public int ElementId;
 
     public TriggerCondition triggerCondition;

@@ -1,6 +1,4 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
@@ -121,7 +119,7 @@ public class Knight : MonoBehaviour
     public void OnHit(int damage, Vector2 knockback)
     {
         rb.velocity = new Vector2(knockback.x, rb.velocity.y + knockback.y);
-        
+
     }
     public bool CanMove
     {
@@ -169,7 +167,7 @@ public class Knight : MonoBehaviour
             Debug.LogError("enemyStat component not found!");
             return;
         }
-        float defReducValue = enemyStat.Endurance*defenseReduction;
+        float defReducValue = enemyStat.BaseEndurance * defenseReduction;
         Debug.Log("def shred value: " + defReducValue);
         enemyStat.Endurance -= defReducValue;
         Debug.Log("enemy current def: " + enemyStat.Endurance);

@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Attack : MonoBehaviour, IBuffable
 {
@@ -39,18 +37,13 @@ public class Attack : MonoBehaviour, IBuffable
             if (gotHit)
             {
                 Debug.Log(collision.name + " hit for " + attackDamage);
-
-                if (gotHit)
+                OwnedPowerups ownedPowerups = GetComponentInParent<OwnedPowerups>();
+                Knight enemyKnight = collision.GetComponent<Knight>();
+                if (enemyKnight != null)
                 {
-                    Debug.Log(collision.name + " hit for " + attackDamage);
-                    OwnedPowerups ownedPowerups = GetComponentInParent<OwnedPowerups>();
-                    Knight enemyKnight = collision.GetComponent<Knight>();
-                    if (enemyKnight != null)
-                    {
-                        ownedPowerups.EnemyHit(); // Set the hit flag
-                        ownedPowerups.CheckPowerupEffects(enemyKnight);
-                        // Apply the debuff to the hit enemy
-                    }
+                    ownedPowerups.EnemyHit(); // Set the hit flag
+                    ownedPowerups.CheckPowerupEffects(enemyKnight);
+                    // Apply the debuff to the hit enemy
                 }
             }
             damageable.IsStun = false;

@@ -1,8 +1,7 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.Audio;
+using UnityEngine.UI;
 
 public class SettingMenu : MonoBehaviour
 {
@@ -19,7 +18,7 @@ public class SettingMenu : MonoBehaviour
         List<string> options = new List<string>();
         int currentResolutionIndex = 0;
 
-        for(int i =0; i < resolutions.Length;i++)
+        for (int i = 0; i < resolutions.Length; i++)
         {
             options.Add(resolutions[i].width + " x " + resolutions[i].height);
 
