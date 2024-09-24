@@ -47,10 +47,6 @@ public class Attack : MonoBehaviour, IBuffable
             damageable.IsStun = false;
         }
     }
-    public void Start()
-    {
-        ApplyBuff(AttackBuff);
-    }
 
     private void Update()
     {
