@@ -5,7 +5,7 @@ public class Metal_3 : Powerups
 {
     public Metal_3()
     {
-        this.id = 1;
+        this.id = 3;
         this.ElementId = 1;
         this.cooldown = 0;
         this.duration = 0;

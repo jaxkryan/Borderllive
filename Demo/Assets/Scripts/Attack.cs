@@ -9,9 +9,12 @@ public class Attack : MonoBehaviour, IBuffable
     private EnemyStat enemyStat; // Reference to EnemyStat
     private float attackDamage;
     public Vector2 knockback = Vector2.zero;
+    private OwnedPowerups ownedPowerups;
 
+    //private OwnedPowerups ownedPowerups;
     private void Start()
     {
+        ownedPowerups = GetComponentInParent<OwnedPowerups>();
         // Get the CharacterStat component from the same GameObject
         characterStat = GetComponentInParent<CharacterStat>();
         if (characterStat == null)
@@ -34,7 +37,7 @@ public class Attack : MonoBehaviour, IBuffable
             attackDamage = enemyStat.Damage;
         }
         Damageable damageable = collision.GetComponent<Damageable>();
-        Debug.Log("Trigger entered with: " + collision.gameObject.name);
+        //Debug.Log("Trigger entered with: " + collision.gameObject.name);
         if (damageable != null)
         {
             Vector2 deliveredKnockback = transform.parent.localScale.x > 0 ? knockback : new Vector2(-knockback.x, knockback.y);
@@ -42,12 +45,15 @@ public class Attack : MonoBehaviour, IBuffable
 
             if (gotHit)
             {
-                Debug.Log(collision.name + " hit for " + attackDamage);
-                OwnedPowerups ownedPowerups = GetComponentInParent<OwnedPowerups>();
+                //OwnedPowerups ownedPowerups = GetComponentInParent<OwnedPowerups>();
                 Knight enemyKnight = collision.GetComponent<Knight>();
                 if (enemyKnight != null)
                 {
+                    //Debug.Log(collision.name + " hit for " + attackDamage);
+                   
                     ownedPowerups.EnemyHit(); // Set the hit flag
+                    //Debug.Log("is hit?" + ownedPowerups.isHitEnemy);
+                    //Debug.Log("hit count: " + ownedPowerups.hitCount);
                     ownedPowerups.CheckPowerupEffects(enemyKnight);
                     // Apply the debuff to the hit enemy
                 }
