@@ -20,6 +20,7 @@ public class Attack : MonoBehaviour, IBuffable
         // Check if this script is attached to the player by checking the tag
         if (transform.root.CompareTag("Player"))
         {
+            ownedPowerups = GetComponentInParent<OwnedPowerups>();
             // Get the CharacterStat component from the parent object
             characterStat = GetComponentInParent<CharacterStat>();
             if (characterStat == null)
@@ -27,15 +28,6 @@ public class Attack : MonoBehaviour, IBuffable
                 Debug.LogError("CharacterStat component not found on the player!");
                 return;
             }
-        ownedPowerups = GetComponentInParent<OwnedPowerups>();
-        // Get the CharacterStat component from the same GameObject
-        characterStat = GetComponentInParent<CharacterStat>();
-        if (characterStat == null)
-        {
-            //Debug.LogError("EnemierrStat component not found!");
-            enemyStat = GetComponentInParent<EnemyStat>();
-            return;
-        }
 
             // Find and reference the BerserkBar component
             berserkBar = FindObjectOfType<BerserkGauge>();
