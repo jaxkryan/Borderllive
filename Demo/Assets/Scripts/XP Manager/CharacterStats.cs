@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 public class CharacterStat : MonoBehaviour
@@ -14,8 +15,8 @@ public class CharacterStat : MonoBehaviour
 
     // Endurance variables
     [SerializeField] float BaseEndurance_PerLevel = 2;  // Endurance increases per level
-    [SerializeField] float BaseEndurance_Offset = 3;    // Fixed offset added to Endurance
-    [SerializeField] float EnduranceToDefConversion = 1; // Conversion rate from Endurance to DEF
+    [SerializeField] float BaseEndurance_Offset = 2;    // Fixed offset added to Endurance
+    [SerializeField] float EnduranceToDefConversion = 0.5f; // Conversion rate from Endurance to DEF
 
     // Speed variable
     [SerializeField] float BaseSpeed = 5; // Fixed value for Speed
@@ -23,13 +24,13 @@ public class CharacterStat : MonoBehaviour
     // UI elements
     //[SerializeField] TextMeshProUGUI StaminaText;
     //[SerializeField] TextMeshProUGUI HealthText;
-    //[SerializeField] TextMeshProUGUI DefText; // UI for DEF (if needed)
+    [SerializeField] TextMeshProUGUI DefText; 
     //[SerializeField] TextMeshProUGUI SpeedText; // UI for Speed (if needed)
 
     // Reference to the Damageable component
     private Damageable damageable;
 
-    private BuffSelectionUI buffSelectionUI;
+    //private BuffSelectionUI buffSelectionUI;
     // Properties for stamina, strength, endurance, and speed
     public float BaseStamina { get; set; } = 0;
     public float BaseStrength { get; set; } = 0;
@@ -78,33 +79,18 @@ public class CharacterStat : MonoBehaviour
             damageable.MaxHealth = (int)MaxHealth;  // Set the new MaxHealth
             damageable.Health = (int)MaxHealth;     // Set current health to MaxHealth
         }
-        for (int i = previousLevel; i < currentLevel; i++)
-        {
-            if (buffSelectionUI == null)
-            {
-                buffSelectionUI = FindObjectOfType<BuffSelectionUI>();
-            }
-
-            if (buffSelectionUI != null)
-            {
-                buffSelectionUI.ShowBuffChoices();
-            }
-            else
-            {
-                Debug.LogError("BuffSelectionUI not found!");
-            }
-        }
+      
         // Update the UI for stamina, health, strength, damage, defense, and speed
         // StaminaText.text = $"Stamina: {Stamina}";
         // HealthText.text = $"Max Health: {MaxHealth}";
-        //DefText.text = $"DEF: {DEF}"; // Update DEF value on the UI
+        DefText.text = $"DEF: {DEF}"; // Update DEF value on the UI
         // SpeedText.text = $"Speed: {Speed}"; // Update Speed value on the UI
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        buffSelectionUI = FindObjectOfType<BuffSelectionUI>();
+        //buffSelectionUI = FindObjectOfType<BuffSelectionUI>();
         // Find the Damageable component attached to the player
         damageable = GetComponent<Damageable>();
         if (damageable == null)

@@ -6,6 +6,7 @@ public class Attack : MonoBehaviour, IBuffable
     private ScriptableBuff AttackBuff;
     private ScriptableBuff _buff;
     private CharacterStat characterStat; // Reference to CharacterStat
+    private EnemyStat enemyStat; // Reference to EnemyStat
     private float attackDamage;
     public Vector2 knockback = Vector2.zero;
 
@@ -17,7 +18,8 @@ public class Attack : MonoBehaviour, IBuffable
         characterStat = GetComponentInParent<CharacterStat>();
         if (characterStat == null)
         {
-            Debug.LogError("EnemierrStat component not found!");
+            //Debug.LogError("EnemierrStat component not found!");
+            enemyStat = GetComponentInParent<EnemyStat>();
             return;
         }
 
@@ -26,7 +28,13 @@ public class Attack : MonoBehaviour, IBuffable
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        attackDamage = characterStat.Damage;
+        if (characterStat != null)
+        {
+            attackDamage = characterStat.Damage;
+        } else
+        {
+            attackDamage = enemyStat.Damage;
+        }
         Damageable damageable = collision.GetComponent<Damageable>();
         Debug.Log("Trigger entered with: " + collision.gameObject.name);
         if (damageable != null)

@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f3ad952134679d47b3af567d1793186, type: 3}
   m_Name: XPTranslation_Linear
   m_EditorClassIdentifier: 
-  OffSet: 100
-  Slope: 50
+  Offset: 0
+  Slope: 200
   LevelCap: 20

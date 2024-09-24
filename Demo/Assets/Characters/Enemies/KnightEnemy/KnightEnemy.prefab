@@ -216,6 +216,7 @@ GameObject:
   - component: {fileID: -7301531111076587301}
   - component: {fileID: 6503429951786410621}
   - component: {fileID: 154405474496553711}
+  - component: {fileID: 8260520739142947106}
   m_Layer: 8
   m_Name: KnightEnemy
   m_TagString: Enemy
@@ -421,7 +422,6 @@ MonoBehaviour:
   attackZone: {fileID: 477284626354402339}
   cliffDetectionZone: {fileID: 2918008427032465300}
   walkStopRate: 0.05
-  walkSpeed: 2
   _hasTarget: 0
 --- !u!114 &154405474496553711
 MonoBehaviour:
@@ -466,6 +466,29 @@ MonoBehaviour:
   invincibilityTime: 0.25
   _isStun: 0
   XPReward: 500
+--- !u!114 &8260520739142947106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4591734722486170938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6e6a10aac3dc6c48b8819b20e4fadd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BaseStamina_PerLevel: 5
+  BaseStamina_Offset: 10
+  StaminaToHealthConversion: 10
+  BaseStrength_PerLevel: 3
+  BaseStrength_Offset: 5
+  StrengthToDamageConversion: 2
+  BaseEndurance_PerLevel: 2
+  BaseEndurance_Offset: 3
+  EnduranceToDefConversion: 1
+  BaseSpeed: 5
+  _endurance: 0
 --- !u!1 &4960883968021715329
 GameObject:
   m_ObjectHideFlags: 0
@@ -565,5 +588,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AttackBuff: {fileID: 11400000, guid: f13ea904223cc0a4d8464a21739d602a, type: 2}
-  attackDamage: 40
   knockback: {x: 1, y: 2}

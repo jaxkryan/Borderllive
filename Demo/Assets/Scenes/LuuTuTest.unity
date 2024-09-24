@@ -2074,6 +2074,7 @@ MonoBehaviour:
   BaseEndurance_Offset: 3
   EnduranceToDefConversion: 1
   BaseSpeed: 5
+  DefText: {fileID: 693090320}
   _endurance: 0
 --- !u!114 &1603555440
 MonoBehaviour:
@@ -3134,7 +3135,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 100
+          m_IntArgument: 50
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
