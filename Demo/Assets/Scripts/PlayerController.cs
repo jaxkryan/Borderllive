@@ -321,13 +321,13 @@ public class PlayerController : MonoBehaviour
     {
         if (damageable.Health <= 0.5 * damageable.MaxHealth)
         {
-
+            CharacterStat characterStat = GetComponent<CharacterStat>();
             float defIncrease = characterStat.BaseEndurance * value;
-
-            //Debug.Log("Gia tri defIncrease: " + (int)defIncrease);
+            Debug.Log("Gia tri defIncrease: " + defIncrease);
             characterStat.Endurance += defIncrease;
+            //Debug.Log("Gia tri defIncrease: nat");
         }
-        //Debug.Log("current " + characterStat.Endurance);
+        //Debug.Log("current " + characterStat.Endurance);      
     }
 
     //remove metal_3 buff when health above 50% 
@@ -342,8 +342,63 @@ public class PlayerController : MonoBehaviour
 
         // Assuming you decrease the same value added by Metal_3 buff
         float defDecrease = characterStat.BaseEndurance * value;
-        Debug.Log("mau da du, hoi lai def cu");
+        //Debug.Log("mau da du, hoi lai def cu");
         characterStat.Endurance -= defDecrease;
     }
 
+    //hpregen from wood3 buff
+    private bool isEffectTriggered = false;
+
+    internal void HPRegen()
+    {
+        // Check if the player's health is below 35%
+        if (damageable.Health < 0.35f * damageable.MaxHealth)
+        {
+            // Check if the effect has not been triggered recently
+            if (!isEffectTriggered)
+            {
+                // Set the flag to true
+                isEffectTriggered = true;
+
+                // Calculate the maximum amount of health to regenerate (20% of max health)
+                int maxHealthToRegen = Mathf.RoundToInt(0.2f * damageable.MaxHealth);
+
+                // Calculate the actual amount of health to regenerate (up to the maximum)
+                int healthToRegen = Mathf.Min(maxHealthToRegen, damageable.MaxHealth - damageable.Health);
+
+                // Regenerate health
+                damageable.Heal(healthToRegen);
+                Debug.Log("Generating");
+                // Start regenerating health every 8 seconds
+                InvokeRepeating("RegenerateHealth", 0f, 1f);
+
+                // Wait for 5 minutes before allowing the effect to be triggered again
+                Invoke("ResetEffectTriggered", 300f);
+            }
+        }
+        else
+        {
+            // If the player's health is above 35%, stop regenerating health
+            CancelInvoke("RegenerateHealth");
+            CancelInvoke("ResetEffectTriggered");
+        }
+    }
+
+    private void RegenerateHealth()
+    {
+        // Get the player's damageable component
+        Damageable damageable = GetComponent<Damageable>();
+
+        // Calculate the amount of health to regenerate (5% of max health)
+        int healthToRegen = Mathf.RoundToInt(0.05f * damageable.MaxHealth);
+
+        // Regenerate health
+        damageable.Heal(healthToRegen);
+    }
+
+    private void ResetEffectTriggered()
+    {
+        // Reset the flag
+        isEffectTriggered = false;
+    }
 }

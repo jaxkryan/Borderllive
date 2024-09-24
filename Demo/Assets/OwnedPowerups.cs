@@ -33,7 +33,7 @@ public class OwnedPowerups : MonoBehaviour
             }
         }
     }
-    //activate a buff
+    //activate a permanent buff
     public void ActivateAPowerup(Powerups p)
     {
 
@@ -41,10 +41,14 @@ public class OwnedPowerups : MonoBehaviour
         {
             metalPowerup.ApplyEffect(playerController);
         }
+        if (p is Wood_3 wood3Powerup)
+        {
+            wood3Powerup.ApplyEffect(playerController);
+        }
 
     }
 
-    //condition buff/debuff go here
+    //condition debuff go here
     public void CheckPowerupEffects(Knight enemyKnight)
     {
         GameObject enemyKnightGameObject = enemyKnight.gameObject;
@@ -78,7 +82,7 @@ public class OwnedPowerups : MonoBehaviour
                 if (p is Wood_2 woodPowerup2)
                 {
                     hitCount++;
-                    if (hitCount == 10)
+                    if (hitCount == 8)
                     {
                         woodPowerup2.ApplyEffect(enemyKnight);
                         if (ownedDebuff != null)
@@ -110,10 +114,12 @@ public class OwnedPowerups : MonoBehaviour
         isHitEnemy = false;
     }
 
+    //buff with condition - metal 3
     internal void TriggerMetal3Buff()
     {
         Metal_3 metal_3 = new Metal_3();
         metal_3.ApplyEffect(playerController);
+        Debug.Log("trigger metal 3 buff is ok");
     }
 
     internal void RemoveMetal3Buff()
@@ -124,5 +130,12 @@ public class OwnedPowerups : MonoBehaviour
             playerController.DecreaseDef(0.1f);
             Debug.Log("Metal_3 buff removed as health is above 50%!");
         }
+    }
+
+    //buff w/ condition - wood 3
+    internal void TriggerWood3Buff()
+    {
+       Wood_3 wood_3 = new Wood_3();
+       wood_3.ApplyEffect(playerController);
     }
 }
