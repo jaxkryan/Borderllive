@@ -43,20 +43,23 @@ public class Damageable : MonoBehaviour
             OwnedPowerups ownedPowerups = GetComponent<OwnedPowerups>();
             _health = value;
             healthChanged?.Invoke(_health, MaxHealth);
-            if (ownedPowerups != null)
+            if (_health <= 0.5 * MaxHealth && !metal3Active && ownedPowerups.IsPowerupActive<Metal_3>())
             {
-                if (_health <= 0.5 * MaxHealth)
-                {
-
-                    ownedPowerups.TriggerMetal3Buff();
-                    metal3Active = true;
-
-                }
-                if (_health <= 0.35 * MaxHealth)
-                {
-                    ownedPowerups.TriggerWood3Buff();
-                }
+                //Debug.Log("metal 3 buff is active");
+                ownedPowerups.TriggerMetal3Buff();
+                metal3Active = true;
             }
+
+            if (_health <= 0.35 * MaxHealth && ownedPowerups.IsPowerupActive<Wood_3>())
+            {
+                ownedPowerups.TriggerWood3Buff();
+            }
+            if (_health > 0.5 * MaxHealth && metal3Active)
+            {
+                ownedPowerups.RemoveMetal3Buff();
+                metal3Active = false;
+            }
+
             //else if (_health > 0.5 * MaxHealth && metal3Active)
             //{
             //    OwnedPowerups ownedPowerups = GetComponent<OwnedPowerups>();
