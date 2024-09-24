@@ -280,6 +280,7 @@ MonoBehaviour:
   isInvincible: 0
   invincibilityTime: 0.25
   _isStun: 0
+  XPReward: 500
 --- !u!95 &3121177932437059774
 Animator:
   serializedVersion: 5
@@ -476,5 +477,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd5646a7a629ed0488b96a7d57ea9393, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AttackBuff: {fileID: 11400000, guid: 410c884a747b1724aa23f1a6ebed359b, type: 2}
   attackDamage: 30
   knockback: {x: 0, y: 0}

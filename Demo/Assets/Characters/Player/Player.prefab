@@ -324,6 +324,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd5646a7a629ed0488b96a7d57ea9393, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AttackBuff: {fileID: 11400000, guid: 410c884a747b1724aa23f1a6ebed359b, type: 2}
   attackDamage: 15
   knockback: {x: 0, y: 0}
 --- !u!1 &1000051857094363089
@@ -508,6 +509,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd5646a7a629ed0488b96a7d57ea9393, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AttackBuff: {fileID: 11400000, guid: 410c884a747b1724aa23f1a6ebed359b, type: 2}
   attackDamage: 20
   knockback: {x: 0, y: 0}
 --- !u!1 &1488529538882304967
@@ -1260,7 +1262,7 @@ MonoBehaviour:
   CurrentLevelText: {fileID: 2567443065960677473}
   CurrentXPText: {fileID: 7984795259678558258}
   XPToNextLevelText: {fileID: 4236803287062583242}
-  XPTranslationType: {fileID: 11400000, guid: 68b427c8ca073f2488d57f4cd0a4b52c, type: 2}
+  XPTranslationType: {fileID: 0}
   OnLevelChanged:
     m_PersistentCalls:
       m_Calls:
@@ -1291,8 +1293,13 @@ MonoBehaviour:
   BaseStamina_PerLevel: 5
   BaseStamina_Offset: 10
   StaminaToHealthConversion: 10
+  BaseStrength_PerLevel: 3
+  BaseStrength_Offset: 5
+  StrengthToDamageConversion: 2
   StaminaText: {fileID: 1309552292396769828}
   HealthText: {fileID: 5352249500302876086}
+  StrengthText: {fileID: 0}
+  DamageText: {fileID: 0}
 --- !u!1 &2452288323189747658
 GameObject:
   m_ObjectHideFlags: 0
@@ -1794,6 +1801,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd5646a7a629ed0488b96a7d57ea9393, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AttackBuff: {fileID: 11400000, guid: 410c884a747b1724aa23f1a6ebed359b, type: 2}
   attackDamage: 10
   knockback: {x: 0, y: 0}
 --- !u!1 &6475025308064497508

@@ -466,6 +466,7 @@ MonoBehaviour:
   isInvincible: 0
   invincibilityTime: 0.25
   _isStun: 0
+  XPReward: 500
 --- !u!114 &-9082804688703720184
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -583,5 +584,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd5646a7a629ed0488b96a7d57ea9393, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AttackBuff: {fileID: 11400000, guid: f13ea904223cc0a4d8464a21739d602a, type: 2}
   attackDamage: 20
   knockback: {x: 5, y: 2}

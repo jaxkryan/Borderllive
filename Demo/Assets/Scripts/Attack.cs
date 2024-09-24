@@ -27,7 +27,6 @@ public class Attack : MonoBehaviour, IBuffable
     }
     public void Start()
     {
-        ApplyBuff(AttackBuff);
     }
     public void Update()
     {
