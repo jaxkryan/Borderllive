@@ -1,6 +1,4 @@
-using System.Collections;
 using UnityEngine;
-using TMPro;
 
 public class CharacterStat : MonoBehaviour
 {
@@ -80,7 +78,8 @@ public class CharacterStat : MonoBehaviour
             damageable.MaxHealth = (int)MaxHealth;  // Set the new MaxHealth
             damageable.Health = (int)MaxHealth;     // Set current health to MaxHealth
         }
-        for (int i = previousLevel; i < currentLevel; i++) {
+        for (int i = previousLevel; i < currentLevel; i++)
+        {
             if (buffSelectionUI == null)
             {
                 buffSelectionUI = FindObjectOfType<BuffSelectionUI>();

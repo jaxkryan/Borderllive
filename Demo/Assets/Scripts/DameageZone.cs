@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class DamageZone : MonoBehaviour
@@ -31,7 +29,8 @@ public class DamageZone : MonoBehaviour
                 }
             }
         }
-        else {
+        else
+        {
             Damageable damageable = other.GetComponent<Damageable>();
             if (damageable != null && sendPlayerToOriginalLocation)
             {
@@ -44,7 +43,7 @@ public class DamageZone : MonoBehaviour
                 // Use Hit method with damage amount and calculated knockback
                 damageable.Hit(1000, knockback);
 
-               
+
             }
         }
     }

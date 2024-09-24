@@ -67,7 +67,7 @@ public class EnemySpawnerController : MonoBehaviour
 
             while (activeEnemies > 0)
             {
-                yield return null; 
+                yield return null;
             }
 
             if (waveNumber == totalWaves)

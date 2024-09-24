@@ -1,10 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BadEffect : ScriptableObject
 {
-    public int id {get; set;}
+    public int id { get; set; }
     public DebuffType type;
     public int ElementId;
     public TriggerCondition triggerCondition;

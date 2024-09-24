@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -16,7 +14,7 @@ public class Interactable : MonoBehaviour
     {
         if (interactMessage != null)
         {
-            interactMessage.enabled = false; 
+            interactMessage.enabled = false;
         }
     }
 

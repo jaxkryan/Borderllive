@@ -1,5 +1,3 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -20,7 +18,7 @@ public class FlyingEye : MonoBehaviour
     int waypointNum = 0;
 
     public bool _hasTarget = false;
-    
+
 
     public bool HasTarget
     {
@@ -64,16 +62,17 @@ public class FlyingEye : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(damageable.IsAlive)
+        if (damageable.IsAlive)
         {
-            if(CanMove)
+            if (CanMove)
             {
                 Flight();
-            } else
+            }
+            else
             {
                 rb.velocity = Vector3.zero;
             }
-        } 
+        }
     }
 
     private void Flight()
@@ -84,15 +83,15 @@ public class FlyingEye : MonoBehaviour
 
         rb.velocity = directionToWaypoint * flightSpeed;
         UpdateDirection();
-        if(distance <= waypointReachedDistance)
+        if (distance <= waypointReachedDistance)
         {
             waypointNum++;
 
-            if(waypointNum >= waypoints.Count)
+            if (waypointNum >= waypoints.Count)
             {
                 waypointNum = 0;
             }
-            
+
             nextWaypoint = waypoints[waypointNum];
         }
     }
@@ -102,9 +101,9 @@ public class FlyingEye : MonoBehaviour
         Vector3 locScale = transform.localScale;
 
 
-        if(transform.localScale.x > 0)
+        if (transform.localScale.x > 0)
         {
-            if(rb.velocity.x < 0)
+            if (rb.velocity.x < 0)
             {
                 transform.localScale = new Vector3(-1 * locScale.x, locScale.y, locScale.z);
             }
@@ -118,7 +117,7 @@ public class FlyingEye : MonoBehaviour
         }
     }
 
-     public void OnDeath()
+    public void OnDeath()
     {
         rb.gravityScale = 2f;
         rb.velocity = new Vector2(0, rb.velocity.y);

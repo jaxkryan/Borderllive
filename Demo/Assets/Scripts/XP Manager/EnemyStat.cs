@@ -1,6 +1,4 @@
-using System.Collections;
 using UnityEngine;
-using TMPro;
 
 public class EnemyStat : MonoBehaviour
 {
@@ -82,15 +80,15 @@ public class EnemyStat : MonoBehaviour
 
         // Update the UI for stamina, health, strength, damage, defense, and speed
         // StaminaText.text = $"Stamina: {Stamina}";
-       // HealthText.text = $"Max Health: {MaxHealth}";
+        // HealthText.text = $"Max Health: {MaxHealth}";
         //DefText.text = $"DEF: {DEF}"; // Update DEF value on the UI
-       // SpeedText.text = $"Speed: {Speed}"; // Update Speed value on the UI
+        // SpeedText.text = $"Speed: {Speed}"; // Update Speed value on the UI
     }
 
     // Start is called before the first frame update
     void Awake()
     {
-      
+
         // Find the Damageable component attached to the player
         damageable = GetComponent<Damageable>();
         if (damageable == null)
@@ -101,13 +99,13 @@ public class EnemyStat : MonoBehaviour
         // Initialize stats UI at the start (optional)
         OnUpdateLevel(1, 1);  // Initialize at level 1 for example purposes
         _endurance = BaseEndurance;
-        Debug.Log("Character stat endurance at start: " +  Endurance);
+        Debug.Log("Character stat endurance at start: " + Endurance);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
         // Optional: Can add additional checks or updates here if needed
     }
 }

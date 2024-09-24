@@ -1,18 +1,18 @@
-﻿using System;
+using System;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Metal_2", menuName = "Powerups/Metal_2")]
-public class Metal_2 : Powerups
+[CreateAssetMenu(fileName = "Wood_2", menuName = "Powerups/Wood_2")]
+public class Wood_2 : Powerups
 {
-    private float chanceToTrigger = 0.1f;  // 10% xác suất
-    private float defenseReduction = 0.1f; // Giảm 10% phòng thủ
+    private int hitCount = 0;
+    private float defenseReduction = 0.1f;
 
-    public Metal_2()
+    public Wood_2()
     {
         this.id = 2;
         this.ElementId = 1;
         this.cooldown = 10;
-        this.duration = 1;
+        this.duration = 2;
         this.isActive = false;
         this.currentCooldown = 0f;
         this.Weight = 10;
@@ -24,12 +24,9 @@ public class Metal_2 : Powerups
 
     public Boolean ApplyEffect(Knight target)
     {
-        if (UnityEngine.Random.Range(0f, 1f) <= chanceToTrigger)
-        {
             ApplyDefenseReduction(target);
+            hitCount = 0;
             return true;
-        }
-        return false;
     }
 
     private void ApplyDefenseReduction(Knight target)
@@ -40,3 +37,4 @@ public class Metal_2 : Powerups
         }
     }
 }
+

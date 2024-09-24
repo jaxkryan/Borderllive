@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -15,7 +12,7 @@ public class HealthBar : MonoBehaviour
     {
         GameObject player = GameObject.FindGameObjectWithTag("Player");
 
-        if(player == null )
+        if (player == null)
         {
             Debug.Log("No player found in the scence. Make sure it has tag 'Player'");
         }
@@ -51,6 +48,6 @@ public class HealthBar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

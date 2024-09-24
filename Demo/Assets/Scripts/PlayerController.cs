@@ -319,9 +319,9 @@ public class PlayerController : MonoBehaviour
 
     internal void IncreaseDefLowHP(float value)
     {
-        if (damageable.Health <= 0.5*damageable.MaxHealth)
+        if (damageable.Health <= 0.5 * damageable.MaxHealth)
         {
-            
+
             float defIncrease = characterStat.BaseEndurance * value;
 
             //Debug.Log("Gia tri defIncrease: " + (int)defIncrease);

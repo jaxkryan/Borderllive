@@ -1,17 +1,18 @@
 ﻿using UnityEngine;
 
-[CreateAssetMenu(fileName = "Metal_2", menuName = "BadEffect/Metal_2")]
-public class Metal_2_DB : BadEffect
+[CreateAssetMenu(fileName = "Wood_2", menuName = "BadEffect/Wood_2")]
+public class Wood_2_DB : BadEffect
 {
     private float defenseReduction = 0.1f; // Giảm 10% phòng thủ
     private float effectTimer = 0f;        // Bộ đếm thời gian cho hiệu ứng
 
-    public Metal_2_DB()
+    public Wood_2_DB()
     {
+        //no cd but count by hitcount. But i still add it for control purpose
         this.id = 2;
-        this.ElementId = 1;
-        this.cooldown = 5;
-        this.duration = 1;
+        this.ElementId = 2;
+        this.cooldown = 2;
+        this.duration = 2;
         this.isActive = false;
         this.currentCooldown = 0f;
         this.type = DebuffType.DefDebuff;
