@@ -14,9 +14,11 @@ public class EnemySpawnerController : MonoBehaviour
     public int totalWaves = 3; // Total number of waves (can be modified)
     public GameObject gate; // Gate GameObject to disable
 
-    private int waveNumber = 1; // Current wave number
+    public int waveNumber = 0;// Current wave number
     private int activeEnemies = 0; // Active enemy count
     private Coroutine spawnCoroutine; // Coroutine reference for spawning waves
+    private BuffSelectionUI buffSelectionUI; // Reference to the buff selection UI
+
     void OnEnable()
     {
         // Start spawning waves when object is enabled
@@ -35,11 +37,16 @@ public class EnemySpawnerController : MonoBehaviour
             spawnCoroutine = null;
         }
     }
+
     void Start()
     {
         gate = GameObject.FindWithTag("Gate"); // Find the gate object with the tag "Gate"
         CloseGate(); // Ensure gate starts closed
-        //StartCoroutine(SpawnWaves()); // Start spawning waves
+        buffSelectionUI = FindObjectOfType<BuffSelectionUI>(); // Find the BuffSelectionUI
+        if (buffSelectionUI == null)
+        {
+            Debug.LogError("BuffSelectionUI not found!");
+        }
     }
 
     void CloseGate()
@@ -65,20 +72,20 @@ public class EnemySpawnerController : MonoBehaviour
                 }
             }
 
+            // Wait until all enemies are defeated before proceeding to the next wave
             while (activeEnemies > 0)
             {
                 yield return null;
             }
 
-            if (waveNumber == totalWaves)
-            {
-                if (activeEnemies == 0)
-                {
-                    DisableGate();
-                }
-            }
-
             waveNumber++;
+        }
+
+        // If all waves are complete and all enemies are defeated, open the gate and show buff selection
+        if (waveNumber > totalWaves && activeEnemies == 0)
+        {
+            DisableGate();
+            ShowBuffSelection();
         }
     }
 
@@ -111,7 +118,6 @@ public class EnemySpawnerController : MonoBehaviour
         activeEnemies++;
         Debug.Log("number of enemies: " + activeEnemies);
 
-
         // Assign waypoints to the flying enemy
         FlyingEye flyingEye = spawnedEnemy.GetComponent<FlyingEye>();
         if (flyingEye != null)
@@ -134,11 +140,6 @@ public class EnemySpawnerController : MonoBehaviour
     {
         activeEnemies--;
 
-        // Check if all enemies of the final wave are defeated
-        if (waveNumber == totalWaves && activeEnemies == 0)
-        {
-            DisableGate();
-        }
     }
 
     void DisableGate()
@@ -146,6 +147,14 @@ public class EnemySpawnerController : MonoBehaviour
         if (gate != null)
         {
             gate.SetActive(false); // Disable the gate
+        }
+    }
+
+    void ShowBuffSelection()
+    {
+        if (buffSelectionUI != null)
+        {
+            buffSelectionUI.ShowBuffChoices();
         }
     }
 

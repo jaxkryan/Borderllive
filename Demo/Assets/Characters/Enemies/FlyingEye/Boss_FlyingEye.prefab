@@ -81,7 +81,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AttackBuff: {fileID: 11400000, guid: f13ea904223cc0a4d8464a21739d602a, type: 2}
-  attackDamage: 20
   knockback: {x: 0, y: 0}
 --- !u!1 &5866203017632488155
 GameObject:
@@ -182,6 +181,7 @@ GameObject:
   - component: {fileID: 8962856500304905640}
   - component: {fileID: 3121177932437059774}
   - component: {fileID: 366460629548117337}
+  - component: {fileID: -8223706081193405153}
   m_Layer: 8
   m_Name: Boss_FlyingEye
   m_TagString: Untagged
@@ -403,6 +403,29 @@ MonoBehaviour:
   deathCollider: {fileID: 4081541737391274040}
   waypoints: []
   _hasTarget: 0
+--- !u!114 &-8223706081193405153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7859724540115080706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6e6a10aac3dc6c48b8819b20e4fadd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BaseStamina_PerLevel: 5
+  BaseStamina_Offset: 10
+  StaminaToHealthConversion: 10
+  BaseStrength_PerLevel: 3
+  BaseStrength_Offset: 5
+  StrengthToDamageConversion: 2
+  BaseEndurance_PerLevel: 1
+  BaseEndurance_Offset: 0
+  EnduranceToDefConversion: 1
+  BaseSpeed: 5
+  _endurance: 0
 --- !u!1 &7886234287371785040
 GameObject:
   m_ObjectHideFlags: 0

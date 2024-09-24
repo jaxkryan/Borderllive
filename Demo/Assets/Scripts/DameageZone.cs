@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class DamageZone : MonoBehaviour
 {
-    public int damageAmount = 20;
+    public int damageAmount = 10;
     public bool sendPlayerToOriginalLocation = true;
     public Vector2 playerOriginalPosition;
     public float knockbackForce = 5f;
@@ -12,6 +12,7 @@ public class DamageZone : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Damageable damageable = other.GetComponent<Damageable>();
+            CharacterStat stat = other.GetComponent<CharacterStat>();
             if (damageable != null)
             {
                 // Calculate knockback direction
@@ -19,9 +20,9 @@ public class DamageZone : MonoBehaviour
 
                 // Apply knockback force
                 Vector2 knockback = knockbackDirection * knockbackForce;
-
+                int totalDamage = damageAmount + (int) stat.DEF + (int)(damageable.MaxHealth * 0.2f);
                 // Use Hit method with damage amount and calculated knockback
-                damageable.Hit(damageAmount, knockback);
+                damageable.Hit(totalDamage, knockback);
 
                 if (sendPlayerToOriginalLocation)
                 {
