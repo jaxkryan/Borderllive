@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 
 public class Attack : MonoBehaviour, IBuffable
 {
@@ -9,10 +9,12 @@ public class Attack : MonoBehaviour, IBuffable
     private EnemyStat enemyStat; // Reference to EnemyStat
     private float attackDamage;
     public Vector2 knockback = Vector2.zero;
+    private OwnedPowerups ownedPowerups;
 
     // Reference to BerserkBar script
     private BerserkGauge berserkBar;
 
+    //private OwnedPowerups ownedPowerups;
     private void Start()
     {
         // Check if this script is attached to the player by checking the tag
@@ -25,6 +27,15 @@ public class Attack : MonoBehaviour, IBuffable
                 Debug.LogError("CharacterStat component not found on the player!");
                 return;
             }
+        ownedPowerups = GetComponentInParent<OwnedPowerups>();
+        // Get the CharacterStat component from the same GameObject
+        characterStat = GetComponentInParent<CharacterStat>();
+        if (characterStat == null)
+        {
+            //Debug.LogError("EnemierrStat component not found!");
+            enemyStat = GetComponentInParent<EnemyStat>();
+            return;
+        }
 
             // Find and reference the BerserkBar component
             berserkBar = FindObjectOfType<BerserkGauge>();
@@ -59,7 +70,7 @@ public class Attack : MonoBehaviour, IBuffable
         }
 
         Damageable damageable = collision.GetComponent<Damageable>();
-        Debug.Log("Trigger entered with: " + collision.gameObject.name);
+        //Debug.Log("Trigger entered with: " + collision.gameObject.name);
         if (damageable != null)
         {
             Vector2 deliveredKnockback = transform.parent.localScale.x > 0 ? knockback : new Vector2(-knockback.x, knockback.y);
@@ -67,6 +78,7 @@ public class Attack : MonoBehaviour, IBuffable
 
             if (gotHit)
             {
+                //OwnedPowerups ownedPowerups = GetComponentInParent<OwnedPowerups>();
                 Debug.Log(collision.name + " hit for " + attackDamage);
 
                 // Increase the Berserk Bar only if the attack is from the player
@@ -79,7 +91,11 @@ public class Attack : MonoBehaviour, IBuffable
                 Knight enemyKnight = collision.GetComponent<Knight>();
                 if (enemyKnight != null)
                 {
+                    //Debug.Log(collision.name + " hit for " + attackDamage);
+
                     ownedPowerups.EnemyHit(); // Set the hit flag
+                    //Debug.Log("is hit?" + ownedPowerups.isHitEnemy);
+                    //Debug.Log("hit count: " + ownedPowerups.hitCount);
                     ownedPowerups.CheckPowerupEffects(enemyKnight);
                     // Apply the debuff to the hit enemy
                 }

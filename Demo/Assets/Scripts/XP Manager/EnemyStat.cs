@@ -18,7 +18,7 @@ public class EnemyStat : MonoBehaviour
     [SerializeField] float EnduranceToDefConversion = 1; // Conversion rate from Endurance to DEF
 
     // Speed variable
-    [SerializeField] float BaseSpeed = 5; // Fixed value for Speed
+    [SerializeField] public float BaseSpeed = 5; // Fixed value for Speed
 
     // UI elements
     //[SerializeField] TextMeshProUGUI StaminaText;
@@ -61,7 +61,12 @@ public class EnemyStat : MonoBehaviour
     public float DEF => Endurance * EnduranceToDefConversion;
 
     // Speed-based property
-    public float Speed => BaseSpeed; // Speed is fixed at 5
+    [SerializeField]
+    private float _speed;
+    public float Speed {
+        get => _speed;
+        set => _speed = value;
+    }
 
     // Method to handle level changes
     public void OnUpdateLevel(int previousLevel, int currentLevel)
@@ -99,7 +104,8 @@ public class EnemyStat : MonoBehaviour
         // Initialize stats UI at the start (optional)
         OnUpdateLevel(1, 1);  // Initialize at level 1 for example purposes
         _endurance = BaseEndurance;
-        Debug.Log("Character stat endurance at start: " + Endurance);
+        _speed = BaseSpeed;
+        //Debug.Log("Character stat endurance at start: " + Endurance);
     }
 
     // Update is called once per frame

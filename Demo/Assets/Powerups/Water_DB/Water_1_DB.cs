@@ -1,23 +1,22 @@
 ﻿using UnityEngine;
 
-[CreateAssetMenu(fileName = "Wood_2", menuName = "BadEffect/Wood_2")]
-public class Wood_2_DB : BadEffect
+[CreateAssetMenu(fileName = "Water_1", menuName = "BadEffect/Water_1")]
+public class Water_1_DB : BadEffect
 {
     private float defenseReduction = 0.1f; // Giảm 10% phòng thủ
     private float effectTimer = 0f;        // Bộ đếm thời gian cho hiệu ứng
 
-    public Wood_2_DB()
+    public Water_1_DB()
     {
-        //no cd but count by hitcount. But i still add it for control purpose
-        this.id = 4;
+        this.id = 6;
         this.ElementId = 2;
-        this.cooldown = 2;
-        this.duration = 2;
+        this.cooldown = 10;
+        this.duration = 10;
         this.isActive = false;
         this.currentCooldown = 0f;
         this.type = DebuffType.DefDebuff;
         this.triggerCondition = TriggerCondition.Always;
-        this.effect = Effect.EnemyDefReduction;
+        this.effect = Effect.SpeedDecrease;
     }
 
 
