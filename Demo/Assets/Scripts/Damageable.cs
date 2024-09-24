@@ -157,11 +157,6 @@ public class Damageable : MonoBehaviour
         }
     }
 
-    private void Awake()
-    {
-        animator = GetComponent<Animator>();
-    }
-
     private void Update()
     {
         if (isInvincible)
@@ -193,20 +188,35 @@ public class Damageable : MonoBehaviour
         }
 
     }
+    private void Awake()
+    {
+        animator = GetComponent<Animator>();
+        characterStat = GetComponent<CharacterStat>();
+        if (characterStat == null)
+        {
+            enemyStat = GetComponent<EnemyStat>();
+        }
+    }
 
+    private CharacterStat characterStat;
+    private EnemyStat enemyStat;
     public bool Hit(int damage, Vector2 knockback)
     {
         if (IsAlive && !isInvincible)
         {
-            Health -= damage;
+            // Calculate reduced damage based on DEF attribute
+            float defense = characterStat != null ? characterStat.DEF : enemyStat.DEF; // Adjust based on actual DEF field name
+            float reducedDamage = Mathf.Max(damage - Mathf.Floor(defense), 0); // Ensure damage doesn't go negative
+
+            // Apply the reduced damage
+            Health -= (int)reducedDamage;
             isInvincible = true;
 
             animator.SetTrigger(AnimationStrings.hitTrigger);
             LockVelocity = true;
-            damageableHit?.Invoke(damage, knockback);
-            CharacterEvents.characterDamaged.Invoke(gameObject, damage);
+            damageableHit?.Invoke((int)reducedDamage, knockback);
+            CharacterEvents.characterDamaged.Invoke(gameObject, (int)reducedDamage);
 
-            //  Debug.Log("Hit! Health: " + Health);
             return true;
         }
 

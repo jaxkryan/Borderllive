@@ -99,7 +99,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AttackBuff: {fileID: 11400000, guid: ed4d9a7cb7037bb49a46b1fab5bf7e65, type: 2}
-  attackDamage: 10
   knockback: {x: 5, y: 2}
 --- !u!1 &5664878560119975108
 GameObject:
@@ -117,6 +116,7 @@ GameObject:
   - component: {fileID: 7750535856152183077}
   - component: {fileID: 3126760905047374723}
   - component: {fileID: 8286660258354314001}
+  - component: {fileID: 5546524151841492102}
   m_Layer: 8
   m_Name: MiniBoss_KnightEnemy Variant
   m_TagString: Untagged
@@ -322,7 +322,6 @@ MonoBehaviour:
   attackZone: {fileID: 8627499103727381981}
   cliffDetectionZone: {fileID: 6438588754586097258}
   walkStopRate: 0.05
-  walkSpeed: 10
   _hasTarget: 0
 --- !u!114 &8286660258354314001
 MonoBehaviour:
@@ -355,6 +354,29 @@ MonoBehaviour:
   invincibilityTime: 0.25
   _isStun: 0
   XPReward: 500
+--- !u!114 &5546524151841492102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5664878560119975108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6e6a10aac3dc6c48b8819b20e4fadd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BaseStamina_PerLevel: 5
+  BaseStamina_Offset: 10
+  StaminaToHealthConversion: 10
+  BaseStrength_PerLevel: 3
+  BaseStrength_Offset: 5
+  StrengthToDamageConversion: 2
+  BaseEndurance_PerLevel: 2
+  BaseEndurance_Offset: 3
+  EnduranceToDefConversion: 1
+  BaseSpeed: 5
+  _endurance: 0
 --- !u!1 &8738186456439416502
 GameObject:
   m_ObjectHideFlags: 0
