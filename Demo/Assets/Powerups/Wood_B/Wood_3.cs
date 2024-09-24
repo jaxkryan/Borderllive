@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[CreateAssetMenu(fileName = "Wood_3", menuName = "Powerups/Wood_3")]
 public class Wood_3 : Powerups
 {
     public Wood_3()
@@ -20,11 +22,13 @@ public class Wood_3 : Powerups
 
         this.effect = Effect.HPRegen;
     }
-    //public void ApplyEffect(PlayerController player)
-    //{
-    //    if (player != null)
-    //    {
-    //        player.HPRegen();
-    //    }
-    //}
+
+    internal void ApplyEffect(PlayerController player)
+    {
+            if (player != null)
+            {
+                player.HPRegen();
+           }
+    }
+
 }
