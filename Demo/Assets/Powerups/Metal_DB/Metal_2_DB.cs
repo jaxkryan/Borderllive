@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 [CreateAssetMenu(fileName = "Metal_2", menuName = "BadEffect/Metal_2")]
 public class Metal_2_DB : BadEffect

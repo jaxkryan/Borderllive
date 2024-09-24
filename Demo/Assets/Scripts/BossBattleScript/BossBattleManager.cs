@@ -1,7 +1,7 @@
-using UnityEngine;
-using UnityEngine.UI;
 using Cinemachine;
 using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
 
 public class BossBattleManager : MonoBehaviour
 {
@@ -53,7 +53,7 @@ public class BossBattleManager : MonoBehaviour
                 // Add more waypoints as needed
             };
         }
-    } 
+    }
 
     private void UpdateBossHealthBar(int damage, Vector2 knockback)
     {

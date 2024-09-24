@@ -1,6 +1,4 @@
-using System.Collections;
 using UnityEngine;
-using TMPro;
 
 public class CharacterStat : MonoBehaviour
 {
@@ -73,14 +71,15 @@ public class CharacterStat : MonoBehaviour
         BaseStamina = BaseStamina_PerLevel * currentLevel + BaseStamina_Offset;
         BaseStrength = BaseStrength_PerLevel * currentLevel + BaseStrength_Offset;
         BaseEndurance = BaseEndurance_PerLevel * currentLevel + BaseEndurance_Offset;
-
+        _endurance = BaseEndurance;
         // Update the Damageable script's health
         if (damageable != null)
         {
             damageable.MaxHealth = (int)MaxHealth;  // Set the new MaxHealth
             damageable.Health = (int)MaxHealth;     // Set current health to MaxHealth
         }
-        for (int i = previousLevel; i < currentLevel; i++) {
+        for (int i = previousLevel; i < currentLevel; i++)
+        {
             if (buffSelectionUI == null)
             {
                 buffSelectionUI = FindObjectOfType<BuffSelectionUI>();
