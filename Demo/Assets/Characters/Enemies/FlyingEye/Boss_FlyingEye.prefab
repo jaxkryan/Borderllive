@@ -363,7 +363,7 @@ MonoBehaviour:
   isInvincible: 0
   invincibilityTime: 0.25
   _isStun: 0
-  XPReward: 500
+  XPReward: 50
 --- !u!95 &3121177932437059774
 Animator:
   serializedVersion: 5
@@ -416,14 +416,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BaseStamina_PerLevel: 5
-  BaseStamina_Offset: 10
-  StaminaToHealthConversion: 10
-  BaseStrength_PerLevel: 3
+  BaseStamina_Offset: 5
+  StaminaToHealthConversion: 5
+  BaseStrength_PerLevel: 4
   BaseStrength_Offset: 5
-  StrengthToDamageConversion: 2
+  StrengthToDamageConversion: 3
   BaseEndurance_PerLevel: 1
   BaseEndurance_Offset: 0
-  EnduranceToDefConversion: 1
+  EnduranceToDefConversion: 0.3
   BaseSpeed: 5
   _endurance: 0
 --- !u!1 &7886234287371785040

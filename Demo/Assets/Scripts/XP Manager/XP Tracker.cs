@@ -12,7 +12,10 @@ public class XPTracker : MonoBehaviour
 
     [SerializeField] UnityEvent<int, int> OnLevelChanged = new UnityEvent<int, int>();
 
-    BaseXPTranslation XPTranslation;
+    private BaseXPTranslation XPTranslation;
+
+    public int CurrentXP => XPTranslation.CurrentXP;
+    public int CurrentLevel => XPTranslation.CurrentLevel;
 
     private void Awake()
     {

@@ -14,23 +14,59 @@ public class LevelController : MonoBehaviour
     private static int roomsVisited = 0;
     private static int bossCounter = 0;
 
+    private PlayerController playerController; // Reference to PlayerController
+
     private void Start()
     {
+        playerController = FindObjectOfType<PlayerController>(); // Get PlayerController instance
+        if (playerController != null)
+        {
+            Debug.Log("PlayerController found successfully.");
+        }
+        else
+        {
+            Debug.LogWarning("PlayerController is null. Make sure it's in the scene.");
+        }
+
         if (tempAction == null || tempEvent == null)
         {
             InitializeLists();
         }
     }
 
+
     private void SavePlayerState()
     {
-        // TODO: Implement saving player state
-        Debug.Log("Saving player state...");
+        playerController = FindObjectOfType<PlayerController>(); // Get PlayerController instance
+        Debug.Log(playerController);
+        Debug.Log("Savinggggg");
+        if (playerController != null)
+        {
+            playerController.SavePlayerState(); // Call PlayerController's SavePlayerState
+            Debug.Log("Player state saved from LevelController.");
+        }
+        else
+        {
+            Debug.LogWarning("PlayerController reference is null. Cannot save player state.");
+        }
+    }
+
+    private void OnApplicationQuit()
+    {
+        ClearPlayerData();
+        Debug.Log("Player data cleared on application quit.");
+    }
+
+    private void ClearPlayerData()
+    {
+        PlayerPrefs.DeleteAll();
+        PlayerPrefs.Save();
     }
 
     public void ShowRoomOptions()
     {
         roomsVisited++;
+        SavePlayerState();
 
         if (roomsVisited % 5 == 0)
         {
@@ -52,7 +88,6 @@ public class LevelController : MonoBehaviour
     {
         string bossRoomName = (bossCounter % 2 == 0) ? "Room_Boss" : "Room_Boss2";
         bossCounter++;
-        SavePlayerState();
         previousScene = bossRoomName;
         SceneManager.LoadScene(bossRoomName);
     }
@@ -61,7 +96,6 @@ public class LevelController : MonoBehaviour
     {
         string sceneName = isAction ? selectedActionRoom : selectedEventRoom;
         List<string> list = isAction ? tempAction : tempEvent;
-        SavePlayerState();
         list.Remove(sceneName);
         previousScene = sceneName;
         SceneManager.LoadScene(sceneName);

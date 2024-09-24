@@ -59,9 +59,9 @@ MonoBehaviour:
   - {fileID: 6670779672066762973}
   enemiesPerWave: 1
   spawnPointsPerWave: 2
-  timeBetweenWaves: 5
+  timeBetweenWaves: 3
   summonEffectPrefab: {fileID: 3608926238929618258, guid: 60279c783a1180f4896b41645b5e4471, type: 3}
-  summonEffectDuration: 1
+  summonEffectDuration: 0.8
   totalWaves: 3
   gate: {fileID: 0}
 --- !u!1 &2624427781924349103

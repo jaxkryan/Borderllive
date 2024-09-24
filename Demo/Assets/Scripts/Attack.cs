@@ -10,29 +10,54 @@ public class Attack : MonoBehaviour, IBuffable
     private float attackDamage;
     public Vector2 knockback = Vector2.zero;
 
+    // Reference to BerserkBar script
+    private BerserkGauge berserkBar;
+
     private void Start()
     {
-        // Get the CharacterStat component from the same GameObject
-        characterStat = GetComponentInParent<CharacterStat>();
-        if (characterStat == null)
+        // Check if this script is attached to the player by checking the tag
+        if (transform.root.CompareTag("Player"))
         {
-            //Debug.LogError("EnemierrStat component not found!");
-            enemyStat = GetComponentInParent<EnemyStat>();
-            return;
-        }
+            // Get the CharacterStat component from the parent object
+            characterStat = GetComponentInParent<CharacterStat>();
+            if (characterStat == null)
+            {
+                Debug.LogError("CharacterStat component not found on the player!");
+                return;
+            }
 
-        ApplyBuff(AttackBuff);
+            // Find and reference the BerserkBar component
+            berserkBar = FindObjectOfType<BerserkGauge>();
+            if (berserkBar == null)
+            {
+                Debug.LogError("BerserkBar component not found in the scene!");
+            }
+
+            ApplyBuff(AttackBuff);
+        }
+        else
+        {
+            // Handle for enemies or disable if not needed
+            enemyStat = GetComponentInParent<EnemyStat>();
+            if (enemyStat == null)
+            {
+                Debug.LogError("EnemyStat component not found on the enemy!");
+            }
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        // Determine attack damage based on whether it's a player or enemy attack
         if (characterStat != null)
         {
             attackDamage = characterStat.Damage;
-        } else
+        }
+        else
         {
             attackDamage = enemyStat.Damage;
         }
+
         Damageable damageable = collision.GetComponent<Damageable>();
         Debug.Log("Trigger entered with: " + collision.gameObject.name);
         if (damageable != null)
@@ -43,6 +68,13 @@ public class Attack : MonoBehaviour, IBuffable
             if (gotHit)
             {
                 Debug.Log(collision.name + " hit for " + attackDamage);
+
+                // Increase the Berserk Bar only if the attack is from the player
+                if (characterStat != null && berserkBar != null)
+                {
+                    berserkBar.IncreaseProgress(8.6f); // Increase the bar by 10 points, adjust value as needed
+                }
+
                 OwnedPowerups ownedPowerups = GetComponentInParent<OwnedPowerups>();
                 Knight enemyKnight = collision.GetComponent<Knight>();
                 if (enemyKnight != null)
@@ -74,6 +106,7 @@ public class Attack : MonoBehaviour, IBuffable
     }
 
     private float currentEffectTime = 0f;
+
     public void HandleBuff()
     {
         currentEffectTime += Time.deltaTime;

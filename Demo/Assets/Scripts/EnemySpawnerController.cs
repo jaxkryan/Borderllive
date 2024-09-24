@@ -14,7 +14,7 @@ public class EnemySpawnerController : MonoBehaviour
     public int totalWaves = 3; // Total number of waves (can be modified)
     public GameObject gate; // Gate GameObject to disable
 
-    public int waveNumber = 0;// Current wave number
+    private int waveNumber = 0;// Current wave number
     private int activeEnemies = 0; // Active enemy count
     private Coroutine spawnCoroutine; // Coroutine reference for spawning waves
     private BuffSelectionUI buffSelectionUI; // Reference to the buff selection UI
