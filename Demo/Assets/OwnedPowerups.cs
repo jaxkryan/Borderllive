@@ -21,6 +21,18 @@ public class OwnedPowerups : MonoBehaviour
         }
         ActivatePowerup();
     }
+    //check if the powerup in activePowerups or not
+    public bool IsPowerupActive<T>() where T : Powerups
+    {
+        foreach (Powerups p in activePowerups)
+        {
+            if (p is T)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
 
     //direct buff without condition go here 
     public void ActivatePowerup()
@@ -119,7 +131,7 @@ public class OwnedPowerups : MonoBehaviour
     {
         Metal_3 metal_3 = new Metal_3();
         metal_3.ApplyEffect(playerController);
-        Debug.Log("trigger metal 3 buff is ok");
+        //Debug.Log("trigger metal 3 buff is ok");
     }
 
     internal void RemoveMetal3Buff()
