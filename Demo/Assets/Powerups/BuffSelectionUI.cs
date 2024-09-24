@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,6 +12,7 @@ public class BuffSelectionUI : MonoBehaviour
 
     void Start()
     {
+
         buffSelectionPanel.SetActive(false); // Hide the panel initially
     }
     private void Awake()
@@ -55,7 +54,7 @@ public class BuffSelectionUI : MonoBehaviour
             }
         }
         // Pause the game by setting time scale to 0
-        
+
     }
 
     public void SelectBuff(int index)
@@ -67,6 +66,6 @@ public class BuffSelectionUI : MonoBehaviour
         buffPool.RemoveBuff(selectedBuff); // Remove the selected buff from the pool
         buffSelectionPanel.SetActive(false); // Hide the panel after selection
 
-      
+
     }
 }

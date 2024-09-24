@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 [CreateAssetMenu(fileName = "Metal_3", menuName = "Powerups/Metal_3")]
 public class Metal_3 : Powerups

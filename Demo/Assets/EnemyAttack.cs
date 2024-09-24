@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyAttack : MonoBehaviour, IBuffable
@@ -18,7 +16,7 @@ public class EnemyAttack : MonoBehaviour, IBuffable
         enemyStat = GetComponentInParent<EnemyStat>();
         if (enemyStat == null)
         {
-            Debug.LogError("EnemierrStat component not found!");
+            //Debug.LogError("EnemierrStat component not found!");
             return;
         }
 
@@ -29,14 +27,14 @@ public class EnemyAttack : MonoBehaviour, IBuffable
     {
         attackDamage = enemyStat.Damage;
         Damageable damageable = collision.GetComponent<Damageable>();
-        Debug.Log("Trigger entered with: " + collision.gameObject.name);
+        //Debug.Log("Trigger entered with: " + collision.gameObject.name);
         if (damageable != null)
         {
             Vector2 deliveredKnockback = transform.parent.localScale.x > 0 ? knockback : new Vector2(-knockback.x, knockback.y);
             bool gotHit = damageable.Hit((int)attackDamage, deliveredKnockback);
 
             if (gotHit)
-                Debug.Log(collision.name + " hit for " + attackDamage);
+                //Debug.Log(collision.name + " hit for " + attackDamage);
             damageable.IsStun = false;
         }
     }

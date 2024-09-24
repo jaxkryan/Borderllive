@@ -1,9 +1,5 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.SceneManagement;
 
 public class Damageable : MonoBehaviour
 {
@@ -44,16 +40,21 @@ public class Damageable : MonoBehaviour
         }
         set
         {
+            OwnedPowerups ownedPowerups = GetComponent<OwnedPowerups>();
             _health = value;
             healthChanged?.Invoke(_health, MaxHealth);
-            if (_health <= 0.5 * MaxHealth)
+            if (ownedPowerups != null)
             {
-                //buff3 
-                OwnedPowerups ownedPowerups = GetComponent<OwnedPowerups>();
-                if (ownedPowerups != null)
+                if (_health <= 0.5 * MaxHealth)
                 {
+
                     ownedPowerups.TriggerMetal3Buff();
                     metal3Active = true;
+
+                }
+                if (_health <= 0.35 * MaxHealth)
+                {
+                    ownedPowerups.TriggerWood3Buff();
                 }
             }
             //else if (_health > 0.5 * MaxHealth && metal3Active)
