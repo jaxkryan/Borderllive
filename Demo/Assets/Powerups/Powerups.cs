@@ -25,6 +25,7 @@ public class Powerups : ScriptableObject
         DefenseIncrease,
         HPIncrease,
         SpeedIncrease,
+        SpeedDecrease,
         EnemyDefReduction,
         HPRegen,
         BeserkRegen

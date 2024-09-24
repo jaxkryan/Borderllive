@@ -40,36 +40,39 @@ public class Damageable : MonoBehaviour
         }
         set
         {
-            OwnedPowerups ownedPowerups = GetComponent<OwnedPowerups>();
+            
             _health = value;
             healthChanged?.Invoke(_health, MaxHealth);
-            if (_health <= 0.5 * MaxHealth && !metal3Active && ownedPowerups.IsPowerupActive<Metal_3>())
+            OwnedPowerups ownedPowerups = GetComponent<OwnedPowerups>();
+            if (ownedPowerups != null)
             {
-                //Debug.Log("metal 3 buff is active");
-                ownedPowerups.TriggerMetal3Buff();
-                metal3Active = true;
-            }
+                if (_health <= 0.5 * MaxHealth && !metal3Active && ownedPowerups.IsPowerupActive<Metal_3>())
+                {
+                    //Debug.Log("metal 3 buff is active");
+                    ownedPowerups.TriggerMetal3Buff();
+                    metal3Active = true;
+                }
 
-            if (_health <= 0.35 * MaxHealth && ownedPowerups.IsPowerupActive<Wood_3>())
-            {
-                ownedPowerups.TriggerWood3Buff();
-            }
-            if (_health > 0.5 * MaxHealth && metal3Active)
-            {
-                ownedPowerups.RemoveMetal3Buff();
-                metal3Active = false;
-            }
+                if (_health <= 0.35 * MaxHealth && ownedPowerups.IsPowerupActive<Wood_3>())
+                {
+                    ownedPowerups.TriggerWood3Buff();
+                }
+                if (_health > 0.5 * MaxHealth && metal3Active)
+                {
+                    ownedPowerups.RemoveMetal3Buff();
+                    metal3Active = false;
+                }
 
-            //else if (_health > 0.5 * MaxHealth && metal3Active)
-            //{
-            //    OwnedPowerups ownedPowerups = GetComponent<OwnedPowerups>();
-            //    if (ownedPowerups != null)
-            //    {
-            //        ownedPowerups.RemoveMetal3Buff(); // Remove Metal_3 buff
-            //        metal3Active = false; // Reset the flag so the buff can be triggered again when health falls
-            //    }
-            //}
-
+                //else if (_health > 0.5 * MaxHealth && metal3Active)
+                //{
+                //    OwnedPowerups ownedPowerups = GetComponent<OwnedPowerups>();
+                //    if (ownedPowerups != null)
+                //    {
+                //        ownedPowerups.RemoveMetal3Buff(); // Remove Metal_3 buff
+                //        metal3Active = false; // Reset the flag so the buff can be triggered again when health falls
+                //    }
+                //}
+            }
             if (_health <= 0)
             {
                 IsAlive = false;

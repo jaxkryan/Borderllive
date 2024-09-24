@@ -6,8 +6,8 @@ public class OwnedPowerups : MonoBehaviour
 {
     public List<Powerups> activePowerups = new List<Powerups>();
     private PlayerController playerController;
-    private bool isHitEnemy = false; // Biến cờ để kiểm tra khi tấn công trúng kẻ địch
-    private int hitCount = 0;
+    public bool isHitEnemy = false; // Biến cờ để kiểm tra khi tấn công trúng kẻ địch
+    public int hitCount;
     //private void Awake()
     //{
 
@@ -65,13 +65,13 @@ public class OwnedPowerups : MonoBehaviour
     {
         GameObject enemyKnightGameObject = enemyKnight.gameObject;
         OwnedDebuff ownedDebuff = enemyKnightGameObject.GetComponent<OwnedDebuff>();
+        //Debug.Log("number of pu : " + activePowerups.Count);
         foreach (Powerups p in activePowerups)
-        {
+        { 
             if (isHitEnemy)
             {
                 if (p is Metal_2 metalPowerup2)
                 {
-
                     {
                         if (metalPowerup2.ApplyEffect(enemyKnight))
                         {
@@ -93,7 +93,7 @@ public class OwnedPowerups : MonoBehaviour
 
                 if (p is Wood_2 woodPowerup2)
                 {
-                    hitCount++;
+                    //Debug.Log("hit count: " + hitCount);
                     if (hitCount == 8)
                     {
                         woodPowerup2.ApplyEffect(enemyKnight);
@@ -105,6 +105,27 @@ public class OwnedPowerups : MonoBehaviour
                             StartCoroutine(RemoveDebuffAfterDuration(ownedDebuff, newDebuff.id, newDebuff.duration + newDebuff.cooldown));
                         }
                         hitCount = 0;
+                    }
+                }
+                
+                if (p is Water_1 water)
+                {
+                    {
+                        if (water.ApplyEffect(enemyKnight))
+                        {
+                            Water_1_DB newDebuff = new Water_1_DB();
+                            //Debug.Log("duration of debuff: " + newDebuff.duration);
+                            if (ownedDebuff != null)
+                            {
+                                ownedDebuff.AddDebuff(newDebuff);
+                                ResetHit();
+                                StartCoroutine(RemoveDebuffAfterDuration(ownedDebuff, newDebuff.id, newDebuff.duration + newDebuff.cooldown));
+                            }
+                            else
+                            {
+                                Debug.LogError("OwnedDebuff component not found on enemyKnight!");
+                            }
+                        }
                     }
                 }
             }
@@ -119,6 +140,7 @@ public class OwnedPowerups : MonoBehaviour
     public void EnemyHit()
     {
         isHitEnemy = true;
+        hitCount++;
     }
 
     public void ResetHit()
