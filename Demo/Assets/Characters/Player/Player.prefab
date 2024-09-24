@@ -324,7 +324,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd5646a7a629ed0488b96a7d57ea9393, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackDamage: 15
+  AttackBuff: {fileID: 11400000, guid: 410c884a747b1724aa23f1a6ebed359b, type: 2}
   knockback: {x: 0, y: 0}
 --- !u!1 &1000051857094363089
 GameObject:
@@ -508,7 +508,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd5646a7a629ed0488b96a7d57ea9393, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AttackBuff: {fileID: 0}
+  AttackBuff: {fileID: 11400000, guid: 410c884a747b1724aa23f1a6ebed359b, type: 2}
   knockback: {x: 0, y: 0}
 --- !u!1 &1488529538882304967
 GameObject:
@@ -1260,7 +1260,7 @@ MonoBehaviour:
   CurrentLevelText: {fileID: 2567443065960677473}
   CurrentXPText: {fileID: 7984795259678558258}
   XPToNextLevelText: {fileID: 4236803287062583242}
-  XPTranslationType: {fileID: 11400000, guid: 6be2af37c0db5804793cba8efb85eae9, type: 2}
+  XPTranslationType: {fileID: 0}
   OnLevelChanged:
     m_PersistentCalls:
       m_Calls:
@@ -1298,9 +1298,7 @@ MonoBehaviour:
   BaseEndurance_Offset: 3
   EnduranceToDefConversion: 1
   BaseSpeed: 5
-  HealthText: {fileID: 5352249500302876086}
-  DefText: {fileID: 1309552292396769828}
-  SpeedText: {fileID: 0}
+  _endurance: 0
 --- !u!1 &2452288323189747658
 GameObject:
   m_ObjectHideFlags: 0
@@ -1802,7 +1800,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd5646a7a629ed0488b96a7d57ea9393, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AttackBuff: {fileID: 11400000, guid: f13ea904223cc0a4d8464a21739d602a, type: 2}
+  AttackBuff: {fileID: 11400000, guid: 410c884a747b1724aa23f1a6ebed359b, type: 2}
   knockback: {x: 0, y: 0}
 --- !u!1 &6475025308064497508
 GameObject:

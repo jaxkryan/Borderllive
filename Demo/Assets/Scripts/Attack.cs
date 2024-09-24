@@ -13,6 +13,8 @@ public class Attack : MonoBehaviour, IBuffable
 
     private void Start()
     {
+        ApplyBuff(AttackBuff);
+
         // Get the CharacterStat component from the same GameObject
         characterStat = GetComponentInParent<CharacterStat>();
         if (characterStat == null)
@@ -53,10 +55,6 @@ public class Attack : MonoBehaviour, IBuffable
             }
             damageable.IsStun = false;
         }
-    }
-    public void Start()
-    {
-        ApplyBuff(AttackBuff);
     }
 
     private void Update()
