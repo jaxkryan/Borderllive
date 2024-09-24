@@ -12,6 +12,8 @@ public class Attack : MonoBehaviour, IBuffable
 
     private void Start()
     {
+        ApplyBuff(AttackBuff);
+
         // Get the CharacterStat component from the same GameObject
         characterStat = GetComponentInParent<CharacterStat>();
         if (characterStat == null)
