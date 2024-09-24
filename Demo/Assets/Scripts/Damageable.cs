@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class Damageable : MonoBehaviour
 {
+    private bool metal3Active = false;
     public UnityEvent<int, Vector2> damageableHit;
     public UnityEvent damageableDeath;
 
@@ -43,9 +45,28 @@ public class Damageable : MonoBehaviour
         set
         {
             _health = value;
-
             healthChanged?.Invoke(_health, MaxHealth);
-            if(_health <= 0)
+            if (_health <= 0.5 * MaxHealth)
+            {
+                //buff3 
+                OwnedPowerups ownedPowerups = GetComponent<OwnedPowerups>();
+                if (ownedPowerups != null)
+                {
+                    ownedPowerups.TriggerMetal3Buff();
+                    metal3Active = true;
+                }
+            }
+            //else if (_health > 0.5 * MaxHealth && metal3Active)
+            //{
+            //    OwnedPowerups ownedPowerups = GetComponent<OwnedPowerups>();
+            //    if (ownedPowerups != null)
+            //    {
+            //        ownedPowerups.RemoveMetal3Buff(); // Remove Metal_3 buff
+            //        metal3Active = false; // Reset the flag so the buff can be triggered again when health falls
+            //    }
+            //}
+
+            if (_health <= 0)
             {
                 IsAlive = false;
             }
@@ -159,6 +180,17 @@ public class Damageable : MonoBehaviour
             LockVelocity = false;
             animator.SetBool(AnimationStrings.isStun, false);
         }
+
+        if (_health > 0.5 * MaxHealth && metal3Active)
+        {
+            OwnedPowerups ownedPowerups = GetComponent<OwnedPowerups>();
+            if (ownedPowerups != null)
+            {
+                ownedPowerups.RemoveMetal3Buff(); // Remove Metal_3 buff
+                metal3Active = false; // Reset the flag so the buff can be triggered again if health drops below 50%
+            }
+        }
+
     }
 
     public bool Hit(int damage, Vector2 knockback)
