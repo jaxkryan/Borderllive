@@ -98,6 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd5646a7a629ed0488b96a7d57ea9393, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AttackBuff: {fileID: 11400000, guid: ed4d9a7cb7037bb49a46b1fab5bf7e65, type: 2}
   attackDamage: 10
   knockback: {x: 5, y: 2}
 --- !u!1 &5664878560119975108
@@ -341,6 +342,9 @@ MonoBehaviour:
   damageableDeath:
     m_PersistentCalls:
       m_Calls: []
+  healthChanged:
+    m_PersistentCalls:
+      m_Calls: []
   dropItem: {fileID: 0}
   isStunned: 0
   stunDuration: 2
@@ -350,6 +354,7 @@ MonoBehaviour:
   isInvincible: 0
   invincibilityTime: 0.25
   _isStun: 0
+  XPReward: 500
 --- !u!1 &8738186456439416502
 GameObject:
   m_ObjectHideFlags: 0
