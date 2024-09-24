@@ -1,21 +1,22 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Attack : MonoBehaviour, IBuffable
+public class EnemyAttack : MonoBehaviour, IBuffable
 {
     [SerializeField]
     private ScriptableBuff AttackBuff;
+
     private ScriptableBuff _buff;
-    private CharacterStat characterStat; // Reference to CharacterStat
+    private EnemyStat enemyStat; // Reference to EnemyStat
     private float attackDamage;
     public Vector2 knockback = Vector2.zero;
 
     private void Start()
     {
-        // Get the CharacterStat component from the same GameObject
-        characterStat = GetComponentInParent<CharacterStat>();
-        if (characterStat == null)
+        // Get the EnemyStat component from the same GameObject
+        enemyStat = GetComponentInParent<EnemyStat>();
+        if (enemyStat == null)
         {
             Debug.LogError("EnemierrStat component not found!");
             return;
@@ -26,7 +27,7 @@ public class Attack : MonoBehaviour, IBuffable
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        attackDamage = characterStat.Damage;
+        attackDamage = enemyStat.Damage;
         Damageable damageable = collision.GetComponent<Damageable>();
         Debug.Log("Trigger entered with: " + collision.gameObject.name);
         if (damageable != null)
@@ -35,22 +36,7 @@ public class Attack : MonoBehaviour, IBuffable
             bool gotHit = damageable.Hit((int)attackDamage, deliveredKnockback);
 
             if (gotHit)
-            {
                 Debug.Log(collision.name + " hit for " + attackDamage);
-
-                if (gotHit)
-                {
-                    Debug.Log(collision.name + " hit for " + attackDamage);
-                    OwnedPowerups ownedPowerups = GetComponentInParent<OwnedPowerups>();
-                    Knight enemyKnight = collision.GetComponent<Knight>();
-                    if (enemyKnight != null)
-                    {
-                        ownedPowerups.EnemyHit(); // Set the hit flag
-                        ownedPowerups.CheckPowerupEffects(enemyKnight);
-                        // Apply the debuff to the hit enemy
-                    }
-                }
-            }
             damageable.IsStun = false;
         }
     }
