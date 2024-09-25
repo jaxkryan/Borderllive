@@ -144,13 +144,13 @@ public class Damageable : MonoBehaviour
     }
 
     public int soulReward = 50;
-
+    private CurrencyManager currencyManager;
     private void GiveSoulReward()
     {
         // Use the CurrencyManager to add souls
-        if (CurrencyManager.Instance != null)
+        if (currencyManager != null)
         {
-            CurrencyManager.Instance.AddCurrency(soulReward); // Assuming "AddMoney" is managing souls
+            currencyManager.AddCurrency(soulReward); // Assuming "AddMoney" is managing souls
         }
         else
         {
@@ -203,6 +203,7 @@ public class Damageable : MonoBehaviour
     }
     private void Awake()
     {
+        currencyManager = FindObjectOfType<CurrencyManager>();
         animator = GetComponent<Animator>();
         characterStat = GetComponent<CharacterStat>();
         if (characterStat == null)

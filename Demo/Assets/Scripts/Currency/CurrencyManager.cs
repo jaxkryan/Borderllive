@@ -3,24 +3,10 @@ using UnityEngine.UI;
 
 public class CurrencyManager : MonoBehaviour
 {
-    public static CurrencyManager Instance; // Singleton instance
     public int startingAmount = 100; // Starting amount of money for the player
     public int currentAmount; // Current money of the player
     public Text currencyText; // Reference to the UI Text element to display the money
 
-    void Awake()
-    {
-        // Set up singleton pattern to ensure only one instance exists
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject); // Ensure the object persists across scenes
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
 
     void Start()
     {

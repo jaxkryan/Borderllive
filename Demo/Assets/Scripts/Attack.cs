@@ -88,7 +88,7 @@ public class Attack : MonoBehaviour, IBuffable
             if (gotHit)
             {
                 //OwnedPowerups ownedPowerups = GetComponentInParent<OwnedPowerups>();
-                Debug.Log(collision.name + " hit for " + attackDamage);
+                //Debug.Log(collision.name + " hit for " + attackDamage);
 
                 // Increase the Berserk Bar only if the attack is from the player
                 if (characterStat != null && berserkBar != null)

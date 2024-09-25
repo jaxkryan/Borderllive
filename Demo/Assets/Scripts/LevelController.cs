@@ -21,7 +21,7 @@ public class LevelController : MonoBehaviour
         playerController = FindObjectOfType<PlayerController>(); // Get PlayerController instance
         if (playerController != null)
         {
-            //Debug.Log("PlayerController found successfully.");
+            Debug.Log("PlayerController found successfully.");
         }
         else
         {

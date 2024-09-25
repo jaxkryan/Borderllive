@@ -473,8 +473,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -100, y: 0}
-  m_SizeDelta: {x: -200, y: 0}
+  m_AnchoredPosition: {x: -566.55164, y: 407.8659}
+  m_SizeDelta: {x: -1133.103, y: -815.732}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1124060727733289899
 CanvasRenderer:
@@ -1391,7 +1391,7 @@ MonoBehaviour:
   CurrentLevelText: {fileID: 2567443065960677473}
   CurrentXPText: {fileID: 7984795259678558258}
   XPToNextLevelText: {fileID: 4236803287062583242}
-  XPTranslationType: {fileID: 11400000, guid: 4b3075adff18e924bbe523a9be52f14b, type: 2}
+  XPTranslationType: {fileID: 0}
   OnLevelChanged:
     m_PersistentCalls:
       m_Calls:
@@ -1773,7 +1773,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8684380020571050648
 RectTransform:
   m_ObjectHideFlags: 0

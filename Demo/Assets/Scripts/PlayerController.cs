@@ -128,11 +128,11 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
         touchingDirection = GetComponent<TouchingDirection>();
         damageable = GetComponent<Damageable>();
-
+        currencyManager = FindObjectOfType<CurrencyManager>();
+        xPTracker = FindObjectOfType<XPTracker>();
         // lockAttackCollider = GetComponent<CircleCollider2D>();
         // Subscribe to the damageableDeath event
         damageable.damageableDeath.AddListener(OnPlayerDeath);
-        LoadPlayerData(); // Khôi phục dữ liệu khi bắt đầu trò chơi
 
     }
     private void OnPlayerDeath()
@@ -148,6 +148,8 @@ public class PlayerController : MonoBehaviour
     }
     void Start()
     {
+        LoadPlayerData(); // Khôi phục dữ liệu khi bắt đầu trò chơi
+
     }
 
     void Update()
@@ -437,7 +439,8 @@ public class PlayerController : MonoBehaviour
         PlayerPrefs.Save();
     }
 
-   
+    private CurrencyManager currencyManager;
+    private XPTracker xPTracker;
     public void SavePlayerState()
     {
         // Save player health
@@ -445,12 +448,12 @@ public class PlayerController : MonoBehaviour
         PlayerPrefs.SetInt("MaxHealth", damageable.MaxHealth);
 
         // Save player XP
-        PlayerPrefs.SetInt("XP", XPTracker.Instance.CurrentXP);
+        PlayerPrefs.SetInt("XP", xPTracker.CurrentXP);
 
         // Save player souls (currency)
-        if (CurrencyManager.Instance != null)
+        if (currencyManager != null)
         {
-            PlayerPrefs.SetInt("Souls", CurrencyManager.Instance.currentAmount); // Assuming CurrentMoney tracks souls
+            PlayerPrefs.SetInt("Souls", currencyManager.currentAmount); // Assuming CurrentMoney tracks souls
         }
 
         // Save active power-ups
@@ -464,7 +467,8 @@ public class PlayerController : MonoBehaviour
         // Save PlayerPrefs data
         PlayerPrefs.Save();
 
-        Debug.Log("Saving Player Data: XP = " + XPTracker.Instance.CurrentXP + ", Souls = " + CurrencyManager.Instance.currentAmount);
+        Debug.Log("Saving Player Data: XP = " + xPTracker.CurrentXP + ", Souls = " + currencyManager.currentAmount);
+       // Debug.Log("Saving Player Data: Health = " + damageable.Health);
     }
 
     public void LoadPlayerData()
@@ -474,20 +478,25 @@ public class PlayerController : MonoBehaviour
         // Load player health
         if (PlayerPrefs.HasKey("Health"))
         {
+           // Debug.Log("Loading Player Data: Health = " + PlayerPrefs.GetInt("Health"));
             damageable.MaxHealth = PlayerPrefs.GetInt("MaxHealth");
-            damageable.Health = PlayerPrefs.GetInt("Health") + 5;
+            damageable.Health = PlayerPrefs.GetInt("Health");
         }
 
         // Load player XP
         if (PlayerPrefs.HasKey("XP"))
         {
-            XPTracker.Instance.AddXP(PlayerPrefs.GetInt("XP"));
+           // Debug.Log("Loading Player Data: XP = " + PlayerPrefs.GetInt("XP"));
+
+            xPTracker.AddXP(PlayerPrefs.GetInt("XP"));
         }
 
         // Load player souls (currency)
-        if (PlayerPrefs.HasKey("Souls") && CurrencyManager.Instance != null)
+        if (PlayerPrefs.HasKey("Souls"))
         {
-            CurrencyManager.Instance.SetCurrency(PlayerPrefs.GetInt("Souls")); // Assuming SetMoney sets the currency amount
+            //Debug.Log("Loading Player Data: Soul = " + PlayerPrefs.GetInt("Souls"));
+
+            currencyManager.SetCurrency(PlayerPrefs.GetInt("Souls")); // Assuming SetMoney sets the currency amount
         }
 
         // Load active power-ups
