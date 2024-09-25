@@ -16,7 +16,8 @@ public class Powerups : ScriptableObject
         LowHP,
         HitDebuffedEnemy,
         Berserk,
-        DmgReduction
+        DmgReduction,
+        EnemyLowHP
     }
 
     public enum Effect

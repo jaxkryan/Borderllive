@@ -49,6 +49,18 @@ public class OwnedPowerups : MonoBehaviour
     //direct buff without condition go here 
     public void ActivatePowerup()
     {
+        var uniquePowerupIds = new HashSet<int>();
+        var uniquePowerups = new List<Powerups>();
+
+        foreach (Powerups p in activePowerups)
+        {
+            if (uniquePowerupIds.Add(p.id))
+            {
+                uniquePowerups.Add(p);
+            }
+        }
+
+        activePowerups = uniquePowerups;
         foreach (Powerups p in activePowerups)
         {
             ActivateAPowerup(p);

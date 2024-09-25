@@ -55,12 +55,23 @@ public class Attack : MonoBehaviour, IBuffable
         if (characterStat != null)
         {
             attackDamage = characterStat.Damage;
+            if (ownedPowerups.IsPowerupActive<Fire_1>())
+            {
+                Fire_1 f1 = new Fire_1();
+                Damageable targetDamageable = collision.GetComponent<Damageable>();
+
+                // Apply the Fire_1 buff's damage increase
+                attackDamage *= f1.CalculateDamageIncrease(targetDamageable);
+            }
+            else
+            {
+                Debug.Log("no buff");
+            }
         }
         else
         {
             attackDamage = enemyStat.Damage;
         }
-
         Damageable damageable = collision.GetComponent<Damageable>();
         //Debug.Log("Trigger entered with: " + collision.gameObject.name);
         if (damageable != null)
@@ -81,6 +92,7 @@ public class Attack : MonoBehaviour, IBuffable
 
                 OwnedPowerups ownedPowerups = GetComponentInParent<OwnedPowerups>();
                 Knight enemyKnight = collision.GetComponent<Knight>();
+
                 if (enemyKnight != null)
                 {
                     //Debug.Log(collision.name + " hit for " + attackDamage);

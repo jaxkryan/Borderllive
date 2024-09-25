@@ -10,7 +10,7 @@ public class BerserkGauge : MonoBehaviour
     private float currentValue = 0f; // Current value of the progress
     private bool isBerserkActive = false; // State of the effect
     public float berserkRegenIncrease { get; set; } =  1f;
-    public float berserkRegenDecrease { get; set; } = 1f;
+    public float berserkRegenDecrease { get; set; } = 0f;
 
     
     private CharacterStat characterStat; // Reference to CharacterStat
