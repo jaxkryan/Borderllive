@@ -56,6 +56,7 @@ MonoBehaviour:
   listEvent:
   - Room_2
   - Room_4
+  - Room_6
 --- !u!212 &7439346308774697223
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -373,10 +374,6 @@ PrefabInstance:
     - target: {fileID: 2297387983278109067, guid: 7f0ac06cf3ae8d8408b663069ea6d15c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3311656229118022688, guid: 7f0ac06cf3ae8d8408b663069ea6d15c, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 143
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

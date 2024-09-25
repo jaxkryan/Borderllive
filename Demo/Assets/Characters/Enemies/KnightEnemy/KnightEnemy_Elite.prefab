@@ -218,6 +218,7 @@ GameObject:
   - component: {fileID: 154405474496553711}
   - component: {fileID: -9082804688703720184}
   - component: {fileID: 6582159076013635011}
+  - component: {fileID: 6471256819166059378}
   - component: {fileID: -214179261014064147}
   m_Layer: 8
   m_Name: KnightEnemy_Elite
@@ -424,7 +425,9 @@ MonoBehaviour:
   attackZone: {fileID: 477284626354402339}
   cliffDetectionZone: {fileID: 2918008427032465300}
   walkStopRate: 0.05
-  _hasTarget: 0
+  chaseSpeedMultiplier: 1.5
+  minChaseDistance: 2
+  attackDistance: 1
 --- !u!114 &154405474496553711
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -511,6 +514,34 @@ MonoBehaviour:
   BaseSpeed: 5
   _endurance: 0
   _speed: 0
+--- !u!114 &6471256819166059378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4591734722486170938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ec4154059c5a5145bec9af558e5fd22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  XPTranslationType: {fileID: 0}
+  OnLevelChanged:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6582159076013635011}
+        m_TargetAssemblyTypeName: EnemyStat, Assembly-CSharp
+        m_MethodName: OnUpdateLevel
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &-214179261014064147
 MonoBehaviour:
   m_ObjectHideFlags: 0

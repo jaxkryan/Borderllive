@@ -12,7 +12,7 @@ public class BuffSelectionUI : MonoBehaviour
 
     void Start()
     {
-
+        xpAdded = 230;
         buffSelectionPanel.SetActive(false); // Hide the panel initially
     }
     private void Awake()
@@ -61,6 +61,7 @@ public class BuffSelectionUI : MonoBehaviour
 
     }
 
+    private static int xpAdded = 230;
     public void SelectBuff(int index)
     {  // Resume the game by setting time scale back to 1
         Time.timeScale = 1;
@@ -70,6 +71,10 @@ public class BuffSelectionUI : MonoBehaviour
         buffPool.RemoveBuff(selectedBuff); // Remove the selected buff from the pool
         buffSelectionPanel.SetActive(false); // Hide the panel after selection
 
+        EnemyXPTracker enemyXPTracker = FindAnyObjectByType<EnemyXPTracker>();
+        enemyXPTracker.AddXP(xpAdded);
+        Debug.Log(("XP add to enemy" + xpAdded));
+        xpAdded += 40;
 
     }
 }

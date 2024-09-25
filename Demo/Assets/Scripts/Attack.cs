@@ -90,7 +90,7 @@ public class Attack : MonoBehaviour, IBuffable
                 // Increase the Berserk Bar only if the attack is from the player
                 if (characterStat != null && berserkBar != null)
                 {
-                    berserkBar.IncreaseProgress(8.6f); // Increase the bar by 10 points, adjust value as needed
+                    berserkBar.IncreaseProgress(8.6f); // Increase the bar by 8.6 points, adjust value as needed
                 }
 
                 if (characterStat != null && berserkBar._isBerserkActive && ownedPowerups.IsPowerupActive<Wood_4>())
