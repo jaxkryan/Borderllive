@@ -508,17 +508,25 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
-    //internal void IncreaseAgility()
-    //{
-    //    characterStat = GetComponent<CharacterStat>();
-    //    //Debug.Log("Gia tri value erd: " + characterStat.Endurance);
-    //    if (characterStat == null)
-    //    {
-    //        Debug.LogError("CharacterStat component not found!");
-    //        return;
-    //    }
-    //    float defIncrease = characterStat.BaseSpeed * 0.1;
-    //    //Debug.Log("Gia tri defIncrease: " + (int)defIncrease);
-    //    characterStat.Endurance += defIncrease;
-    //}
+
+    internal void IncreaseAgility()
+    {
+          characterStat = GetComponent<CharacterStat>();
+           if (characterStat == null)
+           {
+                Debug.LogError("CharacterStat component not found!");
+               return;
+           }
+            float spdIncrease = characterStat.Speed * 0.1f;
+            dashingPower *= 0.1f;
+           //Debug.Log("Gia tri defIncrease: " + (int)defIncrease);
+            characterStat.Speed += spdIncrease;
+    }
+
+    internal void ReduceBerserkPenalty(float reducePercent)
+    {
+        BerserkGauge bg = GetComponent<BerserkGauge>();
+        bg.berserkRegenDecrease = bg.berserkRegenDecrease * reducePercent;
+        //Debug.Log("bs rg dec: " + bg.berserkRegenDecrease);
+    }
 }
