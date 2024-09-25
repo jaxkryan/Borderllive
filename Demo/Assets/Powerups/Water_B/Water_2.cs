@@ -23,11 +23,11 @@ public class Water_2 : Powerups
         this.effect = Effect.SpeedIncrease;
     }
 
-    public void ApplyEffect(PlayerController player)
-    {
-        if (player != null)
-        {
-            player.IncreaseAgility();
-        }
-    }
+    //public void ApplyEffect(PlayerController player)
+    //{
+    //    if (player != null)
+    //    {
+    //        player.IncreaseAgility();
+    //    }
+    //}
 }

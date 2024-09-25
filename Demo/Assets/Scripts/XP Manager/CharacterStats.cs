@@ -72,7 +72,6 @@ public class CharacterStat : MonoBehaviour
         set => _endurance = value;
     }
 
-<<<<<<< Updated upstream
     // Modified DEF calculation to use percentage reduction during berserk
     public float DEF
     {
@@ -87,7 +86,6 @@ public class CharacterStat : MonoBehaviour
             return baseDefense;
         }
     }
-=======
 
     [SerializeField]
     private float _speed;
@@ -102,8 +100,7 @@ public class CharacterStat : MonoBehaviour
     //{
     //   // Set default endurance equal to base
     //}
-    public float DEF => Endurance * EnduranceToDefConversion;
->>>>>>> Stashed changes
+   // public float DEF => Endurance * EnduranceToDefConversion;
 
     // Speed-based property
 
@@ -167,11 +164,8 @@ public class CharacterStat : MonoBehaviour
         // Initialize stats UI at the start (optional)
         OnUpdateLevel(1, 1);  // Initialize at level 1 for example purposes
         _endurance = BaseEndurance;
-<<<<<<< Updated upstream
-=======
-        _speed = BaseSpeed;
 
->>>>>>> Stashed changes
+        _speed = BaseSpeed;
     }
 
     // Update is called once per frame
