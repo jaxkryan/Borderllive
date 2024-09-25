@@ -467,7 +467,7 @@ MonoBehaviour:
   isInvincible: 0
   invincibilityTime: 0.25
   _isStun: 0
-  XPReward: 50
+  soulReward: 100
 --- !u!114 &-9082804688703720184
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -510,6 +510,7 @@ MonoBehaviour:
   EnduranceToDefConversion: 0.7
   BaseSpeed: 5
   _endurance: 0
+  _speed: 0
 --- !u!114 &-214179261014064147
 MonoBehaviour:
   m_ObjectHideFlags: 0

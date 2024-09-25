@@ -129,7 +129,6 @@ public class PlayerController : MonoBehaviour
         touchingDirection = GetComponent<TouchingDirection>();
         damageable = GetComponent<Damageable>();
 
-        xPTracker = GetComponent<XPTracker>();
         // lockAttackCollider = GetComponent<CircleCollider2D>();
         // Subscribe to the damageableDeath event
         damageable.damageableDeath.AddListener(OnPlayerDeath);
@@ -438,13 +437,23 @@ public class PlayerController : MonoBehaviour
         PlayerPrefs.Save();
     }
 
-    private XPTracker xPTracker;
+   
     public void SavePlayerState()
     {
+        // Save player health
         PlayerPrefs.SetInt("Health", damageable.Health);
         PlayerPrefs.SetInt("MaxHealth", damageable.MaxHealth);
-        PlayerPrefs.SetInt("XP", xPTracker.CurrentXP);
 
+        // Save player XP
+        PlayerPrefs.SetInt("XP", XPTracker.Instance.CurrentXP);
+
+        // Save player souls (currency)
+        if (CurrencyManager.Instance != null)
+        {
+            PlayerPrefs.SetInt("Souls", CurrencyManager.Instance.currentAmount); // Assuming CurrentMoney tracks souls
+        }
+
+        // Save active power-ups
         OwnedPowerups ownedPowerups = GetComponent<OwnedPowerups>();
         if (ownedPowerups != null)
         {
@@ -452,27 +461,39 @@ public class PlayerController : MonoBehaviour
             PlayerPrefs.SetString("ActivePowerups", powerupsJson);
         }
 
-        PlayerPrefs.Save();  // Save the PlayerPrefs to persist the data
-        Debug.Log("Saving Player Data: XP = " + xPTracker.CurrentXP);
+        // Save PlayerPrefs data
+        PlayerPrefs.Save();
+
+        Debug.Log("Saving Player Data: XP = " + XPTracker.Instance.CurrentXP + ", Souls = " + CurrencyManager.Instance.currentAmount);
     }
 
     public void LoadPlayerData()
     {
         Debug.Log("Loading Player Data");
 
+        // Load player health
         if (PlayerPrefs.HasKey("Health"))
         {
             damageable.MaxHealth = PlayerPrefs.GetInt("MaxHealth");
             damageable.Health = PlayerPrefs.GetInt("Health") + 5;
         }
 
+        // Load player XP
         if (PlayerPrefs.HasKey("XP"))
         {
-            xPTracker.AddXP(PlayerPrefs.GetInt("XP"));
+            XPTracker.Instance.AddXP(PlayerPrefs.GetInt("XP"));
         }
 
+        // Load player souls (currency)
+        if (PlayerPrefs.HasKey("Souls") && CurrencyManager.Instance != null)
+        {
+            CurrencyManager.Instance.SetCurrency(PlayerPrefs.GetInt("Souls")); // Assuming SetMoney sets the currency amount
+        }
+
+        // Load active power-ups
         LoadPowerups();
     }
+
 
     public void LoadPowerups()
     {
