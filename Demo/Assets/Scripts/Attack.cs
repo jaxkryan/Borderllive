@@ -87,6 +87,7 @@ public class Attack : MonoBehaviour, IBuffable
 
             if (gotHit)
             {
+                OwnedPowerups ownedPowerups = GetComponentInParent<OwnedPowerups>();
                 //OwnedPowerups ownedPowerups = GetComponentInParent<OwnedPowerups>();
                 //Debug.Log(collision.name + " hit for " + attackDamage);
 
@@ -96,8 +97,21 @@ public class Attack : MonoBehaviour, IBuffable
                     berserkBar.IncreaseProgress(8.6f); // Increase the bar by 10 points, adjust value as needed
                 }
 
-                OwnedPowerups ownedPowerups = GetComponentInParent<OwnedPowerups>();
+                if (characterStat != null && berserkBar._isBerserkActive && ownedPowerups.IsPowerupActive<Wood_4>())
+                {
+                    Debug.Log("ok");    
+                    Wood_4 buff = new Wood_4();
+                    //// Get the Damageable component of the player
+                    Damageable playerDamageable = GetComponentInParent<Damageable>();
+
+                    //// Calculate the amount of HP to heal (1% of max HP)
+                    int healAmount = Mathf.RoundToInt(buff.healingPercentage * playerDamageable.MaxHealth);
+
+                    //// Heal the player
+                    playerDamageable.Heal(healAmount);
+                }
                 Knight enemyKnight = collision.GetComponent<Knight>();
+                //PlayerController playerController = collision.GetComponent<PlayerController>();
 
                 if (enemyKnight != null)
                 {
