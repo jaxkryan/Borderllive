@@ -67,6 +67,12 @@ public class Attack : MonoBehaviour, IBuffable
             {
                 Debug.Log("no buff");
             }
+            if (ownedPowerups.IsPowerupActive<Fire_2>())
+            {
+                Fire_2 f2 = new Fire_2();
+                Damageable targetDamageable = collision.GetComponent<Damageable>();
+                attackDamage *= f2.CalculateDamageIncrease(targetDamageable);
+            }
         }
         else
         {
