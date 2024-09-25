@@ -281,7 +281,7 @@ MonoBehaviour:
   isInvincible: 0
   invincibilityTime: 0.25
   _isStun: 0
-  XPReward: 50
+  soulReward: 80
 --- !u!95 &3121177932437059774
 Animator:
   serializedVersion: 5
@@ -344,6 +344,7 @@ MonoBehaviour:
   EnduranceToDefConversion: 0.3
   BaseSpeed: 5
   _endurance: 0
+  _speed: 0
 --- !u!1 &7886234287371785040
 GameObject:
   m_ObjectHideFlags: 0

@@ -4,6 +4,9 @@ using UnityEngine.Events;
 
 public class XPTracker : MonoBehaviour
 {
+    // Singleton instance
+    public static XPTracker Instance { get; private set; }
+
     [SerializeField] TextMeshProUGUI CurrentLevelText;
     [SerializeField] TextMeshProUGUI CurrentXPText;
     [SerializeField] TextMeshProUGUI XPToNextLevelText;
@@ -19,7 +22,30 @@ public class XPTracker : MonoBehaviour
 
     private void Awake()
     {
-        XPTranslation = ScriptableObject.Instantiate(XPTranslationType);
+        // Singleton pattern implementation
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject); // Optional: Keeps this instance between scenes if necessary
+        }
+        else if (Instance != this)
+        {
+            Destroy(gameObject); // Destroy the new instance if one already exists
+        }
+
+        // Check if XPTranslationType is assigned
+        if (XPTranslationType == null)
+        {
+            Debug.Log("No XP Translation found. Creating new XP Translation Table");
+
+            // Create a new instance of XPTranslation_Table
+            XPTranslation = ScriptableObject.CreateInstance<XPTranslation_Table>();
+        }
+        else
+        {
+            // Instantiate the provided XPTranslationType
+            XPTranslation = ScriptableObject.Instantiate(XPTranslationType);
+        }
     }
 
     public void AddXP(int amount)

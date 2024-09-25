@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using static Powerups;
 
-[CreateAssetMenu(fileName = "Water_2", menuName = "Powerups/Water_2")]
-public class Water_2 : Powerups
+[CreateAssetMenu(fileName = "Water_3", menuName = "Powerups/Water_3")]
+public class Water_3 : Powerups
 {
-    public Water_2()
+    private float reducePercent = 0.1f;
+    public Water_3()
     {
-        this.id = 7;
+        this.id = 8;
         this.ElementId = 3;
         this.cooldown = 0;
         this.duration = 0;
@@ -16,18 +17,18 @@ public class Water_2 : Powerups
         this.currentCooldown = 0f;
         this.Weight = 10;
         this.BerserkRateIncrease = 0;
-        this.type = BuffType.SpeedBuff;
+        this.type = BuffType.BerserkBuff;
 
         this.triggerCondition = TriggerCondition.Always;
 
-        this.effect = Effect.SpeedIncrease;
+        this.effect = Effect.BeserkRegen;
     }
 
     public void ApplyEffect(PlayerController player)
     {
         if (player != null)
         {
-            player.IncreaseAgility();
+            player.ReduceBerserkPenalty(reducePercent);
         }
     }
 }

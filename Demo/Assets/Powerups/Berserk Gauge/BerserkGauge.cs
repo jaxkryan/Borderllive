@@ -9,6 +9,10 @@ public class BerserkGauge : MonoBehaviour
     [SerializeField] float maxValue = 100f; // Maximum value of the slider
     private float currentValue = 0f; // Current value of the progress
     private bool isBerserkActive = false; // State of the effect
+    public float berserkRegenIncrease { get; set; } =  1f;
+    public float berserkRegenDecrease { get; set; } = 0f;
+
+    
     private CharacterStat characterStat; // Reference to CharacterStat
 
     [SerializeField] GameObject berserkFrameCanva;
@@ -39,7 +43,7 @@ public class BerserkGauge : MonoBehaviour
 
     public void IncreaseProgress(float amount)
     {
-        currentValue += amount;
+        currentValue += amount*berserkRegenIncrease;
         if (currentValue >= maxValue && !isBerserkActive)
         {
             currentValue = maxValue;
@@ -54,7 +58,7 @@ public class BerserkGauge : MonoBehaviour
 
     public void DecreaseProgress(float amount)
     {
-        currentValue -= amount;
+        currentValue -= amount * (1-berserkRegenDecrease);
         if (currentValue <= 0)
         {
             currentValue = 0;

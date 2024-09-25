@@ -13,6 +13,41 @@ public class XPTranslation_Table : BaseXPTranslation
 {
     [SerializeField] List<XPTranslationTableEntry> Table;
 
+    private void OnEnable()
+    {
+        // Check if the table is already populated
+        if (Table == null || Table.Count == 0)
+        {
+            PopulateTable();
+        }
+    }
+
+    private void PopulateTable()
+    {
+        Table = new List<XPTranslationTableEntry>();
+
+        // Level 1
+        Table.Add(new XPTranslationTableEntry { Level = 1, XPRequired = 0 });
+
+        // Variables for the calculation
+        int lastXPRequired = 0;
+        int increaseAmount = 200; // Initial increase amount
+
+        for (int level = 2; level <= 50; level++)
+        {
+            // Calculate XP required for the current level
+            lastXPRequired += increaseAmount;
+            Table.Add(new XPTranslationTableEntry { Level = level, XPRequired = lastXPRequired });
+
+            // Change the increase amount every 5 levels
+            if (level % 5 == 0)
+            {
+                increaseAmount += 100; // Increase the increase amount
+            }
+        }
+    }
+
+
     public override bool AddXP(int amount)
     {
         if (AtLevelCap)

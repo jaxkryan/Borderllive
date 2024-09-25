@@ -45,21 +45,30 @@ public class OwnedPowerups : MonoBehaviour
         return false;
     }
 
+    //wtf code cho nay xau vcl
     //direct buff without condition go here 
     public void ActivatePowerup()
     {
+        var uniquePowerupIds = new HashSet<int>();
+        var uniquePowerups = new List<Powerups>();
+
         foreach (Powerups p in activePowerups)
         {
-            if (p is Metal_1 metalPowerup)
+            if (uniquePowerupIds.Add(p.id))
             {
-                metalPowerup.ApplyEffect(playerController);
+                uniquePowerups.Add(p);
             }
         }
+
+        activePowerups = uniquePowerups;
+        foreach (Powerups p in activePowerups)
+        {
+            ActivateAPowerup(p);
+        }
     }
-    //activate a permanent buff
+    //activate a permanent buff after choosing
     public void ActivateAPowerup(Powerups p)
     {
-
         if (p is Metal_1 metalPowerup)
         {
             metalPowerup.ApplyEffect(playerController);
@@ -68,7 +77,14 @@ public class OwnedPowerups : MonoBehaviour
         {
             wood3Powerup.ApplyEffect(playerController);
         }
-
+        if (p is Water_2 water2Powerup)
+        {
+            water2Powerup.ApplyEffect(playerController);
+        }
+        if (p is Water_3 water3Powerup)
+        {
+            water3Powerup.ApplyEffect(playerController);
+        }
     }
 
     //condition debuff go here

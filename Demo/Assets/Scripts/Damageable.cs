@@ -123,7 +123,6 @@ public class Damageable : MonoBehaviour
             }
         }
     }
-    public int XPReward = 500;
     public bool IsAlive
     {
         get
@@ -137,18 +136,25 @@ public class Damageable : MonoBehaviour
             if (value == false)
             {
                 DropWhenDeath();
-                GiveXPReward();
+                GiveSoulReward();
                 damageableDeath.Invoke();
 
             }
         }
     }
-    private void GiveXPReward()
+
+    public int soulReward = 50;
+
+    private void GiveSoulReward()
     {
-        XPTracker xpTracker = FindObjectOfType<XPTracker>();
-        if (xpTracker != null)
+        // Use the CurrencyManager to add souls
+        if (CurrencyManager.Instance != null)
         {
-            xpTracker.AddXP(XPReward);
+            CurrencyManager.Instance.AddCurrency(soulReward); // Assuming "AddMoney" is managing souls
+        }
+        else
+        {
+            Debug.LogError("CurrencyManager instance not found!");
         }
     }
 
