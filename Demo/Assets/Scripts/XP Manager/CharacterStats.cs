@@ -107,6 +107,7 @@ public class CharacterStat : MonoBehaviour
     // Method to handle level changes
     public void OnUpdateLevel(int previousLevel, int currentLevel)
     {
+        float previousMaxHealth = MaxHealth;
         // Update BaseStamina, BaseStrength, and BaseEndurance based on the current level
         BaseStamina = BaseStamina_PerLevel * currentLevel + BaseStamina_Offset;
         BaseStrength = BaseStrength_PerLevel * currentLevel + BaseStrength_Offset;
@@ -117,7 +118,11 @@ public class CharacterStat : MonoBehaviour
         if (damageable != null)
         {
             damageable.MaxHealth = (int)MaxHealth;  // Set the new MaxHealth
-            damageable.Health = (int)MaxHealth;     // Set current health to MaxHealth
+            if (previousLevel == currentLevel)
+            {
+                damageable.Health = (int)MaxHealth;
+            }else 
+            damageable.Health +=  (int)( MaxHealth - previousMaxHealth);     // Set current health to MaxHealth
         }
 
         // Update the UI for stamina, health, strength, damage, defense, and speed

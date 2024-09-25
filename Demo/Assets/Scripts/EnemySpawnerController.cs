@@ -124,7 +124,7 @@ public class EnemySpawnerController : MonoBehaviour
         GameObject spawnedEnemy = Instantiate(enemyToSpawn, spawnPoint.position, spawnPoint.rotation);
         activeEnemies++;
         //Debug.Log("number of enemies: " + activeEnemies);
-
+        
         // Assign waypoints to the flying enemy
         FlyingEye flyingEye = spawnedEnemy.GetComponent<FlyingEye>();
         if (flyingEye != null)
