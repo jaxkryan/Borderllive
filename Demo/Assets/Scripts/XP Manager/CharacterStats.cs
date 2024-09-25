@@ -87,8 +87,22 @@ public class CharacterStat : MonoBehaviour
         }
     }
 
+    [SerializeField]
+    private float _speed;
+
+    public float Speed
+    {
+        get => _speed;
+        set => _speed = value;
+    }
+
+    //void Start()
+    //{
+    //   // Set default endurance equal to base
+    //}
+   // public float DEF => Endurance * EnduranceToDefConversion;
+
     // Speed-based property
-    public float Speed => BaseSpeed; // Speed is fixed at 5
 
     // Method to handle level changes
     public void OnUpdateLevel(int previousLevel, int currentLevel)
@@ -150,6 +164,8 @@ public class CharacterStat : MonoBehaviour
         // Initialize stats UI at the start (optional)
         OnUpdateLevel(1, 1);  // Initialize at level 1 for example purposes
         _endurance = BaseEndurance;
+
+        _speed = BaseSpeed;
     }
 
     // Update is called once per frame
