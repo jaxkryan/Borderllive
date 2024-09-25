@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Linq;
 using UnityEngine;
@@ -209,5 +210,10 @@ public class Knight : MonoBehaviour
         animator.speed = 1f;
         enemyStat.Speed = enemyStat.BaseSpeed;
 
+    }
+
+    internal void TakeMoreDmg(float dmgIncrease, float hpThreshold)
+    {
+        throw new NotImplementedException();
     }
 }
