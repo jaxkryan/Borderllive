@@ -81,7 +81,7 @@ public class BerserkGauge : MonoBehaviour
 
         if (currentValue > 70) // Accelerating drop from 100 to 70
         {
-            decreaseRate = 0.22f; // Adjust this value for the speed you desire
+            decreaseRate = 0.20f; // Adjust this value for the speed you desire
         }
         else if (currentValue > 40) // Slowing down drop from 70 to 40
         {
