@@ -749,6 +749,7 @@ GameObject:
   - component: {fileID: 7292146766977042318}
   - component: {fileID: 1549147279774620070}
   - component: {fileID: 4923141854644290416}
+  - component: {fileID: 4023472398452951151}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -1229,7 +1230,7 @@ MonoBehaviour:
   isInvincible: 0
   invincibilityTime: 1
   _isStun: 0
-  XPReward: 0
+  soulReward: 500
 --- !u!96 &5406483318001743203
 TrailRenderer:
   serializedVersion: 3
@@ -1358,7 +1359,7 @@ MonoBehaviour:
   firePrefab: {fileID: 8847997969909377436, guid: 2bfb1732017909e4cbfa165459b1adc0, type: 3}
   launchPoint: {fileID: 6535070933589624269}
   skillTag: Skill1
-  spellCooldown: {fileID: 2326402915659832029}
+  spellCooldown: {fileID: 0}
 --- !u!114 &7908228174054581180
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1374,7 +1375,7 @@ MonoBehaviour:
   launchPoint: {fileID: 6308782148372378380}
   projectilePrefab: {fileID: 1338527739506778704, guid: e3288aeb01c74b24f92e08694114c631, type: 3}
   skillTag: Skill3
-  spellCooldown: {fileID: 6441845903130257510}
+  spellCooldown: {fileID: 0}
 --- !u!114 &7292146766977042318
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1431,6 +1432,7 @@ MonoBehaviour:
   DamageText: {fileID: 1309552292396769828}
   DefText: {fileID: 5352249500302876086}
   _endurance: 0
+  _speed: 0
 --- !u!114 &4923141854644290416
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1446,6 +1448,21 @@ MonoBehaviour:
   berserkSlider: {fileID: 1139410293334412226}
   maxValue: 100
   berserkFrameCanva: {fileID: 2757129409754888543}
+--- !u!114 &4023472398452951151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1670572082697007339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 588d9b6847e72cf41aa0b13cd4f45c01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingMoney: 100
+  currentMoney: 0
+  moneyText: {fileID: 1255445559965122885}
 --- !u!1 &2174041759898171908
 GameObject:
   m_ObjectHideFlags: 0
@@ -3274,15 +3291,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2326402915659832029 stripped
+--- !u!114 &1255445559965122885 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8128290349870466755, guid: 0bbffc1ebfc046b408269f4b96c6c2f8, type: 3}
+  m_CorrespondingSourceObject: {fileID: 4749128495844924763, guid: 0bbffc1ebfc046b408269f4b96c6c2f8, type: 3}
   m_PrefabInstance: {fileID: 5801892107137686558}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7364848b135fb7418b6fb69a6bbc74f, type: 3}
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &2757129409754888543 stripped
@@ -3295,14 +3312,3 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1277754958995585024, guid: 0bbffc1ebfc046b408269f4b96c6c2f8, type: 3}
   m_PrefabInstance: {fileID: 5801892107137686558}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &6441845903130257510 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 712270874978808952, guid: 0bbffc1ebfc046b408269f4b96c6c2f8, type: 3}
-  m_PrefabInstance: {fileID: 5801892107137686558}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7364848b135fb7418b6fb69a6bbc74f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
