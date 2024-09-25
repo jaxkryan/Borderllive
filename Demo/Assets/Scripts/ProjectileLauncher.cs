@@ -26,6 +26,8 @@ public class ProjectileLauncher : MonoBehaviour
     {
         if (spellCooldown != null && spellCooldown.UseSpell()) // Check if the spell can be used
         {
+            BerserkGauge berserkGauge = FindAnyObjectByType<BerserkGauge>();
+
             GameObject projectileInstance = Instantiate(projectilePrefab, launchPoint.position, projectilePrefab.transform.rotation);
             Vector3 origScale = projectileInstance.transform.localScale;
             Projectile projectile = projectileInstance.GetComponent<Projectile>();
@@ -38,6 +40,12 @@ public class ProjectileLauncher : MonoBehaviour
                 origScale.y,
                 origScale.z
             );
+            if (berserkGauge._isBerserkActive) {
+                berserkGauge.DecreaseProgress(10f);
+            } else
+            {
+                berserkGauge.DecreaseProgress(30f);
+            }
         }
     }
 }

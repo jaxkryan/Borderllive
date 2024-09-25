@@ -157,6 +157,7 @@ public class Knight : MonoBehaviour
 
     internal void ReduceDefense(int id, int duration, float defenseReduction)
     {
+        Wood_2 wood_2 = new Wood_2();
         if (ownedDebuff.activeDebuff.Any(debuff => debuff.id == id))
         {
             Debug.Log("Debuff with id " + id + " is already active. Skipping.");
@@ -171,12 +172,42 @@ public class Knight : MonoBehaviour
         Debug.Log("def shred value: " + defReducValue);
         enemyStat.Endurance -= defReducValue;
         Debug.Log("enemy current def: " + enemyStat.Endurance);
-        StartCoroutine(RestoreDefenseAfterDuration(duration));
+        StartCoroutine(RestoreDefenseAfterDuration(wood_2.duration));
     }
 
     private IEnumerator RestoreDefenseAfterDuration(float duration)
     {
         yield return new WaitForSeconds(duration);
         enemyStat.Endurance = enemyStat.BaseEndurance;
+    }
+
+
+    //slow debuff
+    public void SlowDown(int id, int duration, float speedReduction)
+    {
+        Water_1 water_1 = new Water_1();
+        // // slow down animations by half
+        if (ownedDebuff.activeDebuff.Any(debuff => debuff.id == id))
+        {
+            Debug.Log("Debuff with id " + id + " is already active. Skipping.");
+            return;
+        }
+        if (enemyStat == null)
+        {
+            Debug.LogError("enemyStat component not found!");
+            return;
+        }
+        enemyStat.Speed -= enemyStat.BaseSpeed*speedReduction;
+        animator.speed -= animator.speed*speedReduction;
+        Debug.Log("slow successfully in " + water_1.duration);
+        StartCoroutine(RestoreSpeedAfterDuration(water_1.duration));
+    }
+
+    private IEnumerator RestoreSpeedAfterDuration(float duration)
+    {
+        yield return new WaitForSeconds(duration);
+        animator.speed = 1f;
+        enemyStat.Speed = enemyStat.BaseSpeed;
+
     }
 }

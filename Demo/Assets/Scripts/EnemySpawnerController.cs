@@ -14,7 +14,7 @@ public class EnemySpawnerController : MonoBehaviour
     public int totalWaves = 3; // Total number of waves (can be modified)
     public GameObject gate; // Gate GameObject to disable
 
-    public int waveNumber = 0;// Current wave number
+    private int waveNumber = 0;// Current wave number
     private int activeEnemies = 0; // Active enemy count
     private Coroutine spawnCoroutine; // Coroutine reference for spawning waves
     private BuffSelectionUI buffSelectionUI; // Reference to the buff selection UI
@@ -59,35 +59,42 @@ public class EnemySpawnerController : MonoBehaviour
 
     IEnumerator SpawnWaves()
     {
-        while (waveNumber <= totalWaves)
+        while (waveNumber < totalWaves)
         {
-            yield return new WaitForSeconds(timeBetweenWaves);
-
+            // Spawn enemies for the current wave
             List<Transform> selectedSpawnPoints = SelectRandomSpawnPoints(spawnPointsPerWave);
             for (int i = 0; i < selectedSpawnPoints.Count; i++)
             {
                 for (int j = 0; j < enemiesPerWave; j++)
                 {
                     StartCoroutine(SpawnEnemyWithEffect(selectedSpawnPoints[i]));
+
+                    // Optionally, add a small delay between spawning each enemy to stagger them
+                    yield return new WaitForSeconds(0.5f);
                 }
             }
 
-            // Wait until all enemies are defeated before proceeding to the next wave
+            // Wait until all enemies are defeated
             while (activeEnemies > 0)
             {
-                yield return null;
+                yield return null; // Wait until activeEnemies becomes 0
             }
 
+            // Wave completed, proceed to the next one
             waveNumber++;
+
+            // Wait between waves
+            yield return new WaitForSeconds(timeBetweenWaves);
         }
 
         // If all waves are complete and all enemies are defeated, open the gate and show buff selection
-        if (waveNumber > totalWaves && activeEnemies == 0)
+        if (waveNumber >= totalWaves && activeEnemies == 0)
         {
             DisableGate();
             ShowBuffSelection();
         }
     }
+
 
     IEnumerator SpawnEnemyWithEffect(Transform spawnPoint)
     {

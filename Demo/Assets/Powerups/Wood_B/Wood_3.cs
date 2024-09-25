@@ -8,7 +8,7 @@ public class Wood_3 : Powerups
 {
     public Wood_3()
     {
-        this.id = 1;
+        this.id = 5;
         this.ElementId = 2;
         this.cooldown = 0;
         this.duration = 0;

@@ -9,8 +9,8 @@ public class Wood_2 : Powerups
 
     public Wood_2()
     {
-        this.id = 2;
-        this.ElementId = 1;
+        this.id = 4;
+        this.ElementId = 2;
         this.cooldown = 10;
         this.duration = 2;
         this.isActive = false;

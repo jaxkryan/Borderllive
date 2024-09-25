@@ -9,7 +9,7 @@ public class Wood_2_DB : BadEffect
     public Wood_2_DB()
     {
         //no cd but count by hitcount. But i still add it for control purpose
-        this.id = 2;
+        this.id = 4;
         this.ElementId = 2;
         this.cooldown = 2;
         this.duration = 2;
