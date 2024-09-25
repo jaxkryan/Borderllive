@@ -218,6 +218,7 @@ GameObject:
   - component: {fileID: 154405474496553711}
   - component: {fileID: -9082804688703720184}
   - component: {fileID: 6582159076013635011}
+  - component: {fileID: -214179261014064147}
   m_Layer: 8
   m_Name: KnightEnemy_Elite
   m_TagString: Enemy
@@ -466,7 +467,7 @@ MonoBehaviour:
   isInvincible: 0
   invincibilityTime: 0.25
   _isStun: 0
-  XPReward: 500
+  XPReward: 50
 --- !u!114 &-9082804688703720184
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -499,16 +500,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BaseStamina_PerLevel: 5
-  BaseStamina_Offset: 10
-  StaminaToHealthConversion: 10
+  BaseStamina_Offset: 7
+  StaminaToHealthConversion: 8
   BaseStrength_PerLevel: 3
   BaseStrength_Offset: 5
-  StrengthToDamageConversion: 2
+  StrengthToDamageConversion: 3
   BaseEndurance_PerLevel: 2
-  BaseEndurance_Offset: 3
-  EnduranceToDefConversion: 1
+  BaseEndurance_Offset: 4
+  EnduranceToDefConversion: 0.7
   BaseSpeed: 5
   _endurance: 0
+--- !u!114 &-214179261014064147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4591734722486170938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47f118a333aae9742901328be57f65e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activeDebuff: []
 --- !u!1 &4960883968021715329
 GameObject:
   m_ObjectHideFlags: 0

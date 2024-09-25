@@ -40,7 +40,7 @@ public class Damageable : MonoBehaviour
         }
         set
         {
-            
+
             _health = value;
             healthChanged?.Invoke(_health, MaxHealth);
             OwnedPowerups ownedPowerups = GetComponent<OwnedPowerups>();
@@ -139,6 +139,7 @@ public class Damageable : MonoBehaviour
                 DropWhenDeath();
                 GiveXPReward();
                 damageableDeath.Invoke();
+
             }
         }
     }

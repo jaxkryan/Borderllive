@@ -21,6 +21,17 @@ public class OwnedPowerups : MonoBehaviour
         }
         ActivatePowerup();
     }
+
+    public string SerializeActivePowerups()
+    {
+        return JsonUtility.ToJson(this);
+    }
+
+    public void DeserializeActivePowerups(string json)
+    {
+        JsonUtility.FromJsonOverwrite(json, this);
+    }
+
     //check if the powerup in activePowerups or not
     public bool IsPowerupActive<T>() where T : Powerups
     {

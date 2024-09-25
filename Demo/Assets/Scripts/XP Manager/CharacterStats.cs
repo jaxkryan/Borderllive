@@ -23,32 +23,48 @@ public class CharacterStat : MonoBehaviour
 
     // UI elements
     //[SerializeField] TextMeshProUGUI StaminaText;
+    [SerializeField] TextMeshProUGUI DamageText;
     //[SerializeField] TextMeshProUGUI HealthText;
-    [SerializeField] TextMeshProUGUI DefText; 
+    [SerializeField] TextMeshProUGUI DefText;
     //[SerializeField] TextMeshProUGUI SpeedText; // UI for Speed (if needed)
 
     // Reference to the Damageable component
     private Damageable damageable;
 
-    //private BuffSelectionUI buffSelectionUI;
     // Properties for stamina, strength, endurance, and speed
     public float BaseStamina { get; set; } = 0;
     public float BaseStrength { get; set; } = 0;
     public float BaseEndurance { get; set; } = 0;
 
+    // Berserk effect variables - now using percentages
+    private float berserkDamageBoostPercentage = 20; // Damage boost as a percentage
+    private float berserkDefenseReductionPercentage = 50; // Defense reduction as a percentage
+    private bool isBerserkActive = false; // Is berserk mode active?
+
     // Stamina-based properties
     public float Stamina => BaseStamina;
-
     public float MaxHealth => Stamina * StaminaToHealthConversion;
 
     // Strength-based properties
     public float Strength => BaseStrength;
 
-    public float Damage => Strength * StrengthToDamageConversion;
+    // Modified Damage calculation to use percentage boost during berserk
+    public float Damage
+    {
+        get
+        {
+            float baseDamage = Strength * StrengthToDamageConversion;
+            if (isBerserkActive)
+            {
+                // Apply percentage-based damage boost during berserk
+                baseDamage += baseDamage * (berserkDamageBoostPercentage / 100);
+            }
+            return baseDamage;
+        }
+    }
 
     // Endurance-based properties
-    [SerializeField]
-    private float _endurance;
+    [SerializeField] private float _endurance;
 
     public float Endurance
     {
@@ -56,11 +72,20 @@ public class CharacterStat : MonoBehaviour
         set => _endurance = value;
     }
 
-    //void Start()
-    //{
-    //   // Set default endurance equal to base
-    //}
-    public float DEF => Endurance * EnduranceToDefConversion;
+    // Modified DEF calculation to use percentage reduction during berserk
+    public float DEF
+    {
+        get
+        {
+            float baseDefense = Endurance * EnduranceToDefConversion;
+            if (isBerserkActive)
+            {
+                // Apply percentage-based defense reduction during berserk
+                baseDefense -= baseDefense * (berserkDefenseReductionPercentage / 100);
+            }
+            return baseDefense;
+        }
+    }
 
     // Speed-based property
     public float Speed => BaseSpeed; // Speed is fixed at 5
@@ -73,24 +98,48 @@ public class CharacterStat : MonoBehaviour
         BaseStrength = BaseStrength_PerLevel * currentLevel + BaseStrength_Offset;
         BaseEndurance = BaseEndurance_PerLevel * currentLevel + BaseEndurance_Offset;
         _endurance = BaseEndurance;
+
         // Update the Damageable script's health
         if (damageable != null)
         {
             damageable.MaxHealth = (int)MaxHealth;  // Set the new MaxHealth
             damageable.Health = (int)MaxHealth;     // Set current health to MaxHealth
         }
-      
+
         // Update the UI for stamina, health, strength, damage, defense, and speed
         // StaminaText.text = $"Stamina: {Stamina}";
+        DamageText.text = $"Damage: {Damage:F1}"; // Display 1 decimal for clarity
         // HealthText.text = $"Max Health: {MaxHealth}";
-        DefText.text = $"DEF: {DEF}"; // Update DEF value on the UI
+        DefText.text = $"DEF: {DEF:F1}"; // Display 1 decimal for clarity
         // SpeedText.text = $"Speed: {Speed}"; // Update Speed value on the UI
+    }
+
+    // Activate berserk effect
+    public void ActivateBerserk()
+    {
+        isBerserkActive = true;
+        UpdateStats();
+    }
+
+    // Deactivate berserk effect
+    public void DeactivateBerserk()
+    {
+        isBerserkActive = false;
+        UpdateStats();
+    }
+
+    // Method to update stats
+    private void UpdateStats()
+    {
+        // This will refresh damage and defense calculations
+        DamageText.text = $"Damage: {Damage:F1}"; // Display 1 decimal for clarity
+        DefText.text = $"DEF: {DEF:F1}"; // Display 1 decimal for clarity
+        // Update other UI elements as needed
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        //buffSelectionUI = FindObjectOfType<BuffSelectionUI>();
         // Find the Damageable component attached to the player
         damageable = GetComponent<Damageable>();
         if (damageable == null)
@@ -101,13 +150,11 @@ public class CharacterStat : MonoBehaviour
         // Initialize stats UI at the start (optional)
         OnUpdateLevel(1, 1);  // Initialize at level 1 for example purposes
         _endurance = BaseEndurance;
-
     }
 
     // Update is called once per frame
     void Update()
     {
-
         // Optional: Can add additional checks or updates here if needed
     }
 }

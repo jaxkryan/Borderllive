@@ -1,5 +1,8 @@
-using System;
+﻿using System;
 using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using System.Security.Cryptography;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -18,6 +21,7 @@ public class PlayerController : MonoBehaviour
     TouchingDirection touchingDirection;
     OwnedPowerups ownedPowerups;
     Damageable damageable;
+    BerserkGauge berserkGauge;
     public bool canMove
     {
         get
@@ -118,17 +122,28 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
+        berserkGauge = GetComponent<BerserkGauge>();
         rb = GetComponent<Rigidbody2D>();
         ownedPowerups = GetComponent<OwnedPowerups>();
         animator = GetComponent<Animator>();
         touchingDirection = GetComponent<TouchingDirection>();
         damageable = GetComponent<Damageable>();
+
+        xPTracker = GetComponent<XPTracker>();
         // lockAttackCollider = GetComponent<CircleCollider2D>();
         // Subscribe to the damageableDeath event
         damageable.damageableDeath.AddListener(OnPlayerDeath);
+        LoadPlayerData(); // Khôi phục dữ liệu khi bắt đầu trò chơi
+
     }
     private void OnPlayerDeath()
     {
+
+        // Xóa dữ liệu khi người chơi chết
+        ClearPlayerData();
+
+        // Có thể thêm mã xử lý cái chết của người chơi ở đây
+        Debug.Log("Player has died. Player data cleared.");
         // Load the Game Over screen
         SceneManager.LoadScene("GameOver_Screen");
     }
@@ -276,6 +291,14 @@ public class PlayerController : MonoBehaviour
 
     private IEnumerator Dash()
     {
+        if (berserkGauge._isBerserkActive)
+        {
+            berserkGauge.DecreaseProgress(0f);
+        }
+        else
+        {
+            berserkGauge.DecreaseProgress(10f);
+        }
         canDash = false;
         isDashing = true;
         float originalGravity = rb.gravityScale;
@@ -394,9 +417,75 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+ 
+
+
     private void ResetEffectTriggered()
     {
         // Reset the flag
         isEffectTriggered = false;
     }
+
+    private void ClearPlayerData()
+    {
+        // Xóa toàn bộ dữ liệu trong PlayerPrefs
+        PlayerPrefs.DeleteAll();
+        // Nếu bạn chỉ muốn xóa một khóa cụ thể
+        // PlayerPrefs.DeleteKey("YourKeyName");
+
+        // Lưu lại để đảm bảo rằng dữ liệu được xóa ngay lập tức
+        PlayerPrefs.Save();
+    }
+
+    private XPTracker xPTracker;
+    public void SavePlayerState()
+    {
+        PlayerPrefs.SetInt("Health", damageable.Health);
+        PlayerPrefs.SetInt("MaxHealth", damageable.MaxHealth);
+        PlayerPrefs.SetInt("XP", xPTracker.CurrentXP);
+
+        OwnedPowerups ownedPowerups = GetComponent<OwnedPowerups>();
+        if (ownedPowerups != null)
+        {
+            string powerupsJson = ownedPowerups.SerializeActivePowerups();
+            PlayerPrefs.SetString("ActivePowerups", powerupsJson);
+        }
+
+        PlayerPrefs.Save();  // Save the PlayerPrefs to persist the data
+        Debug.Log("Saving Player Data: XP = " + xPTracker.CurrentXP);
+    }
+
+    public void LoadPlayerData()
+    {
+        Debug.Log("Loading Player Data");
+
+        if (PlayerPrefs.HasKey("Health"))
+        {
+            damageable.MaxHealth = PlayerPrefs.GetInt("MaxHealth");
+            damageable.Health = PlayerPrefs.GetInt("Health") + 5;
+        }
+
+        if (PlayerPrefs.HasKey("XP"))
+        {
+            xPTracker.AddXP(PlayerPrefs.GetInt("XP"));
+        }
+
+        LoadPowerups();
+    }
+
+    public void LoadPowerups()
+    {
+        if (PlayerPrefs.HasKey("ActivePowerups"))
+        {
+            string powerupsJson = PlayerPrefs.GetString("ActivePowerups");
+            OwnedPowerups ownedPowerups = GetComponent<OwnedPowerups>();
+            if (ownedPowerups != null)
+            {
+                ownedPowerups.DeserializeActivePowerups(powerupsJson);
+                Debug.Log("Loaded Active Powerups");
+            }
+        }
+    }
+
+
 }
