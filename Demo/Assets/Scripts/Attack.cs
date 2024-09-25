@@ -63,10 +63,6 @@ public class Attack : MonoBehaviour, IBuffable
                 // Apply the Fire_1 buff's damage increase
                 attackDamage *= f1.CalculateDamageIncrease(targetDamageable);
             }
-            else
-            {
-                Debug.Log("no buff");
-            }
             if (ownedPowerups.IsPowerupActive<Fire_2>())
             {
                 Fire_2 f2 = new Fire_2();

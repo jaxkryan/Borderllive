@@ -52,14 +52,16 @@ public class OwnedPowerups : MonoBehaviour
         var uniquePowerupIds = new HashSet<int>();
         var uniquePowerups = new List<Powerups>();
 
-        foreach (Powerups p in activePowerups)
+        if (activePowerups.Count > 0)
         {
-            if (uniquePowerupIds.Add(p.id))
+            foreach (Powerups p in activePowerups)
             {
-                uniquePowerups.Add(p);
+                if (uniquePowerupIds.Add(p.id))
+                {
+                    uniquePowerups.Add(p);
+                }
             }
         }
-
         activePowerups = uniquePowerups;
         foreach (Powerups p in activePowerups)
         {
@@ -88,6 +90,10 @@ public class OwnedPowerups : MonoBehaviour
         if (p is Fire_3 fire3Powerup)
         {
             fire3Powerup.ApplyEffect(playerController);
+        }
+        if (p is Earth_1 earth1Powerup)
+        {
+            earth1Powerup.ApplyEffect(playerController);
         }
     }
 

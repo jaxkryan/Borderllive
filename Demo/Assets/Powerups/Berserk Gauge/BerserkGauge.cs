@@ -7,7 +7,7 @@ public class BerserkGauge : MonoBehaviour
 {
     [SerializeField] Slider berserkSlider; // Reference to the Slider
     [SerializeField] float maxValue = 100f; // Maximum value of the slider
-    private float currentValue = 100f; // Current value of the progress
+    private float currentValue = 0f; // Current value of the progress
     private bool isBerserkActive = false; // State of the effect
     public float berserkRegenIncrease { get; set; } =  0f;
     public float berserkRegenDecrease { get; set; } = 0f;

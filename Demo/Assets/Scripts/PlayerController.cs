@@ -417,16 +417,11 @@ public class PlayerController : MonoBehaviour
             CancelInvoke("RegenerateHealth");
         }
     }
-
- 
-
-
     private void ResetEffectTriggered()
     {
         // Reset the flag
         isEffectTriggered = false;
     }
-
 
     private void ClearPlayerData()
     {
@@ -542,5 +537,18 @@ public class PlayerController : MonoBehaviour
     {
         berserkGauge.berserkRegenIncrease = increasePercent;
         Debug.Log("bs rg inc: " + berserkGauge.berserkRegenIncrease);
+    }
+
+    internal void IncreaseHp(float value)
+    {
+        characterStat = GetComponent<CharacterStat>();
+        if (characterStat == null)
+        {
+            Debug.LogError("CharacterStat component not found!");
+            return;
+        }
+        int newMaxHealth = (int)(damageable.MaxHealth * (1 + value));
+        damageable.MaxHealth = newMaxHealth;
+        damageable.Health += (int)(damageable.Health * value);
     }
 }
