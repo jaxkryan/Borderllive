@@ -534,8 +534,13 @@ public class PlayerController : MonoBehaviour
 
     internal void ReduceBerserkPenalty(float reducePercent)
     {
-        BerserkGauge bg = GetComponent<BerserkGauge>();
-        bg.berserkRegenDecrease = bg.berserkRegenDecrease * reducePercent;
-        //Debug.Log("bs rg dec: " + bg.berserkRegenDecrease);
+        berserkGauge.berserkRegenDecrease += berserkGauge.berserkRegenDecrease * reducePercent;
+        //Debug.Log("bs rg dec: " + berserkGauge.berserkRegenDecrease);
+    }
+
+    internal void IncreaseBerserkRecharge(float increasePercent)
+    {
+        berserkGauge.berserkRegenIncrease = increasePercent;
+        Debug.Log("bs rg inc: " + berserkGauge.berserkRegenIncrease);
     }
 }

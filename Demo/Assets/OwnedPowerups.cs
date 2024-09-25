@@ -85,6 +85,10 @@ public class OwnedPowerups : MonoBehaviour
         {
             water3Powerup.ApplyEffect(playerController);
         }
+        if (p is Fire_3 fire3Powerup)
+        {
+            fire3Powerup.ApplyEffect(playerController);
+        }
     }
 
     //condition debuff go here
