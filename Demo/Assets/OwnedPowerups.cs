@@ -54,6 +54,14 @@ public class OwnedPowerups : MonoBehaviour
             {
                 metalPowerup.ApplyEffect(playerController);
             }
+            if (p is Wood_3 wood3Powerup)
+            {
+                wood3Powerup.ApplyEffect(playerController);
+            }
+            if (p is Water_2 water2Powerup)
+            {
+                water2Powerup.ApplyEffect(playerController);
+            }
         }
     }
     //activate a permanent buff
@@ -68,7 +76,10 @@ public class OwnedPowerups : MonoBehaviour
         {
             wood3Powerup.ApplyEffect(playerController);
         }
-
+        if (p is Water_2 water2Powerup)
+        {
+            water2Powerup.ApplyEffect(playerController);
+        }
     }
 
     //condition debuff go here

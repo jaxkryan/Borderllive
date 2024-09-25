@@ -8,8 +8,8 @@ public class Water_2 : Powerups
 {
     public Water_2()
     {
-        this.id = 1;
-        this.ElementId = 1;
+        this.id = 7;
+        this.ElementId = 3;
         this.cooldown = 0;
         this.duration = 0;
         this.isActive = false;
@@ -23,11 +23,11 @@ public class Water_2 : Powerups
         this.effect = Effect.SpeedIncrease;
     }
 
-    //public void ApplyEffect(PlayerController player)
-    //{
-    //    if (player != null)
-    //    {
-    //        player.IncreaseAgility();
-    //    }
-    //}
+    public void ApplyEffect(PlayerController player)
+    {
+        if (player != null)
+        {
+            player.IncreaseAgility();
+        }
+    }
 }

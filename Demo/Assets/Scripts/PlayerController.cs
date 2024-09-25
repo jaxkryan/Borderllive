@@ -487,6 +487,19 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
+
+    internal void IncreaseAgility()
+    {
+          characterStat = GetComponent<CharacterStat>();
+           if (characterStat == null)
+           {
+                Debug.LogError("CharacterStat component not found!");
+               return;
+           }
+            float spdIncrease = characterStat.Speed * 0.1f;
+           //Debug.Log("Gia tri defIncrease: " + (int)defIncrease);
+            characterStat.Speed += spdIncrease;
+    }
     //internal void IncreaseAgility()
     //{
     //    characterStat = GetComponent<CharacterStat>();
