@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 460898769382832072}
   - component: {fileID: 5772186393172265414}
+  - component: {fileID: 4909046439103174751}
   m_Layer: 0
   m_Name: EnemySpawnPoint
   m_TagString: Untagged
@@ -62,8 +63,24 @@ MonoBehaviour:
   timeBetweenWaves: 0
   summonEffectPrefab: {fileID: 3608926238929618258, guid: 60279c783a1180f4896b41645b5e4471, type: 3}
   summonEffectDuration: 0.5
-  totalWaves: 3
+  totalWaves: 1
   gate: {fileID: 0}
+--- !u!114 &4909046439103174751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1394395819282309732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ec4154059c5a5145bec9af558e5fd22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  XPTranslationType: {fileID: 0}
+  OnLevelChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &2624427781924349103
 GameObject:
   m_ObjectHideFlags: 0
