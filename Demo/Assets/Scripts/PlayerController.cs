@@ -457,6 +457,7 @@ public class PlayerController : MonoBehaviour
         {
             string powerupsJson = ownedPowerups.SerializeActivePowerups();
             PlayerPrefs.SetString("ActivePowerups", powerupsJson);
+            Debug.Log("Buff:" + powerupsJson);
         }
 
         // Save PlayerPrefs data
@@ -503,7 +504,10 @@ public class PlayerController : MonoBehaviour
     {
         if (PlayerPrefs.HasKey("ActivePowerups"))
         {
+
             string powerupsJson = PlayerPrefs.GetString("ActivePowerups");
+            Debug.Log("Buff:" + powerupsJson);
+
             OwnedPowerups ownedPowerups = GetComponent<OwnedPowerups>();
             if (ownedPowerups != null)
             {

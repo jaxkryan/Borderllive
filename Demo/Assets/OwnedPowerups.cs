@@ -44,6 +44,10 @@ public class OwnedPowerups : MonoBehaviour
         }
         return false;
     }
+    public bool IsBuffActive(Powerups powerups)
+    {
+        return activePowerups.Contains(powerups);
+    }
 
     //wtf code cho nay xau vcl
     //direct buff without condition go here 

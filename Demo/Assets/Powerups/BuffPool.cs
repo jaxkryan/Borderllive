@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class BuffPool : MonoBehaviour
@@ -8,11 +9,12 @@ public class BuffPool : MonoBehaviour
 
     // List of predefined power-ups (reference these in the Inspector if needed)
     [SerializeField] private List<Powerups> initialPowerups = new List<Powerups>();
-
+    private OwnedPowerups ownedPowerups;
     private void Awake()
     {
         // Initialize availablePowerups with initial power-ups on game start
         ResetBuffPool();
+        ownedPowerups = FindObjectOfType<OwnedPowerups>();
     }
 
     // Method to reset the buff pool with the initial set of power-ups
@@ -31,16 +33,25 @@ public class BuffPool : MonoBehaviour
     // Method to get random buffs without repetition
     public Powerups[] GetRandomBuffs(int count)
     {
-        if (availablePowerups.Count < count)
-            return availablePowerups.ToArray();
+        List<Powerups> temp = new List<Powerups>();
+        // Only add non-active powerups to the temporary list
+        foreach (var powerup in availablePowerups)
+        {
+            if (!ownedPowerups.IsBuffActive(powerup))
+            {
+                temp.Add(powerup);
+            }
+        }
 
         List<Powerups> randomBuffs = new List<Powerups>();
-        while (randomBuffs.Count < count)
+        while (randomBuffs.Count < count && temp.Count > 0)
         {
-            Powerups randomBuff = availablePowerups[Random.Range(0, availablePowerups.Count)];
-            if (!randomBuffs.Contains(randomBuff))
-                randomBuffs.Add(randomBuff);
+            Powerups randomBuff = temp[Random.Range(0, temp.Count)];
+            randomBuffs.Add(randomBuff);
+            temp.Remove(randomBuff); // Ensure no duplicates
         }
+
         return randomBuffs.ToArray();
     }
+
 }

@@ -100,14 +100,15 @@ public class CharacterStat : MonoBehaviour
     //{
     //   // Set default endurance equal to base
     //}
-   // public float DEF => Endurance * EnduranceToDefConversion;
+    // public float DEF => Endurance * EnduranceToDefConversion;
 
     // Speed-based property
 
     // Method to handle level changes
     public void OnUpdateLevel(int previousLevel, int currentLevel)
     {
-        float previousMaxHealth = MaxHealth;
+        float previousMaxHealth = damageable.MaxHealth;
+        float previouHealth = damageable.Health;
         // Update BaseStamina, BaseStrength, and BaseEndurance based on the current level
         BaseStamina = BaseStamina_PerLevel * currentLevel + BaseStamina_Offset;
         BaseStrength = BaseStrength_PerLevel * currentLevel + BaseStrength_Offset;
@@ -117,12 +118,9 @@ public class CharacterStat : MonoBehaviour
         // Update the Damageable script's health
         if (damageable != null)
         {
-            damageable.MaxHealth = (int)MaxHealth;  // Set the new MaxHealth
-            if (previousLevel == currentLevel)
-            {
-                damageable.Health = (int)MaxHealth;
-            }else 
-            damageable.Health +=  (int)( MaxHealth - previousMaxHealth);     // Set current health to MaxHealth
+            float lossHealth = previousMaxHealth - previouHealth;
+            damageable.MaxHealth = (int)MaxHealth;  // Set the new  
+            damageable.Health = (int)(MaxHealth - lossHealth); // Set current
         }
 
         // Update the UI for stamina, health, strength, damage, defense, and speed
