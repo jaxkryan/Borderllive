@@ -426,6 +426,7 @@ public class PlayerController : MonoBehaviour
         isEffectTriggered = false;
     }
 
+<<<<<<< Updated upstream
     private void ClearPlayerData()
     {
         // Xóa toàn bộ dữ liệu trong PlayerPrefs
@@ -488,4 +489,19 @@ public class PlayerController : MonoBehaviour
     }
 
 
+=======
+    internal void IncreaseAgility()
+    {
+        characterStat = GetComponent<CharacterStat>();
+        //Debug.Log("Gia tri value erd: " + characterStat.Endurance);
+        if (characterStat == null)
+        {
+            Debug.LogError("CharacterStat component not found!");
+            return;
+        }
+        float defIncrease = characterStat.BaseSpeed * 0.1;
+        //Debug.Log("Gia tri defIncrease: " + (int)defIncrease);
+        characterStat.Endurance += defIncrease;
+    }
+>>>>>>> Stashed changes
 }
