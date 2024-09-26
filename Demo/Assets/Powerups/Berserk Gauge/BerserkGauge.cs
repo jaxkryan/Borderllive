@@ -43,10 +43,16 @@ public class BerserkGauge : MonoBehaviour
 
     public void IncreaseProgress(float amount)
     {
-        currentValue += amount*(1+berserkRegenIncrease);
-        if (currentValue >= maxValue && !isBerserkActive)
+        currentValue += amount * (1 + berserkRegenIncrease);
+
+        if (isBerserkActive && currentValue >= maxValue)
         {
             currentValue = maxValue;
+        }    
+
+        if (currentValue >= maxValue && !isBerserkActive)
+        {
+            currentValue = maxValue;  // Make sure it's exactly maxValue when berserk activates
             isBerserkActive = true;
             characterStat.ActivateBerserk(); // Activate berserk effects
             if (berserkFrameCanva != null)
@@ -55,6 +61,7 @@ public class BerserkGauge : MonoBehaviour
             }
         }
     }
+
 
     public void DecreaseProgress(float amount)
     {
