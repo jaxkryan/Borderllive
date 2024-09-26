@@ -1,9 +1,12 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class Damageable : MonoBehaviour
 {
     private bool metal3Active = false;
+    private bool earth2Active = false;
+
     public UnityEvent<int, Vector2> damageableHit;
     public UnityEvent damageableDeath;
 
@@ -52,17 +55,15 @@ public class Damageable : MonoBehaviour
                     ownedPowerups.TriggerMetal3Buff();
                     metal3Active = true;
                 }
-
+                if (_health >= 0.7 * MaxHealth && !earth2Active && ownedPowerups.IsPowerupActive<Earth_2>())
+                {
+                    ownedPowerups.TriggerEarth2Buff();
+                    earth2Active = true;
+                }
                 if (_health <= 0.35 * MaxHealth && ownedPowerups.IsPowerupActive<Wood_3>())
                 {
                     ownedPowerups.TriggerWood3Buff();
                 }
-                if (_health > 0.5 * MaxHealth && metal3Active)
-                {
-                    ownedPowerups.RemoveMetal3Buff();
-                    metal3Active = false;
-                }
-
                 //else if (_health > 0.5 * MaxHealth && metal3Active)
                 //{
                 //    OwnedPowerups ownedPowerups = GetComponent<OwnedPowerups>();
@@ -190,7 +191,7 @@ public class Damageable : MonoBehaviour
             animator.SetBool(AnimationStrings.isStun, false);
         }
 
-        if (_health > 0.5 * MaxHealth && metal3Active)
+        if (_health > 0.5 * MaxHealth && metal3Active && characterStat!=null)
         {
             OwnedPowerups ownedPowerups = GetComponent<OwnedPowerups>();
             if (ownedPowerups != null)
@@ -199,7 +200,32 @@ public class Damageable : MonoBehaviour
                 metal3Active = false; // Reset the flag so the buff can be triggered again if health drops below 50%
             }
         }
+        //can check lai cai removeEarth2buff
+        if (_health < 0.7 * MaxHealth && earth2Active && characterStat != null)
+        {
+            Debug.Log("hp " + _health + "max health at 70: " + 0.7 * MaxHealth);
+            OwnedPowerups ownedPowerups = GetComponent<OwnedPowerups>();
+            ownedPowerups.RemoveEarth2Buff();
+            earth2Active = false;
+        }
+        else if (_health >= 0.7 * MaxHealth && !earth2Active && characterStat != null)
+        {
+            
+            OwnedPowerups ownedPowerups = GetComponent<OwnedPowerups>();
+            ownedPowerups.TriggerEarth2Buff();
+            earth2Active = true;
+        }
+        //if (_health >= 0.7 * MaxHealth && !earth2Active && characterStat != null)
+        //{
+        //    OwnedPowerups ownedPowerups = GetComponent<OwnedPowerups>();
 
+        //    if (ownedPowerups.IsPowerupActive<Earth_2>())
+        //    {
+        //        ownedPowerups.TriggerEarth2Buff();
+
+        //        earth2Active = true;
+        //    }
+        //}
     }
     private void Awake()
     {
@@ -210,6 +236,14 @@ public class Damageable : MonoBehaviour
         {
             enemyStat = GetComponent<EnemyStat>();
         }
+
+        // Check if health is above 70% and trigger Earth_2 buff if necessary
+        //if (_health >= 0.7 * MaxHealth && !earth2Active 
+        //    && GetComponent<OwnedPowerups>().IsPowerupActive<Earth_2>())
+        //{
+        //    GetComponent<OwnedPowerups>().TriggerEarth2Buff();
+        //    earth2Active = true;
+        //}
     }
 
     private CharacterStat characterStat;

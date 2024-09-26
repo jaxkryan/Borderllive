@@ -349,7 +349,7 @@ public class PlayerController : MonoBehaviour
             float defIncrease = characterStat.BaseEndurance * value;
             //Debug.Log("Gia tri defIncrease: " + defIncrease);
             characterStat.Endurance += defIncrease;
-            //Debug.Log("Gia tri defIncrease: nat");
+            Debug.Log("Gia tri defIncrease: " + characterStat.Endurance);
         }
         //Debug.Log("current " + characterStat.Endurance);      
     }
@@ -555,4 +555,38 @@ public class PlayerController : MonoBehaviour
         damageable.MaxHealth = newMaxHealth;
         damageable.Health += (int)(damageable.Health * value);
     }
+
+    //internal void IncreaseDefHighHp(float value)
+    //{
+    //    characterStat = GetComponent<CharacterStat>();
+    //    if (characterStat == null)
+    //    {
+    //        Debug.LogError("CharacterStat component not found!");
+    //        return;
+    //    }
+    //    else
+    //    {
+    //        float defIncrease = characterStat.BaseEndurance * value;
+    //        Debug.Log("Gia tri defIncrease: " + defIncrease);
+    //        characterStat.Endurance += defIncrease;
+    //        Debug.Log("Gia tri defIncrease: " + characterStat.BaseEndurance);
+    //    }
+    //}
+
+
+    internal void IncreaseDefHighHp(float value)
+    {
+
+            CharacterStat characterStat = GetComponent<CharacterStat>();
+           //Debug.Log("Gia tri edurance before: " + characterStat.Endurance);
+           // Debug.Log("Gia tri def before: " + characterStat.DEF);
+
+            float defIncrease = characterStat.BaseEndurance * value;
+            characterStat.Endurance += defIncrease;
+
+            //Debug.Log("Gia tri defIncrease riu: "  + characterStat.DEF);
+            //Debug.Log("Gia tri edurance riu: "  + characterStat.Endurance);
+        //Debug.Log("current " + characterStat.Endurance);      
+    }
 }
+    

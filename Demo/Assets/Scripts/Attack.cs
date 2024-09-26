@@ -1,4 +1,6 @@
+using System.Collections;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class Attack : MonoBehaviour, IBuffable
 {
@@ -123,7 +125,6 @@ public class Attack : MonoBehaviour, IBuffable
             damageable.IsStun = false;
         }
     }
-
     private void Update()
     {
         if (_buff != null) HandleBuff();

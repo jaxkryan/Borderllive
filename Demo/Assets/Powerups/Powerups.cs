@@ -29,7 +29,8 @@ public class Powerups : ScriptableObject
         SpeedDecrease,
         EnemyDefReduction,
         HPRegen,
-        BeserkRegen
+        BeserkRegen,
+        PushBack
     }
 
     public enum BuffType
@@ -39,7 +40,8 @@ public class Powerups : ScriptableObject
         HpBuff,        // Buff máu
         SpeedBuff,     // Buff tốc độ
         DamageBuff,    // Buff sát thương
-        Debuff         // Debuff
+        Debuff,         // Debuff
+        OtherBuff
     }
     public int BerserkRateIncrease;
     public int cooldown;

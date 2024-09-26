@@ -872,7 +872,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e18bbe576ad86c48b9752ea6e5c4267, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activePowerups: []
+  activePowerups:
+  - {fileID: 11400000, guid: b9b43d5426870a94180e06569f4719dc, type: 2}
   isHitEnemy: 0
   hitCount: 0
 --- !u!114 &1607725449858402806

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -193,6 +194,7 @@ public class OwnedPowerups : MonoBehaviour
     internal void TriggerMetal3Buff()
     {
         Metal_3 metal_3 = new Metal_3();
+
         metal_3.ApplyEffect(playerController);
         //Debug.Log("trigger metal 3 buff is ok");
     }
@@ -207,10 +209,27 @@ public class OwnedPowerups : MonoBehaviour
         }
     }
 
+    internal void TriggerEarth2Buff()
+    {
+        PlayerController playerController = GetComponent<PlayerController>();
+        Earth_2 e2 = new Earth_2();
+        e2.ApplyEffect(playerController);
+    }
+
     //buff w/ condition - wood 3
     internal void TriggerWood3Buff()
     {
        Wood_3 wood_3 = new Wood_3();
        wood_3.ApplyEffect(playerController);
+    }
+
+    internal void RemoveEarth2Buff()
+    {
+        PlayerController playerController = GetComponent<PlayerController>();
+        if (playerController != null)
+        {
+            playerController.DecreaseDef(0.2f);
+            Debug.Log("Earth_2 buff removed as health is under 50%!");
+        }
     }
 }
