@@ -30,7 +30,8 @@ public class Powerups : ScriptableObject
         EnemyDefReduction,
         HPRegen,
         BeserkRegen,
-        PushBack
+        PushBack,
+        Shield
     }
 
     public enum BuffType

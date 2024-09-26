@@ -237,4 +237,11 @@ public class OwnedPowerups : MonoBehaviour
             Debug.Log("Earth_2 buff removed as health is under 50%!");
         }
     }
+
+    internal void TriggerEarth3Buff(){
+        PlayerController playerController = GetComponent<PlayerController>();
+        Earth_3 e3 = new Earth_3();
+        
+        e3.ApplyEffect(playerController);
+    }
 }

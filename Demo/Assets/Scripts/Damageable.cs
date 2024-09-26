@@ -65,6 +65,11 @@ public class Damageable : MonoBehaviour
                 {
                     ownedPowerups.TriggerWood3Buff();
                 }
+
+                if (_health <= 0.5 * MaxHealth && ownedPowerups.IsPowerupActive<Earth_3>())
+                {
+                    ownedPowerups.TriggerEarth3Buff();
+                }
                 //else if (_health > 0.5 * MaxHealth && metal3Active)
                 //{
                 //    OwnedPowerups ownedPowerups = GetComponent<OwnedPowerups>();
@@ -193,7 +198,7 @@ public class Damageable : MonoBehaviour
             animator.SetBool(AnimationStrings.isStun, false);
         }
 
-        if (_health > 0.5 * MaxHealth && metal3Active && characterStat!=null)
+        if (_health > 0.5 * MaxHealth && metal3Active && characterStat != null)
         {
             if (ownedPowerups != null)
             {
@@ -204,7 +209,7 @@ public class Damageable : MonoBehaviour
         if (_health < 0.7 * MaxHealth && earth2Active && characterStat != null && ownedPowerups.IsPowerupActive<Earth_2>())
         {
             Debug.Log("hp " + _health + "max health at 70: " + 0.7 * MaxHealth);
-            
+
             ownedPowerups.RemoveEarth2Buff();
             earth2Active = false;
         }
@@ -254,8 +259,22 @@ public class Damageable : MonoBehaviour
             float defense = characterStat != null ? characterStat.DEF : enemyStat.DEF; // Adjust based on actual DEF field name
             float reducedDamage = Mathf.Max(damage - Mathf.Floor(defense), 0); // Ensure damage doesn't go negative
 
-            // Apply the reduced damage
-            Health -= (int)reducedDamage;
+                // Apply the reduced damage
+                if (characterStat != null && characterStat.Shield > 0f)
+                {
+                    // Apply damage to shield
+                    characterStat.DecreaseShield(reducedDamage);
+                    if (characterStat.Shield <= 0f)
+                    {
+                        // If shield is depleted, apply remaining damage to health
+                        Health -= (int)(reducedDamage - characterStat.Shield);
+                    }
+                }
+                else 
+                {
+                    // If no shield, apply damage directly to health
+                    Health -= (int)reducedDamage;
+                }
             isInvincible = true;
 
             animator.SetTrigger(AnimationStrings.hitTrigger);

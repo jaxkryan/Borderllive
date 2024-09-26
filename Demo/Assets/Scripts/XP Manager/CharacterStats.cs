@@ -31,6 +31,14 @@ public class CharacterStat : MonoBehaviour
     // Reference to the Damageable component
     private Damageable damageable;
 
+   [SerializeField]
+    private float shield;
+
+    public float Shield
+    {
+        get { return shield; }
+        set { shield = value; }
+    }
     // Properties for stamina, strength, endurance, and speed
     public float BaseStamina { get; set; } = 0;
     public float BaseStrength { get; set; } = 0;
@@ -96,10 +104,19 @@ public class CharacterStat : MonoBehaviour
         set => _speed = value;
     }
 
-    //void Start()
-    //{
-    //   // Set default endurance equal to base
-    //}
+        public void IncreaseShield(float amount)
+    {
+        Shield += amount;
+    }
+
+    public void DecreaseShield(float amount)
+    {
+        Shield -= amount;
+        if (Shield < 0f)
+        {
+            Shield = 0f;
+        }
+    }
     // public float DEF => Endurance * EnduranceToDefConversion;
 
     // Speed-based property
@@ -176,6 +193,7 @@ public class CharacterStat : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+                Shield = 0f; 
         // Find the Damageable component attached to the player
         damageable = GetComponent<Damageable>();
         if (damageable == null)
