@@ -1,0 +1,115 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: EnemyXPTranslation_Table
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyXPTranslation_Table
+  Table:
+  - Level: 1
+    XPRequired: 0
+  - Level: 2
+    XPRequired: 200
+  - Level: 3
+    XPRequired: 400
+  - Level: 4
+    XPRequired: 600
+  - Level: 5
+    XPRequired: 800
+  - Level: 6
+    XPRequired: 900
+  - Level: 7
+    XPRequired: 1000
+  - Level: 8
+    XPRequired: 1100
+  - Level: 9
+    XPRequired: 1200
+  - Level: 10
+    XPRequired: 1300
+  - Level: 11
+    XPRequired: 1470
+  - Level: 12
+    XPRequired: 1640
+  - Level: 13
+    XPRequired: 1810
+  - Level: 14
+    XPRequired: 1980
+  - Level: 15
+    XPRequired: 2150
+  - Level: 16
+    XPRequired: 2390
+  - Level: 17
+    XPRequired: 2630
+  - Level: 18
+    XPRequired: 2870
+  - Level: 19
+    XPRequired: 3110
+  - Level: 20
+    XPRequired: 3350
+  - Level: 21
+    XPRequired: 3660
+  - Level: 22
+    XPRequired: 3970
+  - Level: 23
+    XPRequired: 4280
+  - Level: 24
+    XPRequired: 4590
+  - Level: 25
+    XPRequired: 4900
+  - Level: 26
+    XPRequired: 5280
+  - Level: 27
+    XPRequired: 5660
+  - Level: 28
+    XPRequired: 6040
+  - Level: 29
+    XPRequired: 6420
+  - Level: 30
+    XPRequired: 6800
+  - Level: 31
+    XPRequired: 7250
+  - Level: 32
+    XPRequired: 7700
+  - Level: 33
+    XPRequired: 8150
+  - Level: 34
+    XPRequired: 8600
+  - Level: 35
+    XPRequired: 9050
+  - Level: 36
+    XPRequired: 9570
+  - Level: 37
+    XPRequired: 10090
+  - Level: 38
+    XPRequired: 10610
+  - Level: 39
+    XPRequired: 11130
+  - Level: 40
+    XPRequired: 11650
+  - Level: 41
+    XPRequired: 12240
+  - Level: 42
+    XPRequired: 12830
+  - Level: 43
+    XPRequired: 13420
+  - Level: 44
+    XPRequired: 14010
+  - Level: 45
+    XPRequired: 14600
+  - Level: 46
+    XPRequired: 15260
+  - Level: 47
+    XPRequired: 15920
+  - Level: 48
+    XPRequired: 16580
+  - Level: 49
+    XPRequired: 17240
+  - Level: 50
+    XPRequired: 17900

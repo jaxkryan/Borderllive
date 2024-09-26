@@ -26,14 +26,18 @@ public class XPTranslation_Table : BaseXPTranslation
     {
         Table = new List<XPTranslationTableEntry>();
 
-        // Level 1
         Table.Add(new XPTranslationTableEntry { Level = 1, XPRequired = 0 });
+        // Level 1 to Level 4 with a fixed XP requirement of 200
+        for (int level = 2; level <= 5; level++)
+        {
+            Table.Add(new XPTranslationTableEntry { Level = level, XPRequired = 200 * (level-1)});
+        }
 
         // Variables for the calculation
-        int lastXPRequired = 0;
-        int increaseAmount = 200; // Initial increase amount
+        int lastXPRequired = 800; // XP for Level 6
+        int increaseAmount = 300;  // Initial increase amount for Level 6
 
-        for (int level = 2; level <= 50; level++)
+        for (int level = 6; level <= 50; level++)
         {
             // Calculate XP required for the current level
             lastXPRequired += increaseAmount;
@@ -42,10 +46,12 @@ public class XPTranslation_Table : BaseXPTranslation
             // Change the increase amount every 5 levels
             if (level % 5 == 0)
             {
-                increaseAmount += 100; // Increase the increase amount
+                increaseAmount += 150; // Increase the increase amount
             }
         }
     }
+
+
 
 
     public override bool AddXP(int amount)

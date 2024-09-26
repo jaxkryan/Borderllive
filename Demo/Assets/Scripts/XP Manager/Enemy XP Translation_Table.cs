@@ -26,14 +26,18 @@ public class EnemyXPTranslation_Table : BaseXPTranslation
     {
         Table = new List<EnemyXPTranslationTableEntry>();
 
-        // Level 1
         Table.Add(new EnemyXPTranslationTableEntry { Level = 1, XPRequired = 0 });
+        // Level 1 to Level 5 with a fixed XP requirement of 200
+        for (int level = 2; level <= 5; level++)
+        {
+            Table.Add(new EnemyXPTranslationTableEntry { Level = level, XPRequired = 200 * (level - 1) });
+        }
 
-        // Variables for the calculation
-        int lastXPRequired = 0;
-        int increaseAmount = 100; // Initial increase amount
+        // Variables for the calculation for levels beyond 5
+        int lastXPRequired = 800; // Start from 1000 for level 6
+        int increaseAmount = 100;   // Initial increase amount
 
-        for (int level = 2; level <= 50; level++)
+        for (int level = 6; level <= 50; level++)
         {
             // Calculate XP required for the current level
             lastXPRequired += increaseAmount;

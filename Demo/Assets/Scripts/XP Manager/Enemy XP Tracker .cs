@@ -3,7 +3,7 @@ using UnityEngine.Events;
 
 public class EnemyXPTracker : MonoBehaviour
 {
-    [SerializeField] BaseXPTranslation XPTranslationType;
+    private BaseXPTranslation XPTranslationType;
     public UnityEvent<int, int> OnLevelChanged = new UnityEvent<int, int>();
 
     private BaseXPTranslation XPTranslation;
@@ -17,7 +17,7 @@ public class EnemyXPTracker : MonoBehaviour
         // Instantiate the XPTranslation based on the assigned type
         if (XPTranslationType == null)
         {
-            //Debug.Log("No XP Translation found. Creating new XP Translation Table");
+           // Debug.Log("No XP Translation found. Creating new XP Translation Table");
             XPTranslation = ScriptableObject.CreateInstance<EnemyXPTranslation_Table>();
         }
         else

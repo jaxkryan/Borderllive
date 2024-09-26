@@ -73,7 +73,7 @@ public class BuffSelectionUI : MonoBehaviour
 
         EnemyXPTracker enemyXPTracker = FindAnyObjectByType<EnemyXPTracker>();
         enemyXPTracker.AddXP(xpAdded);
-        Debug.Log(("XP add to enemy" + xpAdded));
+        //Debug.Log(("XP add to enemy" + xpAdded));
         xpAdded += 40;
 
     }

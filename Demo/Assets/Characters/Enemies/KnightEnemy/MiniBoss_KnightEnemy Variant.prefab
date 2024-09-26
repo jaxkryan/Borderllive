@@ -78,10 +78,11 @@ PolygonCollider2D:
   m_Points:
     m_Paths:
     - - {x: 0.25409985, y: 0.75464857}
-      - {x: -0.52575326, y: 1.1787741}
-      - {x: -1.5864103, y: 0.6488022}
-      - {x: -0.64791906, y: -0.27083504}
-      - {x: -1.1843454, y: -0.975173}
+      - {x: -0.77175355, y: 1.5785266}
+      - {x: -3.769672, y: 1.0793049}
+      - {x: -2.246933, y: 0.40566897}
+      - {x: -2.200703, y: -0.43693012}
+      - {x: -2.1991024, y: -1.6824275}
       - {x: 0.5831647, y: -1.5477154}
       - {x: 0.86420965, y: -0.8511475}
       - {x: 0.87305546, y: -0.0013259649}
@@ -139,6 +140,7 @@ Transform:
   m_LocalScale: {x: 0.8, y: 0.8, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 5495913311140326142}
   - {fileID: 1833086061569067751}
   - {fileID: 2265770377163571929}
   - {fileID: 4331481889183797350}
@@ -324,9 +326,8 @@ MonoBehaviour:
   attackZone: {fileID: 8627499103727381981}
   cliffDetectionZone: {fileID: 6438588754586097258}
   walkStopRate: 0.05
-  chaseSpeedMultiplier: 1.5
-  minChaseDistance: 2
-  attackDistance: 1
+  chaseZone: {fileID: 6416549586966330869}
+  _hasTarget: 0
 --- !u!114 &8286660258354314001
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -357,7 +358,7 @@ MonoBehaviour:
   isInvincible: 0
   invincibilityTime: 0.25
   _isStun: 0
-  soulReward: 100
+  soulReward: 20
 --- !u!114 &5546524151841492102
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -394,7 +395,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ec4154059c5a5145bec9af558e5fd22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  XPTranslationType: {fileID: 0}
   OnLevelChanged:
     m_PersistentCalls:
       m_Calls:
@@ -423,6 +423,100 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activeDebuff: []
+--- !u!1 &5885947276819533893
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5495913311140326142}
+  - component: {fileID: 1978426643944992799}
+  - component: {fileID: 6416549586966330869}
+  m_Layer: 0
+  m_Name: ChasingZone
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5495913311140326142
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5885947276819533893}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 2.28, y: -0.16, z: 0}
+  m_LocalScale: {x: 8, y: 2.5, z: 0.5}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2636314196515597609}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1978426643944992799
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5885947276819533893}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!114 &6416549586966330869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5885947276819533893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5248832893f1c404689bb7499f0302ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  noColliderRemain:
+    m_PersistentCalls:
+      m_Calls: []
+  detectedColliders: []
 --- !u!1 &8738186456439416502
 GameObject:
   m_ObjectHideFlags: 0

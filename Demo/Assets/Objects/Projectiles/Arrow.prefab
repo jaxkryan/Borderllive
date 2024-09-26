@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
-  moveSpeed: {x: 80, y: 0}
+  moveSpeed: {x: 200, y: 0}
   knockback: {x: 2, y: 0}
 --- !u!50 &5768499399915373982
 Rigidbody2D:
