@@ -110,9 +110,12 @@ public class CharacterStat : MonoBehaviour
         float previousMaxHealth = damageable.MaxHealth;
         float previouHealth = damageable.Health;
         // Update BaseStamina, BaseStrength, and BaseEndurance based on the current level
-        BaseStamina = BaseStamina_PerLevel * currentLevel + BaseStamina_Offset;
-        BaseStrength = BaseStrength_PerLevel * currentLevel + BaseStrength_Offset;
-        BaseEndurance = BaseEndurance_PerLevel * currentLevel + BaseEndurance_Offset;
+        float staminaGainFromBuff = Stamina - BaseStamina;
+        BaseStamina = BaseStamina_PerLevel * currentLevel + BaseStamina_Offset + staminaGainFromBuff;
+        float strengthGainFromBuff = Strength - BaseStrength;
+        BaseStrength = BaseStrength_PerLevel * currentLevel + BaseStrength_Offset + strengthGainFromBuff;
+        float enduranceGainFromBuff = Endurance - BaseEndurance;
+        BaseEndurance = BaseEndurance_PerLevel * currentLevel + BaseEndurance_Offset + enduranceGainFromBuff;
         _endurance = BaseEndurance;
 
         // Update the Damageable script's health
