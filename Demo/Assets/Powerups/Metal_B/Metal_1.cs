@@ -3,6 +3,7 @@
 [CreateAssetMenu(fileName = "Metal_1", menuName = "Powerups/Metal_1")]
 public class Metal_1 : Powerups
 {
+    public float enduranceIncrease = 0.1f;
     public Metal_1()
     {
         this.id = 1;
@@ -24,7 +25,7 @@ public class Metal_1 : Powerups
     {
         if (player != null)
         {
-            player.IncreaseDef(0.1f);
+            player.IncreaseDef(enduranceIncrease);
         }
     }
 }

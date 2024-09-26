@@ -27,7 +27,7 @@ public class Earth_2 : Powerups
         if (player != null)
         {
             
-            player.IncreaseDefHighHp(2f);
+            player.IncreaseDefHighHp(0.2f);
         }
         else
         {

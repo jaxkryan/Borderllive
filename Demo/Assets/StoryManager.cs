@@ -12,7 +12,6 @@ public class StoryManager : MonoBehaviour
     public string[] storyLines; // Array of story lines
     public float textDisplaySpeed = 0.05f; // Speed at which each character appears
     public string nextSceneName = "Room_Start"; // Name of the next scene
-
     private int currentLineIndex = 0;
 
     void Start()

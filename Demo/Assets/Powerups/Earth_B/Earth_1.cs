@@ -4,6 +4,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Earth_1", menuName = "Powerups/Earth_1")]
 public class Earth_1 : Powerups
 {   
+    public float staminaIncrease = 0.15f;
     public Earth_1()
     {
         this.id = 13;
@@ -25,7 +26,7 @@ public class Earth_1 : Powerups
     {
         if (player != null)
         {
-            player.IncreaseHp(0.15f);
+            player.IncreaseHp(staminaIncrease);
         }
     }
 }

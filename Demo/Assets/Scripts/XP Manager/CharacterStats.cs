@@ -109,13 +109,29 @@ public class CharacterStat : MonoBehaviour
     {
         float previousMaxHealth = damageable.MaxHealth;
         float previouHealth = damageable.Health;
+        OwnedPowerups ownedPowerups = GetComponent<OwnedPowerups>();
         // Update BaseStamina, BaseStrength, and BaseEndurance based on the current level
-        float staminaGainFromBuff = Stamina - BaseStamina;
+        float staminaGainFromBuff = 0;
+        if (ownedPowerups.IsPowerupActive<Earth_1>())
+        {
+            Earth_1 e1 = new Earth_1();
+            staminaGainFromBuff = BaseStamina * e1.staminaIncrease; // Earth_1 gives 15% stamina gain
+            
+        }        
         BaseStamina = BaseStamina_PerLevel * currentLevel + BaseStamina_Offset + staminaGainFromBuff;
-        float strengthGainFromBuff = Strength - BaseStrength;
+
+        float strengthGainFromBuff = 0;
         BaseStrength = BaseStrength_PerLevel * currentLevel + BaseStrength_Offset + strengthGainFromBuff;
-        float enduranceGainFromBuff = Endurance - BaseEndurance;
+
+        float enduranceGainFromBuff = 0;
+        if (ownedPowerups.IsPowerupActive<Metal_1>())
+        {
+            Metal_1 m1 = new Metal_1();
+            enduranceGainFromBuff = BaseEndurance_Offset * m1.enduranceIncrease; // Earth_1 gives 10% endurance gain
+            Debug.Log("Earth_1 active, adding stamina gain: " + enduranceGainFromBuff);
+        }    
         BaseEndurance = BaseEndurance_PerLevel * currentLevel + BaseEndurance_Offset + enduranceGainFromBuff;
+
         _endurance = BaseEndurance;
 
         // Update the Damageable script's health

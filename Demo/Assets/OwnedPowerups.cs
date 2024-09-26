@@ -100,6 +100,11 @@ public class OwnedPowerups : MonoBehaviour
         {
             earth1Powerup.ApplyEffect(playerController);
         }
+        if (p is Earth_2 earth2Powerup)
+        {
+            earth2Powerup.ApplyEffect(playerController);
+        }
+    
     }
 
     //condition debuff go here
