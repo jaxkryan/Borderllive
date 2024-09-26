@@ -282,7 +282,7 @@ MonoBehaviour:
   isInvincible: 0
   invincibilityTime: 0.25
   _isStun: 0
-  soulReward: 80
+  soulReward: 10
 --- !u!95 &3121177932437059774
 Animator:
   serializedVersion: 5
@@ -358,7 +358,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ec4154059c5a5145bec9af558e5fd22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  XPTranslationType: {fileID: 0}
   OnLevelChanged:
     m_PersistentCalls:
       m_Calls:

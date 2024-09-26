@@ -8,7 +8,7 @@ public class XPTracker : MonoBehaviour
     [SerializeField] TextMeshProUGUI CurrentXPText;
     [SerializeField] TextMeshProUGUI XPToNextLevelText;
 
-    [SerializeField] BaseXPTranslation XPTranslationType;
+    private BaseXPTranslation XPTranslationType;
 
     [SerializeField] UnityEvent<int, int> OnLevelChanged = new UnityEvent<int, int>();
 
@@ -22,7 +22,7 @@ public class XPTracker : MonoBehaviour
         // Check if XPTranslationType is assigned
         if (XPTranslationType == null)
         {
-            Debug.Log("No XP Translation found. Creating new XP Translation Table");
+            //Debug.Log("No XP Translation found. Creating new XP Translation Table");
 
             // Create a new instance of XPTranslation_Table
             XPTranslation = ScriptableObject.CreateInstance<XPTranslation_Table>();

@@ -448,7 +448,7 @@ public class PlayerController : MonoBehaviour
         // Save player souls (currency)
         if (currencyManager != null)
         {
-            PlayerPrefs.SetInt("Souls", currencyManager.currentAmount); // Assuming CurrentMoney tracks souls
+            PlayerPrefs.SetInt("Souls", currencyManager.currentAmount + 30); // Assuming CurrentMoney tracks souls
         }
 
         // Save active power-ups

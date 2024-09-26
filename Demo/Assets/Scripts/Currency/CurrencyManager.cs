@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class CurrencyManager : MonoBehaviour
 {
-    public int startingAmount = 100; // Starting amount of money for the player
+    public int startingAmount = 50; // Starting amount of money for the player
     public int currentAmount; // Current money of the player
     public Text currencyText; // Reference to the UI Text element to display the money
 
