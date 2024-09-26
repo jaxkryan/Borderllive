@@ -238,10 +238,21 @@ public class OwnedPowerups : MonoBehaviour
         }
     }
 
-    internal void TriggerEarth3Buff(){
-        PlayerController playerController = GetComponent<PlayerController>();
-        Earth_3 e3 = new Earth_3();
-        
-        e3.ApplyEffect(playerController);
+    private bool isEarth3BuffTriggered = false;
+
+    internal void TriggerEarth3Buff()
+    {
+        if (!isEarth3BuffTriggered)
+        {
+            Earth_3 e3 = new Earth_3();
+            e3.ApplyEffect(playerController);
+            isEarth3BuffTriggered = true;
+        }
+    }
+
+    // Call this method when the player enters a new room
+    public void ResetEarth3Buff()
+    {
+        isEarth3BuffTriggered = false;
     }
 }
