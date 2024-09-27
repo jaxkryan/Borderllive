@@ -33,7 +33,7 @@ public class ProjectileLauncher : MonoBehaviour
             Projectile projectile = projectileInstance.GetComponent<Projectile>();
             if (projectile != null && characterStat != null)
             {
-                projectile.SetCharacterStat(characterStat); // Set the CharacterStat on the projectile
+                projectile.SetAdditionalDamage((int)characterStat.Damage); // Set the CharacterStat on the projectile
             }
             projectileInstance.transform.localScale = new Vector3(
                 origScale.x * (transform.localScale.x > 0 ? 1f : -1f),

@@ -134,6 +134,38 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!1 &281466667405772869
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6227524201692923267}
+  m_Layer: 7
+  m_Name: MeteorSkill
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6227524201692923267
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 281466667405772869}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -6.7, y: 11.9, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 4634223535798062870}
+  m_Father: {fileID: 6963604570927535182}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &495384378693459533
 GameObject:
   m_ObjectHideFlags: 0
@@ -330,6 +362,37 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d63635d5ab802ba438d623dfd74729e6, type: 2}
   - {fileID: 11400000, guid: 81cdece8f84405b40aa507cdd5e43cd6, type: 2}
   - {fileID: 11400000, guid: e2f1f435659c6d54ea7ca2f9993c171e, type: 2}
+--- !u!1 &610463851357802749
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4634223535798062870}
+  m_Layer: 7
+  m_Name: EndPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4634223535798062870
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 610463851357802749}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 12.14, y: -12.7, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6227524201692923267}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &758923863101330094
 GameObject:
   m_ObjectHideFlags: 0
@@ -750,6 +813,7 @@ GameObject:
   - component: {fileID: 1549147279774620070}
   - component: {fileID: 4923141854644290416}
   - component: {fileID: 4023472398452951151}
+  - component: {fileID: 4276577133430425700}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -778,6 +842,7 @@ Transform:
   - {fileID: 6308782148372378380}
   - {fileID: 6535070933589624269}
   - {fileID: 3997702181528854564}
+  - {fileID: 6227524201692923267}
   - {fileID: 4701486965251990558}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -872,8 +937,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e18bbe576ad86c48b9752ea6e5c4267, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activePowerups:
-  - {fileID: 11400000, guid: b9b43d5426870a94180e06569f4719dc, type: 2}
+  activePowerups: []
   isHitEnemy: 0
   hitCount: 0
 --- !u!114 &1607725449858402806
@@ -1098,6 +1162,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 970d5ce4-1b4e-4f01-9fd8-22f798b51ce2
     m_ActionName: Player/Lock Attack[/Keyboard/3]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1607725449858402806}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: OnCastMeteor
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: b0de15fb-faea-4a33-a590-bfa6ed9ab2c1
+    m_ActionName: Player/CaseMeteor[/Keyboard/4]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -1360,7 +1440,7 @@ MonoBehaviour:
   firePrefab: {fileID: 8847997969909377436, guid: 2bfb1732017909e4cbfa165459b1adc0, type: 3}
   launchPoint: {fileID: 6535070933589624269}
   skillTag: Skill1
-  spellCooldown: {fileID: 0}
+  spellCooldown: {fileID: 2326402915659832029}
 --- !u!114 &7908228174054581180
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1376,7 +1456,7 @@ MonoBehaviour:
   launchPoint: {fileID: 6308782148372378380}
   projectilePrefab: {fileID: 1338527739506778704, guid: e3288aeb01c74b24f92e08694114c631, type: 3}
   skillTag: Skill3
-  spellCooldown: {fileID: 0}
+  spellCooldown: {fileID: 6441845903130257510}
 --- !u!114 &7292146766977042318
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1463,6 +1543,23 @@ MonoBehaviour:
   startingAmount: 70
   currentAmount: 0
   currencyText: {fileID: 1255445559965122885}
+--- !u!114 &4276577133430425700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1670572082697007339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01561efe42450a144a3ea00a792e0090, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosiveProjectilePrefab: {fileID: 4305914652448538098, guid: 550f664f6fc53e84b98140fa221cbbac, type: 3}
+  startPoint: {fileID: 6227524201692923267}
+  endPoint: {fileID: 4634223535798062870}
+  skillTag: Skill4
+  spellCooldown: {fileID: 673129277454922769}
 --- !u!1 &2174041759898171908
 GameObject:
   m_ObjectHideFlags: 0
@@ -3280,6 +3377,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0bbffc1ebfc046b408269f4b96c6c2f8, type: 3}
+--- !u!114 &673129277454922769 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6472545278833993743, guid: 0bbffc1ebfc046b408269f4b96c6c2f8, type: 3}
+  m_PrefabInstance: {fileID: 5801892107137686558}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7364848b135fb7418b6fb69a6bbc74f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1139410293334412226 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6866733507277395932, guid: 0bbffc1ebfc046b408269f4b96c6c2f8, type: 3}
@@ -3302,6 +3410,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2326402915659832029 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8128290349870466755, guid: 0bbffc1ebfc046b408269f4b96c6c2f8, type: 3}
+  m_PrefabInstance: {fileID: 5801892107137686558}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7364848b135fb7418b6fb69a6bbc74f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2757129409754888543 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8558876372094510401, guid: 0bbffc1ebfc046b408269f4b96c6c2f8, type: 3}
@@ -3312,3 +3431,14 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1277754958995585024, guid: 0bbffc1ebfc046b408269f4b96c6c2f8, type: 3}
   m_PrefabInstance: {fileID: 5801892107137686558}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6441845903130257510 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 712270874978808952, guid: 0bbffc1ebfc046b408269f4b96c6c2f8, type: 3}
+  m_PrefabInstance: {fileID: 5801892107137686558}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7364848b135fb7418b6fb69a6bbc74f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

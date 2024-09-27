@@ -211,6 +211,8 @@ public class CharacterStat : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        UpdateStats();
+
         // Optional: Can add additional checks or updates here if needed
     }
 }

@@ -242,6 +242,14 @@ public class PlayerController : MonoBehaviour
             animator.SetTrigger(AnimationStrings.castFireTrigger);
         }
     }
+    
+    public void OnCastMeteor(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            animator.SetTrigger(AnimationStrings.castMeteorTrigger);
+        }
+    }
 
     public void OnLockAttack(InputAction.CallbackContext context)
     {

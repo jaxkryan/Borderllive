@@ -17,6 +17,7 @@
     internal static string lockVelocity = "lockVelocity";
     internal static string rangedAttackTrigger = "rangedAttack";
     internal static string castFireTrigger = "castFire";
+    internal static string castMeteorTrigger = "castMeteor";
     internal static string lockAttackTrigger = "lockAttack";
     internal static string isStun = "isStun";
 }
