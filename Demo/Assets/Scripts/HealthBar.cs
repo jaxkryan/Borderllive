@@ -20,11 +20,11 @@ public class HealthBar : MonoBehaviour
         playDamageable = player.GetComponent<Damageable>();
     }
     // Start is called before the first frame update
-    void Start()
-    {
-        healthSlider.value = CalculateSliderPercentage(playDamageable.Health, playDamageable.MaxHealth);
-        healthBarText.text = "HP " + playDamageable.Health + " / " + playDamageable.MaxHealth;
-    }
+    // void Start()
+    // {
+    //     healthSlider.value = CalculateSliderPercentage(playDamageable.Health, playDamageable.MaxHealth);
+    //     healthBarText.text = "HP " + playDamageable.Health + " / " + playDamageable.MaxHealth;
+    // }
 
     private void OnEnable()
     {
@@ -48,6 +48,7 @@ public class HealthBar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        healthSlider.value = CalculateSliderPercentage(playDamageable.Health, playDamageable.MaxHealth);
+        healthBarText.text = "HP " + playDamageable.Health + " / " + playDamageable.MaxHealth;
     }
 }

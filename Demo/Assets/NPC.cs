@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class NPC : MonoBehaviour
 {
+    private Damageable damageable;
     private PlayerInput playerInput;
     public GameObject dialoguePanel;
     public Text dialogueText;
@@ -31,6 +32,7 @@ public class NPC : MonoBehaviour
 
     private void Awake()
     {
+
         choice1Buff = new Metal_1();
         choice2Buff = new Earth_1();
         // Find the Player GameObject by tag (ensure your Player GameObject is tagged correctly as "Player")
@@ -40,6 +42,7 @@ public class NPC : MonoBehaviour
         if (player != null)
         {
             playerInput = player.GetComponent<PlayerInput>();
+            damageable = player.GetComponent<Damageable>();
         }
         else
         {
@@ -168,17 +171,19 @@ public class NPC : MonoBehaviour
         }
         else if (choiceIndex == 2)
         {
-             Debug.Log("choose 2");
+            Debug.Log("choose 2");
             selectedBuff = choice2Buff;
         }
 
         if (selectedBuff != null)
         {
+
             ownedPowerups.activePowerups.Add(selectedBuff); // Add selected buff to owned powerups
             ownedPowerups.ActivateAPowerup(selectedBuff); // Activate the selected buff
             buffPool.RemoveBuff(selectedBuff); // Remove the selected buff from the pool
             Debug.Log($"Selected Buff: {selectedBuff.name}");
         }
+
 
         // Remove the dialogue and hide the choices
         RemoveText();
