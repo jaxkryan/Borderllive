@@ -182,9 +182,12 @@ MonoBehaviour:
   dialoguePanel: {fileID: 0}
   dialogueText: {fileID: 0}
   gameCanvas: {fileID: 0}
-  nextButton: {fileID: 0}
   wordSpeed: 0
   playerIsClose: 0
   dialogue:
   - 1
   - 2
+  choice1Button: {fileID: 0}
+  choice2Button: {fileID: 0}
+  choice1Buff: {fileID: 11400000, guid: d63635d5ab802ba438d623dfd74729e6, type: 2}
+  choice2Buff: {fileID: 11400000, guid: 9befc1b68abebbc4aa816530f3af74fb, type: 2}
