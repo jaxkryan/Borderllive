@@ -11,6 +11,13 @@ TagManager:
   - Skill1
   - Skill2
   - Skill3
+  - SkillEarth
+  - SkillFire
+  - SkillMetal
+  - SkillWood
+  - SkillWater
+  - Item1
+  - Item2
   - Skill4
   layers:
   - Default
