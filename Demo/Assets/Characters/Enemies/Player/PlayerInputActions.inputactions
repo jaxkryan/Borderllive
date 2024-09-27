@@ -60,7 +60,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "RangedAttack",
+                    "name": "Skill1",
                     "type": "Button",
                     "id": "5f3b28fd-8698-40b5-bf4d-79af9107f530",
                     "expectedControlType": "Button",
@@ -69,7 +69,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Cast Fire",
+                    "name": "Skill2",
                     "type": "Button",
                     "id": "d2b72f63-2be4-4555-bf15-222f1e605b39",
                     "expectedControlType": "Button",
@@ -78,7 +78,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Lock Attack",
+                    "name": "Skill3",
                     "type": "Button",
                     "id": "970d5ce4-1b4e-4f01-9fd8-22f798b51ce2",
                     "expectedControlType": "Button",
@@ -87,9 +87,18 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Cast Meteor",
+                    "name": "Item1",
                     "type": "Button",
                     "id": "b0de15fb-faea-4a33-a590-bfa6ed9ab2c1",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Item2",
+                    "type": "Button",
+                    "id": "1d3f765a-1672-4567-ae01-487397e9f265",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -353,44 +362,55 @@
                 {
                     "name": "",
                     "id": "03836c81-d09c-43cb-95ed-3b22cb1cc9c2",
-                    "path": "<Keyboard>/3",
+                    "path": "<Keyboard>/1",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
-                    "action": "RangedAttack",
+                    "action": "Skill1",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
                     "id": "204513b2-8349-4b00-baac-e3f5dbd15373",
-                    "path": "<Keyboard>/1",
+                    "path": "<Keyboard>/2",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
-                    "action": "Cast Fire",
+                    "action": "Skill2",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
                     "id": "49a201f7-1160-4afd-b06b-eeef22d9a36b",
-                    "path": "<Keyboard>/2",
+                    "path": "<Keyboard>/3",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
-                    "action": "Lock Attack",
+                    "action": "Skill3",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
                     "id": "757dc0b5-50c6-4110-ac7e-d35845f23505",
-                    "path": "<Keyboard>/4",
+                    "path": "<Keyboard>/q",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
-                    "action": "Cast Meteor",
+                    "action": "Item1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5df4fe54-ee3d-4c94-9538-d5dec824d7d1",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Item2",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
@@ -907,6 +927,34 @@
                     "processors": "",
                     "groups": "XR",
                     "action": "TrackedDeviceOrientation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Disable",
+            "id": "77c6b047-4ef6-47a8-8611-9abe5a71423f",
+            "actions": [
+                {
+                    "name": "New action",
+                    "type": "Button",
+                    "id": "81ec0bc0-d4f6-4c8c-a619-692f783e4100",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "661a33a9-6955-4862-926c-c468d21b92b3",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

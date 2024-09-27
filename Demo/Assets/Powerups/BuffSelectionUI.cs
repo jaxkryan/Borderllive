@@ -61,6 +61,7 @@ public class BuffSelectionUI : MonoBehaviour
 
     }
 
+    //vai loz xpAdded bi fix cung
     private static int xpAdded = 230;
     public void SelectBuff(int index)
     {  // Resume the game by setting time scale back to 1

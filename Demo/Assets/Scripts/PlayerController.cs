@@ -227,38 +227,48 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void OnRangedAttack(InputAction.CallbackContext context)
-    {
-        if (context.started)
-        {
-            animator.SetTrigger(AnimationStrings.rangedAttackTrigger);
-        }
-    }
+    public string skill1Trigger;
 
-    public void OnCastFire(InputAction.CallbackContext context)
+    public void OnSkill1(InputAction.CallbackContext context)
+    {
+        Debug.Log("cast skill 1");
+        if (context.started)
+        {
+            animator.SetTrigger(skill1Trigger);
+        }
+    }
+    public string skill2Trigger;
+    public void OnSkill2(InputAction.CallbackContext context)
     {
         if (context.started)
         {
-            animator.SetTrigger(AnimationStrings.castFireTrigger);
+            animator.SetTrigger(skill2Trigger);
         }
     }
-    
-    public void OnCastMeteor(InputAction.CallbackContext context)
+    public string skill3Trigger;
+    public void OnSkill3(InputAction.CallbackContext context)
     {
         if (context.started)
         {
-            animator.SetTrigger(AnimationStrings.castMeteorTrigger);
+            animator.SetTrigger(skill3Trigger);
         }
     }
-
-    public void OnLockAttack(InputAction.CallbackContext context)
+    public string item1Trigger;
+    public void OnItem1(InputAction.CallbackContext context)
     {
         if (context.started)
         {
-            animator.SetTrigger(AnimationStrings.lockAttackTrigger);
+            animator.SetTrigger(item1Trigger);
         }
     }
-
+    public string item2Trigger;
+    public void OnItem2(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            animator.SetTrigger(item2Trigger);
+        }
+    }
     private float stunDuration = 2f;
     public LayerMask enemyLayers;
 
@@ -472,7 +482,7 @@ public class PlayerController : MonoBehaviour
         PlayerPrefs.Save();
 
         Debug.Log("Saving Player Data: XP = " + xPTracker.CurrentXP + ", Souls = " + currencyManager.currentAmount);
-       // Debug.Log("Saving Player Data: Health = " + damageable.Health);
+        // Debug.Log("Saving Player Data: Health = " + damageable.Health);
     }
 
     public void LoadPlayerData()
@@ -482,7 +492,7 @@ public class PlayerController : MonoBehaviour
         // Load player health
         if (PlayerPrefs.HasKey("Health"))
         {
-           // Debug.Log("Loading Player Data: Health = " + PlayerPrefs.GetInt("Health"));
+            // Debug.Log("Loading Player Data: Health = " + PlayerPrefs.GetInt("Health"));
             damageable.MaxHealth = PlayerPrefs.GetInt("MaxHealth");
             damageable.Health = PlayerPrefs.GetInt("Health");
         }
@@ -490,7 +500,7 @@ public class PlayerController : MonoBehaviour
         // Load player XP
         if (PlayerPrefs.HasKey("XP"))
         {
-           // Debug.Log("Loading Player Data: XP = " + PlayerPrefs.GetInt("XP"));
+            // Debug.Log("Loading Player Data: XP = " + PlayerPrefs.GetInt("XP"));
 
             xPTracker.AddXP(PlayerPrefs.GetInt("XP"));
         }
@@ -527,16 +537,16 @@ public class PlayerController : MonoBehaviour
 
     internal void IncreaseAgility()
     {
-          characterStat = GetComponent<CharacterStat>();
-           if (characterStat == null)
-           {
-                Debug.LogError("CharacterStat component not found!");
-               return;
-           }
-            float spdIncrease = characterStat.Speed * 0.1f;
-            dashingPower *= 0.1f;
-           //Debug.Log("Gia tri defIncrease: " + (int)defIncrease);
-            characterStat.Speed += spdIncrease;
+        characterStat = GetComponent<CharacterStat>();
+        if (characterStat == null)
+        {
+            Debug.LogError("CharacterStat component not found!");
+            return;
+        }
+        float spdIncrease = characterStat.Speed * 0.1f;
+        dashingPower *= 0.1f;
+        //Debug.Log("Gia tri defIncrease: " + (int)defIncrease);
+        characterStat.Speed += spdIncrease;
     }
 
     internal void ReduceBerserkPenalty(float reducePercent)
@@ -585,15 +595,15 @@ public class PlayerController : MonoBehaviour
     internal void IncreaseDefHighHp(float value)
     {
 
-            CharacterStat characterStat = GetComponent<CharacterStat>();
-           //Debug.Log("Gia tri edurance before: " + characterStat.Endurance);
-           // Debug.Log("Gia tri def before: " + characterStat.DEF);
+        CharacterStat characterStat = GetComponent<CharacterStat>();
+        //Debug.Log("Gia tri edurance before: " + characterStat.Endurance);
+        // Debug.Log("Gia tri def before: " + characterStat.DEF);
 
-            float defIncrease = characterStat.BaseEndurance * value;
-            characterStat.Endurance += defIncrease;
+        float defIncrease = characterStat.BaseEndurance * value;
+        characterStat.Endurance += defIncrease;
 
-            //Debug.Log("Gia tri defIncrease riu: "  + characterStat.DEF);
-            //Debug.Log("Gia tri edurance riu: "  + characterStat.Endurance);
+        //Debug.Log("Gia tri defIncrease riu: "  + characterStat.DEF);
+        //Debug.Log("Gia tri edurance riu: "  + characterStat.Endurance);
         //Debug.Log("current " + characterStat.Endurance);      
     }
 
@@ -609,4 +619,3 @@ public class PlayerController : MonoBehaviour
         characterStat.IncreaseShield(shield);
     }
 }
-    
