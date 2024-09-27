@@ -596,5 +596,17 @@ public class PlayerController : MonoBehaviour
             //Debug.Log("Gia tri edurance riu: "  + characterStat.Endurance);
         //Debug.Log("current " + characterStat.Endurance);      
     }
+
+    internal void IncreaseShield(float value)
+    {
+        float shield = value * damageable.MaxHealth;
+        characterStat = GetComponent<CharacterStat>();
+        if (characterStat == null)
+        {
+            Debug.LogError("CharacterStat component not found!");
+            return;
+        }
+        characterStat.IncreaseShield(shield);
+    }
 }
     
