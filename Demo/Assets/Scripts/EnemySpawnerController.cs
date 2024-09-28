@@ -12,9 +12,9 @@ public class EnemySpawnerController : MonoBehaviour
     public GameObject summonEffectPrefab; // Summon effect prefab
     public float summonEffectDuration = 1f; // Duration of the summon effect animation
     public int totalWaves = 3; // Total number of waves (can be modified)
-    public GameObject gate; // Gate GameObject to disable
+    public GameObject portal; // Portal GameObject to activate when waves are complete
 
-    private int waveNumber = 0;// Current wave number
+    private int waveNumber = 0; // Current wave number
     private int activeEnemies = 0; // Active enemy count
     private Coroutine spawnCoroutine; // Coroutine reference for spawning waves
     private BuffSelectionUI buffSelectionUI; // Reference to the buff selection UI
@@ -40,20 +40,16 @@ public class EnemySpawnerController : MonoBehaviour
 
     void Start()
     {
-        gate = GameObject.FindWithTag("Gate"); // Find the gate object with the tag "Gate"
-        CloseGate(); // Ensure gate starts closed
+        // Disable the portal at the start of the game
+        if (portal != null)
+        {
+            portal.SetActive(false); // Deactivate the portal initially
+        }
+
         buffSelectionUI = FindObjectOfType<BuffSelectionUI>(); // Find the BuffSelectionUI
         if (buffSelectionUI == null)
         {
             Debug.LogError("BuffSelectionUI not found!");
-        }
-    }
-
-    void CloseGate()
-    {
-        if (gate != null)
-        {
-            gate.SetActive(true); // Ensure gate starts closed
         }
     }
 
@@ -87,14 +83,13 @@ public class EnemySpawnerController : MonoBehaviour
             yield return new WaitForSeconds(timeBetweenWaves);
         }
 
-        // If all waves are complete and all enemies are defeated, open the gate and show buff selection
+        // If all waves are complete and all enemies are defeated, activate the portal and show buff selection
         if (waveNumber >= totalWaves && activeEnemies == 0)
         {
-            DisableGate();
+            ActivatePortal();
             ShowBuffSelection();
         }
     }
-
 
     IEnumerator SpawnEnemyWithEffect(Transform spawnPoint)
     {
@@ -146,14 +141,13 @@ public class EnemySpawnerController : MonoBehaviour
     public void HandleEnemyDeath()
     {
         activeEnemies--;
-
     }
 
-    void DisableGate()
+    void ActivatePortal()
     {
-        if (gate != null)
+        if (portal != null)
         {
-            gate.SetActive(false); // Disable the gate
+            portal.SetActive(true); // Enable the portal when waves are complete
         }
     }
 

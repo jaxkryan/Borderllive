@@ -6,9 +6,11 @@ public abstract class BaseXPTranslation : ScriptableObject
     public int CurrentLevel { get; protected set; } = 1;
     public int XPRequiredForNextLevel => GetXPRequiredForNextLevel();
     public bool AtLevelCap { get; protected set; } = false;
-
     public abstract bool AddXP(int amount);
     public abstract void SetLevel(int level);
 
     protected abstract int GetXPRequiredForNextLevel();
+    public abstract int GetNextLevelXPRequirement();
+    public abstract int GetXPRequiredForCurrentLevel();
+
 }

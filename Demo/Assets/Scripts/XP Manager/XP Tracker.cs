@@ -1,12 +1,12 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class XPTracker : MonoBehaviour
 {
-    [SerializeField] TextMeshProUGUI CurrentLevelText;
-    [SerializeField] TextMeshProUGUI CurrentXPText;
-    [SerializeField] TextMeshProUGUI XPToNextLevelText;
+    [SerializeField] TextMeshProUGUI CurrentLevelText;  // Text for displaying current level
+    [SerializeField] Slider XPSlider;  // Slider for tracking current XP and XP required
 
     private BaseXPTranslation XPTranslationType;
 
@@ -22,9 +22,7 @@ public class XPTracker : MonoBehaviour
         // Check if XPTranslationType is assigned
         if (XPTranslationType == null)
         {
-            //Debug.Log("No XP Translation found. Creating new XP Translation Table");
-
-            // Create a new instance of XPTranslation_Table
+            // Create a new instance of XPTranslation_Table if none is assigned
             XPTranslation = ScriptableObject.CreateInstance<XPTranslation_Table>();
         }
         else
@@ -62,7 +60,6 @@ public class XPTracker : MonoBehaviour
     void Start()
     {
         RefreshDisplays();
-
         OnLevelChanged.Invoke(0, XPTranslation.CurrentLevel);
     }
 
@@ -74,11 +71,20 @@ public class XPTracker : MonoBehaviour
 
     void RefreshDisplays()
     {
-        CurrentLevelText.text = $"Current Level: {XPTranslation.CurrentLevel}";
-        CurrentXPText.text = $"Current XP: {XPTranslation.CurrentXP}";
+        // Update current level text
+        CurrentLevelText.text = $"Level: {XPTranslation.CurrentLevel}";
+        
+        // Update the slider values based on XP
         if (!XPTranslation.AtLevelCap)
-            XPToNextLevelText.text = $"XP To Next Level: {XPTranslation.XPRequiredForNextLevel}";
+        {
+           
+            XPSlider.value = XPTranslation.CurrentXP- XPTranslation.GetXPRequiredForCurrentLevel();  // Set max value to XP required for the next level
+            XPSlider.maxValue = XPTranslation.GetNextLevelXPRequirement()- XPTranslation.GetXPRequiredForCurrentLevel();  // Set slider's current value to current XP
+        }
         else
-            XPToNextLevelText.text = $"XP To Next Level: At Max";
+        {
+            XPSlider.maxValue = 1;
+            XPSlider.value = 1;
+        }
     }
 }
