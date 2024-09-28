@@ -740,7 +740,7 @@ GameObject:
   - component: {fileID: 254141189097035125}
   - component: {fileID: 1666812160580748267}
   m_Layer: 5
-  m_Name: Shop
+  m_Name: Exchanger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -6,10 +6,12 @@ public class UIController : MonoBehaviour
     public void StartBtn_Click()
     {
         SceneManager.LoadScene("StoryScene");
+        LevelController.ResetStaticData();
     }
 
     public void RestartBtn_Click()
     {
+        LevelController.ResetStaticData();
         SceneManager.LoadScene("Room_Start");
     }
 
