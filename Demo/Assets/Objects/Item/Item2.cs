@@ -30,7 +30,7 @@ public class Item2 : Item
         // Calculate the damage based on the number of enemies
         float damageMultiplier = allEnemies.Length == 1 ? 0.4f : 0.2f; // 40% if one enemy, 20% otherwise
         float baseDamage = numberOfSoul * damageMultiplier;
-
+        Debug.Log(baseDamage);
         // Apply damage to each enemy
         foreach (GameObject enemy in allEnemies)
         {
