@@ -77,12 +77,14 @@ MonoBehaviour:
   - BorderDeath_Battle_2
   - BorderDeath_Battle_3
   - BorderDeath_Battle_4
+  - BorderDeath_Battle_5
   listEvent:
   - Room_2
   - Room_4
   - Room_6
   - Room_Event
   - BorderDeath_Event_1
+  - BorderDeath_Event_2
 --- !u!212 &6161422682657837486
 SpriteRenderer:
   m_ObjectHideFlags: 0

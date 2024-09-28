@@ -66,6 +66,9 @@ EditorBuildSettings:
     path: Assets/Scenes/BorderDeath_Event_1.unity
     guid: cc345ab81daf41f4e85ad852c1c38297
   - enabled: 1
-    path: Assets/Scenes/BorderDeath_Boss_1.unity
+    path: Assets/Scenes/BorderDeath_Battle_5.unity
     guid: 75a6ce5b0b8de664a8eb01435ba99be5
+  - enabled: 1
+    path: Assets/Scenes/BorderDeath_Event_2.unity
+    guid: aeb9bb7407b35b943b8b9fa0a1da498c
   m_configObjects: {}

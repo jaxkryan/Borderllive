@@ -33,6 +33,7 @@ public class DamageZone : MonoBehaviour
         else
         {
             Damageable damageable = other.GetComponent<Damageable>();
+            EnemyStat enemyStat = other.GetComponent<EnemyStat>();
             if (damageable != null && sendPlayerToOriginalLocation)
             {
                 // Calculate knockback direction
@@ -42,7 +43,7 @@ public class DamageZone : MonoBehaviour
                 Vector2 knockback = knockbackDirection * knockbackForce;
 
                 // Use Hit method with damage amount and calculated knockback
-                damageable.Hit(1000, knockback);
+                damageable.Hit( (int)(enemyStat.MaxHealth +  enemyStat.DEF), knockback);
 
 
             }
