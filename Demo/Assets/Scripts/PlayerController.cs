@@ -261,7 +261,6 @@ public class PlayerController : MonoBehaviour
     {
         if (context.started)
         {
-            Debug.Log("Q press");
             Item currentItem = ownedActiveItem.item1;
             GameObject Item1 = GameObject.Find("Item1");
                         SpellCooldown sp = Item1.GetComponent<SpellCooldown>();
@@ -286,7 +285,23 @@ public class PlayerController : MonoBehaviour
     {
         if (context.started)
         {
-            animator.SetTrigger(item2Trigger);
+            Item currentItem = ownedActiveItem.item2;
+            GameObject Item2 = GameObject.Find("Item2");
+                        SpellCooldown sp = Item2.GetComponent<SpellCooldown>();
+            if(sp!= null){
+                sp.cooldownTime = currentItem.cd;
+                sp.UseSpell();
+            }
+            // Check if the current item is not null
+            if (currentItem != null)
+            {
+                // Activate the item's effect
+                currentItem.Activate();
+            
+                // Set the animator trigger
+                animator.SetTrigger(item1Trigger);
+            }
+
         }
     }
     private float stunDuration = 2f;
