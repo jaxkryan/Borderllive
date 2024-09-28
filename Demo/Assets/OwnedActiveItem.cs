@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class OwnedActiveItem : MonoBehaviour
 {
@@ -22,6 +23,10 @@ public class OwnedActiveItem : MonoBehaviour
 
     private bool isSelectingItem = false;
     private int selectedItemIndex = 0;
+
+    // References to the Image components of HUD items
+    public Image item1Image;
+    public Image item2Image;
 
     private void Update()
     {
@@ -50,6 +55,9 @@ public class OwnedActiveItem : MonoBehaviour
                 {
                     currentItem = item2;
                 }
+
+                // Update the UI images
+                UpdateUI();
 
                 // Exit the selection mode
                 isSelectingItem = false;
@@ -87,5 +95,25 @@ public class OwnedActiveItem : MonoBehaviour
 
         // Update the current item to the newly added item
         currentItem = newItem;
+
+        // Update the UI images
+        UpdateUI();
+    }
+
+    private void Start(){
+        UpdateUI();
+    }
+    // Method to update the UI images
+    private void UpdateUI()
+    {
+        if (item1 != null && item1Image != null)
+        {
+            item1Image.sprite = item1.image; // Assuming item1 has a sprite property called itemSprite
+        }
+
+        if (item2 != null && item2Image != null)
+        {
+            item2Image.sprite = item2.image; // Assuming item2 has a sprite property called itemSprite
+        }
     }
 }

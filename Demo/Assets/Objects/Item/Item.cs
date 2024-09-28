@@ -1,16 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
-using Microsoft.Unity.VisualStudio.Editor;
 using UnityEngine;
+using UnityEngine.UI;
 
 public abstract class Item : ScriptableObject
 {
     // Item properties
     public string itemName;
     public string itemDescription;
-    public Image image;
+    public Sprite image;
     public enum ItemType { Active, Passive }
     public ItemType itemType;
+
+    public float cd;
     // public bool autoActivateOnPickup = true;
      public abstract void Activate();
 

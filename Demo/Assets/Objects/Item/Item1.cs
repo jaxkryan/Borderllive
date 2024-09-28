@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [CreateAssetMenu(fileName = "Item1", menuName = "Item/Item1")]
 
@@ -10,16 +11,16 @@ public class Item1 : Item
 
     private void OnEnable()
     {
-        // this.image = "";
         this.itemName = "BerserkFillUp";
         this.itemDescription = "Fill up your Berserk Bar immediately";
         this.itemType = ItemType.Active;
+        this.cd = 30f;
     }
 
     public override void Activate()
     {
-        Debug.Log("restore");
         playerController= FindAnyObjectByType<PlayerController>();
+        
         BerserkGauge bg = playerController.GetComponent<BerserkGauge>();
         bg.IncreaseProgress(bg.maxValue);
     }
