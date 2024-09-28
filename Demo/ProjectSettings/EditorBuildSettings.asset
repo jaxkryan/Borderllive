@@ -47,4 +47,25 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Room_6.unity
     guid: 9faf4e1cfea961648a47980da86d271f
+  - enabled: 1
+    path: Assets/Scenes/Room_Event.unity
+    guid: 226d7ccc0ea5f624185c131ca5758dcf
+  - enabled: 1
+    path: Assets/Scenes/BorderDeath_Battle_1.unity
+    guid: 114b838efe435b546a550391e192393b
+  - enabled: 1
+    path: Assets/Scenes/BorderDeath_Battle_2.unity
+    guid: d06aa8d19d6794a45973c55bf25e9ef1
+  - enabled: 1
+    path: Assets/Scenes/BorderDeath_Battle_3.unity
+    guid: 153734eb4a709bb43904ac4f0093d179
+  - enabled: 1
+    path: Assets/Scenes/BorderDeath_Battle_4.unity
+    guid: 9957510375b15d140957875346ef80c5
+  - enabled: 1
+    path: Assets/Scenes/BorderDeath_Event_1.unity
+    guid: cc345ab81daf41f4e85ad852c1c38297
+  - enabled: 1
+    path: Assets/Scenes/BorderDeath_Boss_1.unity
+    guid: 75a6ce5b0b8de664a8eb01435ba99be5
   m_configObjects: {}

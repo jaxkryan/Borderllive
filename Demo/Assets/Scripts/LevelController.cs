@@ -53,6 +53,7 @@ public class LevelController : MonoBehaviour
 
     private void OnApplicationQuit()
     {
+        LevelController.ResetStaticData();
         ClearPlayerData();
         Debug.Log("Player data cleared on application quit.");
     }
@@ -116,4 +117,16 @@ public class LevelController : MonoBehaviour
     {
         LoadSelectedScene(false);
     }
+
+    public static void ResetStaticData()
+    {
+        tempAction = null;
+        tempEvent = null;
+        previousScene = null;
+        selectedActionRoom = null;
+        selectedEventRoom = null;
+        roomsVisited = 0;
+        bossCounter = 0;
+    }
+
 }
