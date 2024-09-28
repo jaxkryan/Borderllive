@@ -11,6 +11,7 @@ using UnityEngine.SceneManagement;
 [RequireComponent(typeof(Rigidbody2D), typeof(TouchingDirection), typeof(Damageable))]
 public class PlayerController : MonoBehaviour
 {
+    OwnedActiveItem ownedActiveItem;
     private CharacterStat characterStat;
     Rigidbody2D rb;
     Animator animator;
@@ -122,6 +123,7 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
+        ownedActiveItem = GetComponent<OwnedActiveItem>();
         berserkGauge = GetComponent<BerserkGauge>();
         rb = GetComponent<Rigidbody2D>();
         ownedPowerups = GetComponent<OwnedPowerups>();
@@ -253,12 +255,25 @@ public class PlayerController : MonoBehaviour
             animator.SetTrigger(skill3Trigger);
         }
     }
+    //trigger with q
     public string item1Trigger;
     public void OnItem1(InputAction.CallbackContext context)
     {
         if (context.started)
         {
-            animator.SetTrigger(item1Trigger);
+            Debug.Log("Q press");
+            Item currentItem = ownedActiveItem.item1;
+
+            // Check if the current item is not null
+            if (currentItem != null)
+            {
+                // Activate the item's effect
+                currentItem.Activate();
+
+                // Set the animator trigger
+                animator.SetTrigger(item1Trigger);
+            }
+
         }
     }
     public string item2Trigger;
