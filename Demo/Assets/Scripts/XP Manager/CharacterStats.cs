@@ -161,9 +161,9 @@ public class CharacterStat : MonoBehaviour
 
         // Update the UI for stamina, health, strength, damage, defense, and speed
         // StaminaText.text = $"Stamina: {Stamina}";
-        DamageText.text = $"Damage: {Damage:F1}"; // Display 1 decimal for clarity
+       // DamageText.text = $"Damage: {Damage:F1}"; // Display 1 decimal for clarity
         // HealthText.text = $"Max Health: {MaxHealth}";
-        DefText.text = $"DEF: {DEF:F1}"; // Display 1 decimal for clarity
+        //DefText.text = $"DEF: {DEF:F1}"; // Display 1 decimal for clarity
         // SpeedText.text = $"Speed: {Speed}"; // Update Speed value on the UI
     }
 
@@ -185,8 +185,8 @@ public class CharacterStat : MonoBehaviour
     private void UpdateStats()
     {
         // This will refresh damage and defense calculations
-        DamageText.text = $"Damage: {Damage:F1}"; // Display 1 decimal for clarity
-        DefText.text = $"DEF: {DEF:F1}"; // Display 1 decimal for clarity
+        //DamageText.text = $"Damage: {Damage:F1}"; // Display 1 decimal for clarity
+        //DefText.text = $"DEF: {DEF:F1}"; // Display 1 decimal for clarity
         // Update other UI elements as needed
     }
 

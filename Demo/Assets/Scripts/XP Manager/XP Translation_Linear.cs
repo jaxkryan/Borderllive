@@ -44,4 +44,27 @@ public class XPTranslation_Linear : BaseXPTranslation
 
         return XPForLevel(CurrentLevel + 1) - CurrentXP;
     }
+
+
+    public override int GetNextLevelXPRequirement()
+    {
+        if (AtLevelCap)
+            return int.MaxValue;
+
+        return XPForLevel(CurrentLevel + 1);
+        throw new System.ArgumentOutOfRangeException($"Could not find any entry for level {CurrentLevel}");
+    }
+
+
+    public override int GetXPRequiredForCurrentLevel()
+    {
+
+        if (AtLevelCap)
+            return int.MaxValue;
+
+        return XPForLevel(CurrentLevel + 1);
+        throw new System.ArgumentOutOfRangeException($"Could not find any entry for level {CurrentLevel}");
+
+    }
+
 }

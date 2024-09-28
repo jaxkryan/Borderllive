@@ -73,12 +73,13 @@ public class XPTracker : MonoBehaviour
     {
         // Update current level text
         CurrentLevelText.text = $"Level: {XPTranslation.CurrentLevel}";
-
+        
         // Update the slider values based on XP
         if (!XPTranslation.AtLevelCap)
         {
-            XPSlider.maxValue = XPTranslation.XPRequiredForNextLevel;  // Set max value to XP required for the next level
-            XPSlider.value = XPTranslation.CurrentXP;  // Set slider's current value to current XP
+           
+            XPSlider.value = XPTranslation.CurrentXP- XPTranslation.GetXPRequiredForCurrentLevel();  // Set max value to XP required for the next level
+            XPSlider.maxValue = XPTranslation.GetNextLevelXPRequirement()- XPTranslation.GetXPRequiredForCurrentLevel();  // Set slider's current value to current XP
         }
         else
         {

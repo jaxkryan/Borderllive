@@ -116,4 +116,38 @@ public class XPTranslation_Table : BaseXPTranslation
 
         throw new System.ArgumentOutOfRangeException($"Could not find any entry for level {CurrentLevel}");
     }
+
+    public override int GetNextLevelXPRequirement()
+    {
+        if (AtLevelCap)
+            return int.MaxValue;
+
+        for (int index = 0; index < Table.Count; ++index)
+        {
+            var entry = Table[index];
+
+            if (entry.Level == CurrentLevel)
+                return Table[index + 1].XPRequired;
+        }
+
+        throw new System.ArgumentOutOfRangeException($"Could not find any entry for level {CurrentLevel}");
+    }
+
+    public override int GetXPRequiredForCurrentLevel()
+    {
+        if (AtLevelCap)
+            return int.MaxValue;
+
+        for (int index = 0; index < Table.Count; ++index)
+        {
+            var entry = Table[index];
+            if (entry.Level == CurrentLevel)
+                return Table[index].XPRequired;
+        }
+
+        throw new System.ArgumentOutOfRangeException($"Could not find any entry for level {CurrentLevel}");
+    }
+
+
+  
 }

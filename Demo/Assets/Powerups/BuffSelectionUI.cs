@@ -62,7 +62,7 @@ public class BuffSelectionUI : MonoBehaviour
     }
 
     //vai loz xpAdded bi fix cung
-    private static int xpAdded = 230;
+    private static int xpAdded = 0;
     public void SelectBuff(int index)
     {  // Resume the game by setting time scale back to 1
         Time.timeScale = 1;
@@ -73,9 +73,9 @@ public class BuffSelectionUI : MonoBehaviour
         buffSelectionPanel.SetActive(false); // Hide the panel after selection
 
         EnemyXPTracker enemyXPTracker = FindAnyObjectByType<EnemyXPTracker>();
-        enemyXPTracker.AddXP(xpAdded);
+        enemyXPTracker.AddXP(selectedBuff.Weight * 20 + xpAdded);
         //Debug.Log(("XP add to enemy" + xpAdded));
-        xpAdded += 40;
+        xpAdded += 20;
 
     }
 }
