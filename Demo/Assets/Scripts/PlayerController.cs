@@ -263,21 +263,23 @@ public class PlayerController : MonoBehaviour
         {
             Item currentItem = ownedActiveItem.item1;
             GameObject Item1 = GameObject.Find("Item1");
-                        SpellCooldown sp = Item1.GetComponent<SpellCooldown>();
-            if(sp!= null){
-                sp.cooldownTime = currentItem.cd;
-                sp.UseSpell();
-            }
-            // Check if the current item is not null
-            if (currentItem != null)
+            SpellCooldown sp = Item1.GetComponent<SpellCooldown>();
+            sp.cooldownTime = currentItem.cd;
+            if (sp != null)
             {
-                // Activate the item's effect
-                currentItem.Activate();
-            
-                // Set the animator trigger
-                animator.SetTrigger(item1Trigger);
-            }
+                if (sp.UseSpell())
+                {
+                    // Check if the current item is not null
+                    if (currentItem != null)
+                    {
+                        // Activate the item's effect
+                        currentItem.Activate();
 
+                        // Set the animator trigger
+                        animator.SetTrigger(item1Trigger);
+                    }
+                }
+            }
         }
     }
     public string item2Trigger;
@@ -287,8 +289,9 @@ public class PlayerController : MonoBehaviour
         {
             Item currentItem = ownedActiveItem.item2;
             GameObject Item2 = GameObject.Find("Item2");
-                        SpellCooldown sp = Item2.GetComponent<SpellCooldown>();
-            if(sp!= null){
+            SpellCooldown sp = Item2.GetComponent<SpellCooldown>();
+            if (sp != null)
+            {
                 sp.cooldownTime = currentItem.cd;
                 sp.UseSpell();
             }
@@ -297,7 +300,7 @@ public class PlayerController : MonoBehaviour
             {
                 // Activate the item's effect
                 currentItem.Activate();
-            
+
                 // Set the animator trigger
                 animator.SetTrigger(item1Trigger);
             }

@@ -41,7 +41,6 @@ public class Item2 : Item
             {
                 // Calculate the damage ensuring it doesn't exceed 40% of the enemy's max health
                 float damageToDeal = Mathf.Min((int)baseDamage, (int)(0.4f * enemyDamageable.MaxHealth)) + enemyStat.DEF;
-
                 // Apply the calculated damage
                 enemyDamageable.Hit((int)damageToDeal, Vector2.zero); // Assuming no knockback, pass (0,0) for the knockback vector
                 Debug.Log($"Dealt {damageToDeal} damage to {enemy.name}");
