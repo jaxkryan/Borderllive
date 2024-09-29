@@ -262,6 +262,7 @@ public class PlayerController : MonoBehaviour
         if (context.started)
         {
             Item currentItem = ownedActiveItem.item1;
+            if (currentItem == null) return;
             GameObject Item1 = GameObject.Find("Item1");
             SpellCooldown sp = Item1.GetComponent<SpellCooldown>();
             sp.cooldownTime = currentItem.cd;
@@ -288,6 +289,7 @@ public class PlayerController : MonoBehaviour
         if (context.started)
         {
             Item currentItem = ownedActiveItem.item2;
+             if (currentItem == null) return;
             GameObject Item2 = GameObject.Find("Item2");
             SpellCooldown sp = Item2.GetComponent<SpellCooldown>();
             if (sp != null)
