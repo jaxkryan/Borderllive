@@ -292,19 +292,22 @@ public class PlayerController : MonoBehaviour
              if (currentItem == null) return;
             GameObject Item2 = GameObject.Find("Item2");
             SpellCooldown sp = Item2.GetComponent<SpellCooldown>();
+            sp.cooldownTime = currentItem.cd;
             if (sp != null)
             {
-                sp.cooldownTime = currentItem.cd;
-                sp.UseSpell();
-            }
-            // Check if the current item is not null
-            if (currentItem != null)
-            {
-                // Activate the item's effect
-                currentItem.Activate();
+                if (sp.UseSpell())
+                {
+                    // Check if the current item is not null
+                    if (currentItem != null)
+                    {
+                        // Activate the item's effect
+                        currentItem.Activate();
 
-                // Set the animator trigger
-                animator.SetTrigger(item1Trigger);
+
+                        // Set the animator trigger
+                        animator.SetTrigger(item1Trigger);
+                    }
+                }
             }
 
         }
