@@ -41,6 +41,6 @@ public class ShopItemUI : MonoBehaviour
             Debug.Log("info: " + currentItem.itemDescription);
         }
         // Tell the ShopManager to handle the purchase
-        shopManager.PurchaseItem(currentItem);
+         shopManager.PurchaseItem(currentItem, this);
     }
 }
