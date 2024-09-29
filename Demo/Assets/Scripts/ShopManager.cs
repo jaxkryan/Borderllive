@@ -46,7 +46,7 @@ public class ShopManager : MonoBehaviour
 
 
     // Handle item purchase
-    public void PurchaseItem(Item item)
+    public void PurchaseItem(Item item, ShopItemUI shopItemUI)
     {
         // Check if the player has enough currency to buy the item
         if (currencyManager.SpendCurrency(item.cost))
@@ -54,6 +54,9 @@ public class ShopManager : MonoBehaviour
             // Add the item to OwnedActiveItem
             ownedActiveItem.AddItem(item);
             Debug.Log("Purchased: " + item.itemName);
+
+            // Hide the item after purchase
+            shopItemUI.gameObject.SetActive(false); // OR Destroy(shopItemUI.gameObject);
         }
         else
         {
