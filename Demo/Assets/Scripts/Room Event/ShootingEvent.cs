@@ -164,8 +164,8 @@ public class ShootingEvent : MonoBehaviour
     {
         if (portal != null)
         {
-            Reward();
             portal.SetActive(true);  // Activate the portal
+            Reward();
             Debug.Log("Portal has been activated!");
         }
     }

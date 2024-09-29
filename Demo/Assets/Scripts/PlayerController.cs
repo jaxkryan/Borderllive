@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour
     Animator animator;
     public float walkSpeed = 5f;
     public float runSpeed = 10f;
-    public float jumpImpulse = 10f;
+    public float jumpImpulse = 17.2f;
     public float airWalkSpeed = 3f;
     TouchingDirection touchingDirection;
     OwnedPowerups ownedPowerups;
@@ -156,7 +156,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if (isDashing) { return; }
+        //if (isDashing) { return; }
     }
 
     private void FixedUpdate()
@@ -206,9 +206,12 @@ public class PlayerController : MonoBehaviour
         if (context.started)
         {
             IsRunning = true;
+
+            jumpImpulse += 0.5f;
         }
         else if (context.canceled)
         {
+            jumpImpulse -= 0.5f;
             IsRunning = false;
         }
     }
@@ -359,7 +362,7 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            berserkGauge.DecreaseProgress(10f);
+            berserkGauge.DecreaseProgress(8f);
         }
         canDash = false;
         isDashing = true;

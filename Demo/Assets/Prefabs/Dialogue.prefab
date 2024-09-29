@@ -249,8 +249,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 620, y: -33.974}
-  m_SizeDelta: {x: -1264.9723, y: -107.30411}
+  m_AnchoredPosition: {x: 619.24, y: -33.974}
+  m_SizeDelta: {x: -1238.5, y: -107.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6126571757672447363
 CanvasRenderer:
@@ -281,7 +281,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: aab5e0a01ee897043a3dd8d134aa79ba, type: 3}
+    m_Font: {fileID: 12800000, guid: e3265ab4bf004d28a9537516768c1c75, type: 3}
     m_FontSize: 35
     m_FontStyle: 0
     m_BestFit: 0
@@ -293,7 +293,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Press E
+  m_Text: Click
 --- !u!1 &1293550563050616702
 GameObject:
   m_ObjectHideFlags: 0
@@ -1324,6 +1324,10 @@ PrefabInstance:
     - target: {fileID: 7861670021808992684, guid: 7f0ac06cf3ae8d8408b663069ea6d15c, type: 3}
       propertyPath: m_FontData.m_FontSize
       value: 66
+      objectReference: {fileID: 0}
+    - target: {fileID: 7861670021808992684, guid: 7f0ac06cf3ae8d8408b663069ea6d15c, type: 3}
+      propertyPath: m_FontData.m_FontStyle
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

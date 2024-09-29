@@ -7,7 +7,7 @@ public class BuffSelectionUI : MonoBehaviour
     public Button[] buffButtons;
     private Powerups[] currentBuffChoices;
 
-    private BuffPool buffPool;
+    [SerializeField] BuffPool buffPool;
     private OwnedPowerups ownedPowerups;
 
     void Start()
@@ -16,9 +16,7 @@ public class BuffSelectionUI : MonoBehaviour
         buffSelectionPanel.SetActive(false); // Hide the panel initially
     }
     private void Awake()
-    {
-
-        buffPool = FindObjectOfType<BuffPool>();
+    { 
         ownedPowerups = FindObjectOfType<OwnedPowerups>();
     }
 
@@ -57,6 +55,10 @@ public class BuffSelectionUI : MonoBehaviour
                     buffButtons[i].gameObject.SetActive(false); // Hide unused buttons
                 }
             }
+        } else
+        {
+            CurrencyManager currency = FindAnyObjectByType<CurrencyManager>();
+            currency.AddCurrency(45);
         }
 
     }

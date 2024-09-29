@@ -32,12 +32,7 @@ public class ShopNPC : MonoBehaviour
 
     void Update()
     {
-       
 
-        if (Input.GetKeyDown(KeyCode.X) && shopPanel.activeInHierarchy)
-        {
-            CloseShop();
-        }
     }
 
     // Method to open the shop menu
@@ -52,7 +47,7 @@ public class ShopNPC : MonoBehaviour
     }
 
     // Optional: Method to close the shop menu
-    private void CloseShop()
+    public void CloseShop()
     {
         if (shopPanel != null)
         {

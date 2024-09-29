@@ -15,11 +15,8 @@ EditorBuildSettings:
     path: Assets/Scenes/GameplayScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/Room_4.unity
-    guid: 1743f6bafb7f25a498379d07b614d9a1
-  - enabled: 1
     path: Assets/Scenes/Room_Start.unity
-    guid: af36673d0d3b7e14fa1c7a55f87a24a1
+    guid: 5c93c9c05b423f944bba5319f8c77479
   - enabled: 1
     path: Assets/Scenes/Room_1.unity
     guid: 441463f9172845644bb9e2caf447737e
@@ -30,8 +27,14 @@ EditorBuildSettings:
     path: Assets/Scenes/Room_3.unity
     guid: a171c0fb5f8aa1a4cad5ccdf22f698aa
   - enabled: 1
-    path: Assets/Scenes/GameOver_Screen.unity
-    guid: 5ac5058914b65db4bb97809dfb78bac3
+    path: Assets/Scenes/Room_4.unity
+    guid: 1743f6bafb7f25a498379d07b614d9a1
+  - enabled: 1
+    path: Assets/Scenes/Room_5.unity
+    guid: be8fe1037fc8d414a95d61aa071c6652
+  - enabled: 1
+    path: Assets/Scenes/Room_6.unity
+    guid: 9faf4e1cfea961648a47980da86d271f
   - enabled: 1
     path: Assets/Scenes/Option_Screen.unity
     guid: 386f63cac2eff5e44a76e29ec6b1ee96
@@ -42,14 +45,8 @@ EditorBuildSettings:
     path: Assets/Scenes/Room_Boss2.unity
     guid: c870c3da2c3e4dc42b85eaec861e1dab
   - enabled: 1
-    path: Assets/Scenes/Room_5.unity
-    guid: be8fe1037fc8d414a95d61aa071c6652
-  - enabled: 1
-    path: Assets/Scenes/Room_6.unity
-    guid: 9faf4e1cfea961648a47980da86d271f
-  - enabled: 1
     path: Assets/Scenes/Room_Event.unity
-    guid: 226d7ccc0ea5f624185c131ca5758dcf
+    guid: 3c958e58572075f46b4cebe75cfe4cad
   - enabled: 1
     path: Assets/Scenes/BorderDeath_Battle_1.unity
     guid: 114b838efe435b546a550391e192393b
@@ -63,12 +60,36 @@ EditorBuildSettings:
     path: Assets/Scenes/BorderDeath_Battle_4.unity
     guid: 9957510375b15d140957875346ef80c5
   - enabled: 1
-    path: Assets/Scenes/BorderDeath_Event_1.unity
-    guid: cc345ab81daf41f4e85ad852c1c38297
-  - enabled: 1
     path: Assets/Scenes/BorderDeath_Battle_5.unity
     guid: 75a6ce5b0b8de664a8eb01435ba99be5
   - enabled: 1
+    path: Assets/Scenes/BorderDeath_ElementalEvent_1.unity
+    guid: cc345ab81daf41f4e85ad852c1c38297
+  - enabled: 1
+    path: Assets/Scenes/BorderDeath_ElementalEvent_2.unity
+    guid: a29bde5d3b0f09946b25d56776181422
+  - enabled: 1
+    path: Assets/Scenes/BorderDeath_ElementalEvent_3.unity
+    guid: 298b0badc6a2abe46b3bbbc91349bd8c
+  - enabled: 1
+    path: Assets/Scenes/BorderDeath_ElementalEvent_4.unity
+    guid: c48333b1ef3767f43b4ae3b87240f8a3
+  - enabled: 1
+    path: Assets/Scenes/BorderDeath_ElementalEvent_5.unity
+    guid: 300bbdbdf8cd813478ad6c3107d45e6f
+  - enabled: 1
+    path: Assets/Scenes/BorderDeath_Event_1.unity
+    guid: 00229ff2bd96e7f43a1cfb27eb42cf88
+  - enabled: 1
     path: Assets/Scenes/BorderDeath_Event_2.unity
     guid: aeb9bb7407b35b943b8b9fa0a1da498c
+  - enabled: 1
+    path: Assets/Scenes/BorderDeath_Event_Shop.unity
+    guid: 4fd5900b49864f8458f00d5a9abf6f46
+  - enabled: 1
+    path: Assets/Scenes/BorderDeath_Fun_1.unity
+    guid: 603b6da70eae1974881558986f226420
+  - enabled: 1
+    path: Assets/Scenes/GameOver_Screen.unity
+    guid: 5ac5058914b65db4bb97809dfb78bac3
   m_configObjects: {}
