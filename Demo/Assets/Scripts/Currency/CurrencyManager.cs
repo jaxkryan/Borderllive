@@ -7,7 +7,6 @@ public class CurrencyManager : MonoBehaviour
     public int currentAmount; // Current money of the player
     public Text currencyText; // Reference to the UI Text element to display the money
 
-
     void Start()
     {
         currentAmount = startingAmount;

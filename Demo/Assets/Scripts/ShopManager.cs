@@ -1,68 +1,62 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
-using static UnityEditor.Progress;
 using TMPro;
-using System;
+using Unity.VisualScripting;
 
-// Shop script
 public class ShopManager : MonoBehaviour
 {
-    public int coins;
-    public TMP_Text coinUI;
-    public ShopItemSO[] shopItemsSO;
-    public GameObject[] shopPanelsGO;
-    public ShopTemplate[] shopPanels;
-    public Button[] myPurchaseBtns;
+    public List<Item> itemsForSale = new List<Item>();  // Items available in the shop
+    public GameObject shopPanelPrefab;  // Prefab to display each shop panel in the UI
+    public Transform shopContent;   // Parent object to hold the item buttons in the UI
+    public OwnedActiveItem ownedActiveItem;  // Reference to OwnedActiveItem script
+    public CurrencyManager currencyManager;  // Reference to the CurrencyManager script
 
-    void Start()
+    private PlayerController playerController;
+    private void Start()
     {
-        for (int i = 0; i < shopItemsSO.Length; i++)
-        {
-            shopPanelsGO[i].SetActive(true);
-        }
-        coinUI.text = "Coins : " + coins.ToString();
-        LoadPanels();
-        CheckPurchasable();
-    }
-    void Update()
-    {
+        DisplayItems();
+        playerController = FindObjectOfType<PlayerController>();
+        currencyManager = playerController.GetComponent<CurrencyManager>();
         
     }
-    public void AddCoins()
+
+    public void DisplayItems()
     {
-        coins += 100;
-        coinUI.text = "Coins : " + coins.ToString();
-        CheckPurchasable();
-    }
-    public void CheckPurchasable()
-    {
-        for (int i = 0; i < shopItemsSO.Length; i++)
+        foreach (Item item in itemsForSale)
         {
-            if(coins >= shopItemsSO[i].baseCost)
+            // Debug.Log("Displaying Items: " + itemsForSale.Count); 
+            // Instantiate a ShopPanel instead of shopItemPrefab
+            GameObject newShopPanel = Instantiate(shopPanelPrefab, shopContent);
+            ShopItemUI shopItemUI = newShopPanel.GetComponent<ShopItemUI>();
+
+            if (shopItemUI != null)
             {
-                myPurchaseBtns[i].interactable = true;
-            } else
+                shopItemUI.SetItem(item, this);
+                newShopPanel.SetActive(true);
+                // Debug.Log("Item added to shop: " + item.itemName);
+            }
+            else
             {
-                myPurchaseBtns[i].interactable = false;
+                Debug.LogError("ShopItemUI component missing on shop panel prefab!");
             }
         }
     }
-    public void PurchaseItem(int btnNo) {
-        if (coins >= shopItemsSO[btnNo].baseCost)
-        {
-            coins -= shopItemsSO[btnNo].baseCost;
-            coinUI.text = "Coins : " + coins.ToString();
-            CheckPurchasable();
-        }
-    }
-    public void LoadPanels()
+
+
+    // Handle item purchase
+    public void PurchaseItem(Item item)
     {
-        for (int i = 0; i < shopItemsSO.Length; i++)
+        // Check if the player has enough currency to buy the item
+        if (currencyManager.SpendCurrency(item.cost))
         {
-            shopPanels[i].titleTxt.text = shopItemsSO[i].title;
-            shopPanels[i].descriptionTxt.text = shopItemsSO[i].description;
-            shopPanels[i].costTxt.text = shopItemsSO[i].baseCost.ToString() + " coins";
+            // Add the item to OwnedActiveItem
+            ownedActiveItem.AddItem(item);
+            Debug.Log("Purchased: " + item.itemName);
+        }
+        else
+        {
+            Debug.Log("Not enough currency to buy: " + item.itemName);
         }
     }
 }

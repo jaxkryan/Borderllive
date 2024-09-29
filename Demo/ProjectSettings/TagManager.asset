@@ -19,6 +19,7 @@ TagManager:
   - Item1
   - Item2
   - Skill4
+  - Shop
   layers:
   - Default
   - TransparentFX
