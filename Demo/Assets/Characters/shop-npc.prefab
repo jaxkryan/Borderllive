@@ -185,7 +185,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d08e2aa6d5c329e42804081e758aa97b, type: 2}
   - {fileID: 11400000, guid: f77c2b4f75043734d83d918ed8e3fc6f, type: 2}
   - {fileID: 11400000, guid: e232ced9b15415041a77109e09658f58, type: 2}
-  shopItemPrefab: {fileID: 7964244533401895935, guid: eb22083a619b4de44a9004f85d94140b, type: 3}
+  shopPanelPrefab: {fileID: 0}
   shopContent: {fileID: 0}
   ownedActiveItem: {fileID: 0}
   currencyManager: {fileID: 0}
