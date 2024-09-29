@@ -15,6 +15,7 @@ public class Item3 : Item
         this.itemDescription = "Trade 5% hp for 10% shield. Can not use skill if under 20% hp.";
         this.itemType = ItemType.Active;
         this.cd = 20f;
+        this.cost = 80;
     }
 
     public override void Activate()

@@ -15,6 +15,7 @@ public class Item1 : Item
         this.itemDescription = "Fill up your Berserk Bar immediately";
         this.itemType = ItemType.Active;
         this.cd = 30f;
+        this.cost = 100;
     }
 
     public override void Activate()

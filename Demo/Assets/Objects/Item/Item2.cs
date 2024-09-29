@@ -17,6 +17,7 @@ public class Item2 : Item
         + "The damage can not exceed the enemy's 40% max health.";
         this.itemType = ItemType.Active;
         this.cd = 45f;
+        this.cost = 100;
     }
 
     public override void Activate()

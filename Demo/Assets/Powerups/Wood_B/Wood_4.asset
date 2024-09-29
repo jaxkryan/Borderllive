@@ -23,4 +23,4 @@ MonoBehaviour:
   duration: 0
   isActive: 0
   currentCooldown: 0
-  healingPercentage: 0.1
+  healingPercentage: 1

@@ -11,8 +11,9 @@ public abstract class Item : ScriptableObject
     public Sprite image;
     public enum ItemType { Active, Passive }
     public ItemType itemType;
-
     public float cd;
+
+    public int cost;
     // public bool autoActivateOnPickup = true;
      public abstract void Activate();
 
