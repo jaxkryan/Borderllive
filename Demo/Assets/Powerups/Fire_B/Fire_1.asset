@@ -23,3 +23,4 @@ MonoBehaviour:
   duration: 0
   isActive: 0
   currentCooldown: 0
+  description: If enemy's HP is under 50%, normal attack deal 15% more damage

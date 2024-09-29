@@ -23,3 +23,5 @@ MonoBehaviour:
   duration: 0
   isActive: 0
   currentCooldown: 0
+  description: When under 35% HP, heal yourself 5% HP each 15 second, cap at 20%
+    HP.

@@ -23,3 +23,5 @@ MonoBehaviour:
   duration: 0
   isActive: 0
   currentCooldown: 0
+  description: Defense increase by 10%
+  enduranceIncrease: 0.1

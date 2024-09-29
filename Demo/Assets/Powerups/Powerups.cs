@@ -8,7 +8,7 @@ public class Powerups : ScriptableObject
 
     public TriggerCondition triggerCondition;
     public Effect effect;
-
+    
     public int Weight;
     public enum TriggerCondition
     {
@@ -49,4 +49,6 @@ public class Powerups : ScriptableObject
     public int duration;
     public bool isActive;
     public float currentCooldown = 0f;
+
+    public string description;
 }

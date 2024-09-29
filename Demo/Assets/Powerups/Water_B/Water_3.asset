@@ -23,3 +23,4 @@ MonoBehaviour:
   duration: 0
   isActive: 0
   currentCooldown: 0
+  description: Berserk Gauge reduction when using skill decrease by 20%

@@ -23,3 +23,5 @@ MonoBehaviour:
   duration: 0
   isActive: 0
   currentCooldown: 0
+  description: HP increase by 15% max HP
+  staminaIncrease: 0.15
