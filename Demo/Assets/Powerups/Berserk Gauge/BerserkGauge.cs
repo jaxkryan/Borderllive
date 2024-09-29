@@ -31,6 +31,11 @@ public class BerserkGauge : MonoBehaviour
 
     void Update()
     {
+       
+    }
+
+    private void FixedUpdate()
+    {
         if (isBerserkActive)
         {
             // Calculate the adjusted decrease rate based on the current value
@@ -88,15 +93,15 @@ public class BerserkGauge : MonoBehaviour
 
         if (currentValue > 70) // Accelerating drop from 100 to 70
         {
-            decreaseRate = 0.30f; // Adjust this value for the speed you desire
+            decreaseRate = 0.35f; // Adjust this value for the speed you desire
         }
         else if (currentValue > 30) // Slowing down drop from 70 to 40
         {
-            decreaseRate = 0.20f; // Adjust this value for the speed you desire
+            decreaseRate = 0.25f; // Adjust this value for the speed you desire
         }
         else // Accelerating drop from 40 to 0
         {
-            decreaseRate = 0.28f; // Adjust this value for the speed you desire
+            decreaseRate = 0.4f; // Adjust this value for the speed you desire
         }
 
         return decreaseRate;

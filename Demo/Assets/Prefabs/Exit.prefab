@@ -85,6 +85,7 @@ MonoBehaviour:
   - Room_Event
   - BorderDeath_Event_1
   - BorderDeath_Event_2
+  - BorderDeath_Fun_1
 --- !u!212 &6161422682657837486
 SpriteRenderer:
   m_ObjectHideFlags: 0

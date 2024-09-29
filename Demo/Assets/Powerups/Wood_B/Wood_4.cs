@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class Wood_4 : Powerups
 {
-    public float healingPercentage = 0.001f;
+    public float healingPercentage = 0.01f;
     public Wood_4()
     {
         this.id = 12;

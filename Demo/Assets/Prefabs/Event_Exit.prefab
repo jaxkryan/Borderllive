@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3249979979400084108}
   - component: {fileID: 7883315449752564400}
+  - component: {fileID: 5413939906928868244}
   - component: {fileID: 3910235904279248648}
   - component: {fileID: 3041335645984857331}
   - component: {fileID: 7322447198414955352}
@@ -58,6 +59,21 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &5413939906928868244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1572316071755810737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ec4154059c5a5145bec9af558e5fd22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnLevelChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!212 &3910235904279248648
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -153,6 +169,7 @@ MonoBehaviour:
   - Room_Event
   - BorderDeath_Event_1
   - BorderDeath_Event_2
+  - BorderDeath_Fun_1
 --- !u!1 &4248268025276373150
 GameObject:
   m_ObjectHideFlags: 0
