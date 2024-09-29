@@ -23,4 +23,5 @@ MonoBehaviour:
   duration: 0
   isActive: 0
   currentCooldown: 0
+  description: In Berserk mode, heal 1% hp per attack
   healingPercentage: 1

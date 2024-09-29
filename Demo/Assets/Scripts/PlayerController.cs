@@ -11,6 +11,8 @@ using UnityEngine.SceneManagement;
 [RequireComponent(typeof(Rigidbody2D), typeof(TouchingDirection), typeof(Damageable))]
 public class PlayerController : MonoBehaviour
 {
+
+    public GameObject inventory;
     OwnedActiveItem ownedActiveItem;
     private CharacterStat characterStat;
     Rigidbody2D rb;
@@ -123,6 +125,7 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
+
         ownedActiveItem = GetComponent<OwnedActiveItem>();
         berserkGauge = GetComponent<BerserkGauge>();
         rb = GetComponent<Rigidbody2D>();
@@ -156,7 +159,15 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        //if (isDashing) { return; }
+        if (isDashing) { return; }
+        if (Input.GetKeyDown(KeyCode.Tab))
+    {
+        // Toggle the panel's active state
+        if (inventory != null)
+        {
+            inventory.SetActive(!inventory.activeSelf);
+        }
+    }
     }
 
     private void FixedUpdate()

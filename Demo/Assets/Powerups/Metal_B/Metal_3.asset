@@ -23,3 +23,4 @@ MonoBehaviour:
   duration: 0
   isActive: 0
   currentCooldown: 0
+  description: When HP is under 50%, receive 10% more defense
