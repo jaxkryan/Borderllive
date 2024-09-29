@@ -2687,10 +2687,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 201906828826464413, guid: 8d26a985fcf7e1a4a8de84102342f10c, type: 3}
-      propertyPath: projectilePrefab
-      value: 
-      objectReference: {fileID: 3067425572971819979, guid: 6b2e1ae4c93a59a4abbc86b03ed4dc12, type: 3}
     - target: {fileID: 2039085856820248502, guid: 8d26a985fcf7e1a4a8de84102342f10c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.93
@@ -2731,22 +2727,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2782073201385326740, guid: 8d26a985fcf7e1a4a8de84102342f10c, type: 3}
-      propertyPath: projectilePrefab
-      value: 
-      objectReference: {fileID: 3067425572971819979, guid: 6b2e1ae4c93a59a4abbc86b03ed4dc12, type: 3}
-    - target: {fileID: 4633548767511022065, guid: 8d26a985fcf7e1a4a8de84102342f10c, type: 3}
-      propertyPath: projectilePrefab
-      value: 
-      objectReference: {fileID: 3067425572971819979, guid: 6b2e1ae4c93a59a4abbc86b03ed4dc12, type: 3}
     - target: {fileID: 5167073246253350396, guid: 8d26a985fcf7e1a4a8de84102342f10c, type: 3}
       propertyPath: m_Name
       value: ShootingEvent
       objectReference: {fileID: 0}
-    - target: {fileID: 8949597709701001621, guid: 8d26a985fcf7e1a4a8de84102342f10c, type: 3}
-      propertyPath: projectilePrefab
-      value: 
-      objectReference: {fileID: 3067425572971819979, guid: 6b2e1ae4c93a59a4abbc86b03ed4dc12, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

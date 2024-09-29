@@ -7,10 +7,13 @@ public class CurrencyManager : MonoBehaviour
     public int currentAmount; // Current money of the player
     public Text currencyText; // Reference to the UI Text element to display the money
 
-    void Start()
+    private void Awake()
     {
         currentAmount = startingAmount;
         UpdateCurrencyText(); // Set initial money display
+    }
+    void Start()
+    {
     }
 
     // Add money
@@ -41,7 +44,7 @@ public class CurrencyManager : MonoBehaviour
     {
         if (currencyText != null)
         {
-            currencyText.text = "Soul: " + currentAmount.ToString();
+            currencyText.text = ": " + currentAmount.ToString();
         }
         else
         {

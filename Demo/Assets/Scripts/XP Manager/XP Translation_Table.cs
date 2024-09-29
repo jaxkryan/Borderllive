@@ -30,11 +30,11 @@ public class XPTranslation_Table : BaseXPTranslation
         // Level 1 to Level 4 with a fixed XP requirement of 200
         for (int level = 2; level <= 5; level++)
         {
-            Table.Add(new XPTranslationTableEntry { Level = level, XPRequired = 200 * (level-1)});
+            Table.Add(new XPTranslationTableEntry { Level = level, XPRequired = 250 * (level-1)});
         }
 
         // Variables for the calculation
-        int lastXPRequired = 800; // XP for Level 6
+        int lastXPRequired = 1000; // XP for Level 6
         int increaseAmount = 300;  // Initial increase amount for Level 6
 
         for (int level = 6; level <= 50; level++)
