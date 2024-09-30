@@ -16,7 +16,10 @@ public abstract class Item : ScriptableObject
     public int cost;
     // public bool autoActivateOnPickup = true;
      public abstract void Activate();
-
+    public string GetImageName()
+    {
+        return image != null ? image.name : null; // Get the sprite name
+    }
     // // Virtual method to implement item pickup behavior
     // public virtual void OnPickup(Damageable target)
     // {
