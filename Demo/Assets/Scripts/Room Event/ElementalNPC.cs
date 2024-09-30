@@ -11,9 +11,8 @@ public class ElementalNPC : MonoBehaviour
     public GameObject dialoguePanel;
     public Text dialogueText;
     private int index;
-    public GameObject gameCanvas;
+    private GameObject gameCanvas;
     public float wordSpeed;
-    public bool playerIsClose;
 
     // Dialogue lines
     public string[] dialogue;
@@ -65,7 +64,7 @@ public class ElementalNPC : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && playerIsClose && !isChoosing)
+        if (Input.GetMouseButtonDown(0) && !isChoosing)
         {
             if (dialogueText.text == GetCurrentDialogue()[index])
             {
@@ -138,20 +137,5 @@ public class ElementalNPC : MonoBehaviour
         return buffChosen ? buffChosenDialogue : dialogue;
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            playerIsClose = true;
-        }
-    }
 
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            playerIsClose = false;
-            RemoveText();
-        }
-    }
 }

@@ -786,9 +786,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialoguePanel: {fileID: 7080114986659062054}
   dialogueText: {fileID: 7190765185629506492}
-  gameCanvas: {fileID: 0}
   wordSpeed: 0.0059
-  playerIsClose: 0
   dialogue:
   - Fire ROCK!!
   - You may have my blessing
@@ -1184,6 +1182,14 @@ PrefabInstance:
     - target: {fileID: 2320568719873109319, guid: 5ba396e9f7095464e8f42866dbcc3223, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3445259665988199570, guid: 5ba396e9f7095464e8f42866dbcc3223, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 172
+      objectReference: {fileID: 0}
+    - target: {fileID: 3445259665988199570, guid: 5ba396e9f7095464e8f42866dbcc3223, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 447
       objectReference: {fileID: 0}
     - target: {fileID: 5379134507326886607, guid: 5ba396e9f7095464e8f42866dbcc3223, type: 3}
       propertyPath: m_Size.x

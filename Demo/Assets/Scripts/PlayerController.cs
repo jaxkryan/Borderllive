@@ -513,9 +513,12 @@ public class PlayerController : MonoBehaviour
     private XPTracker xPTracker;
     public void SavePlayerState()
     {
+        CharacterStat characterStat = GetComponent<CharacterStat>();
         // Save player health
         PlayerPrefs.SetInt("Health", damageable.Health);
         PlayerPrefs.SetInt("MaxHealth", damageable.MaxHealth);
+        PlayerPrefs.SetFloat("Shield", characterStat.Shield);
+        
 
         // Save player XP
         PlayerPrefs.SetInt("XP", xPTracker.CurrentXP);
@@ -553,7 +556,11 @@ public class PlayerController : MonoBehaviour
             damageable.MaxHealth = PlayerPrefs.GetInt("MaxHealth");
             damageable.Health = PlayerPrefs.GetInt("Health");
         }
-
+        if(PlayerPrefs.HasKey("Shield"))
+        {
+            CharacterStat characterStat = GetComponent<CharacterStat>();
+            characterStat.IncreaseShield(PlayerPrefs.GetFloat("Shield"));
+        }
         // Load player XP
         if (PlayerPrefs.HasKey("XP"))
         {

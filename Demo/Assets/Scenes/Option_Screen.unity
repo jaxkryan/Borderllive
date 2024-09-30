@@ -254,9 +254,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   listBattleRooms:
-  - Room_1
-  - Room_3
-  - Room_5
   - BorderDeath_Battle_1
   - BorderDeath_Battle_2
   - BorderDeath_Battle_3
