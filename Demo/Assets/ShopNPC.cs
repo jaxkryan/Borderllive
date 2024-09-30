@@ -32,22 +32,11 @@ public class ShopNPC : MonoBehaviour
 
     void Update()
     {
-        // Check if the player is close and presses 'F'
-        
-        if (Input.GetKeyDown(KeyCode.F) && playerIsClose)
-        {Debug.Log("Press F");
-                OpenShop();
-              if (gameCanvas != null) { gameCanvas.SetActive(false); }
-        }
 
-        if (Input.GetKeyDown(KeyCode.X) && shopPanel.activeInHierarchy)
-        {
-            CloseShop();
-        }
     }
 
     // Method to open the shop menu
-    private void OpenShop()
+    public void OpenShop()
     {
         if (shopPanel != null && shopManager != null)
         {
@@ -58,7 +47,7 @@ public class ShopNPC : MonoBehaviour
     }
 
     // Optional: Method to close the shop menu
-    private void CloseShop()
+    public void CloseShop()
     {
         if (shopPanel != null)
         {

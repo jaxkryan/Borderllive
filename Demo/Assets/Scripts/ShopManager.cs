@@ -11,18 +11,19 @@ public class ShopManager : MonoBehaviour
     public Transform shopContent;   // Parent object to hold the item buttons in the UI
     public OwnedActiveItem ownedActiveItem;  // Reference to OwnedActiveItem script
     public CurrencyManager currencyManager;  // Reference to the CurrencyManager script
-
+    [SerializeField] Text currentSoulAmount;
     private PlayerController playerController;
     private void Start()
     {
         DisplayItems();
         playerController = FindObjectOfType<PlayerController>();
         currencyManager = playerController.GetComponent<CurrencyManager>();
-        
+        currentSoulAmount.text = ": " + currencyManager.currentAmount.ToString();
     }
 
     public void DisplayItems()
     {
+        
         foreach (Item item in itemsForSale)
         {
             // Debug.Log("Displaying Items: " + itemsForSale.Count); 
@@ -61,5 +62,7 @@ public class ShopManager : MonoBehaviour
         {
             Debug.Log("Not enough currency to buy: " + item.itemName);
         }
+        currentSoulAmount.text = ": " + currencyManager.currentAmount.ToString();
+
     }
 }

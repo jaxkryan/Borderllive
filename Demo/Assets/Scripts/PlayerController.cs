@@ -10,7 +10,7 @@ using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Rigidbody2D), typeof(TouchingDirection), typeof(Damageable))]
 public class PlayerController : MonoBehaviour
-{   
+{
 
     public GameObject inventory;
     OwnedActiveItem ownedActiveItem;
@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
     Animator animator;
     public float walkSpeed = 5f;
     public float runSpeed = 10f;
-    public float jumpImpulse = 10f;
+    public float jumpImpulse = 17.2f;
     public float airWalkSpeed = 3f;
     TouchingDirection touchingDirection;
     OwnedPowerups ownedPowerups;
@@ -125,7 +125,7 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
-        
+
         ownedActiveItem = GetComponent<OwnedActiveItem>();
         berserkGauge = GetComponent<BerserkGauge>();
         rb = GetComponent<Rigidbody2D>();
@@ -217,9 +217,12 @@ public class PlayerController : MonoBehaviour
         if (context.started)
         {
             IsRunning = true;
+
+            jumpImpulse += 0.5f;
         }
         else if (context.canceled)
         {
+            jumpImpulse -= 0.5f;
             IsRunning = false;
         }
     }
@@ -303,19 +306,22 @@ public class PlayerController : MonoBehaviour
              if (currentItem == null) return;
             GameObject Item2 = GameObject.Find("Item2");
             SpellCooldown sp = Item2.GetComponent<SpellCooldown>();
+            sp.cooldownTime = currentItem.cd;
             if (sp != null)
             {
-                sp.cooldownTime = currentItem.cd;
-                sp.UseSpell();
-            }
-            // Check if the current item is not null
-            if (currentItem != null)
-            {
-                // Activate the item's effect
-                currentItem.Activate();
+                if (sp.UseSpell())
+                {
+                    // Check if the current item is not null
+                    if (currentItem != null)
+                    {
+                        // Activate the item's effect
+                        currentItem.Activate();
 
-                // Set the animator trigger
-                animator.SetTrigger(item1Trigger);
+
+                        // Set the animator trigger
+                        animator.SetTrigger(item1Trigger);
+                    }
+                }
             }
 
         }
@@ -367,7 +373,7 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            berserkGauge.DecreaseProgress(10f);
+            berserkGauge.DecreaseProgress(8f);
         }
         canDash = false;
         isDashing = true;
@@ -507,9 +513,12 @@ public class PlayerController : MonoBehaviour
     private XPTracker xPTracker;
     public void SavePlayerState()
     {
+        CharacterStat characterStat = GetComponent<CharacterStat>();
         // Save player health
         PlayerPrefs.SetInt("Health", damageable.Health);
         PlayerPrefs.SetInt("MaxHealth", damageable.MaxHealth);
+        PlayerPrefs.SetFloat("Shield", characterStat.Shield);
+        
 
         // Save player XP
         PlayerPrefs.SetInt("XP", xPTracker.CurrentXP);
@@ -547,7 +556,11 @@ public class PlayerController : MonoBehaviour
             damageable.MaxHealth = PlayerPrefs.GetInt("MaxHealth");
             damageable.Health = PlayerPrefs.GetInt("Health");
         }
-
+        if(PlayerPrefs.HasKey("Shield"))
+        {
+            CharacterStat characterStat = GetComponent<CharacterStat>();
+            characterStat.IncreaseShield(PlayerPrefs.GetFloat("Shield"));
+        }
         // Load player XP
         if (PlayerPrefs.HasKey("XP"))
         {
