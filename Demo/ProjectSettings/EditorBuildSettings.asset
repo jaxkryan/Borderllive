@@ -87,6 +87,9 @@ EditorBuildSettings:
     path: Assets/Scenes/BorderDeath_Event_Shop.unity
     guid: 4fd5900b49864f8458f00d5a9abf6f46
   - enabled: 1
+    path: Assets/Scenes/BorderDeath_Fun_2.unity
+    guid: c1619a28bf56ff44891d4a9da59b90d9
+  - enabled: 1
     path: Assets/Scenes/BorderDeath_Fun_1.unity
     guid: 603b6da70eae1974881558986f226420
   - enabled: 1

@@ -12,7 +12,6 @@ public class BuffSelectionUI : MonoBehaviour
 
     void Start()
     {
-        xpAdded = 230;
         buffSelectionPanel.SetActive(false); // Hide the panel initially
     }
     private void Awake()

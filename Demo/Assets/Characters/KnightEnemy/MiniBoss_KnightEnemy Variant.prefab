@@ -372,13 +372,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BaseStamina_PerLevel: 7
-  BaseStamina_Offset: 12
+  BaseStamina_Offset: 15
   StaminaToHealthConversion: 12
   BaseStrength_PerLevel: 4
-  BaseStrength_Offset: 8
-  StrengthToDamageConversion: 5
+  BaseStrength_Offset: 12
+  StrengthToDamageConversion: 4.5
   BaseEndurance_PerLevel: 3
-  BaseEndurance_Offset: 7
+  BaseEndurance_Offset: 12
   EnduranceToDefConversion: 1
   BaseSpeed: 5
   _endurance: 0
