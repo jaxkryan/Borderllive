@@ -3,6 +3,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
+public class PowerUpData
+{
+    public int id;
+    public int elementId;
+    public Powerups.BuffType buffType;
+    public Powerups.TriggerCondition triggerCondition;
+    public Powerups.Effect effect;
+    public int weight;
+    public int berserkRateIncrease;
+    public int cooldown;
+    public int duration;
+    public bool isActive;
+    public float currentCooldown;
+    public string description;
+}
+
 public class OwnedPowerups : MonoBehaviour
 {
     public List<Powerups> activePowerups = new List<Powerups>();
@@ -33,6 +50,28 @@ public class OwnedPowerups : MonoBehaviour
         JsonUtility.FromJsonOverwrite(json, this);
     }
 
+    public void SavePowerups()
+    {
+        string json = SerializeActivePowerups();
+        PlayerPrefs.SetString("ActivePowerups", json);
+        PlayerPrefs.Save(); // Ensure the data is saved
+    }
+
+    public void LoadPowerups()
+    {
+        if (PlayerPrefs.HasKey("ActivePowerups"))
+        {
+            string json = PlayerPrefs.GetString("ActivePowerups");
+            DeserializeActivePowerups(json);
+        }
+    }
+
+    // Clear powerups when the player dies or quits
+    public void ClearPowerups()
+    {
+        activePowerups.Clear();
+        PlayerPrefs.DeleteKey("ActivePowerups"); // Remove saved powerups from PlayerPrefs
+    }
     //check if the powerup in activePowerups or not
     public bool IsPowerupActive<T>() where T : Powerups
     {

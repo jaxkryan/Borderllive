@@ -533,9 +533,12 @@ public class PlayerController : MonoBehaviour
         OwnedPowerups ownedPowerups = GetComponent<OwnedPowerups>();
         if (ownedPowerups != null)
         {
-            string powerupsJson = ownedPowerups.SerializeActivePowerups();
-            PlayerPrefs.SetString("ActivePowerups", powerupsJson);
-            Debug.Log("Buff:" + powerupsJson);
+            ownedPowerups.SavePowerups();
+        }
+        OwnedActiveItem ownedItems = GetComponent<OwnedActiveItem>();
+        if (ownedItems != null)
+        {
+            ownedItems.SaveItems();
         }
 
         // Save PlayerPrefs data
@@ -576,9 +579,23 @@ public class PlayerController : MonoBehaviour
 
             currencyManager.SetCurrency(PlayerPrefs.GetInt("Souls")); // Assuming SetMoney sets the currency amount
         }
+        OwnedActiveItem ownedItems = GetComponent<OwnedActiveItem>();
+        if (ownedItems != null)
+        {
+            ownedItems.LoadItems();
+        }
 
-        // Load active power-ups
-        LoadPowerups();
+        OwnedPowerups ownedPowerups = GetComponent<OwnedPowerups>();
+        if (ownedPowerups != null)
+        {
+            ownedPowerups.LoadPowerups();
+        }
+    }
+    private void OnApplicationQuit()
+    {
+        LevelController.ResetStaticData();
+        ClearPlayerData();
+        Debug.Log("Player data cleared on application quit.");
     }
 
 

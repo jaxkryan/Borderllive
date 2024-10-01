@@ -3,6 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+[System.Serializable]
+public class ItemData
+{
+    public string itemName;
+    public string itemType;
+    public float cd;
+    public string imageName; // Field for storing the image name
+}
+
+
 public class OwnedActiveItem : MonoBehaviour
 {
     // The two active items that are currently owned
@@ -99,6 +109,74 @@ public class OwnedActiveItem : MonoBehaviour
         // Update the UI images
         UpdateUI();
     }
+
+    public void SaveItems()
+    {
+        if (item1 != null)
+        {
+            string item1Json = JsonUtility.ToJson(new ItemData
+            {
+                itemName = item1.itemName,
+                itemType = item1.itemType.ToString(),
+                cd = item1.cd,
+                imageName = item1.GetImageName() // Save image name
+            });
+            PlayerPrefs.SetString("Item1", item1Json);
+        }
+
+        if (item2 != null)
+        {
+            string item2Json = JsonUtility.ToJson(new ItemData
+            {
+                itemName = item2.itemName,
+                itemType = item2.itemType.ToString(),
+                cd = item2.cd,
+                imageName = item2.GetImageName() // Save image name
+            });
+            PlayerPrefs.SetString("Item2", item2Json);
+        }
+
+        PlayerPrefs.Save();
+    }
+
+    public void LoadItems()
+    {
+        if (PlayerPrefs.HasKey("Item1"))
+        {
+            string item1Json = PlayerPrefs.GetString("Item1");
+            ItemData item1Data = JsonUtility.FromJson<ItemData>(item1Json);
+            item1 = ItemDatabase.FindItemByName(item1Data.itemName);
+            if (item1 != null)
+            {
+                item1.cd = item1Data.cd;
+                item1.image = LoadImage(item1Data.imageName); // Load image by name
+            }
+        }
+
+        if (PlayerPrefs.HasKey("Item2"))
+        {
+            string item2Json = PlayerPrefs.GetString("Item2");
+            ItemData item2Data = JsonUtility.FromJson<ItemData>(item2Json);
+            item2 = ItemDatabase.FindItemByName(item2Data.itemName);
+            if (item2 != null)
+            {
+                item2.cd = item2Data.cd;
+                item2.image = LoadImage(item2Data.imageName); // Load image by name
+            }
+        }
+
+        UpdateUI(); // Update UI to reflect loaded items
+    }
+
+    private Sprite LoadImage(string imageName)
+    {
+        if (string.IsNullOrEmpty(imageName))
+        {
+            return null; // Return null if the image name is empty
+        }
+        return Resources.Load<Sprite>("Items/ItemImage/" + imageName); // Adjust the path if needed
+    }
+
 
     private void Start(){
         UpdateUI();
