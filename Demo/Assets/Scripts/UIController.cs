@@ -5,8 +5,8 @@ public class UIController : MonoBehaviour
 {
     public void StartBtn_Click()
     {
-        SceneManager.LoadScene("StoryScene");
         LevelController.ResetStaticData();
+        SceneManager.LoadScene("StoryScene");
     }
 
     public void RestartBtn_Click()

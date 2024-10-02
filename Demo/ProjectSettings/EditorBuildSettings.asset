@@ -87,11 +87,17 @@ EditorBuildSettings:
     path: Assets/Scenes/BorderDeath_Event_Shop.unity
     guid: 4fd5900b49864f8458f00d5a9abf6f46
   - enabled: 1
+    path: Assets/Scenes/BorderDeath_Fun_1.unity
+    guid: 603b6da70eae1974881558986f226420
+  - enabled: 1
     path: Assets/Scenes/BorderDeath_Fun_2.unity
     guid: c1619a28bf56ff44891d4a9da59b90d9
   - enabled: 1
-    path: Assets/Scenes/BorderDeath_Fun_1.unity
-    guid: 603b6da70eae1974881558986f226420
+    path: Assets/Scenes/BorderDeath_Fun_3.unity
+    guid: 749f25ac7f2f5ee44a8affe96645b079
+  - enabled: 1
+    path: Assets/Scenes/BorderDeath_Fun_4.unity
+    guid: 54a09e3abfdfd6b46a2bfd0f72a0ab7b
   - enabled: 1
     path: Assets/Scenes/GameOver_Screen.unity
     guid: 5ac5058914b65db4bb97809dfb78bac3
