@@ -27,6 +27,7 @@ public class Fire_1 : Powerups
 
     public float CalculateDamageIncrease(Damageable target)
     {
+        if (target == null) return 0;
         if (target.Health <= 0.5f * target.MaxHealth)
         {
             return 1.15f; // 15% damage increase
