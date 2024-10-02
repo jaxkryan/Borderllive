@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcb98af7a0f18194babd920c93f5f426, type: 3}
   m_Name: Water_1
   m_EditorClassIdentifier: 
-  id: 4
+  id: 6
   type: 5
   ElementId: 3
   triggerCondition: 0

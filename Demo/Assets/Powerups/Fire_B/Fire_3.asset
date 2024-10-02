@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf4b6accc08de3441b4a5a514f105078, type: 3}
   m_Name: Fire_3
   m_EditorClassIdentifier: 
-  id: 9
+  id: 11
   type: 4
   ElementId: 4
   triggerCondition: 0

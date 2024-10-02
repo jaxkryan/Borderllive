@@ -33,6 +33,7 @@ public class CharacterStat : MonoBehaviour
     // Reference to the Damageable component
     private Damageable damageable;
 
+    // Shield property
     [SerializeField] private float shield;
     public float Shield
     {
@@ -40,9 +41,8 @@ public class CharacterStat : MonoBehaviour
         set
         {
             shield = value;
-            // Update the slider and text UI when shield value changes
             shieldSlider.value = shield;
-            shieldText.text = $"Shield: {shield:F1}"; // Update shield text (optional)
+            shieldText.text = $"Shield: {shield:F1}";
         }
     }
 
@@ -56,14 +56,28 @@ public class CharacterStat : MonoBehaviour
     private float berserkDefenseReductionPercentage = 50;
     private bool isBerserkActive = false;
 
+    // Permanent increase fields
+    private float permanentStaminaIncrease;
+    private float permanentStrengthIncrease;
+    private float permanentEnduranceIncrease;
+
+    // Toggle for permanent buffs
+    public bool applyPermanentBuffs = false;
+
+    // Save keys for PlayerPrefs
+    private const string StaminaIncreaseKey = "StaminaIncrease";
+    private const string StrengthIncreaseKey = "StrengthIncrease";
+    private const string EnduranceIncreaseKey = "EnduranceIncrease";
+    private const string ApplyBuffsKey = "ApplyBuffs";
+
     // Stamina-based properties
-    public float Stamina => BaseStamina;
+    public float Stamina => BaseStamina + (applyPermanentBuffs ? permanentStaminaIncrease : 0);
     public float MaxHealth => Stamina * StaminaToHealthConversion;
 
     // Strength-based properties
-    public float Strength => BaseStrength;
+    public float Strength => BaseStrength + (applyPermanentBuffs ? permanentStrengthIncrease : 0);
 
-    // Modified Damage calculation to use percentage boost during berserk
+    // Damage calculation with berserk effect
     public float Damage
     {
         get
@@ -81,11 +95,11 @@ public class CharacterStat : MonoBehaviour
     [SerializeField] private float _endurance;
     public float Endurance
     {
-        get => _endurance;
+        get => _endurance + (applyPermanentBuffs ? permanentEnduranceIncrease : 0);
         set => _endurance = value;
     }
 
-    // Modified DEF calculation to use percentage reduction during berserk
+    // DEF calculation with berserk effect
     public float DEF
     {
         get
@@ -120,11 +134,13 @@ public class CharacterStat : MonoBehaviour
         }
     }
 
-    // Method to handle level changes
+    private static int levelupCount = 0;
+    // Handle level updates and apply permanent increases if buffs are active
     public void OnUpdateLevel(int previousLevel, int currentLevel)
     {
         float previousMaxHealth = damageable.MaxHealth;
-        float previouHealth = damageable.Health;
+        float previousHealth = damageable.Health;
+
         OwnedPowerups ownedPowerups = GetComponent<OwnedPowerups>();
         float staminaGainFromBuff = 0;
 
@@ -142,23 +158,85 @@ public class CharacterStat : MonoBehaviour
         {
             Metal_1 m1 = new Metal_1();
             enduranceGainFromBuff = BaseEndurance_Offset * m1.enduranceIncrease; // Metal_1 gives 10% endurance gain
-            Debug.Log("Metal_1 active, adding endurance gain: " + enduranceGainFromBuff);
         }
 
         BaseEndurance = BaseEndurance_PerLevel * currentLevel + BaseEndurance_Offset + enduranceGainFromBuff;
         _endurance = BaseEndurance;
 
+        levelupCount += currentLevel - previousLevel;
+        // Apply permanent increases only if buffs are enabled
+        if (levelupCount % 10 == 0 && applyPermanentBuffs)
+        {
+            permanentStaminaIncrease += 0.09f;
+            permanentStrengthIncrease += 0.09f;
+            permanentEnduranceIncrease += 0.09f;
+
+            // Save to PlayerPrefs
+            PlayerPrefs.SetFloat(StaminaIncreaseKey, permanentStaminaIncrease);
+            PlayerPrefs.SetFloat(StrengthIncreaseKey, permanentStrengthIncrease);
+            PlayerPrefs.SetFloat(EnduranceIncreaseKey, permanentEnduranceIncrease);
+        }
+
         if (damageable != null)
         {
-            float lossHealth = previousMaxHealth - previouHealth;
+            float lostHealth = previousMaxHealth - previousHealth;
             damageable.MaxHealth = (int)MaxHealth;
-            damageable.Health = (int)(MaxHealth - lossHealth);
+            damageable.Health = (int)(MaxHealth - lostHealth);
         }
 
         shieldSlider.maxValue = MaxHealth;
     }
 
-    // Activate berserk effect
+    // Load from PlayerPrefs
+    private void LoadPermanentIncreases()
+    {
+        permanentStaminaIncrease = PlayerPrefs.GetFloat(StaminaIncreaseKey, 0);
+        permanentStrengthIncrease = PlayerPrefs.GetFloat(StrengthIncreaseKey, 0);
+        permanentEnduranceIncrease = PlayerPrefs.GetFloat(EnduranceIncreaseKey, 0);
+        applyPermanentBuffs = PlayerPrefs.GetInt(ApplyBuffsKey, 1) == 1;
+    }
+
+    // Save the option for buffs
+    private void SaveApplyBuffsOption(bool value)
+    {
+        PlayerPrefs.SetInt(ApplyBuffsKey, value ? 1 : 0);
+        PlayerPrefs.Save();
+    }
+
+    // Toggle for applying permanent buffs
+    public void TogglePermanentBuffs(bool value)
+    {
+        applyPermanentBuffs = value;
+        SaveApplyBuffsOption(value);
+        UpdateStats();
+    }
+
+    private void Start()
+    {
+        Shield = 0f;
+        damageable = GetComponent<Damageable>();
+        if (damageable == null)
+        {
+            Debug.LogError("Damageable component not found on the player!");
+        }
+
+        LoadPermanentIncreases();
+        OnUpdateLevel(1, 1);
+        _endurance = BaseEndurance;
+        _speed = BaseSpeed;
+
+        shieldSlider.minValue = 0;
+        shieldSlider.value = Shield;
+        shieldSlider.maxValue = MaxHealth;
+        levelupCount = 0;
+    }
+
+    private void Update()
+    {
+        UpdateStats();
+        shieldSlider.value = Shield;
+    }
+
     public void ActivateBerserk()
     {
         isBerserkActive = true;
@@ -177,32 +255,5 @@ public class CharacterStat : MonoBehaviour
     {
         shieldSlider.value = Shield;
         shieldText.text = $"Shield: {Shield:F1}";
-    }
-
-    private void Start()
-    {
-        Shield = 0f;
-        damageable = GetComponent<Damageable>();
-        if (damageable == null)
-        {
-            Debug.LogError("Damageable component not found on the player!");
-        }
-
-        OnUpdateLevel(1, 1);
-        _endurance = BaseEndurance;
-        _speed = BaseSpeed;
-
-        shieldSlider.minValue = 0;
-        shieldSlider.value = Shield;
-        shieldSlider.maxValue = MaxHealth;
-    }
-
-
-
-    private void Update()
-    {
-        UpdateStats();
-
-        shieldSlider.value = Shield;
     }
 }

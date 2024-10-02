@@ -29,33 +29,6 @@ public class LevelController : MonoBehaviour
         }
     }
 
-    private void SavePlayerState()
-    {
-        playerController = FindObjectOfType<PlayerController>(); // Get PlayerController instance
-        if (playerController != null)
-        {
-            playerController.SavePlayerState(); // Call PlayerController's SavePlayerState
-            Debug.Log("Player state saved from LevelController.");
-        }
-        else
-        {
-            Debug.LogWarning("PlayerController reference is null. Cannot save player state.");
-        }
-    }
-
-    private void OnApplicationQuit()
-    {
-        ResetStaticData();
-        ClearPlayerData();
-        Debug.Log("Player data cleared on application quit.");
-    }
-
-    private void ClearPlayerData()
-    {
-        PlayerPrefs.DeleteAll();
-        PlayerPrefs.Save();
-    }
-
     public void ShowOption()
     {
         SceneManager.LoadScene("Option_Screen");
@@ -65,7 +38,6 @@ public class LevelController : MonoBehaviour
     public void ShowRoomOptions()
     {
         roomsVisited++;
-        SavePlayerState();
 
         if (roomsVisited == 1)
         {
