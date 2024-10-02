@@ -159,6 +159,8 @@ MonoBehaviour:
   - BorderDeath_Event_2
   listFunRooms:
   - BorderDeath_Fun_1
+  - BorderDeath_Fun_2
+  - BorderDeath_Fun_3
 --- !u!1 &3694491652938188478
 GameObject:
   m_ObjectHideFlags: 0
@@ -358,6 +360,10 @@ PrefabInstance:
     - target: {fileID: 2297387983278109067, guid: 7f0ac06cf3ae8d8408b663069ea6d15c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3311656229118022688, guid: 7f0ac06cf3ae8d8408b663069ea6d15c, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 504
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
