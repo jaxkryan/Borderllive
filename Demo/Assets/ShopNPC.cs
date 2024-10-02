@@ -43,6 +43,7 @@ public class ShopNPC : MonoBehaviour
             shopPanel.SetActive(true);
             // shopManager.DisplayItems();  // Populate the shop with items
             playerInput.SwitchCurrentActionMap("Disable");  // Disable player input while the shop is open
+            gameCanvas.SetActive(false);
         }
     }
 
