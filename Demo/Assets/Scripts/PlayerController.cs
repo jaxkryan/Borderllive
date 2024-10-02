@@ -161,13 +161,13 @@ public class PlayerController : MonoBehaviour
     {
         if (isDashing) { return; }
         if (Input.GetKeyDown(KeyCode.Tab))
-    {
-        // Toggle the panel's active state
-        if (inventory != null)
         {
-            inventory.SetActive(!inventory.activeSelf);
+            // Toggle the panel's active state
+            if (inventory != null)
+            {
+                inventory.SetActive(!inventory.activeSelf);
+            }
         }
-    }
     }
 
     private void FixedUpdate()
@@ -303,7 +303,7 @@ public class PlayerController : MonoBehaviour
         if (context.started)
         {
             Item currentItem = ownedActiveItem.item2;
-             if (currentItem == null) return;
+            if (currentItem == null) return;
             GameObject Item2 = GameObject.Find("Item2");
             SpellCooldown sp = Item2.GetComponent<SpellCooldown>();
             sp.cooldownTime = currentItem.cd;
@@ -500,12 +500,13 @@ public class PlayerController : MonoBehaviour
 
     private void ClearPlayerData()
     {
-        // Xóa toàn bộ dữ liệu trong PlayerPrefs
-        PlayerPrefs.DeleteAll();
-        // Nếu bạn chỉ muốn xóa một khóa cụ thể
-        // PlayerPrefs.DeleteKey("YourKeyName");
+        PlayerPrefs.DeleteKey("Health");
+        PlayerPrefs.DeleteKey("MaxHealth");
+        PlayerPrefs.DeleteKey("Shield");
+        PlayerPrefs.DeleteKey("XP");
+        PlayerPrefs.DeleteKey("Souls");
+        PlayerPrefs.DeleteKey("ActivePowerups");
 
-        // Lưu lại để đảm bảo rằng dữ liệu được xóa ngay lập tức
         PlayerPrefs.Save();
     }
 
@@ -518,7 +519,7 @@ public class PlayerController : MonoBehaviour
         PlayerPrefs.SetInt("Health", damageable.Health);
         PlayerPrefs.SetInt("MaxHealth", damageable.MaxHealth);
         PlayerPrefs.SetFloat("Shield", characterStat.Shield);
-        
+
 
         // Save player XP
         PlayerPrefs.SetInt("XP", xPTracker.CurrentXP);
@@ -559,7 +560,7 @@ public class PlayerController : MonoBehaviour
             damageable.MaxHealth = PlayerPrefs.GetInt("MaxHealth");
             damageable.Health = PlayerPrefs.GetInt("Health");
         }
-        if(PlayerPrefs.HasKey("Shield"))
+        if (PlayerPrefs.HasKey("Shield"))
         {
             CharacterStat characterStat = GetComponent<CharacterStat>();
             characterStat.IncreaseShield(PlayerPrefs.GetFloat("Shield"));
@@ -625,7 +626,7 @@ public class PlayerController : MonoBehaviour
             return;
         }
         float spdIncrease = characterStat.Speed * 0.1f;
-        dashingPower *= 0.1f;
+        dashingPower += dashingCd * 0.1f;
         //Debug.Log("Gia tri defIncrease: " + (int)defIncrease);
         characterStat.Speed += spdIncrease;
     }

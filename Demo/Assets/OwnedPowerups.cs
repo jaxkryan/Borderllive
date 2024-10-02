@@ -19,6 +19,16 @@ public class PowerUpData
     public float currentCooldown;
     public string description;
 }
+[System.Serializable]
+public class SerializationHelper<T>
+{
+    public List<T> list;
+
+    public SerializationHelper(List<T> list)
+    {
+        this.list = list;
+    }
+}
 
 public class OwnedPowerups : MonoBehaviour
 {
@@ -52,19 +62,65 @@ public class OwnedPowerups : MonoBehaviour
 
     public void SavePowerups()
     {
-        string json = SerializeActivePowerups();
+        List<PowerUpData> powerUpDataList = new List<PowerUpData>();
+
+        // Convert each Powerup to PowerUpData for serialization
+        foreach (Powerups powerup in activePowerups)
+        {
+            PowerUpData data = new PowerUpData()
+            {
+                id = powerup.id,
+                elementId = powerup.ElementId,
+                buffType = powerup.type,
+                triggerCondition = powerup.triggerCondition,
+                effect = powerup.effect,
+                weight = powerup.Weight,
+                berserkRateIncrease = powerup.BerserkRateIncrease,
+                cooldown = powerup.cooldown,
+                duration = powerup.duration,
+                isActive = powerup.isActive,
+                currentCooldown = powerup.currentCooldown,
+                description = powerup.description
+            };
+            powerUpDataList.Add(data);
+        }
+
+        // Convert the list of PowerUpData to JSON and save it to PlayerPrefs
+        string json = JsonUtility.ToJson(new SerializationHelper<PowerUpData>(powerUpDataList));
         PlayerPrefs.SetString("ActivePowerups", json);
-        PlayerPrefs.Save(); // Ensure the data is saved
+        PlayerPrefs.Save();  // Ensure the data is saved
     }
+
 
     public void LoadPowerups()
     {
         if (PlayerPrefs.HasKey("ActivePowerups"))
         {
             string json = PlayerPrefs.GetString("ActivePowerups");
-            DeserializeActivePowerups(json);
+            List<PowerUpData> powerUpDataList = JsonUtility.FromJson<SerializationHelper<PowerUpData>>(json).list;
+
+            activePowerups.Clear(); // Clear current power-ups before loading new ones
+            foreach (PowerUpData data in powerUpDataList)
+            {
+                Powerups powerup = ScriptableObject.CreateInstance<Powerups>();
+                powerup.id = data.id;
+                powerup.ElementId = data.elementId;
+                powerup.type = data.buffType;
+                powerup.triggerCondition = data.triggerCondition;
+                powerup.effect = data.effect;
+                powerup.Weight = data.weight;
+                powerup.BerserkRateIncrease = data.berserkRateIncrease;
+                powerup.cooldown = data.cooldown;
+                powerup.duration = data.duration;
+                powerup.isActive = data.isActive;
+                powerup.currentCooldown = data.currentCooldown;
+                powerup.description = data.description;
+
+                activePowerups.Add(powerup);
+            }
         }
     }
+
 
     // Clear powerups when the player dies or quits
     public void ClearPowerups()
