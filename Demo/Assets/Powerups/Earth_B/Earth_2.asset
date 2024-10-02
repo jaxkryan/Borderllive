@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8818bf745dd8708458b87cfc5d83ead0, type: 3}
   m_Name: Earth_2
   m_EditorClassIdentifier: 
-  id: 14
+  id: 11
   type: 0
   ElementId: 5
   triggerCondition: 0

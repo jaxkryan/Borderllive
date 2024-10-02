@@ -625,7 +625,7 @@ public class PlayerController : MonoBehaviour
             return;
         }
         float spdIncrease = characterStat.Speed * 0.1f;
-        dashingPower *= 0.1f;
+        dashingPower += dashingCd*0.1f;
         //Debug.Log("Gia tri defIncrease: " + (int)defIncrease);
         characterStat.Speed += spdIncrease;
     }

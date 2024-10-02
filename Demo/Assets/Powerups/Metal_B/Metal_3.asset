@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 897c551bc7f2d4140bb731cf1ee83e9f, type: 3}
   m_Name: Metal_3
   m_EditorClassIdentifier: 
-  id: 1
+  id: 3
   type: 0
   ElementId: 1
   triggerCondition: 0

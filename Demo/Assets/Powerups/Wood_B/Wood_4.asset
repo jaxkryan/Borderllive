@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d51eb485fff4a54fb1bc62865bee6cf, type: 3}
   m_Name: Wood_4
   m_EditorClassIdentifier: 
-  id: 12
+  id: 15
   type: 2
   ElementId: 2
   triggerCondition: 3
