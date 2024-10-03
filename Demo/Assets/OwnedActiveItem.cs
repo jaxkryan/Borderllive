@@ -38,6 +38,13 @@ public class OwnedActiveItem : MonoBehaviour
     public Image item1Image;
     public Image item2Image;
 
+    //3rd item for exchange
+    public GameObject exchangeScreen; // The exchange UI screen
+    public Button item1Button;        // Button to exchange with item1
+    public Button item2Button;        // Button to exchange with item2
+    public Button cancelButton;       // Button to cancel the exchange
+    private Item newItem;            // Temporary storage for the new item being purchased
+
     private void Update()
     {
         // Check if the player is selecting an item
@@ -89,8 +96,7 @@ public class OwnedActiveItem : MonoBehaviour
         // If we already have two items, prompt the player to exchange one of them
         if (item1 != null && item2 != null)
         {
-            // Enter selection mode to choose which item to exchange
-            isSelectingItem = true;
+            exchangeScreen.SetActive(true); // Show the exchange UI
         }
         // If we only have one item, add the new item to the second slot
         else if (item1 != null)
@@ -108,6 +114,27 @@ public class OwnedActiveItem : MonoBehaviour
 
         // Update the UI images
         UpdateUI();
+    }
+
+    public void SelectItemToExchange(int index)
+    {
+        if (index == 0)
+        {
+            item1 = newItem;  // Replace item1
+        }
+        else if (index == 1)
+        {
+            item2 = newItem;  // Replace item2
+        }
+
+        exchangeScreen.SetActive(false);
+        UpdateUI();
+    }
+
+        public void CancelExchange()
+    {
+        newItem = null; // Clear the new item reference
+        exchangeScreen.SetActive(false); // Hide the exchange UI
     }
 
     public void SaveItems()
@@ -179,6 +206,12 @@ public class OwnedActiveItem : MonoBehaviour
 
 
     private void Start(){
+                item1Button.onClick.AddListener(() => SelectItemToExchange(0));
+        item2Button.onClick.AddListener(() => SelectItemToExchange(1));
+        cancelButton.onClick.AddListener(CancelExchange);
+
+        // Hide exchange screen initially
+        exchangeScreen.SetActive(false);
         UpdateUI();
     }
     // Method to update the UI images

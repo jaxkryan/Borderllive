@@ -640,7 +640,7 @@ public class PlayerController : MonoBehaviour
     internal void IncreaseBerserkRecharge(float increasePercent)
     {
         berserkGauge.berserkRegenIncrease = increasePercent;
-        Debug.Log("bs rg inc: " + berserkGauge.berserkRegenIncrease);
+        // Debug.Log("bs rg inc: " + berserkGauge.berserkRegenIncrease);
     }
 
     internal void IncreaseHp(float value)

@@ -1,23 +1,23 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
-using Unity.VisualScripting;
 
-public class ShopItemUI : MonoBehaviour
+public class ItemInventoryUI : MonoBehaviour
 {
     // UI elements to display item information
     public Image itemImage;        // To display the item's image
     public Text itemNameText;  // To display the item's name
     public Text itemDescriptionText;  // To display the item's description
-    public Button purchaseButton;  // Button to purchase the item
+    public Button exchangeButton;  // Button to purchase the item
     public Text costText;      // To display the cost on the purchase button
     private Item currentItem;      // The item that this UI is displaying
-    private ShopManager shopManager;  // Reference to ShopManager to handle the purchase
+    private ItemManagement itemManager;  // Reference to itemManager to handle the purchase
 
     // This method sets the UI elements based on the item data
-    public void SetItem(Item item, ShopManager shopManager)
+    public void SetItem(Item item, ItemManagement itemManager)
     {
-        this.shopManager = shopManager;
+        this.itemManager = itemManager;
         this.currentItem = item;
         // Set UI elements
         itemImage.sprite = item.image;
@@ -26,21 +26,21 @@ public class ShopItemUI : MonoBehaviour
         costText.text = "Buy (" + item.cost.ToString() + " Souls)";
 
         // Add listener to the purchase button
-        purchaseButton.onClick.RemoveAllListeners();  // Clear any existing listeners
-        purchaseButton.onClick.AddListener(OnPurchaseButtonClicked);
+        exchangeButton.onClick.RemoveAllListeners();  // Clear any existing listeners
+        exchangeButton.onClick.AddListener(OnExchangeButtonClicked);
     }
 
-    // Method called when the purchase button is clicked
-    private void OnPurchaseButtonClicked()
+    // // Method called when the purchase button is clicked
+    private void OnExchangeButtonClicked()
     {
         if (currentItem == null) {
-           // Debug.Log("ci is null");
+            Debug.Log("ci is null");
              return;
         }
-        // else{
-        //     Debug.Log("info: " + currentItem.itemDescription);
-        // }
-        // Tell the ShopManager to handle the purchase
-         shopManager.PurchaseItem(currentItem, this);
+        else{
+            Debug.Log("info: " + currentItem.itemDescription);
+        }
+        // Tell the itemManager to handle the purchase
+         itemManager.ExchangeItem(currentItem, this);
     }
 }

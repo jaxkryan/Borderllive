@@ -53,7 +53,7 @@ public class ShopManager : MonoBehaviour
         {
             // Add the item to OwnedActiveItem
             ownedActiveItem.AddItem(item);
-            Debug.Log("Purchased: " + item.itemName);
+//            Debug.Log("Purchased: " + item.itemName);
 
             // Hide the item after purchase
             shopItemUI.gameObject.SetActive(false); // OR Destroy(shopItemUI.gameObject);
