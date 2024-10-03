@@ -215,7 +215,7 @@ public class OwnedActiveItem : MonoBehaviour
         UpdateUI();
     }
     // Method to update the UI images
-    private void UpdateUI()
+    public void UpdateUI()
     {
         if (item1 != null && item1Image != null)
         {

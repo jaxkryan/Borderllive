@@ -19,28 +19,28 @@ public class ItemInventoryUI : MonoBehaviour
     {
         this.itemManager = itemManager;
         this.currentItem = item;
-        // Set UI elements
         itemImage.sprite = item.image;
         itemNameText.text = item.itemName;
         itemDescriptionText.text = item.itemDescription;
-        costText.text = "Buy (" + item.cost.ToString() + " Souls)";
+        costText.text = "Exchange and receive (" + item.cost.ToString() + " souls)";
 
-        // Add listener to the purchase button
-        exchangeButton.onClick.RemoveAllListeners();  // Clear any existing listeners
+
+        exchangeButton.onClick.RemoveAllListeners();
         exchangeButton.onClick.AddListener(OnExchangeButtonClicked);
     }
 
-    // // Method called when the purchase button is clicked
     private void OnExchangeButtonClicked()
     {
-        if (currentItem == null) {
-            Debug.Log("ci is null");
-             return;
+        if (currentItem == null)
+        {
+            Debug.Log("No item selected for exchange.");
+            return;
         }
-        else{
-            Debug.Log("info: " + currentItem.itemDescription);
-        }
-        // Tell the itemManager to handle the purchase
-         itemManager.ExchangeItem(currentItem, this);
+
+        // Here you can open a dialog/UI to choose between exchanging item1 or item2
+        Debug.Log("Exchanging " + currentItem.itemName);
+
+        // Call the exchange method in ItemManagement
+        itemManager.ExchangeItem(currentItem);
     }
 }

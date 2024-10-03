@@ -8,38 +8,48 @@ public class ItemManagement : MonoBehaviour
     public GameObject item;  // Prefab to display each item in the UI
     public Transform image;   // Parent object to hold the item buttons in the UI
     public OwnedActiveItem ownedActiveItem;  // Reference to OwnedActiveItem script
-
+    public GameObject exchangeScreen;
     private PlayerController playerController;
 
-        private void Start()
+    private void Start()
     {
-        DisplayExchangeItems();
         playerController = FindObjectOfType<PlayerController>();
         ownedActiveItem = playerController.GetComponent<OwnedActiveItem>();
+        DisplayExchangeItems();
     }
-    // private void Update(){
-    //     DisplayExchangeItems();
-    // }
+
     public void DisplayExchangeItems()
     {
-        if (ownedActiveItem.item1!=null) {
+        // Clear previous activeItems to avoid duplicates
+        activeItems.Clear();
+
+        // Add item1 and item2 to the list
+        if (ownedActiveItem.item1 != null) {
             activeItems.Add(ownedActiveItem.item1);
         }
 
-        if (ownedActiveItem.item2!=null) {
+        if (ownedActiveItem.item2 != null) {
             activeItems.Add(ownedActiveItem.item2);
         }
-        if (activeItems.Count == 0) return; 
-        foreach (Item activeItems in activeItems)
+
+        // // Check for the 3rd item (current)
+        // if (ownedActiveItem.currentItem != null) {
+        //     activeItems.Add(ownedActiveItem.currentItem);
+        // }
+
+        // Ensure we have items to display
+        if (activeItems.Count == 0) return;
+
+        // Display each active item
+        foreach (Item item in activeItems)
         {
-            GameObject newShopPanel = Instantiate(item, image);
+            GameObject newShopPanel = Instantiate(this.item, image);
             ItemInventoryUI itemInventoryUI = newShopPanel.GetComponent<ItemInventoryUI>();
 
             if (itemInventoryUI != null)
             {
-                itemInventoryUI.SetItem(activeItems, this);
+                itemInventoryUI.SetItem(item, this);
                 newShopPanel.SetActive(true);
-                // Debug.Log("Item added to shop: " + item.itemName);
             }
             else
             {
@@ -48,65 +58,27 @@ public class ItemManagement : MonoBehaviour
         }
     }
 
-    // Method to handle exchanging items
-    public void ExchangeItem(Item newItem, ItemInventoryUI newItemUI)
+    // Method to handle exchange logic
+    public void ExchangeItem(Item changeItem)
     {
-        // Ensure ownedActiveItem has 2 items (item1 and item2)
-        if (ownedActiveItem.item1 != null && ownedActiveItem.item2 != null)
+        // You can add UI to let the player choose between item1 and item2 for the exchange
+        Debug.Log("Exchanging item " + changeItem.name);
+
+        // Example: automatically exchange with item1 (you can enhance this part to let the player choose)
+        if (ownedActiveItem.item1 != changeItem)
         {
-            // Show a UI to choose which item to replace (This can be a new UI panel that appears)
-            ShowExchangeOptions(newItem);
+            Debug.Log("Item 1 exchanged with new item.");
+            ownedActiveItem.item2 = ownedActiveItem.currentItem;
         }
-        else
+        else 
         {
-            // If there's only 1 item, directly add the new item to the second slot
-            if (ownedActiveItem.item1 == null)
-            {
-                ownedActiveItem.item1 = newItem;
-            }
-            else
-            {
-                ownedActiveItem.item2 = newItem;
-            }
-            // DisplayActiveItems(); // Update the UI to reflect the new items
+            ownedActiveItem.item1 = ownedActiveItem.currentItem;
         }
-    }
-
-    // Show a UI to select which item to replace
-    private void ShowExchangeOptions(Item newItem)
-    {
-        // Assuming you have a UI set up where the player can choose which item to exchange.
-        // This could be a simple popup dialog with two buttons, one for each existing item.
-
-        // Example of how this can be handled:
-        Debug.Log("Choose which item to exchange for the new item: " + newItem.itemName);
-
-        // Use UI buttons for each active item (item1 and item2) to allow the player to choose
-        // For this, you'll need to set up a UI that allows the player to select the item to replace
-        // Here's an example of the logic:
+        ownedActiveItem.UpdateUI();
+        exchangeScreen.SetActive(false);
+        // Update the UI to reflect the exchange
         
-        // Let's assume you set up buttons for item1 and item2 in your UI:
-        // Button 1:
-        ExchangeButton(ownedActiveItem.item1, newItem);
-
-        // Button 2:
-        ExchangeButton(ownedActiveItem.item2, newItem);
-    }
-
-    // Method to handle button click for exchanging items
-    private void ExchangeButton(Item oldItem, Item newItem)
-    {
-        // Replace the old item with the new one
-        if (ownedActiveItem.item1 == oldItem)
-        {
-            ownedActiveItem.item1 = newItem;
-        }
-        else if (ownedActiveItem.item2 == oldItem)
-        {
-            ownedActiveItem.item2 = newItem;
-        }
-
-        // Refresh the UI to reflect the new item
-        // DisplayActiveItems();
+       // DisplayExchangeItems();
     }
 }
+
