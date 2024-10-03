@@ -122,6 +122,8 @@ public class OwnedActiveItem : MonoBehaviour
                 imageName = item1.GetImageName() // Save image name
             });
             PlayerPrefs.SetString("Item1", item1Json);
+            Debug.Log("Saving item " + item1Json);
+
         }
 
         if (item2 != null)
@@ -134,7 +136,10 @@ public class OwnedActiveItem : MonoBehaviour
                 imageName = item2.GetImageName() // Save image name
             });
             PlayerPrefs.SetString("Item2", item2Json);
+            Debug.Log("Saving item " + item2Json);
+
         }
+
 
         PlayerPrefs.Save();
     }
@@ -145,6 +150,8 @@ public class OwnedActiveItem : MonoBehaviour
         {
             string item1Json = PlayerPrefs.GetString("Item1");
             ItemData item1Data = JsonUtility.FromJson<ItemData>(item1Json);
+            Debug.Log("Loading item " + item1Json + " | " + item1Data);
+
             item1 = ItemDatabase.FindItemByName(item1Data.itemName);
             if (item1 != null)
             {
@@ -157,6 +164,8 @@ public class OwnedActiveItem : MonoBehaviour
         {
             string item2Json = PlayerPrefs.GetString("Item2");
             ItemData item2Data = JsonUtility.FromJson<ItemData>(item2Json);
+            Debug.Log("Loading item " + item2Json + " | " + item2Data);
+
             item2 = ItemDatabase.FindItemByName(item2Data.itemName);
             if (item2 != null)
             {

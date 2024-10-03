@@ -22,7 +22,6 @@ public class BuffSelectionUI : MonoBehaviour
     public void ShowBuffChoices()
     {
         // Pause the game by setting time scale to 0
-        Time.timeScale = 0;
         if (buffPool == null)
         {
             Debug.Log("VCL");
@@ -37,6 +36,7 @@ public class BuffSelectionUI : MonoBehaviour
         currentBuffChoices = buffPool.GetRandomBuffs(3); // Get 3 random buffs
         if (currentBuffChoices.Length != 0)
         {
+            Time.timeScale = 0;
             buffSelectionPanel.SetActive(true);
 
             for (int i = 0; i < buffButtons.Length; i++)

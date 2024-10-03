@@ -31,6 +31,7 @@ public class LevelController : MonoBehaviour
 
     public void ShowOption()
     {
+      
         SceneManager.LoadScene("Option_Screen");
 
     }
@@ -38,7 +39,16 @@ public class LevelController : MonoBehaviour
     public void ShowRoomOptions()
     {
         roomsVisited++;
-
+        playerController = FindObjectOfType<PlayerController>(); // Get PlayerController instance
+        if (playerController != null)
+        {
+            Debug.Log("PlayerController found successfully.");
+            playerController.SavePlayerState();
+        }
+        else
+        {
+            Debug.LogWarning("PlayerController is null. Make sure it's in the scene.");
+        }
         if (roomsVisited == 1)
         {
             // Room 1: Fixed battle or event room

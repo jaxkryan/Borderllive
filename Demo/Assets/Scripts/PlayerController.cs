@@ -506,6 +506,8 @@ public class PlayerController : MonoBehaviour
         PlayerPrefs.DeleteKey("XP");
         PlayerPrefs.DeleteKey("Souls");
         PlayerPrefs.DeleteKey("ActivePowerups");
+        PlayerPrefs.DeleteKey("Item1");
+        PlayerPrefs.DeleteKey("Item2");
 
         PlayerPrefs.Save();
     }

@@ -36,7 +36,7 @@ public class SlotMachineController : MonoBehaviour
 
         // Update the currency text on game start
         UpdateCurrencyText();
-        spendingText.text = "Spend " + (reels.Length * 10).ToString() + " souls?";
+        spendingText.text = "Free";
     }
 
     public void ShowSlotMachine()
@@ -51,7 +51,7 @@ public class SlotMachineController : MonoBehaviour
     public void SpinReels()
     {
         rewardText.text = "";
-        int spendAmount = spendAmount = reels.Length * 10 * spinCount;
+        int spendAmount = reels.Length * 10 * spinCount;
         // Prevent multiple spins if a spin is already in progress
         if (isSpinning)
         {
