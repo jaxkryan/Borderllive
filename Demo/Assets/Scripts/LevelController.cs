@@ -31,7 +31,7 @@ public class LevelController : MonoBehaviour
     private void OnApplicationQuit()
     {
         ResetStaticData();
-        playerController.ClearPlayerData();
+        PlayerController.ClearPlayerData();
 
         Debug.Log("Player data cleared on application quit.");
     }

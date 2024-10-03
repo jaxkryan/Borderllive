@@ -27,8 +27,8 @@ public class CharacterStat : MonoBehaviour
     [SerializeField] TextMeshProUGUI shieldText;  // Optional: to display shield amount as text
 
     // UI elements for Damage and DEF
-    [SerializeField] TextMeshProUGUI DamageText;
-    [SerializeField] TextMeshProUGUI DefText;
+    //[SerializeField] TextMeshProUGUI DamageText;
+    //[SerializeField] TextMeshProUGUI DefText;
 
     // Reference to the Damageable component
     private Damageable damageable;
@@ -134,7 +134,9 @@ public class CharacterStat : MonoBehaviour
         }
     }
 
+
     private static int levelupCount = 0;
+
     // Handle level updates and apply permanent increases if buffs are active
     public void OnUpdateLevel(int previousLevel, int currentLevel)
     {
@@ -164,7 +166,8 @@ public class CharacterStat : MonoBehaviour
         _endurance = BaseEndurance;
 
         levelupCount += currentLevel - previousLevel;
-        // Apply permanent increases only if buffs are enabled
+
+        // Apply permanent increases every 10 levels if buffs are enabled
         if (levelupCount % 10 == 0 && applyPermanentBuffs)
         {
             permanentStaminaIncrease += 0.09f;
@@ -187,21 +190,35 @@ public class CharacterStat : MonoBehaviour
         shieldSlider.maxValue = MaxHealth;
     }
 
-    // Load from PlayerPrefs
+    // Method to reset the permanent buffs
+    public void ResetPermanentBuffs()
+    {
+        permanentStaminaIncrease = 0f;
+        permanentStrengthIncrease = 0f;
+        permanentEnduranceIncrease = 0f;
+
+        // Clear PlayerPrefs
+        PlayerPrefs.DeleteKey(StaminaIncreaseKey);
+        PlayerPrefs.DeleteKey(StrengthIncreaseKey);
+        PlayerPrefs.DeleteKey(EnduranceIncreaseKey);
+        PlayerPrefs.Save();
+
+        // Recalculate the stats to remove the buffs
+        UpdateStats();
+
+        Debug.Log("Permanent buffs have been reset.");
+    }
+
     private void LoadPermanentIncreases()
     {
         permanentStaminaIncrease = PlayerPrefs.GetFloat(StaminaIncreaseKey, 0);
         permanentStrengthIncrease = PlayerPrefs.GetFloat(StrengthIncreaseKey, 0);
         permanentEnduranceIncrease = PlayerPrefs.GetFloat(EnduranceIncreaseKey, 0);
-        applyPermanentBuffs = PlayerPrefs.GetInt(ApplyBuffsKey, 1) == 1;
+
+        // Set buffs to disabled by default (use 0 as the default value)
+        applyPermanentBuffs = PlayerPrefs.GetInt(ApplyBuffsKey, 0) == 1;
     }
 
-    // Save the option for buffs
-    private void SaveApplyBuffsOption(bool value)
-    {
-        PlayerPrefs.SetInt(ApplyBuffsKey, value ? 1 : 0);
-        PlayerPrefs.Save();
-    }
 
     // Toggle for applying permanent buffs
     public void TogglePermanentBuffs(bool value)
@@ -209,6 +226,30 @@ public class CharacterStat : MonoBehaviour
         applyPermanentBuffs = value;
         SaveApplyBuffsOption(value);
         UpdateStats();
+    }
+
+    private void SaveApplyBuffsOption(bool value)
+    {
+        PlayerPrefs.SetInt(ApplyBuffsKey, value ? 1 : 0);
+        PlayerPrefs.Save();
+    }
+
+    // Method to update stats and apply buffs
+    private void UpdateStats()
+    {
+        // Apply changes to stamina, strength, endurance
+        shieldSlider.value = Shield;
+        shieldText.text = $"Shield: {Shield:F1}";
+
+        // Update UI for Damage and DEF
+        //DamageText.text = $"Damage: {Damage:F1}";
+       // DefText.text = $"DEF: {DEF:F1}";
+
+        // Recalculate the player's max health based on the updated stamina
+        if (damageable != null)
+        {
+            damageable.MaxHealth = (int)MaxHealth;
+        }
     }
 
     private void Start()
@@ -221,7 +262,7 @@ public class CharacterStat : MonoBehaviour
         }
 
         LoadPermanentIncreases();
-        OnUpdateLevel(1, 1);
+        OnUpdateLevel(1, 1);  // Set initial level stats
         _endurance = BaseEndurance;
         _speed = BaseSpeed;
 
@@ -237,6 +278,7 @@ public class CharacterStat : MonoBehaviour
         shieldSlider.value = Shield;
     }
 
+    // Activate berserk effect
     public void ActivateBerserk()
     {
         isBerserkActive = true;
@@ -249,11 +291,5 @@ public class CharacterStat : MonoBehaviour
         isBerserkActive = false;
         UpdateStats();
     }
-
-    // Method to update stats
-    private void UpdateStats()
-    {
-        shieldSlider.value = Shield;
-        shieldText.text = $"Shield: {Shield:F1}";
-    }
 }
+

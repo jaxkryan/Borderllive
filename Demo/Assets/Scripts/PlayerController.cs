@@ -498,7 +498,7 @@ public class PlayerController : MonoBehaviour
         isEffectTriggered = false;
     }
 
-    public void ClearPlayerData()
+    public static void ClearPlayerData()
     {
         PlayerPrefs.DeleteKey("Health");
         PlayerPrefs.DeleteKey("MaxHealth");
@@ -517,7 +517,7 @@ public class PlayerController : MonoBehaviour
 
     private CurrencyManager currencyManager;
     private XPTracker xPTracker;
-    private Timer timer;
+    private static Timer timer;
     public void SavePlayerState()
     {
         timer = FindObjectOfType<Timer>();

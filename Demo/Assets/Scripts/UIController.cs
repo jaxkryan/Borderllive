@@ -17,6 +17,8 @@ public class UIController : MonoBehaviour
 
     public void MainMenuBtn_Click()
     {
+        Time.timeScale = 1;
+        PlayerController.ClearPlayerData();
         SceneManager.LoadScene("MainMenu_Screen");
     }
 
