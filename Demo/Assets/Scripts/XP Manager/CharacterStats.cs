@@ -62,7 +62,7 @@ public class CharacterStat : MonoBehaviour
     private float permanentEnduranceIncrease;
 
     // Toggle for permanent buffs
-    public bool applyPermanentBuffs = false;
+    public bool applyPermanentBuffs = true;
 
     // Save keys for PlayerPrefs
     private const string StaminaIncreaseKey = "StaminaIncrease";

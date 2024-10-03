@@ -28,7 +28,13 @@ public class LevelController : MonoBehaviour
             Debug.LogWarning("PlayerController is null. Make sure it's in the scene.");
         }
     }
+    private void OnApplicationQuit()
+    {
+        ResetStaticData();
+        playerController.ClearPlayerData();
 
+        Debug.Log("Player data cleared on application quit.");
+    }
     public void ShowOption()
     {
       

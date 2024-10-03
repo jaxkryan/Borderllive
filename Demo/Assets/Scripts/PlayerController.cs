@@ -498,7 +498,7 @@ public class PlayerController : MonoBehaviour
         isEffectTriggered = false;
     }
 
-    private void ClearPlayerData()
+    public void ClearPlayerData()
     {
         PlayerPrefs.DeleteKey("Health");
         PlayerPrefs.DeleteKey("MaxHealth");
@@ -508,14 +508,20 @@ public class PlayerController : MonoBehaviour
         PlayerPrefs.DeleteKey("ActivePowerups");
         PlayerPrefs.DeleteKey("Item1");
         PlayerPrefs.DeleteKey("Item2");
+        timer = FindObjectOfType<Timer>();
+        timer.ResetTime();
+        PlayerPrefs.DeleteKey("EnemyXP");
 
         PlayerPrefs.Save();
     }
 
     private CurrencyManager currencyManager;
     private XPTracker xPTracker;
+    private Timer timer;
     public void SavePlayerState()
     {
+        timer = FindObjectOfType<Timer>();
+        timer.SaveTime();
         CharacterStat characterStat = GetComponent<CharacterStat>();
         // Save player health
         PlayerPrefs.SetInt("Health", damageable.Health);
@@ -598,6 +604,7 @@ public class PlayerController : MonoBehaviour
     {
         LevelController.ResetStaticData();
         ClearPlayerData();
+
         Debug.Log("Player data cleared on application quit.");
     }
 
