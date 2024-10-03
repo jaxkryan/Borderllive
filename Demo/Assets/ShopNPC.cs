@@ -74,4 +74,6 @@ public class ShopNPC : MonoBehaviour
             CloseShop();  // Close the shop if the player moves away
         }
     }
+
+
 }

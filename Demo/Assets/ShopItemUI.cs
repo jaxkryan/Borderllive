@@ -34,12 +34,12 @@ public class ShopItemUI : MonoBehaviour
     private void OnPurchaseButtonClicked()
     {
         if (currentItem == null) {
-            Debug.Log("ci is null");
+           // Debug.Log("ci is null");
              return;
         }
-        else{
-            Debug.Log("info: " + currentItem.itemDescription);
-        }
+        // else{
+        //     Debug.Log("info: " + currentItem.itemDescription);
+        // }
         // Tell the ShopManager to handle the purchase
          shopManager.PurchaseItem(currentItem, this);
     }

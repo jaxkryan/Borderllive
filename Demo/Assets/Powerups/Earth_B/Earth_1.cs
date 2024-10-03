@@ -16,7 +16,7 @@ public class Earth_1 : Powerups
         this.Weight = 10;
         this.BerserkRateIncrease = 0;
         this.type = BuffType.HpBuff;
-
+    
         this.triggerCondition = TriggerCondition.Always;
 
         this.effect = Effect.HPIncrease;
