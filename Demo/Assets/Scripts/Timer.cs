@@ -36,7 +36,7 @@ public class Timer : MonoBehaviour
         int milliseconds = (int)(elapsedMilliseconds % 1000);
 
         // Display the time in the console (optional)
-        UnityEngine.Debug.Log($"{hours:D2}:{minutes:D2}:{seconds:D2}:{milliseconds:D3}");
+        // UnityEngine.Debug.Log($"{hours:D2}:{minutes:D2}:{seconds:D2}:{milliseconds:D3}");
 
         // Update the UI text if necessary
         if (timerText != null)
