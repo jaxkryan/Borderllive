@@ -13,7 +13,7 @@ public class EnemyXPTracker : MonoBehaviour
 
     private void Awake()
     {
-        currentXP = PlayerPrefs.GetInt("CurrentXP", 0);
+        currentXP = PlayerPrefs.GetInt("EnemyXP", 0);
         // Instantiate the XPTranslation based on the assigned type
         if (XPTranslationType == null)
         {
@@ -28,10 +28,10 @@ public class EnemyXPTracker : MonoBehaviour
 
     public void AddXP(int amount)
     {
-        currentXP = PlayerPrefs.GetInt("CurrentXP", 0) + amount;
+        currentXP = PlayerPrefs.GetInt("EnemyXP", 0) + amount;
 
         // Save the currentXP to PlayerPrefs
-        PlayerPrefs.SetInt("CurrentXP", currentXP);
+        PlayerPrefs.SetInt("EnemyXP", currentXP);
         PlayerPrefs.Save();
 
         // Handle leveling up based on the amount added

@@ -2933,17 +2933,37 @@ PrefabInstance:
       propertyPath: buffChosenDialogue.Array.data[0]
       value: 200K
       objectReference: {fileID: 0}
+    - target: {fileID: 2409320950283131012, guid: 3a5607b8c24ed394d96149de68267ce3, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 8030d8d587233564aa1c908f06476bbe, type: 3}
     - target: {fileID: 2466489649374458975, guid: 3a5607b8c24ed394d96149de68267ce3, type: 3}
       propertyPath: buffPool
       value: 
       objectReference: {fileID: 893671946}
+    - target: {fileID: 2492907783340014431, guid: 3a5607b8c24ed394d96149de68267ce3, type: 3}
+      propertyPath: m_Size.x
+      value: 3.0612893
+      objectReference: {fileID: 0}
+    - target: {fileID: 2492907783340014431, guid: 3a5607b8c24ed394d96149de68267ce3, type: 3}
+      propertyPath: m_Size.y
+      value: 2.434165
+      objectReference: {fileID: 0}
+    - target: {fileID: 2492907783340014431, guid: 3a5607b8c24ed394d96149de68267ce3, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.13539433
+      objectReference: {fileID: 0}
+    - target: {fileID: 2492907783340014431, guid: 3a5607b8c24ed394d96149de68267ce3, type: 3}
+      propertyPath: m_Offset.y
+      value: 4.5344243
+      objectReference: {fileID: 0}
     - target: {fileID: 3170952402835736755, guid: 3a5607b8c24ed394d96149de68267ce3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.13
       objectReference: {fileID: 0}
     - target: {fileID: 3170952402835736755, guid: 3a5607b8c24ed394d96149de68267ce3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -4.28
       objectReference: {fileID: 0}
     - target: {fileID: 3678863542651230858, guid: 3a5607b8c24ed394d96149de68267ce3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -2959,7 +2979,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5913243985381690461, guid: 3a5607b8c24ed394d96149de68267ce3, type: 3}
       propertyPath: m_Name
-      value: Earth_Element
+      value: Metal_Element
       objectReference: {fileID: 0}
     - target: {fileID: 5964508563920473847, guid: 3a5607b8c24ed394d96149de68267ce3, type: 3}
       propertyPath: m_LocalScale.x
@@ -3013,6 +3033,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 8d707719e634e5841af9ea99c9cfb17c, type: 3}
+    - target: {fileID: 7080114986659062054, guid: 3a5607b8c24ed394d96149de68267ce3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7310965192914632174, guid: 3a5607b8c24ed394d96149de68267ce3, type: 3}
       propertyPath: m_Size.x
       value: 1.6092666

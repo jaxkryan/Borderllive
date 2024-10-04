@@ -420,6 +420,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ef84a0e7921403449b62c5d6eeb5a65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!223 &534107298 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 3929137149965588936, guid: 3e36ab574b9c4e4438c656f877fe6072, type: 3}
+  m_PrefabInstance: {fileID: 1550967331}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &550979922
 GameObject:
   m_ObjectHideFlags: 0
@@ -746,7 +751,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ef84a0e7921403449b62c5d6eeb5a65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  settingsCanvas: {fileID: 0}
+  settingsCanvas: {fileID: 534107298}
 --- !u!1001 &1550967331
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -755,6 +760,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1146593745745620952, guid: 3e36ab574b9c4e4438c656f877fe6072, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1322288745857420380, guid: 3e36ab574b9c4e4438c656f877fe6072, type: 3}
       propertyPath: gameOverCanvas
       value: 
@@ -843,8 +852,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: SettingUI
       objectReference: {fileID: 0}
+    - target: {fileID: 2668570162335316936, guid: 3e36ab574b9c4e4438c656f877fe6072, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8176911142010157165, guid: 3e36ab574b9c4e4438c656f877fe6072, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 1435235471166482659, guid: 3e36ab574b9c4e4438c656f877fe6072, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e36ab574b9c4e4438c656f877fe6072, type: 3}

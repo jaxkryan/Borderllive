@@ -615,7 +615,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 4463518905960522865, guid: 0c1ab7f72964dfb428b31ed4560b73c0, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c1ab7f72964dfb428b31ed4560b73c0, type: 3}
@@ -2933,6 +2934,10 @@ PrefabInstance:
       propertyPath: buffChosenDialogue.Array.data[0]
       value: 200K
       objectReference: {fileID: 0}
+    - target: {fileID: 2409320950283131012, guid: 3a5607b8c24ed394d96149de68267ce3, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d4e397d861594204197733bfacf3025f, type: 3}
     - target: {fileID: 2466489649374458975, guid: 3a5607b8c24ed394d96149de68267ce3, type: 3}
       propertyPath: buffPool
       value: 
