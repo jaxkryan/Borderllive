@@ -2,11 +2,13 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
+    private GameObject player;
     public int baseDamage = 10; // Base damage of the projectile
     public int additionalDamage = 0; // Additional damage that can be modified externally
     public Vector2 moveSpeed = new Vector2(3f, 0);
     public Vector2 knockback = new Vector2(0, 0);
 
+    public float force;
     private Rigidbody2D rb;
 
     private void Awake()
@@ -17,8 +19,14 @@ public class Projectile : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
+
+        Vector3 direction = player.transform.position - rb.transform.position;
         // Set the velocity of the projectile based on its direction
         rb.velocity = new Vector2(moveSpeed.x * transform.localScale.x, moveSpeed.y);
+
+        float rot = Mathf.Atan2(-direction.y, -direction.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0, 0, rot);
     }
 
     // Trigger when the projectile collides with another object
