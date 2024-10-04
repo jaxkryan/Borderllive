@@ -206,10 +206,14 @@ public class OwnedActiveItem : MonoBehaviour
 
 
     private void Start(){
-                item1Button.onClick.AddListener(() => SelectItemToExchange(0));
+        if (item1Button != null)
+        item1Button.onClick.AddListener(() => SelectItemToExchange(0));
+        if (item2Button != null)
         item2Button.onClick.AddListener(() => SelectItemToExchange(1));
+        if (cancelButton != null)
         cancelButton.onClick.AddListener(CancelExchange);
 
+        if (exchangeScreen!=null)
         // Hide exchange screen initially
         exchangeScreen.SetActive(false);
         UpdateUI();
