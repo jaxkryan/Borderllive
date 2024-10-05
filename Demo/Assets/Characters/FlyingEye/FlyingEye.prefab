@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2269548428410199991
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 300983416811952430}
+  m_Layer: 8
+  m_Name: Projectile
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &300983416811952430
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2269548428410199991}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.5, y: -0.3, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1943041679444063900}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3703085685215556528
 GameObject:
   m_ObjectHideFlags: 0
@@ -101,6 +132,7 @@ GameObject:
   - component: {fileID: 366460629548117337}
   - component: {fileID: 5270440212616268181}
   - component: {fileID: 6317722812825365873}
+  - component: {fileID: -4651440839720809575}
   m_Layer: 8
   m_Name: FlyingEye
   m_TagString: Untagged
@@ -124,6 +156,7 @@ Transform:
   - {fileID: 7467030596872303753}
   - {fileID: 5466534422653958254}
   - {fileID: 409435310940199186}
+  - {fileID: 300983416811952430}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2891506052734466223
@@ -373,6 +406,22 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &-4651440839720809575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7859724540115080706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce64ea0047bc12d44ba8cd329723181d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 1338527739506778704, guid: e3288aeb01c74b24f92e08694114c631, type: 3}
+  projectilePos: {fileID: 300983416811952430}
+  cooldown: 2
+  distance: 10
 --- !u!1 &7886234287371785040
 GameObject:
   m_ObjectHideFlags: 0
