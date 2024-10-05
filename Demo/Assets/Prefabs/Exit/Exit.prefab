@@ -139,14 +139,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   listBattleRooms:
-  - Room_1
-  - Room_3
-  - Room_5
   - BorderDeath_Battle_1
   - BorderDeath_Battle_2
   - BorderDeath_Battle_3
   - BorderDeath_Battle_4
   - BorderDeath_Battle_5
+  - BorderDeath_Battle_4
+  - BorderDeath_Battle_3
+  - BorderDeath_Battle_2
+  - BorderDeath_Battle_1
   listEventRooms:
   - BorderDeath_ElementalEvent_1
   - BorderDeath_ElementalEvent_2
@@ -156,11 +157,20 @@ MonoBehaviour:
   listShopRooms:
   - BorderDeath_Event_Shop
   - BorderDeath_Event_1
+  - BorderDeath_Event_1
+  - BorderDeath_Event_2
+  - BorderDeath_Event_2
   - BorderDeath_Event_2
   listFunRooms:
   - BorderDeath_Fun_1
+  - BorderDeath_Fun_1
+  - BorderDeath_Fun_1
+  - BorderDeath_Fun_2
+  - BorderDeath_Fun_2
   - BorderDeath_Fun_2
   - BorderDeath_Fun_3
+  - BorderDeath_Fun_3
+  - BorderDeath_Fun_4
 --- !u!1 &3694491652938188478
 GameObject:
   m_ObjectHideFlags: 0

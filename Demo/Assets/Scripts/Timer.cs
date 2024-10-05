@@ -36,6 +36,7 @@ public class Timer : MonoBehaviour
         int milliseconds = (int)(elapsedMilliseconds % 1000);
 
         // Display the time in the console (optional)
+
         // UnityEngine.Debug.Log($"{hours:D2}:{minutes:D2}:{seconds:D2}:{milliseconds:D3}");
 
         // Update the UI text if necessary
@@ -55,7 +56,7 @@ public class Timer : MonoBehaviour
         PlayerPrefs.SetFloat(TimerKey, elapsedMilliseconds);
         PlayerPrefs.Save();
 
-        UnityEngine.Debug.Log($"Saved time: {elapsedMilliseconds} ms");
+       // UnityEngine.Debug.Log($"Saved time: {elapsedMilliseconds} ms");
     }
 
     // Call this method to reset the saved time
