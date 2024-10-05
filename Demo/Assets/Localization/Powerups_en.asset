@@ -43,6 +43,105 @@ MonoBehaviour:
     m_Localized: When HP is under 50%, receive 10% more defense
     m_Metadata:
       m_Items: []
+  - m_Id: 23013553594368
+    m_Localized: Vital Surge
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23475031891968
+    m_Localized: Increase your HP by 15%.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23649280057344
+    m_Localized: Fortified
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23729781334016
+    m_Localized: When HP is higher than 70%, defense increase by 20%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23836748668928
+    m_Localized: 'Stonewall '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23881740967936
+    m_Localized: If HP under 50% then create a shield equals to 20% max HP.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24125618774016
+    m_Localized: Blazing Strike
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24237753491456
+    m_Localized: If enemy's HP is under 50%, normal attack deal 15% more damage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24388551303168
+    m_Localized: "Ember\u2019s Luck"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24532202020864
+    m_Localized: Normal attack have 5% chance to deal 200% damage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24662426771456
+    m_Localized: Inferno's Wrath
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24723281928192
+    m_Localized: Berserk gauge increase 10% faster
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24936692310016
+    m_Localized: Aqua Bind
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26351112282112
+    m_Localized: ' Normal attack has 10% chance to reduce enemy''s action by 50%
+      in 3 seconds. '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26513452818432
+    m_Localized: Fluid Motion
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26603076706304
+    m_Localized: 'Increase 10% movement speed and dash distance '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26697930891264
+    m_Localized: Abyssal Calm
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26716490686464
+    m_Localized: Berserk Gauge reduction when using skill decrease by 20%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27317282791424
+    m_Localized: Nature's Decay
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27831168917504
+    m_Localized: Guarantee to reduce enemy's defense by 10% in 2 seconds after 12
+      normal attacks
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28059540381696
+    m_Localized: Lifebloom
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28197876916224
+    m_Localized: When under 35% HP, heal yourself 5% HP each 15 second, up to 20%
+      HP.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28633086287872
+    m_Localized: Woodland Restoration
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28704221683712
+    m_Localized: In Berserk mode, heal 1% hp per attack
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
