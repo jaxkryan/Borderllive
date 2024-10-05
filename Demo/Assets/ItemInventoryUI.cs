@@ -38,7 +38,7 @@ public class ItemInventoryUI : MonoBehaviour
         }
 
         // Here you can open a dialog/UI to choose between exchanging item1 or item2
-        Debug.Log("Exchanging " + currentItem.itemName);
+        // Debug.Log("Exchanging " + currentItem.itemName);
 
         // Call the exchange method in ItemManagement
         itemManager.ExchangeItem(currentItem);

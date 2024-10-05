@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: StoryLocalization Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: StoryLocalization
+  m_TableCollectionNameGuidString: b3a7ada3e91db7a4c8cd806d4b8ae990
+  m_Entries:
+  - m_Id: 6806298624
+    m_Key: StorySentence1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5529966469120
+    m_Key: StorySentence2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5602645368832
+    m_Key: StorySentence3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6309196849152
+    m_Key: StorySentence4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6527405514752
+    m_Key: StorySentence5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7294900232192
+    m_Key: StorySentence6
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7835126587392
+    m_Key: StorySentence7
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10010326196224
+    m_Key: StorySentence8
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10126214815744
+    m_Key: StorySentence9
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10219026374656
+    m_Key: 'StorySentence10
+
+'
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 7238775660489474074
+  references:
+    version: 2
+    RefIds:
+    - rid: 7238775660489474074
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1728134433737
