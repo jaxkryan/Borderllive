@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Metal_1
   m_EditorClassIdentifier: 
   id: 1
+  name: Bronze Shield
   type: 0
   ElementId: 1
   triggerCondition: 0

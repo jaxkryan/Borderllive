@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Earth_2
   m_EditorClassIdentifier: 
   id: 14
+  name: Fortified
   type: 0
   ElementId: 5
   triggerCondition: 0

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Metal_3
   m_EditorClassIdentifier: 
   id: 3
+  name: Iron Will
   type: 0
   ElementId: 1
   triggerCondition: 0

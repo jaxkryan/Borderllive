@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Metal_2
   m_EditorClassIdentifier: 
   id: 2
+  name: Rusting Strike
   type: 5
   ElementId: 1
   triggerCondition: 0

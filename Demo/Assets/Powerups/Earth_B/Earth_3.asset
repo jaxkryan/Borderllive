@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Earth_3
   m_EditorClassIdentifier: 
   id: 15
+  name: Stoneguard
   type: 6
   ElementId: 5
   triggerCondition: 1

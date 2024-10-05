@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Fire_1
   m_EditorClassIdentifier: 
   id: 9
+  name: Blazing Strike
   type: 4
   ElementId: 4
   triggerCondition: 5

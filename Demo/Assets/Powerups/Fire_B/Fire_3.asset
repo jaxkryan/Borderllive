@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Fire_3
   m_EditorClassIdentifier: 
   id: 11
+  name: Inferno's Wrath
   type: 4
   ElementId: 4
   triggerCondition: 0
