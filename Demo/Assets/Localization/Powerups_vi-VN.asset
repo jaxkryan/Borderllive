@@ -17,7 +17,33 @@ MonoBehaviour:
   m_SharedData: {fileID: 11400000, guid: b20ae765e972d1e4d81287cce6cb8db4, type: 2}
   m_Metadata:
     m_Items: []
-  m_TableData: []
+  m_TableData:
+  - m_Id: 6063906816
+    m_Localized: "Kim gi\xE1p "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21768591892480
+    m_Localized: "Ph\xF2ng th\u1EE7 t\u0103ng 10%"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22372156432384
+    m_Localized: "\u0110\xF2n g\u1EC9 s\xE9t"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22445477060608
+    m_Localized: "\u0110\xF2n \u0111\xE1nh th\u01B0\u1EDDng c\xF3 10% x\xE1c su\u1EA5t
+      khi\u1EBFn k\u1EBB \u0111\u1ECBch gi\u1EA3m 10% gi\xE1p trong 1 gi\xE2y"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22804782112768
+    m_Localized: "\xDD ch\xED ki\xEAn c\u01B0\u1EDDng"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22898428338176
+    m_Localized: "Khi l\u01B0\u1EE3ng m\xE1u d\u01B0\u1EDBi 50%, nh\u1EADn 10% ph\xF2ng
+      th\u1EE7"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

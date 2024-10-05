@@ -17,7 +17,32 @@ MonoBehaviour:
   m_SharedData: {fileID: 11400000, guid: b20ae765e972d1e4d81287cce6cb8db4, type: 2}
   m_Metadata:
     m_Items: []
-  m_TableData: []
+  m_TableData:
+  - m_Id: 6063906816
+    m_Localized: Bronze Shield
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21768591892480
+    m_Localized: Defense increase by 10%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22372156432384
+    m_Localized: Rusting Strike
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22445477060608
+    m_Localized: Normal attack has 10% chance to reduce enemy's defense by 10% in
+      1 second
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22804782112768
+    m_Localized: Iron Wil
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22898428338176
+    m_Localized: When HP is under 50%, receive 10% more defense
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
