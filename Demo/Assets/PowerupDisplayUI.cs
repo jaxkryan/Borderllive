@@ -7,6 +7,8 @@ public class PowerupDisplayUI : MonoBehaviour
 {
     public GameObject powerupPanel; // Reference to the panel that shows the power-ups
     public GameObject powerupPrefab; // Prefab that displays each power-up
+
+    public GameObject noPowerup;
     public Transform contentParent; // The content container where power-ups are displayed
     private OwnedPowerups ownedPowerups; // Reference to the player's owned power-ups
     private bool isPanelVisible = false; // To track if the power-up panel is visible or not
@@ -26,11 +28,12 @@ public class PowerupDisplayUI : MonoBehaviour
         // powerupPanel.SetActive(false);
     }
 
-    // private void Update()
-    // {
-    //     // Toggle the power-up panel when Tab is pressed
-
-    // }
+    private void Update()
+    {
+        if (ownedPowerups.activePowerups.Count == 0) noPowerup.SetActive(true);
+        else noPowerup.SetActive(false);
+        UpdatePowerupDisplay();
+    }
 
     private void TogglePowerupPanel()
     {
