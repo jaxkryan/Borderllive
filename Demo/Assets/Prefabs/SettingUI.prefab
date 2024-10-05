@@ -677,17 +677,17 @@ MonoBehaviour:
   m_FillRect: {fileID: 1146593745745620952}
   m_HandleRect: {fileID: 8176911142010157165}
   m_Direction: 0
-  m_MinValue: 0
+  m_MinValue: 0.0001
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 0.538
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 7788990352420909637}
         m_TargetAssemblyTypeName: SettingMenu, Assembly-CSharp
-        m_MethodName: SetVolumn
-        m_Mode: 0
+        m_MethodName: SetVolume
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -978,6 +978,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioMixer: {fileID: 24100000, guid: 8e1d3c828827c514894cecaafd1107f5, type: 2}
   resolutionDropdown: {fileID: 7002276679206410421}
+  volumeSlider: {fileID: 3764774955460326240}
+  fullscreenToggle: {fileID: 6845208127902268130}
+  qualityDropdown: {fileID: 2286863665739728475}
 --- !u!114 &1322288745857420380
 MonoBehaviour:
   m_ObjectHideFlags: 0

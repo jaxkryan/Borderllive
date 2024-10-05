@@ -31,6 +31,10 @@ public class EnemyProjectile : MonoBehaviour
         if (damageable != null)
         {
             CharacterStat stat = collision.GetComponent<CharacterStat>();
+            if(stat == null)
+            {
+
+            }
             // Calculate total damage (baseDamage + additionalDamage)
             int totalDamage = baseDamage + additionalDamage + (int)stat.DEF +(int) (stat.MaxHealth * 0.2);
 
@@ -46,7 +50,7 @@ public class EnemyProjectile : MonoBehaviour
 
             // Destroy the projectile after hitting
             Destroy(gameObject);
-        }
+        } 
     }
 
     // Method to set additional damage from another script

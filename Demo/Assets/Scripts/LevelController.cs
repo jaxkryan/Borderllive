@@ -31,9 +31,27 @@ public class LevelController : MonoBehaviour
     private void OnApplicationQuit()
     {
         ResetStaticData();
-        PlayerController.ClearPlayerData();
+        ClearPlayerData();
 
         Debug.Log("Player data cleared on application quit.");
+    }
+
+    private static Timer timer;
+    private void ClearPlayerData()
+    {
+        PlayerPrefs.DeleteKey("Health");
+        PlayerPrefs.DeleteKey("MaxHealth");
+        PlayerPrefs.DeleteKey("Shield");
+        PlayerPrefs.DeleteKey("XP");
+        PlayerPrefs.DeleteKey("Souls");
+        PlayerPrefs.DeleteKey("ActivePowerups");
+        PlayerPrefs.DeleteKey("Item1");
+        PlayerPrefs.DeleteKey("Item2");
+        timer = FindObjectOfType<Timer>();
+        timer.ResetTime();
+        PlayerPrefs.DeleteKey("EnemyXP");
+
+        PlayerPrefs.Save();
     }
     public void ShowOption()
     {
