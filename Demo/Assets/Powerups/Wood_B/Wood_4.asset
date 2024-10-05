@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Wood_4
   m_EditorClassIdentifier: 
   id: 12
+  name: Woodland Restoration
   type: 2
   ElementId: 2
   triggerCondition: 3

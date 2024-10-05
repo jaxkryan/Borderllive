@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Wood_3
   m_EditorClassIdentifier: 
   id: 5
+  name: Lifebloom
   type: 2
   ElementId: 2
   triggerCondition: 1

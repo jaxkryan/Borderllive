@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Water_2
   m_EditorClassIdentifier: 
   id: 7
+  name: Fluid Motion
   type: 3
   ElementId: 1
   triggerCondition: 0
@@ -23,4 +24,4 @@ MonoBehaviour:
   duration: 0
   isActive: 0
   currentCooldown: 0
-  description: Increase 10% movement speed
+  description: 'Increase 10% movement speed and dash distance '

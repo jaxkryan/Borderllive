@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Water_1
   m_EditorClassIdentifier: 
   id: 6
+  name: Aqua Bind
   type: 5
   ElementId: 3
   triggerCondition: 0
