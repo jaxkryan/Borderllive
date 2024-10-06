@@ -14,6 +14,7 @@ public class NPC : MonoBehaviour
     public GameObject gameCanvas;
     public float wordSpeed;
     public bool playerIsClose;
+    public GameObject interactableMessage;
 
     // Dialogue lines
     public string[] dialogue;
@@ -68,18 +69,9 @@ public class NPC : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && playerIsClose && !isChoosing)
+        if (Input.GetMouseButtonDown(0) && !isChoosing)
         {
-            if (!dialoguePanel.activeInHierarchy)
-            {
-                dialoguePanel.SetActive(true);
-                playerInput.SwitchCurrentActionMap("Disable");
-                gameCanvas = GameObject.FindGameObjectWithTag("GameCanvas");
-                if (gameCanvas != null) { gameCanvas.SetActive(false); }
-
-                StartCoroutine(Typing());
-            }
-            else if (dialogueText.text == dialogue[index])
+            if (dialogueText.text == dialogue[index])
             {
                 NextLine();
             }
@@ -88,6 +80,23 @@ public class NPC : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Q) && dialoguePanel.activeInHierarchy && !isChoosing)
         {
             RemoveText();
+        }
+    }
+
+    public void ShowDialog()
+    {
+        if (playerIsClose && !isChoosing)
+        {
+            if (!dialoguePanel.activeInHierarchy)
+            {
+                dialoguePanel.SetActive(true);
+                interactableMessage.SetActive(false);
+                playerInput.SwitchCurrentActionMap("Disable");
+                gameCanvas = GameObject.FindGameObjectWithTag("GameCanvas");
+                if (gameCanvas != null) { gameCanvas.SetActive(false); }
+
+                StartCoroutine(Typing());
+            }
         }
 
         // Check for choice inputs only when choices are active
@@ -103,7 +112,6 @@ public class NPC : MonoBehaviour
             }
         }
     }
-
     public void RemoveText()
     {
         if (playerInput != null)
