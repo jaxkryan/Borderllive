@@ -22,6 +22,11 @@ public class UIController : MonoBehaviour
         SceneManager.LoadScene("MainMenu_Screen");
     }
 
+    public void ExitBtn_Click()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene("MainMenu_Screen");
+    }
     public Canvas settingsCanvas;
     private bool isPaused = false;
 

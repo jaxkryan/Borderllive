@@ -7,7 +7,7 @@ public class EnemyAttack : MonoBehaviour, IBuffable
 
     private ScriptableBuff _buff;
     private EnemyStat enemyStat; // Reference to EnemyStat
-    private float attackDamage;
+    public float attackDamage;
     public Vector2 knockback = Vector2.zero;
 
     private void Start()
