@@ -526,6 +526,8 @@ public class PlayerController : MonoBehaviour
         // Save player health
         PlayerPrefs.SetInt("Health", damageable.Health);
         PlayerPrefs.SetInt("MaxHealth", damageable.MaxHealth);
+        Debug.Log("c mau: " + PlayerPrefs.GetInt("Health"));
+        Debug.Log("max mau: " + PlayerPrefs.GetInt("MaxHealth"));
         PlayerPrefs.SetFloat("Shield", characterStat.Shield);
 
 
@@ -663,6 +665,8 @@ public class PlayerController : MonoBehaviour
         int newMaxHealth = (int)(damageable.MaxHealth * (1 + value));
         damageable.MaxHealth = newMaxHealth;
         damageable.Health += (int)(damageable.Health * value);
+        // Debug.Log("max health: " + damageable.MaxHealth);
+        // Debug.Log("c health " + damageable.Health);
     }
 
     //internal void IncreaseDefHighHp(float value)

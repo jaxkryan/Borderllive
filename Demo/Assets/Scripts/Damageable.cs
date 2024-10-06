@@ -1,3 +1,4 @@
+using System;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
@@ -40,7 +41,7 @@ public class Damageable : MonoBehaviour
     {
         get
         {
-            return _health;
+            return Math.Min(_health, MaxHealth);
         }
         set
         {
