@@ -15,6 +15,7 @@ public class BuffPool : MonoBehaviour
         // Initialize availablePowerups with initial power-ups on game start
         ResetBuffPool();
         ownedPowerups = FindObjectOfType<OwnedPowerups>();
+
     }
 
     // Method to reset the buff pool with the initial set of power-ups
@@ -22,6 +23,10 @@ public class BuffPool : MonoBehaviour
     {
         availablePowerups.Clear(); // Clear any previous data
         availablePowerups.AddRange(initialPowerups); // Refill the pool with the initial buffs
+        // foreach (Powerups powerups in availablePowerups)
+        // {
+        //     powerups.InitializeLocalization(powerups.name, powerups.description);
+        // }
     }
 
     // Method to remove a selected buff from the list

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Fire_2
   m_EditorClassIdentifier: 
   id: 10
-  name: "Ember\u2019s Luck"
+  name: Ember's Luck
   type: 4
   ElementId: 4
   triggerCondition: 0
@@ -24,4 +24,25 @@ MonoBehaviour:
   duration: 0
   isActive: 0
   currentCooldown: 0
-  description: Normal attack have 5% chance to deal 200% damage
+  description: 
+  nameLocalization:
+    m_TableReference:
+      m_TableCollectionName: Powerups
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: Fire_2_Name
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  descriptionLocalization:
+    m_TableReference:
+      m_TableCollectionName: Powerups
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: Fire_2_Description
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  references:
+    version: 2
+    RefIds: []

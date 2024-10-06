@@ -22,6 +22,7 @@ public class Water_3 : Powerups
         this.triggerCondition = TriggerCondition.Always;
 
         this.effect = Effect.BeserkRegen;
+        InitializeLocalization("Water_3_Name", "Water_3_Description");
     }
 
     public void ApplyEffect(PlayerController player)

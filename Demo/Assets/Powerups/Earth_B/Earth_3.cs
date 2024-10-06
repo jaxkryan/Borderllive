@@ -21,6 +21,8 @@ public class Earth_3 : Powerups
         this.triggerCondition = TriggerCondition.LowHP;
 
         this.effect = Effect.Shield;
+
+        InitializeLocalization("Earth_3_Name", "Earth_3_Description");
     }
 
     public void ApplyEffect(PlayerController player)

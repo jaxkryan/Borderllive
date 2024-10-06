@@ -20,6 +20,7 @@ public class Metal_2 : Powerups
         this.type = BuffType.Debuff;
         this.triggerCondition = TriggerCondition.Always;
         this.effect = Effect.EnemyDefReduction;
+        InitializeLocalization("Metal_2_Name", "Metal_2_Description");
     }
 
     public Boolean ApplyEffect(Knight target)

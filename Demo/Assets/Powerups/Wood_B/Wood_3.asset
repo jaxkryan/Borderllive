@@ -17,12 +17,32 @@ MonoBehaviour:
   type: 2
   ElementId: 2
   triggerCondition: 1
-  effect: 5
+  effect: 6
   Weight: 10
   BerserkRateIncrease: 0
   cooldown: 0
   duration: 0
   isActive: 0
   currentCooldown: 0
-  description: When under 35% HP, heal yourself 5% HP each 15 second, cap at 20%
-    HP.
+  description: 
+  nameLocalization:
+    m_TableReference:
+      m_TableCollectionName: Powerups
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: Wood_3_Name
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  descriptionLocalization:
+    m_TableReference:
+      m_TableCollectionName: Powerups
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: Wood_3_Description
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  references:
+    version: 2
+    RefIds: []

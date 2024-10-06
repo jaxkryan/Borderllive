@@ -20,6 +20,7 @@ public class Earth_1 : Powerups
         this.triggerCondition = TriggerCondition.Always;
 
         this.effect = Effect.HPIncrease;
+        InitializeLocalization("Earth_1_Name", "Earth_1_Description");
     }
 
     public void ApplyEffect(PlayerController player)

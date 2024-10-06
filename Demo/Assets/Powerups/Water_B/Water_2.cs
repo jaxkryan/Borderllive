@@ -21,6 +21,7 @@ public class Water_2 : Powerups
         this.triggerCondition = TriggerCondition.Always;
 
         this.effect = Effect.SpeedIncrease;
+        InitializeLocalization("Water_2_Name", "Water_2_Description");
     }
 
     public void ApplyEffect(PlayerController player)

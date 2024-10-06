@@ -24,5 +24,26 @@ MonoBehaviour:
   duration: 0
   isActive: 0
   currentCooldown: 0
-  description: Increase your HP by 15%.
+  description: 
+  nameLocalization:
+    m_TableReference:
+      m_TableCollectionName: Powerups
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: Earth_1_Name
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  descriptionLocalization:
+    m_TableReference:
+      m_TableCollectionName: Powerups
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: Earth_1_Description
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   staminaIncrease: 0.15
+  references:
+    version: 2
+    RefIds: []
