@@ -16,16 +16,8 @@ public class HealthBar : MonoBehaviour
         {
             Debug.Log("No player found in the scence. Make sure it has tag 'Player'");
         }
-
         playDamageable = player.GetComponent<Damageable>();
     }
-    // Start is called before the first frame update
-    // void Start()
-    // {
-    //     healthSlider.value = CalculateSliderPercentage(playDamageable.Health, playDamageable.MaxHealth);
-    //     healthBarText.text = "HP " + playDamageable.Health + " / " + playDamageable.MaxHealth;
-    // }
-
     private void OnEnable()
     {
         playDamageable.healthChanged.AddListener(OnPlayerHealthChanged);
