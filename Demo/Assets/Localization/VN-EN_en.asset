@@ -78,6 +78,10 @@ MonoBehaviour:
     m_Localized: Language
     m_Metadata:
       m_Items: []
+  - m_Id: 463574701957120
+    m_Localized: Press F to interact
+    m_Metadata:
+      m_Items: []
   - m_Id: 379586013601792
     m_Localized: Restart
     m_Metadata:

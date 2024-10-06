@@ -75,6 +75,10 @@ MonoBehaviour:
     m_Key: Language
     m_Metadata:
       m_Items: []
+  - m_Id: 463574701957120
+    m_Key: InteractByF
+    m_Metadata:
+      m_Items: []
   - m_Id: 379586013601792
     m_Key: Restart
     m_Metadata:

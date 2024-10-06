@@ -90,4 +90,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1665044f79d159b4e91251efa5aae606, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageAmount: 10
   sendPlayerToOriginalLocation: 1
+  playerOriginalPosition: {x: 9.7, y: -15.7}
+  knockbackForce: 5
