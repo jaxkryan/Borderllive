@@ -68,8 +68,8 @@ public class PowerupDisplayUI : MonoBehaviour
             Text nameText = nameTextTransform.GetComponent<Text>();
             Text descriptionText = descriptionTextTransform.GetComponent<Text>();
 
-            nameText.text = powerup.name;
-            descriptionText.text = powerup.description;
+            nameText.text = powerup.nameLocalization.GetLocalizedString();
+            descriptionText.text = powerup.descriptionLocalization.GetLocalizedString();
         }
     }
 

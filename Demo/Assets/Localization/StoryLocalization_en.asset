@@ -148,6 +148,68 @@ MonoBehaviour:
       playful ghosts.
     m_Metadata:
       m_Items: []
+  - m_Id: 487420549926912
+    m_Localized: '"I miss the feeling of swimming freely in the river by my hometown."'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 487946758918144
+    m_Localized: That was what the ghost in front of you said as you approached.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 488081383493632
+    m_Localized: Seeing that you seemed to be in a hurry, the ghost continued in
+      a melancholic tone.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 488325882056704
+    m_Localized: '"If you don''t mind, could you listen to an old man''s story?"'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 488611224752128
+    m_Localized: You thought for a moment. After all, time had no meaning in this
+      place, so why not sit and listen to a wandering ghost's story? Perhaps you'd
+      learn something interesting.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 488930428063744
+    m_Localized: '"So, do you want to hear about the mountain, the river, or the
+      sea?"'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 489706110062592
+    m_Localized: A story about the mountain might suit me.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 489869926993920
+    m_Localized: The river, huh, that wouldn't be bad either.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 489944711434240
+    m_Localized: This ghost had once been to the sea; there must be an interesting
+      story here.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 490197338558464
+    m_Localized: '"When I was alive, I once fought off two raging buffaloes with
+      just a wooden stick..." The ghost recounted with a nostalgic tone.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 490607075921920
+    m_Localized: '"When I was alive, I once climbed onto the back of a sacred fish..."
+      The ghost recounted with a nostalgic tone.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 490884239724544
+    m_Localized: '"When I was alive, a foreign maiden took her own life because of
+      me..." The ghost recounted with a nostalgic tone. Turns out, the ghost''s sea
+      referred to overseas lands.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 496395618095104
+    m_Localized: You become absorbed in the story told by the homesick ghost. Before
+      long, you feel like you've learned something new.
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
