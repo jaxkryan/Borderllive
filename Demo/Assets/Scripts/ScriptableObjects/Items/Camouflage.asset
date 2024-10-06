@@ -9,9 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cabbe0bd1323d3444a69c43a32354a62, type: 3}
+  m_Script: {fileID: 11500000, guid: e868b982f82ed734594ceba52c74b540, type: 3}
   m_Name: Camouflage
   m_EditorClassIdentifier: 
-  title: Camouflage
-  description: Grants invisibility
-  baseCost: 500
+  itemName: Camouflage
+  itemDescription: Grants invisibility
+  image: {fileID: 1486368608, guid: 7acb259dca06019448bab61d9d9b77a3, type: 3}
+  itemType: 0
+  cd: 30
+  cost: 250
