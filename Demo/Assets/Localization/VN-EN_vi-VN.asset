@@ -98,6 +98,10 @@ MonoBehaviour:
     m_Localized: "B\u1EA1n c\xF3 ch\u1EAFc kh\xF4ng?"
     m_Metadata:
       m_Items: []
+  - m_Id: 498314768326656
+    m_Localized: "M\xE0n h\xECnh ch\xEDnh"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
