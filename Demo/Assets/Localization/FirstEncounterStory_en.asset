@@ -1,0 +1,108 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: FirstEncounterStory_en
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: 4acbc0afb511a054aa036a70e04c2ff4, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 73928544256
+    m_Localized: "You open your eyes and find yourself standing in a vast, starry
+      void. In front of you is a radiant figure, calm and powerful\u2014undoubtedly,
+      a god, or just a normal ghost. "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 143285555200
+    m_Localized: W-Where am I...? And who are you?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 197035560960
+    m_Localized: Welcome, mortal. You have died in your previous world.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 234415198208
+    m_Localized: 'I... died? The last thing I remember is... '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 275221581824
+    m_Localized: You are trying so hard to remember that you forget to ask who exactly
+      the ghost in front of you is.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 351390142464
+    m_Localized: Indeed. Your life there has come to an end. But fret not, for this
+      is not the end of your journey.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 404670386176
+    m_Localized: " I am here to offer you a choice. You may rest peacefully here
+      for eternity... or you may be reborn into another world\u2014one filled with
+      magic, adventure, and unimaginable wonders."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 435175559168
+    m_Localized: Another world...? Like those fantasy novels?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 465332604928
+    m_Localized: Exactly. But this world will be real. And it will not be without
+      danger.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 580164259840
+    m_Localized: "So, what\u2019s the catch?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 605221031936
+    m_Localized: There is no catch. However, to survive and thrive in this world,
+      you will need more than just your current abilities. I will grant you a power
+      of your choosing. A special blessing, if you will.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 625626320896
+    m_Localized: Wait, I get to choose? Anything I want?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1285608443904
+    m_Localized: No, but you will know soon. Just step through that teleport gate.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2924780195840
+    m_Localized: Go!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2960473722880
+    m_Localized: Go!!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2961274834944
+    m_Localized: Go!!!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4049721888768
+    m_Localized: Oh comeon, show some more enthusiasm! Now, go ahead!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4315766591488
+    m_Localized: That's quite some spirit! Now, go ahead!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4438684864512
+    m_Localized: That's what I wanna hear! Now, go ahead!
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []
