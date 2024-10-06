@@ -3,10 +3,10 @@ using UnityEngine.Events;
 
 public class EnemyXPTracker : MonoBehaviour
 {
-    private BaseXPTranslation XPTranslationType;
+    private EnemyXPTranslation_Table XPTranslationType;
     public UnityEvent<int, int> OnLevelChanged = new UnityEvent<int, int>();
 
-    private BaseXPTranslation XPTranslation;
+    public BaseXPTranslation XPTranslation;
 
     // Track the current XP separately in this class
     private int currentXP = 0;
@@ -54,7 +54,6 @@ public class EnemyXPTracker : MonoBehaviour
     {
         // Transfer the currentXP to the enemy when it spawns
         int xpToGrant = currentXP; // Store the XP to grant
-
         // Here you would implement the logic to apply xpToGrant to the enemy
         // For example:
         // enemy.SetCurrentXP(xpToGrant);

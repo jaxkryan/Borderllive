@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 5711693485052203033}
   - component: {fileID: 6161422682657837486}
   - component: {fileID: 2996964197837610143}
-  - component: {fileID: 4880255614700435861}
   m_Layer: 0
   m_Name: Exit
   m_TagString: Untagged
@@ -76,6 +75,7 @@ MonoBehaviour:
   OnLevelChanged:
     m_PersistentCalls:
       m_Calls: []
+  XPTranslation: {fileID: 0}
 --- !u!212 &6161422682657837486
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -151,11 +151,8 @@ MonoBehaviour:
   - BorderDeath_Battle_2
   - BorderDeath_Battle_1
   listEventRooms:
-  - BorderDeath_ElementalEvent_1
-  - BorderDeath_ElementalEvent_2
-  - BorderDeath_ElementalEvent_3
-  - BorderDeath_ElementalEvent_4
-  - BorderDeath_ElementalEvent_5
+  - BorderDeath_Battle_1
+  - BorderDeath_Battle_1
   listShopRooms:
   - BorderDeath_Event_Shop
   - BorderDeath_Event_1
@@ -173,21 +170,6 @@ MonoBehaviour:
   - BorderDeath_Fun_3
   - BorderDeath_Fun_3
   - BorderDeath_Fun_4
---- !u!114 &4880255614700435861
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1726636688667219145}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ec4154059c5a5145bec9af558e5fd22, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnLevelChanged:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1 &3694491652938188478
 GameObject:
   m_ObjectHideFlags: 0

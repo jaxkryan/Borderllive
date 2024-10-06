@@ -12,6 +12,9 @@ public class LevelController : MonoBehaviour
     private static string previousScene;
     private static string selectedPortal1;
     private static string selectedPortal2;
+    public string SelectedPortal1 => selectedPortal1; // Getter for portal 1
+    public string SelectedPortal2 => selectedPortal2; // Getter for portal 2
+
     private static int roomsVisited = 0;
 
     private PlayerController playerController; // Reference to PlayerController
@@ -55,7 +58,7 @@ public class LevelController : MonoBehaviour
     }
     public void ShowOption()
     {
-      
+
         SceneManager.LoadScene("Option_Screen");
 
     }
@@ -176,12 +179,22 @@ public class LevelController : MonoBehaviour
     {
         selectedPortal1 = GetRandomRoom(roomType1);
         selectedPortal2 = GetRandomRoom(roomType2);
+
         Debug.Log("Selected Portal 1: " + selectedPortal1);
         Debug.Log("Selected Portal 2: " + selectedPortal2);
+
+        // Before loading the new scene, update the portal display
+        // Find the OptionScreenController to update the buttons
+        OptionScreenController optionScreen = FindObjectOfType<OptionScreenController>();
+        if (optionScreen != null)
+        {
+            optionScreen.UpdateButtonDisplay();
+        }
 
         // Load the portal selection scene
         SceneManager.LoadScene("Option_Screen");
     }
+
 
     private string GetRandomRoom(string roomType)
     {
