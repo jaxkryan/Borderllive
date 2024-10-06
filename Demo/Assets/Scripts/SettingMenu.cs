@@ -8,6 +8,7 @@ public class SettingMenu : MonoBehaviour
     public AudioMixer audioMixer;
     Resolution[] resolutions;
     public Dropdown resolutionDropdown;
+    public Dropdown languageDropdown;
     public Slider volumeSlider;
     public Toggle fullscreenToggle;
     public Dropdown qualityDropdown;
@@ -23,6 +24,11 @@ public class SettingMenu : MonoBehaviour
         bool isFullScreen = PlayerPrefs.GetInt("Fullscreen", 1) == 1 ? true : false; // Default to fullscreen
         fullscreenToggle.isOn = isFullScreen;
         Screen.fullScreen = isFullScreen;
+
+        int languageIndex = PlayerPrefs.GetInt("Language", 1); // Default quality level is 2 (Medium)
+        languageDropdown.value = languageIndex;
+        SetLanguage(languageIndex);
+
 
         // Load quality settings
         int qualityIndex = PlayerPrefs.GetInt("Quality", 2); // Default quality level is 2 (Medium)
@@ -68,7 +74,12 @@ public class SettingMenu : MonoBehaviour
         PlayerPrefs.SetInt("Quality", qualityIndex);
         PlayerPrefs.Save();
     }
-
+    public void SetLanguage(int languageIndex)
+    {
+        QualitySettings.SetQualityLevel(languageIndex);
+        PlayerPrefs.SetInt("Language", languageIndex);
+        PlayerPrefs.Save();
+    }
     public void SetFullScreen(bool isFullScreen)
     {
         Screen.fullScreen = isFullScreen;

@@ -306,6 +306,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Exit
       objectReference: {fileID: 0}
+    - target: {fileID: 1858437819403875346, guid: d47f7b2153cde144f8a2462b4f26afb4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3602614063871618869, guid: d47f7b2153cde144f8a2462b4f26afb4, type: 3}
       propertyPath: m_FontData.m_Font
       value: 
@@ -321,6 +325,10 @@ PrefabInstance:
     - target: {fileID: 5759094047028247071, guid: d47f7b2153cde144f8a2462b4f26afb4, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7090702680809145532, guid: d47f7b2153cde144f8a2462b4f26afb4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9086687769021585910, guid: d47f7b2153cde144f8a2462b4f26afb4, type: 3}
       propertyPath: m_FontData.m_Font

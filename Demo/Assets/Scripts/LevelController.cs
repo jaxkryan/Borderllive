@@ -92,7 +92,7 @@ public class LevelController : MonoBehaviour
         else if (roomsVisited == 10)
         {
             // Room 10: Boss room
-            SceneManager.LoadScene("Room_Boss");
+            SceneManager.LoadScene("BorderDeath_Boss_1");
         }
         else
         {

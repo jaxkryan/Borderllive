@@ -1274,6 +1274,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioMixer: {fileID: 24100000, guid: 8e1d3c828827c514894cecaafd1107f5, type: 2}
   resolutionDropdown: {fileID: 7002276679206410421}
+  languageDropdown: {fileID: 6648610577690964205}
   volumeSlider: {fileID: 3764774955460326240}
   fullscreenToggle: {fileID: 6845208127902268130}
   qualityDropdown: {fileID: 2286863665739728475}
@@ -1594,7 +1595,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 7788990352420909637}
         m_TargetAssemblyTypeName: SettingMenu, Assembly-CSharp
-        m_MethodName: SetQuality
+        m_MethodName: SetLanguage
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
