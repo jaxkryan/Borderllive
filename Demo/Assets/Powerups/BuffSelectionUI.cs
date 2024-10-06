@@ -46,11 +46,11 @@ public class BuffSelectionUI : MonoBehaviour
                     buffButtons[i].gameObject.SetActive(true); // Show the button if it has a buff
 
                     // Get the button
-                    Button button = buffButtons[i];
+                    // Button button = buffButtons[i];
 
                     // Find the Text components with the names "Name" and "Description"
-                    Text nameText = button.transform.Find("Name").GetComponent<Text>();
-                    Text descriptionText = button.transform.Find("Description").GetComponent<Text>();
+                    Text nameText = buffButtons[i].transform.Find("Name").GetComponent<Text>();
+                    Text descriptionText = buffButtons[i].transform.Find("Description").GetComponent<Text>();
 
                     // Assign the text values
                     nameText.text = currentBuffChoices[i].nameLocalization.GetLocalizedString();

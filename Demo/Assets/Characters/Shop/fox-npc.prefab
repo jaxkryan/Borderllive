@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2351618186161635892}
   - component: {fileID: 3658456757670969220}
   - component: {fileID: 2202209882611822911}
+  - component: {fileID: 583357461978526686}
   m_Layer: 0
   m_Name: fox-npc
   m_TagString: Untagged
@@ -30,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 21.39, y: -0.44, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 0.018962296, y: 0.018285908, z: 0.19405}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2101392173706127456}
@@ -77,7 +78,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -62840328, guid: 14f099512ed0c614ab8298277c6f93b4, type: 3}
+  m_Sprite: {fileID: -603146375, guid: 8787ccb153e47f746a86c3a824b1bc9e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -95,7 +96,7 @@ CapsuleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5233257786418405471}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -155,18 +156,18 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.3141327, y: 0.49975494}
+  m_Offset: {x: 0.6711998, y: 1.2661419}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.125, y: 1.9375}
+    oldSize: {x: 24.5625, y: 41}
     newSize: {x: 3.125, y: 1.9375}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.7532654, y: 2.93701}
+  m_Size: {x: 47.10875, y: 50.961597}
   m_EdgeRadius: 0
 --- !u!114 &2202209882611822911
 MonoBehaviour:
@@ -192,6 +193,27 @@ MonoBehaviour:
   choice2Button: {fileID: 3080446696513433177}
   choice1Buff: {fileID: 11400000, guid: d63635d5ab802ba438d623dfd74729e6, type: 2}
   choice2Buff: {fileID: 11400000, guid: 9befc1b68abebbc4aa816530f3af74fb, type: 2}
+--- !u!95 &583357461978526686
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5233257786418405471}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c650142c188a2c740afca23318fb5cd1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &4403946460155036967
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -204,10 +226,26 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2202209882611822911}
+    - target: {fileID: 861501346157371948, guid: 5ba396e9f7095464e8f42866dbcc3223, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: ed82dac9b67bdd44b8ceeea6be1b2ea7, type: 3}
+    - target: {fileID: 1287559114766904789, guid: 5ba396e9f7095464e8f42866dbcc3223, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: ed82dac9b67bdd44b8ceeea6be1b2ea7, type: 3}
     - target: {fileID: 1702928058556885886, guid: 5ba396e9f7095464e8f42866dbcc3223, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2202209882611822911}
+    - target: {fileID: 1954922662493297907, guid: 5ba396e9f7095464e8f42866dbcc3223, type: 3}
+      propertyPath: interactKey
+      value: 102
+      objectReference: {fileID: 0}
+    - target: {fileID: 1954922662493297907, guid: 5ba396e9f7095464e8f42866dbcc3223, type: 3}
+      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 5233257786418405471}
     - target: {fileID: 2320568719873109319, guid: 5ba396e9f7095464e8f42866dbcc3223, type: 3}
       propertyPath: m_LocalScale.x
       value: 3.9268496
@@ -260,14 +298,42 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3445259665988199570, guid: 5ba396e9f7095464e8f42866dbcc3223, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 188
+      objectReference: {fileID: 0}
+    - target: {fileID: 3445259665988199570, guid: 5ba396e9f7095464e8f42866dbcc3223, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 438
+      objectReference: {fileID: 0}
+    - target: {fileID: 3522370456152258585, guid: 5ba396e9f7095464e8f42866dbcc3223, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: ed82dac9b67bdd44b8ceeea6be1b2ea7, type: 3}
+    - target: {fileID: 4282457762897666549, guid: 5ba396e9f7095464e8f42866dbcc3223, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: ed82dac9b67bdd44b8ceeea6be1b2ea7, type: 3}
+    - target: {fileID: 6467775436075903456, guid: 5ba396e9f7095464e8f42866dbcc3223, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: ed82dac9b67bdd44b8ceeea6be1b2ea7, type: 3}
     - target: {fileID: 6571845702552843034, guid: 5ba396e9f7095464e8f42866dbcc3223, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2202209882611822911}
+    - target: {fileID: 8016156208567943454, guid: 5ba396e9f7095464e8f42866dbcc3223, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: ed82dac9b67bdd44b8ceeea6be1b2ea7, type: 3}
     - target: {fileID: 8019856054274430721, guid: 5ba396e9f7095464e8f42866dbcc3223, type: 3}
       propertyPath: m_Name
       value: Dialogue
       objectReference: {fileID: 0}
+    - target: {fileID: 8974199713470340306, guid: 5ba396e9f7095464e8f42866dbcc3223, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: ed82dac9b67bdd44b8ceeea6be1b2ea7, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
