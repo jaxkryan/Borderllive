@@ -10,6 +10,7 @@ public class SettingMenu : MonoBehaviour
     public Dropdown resolutionDropdown;
     public Dropdown languageDropdown;
     public Slider volumeSlider;
+    public Slider sfxSlider;
     public Toggle fullscreenToggle;
     public Dropdown qualityDropdown;
 
@@ -19,6 +20,10 @@ public class SettingMenu : MonoBehaviour
         float savedVolume = PlayerPrefs.GetFloat("Music", 0.75f); // Default volume is 0.75
         volumeSlider.value = savedVolume;
         SetVolume();
+
+         float savedSfx = PlayerPrefs.GetFloat("Sfx", 0.75f); // Default volume is 0.75
+        sfxSlider.value = savedSfx;
+        SetSfx();
 
         // Load fullscreen preference
         bool isFullScreen = PlayerPrefs.GetInt("Fullscreen", 1) == 1 ? true : false; // Default to fullscreen
@@ -58,6 +63,14 @@ public class SettingMenu : MonoBehaviour
         resolutionDropdown.value = savedResolutionIndex;
         resolutionDropdown.RefreshShownValue();
         SetResolution(savedResolutionIndex);
+    }
+
+    public void SetSfx()
+    {
+        float volume = sfxSlider.value;
+        audioMixer.SetFloat("SFX", Mathf.Log10(volume) * 20);
+        PlayerPrefs.SetFloat("Sfx", volume);
+        PlayerPrefs.Save();
     }
 
     public void SetVolume()
