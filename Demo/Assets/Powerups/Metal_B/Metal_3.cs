@@ -18,6 +18,7 @@ public class Metal_3 : Powerups
         this.triggerCondition = TriggerCondition.Always;
 
         this.effect = Effect.DefenseIncrease;
+        InitializeLocalization("Metal_3_Name", "Metal_3_Description");
     }
 
     public void ApplyEffect(PlayerController player)

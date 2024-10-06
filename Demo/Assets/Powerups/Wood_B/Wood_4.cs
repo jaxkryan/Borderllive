@@ -20,6 +20,7 @@ public class Wood_4 : Powerups
         this.type = BuffType.HpBuff;
         this.triggerCondition = TriggerCondition.Berserk;
         this.effect = Effect.HPRegen;
+        InitializeLocalization("Wood_4_Name", "Wood_4_Description");
     }
 
 

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Water_3
   m_EditorClassIdentifier: 
   id: 8
-  name: Abyssal Calm
+  name: 'Abyssal Calm '
   type: 1
   ElementId: 3
   triggerCondition: 0
@@ -24,4 +24,25 @@ MonoBehaviour:
   duration: 0
   isActive: 0
   currentCooldown: 0
-  description: Berserk Gauge reduction when using skill decrease by 20%
+  description: 
+  nameLocalization:
+    m_TableReference:
+      m_TableCollectionName: Powerups
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: Water_3_Name
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  descriptionLocalization:
+    m_TableReference:
+      m_TableCollectionName: Powerups
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: Water_3_Description
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  references:
+    version: 2
+    RefIds: []

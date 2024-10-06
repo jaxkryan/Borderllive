@@ -17,12 +17,32 @@ MonoBehaviour:
   type: 5
   ElementId: 1
   triggerCondition: 0
-  effect: 4
+  effect: 5
   Weight: 10
   BerserkRateIncrease: 0
-  cooldown: 5
-  duration: 2
+  cooldown: 10
+  duration: 1
   isActive: 0
   currentCooldown: 0
-  description: Normal attack has 10% chance to reduce enemy's defense by 10% in 1
-    second
+  description: 
+  nameLocalization:
+    m_TableReference:
+      m_TableCollectionName: Powerups
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: Metal_2_Name
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  descriptionLocalization:
+    m_TableReference:
+      m_TableCollectionName: Powerups
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: Metal_2_Description
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  references:
+    version: 2
+    RefIds: []

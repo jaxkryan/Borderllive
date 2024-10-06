@@ -24,5 +24,26 @@ MonoBehaviour:
   duration: 0
   isActive: 0
   currentCooldown: 0
-  description: In Berserk mode, heal 1% hp per attack
-  healingPercentage: 1
+  description: 
+  nameLocalization:
+    m_TableReference:
+      m_TableCollectionName: Powerups
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: Wood_4_Name
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  descriptionLocalization:
+    m_TableReference:
+      m_TableCollectionName: Powerups
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: Wood_4_Description
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  healingPercentage: 0.01
+  references:
+    version: 2
+    RefIds: []

@@ -53,8 +53,8 @@ public class BuffSelectionUI : MonoBehaviour
                     Text descriptionText = button.transform.Find("Description").GetComponent<Text>();
 
                     // Assign the text values
-                    nameText.text = currentBuffChoices[i].name;
-                    descriptionText.text = currentBuffChoices[i].description;
+                    nameText.text = currentBuffChoices[i].nameLocalization.GetLocalizedString();
+                    descriptionText.text = currentBuffChoices[i].descriptionLocalization.GetLocalizedString();
                     buffButtons[i].onClick.RemoveAllListeners(); // Clear previous listeners
                     buffButtons[i].onClick.AddListener(() => SelectBuff(index));
                 }
