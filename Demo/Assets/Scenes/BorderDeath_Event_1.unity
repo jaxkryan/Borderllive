@@ -390,11 +390,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c1ab7f72964dfb428b31ed4560b73c0, type: 3}
---- !u!1 &333851763 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3899162222207289204, guid: 0c1ab7f72964dfb428b31ed4560b73c0, type: 3}
-  m_PrefabInstance: {fileID: 218672229}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &430826055
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1005,10 +1000,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2202209882611822911, guid: 0404dbe5a1ab62843860c7a73f9ca335, type: 3}
-      propertyPath: gameCanvas
-      value: 
-      objectReference: {fileID: 333851763}
+    - target: {fileID: 784078288350919129, guid: 0404dbe5a1ab62843860c7a73f9ca335, type: 3}
+      propertyPath: m_StringReference.m_TableEntryReference.m_KeyId
+      value: 407244804972544
+      objectReference: {fileID: 0}
+    - target: {fileID: 818755488809307995, guid: 0404dbe5a1ab62843860c7a73f9ca335, type: 3}
+      propertyPath: m_StringReference.m_TableEntryReference.m_KeyId
+      value: 407137892163584
+      objectReference: {fileID: 0}
     - target: {fileID: 4983669004508546665, guid: 0404dbe5a1ab62843860c7a73f9ca335, type: 3}
       propertyPath: m_LocalPosition.x
       value: 7.84
@@ -1052,6 +1051,14 @@ PrefabInstance:
     - target: {fileID: 5233257786418405471, guid: 0404dbe5a1ab62843860c7a73f9ca335, type: 3}
       propertyPath: m_Name
       value: ghost-npc
+      objectReference: {fileID: 0}
+    - target: {fileID: 6926377088131465100, guid: 0404dbe5a1ab62843860c7a73f9ca335, type: 3}
+      propertyPath: m_StringReference.m_TableEntryReference.m_KeyId
+      value: 408214314147840
+      objectReference: {fileID: 0}
+    - target: {fileID: 6926377088131465100, guid: 0404dbe5a1ab62843860c7a73f9ca335, type: 3}
+      propertyPath: m_StringReference.m_TableReference.m_TableCollectionName
+      value: GUID:b3a7ada3e91db7a4c8cd806d4b8ae990
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
