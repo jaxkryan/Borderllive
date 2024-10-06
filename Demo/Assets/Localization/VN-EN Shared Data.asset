@@ -79,6 +79,22 @@ MonoBehaviour:
     m_Key: Restart
     m_Metadata:
       m_Items: []
+  - m_Id: 477640913887232
+    m_Key: ResetData
+    m_Metadata:
+      m_Items: []
+  - m_Id: 484153879470080
+    m_Key: Yes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 484190034370560
+    m_Key: No
+    m_Metadata:
+      m_Items: []
+  - m_Id: 484243746627584
+    m_Key: AreYouSure
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

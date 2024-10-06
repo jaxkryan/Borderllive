@@ -82,6 +82,22 @@ MonoBehaviour:
     m_Localized: Restart
     m_Metadata:
       m_Items: []
+  - m_Id: 477640913887232
+    m_Localized: Reset Data
+    m_Metadata:
+      m_Items: []
+  - m_Id: 484153879470080
+    m_Localized: Yes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 484190034370560
+    m_Localized: No
+    m_Metadata:
+      m_Items: []
+  - m_Id: 484243746627584
+    m_Localized: Are You Sure?
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

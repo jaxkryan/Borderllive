@@ -94,4 +94,12 @@ public class SettingMenu : MonoBehaviour
         PlayerPrefs.SetInt("Resolution", index);
         PlayerPrefs.Save();
     }
+
+
+    public void ResetAllData()
+    {
+        PlayerPrefs.DeleteAll();
+        PlayerPrefs.Save();
+    }
+
 }
