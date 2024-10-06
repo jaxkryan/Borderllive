@@ -3,6 +3,7 @@
 public class Powerups : ScriptableObject
 {
     public int id;
+    public string name;
     public BuffType type;
     public int ElementId;
 

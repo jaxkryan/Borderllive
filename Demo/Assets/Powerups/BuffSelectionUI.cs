@@ -15,7 +15,7 @@ public class BuffSelectionUI : MonoBehaviour
         buffSelectionPanel.SetActive(false); // Hide the panel initially
     }
     private void Awake()
-    { 
+    {
         ownedPowerups = FindObjectOfType<OwnedPowerups>();
     }
 
@@ -24,7 +24,6 @@ public class BuffSelectionUI : MonoBehaviour
         // Pause the game by setting time scale to 0
         if (buffPool == null)
         {
-            Debug.Log("VCL");
             buffPool = FindObjectOfType<BuffPool>();
         }
 
@@ -45,7 +44,17 @@ public class BuffSelectionUI : MonoBehaviour
                 if (i < currentBuffChoices.Length)
                 {
                     buffButtons[i].gameObject.SetActive(true); // Show the button if it has a buff
-                    buffButtons[i].GetComponentInChildren<Text>().text = currentBuffChoices[i].name;
+
+                    // Get the button
+                    Button button = buffButtons[i];
+
+                    // Find the Text components with the names "Name" and "Description"
+                    Text nameText = button.transform.Find("Name").GetComponent<Text>();
+                    Text descriptionText = button.transform.Find("Description").GetComponent<Text>();
+
+                    // Assign the text values
+                    nameText.text = currentBuffChoices[i].name;
+                    descriptionText.text = currentBuffChoices[i].description;
                     buffButtons[i].onClick.RemoveAllListeners(); // Clear previous listeners
                     buffButtons[i].onClick.AddListener(() => SelectBuff(index));
                 }
@@ -54,7 +63,8 @@ public class BuffSelectionUI : MonoBehaviour
                     buffButtons[i].gameObject.SetActive(false); // Hide unused buttons
                 }
             }
-        } else
+        }
+        else
         {
             CurrencyManager currency = FindAnyObjectByType<CurrencyManager>();
             currency.AddCurrency(45);

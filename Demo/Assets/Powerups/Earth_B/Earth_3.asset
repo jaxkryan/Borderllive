@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Earth_3
   m_EditorClassIdentifier: 
   id: 15
+  name: 'Stonewall '
   type: 6
   ElementId: 5
   triggerCondition: 1
@@ -23,4 +24,4 @@ MonoBehaviour:
   duration: 0
   isActive: 0
   currentCooldown: 0
-  description: If HP under 50%, receive a shield equal by 20% heal.
+  description: If HP under 50% then create a shield equals to 20% max HP.

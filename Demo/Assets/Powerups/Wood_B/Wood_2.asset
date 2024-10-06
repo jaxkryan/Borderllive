@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Wood_2
   m_EditorClassIdentifier: 
   id: 4
+  name: Nature's Decay
   type: 5
   ElementId: 1
   triggerCondition: 0

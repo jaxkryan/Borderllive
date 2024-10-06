@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Water_1
   m_EditorClassIdentifier: 
   id: 6
+  name: Aqua Bind
   type: 5
   ElementId: 3
   triggerCondition: 0
@@ -23,5 +24,5 @@ MonoBehaviour:
   duration: 1
   isActive: 0
   currentCooldown: 0
-  description: 'Normal attack has 10% chance to reduce enemy''s action by 50% in
+  description: ' Normal attack has 10% chance to reduce enemy''s action by 50% in
     3 seconds. '

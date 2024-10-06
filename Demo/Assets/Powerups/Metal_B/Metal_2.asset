@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Metal_2
   m_EditorClassIdentifier: 
   id: 2
+  name: Rusting Strike
   type: 5
   ElementId: 1
   triggerCondition: 0
@@ -23,5 +24,5 @@ MonoBehaviour:
   duration: 2
   isActive: 0
   currentCooldown: 0
-  description: Normal attack has 30% chance to reduce enemy's defense by 10% in 1
+  description: Normal attack has 10% chance to reduce enemy's defense by 10% in 1
     second

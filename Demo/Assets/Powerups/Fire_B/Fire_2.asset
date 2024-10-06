@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Fire_2
   m_EditorClassIdentifier: 
   id: 10
+  name: "Ember\u2019s Luck"
   type: 4
   ElementId: 4
   triggerCondition: 0
