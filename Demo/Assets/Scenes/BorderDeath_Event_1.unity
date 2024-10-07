@@ -390,6 +390,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c1ab7f72964dfb428b31ed4560b73c0, type: 3}
+--- !u!1 &218672230 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3899162222207289204, guid: 0c1ab7f72964dfb428b31ed4560b73c0, type: 3}
+  m_PrefabInstance: {fileID: 218672229}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &430826055
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1008,6 +1013,10 @@ PrefabInstance:
       propertyPath: m_StringReference.m_TableEntryReference.m_KeyId
       value: 407137892163584
       objectReference: {fileID: 0}
+    - target: {fileID: 2202209882611822911, guid: 0404dbe5a1ab62843860c7a73f9ca335, type: 3}
+      propertyPath: gameCanvas
+      value: 
+      objectReference: {fileID: 218672230}
     - target: {fileID: 4983669004508546665, guid: 0404dbe5a1ab62843860c7a73f9ca335, type: 3}
       propertyPath: m_LocalPosition.x
       value: 7.84

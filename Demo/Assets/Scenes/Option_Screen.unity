@@ -215,8 +215,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 150016739}
-  - component: {fileID: 150016740}
   - component: {fileID: 150016741}
+  - component: {fileID: 150016742}
   m_Layer: 0
   m_Name: Option_Screen
   m_TagString: Untagged
@@ -240,7 +240,25 @@ Transform:
   - {fileID: 1451413424}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &150016740
+--- !u!114 &150016741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 150016738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 055b82b60c5b0274f8c8e303f080732e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  portalButton1: {fileID: 1864231950}
+  portalButton2: {fileID: 944568342}
+  redPortalSprite: {fileID: 1303156844, guid: 0d84c7bb09313884c96af5d8c63f5f9f, type: 3}
+  bluePortalSprite: {fileID: -1281170268, guid: 0d84c7bb09313884c96af5d8c63f5f9f, type: 3}
+  button1Text: {fileID: 612931202}
+  button2Text: {fileID: 1690235940}
+--- !u!114 &150016742
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -263,10 +281,11 @@ MonoBehaviour:
   - BorderDeath_Battle_2
   - BorderDeath_Battle_1
   listEventRooms:
-  - BorderDeath_Battle_1
-  - BorderDeath_Battle_1
-  - BorderDeath_Battle_1
-  - BorderDeath_Battle_1
+  - BorderDeath_Event_1
+  - BorderDeath_Event_2
+  - BorderDeath_Event_2
+  - BorderDeath_Event_1
+  - BorderDeath_Event_1
   listShopRooms:
   - BorderDeath_Event_Shop
   - BorderDeath_Event_1
@@ -275,33 +294,15 @@ MonoBehaviour:
   - BorderDeath_Event_2
   - BorderDeath_Event_2
   listFunRooms:
-  - BorderDeath_Fun_1
-  - BorderDeath_Fun_1
-  - BorderDeath_Fun_1
-  - BorderDeath_Fun_2
-  - BorderDeath_Fun_2
-  - BorderDeath_Fun_2
-  - BorderDeath_Fun_3
-  - BorderDeath_Fun_3
-  - BorderDeath_Fun_4
---- !u!114 &150016741
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 150016738}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 055b82b60c5b0274f8c8e303f080732e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  portalButton1: {fileID: 1864231950}
-  portalButton2: {fileID: 944568342}
-  redPortalSprite: {fileID: 1303156844, guid: 0d84c7bb09313884c96af5d8c63f5f9f, type: 3}
-  bluePortalSprite: {fileID: -1281170268, guid: 0d84c7bb09313884c96af5d8c63f5f9f, type: 3}
-  button1Text: {fileID: 612931202}
-  button2Text: {fileID: 1690235940}
+  - BorderDeath_Event_1
+  - BorderDeath_Event_2
+  - BorderDeath_Event_1
+  - BorderDeath_Event_2
+  - BorderDeath_Event_1
+  - BorderDeath_Event_2
+  - BorderDeath_Event_1
+  - BorderDeath_Event_2
+  - BorderDeath_Event_1
 --- !u!1001 &152805827
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -714,7 +715,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 150016740}
+      - m_Target: {fileID: 150016742}
         m_TargetAssemblyTypeName: LevelController, Assembly-CSharp
         m_MethodName: OnPortal2Selected
         m_Mode: 1
@@ -1195,7 +1196,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 150016740}
+      - m_Target: {fileID: 150016742}
         m_TargetAssemblyTypeName: LevelController, Assembly-CSharp
         m_MethodName: OnPortal1Selected
         m_Mode: 1
