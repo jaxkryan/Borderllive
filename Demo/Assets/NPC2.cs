@@ -1,16 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Localization;
 using UnityEngine.UI;
 
-public class NPC : MonoBehaviour
+public class NPC2 : MonoBehaviour
 {
     private Damageable damageable;
     private PlayerInput playerInput;
-
     private CurrencyManager currencyManager;
     public GameObject dialoguePanel;
     public Text dialogueText;
@@ -23,7 +21,7 @@ public class NPC : MonoBehaviour
     // Dialogue lines
     public LocalizedString[] dialogue;
     private string resolvedDialogueText; // Add this field to store the resolved text
-    
+
     // Choice buttons
     public Button choice1Button; // First choice button
     public Button choice2Button; // Second choice button
@@ -33,8 +31,9 @@ public class NPC : MonoBehaviour
     public LocalizedString[] dialogueOption3; // Array for choice 3
 
     // Buffs associated with choices
-    public Metal_1 choice1Buff; // Buff associated with choice 1
-    public Earth_1 choice2Buff; // Buff associated with choice 2
+    public Earth_2 choice1Buff; // Buff associated with choice 1
+    public Water_2 choice2Buff; // Buff associated with choice 2
+    public Fire_2 choice3Buff; // Buff associated with choice 3
 
     private int numberOfShowChoice = 0;
     private BuffPool buffPool;
@@ -44,11 +43,12 @@ public class NPC : MonoBehaviour
     private void Awake()
     {
 
-        choice1Buff = new Metal_1();
-        choice2Buff = new Earth_1();
+        choice1Buff = new Earth_2();
+        choice2Buff = new Water_2();
+        choice3Buff = new Fire_2();
         // Find the Player GameObject by tag (ensure your Player GameObject is tagged correctly as "Player")
         GameObject player = GameObject.FindGameObjectWithTag("Player");
-        
+
         // Ensure the Player GameObject and PlayerInput component exist
         if (player != null)
         {
@@ -171,10 +171,11 @@ public class NPC : MonoBehaviour
             dialogueText.text = ""; // Clear the text
             StartCoroutine(Typing()); // Call the updated Typing coroutine
         }
-        else if (numberOfShowChoice == 1) {
+        else if (numberOfShowChoice == 1)
+        {
             RemoveText();
             dialoguePanel.gameObject.SetActive(false);
-            
+
             //
         }
         else
@@ -226,10 +227,11 @@ public class NPC : MonoBehaviour
     //     // Remove the dialogue and hide the choices
     //     RemoveText();
     // }
-    private void deactiveButton(){
-             choice1Button.gameObject.SetActive(false);
-             choice2Button.gameObject.SetActive(false);
-             choice3Button.gameObject.SetActive(false);
+    private void deactiveButton()
+    {
+        choice1Button.gameObject.SetActive(false);
+        choice2Button.gameObject.SetActive(false);
+        choice3Button.gameObject.SetActive(false);
     }
     private void OnChoiceSelected(int choiceIndex)
     {
@@ -241,22 +243,21 @@ public class NPC : MonoBehaviour
         {
             Debug.Log("Choice 1 selected");
             dialogue = dialogueOption1; // Set to dialogue array for choice 1
-            currencyManager.AddCurrency(40);
+            ownedPowerups.activePowerups.Add(choice1Buff);
         }
         else if (choiceIndex == 2)
         {
             Debug.Log("Choice 2 selected");
             dialogue = dialogueOption2; // Set to dialogue array for choice 2
-             currencyManager.SpendCurrency((int)(currencyManager.currentAmount*0.3f));
-             
+            ownedPowerups.activePowerups.Add(choice2Buff);
         }
         else if (choiceIndex == 3)
         {
             Debug.Log("Choice 3 selected");
             dialogue = dialogueOption3; // Set to dialogue array for choice 3
-            currencyManager.AddCurrency(100);
+            ownedPowerups.activePowerups.Add(choice3Buff);
         }
-  
+
         // After a choice is made, restart the dialogue with the selected option
         RemoveText();  // Clear current text
         ShowDialog();  // Show new dialogue
