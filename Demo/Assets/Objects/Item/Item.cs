@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using static Item;
 
 public abstract class Item : ScriptableObject
 {
@@ -20,6 +22,8 @@ public abstract class Item : ScriptableObject
     {
         return image != null ? image.name : null; // Get the sprite name
     }
+    [field: SerializeField]
+    public List<ItemParameter> DefaultParametersList { get; set; }
     // // Virtual method to implement item pickup behavior
     // public virtual void OnPickup(Damageable target)
     // {
@@ -39,4 +43,16 @@ public abstract class Item : ScriptableObject
     //         Activate(target);
     //     }
     // }
+
+    [Serializable]
+    public struct ItemParameter : IEquatable<ItemParameter>
+    {
+        public ItemParameterSO itemParameter;
+        public float value;
+
+        public bool Equals(ItemParameter other)
+        {
+            return other.itemParameter == itemParameter;
+        }
+    }
 }
