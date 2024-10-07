@@ -18,10 +18,13 @@ public class Item2 : Item
         this.itemType = ItemType.Active;
         this.cd = 45f;
         this.cost = 100;
+                this.code = "daikalop12a";
+        this.isEnable = true;
     }
 
     public override void Activate()
     {
+         if (isEnable==false) return;
         playerController = FindAnyObjectByType<PlayerController>();
         float numberOfSoul = playerController.GetComponent<CurrencyManager>().currentAmount;
         Debug.Log("Number of soul: " + numberOfSoul);
