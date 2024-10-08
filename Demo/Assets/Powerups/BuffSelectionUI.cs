@@ -35,11 +35,12 @@ public class BuffSelectionUI : MonoBehaviour
         currentBuffChoices = buffPool.GetRandomBuffs(3); // Get 3 random buffs
         if (currentBuffChoices.Length != 0)
         {
-            Time.timeScale = 0;
             buffSelectionPanel.SetActive(true);
 
+            Time.timeScale = 0;
             for (int i = 0; i < buffButtons.Length; i++)
             {
+
                 int index = i; // Cache the index for the button click action
                 if (i < currentBuffChoices.Length)
                 {
@@ -66,6 +67,7 @@ public class BuffSelectionUI : MonoBehaviour
         }
         else
         {
+            Time.timeScale = 1;
             CurrencyManager currency = FindAnyObjectByType<CurrencyManager>();
             currency.AddCurrency(45);
         }

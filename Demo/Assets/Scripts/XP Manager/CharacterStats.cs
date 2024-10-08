@@ -171,8 +171,8 @@ public class CharacterStat : MonoBehaviour
         if (levelupCount % 10 == 0 && applyPermanentBuffs)
         {
             permanentStaminaIncrease += 0.09f;
-            permanentStrengthIncrease += 0.09f;
-            permanentEnduranceIncrease += 0.09f;
+            permanentStrengthIncrease += 0.04f;
+            permanentEnduranceIncrease += 0.04f;
 
             // Save to PlayerPrefs
             PlayerPrefs.SetFloat(StaminaIncreaseKey, permanentStaminaIncrease);

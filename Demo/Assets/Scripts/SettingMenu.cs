@@ -8,7 +8,9 @@ public class SettingMenu : MonoBehaviour
     public AudioMixer audioMixer;
     Resolution[] resolutions;
     public Dropdown resolutionDropdown;
+    public Dropdown languageDropdown;
     public Slider volumeSlider;
+    public Slider sfxSlider;
     public Toggle fullscreenToggle;
     public Dropdown qualityDropdown;
 
@@ -19,10 +21,19 @@ public class SettingMenu : MonoBehaviour
         volumeSlider.value = savedVolume;
         SetVolume();
 
+         float savedSfx = PlayerPrefs.GetFloat("Sfx", 0.75f); // Default volume is 0.75
+        sfxSlider.value = savedSfx;
+        SetSfx();
+
         // Load fullscreen preference
         bool isFullScreen = PlayerPrefs.GetInt("Fullscreen", 1) == 1 ? true : false; // Default to fullscreen
         fullscreenToggle.isOn = isFullScreen;
         Screen.fullScreen = isFullScreen;
+
+        int languageIndex = PlayerPrefs.GetInt("Language", 1); // Default quality level is 2 (Medium)
+        languageDropdown.value = languageIndex;
+        SetLanguage(languageIndex);
+
 
         // Load quality settings
         int qualityIndex = PlayerPrefs.GetInt("Quality", 2); // Default quality level is 2 (Medium)
@@ -54,6 +65,14 @@ public class SettingMenu : MonoBehaviour
         SetResolution(savedResolutionIndex);
     }
 
+    public void SetSfx()
+    {
+        float volume = sfxSlider.value;
+        audioMixer.SetFloat("SFX", Mathf.Log10(volume) * 20);
+        PlayerPrefs.SetFloat("Sfx", volume);
+        PlayerPrefs.Save();
+    }
+
     public void SetVolume()
     {
         float volume = volumeSlider.value;
@@ -68,7 +87,12 @@ public class SettingMenu : MonoBehaviour
         PlayerPrefs.SetInt("Quality", qualityIndex);
         PlayerPrefs.Save();
     }
-
+    public void SetLanguage(int languageIndex)
+    {
+        QualitySettings.SetQualityLevel(languageIndex);
+        PlayerPrefs.SetInt("Language", languageIndex);
+        PlayerPrefs.Save();
+    }
     public void SetFullScreen(bool isFullScreen)
     {
         Screen.fullScreen = isFullScreen;
@@ -83,4 +107,12 @@ public class SettingMenu : MonoBehaviour
         PlayerPrefs.SetInt("Resolution", index);
         PlayerPrefs.Save();
     }
+
+
+    public void ResetAllData()
+    {
+        PlayerPrefs.DeleteAll();
+        PlayerPrefs.Save();
+    }
+
 }
