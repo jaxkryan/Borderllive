@@ -25,6 +25,43 @@ public class PlayerController : MonoBehaviour
     OwnedPowerups ownedPowerups;
     Damageable damageable;
     BerserkGauge berserkGauge;
+    // void OnEnable()
+    // {
+    //     // Register the OnSceneLoaded method to the sceneLoaded event
+    //     SceneManager.sceneLoaded += OnSceneLoaded;
+    // }
+
+    // // This method will run when the object is disabled or destroyed
+    // void OnDisable()
+    // {
+    //     // Unregister the OnSceneLoaded method to prevent memory leaks
+    //     SceneManager.sceneLoaded -= OnSceneLoaded;
+    // }
+
+    // // This method will be called every time a new scene is loaded
+    // void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    // {
+    //     Debug.Log("Scene Loaded: " + scene.name);
+    //     CheckObjectState();
+
+    //     // Re-enable the PlayerController script if it was disabled
+    //     if (!this.enabled)
+    //     {
+    //         Debug.Log("PlayerController script was disabled, enabling it now.");
+    //         this.enabled = true; // Enable the script
+    //     }
+
+    //     // Check Rigidbody properties
+
+    // }
+
+    // // Check if the object is active and the script is enabled
+    // void CheckObjectState()
+    // {
+    //     Debug.Log("Is GameObject active: " + gameObject.activeSelf);
+    //     Debug.Log("Is script enabled: " + this.enabled);
+    // }
+
     public bool canMove
     {
         get
@@ -125,7 +162,11 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
-
+                if (!this.enabled)
+        {
+            // Logger.Log("PlayerController script is disabled in Awake, enabling it now.");
+            this.enabled = true; // Enable the script from Awake()
+        }
         ownedActiveItem = GetComponent<OwnedActiveItem>();
         berserkGauge = GetComponent<BerserkGauge>();
         rb = GetComponent<Rigidbody2D>();
@@ -160,6 +201,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+
         if (isDashing) { return; }
         if (Input.GetKeyDown(KeyCode.Tab))
         {
@@ -171,24 +213,20 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void FixedUpdate()
-    {
-        if (isDashing) { return; }
-        if (!damageable.LockVelocity)
-            rb.velocity = new Vector2(moveInput.x * CurrentSpeed, rb.velocity.y);
-
-        animator.SetFloat(AnimationStrings.yVelocity, rb.velocity.y);
-
-        // Update running state based on movement
-        if (moveInput == Vector2.zero)
-        {
-            IsRunning = false;
-        }
-    }
-
     public void OnMove(InputAction.CallbackContext context)
     {
+        Logger.Log("OnMove called");
         moveInput = context.ReadValue<Vector2>();
+        // Logger.Log("OnMove: " + moveInput);
+        // Logger.Log("On move at stage " + SceneManager.GetActiveScene().name);
+        // Logger.Log("Is GameObject active after room change: " + gameObject.activeSelf);
+        // Logger.Log("Is script enabled after room change: " + this.enabled);
+        this.enabled = true;
+        // Logger.Log("PlayerController instance count: " + FindObjectsOfType<PlayerController>().Length);
+        // Logger.Log("Is Rigidbody kinematic: " + rb.isKinematic);
+        // Logger.Log("Rigidbody velocity: " + rb.velocity);
+
+
 
         if (IsAlive)
         {
@@ -201,6 +239,29 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void FixedUpdate()
+    {
+        Logger.Log("FixedUpdate called");
+        if (isDashing) { return; }
+        if (!damageable.LockVelocity)
+        {
+            Logger.Log("Updating velocity: " + moveInput * CurrentSpeed);
+            rb.velocity = new Vector2(moveInput.x * CurrentSpeed, rb.velocity.y);
+            Logger.Log("Character velocity: " + rb.velocity);
+        }
+        else
+        {
+            Logger.Log("Velocity locked: " + damageable.LockVelocity);
+        }
+
+        animator.SetFloat(AnimationStrings.yVelocity, rb.velocity.y);
+
+        // Update running state based on movement
+        if (moveInput == Vector2.zero)
+        {
+            IsRunning = false;
+        }
+    }
     private void SetFacingDirection(Vector2 moveInput)
     {
         if (moveInput.x > 0 && !isFacingRight)
