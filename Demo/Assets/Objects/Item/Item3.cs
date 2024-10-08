@@ -16,10 +16,13 @@ public class Item3 : Item
         this.itemType = ItemType.Active;
         this.cd = 20f;
         this.cost = 80;
+                        this.code = "daikalop12a";
+        this.isEnable = true;
     }
 
     public override void Activate()
     {
+         if (isEnable==false) return;
         playerController = FindAnyObjectByType<PlayerController>();
         CharacterStat characterStat = playerController.GetComponent<CharacterStat>();
         Damageable damageable = playerController.GetComponent<Damageable>();

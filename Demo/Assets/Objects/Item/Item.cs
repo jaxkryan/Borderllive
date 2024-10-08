@@ -14,8 +14,9 @@ public abstract class Item : ScriptableObject
     public enum ItemType { Active, Passive }
     public ItemType itemType;
     public float cd;
-
     public int cost;
+    public String code;
+    public bool isEnable = true;
     // public bool autoActivateOnPickup = true;
      public abstract void Activate();
     public string GetImageName()

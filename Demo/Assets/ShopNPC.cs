@@ -7,15 +7,16 @@ public class ShopNPC : MonoBehaviour
     private PlayerInput playerInput;
     public GameObject shopPanel;  // Reference to the shop panel or ShopManager
     private ShopManager shopManager;  // Reference to ShopManager
-     public GameObject gameCanvas;
+    public GameObject gameCanvas;
     public bool playerIsClose;  // Flag to check if the player is near the NPC
+    private const string ShopInteractedKey = "HasInteractedWithShop";  // Key to track interaction with shop
 
     private void Awake()
     {
         // Find the Player GameObject by tag
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         gameCanvas = GameObject.FindGameObjectWithTag("GameCanvas");
-       
+
         // Ensure the Player exists
         if (player != null)
         {
@@ -44,6 +45,10 @@ public class ShopNPC : MonoBehaviour
             // shopManager.DisplayItems();  // Populate the shop with items
             playerInput.SwitchCurrentActionMap("Disable");  // Disable player input while the shop is open
             gameCanvas.SetActive(false);
+
+            // Save that the player has interacted with the shop
+            PlayerPrefs.SetInt(ShopInteractedKey, 1);
+            PlayerPrefs.Save();
         }
     }
 
@@ -55,7 +60,11 @@ public class ShopNPC : MonoBehaviour
             shopPanel.SetActive(false);
             playerInput.SwitchCurrentActionMap("Player");  // Enable player input after closing the shop
         }
-         if (gameCanvas != null) { gameCanvas.SetActive(true); }
+
+        if (gameCanvas != null)
+        {
+            gameCanvas.SetActive(true);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -74,6 +83,4 @@ public class ShopNPC : MonoBehaviour
             CloseShop();  // Close the shop if the player moves away
         }
     }
-
-
 }

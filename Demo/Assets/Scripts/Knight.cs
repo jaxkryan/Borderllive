@@ -28,7 +28,7 @@ public class Knight : MonoBehaviour
     private Transform target;
     private bool isAttacking = false;
 
-    private int attackCount = 3; // Number of attack variations for boss
+    private int attackCount = 4; // Number of attack variations for boss
 
     public WalkableDirection WalkDirection
     {

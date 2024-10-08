@@ -365,8 +365,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -3.9414964, y: -3.794382}
-  m_Size: {x: 154.80782, y: 250.81264}
+  m_Offset: {x: -3.9414964, y: -37.69659}
+  m_Size: {x: 154.80782, y: 183.00844}
   m_Direction: 0
 --- !u!114 &8962856500304905640
 MonoBehaviour:
@@ -518,6 +518,7 @@ MonoBehaviour:
   cooldown: 2
   distance: 10
   shootingDetectionZone: {fileID: 7679935463186052340}
+  _hasTarget: 0
 --- !u!1 &7886234287371785040
 GameObject:
   m_ObjectHideFlags: 0

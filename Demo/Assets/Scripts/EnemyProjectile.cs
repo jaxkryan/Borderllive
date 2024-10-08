@@ -33,7 +33,7 @@ public class EnemyProjectile : MonoBehaviour
             CharacterStat stat = collision.GetComponent<CharacterStat>();
             if(stat == null)
             {
-                
+                return;
             }
             // Calculate total damage (baseDamage + additionalDamage)
             int totalDamage = baseDamage + additionalDamage + (int)stat.DEF +(int) (stat.MaxHealth * 0.2);
