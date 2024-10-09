@@ -25,42 +25,6 @@ public class PlayerController : MonoBehaviour
     OwnedPowerups ownedPowerups;
     Damageable damageable;
     BerserkGauge berserkGauge;
-    // void OnEnable()
-    // {
-    //     // Register the OnSceneLoaded method to the sceneLoaded event
-    //     SceneManager.sceneLoaded += OnSceneLoaded;
-    // }
-
-    // // This method will run when the object is disabled or destroyed
-    // void OnDisable()
-    // {
-    //     // Unregister the OnSceneLoaded method to prevent memory leaks
-    //     SceneManager.sceneLoaded -= OnSceneLoaded;
-    // }
-
-    // // This method will be called every time a new scene is loaded
-    // void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    // {
-    //     Debug.Log("Scene Loaded: " + scene.name);
-    //     CheckObjectState();
-
-    //     // Re-enable the PlayerController script if it was disabled
-    //     if (!this.enabled)
-    //     {
-    //         Debug.Log("PlayerController script was disabled, enabling it now.");
-    //         this.enabled = true; // Enable the script
-    //     }
-
-    //     // Check Rigidbody properties
-
-    // }
-
-    // // Check if the object is active and the script is enabled
-    // void CheckObjectState()
-    // {
-    //     Debug.Log("Is GameObject active: " + gameObject.activeSelf);
-    //     Debug.Log("Is script enabled: " + this.enabled);
-    // }
 
     public bool canMove
     {
@@ -596,7 +560,7 @@ public class PlayerController : MonoBehaviour
         // Save player XP
         PlayerPrefs.SetInt("XP", xPTracker.CurrentXP);
 
-        // Save player souls (currency)
+        // Save player souls (currency) - cong 30 la cdj the cac ban??
         if (currencyManager != null)
         {
             PlayerPrefs.SetInt("Souls", currencyManager.currentAmount + 30); // Assuming CurrentMoney tracks souls
