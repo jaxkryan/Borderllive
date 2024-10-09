@@ -571,8 +571,8 @@ MonoBehaviour:
   dropItem: {fileID: 2169320341939109797, guid: 0a412343c13056b4fb66b0d30ac72f52, type: 3}
   isStunned: 1
   stunDuration: 0
-  _maxHealth: 10000
-  _health: 10000
+  _maxHealth: 100
+  _health: 100
   _isAlive: 1
   isInvincible: 0
   invincibilityTime: 0.35
@@ -596,7 +596,7 @@ MonoBehaviour:
   BaseStrength_PerLevel: 4
   BaseStrength_Offset: 12
   StrengthToDamageConversion: 3
-  BaseEndurance_PerLevel: 3
+  BaseEndurance_PerLevel: 2.5
   BaseEndurance_Offset: 5
   EnduranceToDefConversion: 0.7
   BaseSpeed: 5
@@ -642,6 +642,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  XPTranslation: {fileID: 0}
 --- !u!114 &7662925682692026617
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -666,11 +667,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce64ea0047bc12d44ba8cd329723181d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 0}
-  projectilePos: {fileID: 0}
+  projectilePrefab: {fileID: 4422785102852216746, guid: a4b54abd1dfe579489ae81a77ec4eb3c, type: 3}
+  projectilePos: {fileID: 5909368084549026271}
   cooldown: 0
   distance: 0
-  shootingDetectionZone: {fileID: 0}
+  shootingDetectionZone: {fileID: 809080051721904297}
   _hasTarget: 0
 --- !u!1 &5312773107960604367
 GameObject:

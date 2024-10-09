@@ -44,10 +44,10 @@ public class FlyingEyeShooting : MonoBehaviour
 
         timer += Time.deltaTime;
 
-        if (timer > cooldown && playerDistance <= this.distance)
+        // Check if the player is within the detection zone
+        HasTarget = shootingDetectionZone.detectedColliders.Count > 0;
+        if (timer > cooldown)
         {
-            // Check if the player is within the detection zone
-            HasTarget = shootingDetectionZone.detectedColliders.Count > 0;
 
             if (HasTarget)
             {

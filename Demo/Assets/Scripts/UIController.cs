@@ -3,6 +3,8 @@ using UnityEngine.SceneManagement;
 
 public class UIController : MonoBehaviour
 {
+    private const string ShopInteractedKey = "HasInteractedWithShop";
+
     public void StartBtn_Click()
     {
         LevelController.ResetStaticData();
@@ -12,7 +14,16 @@ public class UIController : MonoBehaviour
     public void RestartBtn_Click()
     {
         LevelController.ResetStaticData();
-        SceneManager.LoadScene("Room_Start");
+
+        // Check if the player has interacted with a shop before
+        if (PlayerPrefs.GetInt(ShopInteractedKey, 0) == 0)
+        {
+            SceneManager.LoadScene("Room_Start_First");  // Load first-time shop interaction room
+        }
+        else
+        {
+            SceneManager.LoadScene("Room_Start");  // Load regular start room
+        }
     }
 
     public void MainMenuBtn_Click()
@@ -32,6 +43,7 @@ public class UIController : MonoBehaviour
         Time.timeScale = 1;
         SceneManager.LoadScene("MainMenu_Screen");
     }
+
     public Canvas settingsCanvas;
     private bool isPaused = false;
 
@@ -97,5 +109,4 @@ public class UIController : MonoBehaviour
             Application.Quit();
 #endif
     }
-
 }

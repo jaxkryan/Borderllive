@@ -22,6 +22,7 @@ public class Attack : MonoBehaviour, IBuffable
         // Check if this script is attached to the player by checking the tag
         if (transform.root.CompareTag("Player"))
         {
+
             ownedPowerups = GetComponentInParent<OwnedPowerups>();
             // Get the CharacterStat component from the parent object
             characterStat = GetComponentInParent<CharacterStat>();
@@ -53,6 +54,8 @@ public class Attack : MonoBehaviour, IBuffable
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        AudioManager.Instance.PlaySFX("PlayerAttack");
+
         // Determine attack damage based on whether it's a player or enemy attack
         if (characterStat != null)
         {
