@@ -103,6 +103,10 @@ MonoBehaviour:
     m_Key: Mainmenu
     m_Metadata:
       m_Items: []
+  - m_Id: 1552299138486272
+    m_Key: Control
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
