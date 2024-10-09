@@ -35,6 +35,22 @@ MonoBehaviour:
     m_Key: Item1_HistoryDescription
     m_Metadata:
       m_Items: []
+  - m_Id: 206448999047168
+    m_Key: Item2_Description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 206945654972416
+    m_Key: Item2_HistoryDescription
+    m_Metadata:
+      m_Items: []
+  - m_Id: 207195975229440
+    m_Key: Item3_Description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 207446685556736
+    m_Key: Item3_HistoryDescription
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

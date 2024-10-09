@@ -39,12 +39,48 @@ MonoBehaviour:
       t\u1EAFt n\u1EB1m \u1EDF trung t\xE2m t\u1EC9nh T\xE2y Ninh, Vi\u1EC7t Nam.
       V\u1EDBi \u0111\u1ED9 cao 986 m, \u0111\xE2y l\xE0 ng\u1ECDn n\xFAi cao nh\u1EA5t
       mi\u1EC1n Nam Vi\u1EC7t Nam hi\u1EC7n nay, \u0111\u01B0\u1EE3c m\u1EC7nh danh
-      \\\"\u0110\u1EC7 nh\u1EA5t thi\xEAn s\u01A1n\\\". Trung t\xE2m c\u1EE7a qu\u1EA7n
+      \"\u0110\u1EC7 nh\u1EA5t thi\xEAn s\u01A1n\". Trung t\xE2m c\u1EE7a qu\u1EA7n
       th\u1EC3 t\xE2m linh l\xE0 \u0111i\u1EC7n B\xE0 th\u1EDD Linh S\u01A1n Th\xE1nh
       M\u1EABu, c\xF2n g\u1ECDi l\xE0 B\xE0 \u0110en \u2013 v\u1ECB m\u1EABu th\u1EA7n
       c\xF3 \u01A1n ph\xF9 h\u1ED9, \u0111\u1ED9 tr\xEC, t\u01B0\u01A1ng truy\u1EC1n
       c\xF3 kh\u1EA3 n\u0103ng c\u1EA3nh b\xE1o tr\u01B0\u1EDBc \u0111i\u1EC1m d\u1EEF,
       tai \u01B0\u01A1ng.\";\r\n    "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 206448999047168
+    m_Localized: "G\xE2y s\xE1t th\u01B0\u01A1ng chu\u1EA9n b\u1EB1ng 20% s\u1ED1
+      linh h\u1ED3n \u0111ang c\xF3. N\u1EBFu ch\u1EC9 c\xF3 1 k\u1EBB \u0111\u1ECBch
+      tr\xFAng \u0111\xF2n, s\xE1t th\u01B0\u01A1ng s\u1EBD l\xE0 40% s\u1ED1 l\u01B0\u1EE3ng
+      linh h\u1ED3n. S\xE1t th\u01B0\u01A1ng kh\xF4ng th\u1EC3 v\u01B0\u1EE3t qu\xE1
+      40% m\xE1u t\u1ED1i \u0111a c\u1EE7a k\u1EBB \u0111\u1ECBch."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 206945654972416
+    m_Localized: "N\u0103m 1601, \u0111\u1EC3 chu\u1EA9n b\u1ECB cho qu\xE1 tr\xECnh
+      m\u1EDF r\u1ED9ng b\u1EDD c\xF5i, x\xE2y d\u1EF1ng giang s\u01A1n c\u01A1 \u0111\u1ED3,
+      ch\xFAa Nguy\u1EC5n Ho\xE0ng \u0111\xE3 c\xF9ng binh l\xEDnh rong ru\u1ED5i
+      v\xF3 ng\u1EF1a d\u1ECDc hai b\xEAn b\u1EDD s\xF4ng H\u01B0\u01A1ng. \xD4ng
+      b\u1EA5t ch\u1EE3t b\u1EAFt g\u1EB7p h\xECnh \u1EA3nh m\u1ED9t ng\u1ECDn \u0111\u1ED3i
+      nh\u1ECF nh\xF4 l\xEAn b\xEAn d\xF2ng s\xF4ng xanh bi\u1EBFc, th\u1EBF t\u1EF1a
+      con r\u1ED3ng quay \u0111\u1EA7u nh\xECn l\u1EA1i. T\u01B0\u01A1ng truy\u1EC1n
+      r\u1EB1ng m\u1ED7i \u0111\xEAm l\u1EA1i c\xF3 m\u1ED9t b\xE0 l\xE3o m\u1EB7c
+      \xE1o \u0111\u1ECF, v\u1EDBi khu\xF4n m\u1EB7t ph\xFAc h\u1EADu, \u0111i l\xEAn
+      \u0111\u1ED3i H\u1EA1 Khu\xEA v\xE0 n\xF3i v\u1EDBi m\u1ECDi ng\u01B0\u1EDDi
+      r\u1EB1ng: T\u1EA1i \u0111\xE2y s\u1EBD c\xF3 m\u1ED9t v\u1ECB ch\xFAa l\u1EADp
+      ch\xF9a \u0111\u1EC3 tr\u1EA5n gi\u1EEF long m\u1EA1ch. Th\u1EA5y \xFD t\u01B0\u1EDFng
+      c\u1EE7a m\xECnh c\xF3 s\u1EF1 t\u01B0\u01A1ng th\xF4ng v\u1EDBi c\xE2u chuy\u1EC7n
+      k\u1EC3 l\u1EA1i, Nguy\u1EC5n Ho\xE0ng ngay l\u1EADp t\u1EE9c cho qu\xE2n l\xEDnh
+      x\xE2y d\u1EF1ng ng\xF4i ch\xF9a tr\xEAn \u0111\u1ED3i."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 207195975229440
+    m_Localized: "\u0110\xE1nh \u0111\u1ED5i 5% m\xE1u \u0111\u1EC3 l\u1EA5y 10%
+      gi\xE1p. Kh\xF4ng th\u1EC3 s\u1EED d\u1EE5ng n\u1EBFu d\u01B0\u1EDBi 20% m\xE1u."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 207446685556736
+    m_Localized: "\u0110\xE1nh \u0111\u1ED5i 5% m\xE1u \u0111\u1EC3 l\u1EA5y 10%
+      gi\xE1p. Kh\xF4ng th\u1EC3 s\u1EED d\u1EE5ng n\u1EBFu d\u01B0\u1EDBi 20% m\xE1u."
     m_Metadata:
       m_Items: []
   references:

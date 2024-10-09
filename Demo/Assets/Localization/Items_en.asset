@@ -43,6 +43,32 @@ MonoBehaviour:
       capable of warning of bad omens and calamitous.\";\r\n    "
     m_Metadata:
       m_Items: []
+  - m_Id: 206448999047168
+    m_Localized: Deal true damage to all enemies equal to 20% number of soul. If
+      only one enemy is hit, the damage will be equal to 40% number of soul. The
+      damage can not exceed the enemy's 40% max health.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 206945654972416
+    m_Localized: 'In 1601, in order to prepare for the process of expanding the borders
+      of the realm and building Jiang Son Co Do, Lord Nguyen Hoang and his soldiers
+      roamed along the banks of the Perfume River. He suddenly came across the image
+      of a small hill rising by the blue river, like a dragon turning its head to
+      look back. Legend has it that every night, an old woman in a red robe, with
+      a happy face, goes up to Ha Khue hill and tells everyone: There will be a god
+      here who will set up a pagoda to guard the dragon vein. Seeing that his idea
+      had a connection with the story, Nguyen Hoang immediately had the soldiers
+      build a pagoda on the hill.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 207195975229440
+    m_Localized: Trade 5% hp for 10% shield. Can not use skill if under 20% hp.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 207446685556736
+    m_Localized: Trade 5% hp for 10% shield. Can not use skill if under 20% hp.
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

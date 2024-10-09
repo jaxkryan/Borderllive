@@ -21,6 +21,7 @@ public class Item2 : Item
                 this.code = "daikalop12a";
         this.isEnable = true;
         this.historyDescription = "Năm 1601, để chuẩn bị cho quá trình mở rộng bờ cõi, xây dựng giang sơn cơ đồ, chúa Nguyễn Hoàng đã cùng binh lính rong ruổi vó ngựa dọc hai bên bờ sông Hương. Ông bất chợt bắt gặp hình ảnh một ngọn đồi nhỏ nhô lên bên dòng sông xanh biếc, thế tựa con rồng quay đầu nhìn lại. Tương truyền rằng mỗi đêm lại có một bà lão mặc áo đỏ, với khuôn mặt phúc hậu, đi lên đồi Hạ Khuê và nói với mọi người rằng: Tại đây sẽ có một vị chúa lập chùa để trấn giữ long mạch. Thấy ý tưởng của mình có sự tương thông với câu chuyện kể lại, Nguyễn Hoàng ngay lập tức cho quân lính xây dựng ngôi chùa trên đồi.";
+        InitializeLocalization("Item2", "Item2_Description", "Item2_HistoryDescription");
 
     }
 
