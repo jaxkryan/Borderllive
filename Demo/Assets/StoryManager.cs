@@ -108,6 +108,10 @@ public class StoryManager : MonoBehaviour
         var operation = localizedStoryLines[currentLineIndex].GetLocalizedStringAsync();
         yield return operation;
         string line = operation.Result;
+                if (isItalic != null && currentLineIndex < isItalic.Length && isItalic[currentLineIndex])
+        {
+            line = "<i>" + line + "</i>";
+        }
         storyText.text = tempPassage + "\n" + line + "\n";
         tempPassage = "";
         previousLine = "";
@@ -119,7 +123,10 @@ public class StoryManager : MonoBehaviour
             {
                 break;
             }
-
+        if (isItalic != null && currentLineIndex < isItalic.Length && isItalic[currentLineIndex])
+        {
+            line = "<i>" + line + "</i>";
+        }
             operation = localizedStoryLines[currentLineIndex].GetLocalizedStringAsync();
             yield return operation;
 
