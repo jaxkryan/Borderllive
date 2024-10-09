@@ -30,7 +30,7 @@ public class SettingMenu : MonoBehaviour
         fullscreenToggle.isOn = isFullScreen;
         Screen.fullScreen = isFullScreen;
 
-        int languageIndex = PlayerPrefs.GetInt("Language", 1); // Default quality level is 2 (Medium)
+        int languageIndex = PlayerPrefs.GetInt("Language", 0); // Default quality level is 2 (Medium)
         languageDropdown.value = languageIndex;
         SetLanguage(languageIndex);
 
