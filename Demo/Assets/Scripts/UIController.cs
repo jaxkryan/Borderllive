@@ -33,6 +33,11 @@ public class UIController : MonoBehaviour
         SceneManager.LoadScene("MainMenu_Screen");
     }
 
+    public void ShopBtn_Click()
+    {
+        SceneManager.LoadScene("Shop");
+    }
+
     public void ExitBtn_Click()
     {
         Time.timeScale = 1;
