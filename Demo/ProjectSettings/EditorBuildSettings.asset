@@ -84,9 +84,6 @@ EditorBuildSettings:
     path: Assets/Scenes/BorderDeath_Event_1.unity
     guid: 00229ff2bd96e7f43a1cfb27eb42cf88
   - enabled: 1
-    path: Assets/Scenes/BorderDeath_Event_2.unity
-    guid: dbbdbbd5a342fbb439aa3b0f4272de9a
-  - enabled: 1
     path: Assets/Scenes/BorderDeath_Event_3.unity
     guid: aeb9bb7407b35b943b8b9fa0a1da498c
   - enabled: 1
@@ -110,14 +107,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameOver_Screen.unity
     guid: 5ac5058914b65db4bb97809dfb78bac3
-
   - enabled: 1
     path: Assets/Scenes/BorderDeath_Event_2.unity
     guid: dbbdbbd5a342fbb439aa3b0f4272de9a
   - enabled: 1
     path: Assets/Scenes/Shop.unity
     guid: e0cfdc8d5fcfab74eb7f0c0b8d4691ac
-
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: c4aa7708760815c408ac023870158f8f, type: 2}
     com.unity.localization.settings: {fileID: 11400000, guid: e4ff5f15e26bfdc4e8ece096a0810dae, type: 2}
