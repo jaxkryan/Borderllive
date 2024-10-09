@@ -12,9 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 600653545505d0e4a96f50e69caabdb3, type: 3}
   m_Name: Mystery Box
   m_EditorClassIdentifier: 
-  itemName: Mystery Box
-  itemDescription: Gains a random amount of souls
+  itemName: BerserkFillUp
+  itemDescription: Fill up your Berserk Bar immediately
   image: {fileID: 21300000, guid: 3c2633600af1a4f4cae1b9505f0d5871, type: 3}
-  itemType: 1
-  cd: 0
-  cost: 250
+  itemType: 0
+  cd: 30
+  cost: 100
+  code: daikalop12a
+  isEnable: 0
+  <DefaultParametersList>k__BackingField: []
