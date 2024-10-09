@@ -798,11 +798,11 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   activeInputHandler: 2
   windowsGamepadBackendHint: 0
-  cloudProjectId: 592bea6d-2a38-4f22-9518-4e309cd67936
+  cloudProjectId: 2e5174be-6931-4e70-83cc-e6eb4118bbed
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
   projectName: Demo
-  organizationId: tungdthe176669
+  organizationId: huy6ach2
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   hmiLoadingImage: {fileID: 0}

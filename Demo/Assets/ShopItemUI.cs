@@ -7,11 +7,11 @@ public class ShopItemUI : MonoBehaviour
 {
     // UI elements to display item information
     public Image itemImage;        // To display the item's image
-    public TMP_Text itemNameText;  // To display the item's name
-    public TMP_Text itemDescriptionText;  // To display the item's description
+    public Text itemNameText;  // To display the item's name
+    public Text itemDescriptionText;  // To display the item's description
     public Button purchaseButton;  // Button to purchase the item
-    public TMP_Text costText;      // To display the cost on the purchase button
-    public Item currentItem;      // The item that this UI is displaying
+    public Text costText;      // To display the cost on the purchase button
+    private Item currentItem;      // The item that this UI is displaying
     private ShopManager shopManager;  // Reference to ShopManager to handle the purchase
 
     // This method sets the UI elements based on the item data
@@ -33,17 +33,14 @@ public class ShopItemUI : MonoBehaviour
     // Method called when the purchase button is clicked
     private void OnPurchaseButtonClicked()
     {
-        //if (currentItem == null)
-        //{
-        //    Debug.Log("ci is null");
-        //    return;
-        //}
-        //else
-        //{
-        //    Debug.Log("info: " + currentItem.itemDescription);
-        //}
-        ////Tell the ShopManager to handle the purchase
-        //shopManager.PurchaseItem(currentItem, this);
-        shopManager.purchasePanel.Show(currentItem);
+        if (currentItem == null) {
+           // Debug.Log("ci is null");
+             return;
+        }
+        // else{
+        //     Debug.Log("info: " + currentItem.itemDescription);
+        // }
+        // Tell the ShopManager to handle the purchase
+         shopManager.PurchaseItem(currentItem, this);
     }
 }
