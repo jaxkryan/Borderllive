@@ -126,7 +126,7 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
-                if (!this.enabled)
+        if (!this.enabled)
         {
             // Logger.Log("PlayerController script is disabled in Awake, enabling it now.");
             this.enabled = true; // Enable the script from Awake()
@@ -148,7 +148,14 @@ public class PlayerController : MonoBehaviour
     }
     private void OnPlayerDeath()
     {
-
+        // if (ownedActiveItem.item2 is Item7 || ownedActiveItem.item1 is Item7)
+        // {
+        //     Debug.Log("It suppose to revive");
+        //     return;
+        // }
+        // else{
+        //     Debug.Log("NOPE");
+        // }
         // Xóa dữ liệu khi người chơi chết
         ClearPlayerData();
 

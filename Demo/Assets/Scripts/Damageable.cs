@@ -83,7 +83,19 @@ public class Damageable : MonoBehaviour
             }
             if (_health <= 0)
             {
-                IsAlive = false;
+                PlayerController playerController = GetComponent<PlayerController>();
+                if (playerController != null)
+                {
+                    OwnedActiveItem ownedActiveItem = FindObjectOfType<OwnedActiveItem>();
+                    if (ownedActiveItem.item1 is Item7 || ownedActiveItem.item2 is Item7)
+                    {
+                        IsAlive = true;
+                        //    Item7 item7 = new Item7();
+                        //    item7.Activate();
+
+                    }
+                    else IsAlive = false;
+                }
             }
         }
     }
@@ -181,6 +193,19 @@ public class Damageable : MonoBehaviour
     private void Update()
     {
         OwnedPowerups ownedPowerups = GetComponent<OwnedPowerups>();
+        OwnedActiveItem ownedActiveItem = FindObjectOfType<OwnedActiveItem>();
+        PlayerController playerController = GetComponent<PlayerController>();
+        Item7 item7 = new Item7();
+        if (playerController != null)
+        {
+            if (ownedActiveItem != null &&
+    ((ownedActiveItem.item1 is Item7 || ownedActiveItem.item2 is Item7) &&
+    item7.isEnable && Health <= 0))
+            {
+                Debug.Log("health: " + Health);
+                item7.Activate(); // Revive the character and destroy the item
+            }
+        }
         if (isInvincible)
         {
             if (timeSinceHit > invincibilityTime)
@@ -260,22 +285,22 @@ public class Damageable : MonoBehaviour
             float defense = characterStat != null ? characterStat.DEF : enemyStat.DEF; // Adjust based on actual DEF field name
             float reducedDamage = Mathf.Max(damage - Mathf.Floor(defense), 0); // Ensure damage doesn't go negative
 
-                // Apply the reduced damage
-                if (characterStat != null && characterStat.Shield > 0f)
+            // Apply the reduced damage
+            if (characterStat != null && characterStat.Shield > 0f)
+            {
+                // Apply damage to shield
+                characterStat.DecreaseShield(reducedDamage);
+                if (characterStat.Shield <= 0f)
                 {
-                    // Apply damage to shield
-                    characterStat.DecreaseShield(reducedDamage);
-                    if (characterStat.Shield <= 0f)
-                    {
-                        // If shield is depleted, apply remaining damage to health
-                        Health -= (int)(reducedDamage - characterStat.Shield);
-                    }
+                    // If shield is depleted, apply remaining damage to health
+                    Health -= (int)(reducedDamage - characterStat.Shield);
                 }
-                else 
-                {
-                    // If no shield, apply damage directly to health
-                    Health -= (int)reducedDamage;
-                }
+            }
+            else
+            {
+                // If no shield, apply damage directly to health
+                Health -= (int)reducedDamage;
+            }
             isInvincible = true;
 
             animator.SetTrigger(AnimationStrings.hitTrigger);
