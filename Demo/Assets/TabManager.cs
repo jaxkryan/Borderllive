@@ -16,7 +16,7 @@ public class TabManager : MonoBehaviour
     private void Start()
     {
         int currentCurrency = PlayerPrefs.GetInt("PremiumCurrency");
-        currencyText.text = "Premium Currency: " + PlayerPrefs.GetInt("PremiumCurrency").ToString();
+        currencyText.text = "Eternal Soul: " + PlayerPrefs.GetInt("PremiumCurrency").ToString();
         // Add listeners to buttons to handle tab switching
         eternalSoulTabButton.onClick.AddListener(() => SwitchTab(true));
         exclusiveItemTabButton.onClick.AddListener(() => SwitchTab(false));
