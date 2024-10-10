@@ -2847,9 +2847,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8743a6e112c9904fbf2b0d79f581ec0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shopManager: {fileID: 0}
+  shopManager: {fileID: 1098326777}
+  shopPanel: {fileID: 0}
   exitButton: {fileID: 687211970}
-  codeInputField: {fileID: 1780982306}
+  codeInputFieldTxt: {fileID: 0}
   confirmButton: {fileID: 1621046673}
 --- !u!1001 &1703347905
 PrefabInstance:
@@ -3130,7 +3131,7 @@ GameObject:
   - component: {fileID: 1780982307}
   - component: {fileID: 1780982306}
   m_Layer: 5
-  m_Name: Text (Legacy)
+  m_Name: InputFieldTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3335,7 +3336,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1955797680
 RectTransform:
   m_ObjectHideFlags: 0
