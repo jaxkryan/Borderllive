@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 96177902286358457}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 304, y: 94, z: 0}
+  m_LocalPosition: {x: 360, y: 94, z: 0}
   m_LocalScale: {x: 100, y: 100, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -82,7 +82,9 @@ PolygonCollider2D:
       - {x: -2.2902663, y: 1.0117996}
       - {x: -2.637598, y: 1.0824444}
       - {x: -2.9829278, y: 1.0702754}
-      - {x: -3.3024054, y: 0.8575729}
+      - {x: -3.4877832, y: 0.6285766}
+      - {x: -3.798883, y: 0.173274}
+      - {x: -3.8998315, y: -0.21683253}
       - {x: -3.5074837, y: 0.13955764}
       - {x: -2.7306228, y: 0.4050727}
       - {x: -2.5855842, y: 0.24997462}
@@ -115,6 +117,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AttackBuff: {fileID: 11400000, guid: f13ea904223cc0a4d8464a21739d602a, type: 2}
+  attackDamage: 15
   knockback: {x: 0, y: 0}
 --- !u!1 &130169560623644369
 GameObject:
@@ -202,6 +205,7 @@ Transform:
   - {fileID: 399217480617949162}
   - {fileID: 4256145303815175877}
   - {fileID: 7065591387606037924}
+  - {fileID: 6562945626233707813}
   - {fileID: 651349261314267512}
   - {fileID: 2353783590795032478}
   - {fileID: 3326559098262215292}
@@ -257,7 +261,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 3.125, y: 2.3125}
+  m_Size: {x: 139.0353, y: 137.75}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -1913,7 +1917,7 @@ Transform:
   m_GameObject: {fileID: 5789710654673845497}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 76, y: 91, z: 0}
+  m_LocalPosition: {x: 107, y: 100, z: 0}
   m_LocalScale: {x: 100, y: 100, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1996,6 +2000,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AttackBuff: {fileID: 11400000, guid: f13ea904223cc0a4d8464a21739d602a, type: 2}
+  attackDamage: 8
   knockback: {x: 0, y: 0}
 --- !u!1 &6589448070663564626
 GameObject:
@@ -2569,6 +2574,105 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!1 &8573216519538801422
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6562945626233707813}
+  - component: {fileID: 5510362440717859195}
+  - component: {fileID: 3416861703384343904}
+  m_Layer: 9
+  m_Name: SwordAttack2.5
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6562945626233707813
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8573216519538801422}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 107, y: 100, z: 0}
+  m_LocalScale: {x: 100, y: 100, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4557862977418653240}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!60 &5510362440717859195
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8573216519538801422}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.84662753, y: -0.09981372}
+      - {x: -0.20838241, y: -0.58362424}
+      - {x: 0.53505284, y: -1.141598}
+      - {x: 0.54542196, y: -0.6692512}
+      - {x: 0.55987275, y: 0.34673798}
+      - {x: -0.18914935, y: 0.14136454}
+  m_UseDelaunayMesh: 0
+--- !u!114 &3416861703384343904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8573216519538801422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd5646a7a629ed0488b96a7d57ea9393, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AttackBuff: {fileID: 11400000, guid: f13ea904223cc0a4d8464a21739d602a, type: 2}
+  attackDamage: 3
+  knockback: {x: 0, y: 0}
 --- !u!1 &8855759503433049881
 GameObject:
   m_ObjectHideFlags: 0
@@ -2673,6 +2777,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AttackBuff: {fileID: 11400000, guid: f13ea904223cc0a4d8464a21739d602a, type: 2}
+  attackDamage: 5
   knockback: {x: 0, y: 0}
 --- !u!1 &8964478321177050342
 GameObject:

@@ -107,6 +107,18 @@ MonoBehaviour:
     m_Key: View
     m_Metadata:
       m_Items: []
+  - m_Id: 1784924042469376
+    m_Key: NoBuffReturnSoul
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1785153227628544
+    m_Key: Powerups
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1785318562897920
+    m_Key: Items
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

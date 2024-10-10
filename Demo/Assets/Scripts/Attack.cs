@@ -9,7 +9,7 @@ public class Attack : MonoBehaviour, IBuffable
     private ScriptableBuff _buff;
     private CharacterStat characterStat; // Reference to CharacterStat
     private EnemyStat enemyStat; // Reference to EnemyStat
-    private float attackDamage;
+    public float attackDamage;
     public Vector2 knockback = Vector2.zero;
     private OwnedPowerups ownedPowerups;
 

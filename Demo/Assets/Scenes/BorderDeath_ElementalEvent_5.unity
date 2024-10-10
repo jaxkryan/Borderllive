@@ -669,6 +669,22 @@ PrefabInstance:
       propertyPath: m_hasFontAssetChanged
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9124344514846242668, guid: 0c1ab7f72964dfb428b31ed4560b73c0, type: 3}
+      propertyPath: activePowerups.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9124344514846242668, guid: 0c1ab7f72964dfb428b31ed4560b73c0, type: 3}
+      propertyPath: activePowerups.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: d8949de9bdd3acf44bed63c6de6648c5, type: 2}
+    - target: {fileID: 9124344514846242668, guid: 0c1ab7f72964dfb428b31ed4560b73c0, type: 3}
+      propertyPath: activePowerups.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: b9f8198cf5b4ac64086ef6da2756a93b, type: 2}
+    - target: {fileID: 9124344514846242668, guid: 0c1ab7f72964dfb428b31ed4560b73c0, type: 3}
+      propertyPath: activePowerups.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 95ab373100625a349bd67418bd1dd707, type: 2}
     - target: {fileID: 9201945584611412163, guid: 0c1ab7f72964dfb428b31ed4560b73c0, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -977,17 +993,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!114 &893671946 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 192990979878740786, guid: 3a5607b8c24ed394d96149de68267ce3, type: 3}
-  m_PrefabInstance: {fileID: 8449509403693573482}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb80ee2fc07f4134d979567c4bdc44e2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &933479356
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3041,12 +3046,73 @@ PrefabInstance:
       propertyPath: m_FontData.m_Font
       value: 
       objectReference: {fileID: 12800000, guid: ed82dac9b67bdd44b8ceeea6be1b2ea7, type: 3}
+    - target: {fileID: 8663149692010824648, guid: d47f7b2153cde144f8a2462b4f26afb4, type: 3}
+      propertyPath: initialPowerups.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: d8949de9bdd3acf44bed63c6de6648c5, type: 2}
+    - target: {fileID: 8663149692010824648, guid: d47f7b2153cde144f8a2462b4f26afb4, type: 3}
+      propertyPath: initialPowerups.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: b9f8198cf5b4ac64086ef6da2756a93b, type: 2}
+    - target: {fileID: 8663149692010824648, guid: d47f7b2153cde144f8a2462b4f26afb4, type: 3}
+      propertyPath: initialPowerups.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 95ab373100625a349bd67418bd1dd707, type: 2}
+    - target: {fileID: 8663149692010824648, guid: d47f7b2153cde144f8a2462b4f26afb4, type: 3}
+      propertyPath: initialPowerups.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: 9befc1b68abebbc4aa816530f3af74fb, type: 2}
+    - target: {fileID: 8663149692010824648, guid: d47f7b2153cde144f8a2462b4f26afb4, type: 3}
+      propertyPath: initialPowerups.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: b9b43d5426870a94180e06569f4719dc, type: 2}
+    - target: {fileID: 8663149692010824648, guid: d47f7b2153cde144f8a2462b4f26afb4, type: 3}
+      propertyPath: initialPowerups.Array.data[5]
+      value: 
+      objectReference: {fileID: 11400000, guid: 9127a1e820e95f84abca22c2edd20a30, type: 2}
+    - target: {fileID: 8663149692010824648, guid: d47f7b2153cde144f8a2462b4f26afb4, type: 3}
+      propertyPath: initialPowerups.Array.data[6]
+      value: 
+      objectReference: {fileID: 11400000, guid: 311936e373ba9a24b97b217c5a9b0e86, type: 2}
+    - target: {fileID: 8663149692010824648, guid: d47f7b2153cde144f8a2462b4f26afb4, type: 3}
+      propertyPath: initialPowerups.Array.data[7]
+      value: 
+      objectReference: {fileID: 11400000, guid: 76b0501e162a4cb42a99193021d696f0, type: 2}
+    - target: {fileID: 8663149692010824648, guid: d47f7b2153cde144f8a2462b4f26afb4, type: 3}
+      propertyPath: initialPowerups.Array.data[8]
+      value: 
+      objectReference: {fileID: 11400000, guid: 58c61de265fbcc94ea05833c3b44a1b6, type: 2}
+    - target: {fileID: 8663149692010824648, guid: d47f7b2153cde144f8a2462b4f26afb4, type: 3}
+      propertyPath: initialPowerups.Array.data[9]
+      value: 
+      objectReference: {fileID: 11400000, guid: f56886f71c374904e90ed8bdd2304433, type: 2}
+    - target: {fileID: 8663149692010824648, guid: d47f7b2153cde144f8a2462b4f26afb4, type: 3}
+      propertyPath: initialPowerups.Array.data[10]
+      value: 
+      objectReference: {fileID: 11400000, guid: 81cdece8f84405b40aa507cdd5e43cd6, type: 2}
+    - target: {fileID: 8663149692010824648, guid: d47f7b2153cde144f8a2462b4f26afb4, type: 3}
+      propertyPath: initialPowerups.Array.data[11]
+      value: 
+      objectReference: {fileID: 11400000, guid: e2f1f435659c6d54ea7ca2f9993c171e, type: 2}
+    - target: {fileID: 8663149692010824648, guid: d47f7b2153cde144f8a2462b4f26afb4, type: 3}
+      propertyPath: initialPowerups.Array.data[12]
+      value: 
+      objectReference: {fileID: 11400000, guid: d2f95b860dbc44d45bb19dff6e648f21, type: 2}
+    - target: {fileID: 8663149692010824648, guid: d47f7b2153cde144f8a2462b4f26afb4, type: 3}
+      propertyPath: initialPowerups.Array.data[13]
+      value: 
+      objectReference: {fileID: 11400000, guid: 2a2e946c76a2c3349a3b9f0fa3d240ef, type: 2}
+    - target: {fileID: 8663149692010824648, guid: d47f7b2153cde144f8a2462b4f26afb4, type: 3}
+      propertyPath: initialPowerups.Array.data[14]
+      value: 
+      objectReference: {fileID: 11400000, guid: baba748b3b906394d8d6a531ac1d9c2c, type: 2}
     - target: {fileID: 9086687769021585910, guid: d47f7b2153cde144f8a2462b4f26afb4, type: 3}
       propertyPath: m_FontData.m_Font
       value: 
       objectReference: {fileID: 12800000, guid: ed82dac9b67bdd44b8ceeea6be1b2ea7, type: 3}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 7090702680809145532, guid: d47f7b2153cde144f8a2462b4f26afb4, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d47f7b2153cde144f8a2462b4f26afb4, type: 3}
@@ -3105,7 +3171,7 @@ PrefabInstance:
     - target: {fileID: 2466489649374458975, guid: 3a5607b8c24ed394d96149de68267ce3, type: 3}
       propertyPath: buffPool
       value: 
-      objectReference: {fileID: 893671946}
+      objectReference: {fileID: 0}
     - target: {fileID: 2492907783340014431, guid: 3a5607b8c24ed394d96149de68267ce3, type: 3}
       propertyPath: m_Size.x
       value: 2.9960895
@@ -3210,6 +3276,66 @@ PrefabInstance:
       propertyPath: m_FontData.m_Font
       value: 
       objectReference: {fileID: 12800000, guid: ed82dac9b67bdd44b8ceeea6be1b2ea7, type: 3}
+    - target: {fileID: 6768290221109149911, guid: 3a5607b8c24ed394d96149de68267ce3, type: 3}
+      propertyPath: initialPowerups.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6768290221109149911, guid: 3a5607b8c24ed394d96149de68267ce3, type: 3}
+      propertyPath: initialPowerups.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: d8949de9bdd3acf44bed63c6de6648c5, type: 2}
+    - target: {fileID: 6768290221109149911, guid: 3a5607b8c24ed394d96149de68267ce3, type: 3}
+      propertyPath: initialPowerups.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: b9f8198cf5b4ac64086ef6da2756a93b, type: 2}
+    - target: {fileID: 6768290221109149911, guid: 3a5607b8c24ed394d96149de68267ce3, type: 3}
+      propertyPath: initialPowerups.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 95ab373100625a349bd67418bd1dd707, type: 2}
+    - target: {fileID: 6768290221109149911, guid: 3a5607b8c24ed394d96149de68267ce3, type: 3}
+      propertyPath: initialPowerups.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: 95ab373100625a349bd67418bd1dd707, type: 2}
+    - target: {fileID: 6768290221109149911, guid: 3a5607b8c24ed394d96149de68267ce3, type: 3}
+      propertyPath: initialPowerups.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: 95ab373100625a349bd67418bd1dd707, type: 2}
+    - target: {fileID: 6768290221109149911, guid: 3a5607b8c24ed394d96149de68267ce3, type: 3}
+      propertyPath: initialPowerups.Array.data[5]
+      value: 
+      objectReference: {fileID: 11400000, guid: 95ab373100625a349bd67418bd1dd707, type: 2}
+    - target: {fileID: 6768290221109149911, guid: 3a5607b8c24ed394d96149de68267ce3, type: 3}
+      propertyPath: initialPowerups.Array.data[6]
+      value: 
+      objectReference: {fileID: 11400000, guid: 95ab373100625a349bd67418bd1dd707, type: 2}
+    - target: {fileID: 6768290221109149911, guid: 3a5607b8c24ed394d96149de68267ce3, type: 3}
+      propertyPath: initialPowerups.Array.data[7]
+      value: 
+      objectReference: {fileID: 11400000, guid: 95ab373100625a349bd67418bd1dd707, type: 2}
+    - target: {fileID: 6768290221109149911, guid: 3a5607b8c24ed394d96149de68267ce3, type: 3}
+      propertyPath: initialPowerups.Array.data[8]
+      value: 
+      objectReference: {fileID: 11400000, guid: 95ab373100625a349bd67418bd1dd707, type: 2}
+    - target: {fileID: 6768290221109149911, guid: 3a5607b8c24ed394d96149de68267ce3, type: 3}
+      propertyPath: initialPowerups.Array.data[9]
+      value: 
+      objectReference: {fileID: 11400000, guid: 95ab373100625a349bd67418bd1dd707, type: 2}
+    - target: {fileID: 6768290221109149911, guid: 3a5607b8c24ed394d96149de68267ce3, type: 3}
+      propertyPath: initialPowerups.Array.data[10]
+      value: 
+      objectReference: {fileID: 11400000, guid: 95ab373100625a349bd67418bd1dd707, type: 2}
+    - target: {fileID: 6768290221109149911, guid: 3a5607b8c24ed394d96149de68267ce3, type: 3}
+      propertyPath: initialPowerups.Array.data[11]
+      value: 
+      objectReference: {fileID: 11400000, guid: 95ab373100625a349bd67418bd1dd707, type: 2}
+    - target: {fileID: 6768290221109149911, guid: 3a5607b8c24ed394d96149de68267ce3, type: 3}
+      propertyPath: initialPowerups.Array.data[12]
+      value: 
+      objectReference: {fileID: 11400000, guid: 95ab373100625a349bd67418bd1dd707, type: 2}
+    - target: {fileID: 6768290221109149911, guid: 3a5607b8c24ed394d96149de68267ce3, type: 3}
+      propertyPath: initialPowerups.Array.data[13]
+      value: 
+      objectReference: {fileID: 11400000, guid: 95ab373100625a349bd67418bd1dd707, type: 2}
     - target: {fileID: 7190765185629506492, guid: 3a5607b8c24ed394d96149de68267ce3, type: 3}
       propertyPath: m_FontData.m_Font
       value: 
