@@ -15,6 +15,7 @@ public class Item7 : Item
         this.code = "daikalop12a";
         this.isEnable = true;
         this.historyDescription = "";
+        InitializeLocalization("Item7", "Item7_Description", "Item7_HistoryDescription");
     }
 
     public override void Activate()

@@ -10,13 +10,14 @@ public class Item6 : Item
     private void OnEnable()
     {
         this.itemName = "HealDynamic";
-        this.itemDescription = "The lower your health is, the higher hp you receive";
+        this.itemDescription = "The lower your health is, the higher hp you recorver";
         this.itemType = ItemType.Active;
         this.cd = 0;
         this.cost = 100;
         this.code = "daikalop12a";
         this.isEnable = true;
         this.historyDescription = "";
+        InitializeLocalization("Item6", "Item6_Description", "Item6_HistoryDescription");
     }
 
     public override void Activate()

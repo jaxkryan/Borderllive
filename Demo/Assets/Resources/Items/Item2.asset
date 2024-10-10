@@ -16,7 +16,55 @@ MonoBehaviour:
   itemDescription: Deal true damage to all enemies equal to 20% number of soul. If
     only one enemy is hit, the damage will be equal to 40% number of soul. The damage
     can not exceed the enemy's 40% max health.
-  image: {fileID: 21300000, guid: 4580fb91e3674674690b74bba9386fdb, type: 2}
+  historyDescription: "N\u0103m 1601, \u0111\u1EC3 chu\u1EA9n b\u1ECB cho qu\xE1
+    tr\xECnh m\u1EDF r\u1ED9ng b\u1EDD c\xF5i, x\xE2y d\u1EF1ng giang s\u01A1n c\u01A1
+    \u0111\u1ED3, ch\xFAa Nguy\u1EC5n Ho\xE0ng \u0111\xE3 c\xF9ng binh l\xEDnh rong
+    ru\u1ED5i v\xF3 ng\u1EF1a d\u1ECDc hai b\xEAn b\u1EDD s\xF4ng H\u01B0\u01A1ng.
+    \xD4ng b\u1EA5t ch\u1EE3t b\u1EAFt g\u1EB7p h\xECnh \u1EA3nh m\u1ED9t ng\u1ECDn
+    \u0111\u1ED3i nh\u1ECF nh\xF4 l\xEAn b\xEAn d\xF2ng s\xF4ng xanh bi\u1EBFc, th\u1EBF
+    t\u1EF1a con r\u1ED3ng quay \u0111\u1EA7u nh\xECn l\u1EA1i. T\u01B0\u01A1ng truy\u1EC1n
+    r\u1EB1ng m\u1ED7i \u0111\xEAm l\u1EA1i c\xF3 m\u1ED9t b\xE0 l\xE3o m\u1EB7c
+    \xE1o \u0111\u1ECF, v\u1EDBi khu\xF4n m\u1EB7t ph\xFAc h\u1EADu, \u0111i l\xEAn
+    \u0111\u1ED3i H\u1EA1 Khu\xEA v\xE0 n\xF3i v\u1EDBi m\u1ECDi ng\u01B0\u1EDDi
+    r\u1EB1ng: T\u1EA1i \u0111\xE2y s\u1EBD c\xF3 m\u1ED9t v\u1ECB ch\xFAa l\u1EADp
+    ch\xF9a \u0111\u1EC3 tr\u1EA5n gi\u1EEF long m\u1EA1ch. Th\u1EA5y \xFD t\u01B0\u1EDFng
+    c\u1EE7a m\xECnh c\xF3 s\u1EF1 t\u01B0\u01A1ng th\xF4ng v\u1EDBi c\xE2u chuy\u1EC7n
+    k\u1EC3 l\u1EA1i, Nguy\u1EC5n Ho\xE0ng ngay l\u1EADp t\u1EE9c cho qu\xE2n l\xEDnh
+    x\xE2y d\u1EF1ng ng\xF4i ch\xF9a tr\xEAn \u0111\u1ED3i."
+  image: {fileID: 21300000, guid: 0742a48cd58651044b4009ef94f6a1b6, type: 3}
   itemType: 0
   cd: 45
   cost: 100
+  code: daikalop12a
+  isEnable: 0
+  nameLocalization:
+    m_TableReference:
+      m_TableCollectionName: Items
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: Item2
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  descriptionLocalization:
+    m_TableReference:
+      m_TableCollectionName: Items
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: Item2_Description
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  historyDescriptionLocalization:
+    m_TableReference:
+      m_TableCollectionName: Items
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: Item2_HistoryDescription
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  <DefaultParametersList>k__BackingField: []
+  references:
+    version: 2
+    RefIds: []

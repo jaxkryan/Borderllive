@@ -23,7 +23,7 @@ MonoBehaviour:
     g\u1ECDi l\xE0 B\xE0 \u0110en \u2013 v\u1ECB m\u1EABu th\u1EA7n c\xF3 \u01A1n
     ph\xF9 h\u1ED9, \u0111\u1ED9 tr\xEC, t\u01B0\u01A1ng truy\u1EC1n c\xF3 kh\u1EA3
     n\u0103ng c\u1EA3nh b\xE1o tr\u01B0\u1EDBc \u0111i\u1EC1m d\u1EEF, tai \u01B0\u01A1ng."
-  image: {fileID: 21300000, guid: e4b31bd81e3678b47b9295645e24bb6e, type: 3}
+  image: {fileID: 21300000, guid: 24fd6073d23cab2448fc1f9f7accb84a, type: 3}
   itemType: 0
   cd: 30
   cost: 100
