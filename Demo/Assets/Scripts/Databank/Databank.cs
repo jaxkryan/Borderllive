@@ -27,12 +27,12 @@ public class Databank : MonoBehaviour
         foreach (Item item in items)
         {
             GameObject itemUI = Instantiate(itemUIPrefab, contentPanel);
-            itemUI.transform.Find("ItemName").GetComponent<Text>().text = item.nameLocalization.GetLocalizedString();
-            itemUI.transform.Find("ItemDescription").GetComponent<Text>().text = item.descriptionLocalization.GetLocalizedString();
+            itemUI.transform.Find("ItemName").GetComponent<TextMeshProUGUI>().text = item.nameLocalization.GetLocalizedString();
+            itemUI.transform.Find("ItemDescription").GetComponent<TextMeshProUGUI>().text = item.descriptionLocalization.GetLocalizedString();
             itemUI.transform.Find("ItemImage").GetComponent<Image>().sprite = item.image;
-            itemUI.transform.Find("ItemType").GetComponent<Text>().text = item.itemType.ToString();
-            itemUI.transform.Find("ItemCooldown").GetComponent<Text>().text = $"CD: {item.cd}";
-            itemUI.transform.Find("ItemHistoryDescription").GetComponent<Text>().text = item.historyDescriptionLocalization.GetLocalizedString();
+            itemUI.transform.Find("ItemType").GetComponent<TextMeshProUGUI>().text = item.itemType.ToString();
+            itemUI.transform.Find("ItemCooldown").GetComponent<TextMeshProUGUI>().text = $"CD: {item.cd}";
+            itemUI.transform.Find("Scroll View/Viewport/Content/ItemHistoryDescription").GetComponent<TextMeshProUGUI>().text = item.historyDescriptionLocalization.GetLocalizedString();
         }
 
         // Refresh the layout of the content panel
@@ -47,9 +47,9 @@ public class Databank : MonoBehaviour
         foreach (Powerups powerup in powerups)
         {
             GameObject powerupUI = Instantiate(powerupUIPrefab, contentPanel);
-            powerupUI.transform.Find("PowerupName").GetComponent<Text>().text = powerup.nameLocalization.GetLocalizedString();
-            powerupUI.transform.Find("PowerupDescription").GetComponent<Text>().text = powerup.descriptionLocalization.GetLocalizedString();
-            powerupUI.transform.Find("PowerupWeight").GetComponent<Text>().text = $"Weight: {powerup.Weight}";
+            powerupUI.transform.Find("PowerupWeight").GetComponent<TextMeshProUGUI>().text = $"Weight: {powerup.Weight}";
+            powerupUI.transform.Find("PowerupName").GetComponent<TextMeshProUGUI>().text = powerup.nameLocalization.GetLocalizedString();
+            powerupUI.transform.Find("PowerupDescription").GetComponent<TextMeshProUGUI>().text = powerup.descriptionLocalization.GetLocalizedString();
         }
 
         // Refresh the layout of the content panel

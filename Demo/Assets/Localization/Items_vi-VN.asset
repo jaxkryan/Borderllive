@@ -19,11 +19,11 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 9374310400
-    m_Localized: Item1
+    m_Localized: "V\xF2ng \u0111\xE1 l\u1EEDa n\xFAi B\xE0 \u0110en"
     m_Metadata:
       m_Items: []
   - m_Id: 49224392704
-    m_Localized: Item2
+    m_Localized: "Chu\xF4ng ch\xF9a Thi\xEAn M\u1EE5"
     m_Metadata:
       m_Items: []
   - m_Id: 86444646400
@@ -81,6 +81,26 @@ MonoBehaviour:
   - m_Id: 207446685556736
     m_Localized: "\u0110\xE1nh \u0111\u1ED5i 5% m\xE1u \u0111\u1EC3 l\u1EA5y 10%
       gi\xE1p. Kh\xF4ng th\u1EC3 s\u1EED d\u1EE5ng n\u1EBFu d\u01B0\u1EDBi 20% m\xE1u."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 553265607516160
+    m_Localized: "Cu\u1ED1i th\u1EBF k\u1EF7 16, ng\u01B0\u1EDDi Vi\u1EC7t hay \u0111\u1EB7t
+      c\xE1c l\xF2 g\u1ED1m Chu \u0110\u1EADu l\xE0m l\u01B0 h\u01B0\u01A1ng \u0111\u1EC3
+      c\xFAng v\xE0o c\xE1c c\xF4ng tr\xECnh t\xF4n gi\xE1o. Vi\u1EC7c kh\u1EAFc
+      hai ch\u1EEF \u201C\u0110\u1EA1i t\u1EF1\u201D l\xE0 ch\u1EEF Ph\u1EADt ch\u1EE9ng
+      t\u1ECF vai tr\xF2 c\u1EE7a Ph\u1EADt gi\xE1o trong t\xE2m th\u1EE9c ng\u01B0\u1EDDi
+      Vi\u1EC7t r\u1EA5t quan tr\u1ECDng. Sau \u201Cng\xE0n n\u0103m B\u1EAFc thu\u1ED9c\u201D,
+      ng\u01B0\u1EDDi Vi\u1EC7t v\u1EABn t\u1EA1o d\xE1ng l\u01B0 h\u01B0\u01A1ng
+      c\xF3 d\xE1ng tr\u1ED1ng \u0110\xF4ng S\u01A1n."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 553447506092032
+    m_Localized: "T\u0103ng s\u1ED1 linh h\u1ED3n h\u1EA5p th\u1EF1 b\u1EDFi 150%
+      trong 10 gi\xE2y k\u1EBF ti\u1EBFp."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 553630524547072
+    m_Localized: "L\u01B0 H\u01B0\u01A1ng Th\u1EA7n H\u1ED3n"
     m_Metadata:
       m_Items: []
   references:

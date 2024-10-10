@@ -19,11 +19,11 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 9374310400
-    m_Localized: Item1
+    m_Localized: Ba Den Mountain Flintstone Ring
     m_Metadata:
       m_Items: []
   - m_Id: 49224392704
-    m_Localized: Item2
+    m_Localized: Bell of Thien Mu Pagoda
     m_Metadata:
       m_Items: []
   - m_Id: 86444646400
@@ -67,6 +67,23 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 207446685556736
     m_Localized: Trade 5% hp for 10% shield. Can not use skill if under 20% hp.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 553265607516160
+    m_Localized: At the end of the 16th century, Vietnamese people often placed Chu
+      Dau pottery kilns as incense burners to offer in religious works. The engraving
+      of the two words "Dai Tu" is the word Buddha, proving that the role of Buddhism
+      in the Vietnamese mind is very important. After "thousands of years of Northern
+      colonization", Vietnamese people still pose incense burners with the shape
+      of Dong Son drums.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 553447506092032
+    m_Localized: For the next 10 seconds, increase your soul absorption by 150%.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 553630524547072
+    m_Localized: SoulCenser
     m_Metadata:
       m_Items: []
   references:
