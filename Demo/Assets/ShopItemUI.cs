@@ -43,6 +43,7 @@ public class ShopItemUI : MonoBehaviour
         //}
         // Tell the ShopManager to handle the purchase
         //shopManager.PurchaseItem(currentItem, this);
-        shopManager.purchasePanel.Show(currentItem);
+        GameObject shopPanel = purchaseButton.transform.parent.gameObject;
+        shopManager.purchasePanel.Show(currentItem, shopPanel);
     }
 }

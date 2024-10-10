@@ -7,9 +7,10 @@ using UnityEngine.UI;
 public class PurchasePanel : MonoBehaviour
 {
     public ShopManager shopManager;
+    public GameObject shopPanel;
     public static PurchasePanel instance; // Singleton instance
     public Button exitButton;
-    public Text codeInputField; // Assign the input field in the inspector
+    public Text codeInputFieldTxt; // Assign the input field in the inspector
     public Button confirmButton; // Assign the confirm button in the inspector
     private Item currentItem;
 
@@ -18,9 +19,23 @@ public class PurchasePanel : MonoBehaviour
         instance = this;
     }
 
-    public void Show(Item item)
+    public void OnEnable()
+    {
+        // Get the PurchaseContent panel
+        Transform purchaseContent = transform.Find("PurchaseContent");
+        // Get the CodeInputField
+        Transform codeInputField = purchaseContent.Find("CodeInputField");
+        // Get the InputFieldText component
+        codeInputFieldTxt = codeInputField.Find("InputFieldTxt").GetComponent<Text>();
+
+        codeInputFieldTxt.text = String.Empty;
+    }
+
+    public void Show(Item item, GameObject currentPanel)
     {
         currentItem = item;
+        shopPanel = currentPanel;
+
         // Show the purchase panel
         gameObject.SetActive(true);
     }
@@ -28,7 +43,7 @@ public class PurchasePanel : MonoBehaviour
     public void OnConfirmButtonClick()
     {
         // Get the entered code
-        String inputCode = codeInputField.text;
+        String inputCode = codeInputFieldTxt.text;
 
         Debug.Log("enter : " + inputCode);
         Debug.Log("code : " + currentItem.code);
@@ -41,6 +56,7 @@ public class PurchasePanel : MonoBehaviour
             //PurchaseItem(itemId);
             // Hide the purchase panel
             gameObject.SetActive(false);
+            shopPanel.SetActive(false);
         }
         else
         {
