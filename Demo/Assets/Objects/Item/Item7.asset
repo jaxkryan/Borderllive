@@ -20,32 +20,33 @@ MonoBehaviour:
   itemType: 1
   cd: 0
   cost: 300
+  unlockCost: 0
   code: daikalop12a
-  isEnable: 1
+  isEnable: 0
   nameLocalization:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: Items
     m_TableEntryReference:
       m_KeyId: 0
-      m_Key: 
+      m_Key: Item7
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
   descriptionLocalization:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: Items
     m_TableEntryReference:
       m_KeyId: 0
-      m_Key: 
+      m_Key: Item7_Description
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
   historyDescriptionLocalization:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: Items
     m_TableEntryReference:
       m_KeyId: 0
-      m_Key: 
+      m_Key: Item7_HistoryDescription
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []

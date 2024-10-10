@@ -17,6 +17,8 @@ public abstract class Item : ScriptableObject
     public ItemType itemType;
     public float cd;
     public int cost;
+    
+    public int unlockCost;
     public String code;
     public bool isEnable = false;
     // public bool autoActivateOnPickup = true;
