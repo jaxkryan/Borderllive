@@ -26,6 +26,11 @@ public class CurrencyInputHandler : MonoBehaviour
         submitButton.onClick.AddListener(SubmitCode);
     }
 
+    private void Update(){
+        if (Input.GetKeyDown(KeyCode.Escape)){
+            gameObject.SetActive(false);
+        }
+    }
     public void SubmitCode()
     {
         // Get the input code from the input field
