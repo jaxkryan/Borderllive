@@ -18,6 +18,7 @@ public class Item6 : Item
         this.isEnable = true;
         this.historyDescription = "";
         InitializeLocalization("Item6", "Item6_Description", "Item6_HistoryDescription");
+        LoadItemState();
     }
 
     public override void Activate()

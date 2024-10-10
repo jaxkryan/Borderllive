@@ -82,12 +82,16 @@ public abstract class Item : ScriptableObject
     {
         string key = PlayerPrefsKeyPrefix + itemName;
         PlayerPrefs.SetInt(key, isEnable ? 1 : 0);
+        Debug.Log($"PlayerPrefs value for {key}: {PlayerPrefs.GetInt(key)}");
+
     }
 
     // Method to load the state of this item from PlayerPrefs
     public void LoadItemState()
     {
-        string key = PlayerPrefsKeyPrefix + code;
+        
+        string key = PlayerPrefsKeyPrefix + itemName;
+        Debug.Log($"PlayerPrefs value for {key}: {PlayerPrefs.GetInt(key)}");
         if (PlayerPrefs.HasKey(key))
         {
             isEnable = PlayerPrefs.GetInt(key) == 1;

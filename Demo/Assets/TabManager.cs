@@ -35,7 +35,7 @@ public class TabManager : MonoBehaviour
         eternalSoulPanel.SetActive(isEternalSoulTab);
         exclusiveItemPanel.SetActive(!isEternalSoulTab);
 
-        Debug.Log("Eternal Soul Panel Active: " + eternalSoulPanel.activeSelf);
+        // Debug.Log("Eternal Soul Panel Active: " + eternalSoulPanel.activeSelf);
         Debug.Log("Exclusive Item Panel Active: " + exclusiveItemPanel.activeSelf);
     }
 
