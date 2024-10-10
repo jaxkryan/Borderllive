@@ -77,4 +77,24 @@ public abstract class Item : ScriptableObject
             return other.itemParameter == itemParameter;
         }
     }
+    private const string PlayerPrefsKeyPrefix = "ItemState_";
+     public void SaveItemState()
+    {
+        string key = PlayerPrefsKeyPrefix + itemName;
+        PlayerPrefs.SetInt(key, isEnable ? 1 : 0);
+    }
+
+    // Method to load the state of this item from PlayerPrefs
+    public void LoadItemState()
+    {
+        string key = PlayerPrefsKeyPrefix + code;
+        if (PlayerPrefs.HasKey(key))
+        {
+            isEnable = PlayerPrefs.GetInt(key) == 1;
+        }
+        else
+        {
+            isEnable = false; // Default state if no data is saved
+        }
+    }
 }

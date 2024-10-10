@@ -88,7 +88,6 @@ public class ExclusiveItemManager : MonoBehaviour
 
     private void UnlockItem()
     {
-        // Check if the player has enough currency
         if (PlayerPrefs.HasKey("PremiumCurrency") && PlayerPrefs.GetInt("PremiumCurrency") >= selectedItem.unlockCost)
         {
             // Deduct the unlock cost
@@ -98,7 +97,9 @@ public class ExclusiveItemManager : MonoBehaviour
             // Unlock the item
             selectedItem.isEnable = true;
 
-            // Optionally, display a message or update the UI to reflect the unlock
+            // Save the item's state to PlayerPrefs
+            selectedItem.SaveItemState();
+
             Debug.Log($"{selectedItem.nameLocalization.GetLocalizedString()} has been unlocked!");
             DisplayItems();
         }
@@ -107,10 +108,8 @@ public class ExclusiveItemManager : MonoBehaviour
             Debug.Log("Not enough currency to unlock this item.");
         }
 
-        // Hide the confirmation panel
         confirmationPanel.SetActive(false);
     }
-
 
     // Optionally, add a cancel method for the cancel button
     public void CancelUnlock()
