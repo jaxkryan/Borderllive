@@ -12,9 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 600653545505d0e4a96f50e69caabdb3, type: 3}
   m_Name: Potato
   m_EditorClassIdentifier: 
-  itemName: Potato
-  itemDescription: Gains addition shield
+  itemName: BerserkFillUp
+  itemDescription: Fill up your Berserk Bar immediately
   image: {fileID: 21300000, guid: 7dd21f826a119274bb085376073e5cbd, type: 3}
   itemType: 0
   cd: 30
-  cost: 300
+  cost: 100
+  code: daikalop12a
+  isEnable: 0
+  <DefaultParametersList>k__BackingField: []

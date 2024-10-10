@@ -12,9 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 600653545505d0e4a96f50e69caabdb3, type: 3}
   m_Name: Apple
   m_EditorClassIdentifier: 
-  itemName: Apple
-  itemDescription: Gains more XP on kill for a while
+  itemName: BerserkFillUp
+  itemDescription: Fill up your Berserk Bar immediately
   image: {fileID: 21300000, guid: a020d82ffd21fa4419fcbd8b9b020671, type: 3}
   itemType: 0
-  cd: 40
-  cost: 250
+  cd: 30
+  cost: 100
+  code: daikalop12a
+  isEnable: 0
+  <DefaultParametersList>k__BackingField: []

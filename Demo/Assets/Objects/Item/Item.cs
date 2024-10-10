@@ -18,7 +18,7 @@ public abstract class Item : ScriptableObject
     public float cd;
     public int cost;
     public String code;
-    public bool isEnable = true;
+    public bool isEnable = false;
     // public bool autoActivateOnPickup = true;
      public abstract void Activate();
     public string GetImageName()
