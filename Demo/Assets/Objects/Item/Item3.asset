@@ -16,7 +16,7 @@ MonoBehaviour:
   itemDescription: Trade 5% hp for 10% shield. Can not use skill if under 20% hp.
   historyDescription: Trade 5% hp for 10% shield. Can not use skill if under 20%
     hp.
-  image: {fileID: 21300000, guid: 0ff995099d7a3c845a1136fb4bb002ef, type: 3}
+  image: {fileID: 21300000, guid: 57be014274637004b90f7cfb5c4d6512, type: 3}
   itemType: 0
   cd: 20
   cost: 80
@@ -42,10 +42,10 @@ MonoBehaviour:
     m_LocalVariables: []
   historyDescriptionLocalization:
     m_TableReference:
-      m_TableCollectionName: GUID:f194860d1e886f549a848ecf094db7fc
+      m_TableCollectionName: Items
     m_TableEntryReference:
-      m_KeyId: 207446685556736
-      m_Key: 
+      m_KeyId: 0
+      m_Key: Item3_HistoryDescription
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
