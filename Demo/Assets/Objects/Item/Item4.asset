@@ -12,12 +12,48 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c598bef32c92de040a66db151a1ca47b, type: 3}
   m_Name: Item4
   m_EditorClassIdentifier: 
-  itemName: Soul Censer
-  itemDescription: For the next 10 seconds, increase your soul absorption by 150%
-  image: {fileID: -932786162, guid: 7acb259dca06019448bab61d9d9b77a3, type: 3}
+  itemName: SoulCenser
+  itemDescription: For the next 10 seconds, increase your soul absorption by 150%.
+  historyDescription: At the end of the 16th century, Vietnamese people often placed
+    Chu Dau pottery kilns as incense burners to offer in religious works. The engraving
+    of the two words "Dai Tu" is the word Buddha, proving that the role of Buddhism
+    in the Vietnamese mind is very important. After "thousands of years of Northern
+    colonization", Vietnamese people still pose incense burners with the shape of
+    Dong Son drums.
+  image: {fileID: 21300000, guid: c4a4e09c0f229c4489bff70823c84d00, type: 3}
   itemType: 0
   cd: 30
   cost: 120
   code: daikalop12a
   isEnable: 1
+  nameLocalization:
+    m_TableReference:
+      m_TableCollectionName: Items
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: Item4
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  descriptionLocalization:
+    m_TableReference:
+      m_TableCollectionName: Items
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: Item4_Description
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  historyDescriptionLocalization:
+    m_TableReference:
+      m_TableCollectionName: Items
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: Item4_HistoryDescription
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   <DefaultParametersList>k__BackingField: []
+  references:
+    version: 2
+    RefIds: []

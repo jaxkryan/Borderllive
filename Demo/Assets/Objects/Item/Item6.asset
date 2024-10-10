@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffe758c0758c41a478387da79814dab6, type: 3}
+  m_Name: Item6
+  m_EditorClassIdentifier: 
+  itemName: HealDynamic
+  itemDescription: The lower your health is, the higher hp you receive. Minimum is
+    10% and maximum is 50% of your max HP.
+  historyDescription: 
+  image: {fileID: 21300000, guid: f40621faad99a284bb0c3b4c49983a0c, type: 3}
+  itemType: 0
+  cd: 0
+  cost: 100
+  code: daikalop12a
+  isEnable: 1
+  nameLocalization:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  descriptionLocalization:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  historyDescriptionLocalization:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  <DefaultParametersList>k__BackingField: []
+  healAmount: 0.2
+  references:
+    version: 2
+    RefIds: []
