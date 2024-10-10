@@ -17,7 +17,7 @@ public class Item1 : Item
         this.cd = 30f;
         this.cost = 100;
         this.code = "daikalop12a";
-        this.isEnable = false;
+        this.isEnable = true;
         this.historyDescription = "Núi Bà Đen là ngọn núi lửa đã tắt nằm ở trung tâm tỉnh Tây Ninh, Việt Nam. Với độ cao 986 m, đây là ngọn núi cao nhất miền Nam Việt Nam hiện nay, được mệnh danh \"Đệ nhất thiên sơn\". Trung tâm của quần thể tâm linh là điện Bà thờ Linh Sơn Thánh Mẫu, còn gọi là Bà Đen – vị mẫu thần có ơn phù hộ, độ trì, tương truyền có khả năng cảnh báo trước điềm dữ, tai ương.";
         InitializeLocalization("Item1", "Item1_Description", "Item1_HistoryDescription");
     }

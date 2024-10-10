@@ -13,7 +13,7 @@ public class Item7 : Item
         this.cd = 0;
         this.cost = 300;
         this.code = "daikalop12a";
-        this.isEnable = true;
+        this.isEnable = false;
         this.historyDescription = "";
         InitializeLocalization("Item7", "Item7_Description", "Item7_HistoryDescription");
     }
