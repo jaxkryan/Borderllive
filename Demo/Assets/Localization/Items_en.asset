@@ -1,0 +1,91 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Items_en
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: f194860d1e886f549a848ecf094db7fc, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 9374310400
+    m_Localized: Ba Den Mountain Flintstone Ring
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49224392704
+    m_Localized: Bell of Thien Mu Pagoda
+    m_Metadata:
+      m_Items: []
+  - m_Id: 86444646400
+    m_Localized: Item3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 193097408512
+    m_Localized: Fill up your Berserk Bar immediately
+    m_Metadata:
+      m_Items: []
+  - m_Id: 285233684480
+    m_Localized: "Ba Den Mountain is an extinct volcano located in the center of
+      Tay Ninh province, Vietnam. With an altitude of 986 m, this is the highest
+      mountain in South Vietnam today, known as \"The First Thien Son\". The center
+      of the spiritual complex is the Linh Son Holy Mother Temple, also known as
+      Ba Den \u2013 the mother goddess with blessings, perseverance, and transmission
+      capable of warning of bad omens and calamitous.\";\r\n    "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 206448999047168
+    m_Localized: Deal true damage to all enemies equal to 20% number of soul. If
+      only one enemy is hit, the damage will be equal to 40% number of soul. The
+      damage can not exceed the enemy's 40% max health.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 206945654972416
+    m_Localized: 'In 1601, in order to prepare for the process of expanding the borders
+      of the realm and building Jiang Son Co Do, Lord Nguyen Hoang and his soldiers
+      roamed along the banks of the Perfume River. He suddenly came across the image
+      of a small hill rising by the blue river, like a dragon turning its head to
+      look back. Legend has it that every night, an old woman in a red robe, with
+      a happy face, goes up to Ha Khue hill and tells everyone: There will be a god
+      here who will set up a pagoda to guard the dragon vein. Seeing that his idea
+      had a connection with the story, Nguyen Hoang immediately had the soldiers
+      build a pagoda on the hill.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 207195975229440
+    m_Localized: Trade 5% hp for 10% shield. Can not use skill if under 20% hp.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 207446685556736
+    m_Localized: Trade 5% hp for 10% shield. Can not use skill if under 20% hp.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 553265607516160
+    m_Localized: At the end of the 16th century, Vietnamese people often placed Chu
+      Dau pottery kilns as incense burners to offer in religious works. The engraving
+      of the two words "Dai Tu" is the word Buddha, proving that the role of Buddhism
+      in the Vietnamese mind is very important. After "thousands of years of Northern
+      colonization", Vietnamese people still pose incense burners with the shape
+      of Dong Son drums.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 553447506092032
+    m_Localized: For the next 10 seconds, increase your soul absorption by 150%.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 553630524547072
+    m_Localized: SoulCenser
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []
