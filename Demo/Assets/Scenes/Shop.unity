@@ -1438,22 +1438,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 6757894290023285032, guid: 53127c4fc7eecdd4c835231e0aa46601, type: 3}
   m_PrefabInstance: {fileID: 360564169}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &360564171 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6648438099818973931, guid: 53127c4fc7eecdd4c835231e0aa46601, type: 3}
-  m_PrefabInstance: {fileID: 360564169}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 360564172}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a0f9e2342ded8714aae1246881f9c3dd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!1 &360564172 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2020333564001483120, guid: 53127c4fc7eecdd4c835231e0aa46601, type: 3}
-  m_PrefabInstance: {fileID: 360564169}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &409180419
 GameObject:
   m_ObjectHideFlags: 0
@@ -3249,7 +3233,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '35.000 VND = 2000 Eternal Soul '
+  m_text: '37.000 VND = 4000 Eternal Soul '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3633,8 +3617,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1.5743, y: 60.3609}
-  m_SizeDelta: {x: 450.8513, y: 495.2823}
+  m_AnchoredPosition: {x: -0.0000076294, y: 54}
+  m_SizeDelta: {x: 221.9419, y: 243.814}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &791266812
 MonoBehaviour:
@@ -3656,7 +3640,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -603146375, guid: 8787ccb153e47f746a86c3a824b1bc9e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3731,7 +3715,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '19.000 VND = 1000 Eternal Soul '
+  m_text: '19.000 VND = 2000 Eternal Soul '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3918,22 +3902,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 53127c4fc7eecdd4c835231e0aa46601, type: 3}
---- !u!114 &866113961 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6648438099818973931, guid: 53127c4fc7eecdd4c835231e0aa46601, type: 3}
-  m_PrefabInstance: {fileID: 866113960}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 866113962}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a0f9e2342ded8714aae1246881f9c3dd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!1 &866113962 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2020333564001483120, guid: 53127c4fc7eecdd4c835231e0aa46601, type: 3}
-  m_PrefabInstance: {fileID: 866113960}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &877040914
 GameObject:
   m_ObjectHideFlags: 0
@@ -4317,22 +4285,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 53127c4fc7eecdd4c835231e0aa46601, type: 3}
---- !u!114 &893592234 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6648438099818973931, guid: 53127c4fc7eecdd4c835231e0aa46601, type: 3}
-  m_PrefabInstance: {fileID: 893592233}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 893592235}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a0f9e2342ded8714aae1246881f9c3dd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!1 &893592235 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2020333564001483120, guid: 53127c4fc7eecdd4c835231e0aa46601, type: 3}
-  m_PrefabInstance: {fileID: 893592233}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &900196331
 GameObject:
   m_ObjectHideFlags: 0
@@ -4367,8 +4319,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1.5743, y: 60.3609}
-  m_SizeDelta: {x: 450.8513, y: 495.2823}
+  m_AnchoredPosition: {x: 7.1412, y: 97.1595}
+  m_SizeDelta: {x: 468.2822, y: 421.685}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &900196333
 MonoBehaviour:
@@ -4390,7 +4342,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 8904f1f9d6b8cb243a3bc36700d1bb79, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4513,22 +4465,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 53127c4fc7eecdd4c835231e0aa46601, type: 3}
---- !u!114 &907683391 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6648438099818973931, guid: 53127c4fc7eecdd4c835231e0aa46601, type: 3}
-  m_PrefabInstance: {fileID: 907683390}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 907683392}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a0f9e2342ded8714aae1246881f9c3dd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!1 &907683392 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2020333564001483120, guid: 53127c4fc7eecdd4c835231e0aa46601, type: 3}
-  m_PrefabInstance: {fileID: 907683390}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &973572143
 GameObject:
   m_ObjectHideFlags: 0
@@ -5256,25 +5192,12 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 81a89cb546ec9da45a6c2e16da7062c3, type: 2}
   - {fileID: 11400000, guid: 4264a0694836ede4c98c8adeae2914ec, type: 2}
   - {fileID: 11400000, guid: 6251eb07218a5a2428294ed9e8e18e4a, type: 2}
-  shopPanelsGO:
-  - {fileID: 128593988078965505}
-  - {fileID: 1366418247}
-  - {fileID: 1703347907}
-  - {fileID: 866113962}
-  - {fileID: 893592235}
-  - {fileID: 1811322001}
-  - {fileID: 907683392}
-  - {fileID: 360564172}
-  shopPanels:
-  - {fileID: 128593988078965504}
-  - {fileID: 1366418246}
-  - {fileID: 1703347906}
-  - {fileID: 866113961}
-  - {fileID: 893592234}
-  - {fileID: 1811322000}
-  - {fileID: 907683391}
-  - {fileID: 360564171}
-  purchasePanel: {fileID: 1684362663}
+  shopPanelPrefab: {fileID: 0}
+  shopContent: {fileID: 0}
+  shopPanel: {fileID: 0}
+  ownedActiveItem: {fileID: 0}
+  currencyManager: {fileID: 0}
+  currentSoulAmount: {fileID: 0}
 --- !u!114 &1098326778
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6452,22 +6375,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 53127c4fc7eecdd4c835231e0aa46601, type: 3}
---- !u!114 &1366418246 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6648438099818973931, guid: 53127c4fc7eecdd4c835231e0aa46601, type: 3}
-  m_PrefabInstance: {fileID: 1366418245}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1366418247}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a0f9e2342ded8714aae1246881f9c3dd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!1 &1366418247 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2020333564001483120, guid: 53127c4fc7eecdd4c835231e0aa46601, type: 3}
-  m_PrefabInstance: {fileID: 1366418245}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1385700280
 GameObject:
   m_ObjectHideFlags: 0
@@ -6593,7 +6500,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '35.000 VND = 2000 Eternal Soul '
+  m_text: '28.000 VND = 3000 Eternal Soul '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -6879,8 +6786,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1.5743, y: 60.3609}
-  m_SizeDelta: {x: 450.8513, y: 495.2823}
+  m_AnchoredPosition: {x: 8.0948, y: 76.4625}
+  m_SizeDelta: {x: 454.7248, y: 369.3922}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1554749479
 MonoBehaviour:
@@ -6902,7 +6809,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: f4264997a22d0664bbe307b7a15b5225, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -7599,22 +7506,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 53127c4fc7eecdd4c835231e0aa46601, type: 3}
---- !u!114 &1703347906 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6648438099818973931, guid: 53127c4fc7eecdd4c835231e0aa46601, type: 3}
-  m_PrefabInstance: {fileID: 1703347905}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1703347907}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a0f9e2342ded8714aae1246881f9c3dd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!1 &1703347907 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2020333564001483120, guid: 53127c4fc7eecdd4c835231e0aa46601, type: 3}
-  m_PrefabInstance: {fileID: 1703347905}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1723727029
 GameObject:
   m_ObjectHideFlags: 0
@@ -8020,22 +7911,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 53127c4fc7eecdd4c835231e0aa46601, type: 3}
---- !u!114 &1811322000 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6648438099818973931, guid: 53127c4fc7eecdd4c835231e0aa46601, type: 3}
-  m_PrefabInstance: {fileID: 1811321999}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1811322001}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a0f9e2342ded8714aae1246881f9c3dd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!1 &1811322001 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2020333564001483120, guid: 53127c4fc7eecdd4c835231e0aa46601, type: 3}
-  m_PrefabInstance: {fileID: 1811321999}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1829958279
 GameObject:
   m_ObjectHideFlags: 0
@@ -9945,22 +9820,6 @@ PrefabInstance:
 --- !u!224 &128593988078965503 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6757894290023285032, guid: 53127c4fc7eecdd4c835231e0aa46601, type: 3}
-  m_PrefabInstance: {fileID: 128593988078965502}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &128593988078965504 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6648438099818973931, guid: 53127c4fc7eecdd4c835231e0aa46601, type: 3}
-  m_PrefabInstance: {fileID: 128593988078965502}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 128593988078965505}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a0f9e2342ded8714aae1246881f9c3dd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!1 &128593988078965505 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2020333564001483120, guid: 53127c4fc7eecdd4c835231e0aa46601, type: 3}
   m_PrefabInstance: {fileID: 128593988078965502}
   m_PrefabAsset: {fileID: 0}
 --- !u!224 &141755707493445012
@@ -13587,9 +13446,12 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f77c2b4f75043734d83d918ed8e3fc6f, type: 2}
   - {fileID: 11400000, guid: e232ced9b15415041a77109e09658f58, type: 2}
   - {fileID: 11400000, guid: 55324951f24bf7d41ac65d27c50079a4, type: 2}
-  shopPanelsGO: []
-  shopPanels: []
-  purchasePanel: {fileID: 0}
+  shopPanelPrefab: {fileID: 0}
+  shopContent: {fileID: 0}
+  shopPanel: {fileID: 0}
+  ownedActiveItem: {fileID: 0}
+  currencyManager: {fileID: 0}
+  currentSoulAmount: {fileID: 0}
 --- !u!222 &3632693447360956502
 CanvasRenderer:
   m_ObjectHideFlags: 0
