@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c598bef32c92de040a66db151a1ca47b, type: 3}
   m_Name: Item4
   m_EditorClassIdentifier: 
-  itemName: 
-  itemDescription: 
-  image: {fileID: 0}
+  itemName: Soul Censer
+  itemDescription: For the next 10 seconds, increase your soul absorption by 150%
+  image: {fileID: -932786162, guid: 7acb259dca06019448bab61d9d9b77a3, type: 3}
   itemType: 0
-  cd: 0
-  cost: 0
-  code: 
+  cd: 30
+  cost: 120
+  code: daikalop12a
   isEnable: 1
   <DefaultParametersList>k__BackingField: []
