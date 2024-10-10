@@ -38,8 +38,8 @@ public class HealthPickup2 : MonoBehaviour
     private int CalculateHealAmount(Damageable damageable)
     {
         // Define a minimum and maximum heal amount
-        int minHeal = 10;
-        int maxHeal = 50;
+        int minHeal = (int)(0.1 * damageable.MaxHealth);
+        int maxHeal = (int)(0.5 * damageable.MaxHealth);
 
         // Calculate the heal amount based on the player's current health
         float healthRatio = (float)damageable.Health / damageable.MaxHealth;

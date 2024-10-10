@@ -108,8 +108,26 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 1567344816070656
     m_Localized: Collection
+    m_Metadata:
+      m_Items: []
   - m_Id: 1552299138486272
     m_Localized: Control
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1784924042469376
+    m_Localized: No buff can be choosen, +45 souls.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1785153227628544
+    m_Localized: Powerups
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1785318562897920
+    m_Localized: Items
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1901378133561344
+    m_Localized: Bargain
     m_Metadata:
       m_Items: []
   references:

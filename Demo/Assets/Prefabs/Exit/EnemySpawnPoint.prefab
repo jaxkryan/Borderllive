@@ -66,7 +66,7 @@ MonoBehaviour:
   timeBetweenWaves: 0
   summonEffectPrefab: {fileID: 3608926238929618258, guid: 60279c783a1180f4896b41645b5e4471, type: 3}
   summonEffectDuration: 0.5
-  totalWaves: 1
+  totalWaves: 3
   portal: {fileID: 8720259928190103623}
 --- !u!1 &2624427781924349103
 GameObject:

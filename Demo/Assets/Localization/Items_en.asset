@@ -27,7 +27,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 86444646400
-    m_Localized: Item3
+    m_Localized: Shield
     m_Metadata:
       m_Items: []
   - m_Id: 193097408512
@@ -66,7 +66,10 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 207446685556736
-    m_Localized: Trade 5% hp for 10% shield. Can not use skill if under 20% hp.
+    m_Localized: Ru Cha - the only remaining primeval mangrove forest on the Tam
+      Giang - Cau Hai lagoon system, is considered as the "Green Shield" where the
+      sea is shallow, shielding the mainland from natural disasters and is a place
+      that attracts tourists because of its rarity, wildness and poetry.
     m_Metadata:
       m_Items: []
   - m_Id: 553265607516160
@@ -83,7 +86,58 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 553630524547072
-    m_Localized: SoulCenser
+    m_Localized: Soul Censer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 669769283969024
+    m_Localized: Wine
+    m_Metadata:
+      m_Items: []
+  - m_Id: 669789529874432
+    m_Localized: Pho
+    m_Metadata:
+      m_Items: []
+  - m_Id: 669805602447360
+    m_Localized: Steadfast Heart
+    m_Metadata:
+      m_Items: []
+  - m_Id: 670655204859904
+    m_Localized: Heal 20% of your max HP
+    m_Metadata:
+      m_Items: []
+  - m_Id: 670685038944256
+    m_Localized: The lower your health is, the higher hp you recorver
+    m_Metadata:
+      m_Items: []
+  - m_Id: 670714747199488
+    m_Localized: When your HP is 0, you will be revived with 50% HP. Automatically
+      trigger and only used once per item. You can only carry one of this item.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 670730287095808
+    m_Localized: "The golden flower glutinous wine in Van Village is likened to a
+      crystal-clear water, as beautiful as the summer sunshine, and with just a gentle
+      shake, bubbles rise to the surface. This wine was once honored by a king with
+      four poetic titles: V\xE2n \u2013 H\u01B0\u01A1ng \u2013 M\u1EF9 \u2013 T\u1EEDu,
+      meaning Cloud \u2013 Fragrance \u2013 Beauty \u2013 Wine."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 670771303194624
+    m_Localized: Pho, a traditional dish of Vietnamese cuisine, is a harmonious combination
+      of fresh rice noodles, rich broth, tender slices of beef or chicken, and aromatic
+      herbs, often served with lime and crispy dough sticks. This is truly the taste
+      of life. The word Pho has even been included in the Oxford English Dictionary.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 670789531639808
+    m_Localized: 'The red flag with a yellow star first appeared during the Nam Ky
+      Uprising against French colonial rule on November 23, 1940. The creator of
+      this flag, with its red background and a five-pointed yellow star in the center,
+      was comrade Nguyen Huu Tien. The red flag with a yellow star stands as a symbol
+      of the unity, independence, self-determination, and peace of the Vietnamese
+      people. This was affirmed by President Ho Chi Minh and has been proven by history
+      over nearly a century: "Vietnam is one, the Vietnamese people are one. Rivers
+      may run dry, mountains may wear down, but this truth will never change."'
     m_Metadata:
       m_Items: []
   references:

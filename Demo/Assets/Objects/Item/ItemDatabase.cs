@@ -11,6 +11,10 @@ public static class ItemDatabase
         items.Add(Resources.Load<Item>("Items/Item1")); // Ensure correct path
         items.Add(Resources.Load<Item>("Items/Item2"));
         items.Add(Resources.Load<Item>("Items/Item3"));
+        items.Add(Resources.Load<Item>("Items/Item4"));
+        items.Add(Resources.Load<Item>("Items/Item5"));
+        items.Add(Resources.Load<Item>("Items/Item6"));
+        items.Add(Resources.Load<Item>("Items/Item7"));
         // Add other items here...
 
         Debug.Log("Items loaded into the database:");

@@ -52,6 +52,10 @@ public class UIController : MonoBehaviour
         Time.timeScale = 1;
         SceneManager.LoadScene("MainMenu_Screen");
     }
+    public void BargainBtn_Click()
+    {
+        SceneManager.LoadScene("Shop");
+    }
 
     void Start()
     {

@@ -58,6 +58,7 @@ public class FlyingEyeShooting : MonoBehaviour
 
     void ShootProjectile()
     {
+        HasTarget = false;
         // Instantiate the projectile
         GameObject projectile = Instantiate(projectilePrefab, projectilePos.position, Quaternion.identity);
 
