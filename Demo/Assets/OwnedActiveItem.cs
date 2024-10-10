@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -131,7 +132,7 @@ public class OwnedActiveItem : MonoBehaviour
         UpdateUI();
     }
 
-        public void CancelExchange()
+    public void CancelExchange()
     {
         newItem = null; // Clear the new item reference
         exchangeScreen.SetActive(false); // Hide the exchange UI
@@ -214,17 +215,18 @@ public class OwnedActiveItem : MonoBehaviour
     }
 
 
-    private void Start(){
+    private void Start()
+    {
         if (item1Button != null)
-        item1Button.onClick.AddListener(() => SelectItemToExchange(0));
+            item1Button.onClick.AddListener(() => SelectItemToExchange(0));
         if (item2Button != null)
-        item2Button.onClick.AddListener(() => SelectItemToExchange(1));
+            item2Button.onClick.AddListener(() => SelectItemToExchange(1));
         if (cancelButton != null)
-        cancelButton.onClick.AddListener(CancelExchange);
+            cancelButton.onClick.AddListener(CancelExchange);
 
-        if (exchangeScreen!=null)
-        // Hide exchange screen initially
-        exchangeScreen.SetActive(false);
+        if (exchangeScreen != null)
+            // Hide exchange screen initially
+            exchangeScreen.SetActive(false);
         UpdateUI();
     }
     // Method to update the UI images
@@ -234,10 +236,40 @@ public class OwnedActiveItem : MonoBehaviour
         {
             item1Image.sprite = item1.image; // Assuming item1 has a sprite property called itemSprite
         }
-
+        else{
+            item1Image.sprite = null; // Clear the UI image if item1 is null
+        }
         if (item2 != null && item2Image != null)
         {
             item2Image.sprite = item2.image; // Assuming item2 has a sprite property called itemSprite
         }
+        else {
+            item2Image.sprite = null; // Clear the UI image if item2 is null
+        }
     }
+
+    public void RemoveItem(Item itemToRemove)
+    {
+        Debug.Log($"Attempting to remove item: {itemToRemove.itemName}");
+
+        if (item1 is Item7)
+        {
+            item1 = null;
+            Debug.Log("Item1 removed");
+        }
+        else if (item2 is Item7)
+        {
+            item2 = null;
+            Debug.Log("Item2 removed");
+        }
+
+        if (currentItem is Item7)
+        {
+            currentItem = null;
+            Debug.Log("Current item removed");
+        }
+
+        UpdateUI(); // Update the UI after removing the item
+    }
+
 }
