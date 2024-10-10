@@ -94386,3 +94386,105 @@ Character velocity: (0.00, 0.00)
 FixedUpdate called
 Updating velocity: (0.00, 0.00)
 Character velocity: (0.00, 0.00)
+FixedUpdate called
+Updating velocity: (0.00, 0.00)
+Character velocity: (0.00, 0.00)
+FixedUpdate called
+Updating velocity: (0.00, 0.00)
+Character velocity: (0.00, -0.39)
+FixedUpdate called
+Updating velocity: (0.00, 0.00)
+Character velocity: (0.00, -0.76)
+FixedUpdate called
+Updating velocity: (0.00, 0.00)
+Character velocity: (0.00, -1.12)
+FixedUpdate called
+Updating velocity: (0.00, 0.00)
+Character velocity: (0.00, -1.46)
+FixedUpdate called
+Updating velocity: (0.00, 0.00)
+Character velocity: (0.00, -1.79)
+FixedUpdate called
+Updating velocity: (0.00, 0.00)
+Character velocity: (0.00, -2.11)
+FixedUpdate called
+Updating velocity: (0.00, 0.00)
+Character velocity: (0.00, -2.41)
+FixedUpdate called
+Updating velocity: (0.00, 0.00)
+Character velocity: (0.00, -2.71)
+FixedUpdate called
+Updating velocity: (0.00, 0.00)
+Character velocity: (0.00, -2.99)
+FixedUpdate called
+Updating velocity: (0.00, 0.00)
+Character velocity: (0.00, -3.26)
+FixedUpdate called
+Updating velocity: (0.00, 0.00)
+Character velocity: (0.00, -3.52)
+FixedUpdate called
+Updating velocity: (0.00, 0.00)
+Character velocity: (0.00, 0.00)
+FixedUpdate called
+Updating velocity: (0.00, 0.00)
+Character velocity: (0.00, 0.00)
+FixedUpdate called
+Updating velocity: (0.00, 0.00)
+Character velocity: (0.00, 0.00)
+FixedUpdate called
+Updating velocity: (0.00, 0.00)
+Character velocity: (0.00, 0.00)
+FixedUpdate called
+Updating velocity: (0.00, 0.00)
+Character velocity: (0.00, 0.00)
+FixedUpdate called
+Updating velocity: (0.00, 0.00)
+Character velocity: (0.00, 0.00)
+FixedUpdate called
+Updating velocity: (0.00, 0.00)
+Character velocity: (0.00, 0.00)
+FixedUpdate called
+Updating velocity: (0.00, 0.00)
+Character velocity: (0.00, 0.00)
+FixedUpdate called
+Updating velocity: (0.00, 0.00)
+Character velocity: (0.00, 0.00)
+FixedUpdate called
+Updating velocity: (0.00, 0.00)
+Character velocity: (0.00, 0.00)
+FixedUpdate called
+Updating velocity: (0.00, 0.00)
+Character velocity: (0.00, 0.00)
+FixedUpdate called
+Updating velocity: (0.00, 0.00)
+Character velocity: (0.00, 0.00)
+FixedUpdate called
+Updating velocity: (0.00, 0.00)
+Character velocity: (0.00, 0.00)
+FixedUpdate called
+Updating velocity: (0.00, 0.00)
+Character velocity: (0.00, 0.00)
+FixedUpdate called
+Updating velocity: (0.00, 0.00)
+Character velocity: (0.00, 0.00)
+FixedUpdate called
+Updating velocity: (0.00, 0.00)
+Character velocity: (0.00, 0.00)
+FixedUpdate called
+Updating velocity: (0.00, 0.00)
+Character velocity: (0.00, 0.00)
+FixedUpdate called
+Updating velocity: (0.00, 0.00)
+Character velocity: (0.00, 0.00)
+FixedUpdate called
+Updating velocity: (0.00, 0.00)
+Character velocity: (0.00, 0.00)
+FixedUpdate called
+Updating velocity: (0.00, 0.00)
+Character velocity: (0.00, 0.00)
+FixedUpdate called
+Updating velocity: (0.00, 0.00)
+Character velocity: (0.00, 0.00)
+FixedUpdate called
+Updating velocity: (0.00, 0.00)
+Character velocity: (0.00, 0.00)
