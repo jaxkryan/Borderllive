@@ -14,8 +14,10 @@ public class SettingMenu : MonoBehaviour
     public Toggle fullscreenToggle;
     public Dropdown qualityDropdown;
 
+
     private void Start()
     {
+
         // Load saved volume and apply it
         float savedVolume = PlayerPrefs.GetFloat("Music", 0.75f); // Default volume is 0.75
         volumeSlider.value = savedVolume;
@@ -114,5 +116,6 @@ public class SettingMenu : MonoBehaviour
         PlayerPrefs.DeleteAll();
         PlayerPrefs.Save();
     }
+
 
 }
