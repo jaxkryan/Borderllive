@@ -16,7 +16,7 @@ public class TabManager : MonoBehaviour
     private void Start()
     {
         int currentCurrency = PlayerPrefs.GetInt("PremiumCurrency");
-        currencyText.text = "Premium Currency: " + PlayerPrefs.GetInt("PremiumCurrency").ToString();
+        currencyText.text = "Eternal Soul: " + PlayerPrefs.GetInt("PremiumCurrency").ToString();
         // Add listeners to buttons to handle tab switching
         eternalSoulTabButton.onClick.AddListener(() => SwitchTab(true));
         exclusiveItemTabButton.onClick.AddListener(() => SwitchTab(false));
@@ -25,16 +25,19 @@ public class TabManager : MonoBehaviour
         SwitchTab(true);
     }
 
+    private void Update()
+    {
+        currencyText.text = "Eternal Soul: " + PlayerPrefs.GetInt("PremiumCurrency").ToString();
+    }
     // Function to switch between tabs
     public void SwitchTab(bool isEternalSoulTab)
     {
-        // Toggle panel visibility based on the selected tab
         eternalSoulPanel.SetActive(isEternalSoulTab);
         exclusiveItemPanel.SetActive(!isEternalSoulTab);
 
-        // Optionally, highlight the active tab button (optional cosmetic)
-        // eternalSoulTabButton.interactable = !isEternalSoulTab;
-        // exclusiveItemTabButton.interactable = isEternalSoulTab;
+        // Debug.Log("Eternal Soul Panel Active: " + eternalSoulPanel.activeSelf);
+        Debug.Log("Exclusive Item Panel Active: " + exclusiveItemPanel.activeSelf);
     }
+
 }
 

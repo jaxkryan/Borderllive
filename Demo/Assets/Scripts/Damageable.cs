@@ -139,7 +139,6 @@ public class Damageable : MonoBehaviour
                     LockVelocity = true;
                     stunEndTime = Time.time + stunDuration;
                     isStunned = true;
-                    //Debug.Log("Stunned for duration: " + stunDuration + ", stun end time: " + stunEndTime);
                 }
             }
         }

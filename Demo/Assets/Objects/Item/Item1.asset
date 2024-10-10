@@ -27,8 +27,9 @@ MonoBehaviour:
   itemType: 0
   cd: 30
   cost: 100
+  unlockCost: 0
   code: daikalop12a
-  isEnable: 0
+  isEnable: 1
   nameLocalization:
     m_TableReference:
       m_TableCollectionName: Items
