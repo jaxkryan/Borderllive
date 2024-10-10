@@ -12,9 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e868b982f82ed734594ceba52c74b540, type: 3}
   m_Name: Camouflage
   m_EditorClassIdentifier: 
-  itemName: Camouflage
-  itemDescription: Grants invisibility
+  itemName: DmgAllEnemy
+  itemDescription: Deal true damage to all enemies equal to 20% number of soul. If
+    only one enemy is hit, the damage will be equal to 40% number of soul. The damage
+    can not exceed the enemy's 40% max health.
   image: {fileID: 1486368608, guid: 7acb259dca06019448bab61d9d9b77a3, type: 3}
   itemType: 0
-  cd: 30
-  cost: 250
+  cd: 45
+  cost: 100
+  code: daikalop12a
+  isEnable: 0
+  <DefaultParametersList>k__BackingField: []

@@ -21,7 +21,7 @@ MonoBehaviour:
   cd: 0
   cost: 300
   code: daikalop12a
-  isEnable: 1
+  isEnable: 0
   nameLocalization:
     m_TableReference:
       m_TableCollectionName: 

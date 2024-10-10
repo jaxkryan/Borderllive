@@ -17,7 +17,7 @@ public class Item3 : Item
         this.cd = 20f;
         this.cost = 80;
                         this.code = "daikalop12a";
-        this.isEnable = true;
+        this.isEnable = false;
         this.historyDescription = "Trade 5% hp for 10% shield. Can not use skill if under 20% hp.";
 
         InitializeLocalization("Item3", "Item3_Description", "Item3_HistoryDescription");
