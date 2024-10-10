@@ -17,7 +17,7 @@ public class Item1 : Item
         this.cd = 30f;
         this.cost = 100;
         this.code = "daikalop12a";
-        this.isEnable = true;
+        this.isEnable = false;
     }
 
     public override void Activate()

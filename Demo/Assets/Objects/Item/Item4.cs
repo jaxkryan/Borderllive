@@ -34,6 +34,6 @@ public class Item4 : Item
         this.cd = 30f;
         this.cost = 120;
         this.code = "daikalop12a";
-        this.isEnable = true;
+        this.isEnable = false;
     }
 }
