@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c598bef32c92de040a66db151a1ca47b, type: 3}
+  m_Name: Item4
+  m_EditorClassIdentifier: 
+  itemName: Soul Censer
+  itemDescription: For the next 10 seconds, increase your soul absorption by 150%
+  image: {fileID: -932786162, guid: 7acb259dca06019448bab61d9d9b77a3, type: 3}
+  itemType: 0
+  cd: 30
+  cost: 120
+  code: daikalop12a
+  isEnable: 1
+  <DefaultParametersList>k__BackingField: []

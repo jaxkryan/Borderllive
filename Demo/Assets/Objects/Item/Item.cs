@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Localization;
 using UnityEngine.UI;
 using static Item;
 
@@ -10,6 +11,7 @@ public abstract class Item : ScriptableObject
     // Item properties
     public string itemName;
     public string itemDescription;
+    public string historyDescription;
     public Sprite image;
     public enum ItemType { Active, Passive }
     public ItemType itemType;
@@ -23,6 +25,23 @@ public abstract class Item : ScriptableObject
     {
         return image != null ? image.name : null; // Get the sprite name
     }
+
+    public LocalizedString nameLocalization;
+    public LocalizedString descriptionLocalization;
+    public LocalizedString historyDescriptionLocalization; // Localization for historyDescription
+
+    public void InitializeLocalization(string nameKey, string descriptionKey, string historyKey)
+    {
+        nameLocalization = new LocalizedString { TableReference = "Items", TableEntryReference = nameKey };
+        descriptionLocalization = new LocalizedString { TableReference = "Items", TableEntryReference = descriptionKey };
+        historyDescriptionLocalization = new LocalizedString { TableReference = "Items", TableEntryReference = historyKey }; // Initialize localization for history description
+    }
+
+    public void UpdateHistoryLocalization(string historyKey)
+    {
+        historyDescriptionLocalization.TableEntryReference = historyKey;  // Method to update the history description localization
+    }
+
     [field: SerializeField]
     public List<ItemParameter> DefaultParametersList { get; set; }
     // // Virtual method to implement item pickup behavior

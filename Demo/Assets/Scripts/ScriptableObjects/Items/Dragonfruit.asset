@@ -12,12 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 600653545505d0e4a96f50e69caabdb3, type: 3}
   m_Name: Dragonfruit
   m_EditorClassIdentifier: 
-  itemName: BerserkFillUp
-  itemDescription: Fill up your Berserk Bar immediately
+  itemName: Dragonfruit
+  itemDescription: Heals player
   image: {fileID: 21300000, guid: b2834b9a4be626e4d8a56e1cde70b1b1, type: 3}
   itemType: 0
-  cd: 30
-  cost: 100
-  code: daikalop12a
-  isEnable: 0
-  <DefaultParametersList>k__BackingField: []
+  cd: 10
+  cost: 150

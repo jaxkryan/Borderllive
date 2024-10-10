@@ -14,6 +14,42 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: ShieldForAHealth
   itemDescription: Trade 5% hp for 10% shield. Can not use skill if under 20% hp.
+  historyDescription: Trade 5% hp for 10% shield. Can not use skill if under 20%
+    hp.
   image: {fileID: 21300000, guid: 0ff995099d7a3c845a1136fb4bb002ef, type: 3}
   itemType: 0
   cd: 20
+  cost: 80
+  code: daikalop12a
+  isEnable: 1
+  nameLocalization:
+    m_TableReference:
+      m_TableCollectionName: Items
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: Item3
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  descriptionLocalization:
+    m_TableReference:
+      m_TableCollectionName: Items
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: Item3_Description
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  historyDescriptionLocalization:
+    m_TableReference:
+      m_TableCollectionName: GUID:f194860d1e886f549a848ecf094db7fc
+    m_TableEntryReference:
+      m_KeyId: 207446685556736
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  <DefaultParametersList>k__BackingField: []
+  references:
+    version: 2
+    RefIds: []

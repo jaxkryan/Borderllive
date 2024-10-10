@@ -3,111 +3,87 @@ using UnityEngine.UI;
 using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
-using System;
 
 public class ShopManager : MonoBehaviour
 {
     public List<Item> itemsForSale = new List<Item>();  // Items available in the shop
-    public List<GameObject> shopPanelsGO;
-    public List<ShopItemUI> shopPanels;
-    public PurchasePanel purchasePanel;
-
-    private ShopNPC shopNPC; //shop
-
-    //public GameObject shopPanelPrefab;  // Prefab to display each shop panel in the UI
-    //public Transform shopContent;   // Parent object to hold the item buttons in the UI
-    //public GameObject shopPanel;
-    //public OwnedActiveItem ownedActiveItem;  // Reference to OwnedActiveItem script
-    //public CurrencyManager currencyManager;  // Reference to the CurrencyManager script
-    //[SerializeField] TMP_Text currentSoulAmount;
-    //private PlayerController playerController;
-
+    public GameObject shopPanelPrefab;  // Prefab to display each shop panel in the UI
+    public Transform shopContent;   // Parent object to hold the item buttons in the UI
+    
+    public GameObject shopPanel;
+    public OwnedActiveItem ownedActiveItem;  // Reference to OwnedActiveItem script
+    public CurrencyManager currencyManager;  // Reference to the CurrencyManager script
+    [SerializeField] Text currentSoulAmount;
+    private PlayerController playerController;
+    private ShopNPC shopNPC; //hop
     private void Start()
     {
-        for (int i = 0; i < itemsForSale.Count; i++)
-        {
-            shopPanelsGO[i].SetActive(true);
-        }
-        LoadPanels();
-        //DisplayItems();
-        //playerController = FindObjectOfType<PlayerController>();
-        //currencyManager = playerController.GetComponent<CurrencyManager>();
-        //currentSoulAmount.text = ": " + currencyManager.currentAmount.ToString();
-        purchasePanel.gameObject.SetActive(false);
+        DisplayItems();
+        playerController = FindObjectOfType<PlayerController>();
+        currencyManager = playerController.GetComponent<CurrencyManager>();
+        currentSoulAmount.text = ": " + currencyManager.currentAmount.ToString();
         shopNPC = FindObjectOfType<ShopNPC>(); 
     }
 
-    public void LoadPanels()
+    public void DisplayItems()
     {
-        for (int i = 0; i < shopPanels.Count; i++)
+
+        foreach (Item item in itemsForSale)
         {
-            shopPanels[i].SetItem(itemsForSale[i], this);
-            //shopPanels[i].itemNameText.text = itemsForSale[i].itemName;
-            //shopPanels[i].itemDescriptionText.text = itemsForSale[i].itemDescription;
-            //shopPanels[i].itemImage.sprite = itemsForSale[i].image;
-            //shopPanels[i].costText.text = itemsForSale[i].cost.ToString() + "$";
+            // Debug.Log("Displaying Items: " + itemsForSale.Count); 
+            // Instantiate a ShopPanel instead of shopItemPrefab
+            GameObject newShopPanel = Instantiate(shopPanelPrefab, shopContent);
+            ShopItemUI shopItemUI = newShopPanel.GetComponent<ShopItemUI>();
+
+            if (shopItemUI != null)
+            {
+                shopItemUI.SetItem(item, this);
+                newShopPanel.SetActive(true);
+                // Debug.Log("Item added to shop: " + item.itemName);
+            }
+            else
+            {
+                Debug.LogError("ShopItemUI component missing on shop panel prefab!");
+            }
         }
     }
 
-    //public void DisplayItems()
-    //{
-
-    //    foreach (Item item in itemsForSale)
-    //    {
-    //        // Debug.Log("Displaying Items: " + itemsForSale.Count); 
-    //        // Instantiate a ShopPanel instead of shopItemPrefab
-    //        GameObject newShopPanel = Instantiate(shopPanelPrefab, shopContent);
-    //        ShopItemUI shopItemUI = newShopPanel.GetComponent<ShopItemUI>();
-
-    //        if (shopItemUI != null)
-    //        {
-    //            shopItemUI.SetItem(item, this);
-    //            newShopPanel.SetActive(true);
-    //            // Debug.Log("Item added to shop: " + item.itemName);
-    //        }
-    //        else
-    //        {
-    //            Debug.LogError("ShopItemUI component missing on shop panel prefab!");
-    //        }
-    //    }
-    //}
 
     public void PurchaseItem(Item item, ShopItemUI shopItemUI)
     {
         // Check if the player has enough currency to buy the item
-        //if (currencyManager.SpendCurrency(item.cost))
-        //{
+        if (currencyManager.SpendCurrency(item.cost))
+        {
             // Add the item to OwnedActiveItem
-            //ownedActiveItem.AddItem(item);
+            ownedActiveItem.AddItem(item);
 
             // Hide the item after purchase
             shopItemUI.gameObject.SetActive(false); // Hide the purchased item
 
             // Check if any other shop items are still active
             CheckAndDisableShopPanel();
-        //}
-        //else
-        //{
-        //    Debug.Log("Not enough currency to buy: " + item.itemName);
-        //}
+        }
+        else
+        {
+            Debug.Log("Not enough currency to buy: " + item.itemName);
+        }
 
         // Update the soul amount in the UI
-        //currentSoulAmount.text = ": " + currencyManager.currentAmount.ToString();
+        currentSoulAmount.text = ": " + currencyManager.currentAmount.ToString();
     }
-
     private void CheckAndDisableShopPanel()
     {
         bool hasActiveItems = false;
 
         // Loop through all children of shopContent to check if any are still active
-        //foreach (Transform shopItem in shopContent)
-        //{
-        //    if (shopItem.gameObject.activeSelf)
-        //    {
-        //        hasActiveItems = true;
-        //        break;  // Exit the loop as soon as we find one active item
-        //    }
-        //}
+        foreach (Transform shopItem in shopContent)
+        {
+            if (shopItem.gameObject.activeSelf)
+            {
+                hasActiveItems = true;
+                break;  // Exit the loop as soon as we find one active item
+            }
+        }
 
         // If no active items are found, disable the entire shop panel
         if (!hasActiveItems)

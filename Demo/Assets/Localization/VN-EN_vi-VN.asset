@@ -106,6 +106,12 @@ MonoBehaviour:
     m_Localized: "M\xE0n h\xECnh ch\xEDnh"
     m_Metadata:
       m_Items: []
+  - m_Id: 1567344816070656
+    m_Localized: "B\u1ED9 s\u01B0u t\u1EADp"
+  - m_Id: 1552299138486272
+    m_Localized: "\u0110i\u1EC1u khi\u1EC3n"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
