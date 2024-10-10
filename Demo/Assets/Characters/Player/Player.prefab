@@ -117,7 +117,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AttackBuff: {fileID: 11400000, guid: f13ea904223cc0a4d8464a21739d602a, type: 2}
-  attackDamage: 15
+  baseDamage: 15
   knockback: {x: 0, y: 0}
 --- !u!1 &130169560623644369
 GameObject:
@@ -704,7 +704,7 @@ MonoBehaviour:
   _health: 100
   _isAlive: 1
   isInvincible: 0
-  invincibilityTime: 1
+  invincibilityTime: 1.2
   _isStun: 0
   soulReward: 500
 --- !u!96 &1503118684575069070
@@ -2075,7 +2075,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AttackBuff: {fileID: 11400000, guid: f13ea904223cc0a4d8464a21739d602a, type: 2}
-  attackDamage: 8
+  baseDamage: 8
   knockback: {x: 0, y: 0}
 --- !u!1 &6589448070663564626
 GameObject:
@@ -2821,7 +2821,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AttackBuff: {fileID: 11400000, guid: f13ea904223cc0a4d8464a21739d602a, type: 2}
-  attackDamage: 3
+  baseDamage: 2
   knockback: {x: 0, y: 0}
 --- !u!1 &8855759503433049881
 GameObject:
@@ -2927,7 +2927,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AttackBuff: {fileID: 11400000, guid: f13ea904223cc0a4d8464a21739d602a, type: 2}
-  attackDamage: 5
+  baseDamage: 2
   knockback: {x: 0, y: 0}
 --- !u!1 &8964478321177050342
 GameObject:
