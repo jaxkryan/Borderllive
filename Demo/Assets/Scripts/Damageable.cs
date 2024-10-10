@@ -96,6 +96,7 @@ public class Damageable : MonoBehaviour
                     }
                     else IsAlive = false;
                 }
+                else IsAlive = false;
             }
         }
     }
