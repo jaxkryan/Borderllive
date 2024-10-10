@@ -31,10 +31,9 @@ public class EnemyProjectile : MonoBehaviour
         if (damageable != null)
         {
             CharacterStat stat = collision.GetComponent<CharacterStat>();
-            if(stat == null)
+            if(stat != null)
             {
-                return;
-            }
+                
             // Calculate total damage (baseDamage + additionalDamage)
             int totalDamage = baseDamage + additionalDamage + (int)stat.DEF +(int) (stat.MaxHealth * 0.2);
 
@@ -50,6 +49,7 @@ public class EnemyProjectile : MonoBehaviour
 
             // Destroy the projectile after hitting
             Destroy(gameObject);
+            }
         } 
     }
 

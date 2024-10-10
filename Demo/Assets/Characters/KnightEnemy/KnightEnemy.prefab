@@ -529,6 +529,7 @@ MonoBehaviour:
   attackZone: {fileID: 477284626354402339}
   cliffDetectionZone: {fileID: 2918008427032465300}
   walkStopRate: 0.05
+  isBoss: 0
   chaseZone: {fileID: 6790984812517088751}
   _hasTarget: 0
 --- !u!114 &154405474496553711
@@ -638,6 +639,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  XPTranslation: {fileID: 0}
 --- !u!1 &4960883968021715329
 GameObject:
   m_ObjectHideFlags: 0
@@ -715,14 +717,15 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.25409985, y: 1.0197407}
+    - - {x: 0.33821902, y: 1.3411969}
+      - {x: 0.25409985, y: 1.0197407}
       - {x: -0.52575326, y: 1.1787741}
       - {x: -2.5142326, y: 1.1789863}
       - {x: -2.500468, y: -1.5133033}
       - {x: -1.6551076, y: -1.371604}
-      - {x: 0.5831647, y: -1.5477154}
-      - {x: 0.7846821, y: -1.5138779}
-      - {x: 0.77081245, y: 0.9644374}
+      - {x: 0.15505898, y: -1.5477154}
+      - {x: 0.16392869, y: -0.55063915}
+      - {x: 0.23567995, y: 0.108225584}
   m_UseDelaunayMesh: 0
 --- !u!114 &2610614781845666621
 MonoBehaviour:
@@ -737,4 +740,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AttackBuff: {fileID: 11400000, guid: f13ea904223cc0a4d8464a21739d602a, type: 2}
+  attackDamage: 5
   knockback: {x: 1, y: 2}

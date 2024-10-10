@@ -196,7 +196,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 722.1027, y: -94.18738}
+  m_Offset: {x: 512.4092, y: 153.2511}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -207,7 +207,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 618.4498, y: 796.35974}
+  m_Size: {x: 685.5518, y: 1677.073}
   m_EdgeRadius: 0
 --- !u!1 &7859724540115080706
 GameObject:
@@ -501,6 +501,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  XPTranslation: {fileID: 0}
 --- !u!114 &-4651440839720809575
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -515,7 +516,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 421226511029679588, guid: b032828ad91eb8844ac7c9d7ecc4bc36, type: 3}
   projectilePos: {fileID: 300983416811952430}
-  cooldown: 2
+  cooldown: 3
   distance: 10
   shootingDetectionZone: {fileID: 7679935463186052340}
   _hasTarget: 0
@@ -677,4 +678,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AttackBuff: {fileID: 11400000, guid: 410c884a747b1724aa23f1a6ebed359b, type: 2}
+  attackDamage: 0
   knockback: {x: 0, y: 0}
