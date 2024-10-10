@@ -35,5 +35,8 @@ public class Item4 : Item
         this.cost = 120;
         this.code = "daikalop12a";
         this.isEnable = false;
+        this.historyDescription = "At the end of the 16th century, Vietnamese people often placed Chu Dau pottery kilns as incense burners to offer in religious works. The engraving of the two words \"Dai Tu\" is the word Buddha, proving that the role of Buddhism in the Vietnamese mind is very important. After \"thousands of years of Northern colonization\", Vietnamese people still pose incense burners with the shape of Dong Son drums.";
+        InitializeLocalization("Item4", "Item4_Description", "Item4_HistoryDescription");
+
     }
 }
