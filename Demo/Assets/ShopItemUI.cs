@@ -33,17 +33,14 @@ public class ShopItemUI : MonoBehaviour
     // Method called when the purchase button is clicked
     private void OnPurchaseButtonClicked()
     {
-        //if (currentItem == null) {
-        //    Debug.Log("ci is null");
-        //    return;
-        //}
-        //else
-        //{
-        //    Debug.Log("info: " + currentItem.itemDescription);
-        //}
+        if (currentItem == null) {
+           // Debug.Log("ci is null");
+             return;
+        }
+        // else{
+        //     Debug.Log("info: " + currentItem.itemDescription);
+        // }
         // Tell the ShopManager to handle the purchase
-        //shopManager.PurchaseItem(currentItem, this);
-        GameObject shopPanel = purchaseButton.transform.parent.gameObject;
-        shopManager.purchasePanel.Show(currentItem, shopPanel);
+         shopManager.PurchaseItem(currentItem, this);
     }
 }

@@ -1,6 +1,7 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.Localization.Settings;
 using UnityEngine.UI;
 
 public class SettingMenu : MonoBehaviour
@@ -13,7 +14,6 @@ public class SettingMenu : MonoBehaviour
     public Slider sfxSlider;
     public Toggle fullscreenToggle;
     public Dropdown qualityDropdown;
-
 
     private void Start()
     {
@@ -32,7 +32,7 @@ public class SettingMenu : MonoBehaviour
         fullscreenToggle.isOn = isFullScreen;
         Screen.fullScreen = isFullScreen;
 
-        int languageIndex = PlayerPrefs.GetInt("Language", 0); // Default quality level is 2 (Medium)
+        int languageIndex = PlayerPrefs.GetInt("Language", 0); // Default quality level is 1 English
         languageDropdown.value = languageIndex;
         SetLanguage(languageIndex);
 
@@ -91,9 +91,31 @@ public class SettingMenu : MonoBehaviour
     }
     public void SetLanguage(int languageIndex)
     {
-        QualitySettings.SetQualityLevel(languageIndex);
+        ChangeLanguage(languageIndex);
         PlayerPrefs.SetInt("Language", languageIndex);
         PlayerPrefs.Save();
+    }
+    void ChangeLanguage(int index)
+    {
+        // Get the selected option
+        string selectedLanguage = languageDropdown.options[index].text;
+        Debug.Log(selectedLanguage);
+        // Switch locale based on the selected language
+        if (selectedLanguage == "English")
+        {
+            SetLocale("en");
+        }
+        else if (selectedLanguage == "Tiếng Việt")
+        {
+            SetLocale("vi-VN");
+        }
+    }
+
+    void SetLocale(string localeCode)
+    {
+        var selectedLocale = LocalizationSettings.AvailableLocales.Locales
+            .Find(locale => locale.Identifier.Code == localeCode);
+        LocalizationSettings.SelectedLocale = selectedLocale;
     }
     public void SetFullScreen(bool isFullScreen)
     {
@@ -110,11 +132,39 @@ public class SettingMenu : MonoBehaviour
         PlayerPrefs.Save();
     }
 
+    private const string PlayerPrefsKeyPrefix = "ItemState_";
+    private string[] itemNames = { "item1", "item2", "item3", "item4", "item5", "item6", "item7" }; // Add more if needed
 
     public void ResetAllData()
     {
+        // Store all item states
+        Dictionary<string, int> itemStates = new Dictionary<string, int>();
+
+        foreach (var itemName in itemNames)
+        {
+            string key = PlayerPrefsKeyPrefix + itemName;
+            if (PlayerPrefs.HasKey(key))
+            {
+                itemStates[key] = PlayerPrefs.GetInt(key);
+            }
+        }
+       
+        int premiumCurrency = PlayerPrefs.GetInt("PremiumCurrency",0);
+        Debug.Log(premiumCurrency);
         PlayerPrefs.DeleteAll();
+
+        // Restore item states
+        foreach (var itemState in itemStates)
+        {
+            PlayerPrefs.SetInt(itemState.Key, itemState.Value);
+        }
+
+        // After PlayerPrefs.DeleteAll(), restore the saved premiumCurrency value.
+        PlayerPrefs.SetInt("PremiumCurrency", premiumCurrency);
+
+        // Save again to persist restored values
         PlayerPrefs.Save();
+
     }
 
 

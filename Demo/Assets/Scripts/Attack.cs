@@ -9,7 +9,8 @@ public class Attack : MonoBehaviour, IBuffable
     private ScriptableBuff _buff;
     private CharacterStat characterStat; // Reference to CharacterStat
     private EnemyStat enemyStat; // Reference to EnemyStat
-    public float attackDamage;
+    private float attackDamage;
+    public float baseDamage = 5;
     public Vector2 knockback = Vector2.zero;
     private OwnedPowerups ownedPowerups;
 
@@ -59,7 +60,7 @@ public class Attack : MonoBehaviour, IBuffable
         // Determine attack damage based on whether it's a player or enemy attack
         if (characterStat != null)
         {
-            attackDamage = characterStat.Damage;
+            attackDamage = characterStat.Damage + baseDamage;
             if (ownedPowerups.IsPowerupActive<Fire_1>())
             {
                 Fire_1 f1 = new Fire_1();
@@ -77,7 +78,7 @@ public class Attack : MonoBehaviour, IBuffable
         }
         else
         {
-            attackDamage = enemyStat.Damage;
+            attackDamage = enemyStat.Damage + baseDamage;
         }
         Damageable damageable = collision.GetComponent<Damageable>();
         //Debug.Log("Trigger entered with: " + collision.gameObject.name);

@@ -20,7 +20,7 @@ MonoBehaviour:
   itemType: 1
   cd: 0
   cost: 300
-  unlockCost: 0
+  unlockCost: 3500
   code: daikalop12a
   isEnable: 0
   nameLocalization:

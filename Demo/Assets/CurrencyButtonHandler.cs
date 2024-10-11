@@ -21,6 +21,6 @@ public class CurrencyButtonHandler : MonoBehaviour
 
         // Set the currency value and code in the CurrencyInputHandler script
         currencyInputHandler.SetCurrencyValue(currencyValue);
-        currencyInputHandler.SetCurrencyCode(currencyCode);
+        // currencyInputHandler.SetCurrencyCode(currencyCode);
     }
 }

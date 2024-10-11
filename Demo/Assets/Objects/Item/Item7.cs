@@ -13,9 +13,10 @@ public class Item7 : Item
         this.cd = 0;
         this.cost = 300;
         this.code = "daikalop12a";
-        this.isEnable = true;
+        this.isEnable = false;
         this.historyDescription = "";
         InitializeLocalization("Item7", "Item7_Description", "Item7_HistoryDescription");
+        LoadItemState();
     }
 
     public override void Activate()
@@ -43,7 +44,6 @@ public class Item7 : Item
         // Log the player's current status
         Debug.Log("Is player alive? " + damageable.IsAlive);
 
-        // Check if the player is dead (Health <= 0 and IsAlive == false)
         if (damageable.IsAlive == true)
         {
             // Revive the player with 50% of MaxHealth

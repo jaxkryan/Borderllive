@@ -129,7 +129,7 @@ MonoBehaviour:
   baseDamage: 2
   additionalDamage: 0
   direction: {x: 1, y: 0}
-  speed: 8
+  speed: 4
   knockback: {x: 0, y: 0}
 --- !u!58 &7142806869380514723
 CircleCollider2D:

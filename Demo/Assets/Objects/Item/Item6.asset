@@ -13,38 +13,39 @@ MonoBehaviour:
   m_Name: Item6
   m_EditorClassIdentifier: 
   itemName: HealDynamic
-  itemDescription: The lower your health is, the higher hp you receive
+  itemDescription: The lower your health is, the higher hp you recorver
   historyDescription: 
   image: {fileID: 21300000, guid: 87729225c5893384ca63b4f951a2fd65, type: 3}
   itemType: 0
   cd: 0
   cost: 100
+  unlockCost: 0
   code: daikalop12a
   isEnable: 1
   nameLocalization:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: Items
     m_TableEntryReference:
       m_KeyId: 0
-      m_Key: 
+      m_Key: Item6
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
   descriptionLocalization:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: Items
     m_TableEntryReference:
       m_KeyId: 0
-      m_Key: 
+      m_Key: Item6_Description
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
   historyDescriptionLocalization:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: Items
     m_TableEntryReference:
       m_KeyId: 0
-      m_Key: 
+      m_Key: Item6_HistoryDescription
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
