@@ -135,6 +135,18 @@ MonoBehaviour:
     m_Key: 'Powerups '
     m_Metadata:
       m_Items: []
+  - m_Id: 3102842138923008
+    m_Key: Move
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3110277956243456
+    m_Key: "Jump\t"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3114295956869120
+    m_Key: "JumpDash\t"
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

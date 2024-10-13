@@ -138,6 +138,18 @@ MonoBehaviour:
     m_Localized: Power-ups
     m_Metadata:
       m_Items: []
+  - m_Id: 3102842138923008
+    m_Localized: to move
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3110277956243456
+    m_Localized: "to jump\t"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3114295956869120
+    m_Localized: to dash in mid-air
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
