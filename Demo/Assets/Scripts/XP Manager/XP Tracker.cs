@@ -8,7 +8,7 @@ public class XPTracker : MonoBehaviour
     [SerializeField] TextMeshProUGUI CurrentLevelText;  // Text for displaying current level
     [SerializeField] Slider XPSlider;  // Slider for tracking current XP and XP required
 
-    private BaseXPTranslation XPTranslationType;
+    [SerializeField] BaseXPTranslation XPTranslationType;
 
     [SerializeField] UnityEvent<int, int> OnLevelChanged = new UnityEvent<int, int>();
 
@@ -34,6 +34,8 @@ public class XPTracker : MonoBehaviour
 
     public void AddXP(int amount)
     {
+        EnemyXPTracker enemyXPTracker = FindObjectOfType<EnemyXPTracker>();
+        enemyXPTracker.AddXP((int)amount/3);
         int previousLevel = XPTranslation.CurrentLevel;
         if (XPTranslation.AddXP(amount))
         {

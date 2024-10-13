@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2825383484049916840}
   - component: {fileID: 7310965192914632174}
   - component: {fileID: 1255763239430262725}
+  - component: {fileID: 8785601817087367127}
   m_Layer: 0
   m_Name: Elementtal_NPC
   m_TagString: Untagged
@@ -29,12 +30,12 @@ Transform:
   m_GameObject: {fileID: 5913243985381690461}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.308734, y: -16.52, z: 0}
-  m_LocalScale: {x: 0.012, y: 0.012, z: 0.012}
+  m_LocalPosition: {x: 11.308734, y: -15.78, z: 0}
+  m_LocalScale: {x: 0.043993898, y: 0.030198961, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 5191032760438949079}
-  - {fileID: 2685712596295509513}
+  - {fileID: 1494845561469820190}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6197893052742708893
@@ -78,7 +79,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b89e61cdc6319694085996adb4d58c11, type: 3}
+  m_Sprite: {fileID: -603146375, guid: 8787ccb153e47f746a86c3a824b1bc9e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -160,7 +161,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 218.75, y: 262.52563}
+    oldSize: {x: 24.5625, y: 41}
     newSize: {x: 3.125, y: 1.9375}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -189,9 +190,30 @@ MonoBehaviour:
   - You may have my blessing
   buffChosenDialogue:
   - Tham lam no vua thoi
-  buffSelectionUI: {fileID: 6259882549144914277}
+  buffSelectionUI: {fileID: 7432278029142143602}
   interactText: {fileID: 1523893047350596695}
---- !u!1001 &629420096678167352
+--- !u!95 &8785601817087367127
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5913243985381690461}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c650142c188a2c740afca23318fb5cd1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!1001 &4127396503251105839
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -288,15 +310,15 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c0c79808086a45942bb2145d47435d12, type: 3}
---- !u!224 &2685712596295509513 stripped
+--- !u!224 &1494845561469820190 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3312880616504223025, guid: c0c79808086a45942bb2145d47435d12, type: 3}
-  m_PrefabInstance: {fileID: 629420096678167352}
+  m_PrefabInstance: {fileID: 4127396503251105839}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &6259882549144914277 stripped
+--- !u!114 &7432278029142143602 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6801478036908509789, guid: c0c79808086a45942bb2145d47435d12, type: 3}
-  m_PrefabInstance: {fileID: 629420096678167352}
+  m_PrefabInstance: {fileID: 4127396503251105839}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
@@ -410,19 +432,19 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: b89e61cdc6319694085996adb4d58c11, type: 3}
     - target: {fileID: 5379134507326886607, guid: 5ba396e9f7095464e8f42866dbcc3223, type: 3}
       propertyPath: m_Size.x
-      value: 179.9346
+      value: 47.51481
       objectReference: {fileID: 0}
     - target: {fileID: 5379134507326886607, guid: 5ba396e9f7095464e8f42866dbcc3223, type: 3}
       propertyPath: m_Size.y
-      value: 240.86899
+      value: 69.71521
       objectReference: {fileID: 0}
     - target: {fileID: 5379134507326886607, guid: 5ba396e9f7095464e8f42866dbcc3223, type: 3}
       propertyPath: m_Offset.x
-      value: 5.789032
+      value: 0.9676056
       objectReference: {fileID: 0}
     - target: {fileID: 5379134507326886607, guid: 5ba396e9f7095464e8f42866dbcc3223, type: 3}
       propertyPath: m_Offset.y
-      value: -12.855133
+      value: -5.6532288
       objectReference: {fileID: 0}
     - target: {fileID: 6467775436075903456, guid: 5ba396e9f7095464e8f42866dbcc3223, type: 3}
       propertyPath: m_Text
