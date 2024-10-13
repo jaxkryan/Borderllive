@@ -13,7 +13,8 @@ public class Damageable : MonoBehaviour
     public UnityEvent damageableDeath;
 
     public UnityEvent<int, int> healthChanged;
-    public GameObject dropItem;
+    public GameObject dropItem1;
+    public GameObject dropItem2;
     Animator animator;
 
     public bool isStunned = false;
@@ -327,11 +328,26 @@ public class Damageable : MonoBehaviour
         return false;
     }
 
-    private void DropWhenDeath()
+private void DropWhenDeath()
+{
+    // Generate a random number between 0 and 100
+    float randomValue = UnityEngine.Random.Range(0f, 100f);
+
+    // 10% chance to drop item 1
+    if (randomValue <= 10f)
     {
-        if (dropItem != null)
-        {
-            Instantiate(dropItem, transform.position, Quaternion.identity);
-        }
+        Instantiate(dropItem1, transform.position, Quaternion.identity);
     }
+    // 2% chance to drop item 2 (within the remaining 90%)
+    else if (randomValue > 15f && randomValue <= 17f)
+    {
+        Instantiate(dropItem2, transform.position, Quaternion.identity);
+    }
+    else
+    {
+        // No item drop
+        Debug.Log("No item dropped");
+    }
+}
+
 }
