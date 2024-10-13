@@ -1834,6 +1834,18 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1899714242440935341, guid: 999c2382a7c997d4da36a3a75395c46f, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 3b09504b5ca11964683f0a4ad30a6038, type: 2}
+    - target: {fileID: 1899714242440935341, guid: 999c2382a7c997d4da36a3a75395c46f, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 5427248400293604217, guid: 3b09504b5ca11964683f0a4ad30a6038, type: 2}
+    - target: {fileID: 1899714242440935341, guid: 999c2382a7c997d4da36a3a75395c46f, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3955239789712877709, guid: 999c2382a7c997d4da36a3a75395c46f, type: 3}
       propertyPath: m_Name
       value: Collection
