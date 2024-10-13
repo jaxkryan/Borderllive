@@ -143,8 +143,6 @@ public class PlayerController : MonoBehaviour
         // lockAttackCollider = GetComponent<CircleCollider2D>();
         // Subscribe to the damageableDeath event
         damageable.damageableDeath.AddListener(OnPlayerDeath);
-        LoadPlayerData();
-
     }
     private void OnPlayerDeath()
     {
@@ -166,6 +164,7 @@ public class PlayerController : MonoBehaviour
     }
     void Start()
     {
+        LoadPlayerData();
 
     }
 
