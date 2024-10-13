@@ -34,8 +34,7 @@ public class XPTracker : MonoBehaviour
 
     public void AddXP(int amount)
     {
-        EnemyXPTracker enemyXPTracker = FindObjectOfType<EnemyXPTracker>();
-        enemyXPTracker.AddXP((int)amount/3);
+
         int previousLevel = XPTranslation.CurrentLevel;
         if (XPTranslation.AddXP(amount))
         {
