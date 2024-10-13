@@ -128,7 +128,7 @@ public class BuffSelectionUI : MonoBehaviour
         buffSelectionPanel.SetActive(false); // Hide the panel after selection
 
         EnemyXPTracker enemyXPTracker = FindAnyObjectByType<EnemyXPTracker>();
-        enemyXPTracker.AddXP(selectedBuff.Weight * 10 + xpAdded);
+        enemyXPTracker.AddXP(selectedBuff.Weight * 15 + xpAdded);
         xpAdded += 20;
     }
 }

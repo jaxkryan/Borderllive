@@ -496,8 +496,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 81, y: 187}
-  m_SizeDelta: {x: 824.2294, y: 140.3419}
+  m_AnchoredPosition: {x: 85, y: 187}
+  m_SizeDelta: {x: 667.3621, y: 120.1926}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1018560588444768951
 CanvasRenderer:
@@ -838,7 +838,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 18.5765, y: -0.1033, z: -1.3046128}
-  m_LocalScale: {x: 0.022646401, y: 0.022646401, z: 1.8872}
+  m_LocalScale: {x: 0.02897299, y: 0.02440017, z: 1.8872}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6537457071558741750}
@@ -932,7 +932,7 @@ SpriteRenderer:
   m_SortingLayerID: 573376469
   m_SortingLayer: -2
   m_SortingOrder: 5
-  m_Sprite: {fileID: 21300000, guid: dd8b27a3a66be2a45a408fc2d163e558, type: 3}
+  m_Sprite: {fileID: -603146375, guid: 8787ccb153e47f746a86c3a824b1bc9e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -975,18 +975,18 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -9.457672, y: 3.7570724}
+  m_Offset: {x: -1.7143555, y: 21.204674}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 218.75, y: 250}
+    oldSize: {x: 24.5625, y: 41}
     newSize: {x: 2, y: 2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 159.69418, y: 253.42882}
+  m_Size: {x: 62.55081, y: 104.665054}
   m_EdgeRadius: 0
 --- !u!95 &5917063373895937994
 Animator:
@@ -998,7 +998,7 @@ Animator:
   m_GameObject: {fileID: 8637987210001401923}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 5190bc2f242c78f4fa214cf152136364, type: 2}
+  m_Controller: {fileID: 9100000, guid: c650142c188a2c740afca23318fb5cd1, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1122,8 +1122,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0000076294, y: 6.8199}
-  m_SizeDelta: {x: 65.0076, y: 67.6399}
+  m_AnchoredPosition: {x: 0.000015259, y: 155.61}
+  m_SizeDelta: {x: 397.7175, y: 424.7832}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7487229221598015163
 CanvasRenderer:
@@ -1153,7 +1153,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -603146375, guid: 8787ccb153e47f746a86c3a824b1bc9e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: dd8b27a3a66be2a45a408fc2d163e558, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

@@ -166,7 +166,6 @@ public class PlayerController : MonoBehaviour
     }
     void Start()
     {
-        LoadPlayerData(); // Khôi phục dữ liệu khi bắt đầu trò chơi
 
     }
 
@@ -186,7 +185,7 @@ public class PlayerController : MonoBehaviour
 
     public void OnMove(InputAction.CallbackContext context)
     {
-        Logger.Log("OnMove called");
+        //Logger.Log("OnMove called");
         moveInput = context.ReadValue<Vector2>();
         Logger.Log("OnMove: " + moveInput);
         Logger.Log("On move at stage " + SceneManager.GetActiveScene().name);
@@ -212,17 +211,17 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Logger.Log("FixedUpdate called");
+        //Logger.Log("FixedUpdate called");
         if (isDashing) { return; }
         if (!damageable.LockVelocity)
         {
-            Logger.Log("Updating velocity: " + moveInput * CurrentSpeed);
+            //Logger.Log("Updating velocity: " + moveInput * CurrentSpeed);
             rb.velocity = new Vector2(moveInput.x * CurrentSpeed, rb.velocity.y);
-            Logger.Log("Character velocity: " + rb.velocity);
+            //Logger.Log("Character velocity: " + rb.velocity);
         }
         else
         {
-            Logger.Log("Velocity locked: " + damageable.LockVelocity);
+            //Logger.Log("Velocity locked: " + damageable.LockVelocity);
         }
 
         animator.SetFloat(AnimationStrings.yVelocity, rb.velocity.y);

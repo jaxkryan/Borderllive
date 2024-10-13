@@ -157,11 +157,6 @@ MonoBehaviour:
   - BorderDeath_Event_1
   listShopRooms:
   - BorderDeath_Event_Shop
-  - BorderDeath_Event_1
-  - BorderDeath_Event_1
-  - BorderDeath_Event_2
-  - BorderDeath_Event_2
-  - BorderDeath_Event_2
   listFunRooms:
   - BorderDeath_Event_1
   - BorderDeath_Event_2
