@@ -127,6 +127,14 @@ MonoBehaviour:
     m_Key: Bargain
     m_Metadata:
       m_Items: []
+  - m_Id: 3019275916546048
+    m_Key: 'Items '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3019326072033280
+    m_Key: 'Powerups '
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

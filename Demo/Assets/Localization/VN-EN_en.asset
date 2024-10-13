@@ -130,6 +130,14 @@ MonoBehaviour:
     m_Localized: Bargain
     m_Metadata:
       m_Items: []
+  - m_Id: 3019275916546048
+    m_Localized: "Items\t"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3019326072033280
+    m_Localized: Power-ups
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
