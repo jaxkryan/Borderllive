@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 460898769382832072}
   - component: {fileID: 5772186393172265414}
+  - component: {fileID: 7655710772308975398}
+  - component: {fileID: 2546030598074118713}
   m_Layer: 0
   m_Name: EnemySpawnPoint
   m_TagString: Untagged
@@ -68,6 +70,62 @@ MonoBehaviour:
   summonEffectDuration: 0.5
   totalWaves: 3
   portal: {fileID: 8720259928190103623}
+--- !u!114 &7655710772308975398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1394395819282309732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba72fc8b25066944db471a124236cdc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  listBattleRooms:
+  - BorderDeath_Battle_1
+  - BorderDeath_Battle_2
+  - BorderDeath_Battle_3
+  - BorderDeath_Battle_4
+  - BorderDeath_Battle_5
+  - BorderDeath_Battle_4
+  - BorderDeath_Battle_3
+  - BorderDeath_Battle_2
+  - BorderDeath_Battle_1
+  listEventRooms:
+  - BorderDeath_Event_1
+  - BorderDeath_Event_2
+  - BorderDeath_Event_2
+  - BorderDeath_Event_1
+  - BorderDeath_Event_1
+  listShopRooms:
+  - BorderDeath_Event_Shop
+  listFunRooms:
+  - BorderDeath_Event_1
+  - BorderDeath_Event_2
+  - BorderDeath_Event_1
+  - BorderDeath_Event_2
+  - BorderDeath_Event_1
+  - BorderDeath_Event_2
+  - BorderDeath_Event_1
+  - BorderDeath_Event_2
+  - BorderDeath_Event_1
+--- !u!114 &2546030598074118713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1394395819282309732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ec4154059c5a5145bec9af558e5fd22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnLevelChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  XPTranslation: {fileID: 0}
 --- !u!1 &2624427781924349103
 GameObject:
   m_ObjectHideFlags: 0
@@ -306,7 +364,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Exit
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 9132311332899670778, guid: d47f7b2153cde144f8a2462b4f26afb4, type: 3}
+      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 7655710772308975398}
+    m_RemovedComponents:
+    - {fileID: 2996964197837610143, guid: d47f7b2153cde144f8a2462b4f26afb4, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

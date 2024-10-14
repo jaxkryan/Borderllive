@@ -565,7 +565,8 @@ MonoBehaviour:
   healthChanged:
     m_PersistentCalls:
       m_Calls: []
-  dropItem: {fileID: 2169320341939109797, guid: 0a412343c13056b4fb66b0d30ac72f52, type: 3}
+  dropItem1: {fileID: 2169320341939109797, guid: 0a412343c13056b4fb66b0d30ac72f52, type: 3}
+  dropItem2: {fileID: 2169320341939109797, guid: 17bbc8d98d4eb2a489d081132abc3854, type: 3}
   isStunned: 1
   stunDuration: 0.2
   _maxHealth: 100
@@ -740,5 +741,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AttackBuff: {fileID: 11400000, guid: f13ea904223cc0a4d8464a21739d602a, type: 2}
-  attackDamage: 5
+  baseDamage: 5
   knockback: {x: 1, y: 2}
