@@ -837,7 +837,8 @@ MonoBehaviour:
   healthChanged:
     m_PersistentCalls:
       m_Calls: []
-  dropItem: {fileID: 2169320341939109797, guid: 0a412343c13056b4fb66b0d30ac72f52, type: 3}
+  dropItem1: {fileID: 2169320341939109797, guid: 17bbc8d98d4eb2a489d081132abc3854, type: 3}
+  dropItem2: {fileID: 2169320341939109797, guid: 17bbc8d98d4eb2a489d081132abc3854, type: 3}
   isStunned: 1
   stunDuration: 0
   _maxHealth: 100
@@ -861,11 +862,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BaseStamina_PerLevel: 3.5
   BaseStamina_Offset: 45
-  StaminaToHealthConversion: 5
-  BaseStrength_PerLevel: 4
+  StaminaToHealthConversion: 30
+  BaseStrength_PerLevel: 8
   BaseStrength_Offset: 12
   StrengthToDamageConversion: 3
-  BaseEndurance_PerLevel: 2.5
+  BaseEndurance_PerLevel: 4
   BaseEndurance_Offset: 7
   EnduranceToDefConversion: 0.7
   BaseSpeed: 5

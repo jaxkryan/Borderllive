@@ -331,15 +331,15 @@ public class Damageable : MonoBehaviour
 private void DropWhenDeath()
 {
     // Generate a random number between 0 and 100
-    float randomValue = UnityEngine.Random.Range(0f, 100f);
+    float randomValue = UnityEngine.Random.Range(0f, 10f);
 
     // 10% chance to drop item 1
-    if (randomValue <= 10f)
+    if (randomValue <= 10f && dropItem1 != null)
     {
         Instantiate(dropItem1, transform.position, Quaternion.identity);
     }
     // 2% chance to drop item 2 (within the remaining 90%)
-    else if (randomValue > 15f && randomValue <= 17f)
+    else if (randomValue > 15f && randomValue <= 17f && dropItem2 != null)
     {
         Instantiate(dropItem2, transform.position, Quaternion.identity);
     }
