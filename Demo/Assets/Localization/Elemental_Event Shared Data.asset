@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Elemental_Event Shared Data
   m_EditorClassIdentifier: 
   m_TableCollectionName: Elemental_Event
-  m_TableCollectionNameGuidString: 00000000000000000000000000000000
+  m_TableCollectionNameGuidString: c4a8ad77c62f63c488e35024ea9acc55
   m_Entries: []
   m_Metadata:
     m_Items: []
