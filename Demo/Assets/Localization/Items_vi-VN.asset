@@ -173,6 +173,19 @@ MonoBehaviour:
       l\xFD \u1EA5y kh\xF4ng bao gi\u1EDD thay \u0111\u1ED5i\u201D."
     m_Metadata:
       m_Items: []
+  - m_Id: 2848557178294272
+    m_Localized: "C\xE2n b\u1EB1ng "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2849300383797248
+    m_Localized: "M\u1EA5t \u0111\u1ED5i l\u01B0\u1EE3ng l\u1EDBn ch\u1EC9 s\u1ED1
+      t\u1EA5n c\xF4ng sang ph\xF2ng th\u1EE7 trong 3 gi\xE2y."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2849667993571328
+    m_Localized: "Ch\u01B0a c\xF3 g\xEC"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

@@ -140,6 +140,18 @@ MonoBehaviour:
       may run dry, mountains may wear down, but this truth will never change."'
     m_Metadata:
       m_Items: []
+  - m_Id: 2848557178294272
+    m_Localized: Equilibrium Scale
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2849300383797248
+    m_Localized: Greatly trade attack for defense in 3 seconds.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2849667993571328
+    m_Localized: Nothing
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

@@ -1,3 +1,4 @@
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -133,8 +134,6 @@ public class CharacterStat : MonoBehaviour
             Shield = 0f;
         }
     }
-
-
     private static int levelupCount = 0;
 
     // Handle level updates and apply permanent increases if buffs are active
@@ -296,6 +295,29 @@ public class CharacterStat : MonoBehaviour
     {
         isBerserkActive = false;
         UpdateStats();
+    }
+
+        public void StartEquilibriumEffectCoroutine(float duration, float strengthMultiplier, float enduranceMultiplier)
+    {
+        StartCoroutine(ApplyEquilibriumScaleEffect(duration, strengthMultiplier, enduranceMultiplier));
+    }
+
+    private IEnumerator ApplyEquilibriumScaleEffect(float duration, float strengthMultiplier, float enduranceMultiplier)
+    {
+        // Store original Strength and Endurance
+        float originalStrength = StrengthToDamageConversion;
+        float originalEndurance = Endurance;
+
+        // Apply the effect
+        StrengthToDamageConversion = originalStrength * strengthMultiplier;
+        Endurance = originalEndurance * enduranceMultiplier;
+
+        // Wait for the duration of the effect
+        yield return new WaitForSeconds(duration);
+
+        // Revert stats back to their original values
+        StrengthToDamageConversion = originalStrength;
+        Endurance = originalEndurance;
     }
 }
 
