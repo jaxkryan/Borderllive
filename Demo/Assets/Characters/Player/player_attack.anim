@@ -79,7 +79,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: SwordAttack
+    path: StaffAttack
     classID: 60
     script: {fileID: 0}
     flags: 0
@@ -113,7 +113,7 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 2109124072
+      path: 825090945
       attribute: 3305885265
       script: {fileID: 0}
       typeID: 60
@@ -221,7 +221,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: SwordAttack
+    path: StaffAttack
     classID: 60
     script: {fileID: 0}
     flags: 0
