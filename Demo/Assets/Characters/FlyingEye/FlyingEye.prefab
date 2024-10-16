@@ -469,9 +469,9 @@ MonoBehaviour:
   BaseStrength_PerLevel: 4
   BaseStrength_Offset: 5
   StrengthToDamageConversion: 3
-  BaseEndurance_PerLevel: 1
+  BaseEndurance_PerLevel: 2
   BaseEndurance_Offset: 0
-  EnduranceToDefConversion: 0.3
+  EnduranceToDefConversion: 0.5
   BaseSpeed: 5
   _endurance: 0
   _speed: 0

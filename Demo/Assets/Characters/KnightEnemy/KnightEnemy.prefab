@@ -591,10 +591,10 @@ MonoBehaviour:
   BaseStamina_PerLevel: 3
   BaseStamina_Offset: 14
   StaminaToHealthConversion: 6.5
-  BaseStrength_PerLevel: 2.3
+  BaseStrength_PerLevel: 3
   BaseStrength_Offset: 8
   StrengthToDamageConversion: 2.2
-  BaseEndurance_PerLevel: 2
+  BaseEndurance_PerLevel: 2.5
   BaseEndurance_Offset: 5
   EnduranceToDefConversion: 0.7
   BaseSpeed: 5

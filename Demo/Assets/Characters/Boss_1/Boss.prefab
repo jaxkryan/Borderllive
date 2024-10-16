@@ -860,10 +860,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6e6a10aac3dc6c48b8819b20e4fadd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BaseStamina_PerLevel: 3.5
+  BaseStamina_PerLevel: 10
   BaseStamina_Offset: 45
   StaminaToHealthConversion: 30
-  BaseStrength_PerLevel: 8
+  BaseStrength_PerLevel: 10
   BaseStrength_Offset: 12
   StrengthToDamageConversion: 3
   BaseEndurance_PerLevel: 4

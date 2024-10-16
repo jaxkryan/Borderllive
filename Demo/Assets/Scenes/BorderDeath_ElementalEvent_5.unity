@@ -1133,6 +1133,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 847925121773446576, guid: 3e36ab574b9c4e4438c656f877fe6072, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 905192623548289963, guid: 3e36ab574b9c4e4438c656f877fe6072, type: 3}
       propertyPath: m_FontData.m_Font
       value: 
@@ -3577,8 +3581,84 @@ PrefabInstance:
       value: Fire Suck!!
       objectReference: {fileID: 0}
     - target: {fileID: 1255763239430262725, guid: 3a5607b8c24ed394d96149de68267ce3, type: 3}
+      propertyPath: npcDialogue.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1255763239430262725, guid: 3a5607b8c24ed394d96149de68267ce3, type: 3}
+      propertyPath: dialogueTurns.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1255763239430262725, guid: 3a5607b8c24ed394d96149de68267ce3, type: 3}
+      propertyPath: playerDialogue.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1255763239430262725, guid: 3a5607b8c24ed394d96149de68267ce3, type: 3}
+      propertyPath: dialogueTurns.Array.data[0]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1255763239430262725, guid: 3a5607b8c24ed394d96149de68267ce3, type: 3}
+      propertyPath: dialogueTurns.Array.data[1]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1255763239430262725, guid: 3a5607b8c24ed394d96149de68267ce3, type: 3}
+      propertyPath: dialogueTurns.Array.data[2]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1255763239430262725, guid: 3a5607b8c24ed394d96149de68267ce3, type: 3}
+      propertyPath: dialogueTurns.Array.data[3]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1255763239430262725, guid: 3a5607b8c24ed394d96149de68267ce3, type: 3}
+      propertyPath: commentorDialogue.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1255763239430262725, guid: 3a5607b8c24ed394d96149de68267ce3, type: 3}
+      propertyPath: buffChosenDialogue.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1255763239430262725, guid: 3a5607b8c24ed394d96149de68267ce3, type: 3}
       propertyPath: buffChosenDialogue.Array.data[0]
       value: 200K
+      objectReference: {fileID: 0}
+    - target: {fileID: 1255763239430262725, guid: 3a5607b8c24ed394d96149de68267ce3, type: 3}
+      propertyPath: npcDialogue.Array.data[0].m_TableEntryReference.m_KeyId
+      value: 341906353594368
+      objectReference: {fileID: 0}
+    - target: {fileID: 1255763239430262725, guid: 3a5607b8c24ed394d96149de68267ce3, type: 3}
+      propertyPath: npcDialogue.Array.data[1].m_TableEntryReference.m_KeyId
+      value: 342304703422464
+      objectReference: {fileID: 0}
+    - target: {fileID: 1255763239430262725, guid: 3a5607b8c24ed394d96149de68267ce3, type: 3}
+      propertyPath: playerDialogue.Array.data[0].m_TableEntryReference.m_KeyId
+      value: 342636858744832
+      objectReference: {fileID: 0}
+    - target: {fileID: 1255763239430262725, guid: 3a5607b8c24ed394d96149de68267ce3, type: 3}
+      propertyPath: commentorDialogue.Array.data[0].m_TableEntryReference.m_KeyId
+      value: 341359491850240
+      objectReference: {fileID: 0}
+    - target: {fileID: 1255763239430262725, guid: 3a5607b8c24ed394d96149de68267ce3, type: 3}
+      propertyPath: buffChosenDialogue.Array.data[0].m_TableEntryReference.m_KeyId
+      value: 342520596832256
+      objectReference: {fileID: 0}
+    - target: {fileID: 1255763239430262725, guid: 3a5607b8c24ed394d96149de68267ce3, type: 3}
+      propertyPath: npcDialogue.Array.data[0].m_TableReference.m_TableCollectionName
+      value: GUID:c4a8ad77c62f63c488e35024ea9acc55
+      objectReference: {fileID: 0}
+    - target: {fileID: 1255763239430262725, guid: 3a5607b8c24ed394d96149de68267ce3, type: 3}
+      propertyPath: npcDialogue.Array.data[1].m_TableReference.m_TableCollectionName
+      value: GUID:c4a8ad77c62f63c488e35024ea9acc55
+      objectReference: {fileID: 0}
+    - target: {fileID: 1255763239430262725, guid: 3a5607b8c24ed394d96149de68267ce3, type: 3}
+      propertyPath: playerDialogue.Array.data[0].m_TableReference.m_TableCollectionName
+      value: GUID:c4a8ad77c62f63c488e35024ea9acc55
+      objectReference: {fileID: 0}
+    - target: {fileID: 1255763239430262725, guid: 3a5607b8c24ed394d96149de68267ce3, type: 3}
+      propertyPath: commentorDialogue.Array.data[0].m_TableReference.m_TableCollectionName
+      value: GUID:c4a8ad77c62f63c488e35024ea9acc55
+      objectReference: {fileID: 0}
+    - target: {fileID: 1255763239430262725, guid: 3a5607b8c24ed394d96149de68267ce3, type: 3}
+      propertyPath: buffChosenDialogue.Array.data[0].m_TableReference.m_TableCollectionName
+      value: GUID:c4a8ad77c62f63c488e35024ea9acc55
       objectReference: {fileID: 0}
     - target: {fileID: 1408788999245286233, guid: 3a5607b8c24ed394d96149de68267ce3, type: 3}
       propertyPath: m_AnchoredPosition.x

@@ -14,7 +14,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_TableCollectionName: Elemental_Event
   m_TableCollectionNameGuidString: c4a8ad77c62f63c488e35024ea9acc55
-  m_Entries: []
+  m_Entries:
+  - m_Id: 341359491850240
+    m_Key: Wood_Commentor_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 341906353594368
+    m_Key: Wood_NPC_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 342304703422464
+    m_Key: Wood_NPC_2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 342520596832256
+    m_Key: Wood_NPC_3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 342636858744832
+    m_Key: Wood_Player_1
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
