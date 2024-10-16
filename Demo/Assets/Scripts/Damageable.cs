@@ -196,9 +196,9 @@ public class Damageable : MonoBehaviour
         OwnedPowerups ownedPowerups = GetComponent<OwnedPowerups>();
         OwnedActiveItem ownedActiveItem = FindObjectOfType<OwnedActiveItem>();
         PlayerController playerController = GetComponent<PlayerController>();
-        Item7 item7 = new Item7();
+        
         if (playerController != null)
-        {
+        {Item7 item7 = new Item7();
             if (ownedActiveItem != null &&
     ((ownedActiveItem.item1 is Item7 || ownedActiveItem.item2 is Item7) &&
     item7.isEnable && Health <= 0))
@@ -328,26 +328,26 @@ public class Damageable : MonoBehaviour
         return false;
     }
 
-private void DropWhenDeath()
-{
-    // Generate a random number between 0 and 100
-    float randomValue = UnityEngine.Random.Range(0f, 10f);
+    private void DropWhenDeath()
+    {
+        // Generate a random number between 0 and 100
+        float randomValue = UnityEngine.Random.Range(0f, 10f);
 
-    // 10% chance to drop item 1
-    if (randomValue <= 10f && dropItem1 != null)
-    {
-        Instantiate(dropItem1, transform.position, Quaternion.identity);
+        // 10% chance to drop item 1
+        if (randomValue <= 10f && dropItem1 != null)
+        {
+            Instantiate(dropItem1, transform.position, Quaternion.identity);
+        }
+        // 2% chance to drop item 2 (within the remaining 90%)
+        else if (randomValue > 15f && randomValue <= 17f && dropItem2 != null)
+        {
+            Instantiate(dropItem2, transform.position, Quaternion.identity);
+        }
+        else
+        {
+            // No item drop
+            Debug.Log("No item dropped");
+        }
     }
-    // 2% chance to drop item 2 (within the remaining 90%)
-    else if (randomValue > 15f && randomValue <= 17f && dropItem2 != null)
-    {
-        Instantiate(dropItem2, transform.position, Quaternion.identity);
-    }
-    else
-    {
-        // No item drop
-        Debug.Log("No item dropped");
-    }
-}
 
 }

@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 258d2fa26c33b664180c82b6031bcdaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthRestore: 20
+  healthRestore: 0.2
   spinRotationSpeed: {x: 0, y: 180, z: 0}
 --- !u!58 &5070546922100413371
 CircleCollider2D:
