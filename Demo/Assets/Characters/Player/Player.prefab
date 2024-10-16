@@ -678,28 +678,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageableHit:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 540710615215592317}
-        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-        m_MethodName: OnHit
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   damageableDeath:
     m_PersistentCalls:
       m_Calls: []
   healthChanged:
     m_PersistentCalls:
       m_Calls: []
-  dropItem: {fileID: 2169320341939109797, guid: 0a412343c13056b4fb66b0d30ac72f52, type: 3}
+  dropItem1: {fileID: 0}
+  dropItem2: {fileID: 0}
   isStunned: 0
   stunDuration: 0
+  MaxHealthChanged:
+    m_PersistentCalls:
+      m_Calls: []
   _maxHealth: 100
   _health: 100
   _isAlive: 1
@@ -866,6 +858,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CurrentLevelText: {fileID: 3989668017948549302}
   XPSlider: {fileID: 223289299298361161}
+  XPTranslationType: {fileID: 0}
   OnLevelChanged:
     m_PersistentCalls:
       m_Calls:
@@ -3414,11 +3407,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 430508868158001140, guid: 0bbffc1ebfc046b408269f4b96c6c2f8, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 698
+      value: 695.99994
       objectReference: {fileID: 0}
     - target: {fileID: 430508868158001140, guid: 0bbffc1ebfc046b408269f4b96c6c2f8, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -293
+      value: -244.00006
       objectReference: {fileID: 0}
     - target: {fileID: 736914985735494895, guid: 0bbffc1ebfc046b408269f4b96c6c2f8, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -3578,11 +3571,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3226589936826755488, guid: 0bbffc1ebfc046b408269f4b96c6c2f8, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 698
+      value: 696
       objectReference: {fileID: 0}
     - target: {fileID: 3226589936826755488, guid: 0bbffc1ebfc046b408269f4b96c6c2f8, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -347
+      value: -298
       objectReference: {fileID: 0}
     - target: {fileID: 3584017201174286107, guid: 0bbffc1ebfc046b408269f4b96c6c2f8, type: 3}
       propertyPath: m_Color.b
@@ -3621,8 +3614,20 @@ PrefabInstance:
       value: -792.9419
       objectReference: {fileID: 0}
     - target: {fileID: 4038524556227856412, guid: 0bbffc1ebfc046b408269f4b96c6c2f8, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 4038524556227856412, guid: 0bbffc1ebfc046b408269f4b96c6c2f8, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 4038524556227856412, guid: 0bbffc1ebfc046b408269f4b96c6c2f8, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 4038524556227856412, guid: 0bbffc1ebfc046b408269f4b96c6c2f8, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -195.08582
+      value: -132
       objectReference: {fileID: 0}
     - target: {fileID: 4038524556227856412, guid: 0bbffc1ebfc046b408269f4b96c6c2f8, type: 3}
       propertyPath: m_AnchoredPosition.y

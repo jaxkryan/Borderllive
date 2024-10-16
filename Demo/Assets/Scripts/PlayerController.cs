@@ -568,7 +568,7 @@ public class PlayerController : MonoBehaviour
         // Save player souls (currency) - cong 30 la cdj the cac ban??
         if (currencyManager != null)
         {
-            PlayerPrefs.SetInt("Souls", currencyManager.currentAmount + 30); // Assuming CurrentMoney tracks souls
+            PlayerPrefs.SetInt("Souls", currencyManager.currentAmount); // Assuming CurrentMoney tracks souls
         }
 
         // Save active power-ups
@@ -693,8 +693,13 @@ public class PlayerController : MonoBehaviour
             Debug.LogError("CharacterStat component not found!");
             return;
         }
+
+
         int newMaxHealth = (int)(damageable.MaxHealth * (1 + value));
+        Debug.Log($"Old MaxHealth: {damageable.MaxHealth}, New MaxHealth: {newMaxHealth}");
         damageable.MaxHealth = newMaxHealth;
+
+        Debug.Log("Earth 1 active!: " + damageable.MaxHealth);
         damageable.Health += (int)(damageable.Health * value);
         // Debug.Log("max health: " + damageable.MaxHealth);
         // Debug.Log("c health " + damageable.Health);

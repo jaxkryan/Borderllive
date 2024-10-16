@@ -99,7 +99,7 @@ public class SettingMenu : MonoBehaviour
     {
         // Get the selected option
         string selectedLanguage = languageDropdown.options[index].text;
-        Debug.Log(selectedLanguage);
+        // Debug.Log(selectedLanguage);
         // Switch locale based on the selected language
         if (selectedLanguage == "English")
         {

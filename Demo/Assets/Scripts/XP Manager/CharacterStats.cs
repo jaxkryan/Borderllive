@@ -248,7 +248,10 @@ public class CharacterStat : MonoBehaviour
         // Recalculate the player's max health based on the updated stamina
         if (damageable != null)
         {
-            damageable.MaxHealth = (int)MaxHealth;
+             OwnedPowerups ownedPowerups = GetComponent<OwnedPowerups>();
+            // Debug.Log("At update of charstat, max health is: " + MaxHealth);
+            if (ownedPowerups.IsPowerupActive<Earth_1>())
+            damageable.MaxHealth = (int)(MaxHealth * 1.15f);
         }
     }
 
@@ -260,6 +263,9 @@ public class CharacterStat : MonoBehaviour
         {
             Debug.LogError("Damageable component not found on the player!");
         }
+// float extraHealthFromBuffs = damageable.MaxHealth - previousMaxHealth;
+// damageable.MaxHealth = (int)MaxHealth + extraHealthFromBuffs;
+// damageable.Health = (int)(MaxHealth - lostHealth + extraHealthFromBuffs);
 
         LoadPermanentIncreases();
         OnUpdateLevel(1, 1);  // Set initial level stats

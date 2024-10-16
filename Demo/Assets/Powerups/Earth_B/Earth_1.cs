@@ -27,6 +27,7 @@ public class Earth_1 : Powerups
     {
         if (player != null)
         {
+
             player.IncreaseHp(staminaIncrease);
         }
     }
