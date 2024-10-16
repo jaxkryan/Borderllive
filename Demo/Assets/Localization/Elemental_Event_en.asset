@@ -17,7 +17,45 @@ MonoBehaviour:
   m_SharedData: {fileID: 11400000, guid: c4a8ad77c62f63c488e35024ea9acc55, type: 2}
   m_Metadata:
     m_Items: []
-  m_TableData: []
+  m_TableData:
+  - m_Id: 341359491850240
+    m_Localized: You wanders into a dense forest, with shimmering light filtering
+      through the leaves, creating a mystical atmosphere. When stepping into a large
+      clearing, You sees a small altar with an incense bowl and a set of fortune-telling
+      sticks placed on the table.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 341906353594368
+    m_Localized: '(A gentle voice resonates, breaking the silence of the forest.)
+
+      Who
+      dares to wander into this sacred place on the New Year without shaking a fortune
+      for good luck?'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 342304703422464
+    m_Localized: '(The girl smiles, her expression serene yet intriguingly mysterious.)
+
+      At
+      the beginning of the new year, people shake sticks to pray for good fortune
+      and safety for a prosperous year ahead. But in the midst of this forest, meeting
+      me is surely a great fate. I have two fortunes, each representing an ancient
+      power that you can carry with you on your journey. Choose wisely, but be careful
+      in your choice.
+
+      Main gazes intently at the two fortune sticks before
+      them, a sense of excitement welling up inside.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 342520596832256
+    m_Localized: '(Gently nodding after Main selects a fortune.)
+
+      Thus, from
+      now on, you have received the blessing from the sacred power of this forest.
+      The path ahead is long, but remember, whether right or wrong, it all lies in
+      fate. Go forth and carry this luck with you.'
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

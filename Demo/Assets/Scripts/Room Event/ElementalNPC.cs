@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Localization;
 using UnityEngine.UI;
 
 public class ElementalNPC : MonoBehaviour
@@ -14,16 +15,20 @@ public class ElementalNPC : MonoBehaviour
     private GameObject gameCanvas;
     public float wordSpeed;
 
-    // Dialogue lines
-    public string[] dialogue;
-    public string[] buffChosenDialogue;  // New dialogue for after buff is chosen
-
+    // Localized dialogue lines
+    public LocalizedString[] npcDialogue;     // NPC's localized dialogue lines
+    public LocalizedString[] playerDialogue;   // Player's localized response lines
+    public LocalizedString[] buffChosenDialogue; // Localized dialogue for after buff is chosen
+    public LocalizedString[] commentorDialogue; // Commentor's localized dialogue lines
+    [SerializeField] List<int> dialogueTurns = new List<int>();
     [SerializeField] BuffSelectionUI buffSelectionUI;
     private OwnedPowerups ownedPowerups;
     private bool isChoosing = false;
+    private bool buffChosen = false;
 
     [SerializeField] GameObject interactText;
-    private bool buffChosen = false;
+
+    private string resolvedDialogueText; // Store the resolved text for typing
 
     private void Awake()
     {
@@ -55,18 +60,21 @@ public class ElementalNPC : MonoBehaviour
             interactText.SetActive(false);
             dialoguePanel.SetActive(true);
             playerInput.SwitchCurrentActionMap("Disable");
+
             gameCanvas = GameObject.FindGameObjectWithTag("GameCanvas");
             if (gameCanvas != null) { gameCanvas.SetActive(false); }
 
-            StartCoroutine(Typing());
+            index = 0;
+            StartCoroutine(TypingDialogue()); // Start dialogue according to turn order
         }
     }
 
     void Update()
     {
+        // Advance dialogue when clicking or pressing a button
         if (Input.GetMouseButtonDown(0) && !isChoosing)
         {
-            if (dialogueText.text == GetCurrentDialogue()[index])
+            if (dialogueText.text == resolvedDialogueText)
             {
                 NextLine();
             }
@@ -91,9 +99,18 @@ public class ElementalNPC : MonoBehaviour
         isChoosing = false;
     }
 
-    IEnumerator Typing()
+    // Typing out the dialogue for either NPC, Player, or Commentor based on the current turn
+    IEnumerator TypingDialogue()
     {
-        foreach (char letter in GetCurrentDialogue()[index].ToCharArray())
+        var currentDialogue = GetCurrentDialogue()[index]; // Get the current LocalizedString
+        var localizedTextOperation = currentDialogue.GetLocalizedStringAsync(); // Get the async operation for the localized string
+
+        yield return localizedTextOperation; // Wait for the operation to complete
+
+        resolvedDialogueText = localizedTextOperation.Result; // Store the resolved text
+
+        dialogueText.text = ""; // Clear the dialogueText before typing
+        foreach (char letter in resolvedDialogueText.ToCharArray())
         {
             dialogueText.text += letter;
             yield return new WaitForSeconds(wordSpeed);
@@ -102,24 +119,30 @@ public class ElementalNPC : MonoBehaviour
 
     public void NextLine()
     {
-        string[] currentDialogue = GetCurrentDialogue();
-        if (index < currentDialogue.Length - 1)
+        if (!buffChosen)
         {
             index++;
             dialogueText.text = "";
-            StartCoroutine(Typing());
+
+            if (index < GetCurrentDialogue().Length)
+            {
+                StartCoroutine(TypingDialogue()); // Continue dialogue based on turns
+            }
+            else
+            {
+                ShowChoices(); // End of dialogue, show buff choices
+            }
         }
-        else if (!buffChosen)
+        else
         {
-            ShowChoices();
-        }
-        else if (dialoguePanel.activeInHierarchy)
-        {
-            RemoveText();
+            if (dialoguePanel.activeInHierarchy)
+            {
+                RemoveText();
+            }
         }
     }
 
-    // Method to display the choice buttons at the end of the dialogue
+    // Show Buff Selection UI
     private void ShowChoices()
     {
         buffSelectionUI.ShowBuffChoices();
@@ -131,11 +154,33 @@ public class ElementalNPC : MonoBehaviour
         }
     }
 
-    // Helper method to determine which dialogue array to use
-    private string[] GetCurrentDialogue()
+    // Determine whether the NPC, Player, or Commentor speaks based on the index
+    private LocalizedString[] GetCurrentDialogue()
     {
-        return buffChosen ? buffChosenDialogue : dialogue;
+        if (buffChosen)
+        {
+            return buffChosenDialogue;
+        }
+
+        // Check whose turn it is based on dialogueTurns list
+        int? turn = dialogueTurns[index];
+
+        if (turn == 1) // NPC turn
+        {
+            return npcDialogue;
+        }
+        else if (turn == 2) // Player turn
+        {
+            return playerDialogue;
+        }
+        else if (turn == 3) // Commentor turn
+        {
+            return commentorDialogue;
+        }
+        else
+        {
+            Debug.LogWarning("Invalid dialogue turn detected: " + turn);
+            return npcDialogue; // Fallback to NPC dialogue if turn is invalid
+        }
     }
-
-
 }

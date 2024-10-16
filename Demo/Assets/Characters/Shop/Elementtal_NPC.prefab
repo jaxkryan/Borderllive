@@ -185,13 +185,16 @@ MonoBehaviour:
   dialoguePanel: {fileID: 7080114986659062054}
   dialogueText: {fileID: 7190765185629506492}
   wordSpeed: 0.0059
-  dialogue:
-  - Fire ROCK!!
-  - You may have my blessing
-  buffChosenDialogue:
-  - Tham lam no vua thoi
+  npcDialogue: []
+  playerDialogue: []
+  buffChosenDialogue: []
+  commentorDialogue: []
+  dialogueTurns: 
   buffSelectionUI: {fileID: 7432278029142143602}
   interactText: {fileID: 1523893047350596695}
+  references:
+    version: 2
+    RefIds: []
 --- !u!95 &8785601817087367127
 Animator:
   serializedVersion: 5
@@ -362,6 +365,14 @@ PrefabInstance:
       propertyPath: m_FontData.m_Font
       value: 
       objectReference: {fileID: 12800000, guid: ed82dac9b67bdd44b8ceeea6be1b2ea7, type: 3}
+    - target: {fileID: 861501346157371948, guid: 5ba396e9f7095464e8f42866dbcc3223, type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 861501346157371948, guid: 5ba396e9f7095464e8f42866dbcc3223, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 32
+      objectReference: {fileID: 0}
     - target: {fileID: 965303003094474863, guid: 5ba396e9f7095464e8f42866dbcc3223, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -361
@@ -439,12 +450,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4368032947303838344, guid: 5ba396e9f7095464e8f42866dbcc3223, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 902.97
+      objectReference: {fileID: 0}
+    - target: {fileID: 4368032947303838344, guid: 5ba396e9f7095464e8f42866dbcc3223, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 147.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4368032947303838344, guid: 5ba396e9f7095464e8f42866dbcc3223, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -225
+      value: -227.95
       objectReference: {fileID: 0}
     - target: {fileID: 4368032947303838344, guid: 5ba396e9f7095464e8f42866dbcc3223, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 13
+      value: -0.5938
       objectReference: {fileID: 0}
     - target: {fileID: 4917768437238358307, guid: 5ba396e9f7095464e8f42866dbcc3223, type: 3}
       propertyPath: m_LocalPosition.x
