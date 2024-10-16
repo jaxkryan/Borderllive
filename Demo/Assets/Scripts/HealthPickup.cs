@@ -19,12 +19,13 @@ public class HealthPickup : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log("pick up!");
         Damageable damageable = collision.GetComponent<Damageable>();
 
         if (damageable && damageable.Health < damageable.MaxHealth)
         {
-            bool wasHealed = damageable.Heal((int)healthRestore * damageable.MaxHealth);
-
+            bool wasHealed = damageable.Heal((int)(healthRestore * damageable.MaxHealth));
+            Debug.Log("heal was: " + (int)(healthRestore * damageable.MaxHealth));
             if (wasHealed)
                 if (pickupSource)
                     AudioSource.PlayClipAtPoint(pickupSource.clip, gameObject.transform.position, pickupSource.volume);

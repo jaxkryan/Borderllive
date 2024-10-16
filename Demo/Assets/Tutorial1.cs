@@ -13,14 +13,15 @@ public class Tutorial1 : MonoBehaviour
     {
         if (!PlayerPrefs.HasKey(isFirstPlayKey) || PlayerPrefs.GetInt(isFirstPlayKey) == 0)
         {
-            Debug.Log("not first play");
+            // Debug.Log("not first play");
             // First play, set the flag
             PlayerPrefs.SetInt(isFirstPlayKey, isFirstPlayValue);
             // Hide the game object
             gameObject.SetActive(false);
         }
         else
-        {Debug.Log("yes first play");
+        {
+            // Debug.Log("yes first play");
             // Not the first play, show the game object
             gameObject.SetActive(true);
         }
