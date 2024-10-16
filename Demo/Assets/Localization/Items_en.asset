@@ -152,6 +152,18 @@ MonoBehaviour:
     m_Localized: Nothing
     m_Metadata:
       m_Items: []
+  - m_Id: 2886421991657472
+    m_Localized: Spicy garlic
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2886492439187456
+    m_Localized: Trade 30% of your current HP for a 100% attack increase for 5 seconds.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2886611666472960
+    m_Localized: "Nothing\t"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
