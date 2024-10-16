@@ -20,7 +20,7 @@ public class Damageable : MonoBehaviour
     public bool isStunned = false;
     public float stunDuration = 2f;
     private float stunEndTime;
-
+    public UnityEvent<int> MaxHealthChanged;
     [SerializeField]
     private int _maxHealth = 100;
     public int MaxHealth
@@ -32,7 +32,10 @@ public class Damageable : MonoBehaviour
         set
         {
             _maxHealth = value;
+            // Debug.Log("MaxHealth changed to: " + _maxHealth);
+            MaxHealthChanged?.Invoke(_maxHealth);
         }
+
     }
 
     [SerializeField]
@@ -196,9 +199,10 @@ public class Damageable : MonoBehaviour
         OwnedPowerups ownedPowerups = GetComponent<OwnedPowerups>();
         OwnedActiveItem ownedActiveItem = FindObjectOfType<OwnedActiveItem>();
         PlayerController playerController = GetComponent<PlayerController>();
-        
+
         if (playerController != null)
-        {Item7 item7 = new Item7();
+        {
+            Item7 item7 = new Item7();
             if (ownedActiveItem != null &&
     ((ownedActiveItem.item1 is Item7 || ownedActiveItem.item2 is Item7) &&
     item7.isEnable && Health <= 0))
@@ -259,6 +263,8 @@ public class Damageable : MonoBehaviour
     }
     private void Awake()
     {
+        if (MaxHealthChanged == null)
+            MaxHealthChanged = new UnityEvent<int>();
         currencyManager = FindObjectOfType<CurrencyManager>();
         animator = GetComponent<Animator>();
         characterStat = GetComponent<CharacterStat>();
@@ -331,7 +337,7 @@ public class Damageable : MonoBehaviour
     private void DropWhenDeath()
     {
         // Generate a random number between 0 and 100
-        float randomValue = UnityEngine.Random.Range(0f, 10f);
+        float randomValue = UnityEngine.Random.Range(0f, 100f);
 
         // 10% chance to drop item 1
         if (randomValue <= 10f && dropItem1 != null)

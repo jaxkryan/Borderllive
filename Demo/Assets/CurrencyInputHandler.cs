@@ -33,9 +33,10 @@ public class CurrencyInputHandler : MonoBehaviour
     }
     public void SubmitCode()
     {
+        
         // Get the input code from the input field
         string inputCode = inputField.text;
-
+        inputField.text = "";
         // Validate the input code using the StringValidator
         if (!ValidateString(inputCode))
         {
@@ -46,9 +47,10 @@ public class CurrencyInputHandler : MonoBehaviour
         // Check if the input code matches the currency code
         else
         {
-            if (PlayerPrefs.HasKey(currencyCode))
-            {
-                // Debug.Log("This code has already been used.");
+            Debug.Log("processing value: " + currencyValue);
+            if (PlayerPrefs.HasKey(inputCode))
+            {   
+                Debug.Log("This code has already been used.");
                 return; // Exit early if the code has already been redeemed
             }
             // Check if the "PremiumCurrency" key exists in PlayerPrefs
@@ -57,16 +59,16 @@ public class CurrencyInputHandler : MonoBehaviour
                 // If it doesn't exist, set it to 0
                 PlayerPrefs.SetInt("PremiumCurrency", 0);
             }
-
+            Debug.Log("code " + inputCode + " is " + PlayerPrefs.GetInt(inputCode));
             // Get the current currency value
             int currentCurrency = PlayerPrefs.GetInt("PremiumCurrency");
-
+            // if (PlayerPrefs.GetInt(currencyCode)==1) return;
             // Add the new currency value
             PlayerPrefs.SetInt("PremiumCurrency", currentCurrency + currencyValue);
 
             // Display the updated currency on the TextMeshProUGUI
             currencyText.text = "Premium Currency: " + PlayerPrefs.GetInt("PremiumCurrency").ToString();
-            PlayerPrefs.SetInt(currencyCode, 1);
+            PlayerPrefs.SetInt(inputCode, 1);
             gameObject.SetActive(false);
         }
 

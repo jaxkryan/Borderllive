@@ -4,7 +4,7 @@ using UnityEngine.UI;
 public class CurrencyButtonHandler : MonoBehaviour
 {
     public int currencyValue; // value of the currency associated with this button
-    public string currencyCode; // code associated with this button
+    // public string currencyCode; // code associated with this button
     public CurrencyInputHandler currencyInputHandler;
     public GameObject codeInputPanel; // the panel that contains the input field
 
