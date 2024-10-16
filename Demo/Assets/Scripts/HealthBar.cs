@@ -18,15 +18,15 @@ public class HealthBar : MonoBehaviour
         }
         playDamageable = player.GetComponent<Damageable>();
     }
-    private void OnEnable()
-    {
-        playDamageable.healthChanged.AddListener(OnPlayerHealthChanged);
-    }
+    // private void OnEnable()
+    // {
+    //     playDamageable.healthChanged.AddListener(OnPlayerHealthChanged);
+    // }
 
-    private void OnDisable()
-    {
-        playDamageable.healthChanged.RemoveListener(OnPlayerHealthChanged);
-    }
+    // private void OnDisable()
+    // {
+    //     playDamageable.healthChanged.RemoveListener(OnPlayerHealthChanged);
+    // }
     private float CalculateSliderPercentage(float currentHealth, float maxHealth)
     {
         return currentHealth / maxHealth;
@@ -37,10 +37,24 @@ public class HealthBar : MonoBehaviour
         healthSlider.value = CalculateSliderPercentage(newHealth, maxHealth);
         healthBarText.text = "HP " + newHealth + " / " + maxHealth;
     }
-    // Update is called once per frame
-    void Update()
+    private void OnEnable()
     {
-        healthSlider.value = CalculateSliderPercentage(playDamageable.Health, playDamageable.MaxHealth);
-        healthBarText.text = "HP " + playDamageable.Health + " / " + playDamageable.MaxHealth;
+        playDamageable.healthChanged.AddListener(OnPlayerHealthChanged);
+        playDamageable.MaxHealthChanged.AddListener(OnMaxHealthChanged); // Listen for max health changes
     }
+
+    private void OnDisable()
+    {
+        playDamageable.healthChanged.RemoveListener(OnPlayerHealthChanged);
+        playDamageable.MaxHealthChanged.RemoveListener(OnMaxHealthChanged); // Stop listening
+    }
+
+    private void OnMaxHealthChanged(int newMaxHealth)
+    {
+        // Debug.Log("HealthBar received MaxHealthChanged: " + newMaxHealth);
+        healthSlider.value = CalculateSliderPercentage(playDamageable.Health, newMaxHealth);
+        healthBarText.text = "HP " + playDamageable.Health + " / " + newMaxHealth;
+    }
+
+
 }
