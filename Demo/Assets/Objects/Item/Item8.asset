@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Item8
   m_EditorClassIdentifier: 
   itemName: Equilibrium Scale
-  itemDescription: Greatly trade attack for defense in 3 seconds.
+  itemDescription: In 3 seconds, lose 100% Attack and gain 300% Defense.
   historyDescription: 
-  image: {fileID: 21300000, guid: 2db95df555dbeea4caf1ea7b35d548e1, type: 3}
+  image: {fileID: 21300000, guid: 2c61d843833b8584697da0865730e578, type: 3}
   itemType: 1
   cd: 10
   cost: 150
