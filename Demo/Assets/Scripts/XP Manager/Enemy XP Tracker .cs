@@ -57,7 +57,7 @@ public class EnemyXPTracker : MonoBehaviour
         // Here you would implement the logic to apply xpToGrant to the enemy
         // For example:
         // enemy.SetCurrentXP(xpToGrant);
-        Debug.Log("XP GRANTED SUCESSFULLY: " + xpToGrant);
+        // Debug.Log("XP GRANTED SUCESSFULLY: " + xpToGrant);
         // Optionally, set the enemy's level based on the total XP
         XPTranslation.AddXP(xpToGrant);
     }

@@ -295,12 +295,15 @@ public class Damageable : MonoBehaviour
             // Apply the reduced damage
             if (characterStat != null && characterStat.Shield > 0f)
             {
+                Debug.Log("I HAVE SHIELDDDDDDD");
                 // Apply damage to shield
-                characterStat.DecreaseShield(reducedDamage);
-                if (characterStat.Shield <= 0f)
+                float remainDmg = characterStat.DecreaseShield(reducedDamage);
+                if (remainDmg > 0f)
                 {
+                    // Debug.Log("The dmg to health is: " + (int)(remainDmg));
                     // If shield is depleted, apply remaining damage to health
-                    Health -= (int)(reducedDamage - characterStat.Shield);
+                    Health -= (int)(remainDmg);
+                    
                 }
             }
             else
@@ -328,6 +331,7 @@ public class Damageable : MonoBehaviour
             int maxHeal = Mathf.Max(MaxHealth - Health, 0);
             int actualHeal = Mathf.Min(maxHeal, healthRestore);
             Health += actualHeal;
+             
             CharacterEvents.characterHealed(gameObject, actualHeal);
             return true;
         }
