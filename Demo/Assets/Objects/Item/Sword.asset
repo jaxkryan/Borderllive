@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1417dff7fd9ff9145b73e8b67b9896cb, type: 3}
   m_Name: Sword
   m_EditorClassIdentifier: 
-  itemName: Thuan Thien Sword
+  itemName: sword
   itemDescription: 'This is a sword. You don''t understand why every time you place
     it on the ground, it splits into three parts: the hilt, the blade, and the guard,
     then starts jumping around you.'
@@ -25,7 +25,7 @@ MonoBehaviour:
   itemType: 0
   cd: 0
   cost: 1000
-  unlockCost: 5000
+  unlockCost: 5500
   code: daikalop12a
   isEnable: 0
   nameLocalization:
