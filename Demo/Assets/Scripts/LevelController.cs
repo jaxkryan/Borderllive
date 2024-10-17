@@ -83,6 +83,10 @@ public class LevelController : MonoBehaviour
             // Room 1: Fixed battle or event room
             // SpawnRoom("battle", "event");
         }
+        else if (roomsVisited == 2){
+            // Room 2: Fixed shop room
+            SceneManager.LoadScene("Tutorial 2");
+        }
         else if (roomsVisited == 5)
         {
             // Room 5: Fixed battle room

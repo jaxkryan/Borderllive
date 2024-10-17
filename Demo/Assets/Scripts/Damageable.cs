@@ -203,7 +203,7 @@ public class Damageable : MonoBehaviour
 
         if (playerController != null)
         {
-            Item7 item7 = new Item7();
+            Item7 item7 = ScriptableObject.CreateInstance<Item7>();
             if (ownedActiveItem != null &&
     ((ownedActiveItem.item1 is Item7 || ownedActiveItem.item2 is Item7) &&
     item7.isEnable && Health <= 0))
@@ -304,7 +304,7 @@ public class Damageable : MonoBehaviour
                     // Debug.Log("The dmg to health is: " + (int)(remainDmg));
                     // If shield is depleted, apply remaining damage to health
                     Health -= (int)(remainDmg);
-                    
+
                 }
             }
             else
@@ -332,7 +332,7 @@ public class Damageable : MonoBehaviour
             int maxHeal = Mathf.Max(MaxHealth - Health, 0);
             int actualHeal = Mathf.Min(maxHeal, healthRestore);
             Health += actualHeal;
-             
+
             CharacterEvents.characterHealed(gameObject, actualHeal);
             return true;
         }
@@ -370,7 +370,7 @@ public class Damageable : MonoBehaviour
             dropRateBoosted = false;
         }
     }
-    
+
     private void DropWhenDeath()
     {
         // Generate a random number between 0 and 100
