@@ -9,7 +9,6 @@ public class ShootingEvent : MonoBehaviour
     public List<GameObject> verticalShooters;   // List of vertical shooters
     public GameObject portal;                   // Portal GameObject that will appear after waves are completed
     public Text messageText;                    // UI Text to display messages
-    public float interval = 4f;                 // Time between shooting events
     public int totalWaves = 5;                  // Total number of waves before the portal appears
     public float portalDelay = 3f;              // Delay before portal appears after final wave
 
@@ -40,7 +39,7 @@ public class ShootingEvent : MonoBehaviour
                 FireRandomPattern();
                 currentWave++;
 
-                timer = interval;               // Set timer for next wave to normal interval
+                timer = 3f;               // Set timer for next wave to normal interval
                 if (messageText != null)
                 {
                     messageText.gameObject.SetActive(false); // Deactivate the messageText after the first wave starts
@@ -51,7 +50,7 @@ public class ShootingEvent : MonoBehaviour
             if (firstWaveStarted && timer <= 0f)
             {
                 FireRandomPattern();
-                timer = interval;
+                timer = Random.Range(2,5);
                 currentWave++;
 
                 // If the last wave has been reached, wait and then activate the portal

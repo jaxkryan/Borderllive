@@ -8,6 +8,7 @@ public class Timer : MonoBehaviour
     public Text timerText;
 
     private const string TimerKey = "SavedTime";  // Key for storing saved time
+    private const string ElapsedTimeKey = "ElapsedTime"; // Key for storing elapsed time as string
     private long savedTime = 0;  // Time loaded from PlayerPrefs
 
     void Start()
@@ -35,11 +36,7 @@ public class Timer : MonoBehaviour
         int seconds = (int)(elapsedMilliseconds / 1000) % 60;
         int milliseconds = (int)(elapsedMilliseconds % 1000);
 
-        // Display the time in the console (optional)
-
-        // UnityEngine.Debug.Log($"{hours:D2}:{minutes:D2}:{seconds:D2}:{milliseconds:D3}");
-
-        // Update the UI text if necessary
+        // Update the UI text
         if (timerText != null)
         {
             timerText.text = $"{hours:D2}:{minutes:D2}:{seconds:D2}:{milliseconds:D3}";
@@ -56,7 +53,12 @@ public class Timer : MonoBehaviour
         PlayerPrefs.SetFloat(TimerKey, elapsedMilliseconds);
         PlayerPrefs.Save();
 
-       // UnityEngine.Debug.Log($"Saved time: {elapsedMilliseconds} ms");
+        // Save the elapsed time as a formatted string
+        string formattedTime = $"{elapsedMilliseconds / 1000f:F2} seconds"; // Convert to seconds for display
+        PlayerPrefs.SetString(ElapsedTimeKey, formattedTime);
+        PlayerPrefs.Save();
+
+        UnityEngine.Debug.Log($"Saved time: {elapsedMilliseconds} ms");
     }
 
     // Call this method to reset the saved time
@@ -71,4 +73,34 @@ public class Timer : MonoBehaviour
 
         UnityEngine.Debug.Log("Time reset");
     }
+
+    public void OnPlayerDie()
+    {
+        SaveTime(); // Save the time when the player dies
+
+        // Get the saved elapsed time in milliseconds
+        long elapsedMilliseconds = savedTime + stopwatch.ElapsedMilliseconds;
+
+        // Convert milliseconds to seconds (1 second = 1000 milliseconds)
+        float elapsedSeconds = elapsedMilliseconds / 1000f;
+
+        // Calculate currency: 1 second = 2 currency
+        int currencyToAdd = (int)(elapsedSeconds * 2); // Multiply seconds by 2
+
+        // Check if PremiumCurrency key exists, if not set it to 0
+        if (!PlayerPrefs.HasKey("PremiumCurrency"))
+        {
+            PlayerPrefs.SetInt("PremiumCurrency", 0);
+        }
+
+        // Retrieve the current currency and update it
+        int currentCurrency = PlayerPrefs.GetInt("PremiumCurrency");
+        PlayerPrefs.SetInt("PremiumCurrency", currentCurrency + currencyToAdd);
+        PlayerPrefs.Save(); // Save the changes to PlayerPrefs
+
+        // Optionally, you can log the current currency
+        UnityEngine.Debug.Log($"Updated Premium Currency: {currentCurrency + currencyToAdd}");
+
+    }
+
 }
