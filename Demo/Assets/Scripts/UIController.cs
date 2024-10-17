@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class UIController : MonoBehaviour
 {
-    private const string ShopInteractedKey = "HasInteractedWithShop";
+    private const string doneTutorial = "DoneTutorial";
 
     public GameObject controlGuidelineImage; // Reference to the control guideline image
     public Canvas settingsCanvas;            // Reference to the settings canvas
@@ -25,7 +25,7 @@ public class UIController : MonoBehaviour
     public void RestartBtn_Click()
     {
         LevelController.ResetStaticData();
-        if (PlayerPrefs.GetInt(ShopInteractedKey, 0) == 0)
+        if (PlayerPrefs.GetInt(doneTutorial, 0) == 0)
         {
             SceneManager.LoadScene("Room_Start_First");
         }

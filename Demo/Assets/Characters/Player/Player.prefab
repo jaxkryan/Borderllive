@@ -801,6 +801,10 @@ MonoBehaviour:
   invincibilityTime: 1.2
   _isStun: 0
   soulReward: 500
+  dropRateHealth1: 10
+  dropRateHealth2: 2
+  boostedDropRateHealth1: 100
+  boostedDropRateHealth2: 50
 --- !u!96 &1503118684575069070
 TrailRenderer:
   serializedVersion: 3

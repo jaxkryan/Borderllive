@@ -15,13 +15,12 @@ public class Tutorial2 : MonoBehaviour
             // Also, set the Tutorial1 script's game object to active
             //tutorialScript.gameObject.SetActive(true);
         }
-
-
     }
 
     void OnTriggerExit2D(Collider2D collision)
     {
-
         canvas.SetActive(false);
+        PlayerPrefs.SetInt("DoneTutorial", 1);
+        PlayerPrefs.Save();
     }
 }

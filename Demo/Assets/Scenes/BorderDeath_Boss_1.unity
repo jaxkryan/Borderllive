@@ -1174,6 +1174,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 398393237977053487, guid: 11938f2e35f943744a4874dcbc5a45fd, type: 3}
+      propertyPath: noColliderRemain.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 398393237977053487, guid: 11938f2e35f943744a4874dcbc5a45fd, type: 3}
+      propertyPath: noColliderRemain.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2431104722902279275, guid: 11938f2e35f943744a4874dcbc5a45fd, type: 3}
       propertyPath: m_LocalPosition.x
       value: 19.02

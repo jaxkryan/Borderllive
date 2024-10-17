@@ -9,7 +9,7 @@ public class ShopNPC : MonoBehaviour
     private ShopManager shopManager;  // Reference to ShopManager
     public GameObject gameCanvas;
     public bool playerIsClose;  // Flag to check if the player is near the NPC
-    private const string ShopInteractedKey = "HasInteractedWithShop";  // Key to track interaction with shop
+    private const string doneTutorial = "DoneTutorial";  // Key to track interaction with shop
 
     private void Awake()
     {
@@ -46,9 +46,9 @@ public class ShopNPC : MonoBehaviour
             playerInput.SwitchCurrentActionMap("Disable");  // Disable player input while the shop is open
             gameCanvas.SetActive(false);
 
-            // Save that the player has interacted with the shop
-            PlayerPrefs.SetInt(ShopInteractedKey, 1);
-            PlayerPrefs.Save();
+            // // Save that the player has interacted with the shop
+            // PlayerPrefs.SetInt(doneTutorial, 1);
+            // PlayerPrefs.Save();
         }
     }
 

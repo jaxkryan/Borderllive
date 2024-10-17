@@ -23,7 +23,7 @@ public class StoryManager : MonoBehaviour
     private bool isDisplaying = false;
 
     // Key for shop interaction status
-    private const string ShopInteractedKey = "HasInteractedWithShop";
+    private const string doneTutorial = "DoneTutorial";
 
     void Start()
     {
@@ -160,12 +160,13 @@ public class StoryManager : MonoBehaviour
     public void LoadNextScene()
     {
         // Check if the player has interacted with a shop before
-        if (PlayerPrefs.GetInt(ShopInteractedKey, 0) == 0)
+        if (PlayerPrefs.GetInt(doneTutorial, 0) == 0)
         {
             SceneManager.LoadScene("Room_Start_First");  // Load first-time shop interaction room
         }
         else
         {
+            Logger.Log("room start go first smh");
             SceneManager.LoadScene("Room_Start");  // Load regular start room
         }
     }
