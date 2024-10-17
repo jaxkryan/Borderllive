@@ -11,8 +11,8 @@ public class Item10 : Item
         this.itemName = "Delicious leaf";
         this.itemDescription = "Use half of your shield value to heal yourself. If there is no shield, give 10 shield points.";
         this.itemType = ItemType.Active;
-        this.cd = 30;
-        this.cost = 250;
+        this.cd = 25;
+        this.cost = 300;
         this.code = "daikalop12a";
         this.isEnable = false;
         this.historyDescription = "";

@@ -123,16 +123,28 @@ MonoBehaviour:
     m_Key: Item9_HistoryDescription
     m_Metadata:
       m_Items: []
-  - m_Id: 3097422368645120
-    m_Key: Sword
+  - m_Id: 2950785268453376
+    m_Key: Item10
     m_Metadata:
       m_Items: []
-  - m_Id: 3097440290906112
-    m_Key: Sword_Description
+  - m_Id: 2950866222714880
+    m_Key: Item10_Description
     m_Metadata:
       m_Items: []
-  - m_Id: 3097472226336768
-    m_Key: Sword_HistoryDescription
+  - m_Id: 2950885222912000
+    m_Key: Item10_HistoryDescription
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3096947610882048
+    m_Key: Item11
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3097057593921536
+    m_Key: Item11_Description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3097530614943744
+    m_Key: Item11_HistoryDescription
     m_Metadata:
       m_Items: []
   m_Metadata:

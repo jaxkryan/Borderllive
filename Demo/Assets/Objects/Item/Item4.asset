@@ -22,7 +22,7 @@ MonoBehaviour:
     Dong Son drums.
   image: {fileID: 21300000, guid: 1793de6c8ee46f94899d96ff54659c8a, type: 3}
   itemType: 0
-  cd: 30
+  cd: 15
   cost: 120
   unlockCost: 2500
   code: daikalop12a

@@ -11,7 +11,7 @@ public class Item9 : Item
         this.itemName = "Spicy garlic";
         this.itemDescription = "Trade 30% of your current HP for a 100% attack increase for 5 seconds.";
         this.itemType = ItemType.Active;
-        this.cd = 30;
+        this.cd = 20;
         this.cost = 250;
         this.code = "daikalop12a";
         this.isEnable = false;

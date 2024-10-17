@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afaaa811d17cc004c9904e39628ea2d6, type: 3}
+  m_Name: Item11
+  m_EditorClassIdentifier: 
+  itemName: 
+  itemDescription: 
+  historyDescription: 
+  image: {fileID: 21300000, guid: 201eacde8c846924e8d87d96730df59f, type: 3}
+  itemType: 0
+  cd: 20
+  cost: 350
+  unlockCost: 3500
+  code: 
+  isEnable: 0
+  nameLocalization:
+    m_TableReference:
+      m_TableCollectionName: GUID:f194860d1e886f549a848ecf094db7fc
+    m_TableEntryReference:
+      m_KeyId: 3096947610882048
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  descriptionLocalization:
+    m_TableReference:
+      m_TableCollectionName: GUID:f194860d1e886f549a848ecf094db7fc
+    m_TableEntryReference:
+      m_KeyId: 3097057593921536
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  historyDescriptionLocalization:
+    m_TableReference:
+      m_TableCollectionName: GUID:f194860d1e886f549a848ecf094db7fc
+    m_TableEntryReference:
+      m_KeyId: 3097530614943744
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  <DefaultParametersList>k__BackingField: []
+  references:
+    version: 2
+    RefIds: []
