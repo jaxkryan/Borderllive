@@ -155,11 +155,14 @@ public class PlayerController : MonoBehaviour
         //     Debug.Log("NOPE");
         // }
         // Xóa dữ liệu khi người chơi chết
-        ClearPlayerData();
+        timer = FindObjectOfType<Timer>();
+        timer.OnPlayerDie();
 
+        ClearPlayerData();
         // Có thể thêm mã xử lý cái chết của người chơi ở đây
         Debug.Log("Player has died. Player data cleared.");
         // Load the Game Over screen
+        
         SceneManager.LoadScene("GameOver_Screen");
     }
     void Start()

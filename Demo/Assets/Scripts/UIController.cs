@@ -13,6 +13,7 @@ public class UIController : MonoBehaviour
     public void StartBtn_Click()
     {
         LevelController.ResetStaticData();
+        PlayerPrefs.DeleteKey("ElapsedTime");
         SceneManager.LoadScene("StoryScene");
     }
 
@@ -20,9 +21,7 @@ public class UIController : MonoBehaviour
     {
 
         LevelController.ResetStaticData();
-        int room = Random.Range(1, 2);
-        if(room == 1)SceneManager.LoadScene("BorderDeath_Fun_1");
-        else SceneManager.LoadScene("BorderDeath_Fun_2");
+        SceneManager.LoadScene("BorderDeath_Fun_2");
     }
 
     public void ControlBtn_Click()
@@ -42,12 +41,15 @@ public class UIController : MonoBehaviour
         {
             SceneManager.LoadScene("Room_Start");
         }
+        PlayerPrefs.DeleteKey("ElapsedTime");
+
     }
 
     public void MainMenuBtn_Click()
     {
         Time.timeScale = 1;
         PlayerController.ClearPlayerData();
+        PlayerPrefs.DeleteKey("ElapsedTime");
         SceneManager.LoadScene("MainMenu_Screen");
     }
 
@@ -59,6 +61,7 @@ public class UIController : MonoBehaviour
     public void ExitBtn_Click()
     {
         Time.timeScale = 1;
+        PlayerPrefs.DeleteKey("ElapsedTime");
         SceneManager.LoadScene("MainMenu_Screen");
     }
     public void BargainBtn_Click()
