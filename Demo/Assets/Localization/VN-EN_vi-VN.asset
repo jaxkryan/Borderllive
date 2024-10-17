@@ -171,6 +171,23 @@ MonoBehaviour:
     m_Localized: "Th\xEAm"
     m_Metadata:
       m_Items: []
+  - m_Id: 4502996763021312
+    m_Localized: "Chu\u1EA9n b\u1ECB n\xE9 \u0111\u1EA1n! M\u1ED7i gi\xE2y s\u1ED1ng
+      s\xF3t s\u1EBD cho b\u1EA1n 2 Linh h\u1ED3n v\u0129nh c\u1EEDu."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4504616141852672
+    m_Localized: "Linh h\u1ED3n v\u0129nh c\u1EEDu"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4505650914398208
+    m_Localized: "V\u1EC1 m\xE0n h\xECnh ch\xEDnh"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4506348410376192
+    m_Localized: "V\u1EADt ph\u1EA9m \u0111\u1EB7c bi\u1EC7t"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

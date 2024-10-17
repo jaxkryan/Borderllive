@@ -167,6 +167,23 @@ MonoBehaviour:
     m_Localized: Extra
     m_Metadata:
       m_Items: []
+  - m_Id: 4502996763021312
+    m_Localized: Dodge the bullet! Each second you survive, you will receive 2 Eternal
+      souls.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4504616141852672
+    m_Localized: Eternal Soul
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4505650914398208
+    m_Localized: Back to main menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4506348410376192
+    m_Localized: Exclusive Item
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

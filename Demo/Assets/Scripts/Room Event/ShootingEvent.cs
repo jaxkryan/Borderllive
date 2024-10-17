@@ -2,13 +2,14 @@ using UnityEngine;
 using UnityEngine.UI; // For working with UI elements
 using System.Collections.Generic;
 using System.Collections;
+using TMPro;
 
 public class ShootingEvent : MonoBehaviour
 {
     public List<GameObject> horizontalShooters; // List of horizontal shooters
     public List<GameObject> verticalShooters;   // List of vertical shooters
     public GameObject portal;                   // Portal GameObject that will appear after waves are completed
-    public Text messageText;                    // UI Text to display messages
+    public TMP_Text messageText;                    // UI Text to display messages
     public int totalWaves = 5;                  // Total number of waves before the portal appears
     public float portalDelay = 3f;              // Delay before portal appears after final wave
 
