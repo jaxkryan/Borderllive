@@ -1080,7 +1080,7 @@ PrefabInstance:
     - target: {fileID: 3404329841009920981, guid: 0c1ab7f72964dfb428b31ed4560b73c0, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: f4055b33b65f1204c9acf1e95af1c5cc, type: 2}
+      objectReference: {fileID: 9100000, guid: bd0a7b7d3968bfc4d9a682d73708b4c7, type: 2}
     - target: {fileID: 4131617576893075826, guid: 0c1ab7f72964dfb428b31ed4560b73c0, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -2549,6 +2549,10 @@ PrefabInstance:
       objectReference: {fileID: 1102185756}
     - target: {fileID: 7087101153333679968, guid: 88446fe7d6187784b95bd36bc6876139, type: 3}
       propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1102185756}
+    - target: {fileID: 7193338479256600923, guid: 88446fe7d6187784b95bd36bc6876139, type: 3}
+      propertyPath: playerController
       value: 
       objectReference: {fileID: 1102185756}
     m_RemovedComponents: []

@@ -285,7 +285,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f25ccd3c44806141ad929d0cc9f2e4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  exchanger: {fileID: 0}
+  exchanger: {fileID: 2129591163}
   canvas: {fileID: 902068249}
 --- !u!61 &35837498
 BoxCollider2D:
@@ -5336,6 +5336,11 @@ Transform:
   - {fileID: 1659639725}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2129591163 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8637987210001401923, guid: c21c6ac4c53b2d64899c87be88d32a6f, type: 3}
+  m_PrefabInstance: {fileID: 1917414939}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2145523358
 GameObject:
   m_ObjectHideFlags: 0

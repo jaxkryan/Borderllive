@@ -123,6 +123,18 @@ MonoBehaviour:
     m_Key: Item9_HistoryDescription
     m_Metadata:
       m_Items: []
+  - m_Id: 3097422368645120
+    m_Key: Sword
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3097440290906112
+    m_Key: Sword_Description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3097472226336768
+    m_Key: Sword_HistoryDescription
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

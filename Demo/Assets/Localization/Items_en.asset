@@ -164,6 +164,24 @@ MonoBehaviour:
     m_Localized: "Nothing\t"
     m_Metadata:
       m_Items: []
+  - m_Id: 3097472226336768
+    m_Localized: "\"Thuan Thien\" means to follow the will of Heaven. Its meaning
+      affirms that Le Loi\u2019s uprising against the Ming Dynasty was in accordance
+      with Heaven\u2019s will, ensuring inevitable victory. The Thuan Thien sword
+      is said to possess a mystical power, which granted Le Loi immense strength,
+      making him appear larger and endowed with the power of ten thousand men."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3097440290906112
+    m_Localized: 'This is a sword. You don''t understand why every time you place
+      it on the ground, it splits into three parts: the hilt, the blade, and the
+      guard, then starts jumping around you.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3097422368645120
+    m_Localized: Thuan Thien sword
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

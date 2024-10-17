@@ -186,14 +186,14 @@ public class PlayerController : MonoBehaviour
     {
         //Logger.Log("OnMove called");
         moveInput = context.ReadValue<Vector2>();
-        Logger.Log("OnMove: " + moveInput);
-        Logger.Log("On move at stage " + SceneManager.GetActiveScene().name);
-        Logger.Log("Is GameObject active after room change: " + gameObject.activeSelf);
-        Logger.Log("Is script enabled after room change: " + this.enabled);
+        //Logger.Log("OnMove: " + moveInput);
+        //Logger.Log("On move at stage " + SceneManager.GetActiveScene().name);
+        //Logger.Log("Is GameObject active after room change: " + gameObject.activeSelf);
+        //Logger.Log("Is script enabled after room change: " + this.enabled);
         this.enabled = true;
-        Logger.Log("PlayerController instance count: " + FindObjectsOfType<PlayerController>().Length);
-        Logger.Log("Is Rigidbody kinematic: " + rb.isKinematic);
-        Logger.Log("Rigidbody velocity: " + rb.velocity);
+        //Logger.Log("PlayerController instance count: " + FindObjectsOfType<PlayerController>().Length);
+        //Logger.Log("Is Rigidbody kinematic: " + rb.isKinematic);
+        //Logger.Log("Rigidbody velocity: " + rb.velocity);
 
 
 
