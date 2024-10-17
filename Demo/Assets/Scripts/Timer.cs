@@ -83,24 +83,29 @@ public class Timer : MonoBehaviour
 
         // Convert milliseconds to seconds (1 second = 1000 milliseconds)
         float elapsedSeconds = elapsedMilliseconds / 1000f;
-
-        // Calculate currency: 1 second = 2 currency
-        int currencyToAdd = (int)(elapsedSeconds * 2); // Multiply seconds by 2
-
-        // Check if PremiumCurrency key exists, if not set it to 0
-        if (!PlayerPrefs.HasKey("PremiumCurrency"))
+        if (PlayerPrefs.GetInt("PlayerDied", 0) == 1) // Check the key
         {
-            PlayerPrefs.SetInt("PremiumCurrency", 0);
+            // Calculate currency: 1 second = 2 currency
+            int currencyToAdd = (int)(elapsedSeconds * 2); // Multiply seconds by 2
+
+            // Check if PremiumCurrency key exists, if not set it to 0
+            if (!PlayerPrefs.HasKey("PremiumCurrency"))
+            {
+                PlayerPrefs.SetInt("PremiumCurrency", 0);
+            }
+
+            // Retrieve the current currency and update it
+            int currentCurrency = PlayerPrefs.GetInt("PremiumCurrency");
+
+            PlayerPrefs.SetInt("PremiumCurrency", currentCurrency + currencyToAdd);
+            PlayerPrefs.Save(); // Save the changes to PlayerPrefs
+            // Optionally, you can log the current currency
+            UnityEngine.Debug.Log($"Updated Premium Currency: {currentCurrency + currencyToAdd}");
         }
 
-        // Retrieve the current currency and update it
-        int currentCurrency = PlayerPrefs.GetInt("PremiumCurrency");
-        PlayerPrefs.SetInt("PremiumCurrency", currentCurrency + currencyToAdd);
-        PlayerPrefs.Save(); // Save the changes to PlayerPrefs
-
-        // Optionally, you can log the current currency
-        UnityEngine.Debug.Log($"Updated Premium Currency: {currentCurrency + currencyToAdd}");
-
+        // After processing the player death, reset the key
+        PlayerPrefs.SetInt("PlayerDied", 0); // Reset the key for the next event
     }
+
 
 }
