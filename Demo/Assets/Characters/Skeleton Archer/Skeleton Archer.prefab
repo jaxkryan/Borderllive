@@ -112,7 +112,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4073584757197811603}
   - component: {fileID: 5494980442471651933}
-  - component: {fileID: 8128257901853074948}
   - component: {fileID: 1266914907660124597}
   - component: {fileID: 6940440872008874421}
   - component: {fileID: 401305541602428583}
@@ -122,6 +121,7 @@ GameObject:
   - component: {fileID: 7041029444694193168}
   - component: {fileID: 7054869855024229347}
   - component: {fileID: 2690121331110890983}
+  - component: {fileID: 7014310629699053383}
   m_Layer: 8
   m_Name: Skeleton Archer
   m_TagString: Enemy
@@ -200,27 +200,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &8128257901853074948
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2878712719979127204}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ed60ca018e161e046bd0c0157b3c8b2f, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!50 &1266914907660124597
 Rigidbody2D:
   serializedVersion: 4
@@ -478,6 +457,27 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   XPTranslation: {fileID: 0}
+--- !u!95 &7014310629699053383
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2878712719979127204}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 44bba283814029c4f9553fa786bd82bb, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &5259583505107027303
 GameObject:
   m_ObjectHideFlags: 0
