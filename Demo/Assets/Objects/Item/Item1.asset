@@ -25,11 +25,11 @@ MonoBehaviour:
     n\u0103ng c\u1EA3nh b\xE1o tr\u01B0\u1EDBc \u0111i\u1EC1m d\u1EEF, tai \u01B0\u01A1ng."
   image: {fileID: 21300000, guid: 24fd6073d23cab2448fc1f9f7accb84a, type: 3}
   itemType: 0
-  cd: 30
+  cd: 18
   cost: 100
   unlockCost: 0
   code: daikalop12a
-  isEnable: 0
+  isEnable: 1
   nameLocalization:
     m_TableReference:
       m_TableCollectionName: Items

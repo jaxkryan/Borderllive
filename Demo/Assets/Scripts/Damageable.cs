@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
@@ -338,18 +339,50 @@ public class Damageable : MonoBehaviour
         return false;
     }
 
+    public float dropRateHealth1 = 10f;
+    public float dropRateHealth2 = 2f;
+
+    private bool dropRateBoosted = false; // Flag to check if boost is active
+
+    public float boostedDropRateHealth1 = 100f; // Boosted drop rate for health item 1
+    public float boostedDropRateHealth2 = 50f; // Boosted drop rate for health item 2
+
+    // Coroutine to temporarily increase the drop rate
+    public IEnumerator BoostDropRate(float duration)
+    {
+        if (!dropRateBoosted)
+        {
+            dropRateBoosted = true;
+            float originalDropRate1 = dropRateHealth1;
+            float originalDropRate2 = dropRateHealth2;
+
+            // Apply boosted drop rates
+            dropRateHealth1 = boostedDropRateHealth1;
+            dropRateHealth2 = boostedDropRateHealth2;
+
+            // Wait for the duration (e.g., 3 seconds)
+            yield return new WaitForSeconds(duration);
+
+            // Revert to the original drop rates
+            dropRateHealth1 = originalDropRate1;
+            dropRateHealth2 = originalDropRate2;
+
+            dropRateBoosted = false;
+        }
+    }
+    
     private void DropWhenDeath()
     {
         // Generate a random number between 0 and 100
         float randomValue = UnityEngine.Random.Range(0f, 100f);
 
         // 10% chance to drop item 1
-        if (randomValue <= 10f && dropItem1 != null)
+        if (randomValue <= dropRateHealth1 && dropItem1 != null)
         {
             Instantiate(dropItem1, transform.position, Quaternion.identity);
         }
         // 2% chance to drop item 2 (within the remaining 90%)
-        else if (randomValue > 15f && randomValue <= 17f && dropItem2 != null)
+        else if (randomValue > 0 && randomValue <= dropRateHealth2 && dropItem2 != null)
         {
             Instantiate(dropItem2, transform.position, Quaternion.identity);
         }

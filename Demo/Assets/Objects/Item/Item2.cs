@@ -16,7 +16,7 @@ public class Item2 : Item
         "If only one enemy is hit, the damage will be equal to 40% number of soul. "
         + "The damage can not exceed the enemy's 40% max health.";
         this.itemType = ItemType.Active;
-        this.cd = 45f;
+        this.cd = 20f;
         this.cost = 100;
                 this.code = "daikalop12a";
         this.isEnable = false;

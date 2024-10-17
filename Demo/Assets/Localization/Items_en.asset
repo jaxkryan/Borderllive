@@ -149,7 +149,12 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 2849667993571328
-    m_Localized: Nothing
+    m_Localized: The carrying pole is a product that crystallizes the agricultural
+      culture and the creative power of the mind and the skilled hands of the working
+      class. With just carrying poles, generations of Vietnamese people have been
+      able to "carry the entire beloved country" until today. The carrying pole is
+      a product of the thousand-year-old rice culture that showcases the imagination
+      and ingenuity of the ancient Vietnamese people.
     m_Metadata:
       m_Items: []
   - m_Id: 2886421991657472
@@ -161,7 +166,51 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 2886611666472960
-    m_Localized: "Nothing\t"
+    m_Localized: "L\xFD S\u01A1n is an island formed by volcanic activity and the
+      accumulation of sea sand and coral stones. The unique soil conditions, combined
+      with the experience of local farmers, have given L\xFD S\u01A1n garlic its
+      distinct flavor, especially the \"lonely garlic\" variety. During its growth
+      and development, this type of garlic is different from regular garlic (which
+      typically has many cloves); each bulb of this garlic contains only a single
+      clove."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2950785268453376
+    m_Localized: Delicious leaf
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2950866222714880
+    m_Localized: Use half of your shield value to heal yourself. If there is no shield,
+      give 10 shield points.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2950885222912000
+    m_Localized: "The plant known as \"l\xE1 ng\xF3n,\" also referred to as \"r\xFAt
+      ru\u1ED9t,\" is associated with a warning among the people in the northern
+      mountainous regions: \"this plant can cause death from just eating three leaves.\"
+      The plant contains alkaloids that are toxic. The leaves are the main part that
+      contains a significant amount of poison, and they are often consumed directly
+      by victims. The image of \"l\xE1 ng\xF3n\" is closely linked to the character
+      M\u1ECB, a girl from the highlands in the work \"V\u1EE3 ch\u1ED3ng A Ph\u1EE7\"
+      by the writer T\xF4 Ho\xE0i."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3096947610882048
+    m_Localized: Lemongrass essential oil
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3097057593921536
+    m_Localized: Guarantee to drop a healing item after defeating enemy in 5 seconds
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3097530614943744
+    m_Localized: "Lemongrass is a type of plant that has been closely associated
+      with the ethnic communities in H\xF2a B\xECnh province for about 20 years.
+      This plant requires little care and has growth characteristics that are suitable
+      for the climate and soil conditions of sloped land. It can be harvested quickly
+      and is not affected by pests. Previously, farmers only sold the roots and stems
+      of lemongrass as a spice for food preparation, but now all parts of the plant
+      are used as raw materials for producing organic lemongrass essential oil."
     m_Metadata:
       m_Items: []
   references:

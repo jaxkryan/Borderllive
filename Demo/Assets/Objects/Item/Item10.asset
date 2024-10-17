@@ -18,7 +18,7 @@ MonoBehaviour:
   historyDescription: 
   image: {fileID: 21300000, guid: 659f3664c1a57884b90fec02aad9ec21, type: 3}
   itemType: 0
-  cd: 0
+  cd: 15
   cost: 250
   unlockCost: 2500
   code: daikalop12a
