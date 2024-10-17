@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Localization;
@@ -9,9 +10,12 @@ public class ElementalNPC : MonoBehaviour
 {
     private Damageable damageable;
     private PlayerInput playerInput;
-    public GameObject dialoguePanel;
-    public Text dialogueText;
-    private int index;
+    public GameObject dialoguePanel; 
+    public TextMeshProUGUI dialogueText; // Replace Text with TextMeshProUGUI
+    private int dialogueTurnIndex; // Used to track whose turn it is
+    private int npcDialogueIndex;
+    private int playerDialogueIndex;
+    private int commentorDialogueIndex;
     private GameObject gameCanvas;
     public float wordSpeed;
 
@@ -30,6 +34,11 @@ public class ElementalNPC : MonoBehaviour
 
     private string resolvedDialogueText; // Store the resolved text for typing
 
+    // NPC images for hiding and showing
+    public List<Image> npcImages;  // List of NPC images that hide when NPC is done talking
+    public List<Image> npcImageFades;  // List of NPC images that stay visible after NPC talks for the first time
+    private bool npcFirstTimeTalking = true; // Track if it's the NPC's first time talking
+
     private void Awake()
     {
         buffChosen = false;
@@ -46,6 +55,18 @@ public class ElementalNPC : MonoBehaviour
         }
 
         ownedPowerups = FindObjectOfType<OwnedPowerups>();
+
+        // Initially hide the NPC images
+        foreach (var img in npcImages)
+        {
+            img.gameObject.SetActive(false);
+        }
+
+        // Initially hide the NPC fade images as well
+        foreach (var img in npcImageFades)
+        {
+            img.gameObject.SetActive(false);
+        }
     }
 
     void Start()
@@ -64,8 +85,13 @@ public class ElementalNPC : MonoBehaviour
             gameCanvas = GameObject.FindGameObjectWithTag("GameCanvas");
             if (gameCanvas != null) { gameCanvas.SetActive(false); }
 
-            index = 0;
-            StartCoroutine(TypingDialogue()); // Start dialogue according to turn order
+            // Reset indices when dialogue starts
+            dialogueTurnIndex = 0;
+            npcDialogueIndex = 0;
+            playerDialogueIndex = 0;
+            commentorDialogueIndex = 0;
+
+            StartCoroutine(TypingDialogue());
         }
     }
 
@@ -93,16 +119,22 @@ public class ElementalNPC : MonoBehaviour
             playerInput.SwitchCurrentActionMap("Player");
         }
         dialogueText.text = "";
-        index = 0;
+        dialogueTurnIndex = 0;
         dialoguePanel.SetActive(false);
         gameCanvas.SetActive(true);
         isChoosing = false;
+
+        // Hide the NPC images when the dialogue is done
+        foreach (var img in npcImages)
+        {
+            img.gameObject.SetActive(false);
+        }
     }
 
     // Typing out the dialogue for either NPC, Player, or Commentor based on the current turn
     IEnumerator TypingDialogue()
     {
-        var currentDialogue = GetCurrentDialogue()[index]; // Get the current LocalizedString
+        var currentDialogue = GetCurrentDialogue(); // Get the correct LocalizedString based on turns
         var localizedTextOperation = currentDialogue.GetLocalizedStringAsync(); // Get the async operation for the localized string
 
         yield return localizedTextOperation; // Wait for the operation to complete
@@ -117,30 +149,37 @@ public class ElementalNPC : MonoBehaviour
         }
     }
 
+    // Ensure to reset npcDialogueIndex when starting buffChosenDialogue
     public void NextLine()
     {
         if (!buffChosen)
         {
-            index++;
+            dialogueTurnIndex++;
             dialogueText.text = "";
 
-            if (index < GetCurrentDialogue().Length)
+            if (dialogueTurnIndex < dialogueTurns.Count)
             {
-                StartCoroutine(TypingDialogue()); // Continue dialogue based on turns
+                StartCoroutine(TypingDialogue()); // Continue normal dialogue based on turns
             }
             else
             {
-                ShowChoices(); // End of dialogue, show buff choices
+                ShowChoices(); // End of normal dialogue, show buff choices
             }
         }
         else
         {
-            if (dialoguePanel.activeInHierarchy)
+            // Ensure to use separate npcDialogueIndex for buffChosenDialogue
+            if (npcDialogueIndex >= buffChosenDialogue.Length)
             {
-                RemoveText();
+                RemoveText(); // End dialogue if no more buffChosenDialogue is available
+                return; // Exit to avoid further execution
             }
+
+            StartCoroutine(ShowBuffChosenDialogue()); // Show the next buff chosen dialogue
         }
     }
+
+
 
     // Show Buff Selection UI
     private void ShowChoices()
@@ -154,33 +193,75 @@ public class ElementalNPC : MonoBehaviour
         }
     }
 
-    // Determine whether the NPC, Player, or Commentor speaks based on the index
-    private LocalizedString[] GetCurrentDialogue()
+    private IEnumerator ShowBuffChosenDialogue()
     {
-        if (buffChosen)
+        // Hide npcImages and show npcImageFades when displaying buffChosenDialogue
+        foreach (var img in npcImages)
         {
-            return buffChosenDialogue;
+            img.gameObject.SetActive(true); // Hide regular NPC images
         }
 
-        // Check whose turn it is based on dialogueTurns list
-        int? turn = dialogueTurns[index];
+        foreach (var img in npcImageFades)
+        {
+            img.gameObject.SetActive(false); // Show faded NPC images
+        }
+
+        // Use the npcDialogueIndex for buffChosenDialogue
+        var localizedBuffDialogue = buffChosenDialogue[npcDialogueIndex].GetLocalizedStringAsync();
+        yield return localizedBuffDialogue;
+
+        resolvedDialogueText = localizedBuffDialogue.Result;
+        dialogueText.text = "";
+
+        foreach (char letter in resolvedDialogueText.ToCharArray())
+        {
+            dialogueText.text += letter;
+            yield return new WaitForSeconds(wordSpeed);
+        }
+
+        npcDialogueIndex++; // Move to next buffChosenDialogue
+    }
+
+
+    // Determine whose dialogue to play and use the respective index
+    private LocalizedString GetCurrentDialogue()
+    {
+        int turn = dialogueTurns[dialogueTurnIndex];
 
         if (turn == 1) // NPC turn
         {
-            return npcDialogue;
+            if (npcFirstTimeTalking)
+            {
+                foreach (var img in npcImageFades)
+                {
+                    img.gameObject.SetActive(true); // Show the NPC fade images
+                }
+                npcFirstTimeTalking = false; // Mark that NPC has talked
+            }
+            foreach (var img in npcImages)
+            {
+                img.gameObject.SetActive(true); // Show NPC images temporarily
+            }
+            return npcDialogue[npcDialogueIndex++];
         }
-        else if (turn == 2) // Player turn
+
+        foreach (var img in npcImages)
         {
-            return playerDialogue;
+            img.gameObject.SetActive(false); // Hide NPC images when it's not their turn
+        }
+
+        if (turn == 2) // Player turn
+        {
+            return playerDialogue[playerDialogueIndex++];
         }
         else if (turn == 3) // Commentor turn
         {
-            return commentorDialogue;
+            return commentorDialogue[commentorDialogueIndex++];
         }
         else
         {
             Debug.LogWarning("Invalid dialogue turn detected: " + turn);
-            return npcDialogue; // Fallback to NPC dialogue if turn is invalid
+            return npcDialogue[0]; // Fallback to NPC dialogue if turn is invalid
         }
     }
 }

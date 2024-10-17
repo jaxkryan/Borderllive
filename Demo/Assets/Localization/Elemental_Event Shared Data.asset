@@ -35,6 +35,34 @@ MonoBehaviour:
     m_Key: Wood_Player_1
     m_Metadata:
       m_Items: []
+  - m_Id: 401946527703040
+    m_Key: Wood_Commentor_1_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 402042900226048
+    m_Key: Wood_NPC_3_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 402660616347648
+    m_Key: Wood_NPC_2_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 402727200923648
+    m_Key: Wood_NPC_2_2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 402737707655168
+    m_Key: Wood_NPC_2_3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 403266961711104
+    m_Key: Wood_NPC_2_4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 437987204702208
+    m_Key: NPC_Blank
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

@@ -632,6 +632,24 @@ public class PlayerController : MonoBehaviour
         {
             ownedPowerups.LoadPowerups();
         }
+
+        if (PlayerPrefs.HasKey("AnimatorController"))
+        {
+            string animatorControllerName = PlayerPrefs.GetString("AnimatorController");
+            Animator animator = GetComponent<Animator>();
+            RuntimeAnimatorController ac = Resources.Load<RuntimeAnimatorController>("Animator/" + animatorControllerName);
+
+
+            if (ac != null)
+            {
+                animator.runtimeAnimatorController = ac;
+               
+            }
+            else
+            {
+                Debug.LogWarning("Animator Controller not found: " + animatorControllerName);
+            }
+        }
     }
     private void OnApplicationQuit()
     {
@@ -641,6 +659,47 @@ public class PlayerController : MonoBehaviour
         Debug.Log("Player data cleared on application quit.");
     }
 
+    public void SaveAnimatorChoice(string animatorControllerName)
+    {
+        PlayerPrefs.SetString("AnimatorController", animatorControllerName);
+        PlayerPrefs.Save();
+    }
+
+    public void OnStaffClick()
+    {
+        SaveAnimatorChoice("AC_Player");
+        string animatorControllerName = PlayerPrefs.GetString("AnimatorController");
+        Animator animator = GetComponent<Animator>();
+        RuntimeAnimatorController ac = Resources.Load<RuntimeAnimatorController>("Animator/" + animatorControllerName);
+
+
+        if (ac != null)
+        {
+            animator.runtimeAnimatorController = ac;
+        }
+        else
+        {
+            Debug.LogWarning("Animator Controller not found: " + animatorControllerName);
+        }
+    }
+
+    public void OnSwordClick()
+    {
+        SaveAnimatorChoice("AC_Player_Sword");
+        string animatorControllerName = PlayerPrefs.GetString("AnimatorController");
+        Animator animator = GetComponent<Animator>();
+        RuntimeAnimatorController ac = Resources.Load<RuntimeAnimatorController>("Animator/" + animatorControllerName);
+
+
+        if (ac != null)
+        {
+            animator.runtimeAnimatorController = ac;
+        }
+        else
+        {
+            Debug.LogWarning("Animator Controller not found: " + animatorControllerName);
+        }
+    }
 
     public void LoadPowerups()
     {

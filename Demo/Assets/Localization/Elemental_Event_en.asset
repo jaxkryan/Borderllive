@@ -19,10 +19,8 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 341359491850240
-    m_Localized: You wanders into a dense forest, with shimmering light filtering
-      through the leaves, creating a mystical atmosphere. When stepping into a large
-      clearing, You sees a small altar with an incense bowl and a set of fortune-telling
-      sticks placed on the table.
+    m_Localized: 'You wanders into a dense forest, with shimmering light filtering
+      through the leaves, creating a mystical atmosphere. '
     m_Metadata:
       m_Items: []
   - m_Id: 341906353594368
@@ -36,24 +34,53 @@ MonoBehaviour:
   - m_Id: 342304703422464
     m_Localized: '(The girl smiles, her expression serene yet intriguingly mysterious.)
 
-      At
-      the beginning of the new year, people shake sticks to pray for good fortune
-      and safety for a prosperous year ahead. But in the midst of this forest, meeting
-      me is surely a great fate. I have two fortunes, each representing an ancient
-      power that you can carry with you on your journey. Choose wisely, but be careful
-      in your choice.
 
-      Main gazes intently at the two fortune sticks before
-      them, a sense of excitement welling up inside.'
+'
     m_Metadata:
       m_Items: []
   - m_Id: 342520596832256
-    m_Localized: '(Gently nodding after Main selects a fortune.)
+    m_Localized: '(Gently nodding after you selects a fortune.)
 
       Thus, from
-      now on, you have received the blessing from the sacred power of this forest.
-      The path ahead is long, but remember, whether right or wrong, it all lies in
-      fate. Go forth and carry this luck with you.'
+      now on, you have received the blessing from the sacred power of this forest.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 401946527703040
+    m_Localized: When stepping into a large clearing, You sees a small altar with
+      an incense bowl and a set of fortune-telling sticks placed on the table.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 402042900226048
+    m_Localized: The path ahead is long, but remember, whether right or wrong, it
+      all lies in fate. Go forth and carry this luck with you.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 402660616347648
+    m_Localized: At the beginning of the new year, people shake sticks to pray for
+      good fortune and safety for a prosperous year ahead.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 402727200923648
+    m_Localized: But in the midst of this forest, meeting me is surely a great fate.
+      I have two fortunes, each representing an ancient power that you can carry
+      with you on your journey.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 402737707655168
+    m_Localized: Choose wisely, but be careful in your choice.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 342636858744832
+    m_Localized: (You standing in a daze, unable to respond.)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 403266961711104
+    m_Localized: You gazes intently at the two fortune sticks before them, a sense
+      of excitement welling up inside.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 437987204702208
+    m_Localized: ' '
     m_Metadata:
       m_Items: []
   references:
