@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
@@ -126,13 +127,16 @@ public class CharacterStat : MonoBehaviour
         Shield += amount;
     }
 
-    public void DecreaseShield(float amount)
+    public float DecreaseShield(float amount)
     {
         Shield -= amount;
         if (Shield < 0f)
         {
-            Shield = 0f;
+            float temp = Math.Abs(Shield);
+            Shield = 0;
+            return temp;
         }
+        return 0;
     }
     private static int levelupCount = 0;
 
@@ -319,5 +323,26 @@ public class CharacterStat : MonoBehaviour
         StrengthToDamageConversion = originalStrength;
         Endurance = originalEndurance;
     }
+
+public void StartSpicyGarlicEffect()
+    {
+        StartCoroutine(ApplySpicyGarlicEffect());
+    }
+
+    private IEnumerator ApplySpicyGarlicEffect()
+    {
+        // Store the original strength value
+        float originalStrength = StrengthToDamageConversion;
+
+        // Increase attack by 50%
+        StrengthToDamageConversion = 4;
+
+        // Wait for 6 seconds
+        yield return new WaitForSeconds(5);
+
+        // Revert attack to original value
+        BaseStrength = originalStrength;
+    }
+
 }
 
