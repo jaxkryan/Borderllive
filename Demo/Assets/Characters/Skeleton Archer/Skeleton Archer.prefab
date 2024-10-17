@@ -112,6 +112,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4073584757197811603}
   - component: {fileID: 5494980442471651933}
+  - component: {fileID: 7014310629699053383}
   - component: {fileID: 1266914907660124597}
   - component: {fileID: 6940440872008874421}
   - component: {fileID: 401305541602428583}
@@ -121,7 +122,7 @@ GameObject:
   - component: {fileID: 7041029444694193168}
   - component: {fileID: 7054869855024229347}
   - component: {fileID: 2690121331110890983}
-  - component: {fileID: 7014310629699053383}
+  - component: {fileID: 2140595731295638137}
   m_Layer: 8
   m_Name: Skeleton Archer
   m_TagString: Enemy
@@ -146,6 +147,7 @@ Transform:
   - {fileID: 5794244258894930950}
   - {fileID: 4680090772543232236}
   - {fileID: 4524282897279111444}
+  - {fileID: 2097253889301650963}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5494980442471651933
@@ -200,6 +202,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &7014310629699053383
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2878712719979127204}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 44bba283814029c4f9553fa786bd82bb, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!50 &1266914907660124597
 Rigidbody2D:
   serializedVersion: 4
@@ -327,6 +350,10 @@ MonoBehaviour:
   invincibilityTime: 0.25
   _isStun: 0
   soulReward: 50
+  dropRateHealth1: 10
+  dropRateHealth2: 2
+  boostedDropRateHealth1: 100
+  boostedDropRateHealth2: 50
 --- !u!114 &4332968496349350974
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -392,6 +419,10 @@ MonoBehaviour:
   invincibilityTime: 0.25
   _isStun: 0
   soulReward: 20
+  dropRateHealth1: 10
+  dropRateHealth2: 2
+  boostedDropRateHealth1: 100
+  boostedDropRateHealth2: 50
 --- !u!114 &7041029444694193168
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -457,27 +488,55 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   XPTranslation: {fileID: 0}
---- !u!95 &7014310629699053383
-Animator:
-  serializedVersion: 5
+--- !u!114 &2140595731295638137
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2878712719979127204}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 44bba283814029c4f9553fa786bd82bb, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce64ea0047bc12d44ba8cd329723181d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 1338527739506778704, guid: e3288aeb01c74b24f92e08694114c631, type: 3}
+  projectilePos: {fileID: 2097253889301650963}
+  cooldown: 3
+  distance: 10
+  shootingDetectionZone: {fileID: 2788638357854697970}
+  _hasTarget: 0
+--- !u!1 &4278181710429041646
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2097253889301650963}
+  m_Layer: 8
+  m_Name: Projectile
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2097253889301650963
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4278181710429041646}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 53, y: 24, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4073584757197811603}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5259583505107027303
 GameObject:
   m_ObjectHideFlags: 0
