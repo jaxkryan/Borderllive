@@ -16,14 +16,17 @@ public class UIController : MonoBehaviour
         PlayerPrefs.DeleteKey("ElapsedTime");
         SceneManager.LoadScene("StoryScene");
     }
+    private const string PlayerDiedKey = "PlayerDied"; // Key for tracking player death
 
     public void ExtraBtn_Click()
     {
+        // Set the PlayerDied key to true when the button is clicked
+        PlayerPrefs.SetInt(PlayerDiedKey, 1); // Set to 1 (true)
+        PlayerPrefs.Save(); // Save the changes
 
         LevelController.ResetStaticData();
         SceneManager.LoadScene("BorderDeath_Fun_2");
     }
-
     public void ControlBtn_Click()
     {
         // Toggle the visibility of the control guideline image
