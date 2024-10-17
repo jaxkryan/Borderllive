@@ -14,7 +14,7 @@ public class Item1 : Item
         this.itemName = "BerserkFillUp";
         this.itemDescription = "Fill up your Berserk Bar immediately";
         this.itemType = ItemType.Active;
-        this.cd = 30f;
+        this.cd = 15f;
         this.cost = 100;
         this.code = "daikalop12a";
         this.isEnable = true;

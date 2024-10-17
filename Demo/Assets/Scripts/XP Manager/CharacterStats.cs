@@ -1,3 +1,5 @@
+using System;
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -125,16 +127,17 @@ public class CharacterStat : MonoBehaviour
         Shield += amount;
     }
 
-    public void DecreaseShield(float amount)
+    public float DecreaseShield(float amount)
     {
         Shield -= amount;
         if (Shield < 0f)
         {
-            Shield = 0f;
+            float temp = Math.Abs(Shield);
+            Shield = 0;
+            return temp;
         }
+        return 0;
     }
-
-
     private static int levelupCount = 0;
 
     // Handle level updates and apply permanent increases if buffs are active
@@ -297,5 +300,49 @@ public class CharacterStat : MonoBehaviour
         isBerserkActive = false;
         UpdateStats();
     }
+
+        public void StartEquilibriumEffectCoroutine(float duration, float strengthMultiplier, float enduranceMultiplier)
+    {
+        StartCoroutine(ApplyEquilibriumScaleEffect(duration, strengthMultiplier, enduranceMultiplier));
+    }
+
+    private IEnumerator ApplyEquilibriumScaleEffect(float duration, float strengthMultiplier, float enduranceMultiplier)
+    {
+        // Store original Strength and Endurance
+        float originalStrength = StrengthToDamageConversion;
+        float originalEndurance = Endurance;
+
+        // Apply the effect
+        StrengthToDamageConversion = originalStrength * strengthMultiplier;
+        Endurance = originalEndurance * enduranceMultiplier;
+
+        // Wait for the duration of the effect
+        yield return new WaitForSeconds(duration);
+
+        // Revert stats back to their original values
+        StrengthToDamageConversion = originalStrength;
+        Endurance = originalEndurance;
+    }
+
+public void StartSpicyGarlicEffect()
+    {
+        StartCoroutine(ApplySpicyGarlicEffect());
+    }
+
+    private IEnumerator ApplySpicyGarlicEffect()
+    {
+        // Store the original strength value
+        float originalStrength = StrengthToDamageConversion;
+
+        // Increase attack by 50%
+        StrengthToDamageConversion = 4;
+
+        // Wait for 6 seconds
+        yield return new WaitForSeconds(5);
+
+        // Revert attack to original value
+        BaseStrength = originalStrength;
+    }
+
 }
 

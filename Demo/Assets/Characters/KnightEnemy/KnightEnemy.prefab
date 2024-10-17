@@ -569,6 +569,9 @@ MonoBehaviour:
   dropItem2: {fileID: 2169320341939109797, guid: 17bbc8d98d4eb2a489d081132abc3854, type: 3}
   isStunned: 1
   stunDuration: 0.2
+  MaxHealthChanged:
+    m_PersistentCalls:
+      m_Calls: []
   _maxHealth: 100
   _health: 100
   _isAlive: 1
@@ -576,6 +579,10 @@ MonoBehaviour:
   invincibilityTime: 0.25
   _isStun: 0
   soulReward: 20
+  dropRateHealth1: 10
+  dropRateHealth2: 2
+  boostedDropRateHealth1: 100
+  boostedDropRateHealth2: 100
 --- !u!114 &8260520739142947106
 MonoBehaviour:
   m_ObjectHideFlags: 0

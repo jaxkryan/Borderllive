@@ -76,10 +76,12 @@ public class LevelController : MonoBehaviour
         {
             Debug.LogWarning("PlayerController is null. Make sure it's in the scene.");
         }
+        
         if (roomsVisited == 1)
         {
+            SceneManager.LoadScene("Tutorial");
             // Room 1: Fixed battle or event room
-            SpawnRoom("battle", "event");
+            // SpawnRoom("battle", "event");
         }
         else if (roomsVisited == 5)
         {
