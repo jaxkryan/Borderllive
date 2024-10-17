@@ -90,6 +90,62 @@ MonoBehaviour:
     m_Localized: ' '
     m_Metadata:
       m_Items: []
+  - m_Id: 725329207402496
+    m_Localized: "B\u1EA1n \u0111ang \u0111i d\u1EA1o trong m\u1ED9t khu r\u1EEBng
+      tr\xFAc d\u01B0\u1EDBi \xE1nh tr\u0103ng tr\xF2n. B\u1EA5t ng\u1EDD, b\u1EA1n
+      nghe th\u1EA5y ti\u1EBFng c\u01B0\u1EDDi kh\xFAc kh\xEDch v\xE0 ph\xE1t hi\u1EC7n
+      m\u1ED9t c\xF4 g\xE1i. C\xF4 nh\u1EB9 nh\xE0ng ph\u1EA9y tay, ra hi\u1EC7u
+      cho b\u1EA1n \u0111\u1EBFn g\u1EA7n."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 744413533872128
+    m_Localized: "\xCA, ... \u0111i \u0111\xE2u m\xE0 v\u1ED9i th\u1EBF? \u0110\xEAm
+      nay l\xE0 Trung Thu, h\xE3y \u1EDF l\u1EA1i ch\u01A1i v\u1EDBi t\xF4i."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 744545734139904
+    m_Localized: "B\u1EA1n d\u1EEBng l\u1EA1i, ng\u01B0\u1EDBc nh\xECn l\xEAn tr\u0103ng
+      v\xE0 nh\u1EADn ra \u0111\xE2y l\xE0 \u0111\xEAm h\u1ED9i c\u1ED5 truy\u1EC1n.
+      C\xF3 ch\xFAt b\u1ED1i r\u1ED1i nh\u01B0ng b\u1EA1n v\u1EABn \u0111\xE1p l\u1EA1i
+      v\u1EDBi n\u1EE5 c\u01B0\u1EDDi:"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 744571009015808
+    m_Localized: "Xin l\u1ED7i v\xEC \u0111\xE3 l\xE0m phi\u1EC1n. Nh\u01B0ng c\xF4
+      l\xE0 ai? T\u1EA1i sao l\u1EA1i \u1EDF \u0111\xE2y m\u1ED9t m\xECnh?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 744644421918720
+    m_Localized: "C\u1EE9 g\u1ECDi ta l\xE0... \u1EEBm, H\u1EB1ng Nga th\u1EE9 hai
+      \u0111i. \u1EDE \u0111\xE2y canh gi\u1EEF b\xED m\u1EADt cung tr\u0103ng m\xE0.
+      M\xE0 ta th\u1EA5y ng\u01B0\u01A1i c\u0169ng th\xFA v\u1ECB, mu\u1ED1n t\u1EB7ng
+      ng\u01B0\u01A1i ch\xFAt qu\xE0 Trung Thu. Nh\u01B0ng ch\u1EC9 m\u1ED9t th\xF4i,
+      ng\u01B0\u01A1i ph\u1EA3i ch\u1ECDn kh\xF4n kh\xE9o \u0111\u1EA5y."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 744787737092096
+    m_Localized: "C\xF4 \u1EA5y c\u01B0\u1EDDi nh\u1EB9, ch\u1EC9 tay l\xEAn m\u1EB7t
+      tr\u0103ng, r\u1ED3i nh\xECn th\u1EB3ng v\xE0o b\u1EA1n, nh\u01B0 \u0111ang
+      th\u1EED th\xE1ch."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 744826563764224
+    m_Localized: "N\xE0o, \u0111\xEAm Trung Thu tr\xF4i qua nhanh l\u1EAFm. Ch\u1ECDn
+      m\u1ED9t \u0111i, r\u1ED3i c\xF2n k\u1ECBp ph\xE1 c\u1ED7."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 744868871708672
+    m_Localized: "B\u1EA1n nh\xECn c\xF4 g\xE1i v\xE0 ch\u1ECDn l\u1EA5y m\u1ED9t
+      trong hai s\u1EE9c m\u1EA1nh. C\xF4 g\xE1i c\u01B0\u1EDDi kh\u1EBD, t\u1EB7ng
+      th\xEAm m\u1ED9t l\u1EDDi ch\xFAc tr\u01B0\u1EDBc khi bi\u1EBFn m\u1EA5t.\r\n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 744918104449024
+    m_Localized: "Th\u1EBF l\xE0 xong! \u0110\u1EEBng qu\xEAn \u0103n b\xE1nh trung
+      thu v\u1EDBi b\u1ED1 m\u1EB9 nh\xE9! D\xF9 sao, Trung Thu ch\u1EC9 c\xF3 m\u1ED9t
+      l\u1EA7n m\u1ED7i n\u0103m m\xE0."
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

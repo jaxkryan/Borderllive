@@ -83,6 +83,53 @@ MonoBehaviour:
     m_Localized: ' '
     m_Metadata:
       m_Items: []
+  - m_Id: 725329207402496
+    m_Localized: You are walking through a bamboo forest under a full moon. Suddenly,
+      you hear a soft giggle and spot a girl. She gently waves her hand, signaling
+      you to come closer.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 744413533872128
+    m_Localized: Hey, where are you rushing off to? Tonight is the Mid-Autumn Festival,
+      stay and play with me.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 744545734139904
+    m_Localized: "You stop, look up at the moon, and realize it\u2019s the night
+      of the traditional festival. Feeling a bit confused but still smiling, you
+      reply:"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 744571009015808
+    m_Localized: Sorry for the disturbance. But who are you? Why are you here alone?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 744644421918720
+    m_Localized: "Just call me... hmm, the second Chang'e. I guard the secrets of
+      the moon palace. But I find you interesting and want to give you a Mid-Autumn
+      gift. But only one\u2014you must choose wisely."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 744787737092096
+    m_Localized: The girl smiles gently, points up at the moon, then looks straight
+      at you, as if testing you.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 744826563764224
+    m_Localized: "Come on, the Mid-Autumn night passes quickly. Choose one, so you\u2019ll
+      still have time to enjoy the feast."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 744868871708672
+    m_Localized: You look at the the girl and pick one of the two powers. The girl
+      smiles slightly and offers one last blessing before disappearing.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 744918104449024
+    m_Localized: "That\u2019s it! Don\u2019t forget to eat mooncakes with your parents!
+      After all, the Mid-Autumn Festival only comes once a year"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
