@@ -16,6 +16,15 @@ public class UIController : MonoBehaviour
         SceneManager.LoadScene("StoryScene");
     }
 
+    public void ExtraBtn_Click()
+    {
+
+        LevelController.ResetStaticData();
+        int room = Random.Range(1, 2);
+        if(room == 1)SceneManager.LoadScene("BorderDeath_Fun_1");
+        else SceneManager.LoadScene("BorderDeath_Fun_2");
+    }
+
     public void ControlBtn_Click()
     {
         // Toggle the visibility of the control guideline image

@@ -163,6 +163,10 @@ MonoBehaviour:
     m_Localized: You have completed tutorial hell. Good luck on Borderlive!
     m_Metadata:
       m_Items: []
+  - m_Id: 4490283555266560
+    m_Localized: Extra
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

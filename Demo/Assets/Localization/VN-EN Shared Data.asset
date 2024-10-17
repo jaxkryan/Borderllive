@@ -159,6 +159,10 @@ MonoBehaviour:
     m_Key: BerserkActive2
     m_Metadata:
       m_Items: []
+  - m_Id: 4490283555266560
+    m_Key: Extra
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
