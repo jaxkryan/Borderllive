@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AttackBuff: {fileID: 11400000, guid: f13ea904223cc0a4d8464a21739d602a, type: 2}
-  baseDamage: 17
+  baseDamage: 15
   knockback: {x: 0, y: 0}
 --- !u!1 &130169560623644369
 GameObject:
@@ -1470,7 +1470,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AttackBuff: {fileID: 11400000, guid: f13ea904223cc0a4d8464a21739d602a, type: 2}
-  baseDamage: 2
+  baseDamage: -3
   knockback: {x: 0, y: 0}
 --- !u!1 &2494157327460931022
 GameObject:
@@ -2488,7 +2488,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AttackBuff: {fileID: 11400000, guid: f13ea904223cc0a4d8464a21739d602a, type: 2}
-  baseDamage: 12
+  baseDamage: 17
   knockback: {x: 0, y: 0}
 --- !u!1 &6589448070663564626
 GameObject:
@@ -3243,7 +3243,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AttackBuff: {fileID: 11400000, guid: f13ea904223cc0a4d8464a21739d602a, type: 2}
-  baseDamage: 5
+  baseDamage: 6
   knockback: {x: 0, y: 0}
 --- !u!1 &8964478321177050342
 GameObject:
