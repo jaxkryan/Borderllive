@@ -147,6 +147,18 @@ MonoBehaviour:
     m_Key: "JumpDash\t"
     m_Metadata:
       m_Items: []
+  - m_Id: 4327010427736064
+    m_Key: Attack
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4332812316184576
+    m_Key: BerserkActive
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4332848219426816
+    m_Key: BerserkActive2
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

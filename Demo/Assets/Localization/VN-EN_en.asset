@@ -150,6 +150,19 @@ MonoBehaviour:
     m_Localized: to dash in mid-air
     m_Metadata:
       m_Items: []
+  - m_Id: 4327010427736064
+    m_Localized: to attack. Every attack increase Berserk Gauge.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4332812316184576
+    m_Localized: In Berserk Mode, all your damage dealt and taken is increase. Be
+      advised!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4332848219426816
+    m_Localized: You have completed tutorial hell. Good luck on Borderlive!
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

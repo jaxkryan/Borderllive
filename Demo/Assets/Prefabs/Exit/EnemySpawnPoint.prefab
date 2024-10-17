@@ -364,12 +364,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Exit
       objectReference: {fileID: 0}
-    - target: {fileID: 9132311332899670778, guid: d47f7b2153cde144f8a2462b4f26afb4, type: 3}
-      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 7655710772308975398}
-    m_RemovedComponents:
-    - {fileID: 2996964197837610143, guid: d47f7b2153cde144f8a2462b4f26afb4, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

@@ -286,18 +286,15 @@ MonoBehaviour:
   - BorderDeath_Event_2
   - BorderDeath_Event_1
   - BorderDeath_Event_1
+  - BorderDeath_ElementalEvent_5
+  - BorderDeath_ElementalEvent_3
   listShopRooms:
   - BorderDeath_Event_Shop
   listFunRooms:
   - BorderDeath_Event_1
   - BorderDeath_Event_2
-  - BorderDeath_Event_1
-  - BorderDeath_Event_2
-  - BorderDeath_Event_1
-  - BorderDeath_Event_2
-  - BorderDeath_Event_1
-  - BorderDeath_Event_2
-  - BorderDeath_Event_1
+  - BorderDeath_ElementalEvent_5
+  - BorderDeath_ElementalEvent_3
 --- !u!1001 &152805827
 PrefabInstance:
   m_ObjectHideFlags: 0

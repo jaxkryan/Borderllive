@@ -151,6 +151,22 @@ MonoBehaviour:
     m_Localized: "\u0111\u1EC3 l\u01B0\u1EDBt gi\u1EEFa kh\xF4ng trung "
     m_Metadata:
       m_Items: []
+  - m_Id: 4327010427736064
+    m_Localized: "\u0111\u1EC3 t\u1EA5n c\xF4ng. T\u1EA5n c\xF4ng li\xEAn t\u1EE5c
+      t\xEDch l\u0169y tr\u1EA1ng th\xE1i \"T\u1EA9u h\u1ECFa nh\u1EADp ma\"."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4332812316184576
+    m_Localized: "Trong tr\u1EA1ng th\xE1i \"T\u1EA9u h\u1ECFa nh\u1EADp ma\", s\xE1t
+      th\u01B0\u01A1ng g\xE2y ra v\xE0 nh\u1EADn v\xE0o \u0111\u1EC1u t\u0103ng l\xEAn.
+      H\xE3y c\u1EA9n th\u1EADn!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4332848219426816
+    m_Localized: "H\u01B0\u1EDBng d\u1EABn \u0111\xE3 xong. Ch\xFAc b\u1EA1n c\xF3
+      nh\u1EEFng gi\u1EDD ph\xFAt vui v\u1EBB v\u1EDBi Sinh Kh\u1EDFi!"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

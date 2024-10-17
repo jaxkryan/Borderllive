@@ -133,7 +133,7 @@ public class SettingMenu : MonoBehaviour
     }
 
     private const string PlayerPrefsKeyPrefix = "ItemState_";
-    private string[] itemNames = { "item1", "item2", "item3", "item4", "item5", "item6", "item7" }; // Add more if needed
+    private string[] itemNames = { "item1", "item2", "item3", "item4", "item5", "item6", "item7","item8","item9","item10","sword" }; // Add more if needed
 
     public void ResetAllData()
     {

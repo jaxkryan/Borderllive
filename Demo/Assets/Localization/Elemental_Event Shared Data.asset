@@ -63,6 +63,42 @@ MonoBehaviour:
     m_Key: NPC_Blank
     m_Metadata:
       m_Items: []
+  - m_Id: 725329207402496
+    m_Key: Earth_Commentor_01
+    m_Metadata:
+      m_Items: []
+  - m_Id: 744413533872128
+    m_Key: Earth_NPC_01
+    m_Metadata:
+      m_Items: []
+  - m_Id: 744545734139904
+    m_Key: Earth_Commentor_02
+    m_Metadata:
+      m_Items: []
+  - m_Id: 744571009015808
+    m_Key: Earth_Main_01
+    m_Metadata:
+      m_Items: []
+  - m_Id: 744644421918720
+    m_Key: Earth_NPC_02
+    m_Metadata:
+      m_Items: []
+  - m_Id: 744787737092096
+    m_Key: Earth_Commentor_03
+    m_Metadata:
+      m_Items: []
+  - m_Id: 744826563764224
+    m_Key: Earth_NPC_03
+    m_Metadata:
+      m_Items: []
+  - m_Id: 744868871708672
+    m_Key: Earth_Commentor_04
+    m_Metadata:
+      m_Items: []
+  - m_Id: 744918104449024
+    m_Key: Earth_NPC_04
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
