@@ -55,7 +55,7 @@ public class BuffSelectionUI : MonoBehaviour
                     // Get the button
                     TMP_Text nameText = buffButtons[i].transform.Find("Name").GetComponent<TMP_Text>();
                     TMP_Text descriptionText = buffButtons[i].transform.Find("Description").GetComponent<TMP_Text>();
-
+                    
                     // Assign the text values
                     nameText.text = currentBuffChoices[i].nameLocalization.GetLocalizedString();
                     descriptionText.text = currentBuffChoices[i].descriptionLocalization.GetLocalizedString();
