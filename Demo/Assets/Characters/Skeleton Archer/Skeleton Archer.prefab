@@ -465,6 +465,7 @@ MonoBehaviour:
   cooldown: 3
   distance: 10
   shootingDetectionZone: {fileID: 2788638357854697970}
+  isStraightShooter: 1
   _hasTarget: 0
 --- !u!1 &4278181710429041646
 GameObject:

@@ -13,6 +13,8 @@ public class FlyingEyeShooting : MonoBehaviour
 
     private float timer;
 
+    // New variable to control shooting behavior
+    [SerializeField] private bool isStraightShooter = false;
 
     public bool _hasTarget = false;
     public bool HasTarget
@@ -27,9 +29,9 @@ public class FlyingEyeShooting : MonoBehaviour
 
     private void Awake()
     {
-
         animator = GetComponent<Animator>();
     }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -37,18 +39,17 @@ public class FlyingEyeShooting : MonoBehaviour
     }
 
     Animator animator;
+
     // Update is called once per frame
     void Update()
     {
         float playerDistance = Vector2.Distance(transform.position, player.transform.position);
-
         timer += Time.deltaTime;
 
         // Check if the player is within the detection zone
         HasTarget = shootingDetectionZone.detectedColliders.Count > 0;
         if (timer > cooldown)
         {
-
             if (HasTarget)
             {
                 timer = 0;
@@ -63,7 +64,25 @@ public class FlyingEyeShooting : MonoBehaviour
         GameObject projectile = Instantiate(projectilePrefab, projectilePos.position, Quaternion.identity);
 
         // Calculate direction to the player
-        Vector2 direction = (player.transform.position - projectilePos.position).normalized;
+        Vector2 direction;
+
+        if (isStraightShooter)
+        {
+            // Determine if the player is to the left or right of the enemy
+            if (player.transform.position.x > transform.position.x)
+            {
+                direction = Vector2.right; // Player is to the right
+            }
+            else
+            {
+                direction = Vector2.left; // Player is to the left
+            }
+        }
+        else
+        {
+            // Calculate direction to the player
+            direction = (player.transform.position - projectilePos.position).normalized;
+        }
 
         // Set the direction for the projectile using the EnemyProjectile script
         EnemyProjectile enemyProjectile = projectile.GetComponent<EnemyProjectile>();
@@ -72,9 +91,18 @@ public class FlyingEyeShooting : MonoBehaviour
             enemyProjectile.SetDirection(direction);
         }
 
-        // Rotate the projectile to face the direction it is moving
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        projectile.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
+        // Rotate the projectile to face the direction it is moving (if not straight shooter)
+        if (!isStraightShooter)
+        {
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            projectile.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
+        }
+        else
+        {
+            // Set the projectile to face straight right if it's facing right, otherwise set it to face left
+            float angle = direction == Vector2.right ? 0 : 180; // 0 degrees for right, 180 for left
+            projectile.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
+        }
     }
 
 }

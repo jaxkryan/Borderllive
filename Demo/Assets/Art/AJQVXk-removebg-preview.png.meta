@@ -118,7 +118,7 @@ TextureImporter:
         width: 25
         height: 104
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -126,6 +126,27 @@ TextureImporter:
       bones: []
       spriteID: ac2c8ecf5024c5a4285aa41752e85981
       internalID: -1595585184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AJQVXk-removebg-preview_1
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 205
+        width: 98
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7255117fbad0dca469aec75c41a6f389
+      internalID: 133102426
       vertices: []
       indices: 
       edges: []
@@ -142,6 +163,7 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       AJQVXk-removebg-preview_0: -1595585184
+      AJQVXk-removebg-preview_1: 133102426
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
