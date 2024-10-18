@@ -102,6 +102,9 @@ MonoBehaviour:
   warningLinePrefab: {fileID: 3353942325497043272, guid: 1358afcdd8c717d45988c2dbc8ef08e3, type: 3}
   warningDuration: 1
   isVerticalShooter: 0
+  isLeftShooter: 0
+  minSpeed: 3
+  maxSpeed: 7.5
 --- !u!1 &1154712677554929871
 GameObject:
   m_ObjectHideFlags: 0
@@ -306,6 +309,9 @@ MonoBehaviour:
   warningLinePrefab: {fileID: 3353942325497043272, guid: 1358afcdd8c717d45988c2dbc8ef08e3, type: 3}
   warningDuration: 1
   isVerticalShooter: 0
+  isLeftShooter: 0
+  minSpeed: 3
+  maxSpeed: 7.5
 --- !u!1 &3563760606282672698
 GameObject:
   m_ObjectHideFlags: 0
@@ -408,6 +414,9 @@ MonoBehaviour:
   warningLinePrefab: {fileID: 3353942325497043272, guid: 1358afcdd8c717d45988c2dbc8ef08e3, type: 3}
   warningDuration: 1
   isVerticalShooter: 0
+  isLeftShooter: 0
+  minSpeed: 3
+  maxSpeed: 7.5
 --- !u!1 &5167073246253350396
 GameObject:
   m_ObjectHideFlags: 0
@@ -461,9 +470,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb29b66a84fab2c47a2e87eddf049f54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  horizontalShooters:
-  - {fileID: 431463170276418454}
-  - {fileID: 7613844804092904790}
+  leftShooters: []
+  rightShooters: []
   verticalShooters:
   - {fileID: 9131312336225027806}
   - {fileID: 8878896777919881426}
@@ -474,6 +482,7 @@ MonoBehaviour:
   messageText: {fileID: 0}
   totalWaves: 214700000
   portalDelay: 3
+  damageableTarget: {fileID: 0}
   firstWaveDelay: 8
 --- !u!1 &6024713401361933597
 GameObject:
@@ -577,6 +586,9 @@ MonoBehaviour:
   warningLinePrefab: {fileID: 3353942325497043272, guid: 1358afcdd8c717d45988c2dbc8ef08e3, type: 3}
   warningDuration: 1
   isVerticalShooter: 0
+  isLeftShooter: 0
+  minSpeed: 3
+  maxSpeed: 7.5
 --- !u!1 &6407735609233258225
 GameObject:
   m_ObjectHideFlags: 0
@@ -643,7 +655,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3b09504b5ca11964683f0a4ad30a6038, type: 2}
   m_sharedMaterial: {fileID: 5427248400293604217, guid: 3b09504b5ca11964683f0a4ad30a6038, type: 2}
@@ -652,8 +664,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190335
+  m_fontColor: {r: 1, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -677,8 +689,8 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -854,6 +866,9 @@ MonoBehaviour:
   warningLinePrefab: {fileID: 3353942325497043272, guid: 1358afcdd8c717d45988c2dbc8ef08e3, type: 3}
   warningDuration: 1
   isVerticalShooter: 0
+  isLeftShooter: 0
+  minSpeed: 3
+  maxSpeed: 7.5
 --- !u!1 &8878896777919881426
 GameObject:
   m_ObjectHideFlags: 0
@@ -956,6 +971,9 @@ MonoBehaviour:
   warningLinePrefab: {fileID: 3353942325497043272, guid: 1358afcdd8c717d45988c2dbc8ef08e3, type: 3}
   warningDuration: 1
   isVerticalShooter: 0
+  isLeftShooter: 0
+  minSpeed: 3
+  maxSpeed: 7.5
 --- !u!1 &9131312336225027806
 GameObject:
   m_ObjectHideFlags: 0
@@ -1058,6 +1076,9 @@ MonoBehaviour:
   warningLinePrefab: {fileID: 3353942325497043272, guid: 1358afcdd8c717d45988c2dbc8ef08e3, type: 3}
   warningDuration: 1
   isVerticalShooter: 0
+  isLeftShooter: 0
+  minSpeed: 3
+  maxSpeed: 7.5
 --- !u!1001 &1199909027306515384
 PrefabInstance:
   m_ObjectHideFlags: 0
