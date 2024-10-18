@@ -71,5 +71,10 @@ public class FlyingEyeShooting : MonoBehaviour
         {
             enemyProjectile.SetDirection(direction);
         }
+
+        // Rotate the projectile to face the direction it is moving
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        projectile.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
     }
+
 }

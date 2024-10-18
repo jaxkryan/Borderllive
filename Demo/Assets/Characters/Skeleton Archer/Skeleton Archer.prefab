@@ -116,7 +116,6 @@ GameObject:
   - component: {fileID: 1266914907660124597}
   - component: {fileID: 6940440872008874421}
   - component: {fileID: 401305541602428583}
-  - component: {fileID: 4904497027472304015}
   - component: {fileID: 4332968496349350974}
   - component: {fileID: 3244684145262270176}
   - component: {fileID: 7041029444694193168}
@@ -315,45 +314,6 @@ MonoBehaviour:
   _isGround: 1
   _isOnWall: 0
   _isOnCelling: 0
---- !u!114 &4904497027472304015
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2878712719979127204}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ebd0e8667e833c8478bddc9697e8c653, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damageableHit:
-    m_PersistentCalls:
-      m_Calls: []
-  damageableDeath:
-    m_PersistentCalls:
-      m_Calls: []
-  healthChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  dropItem1: {fileID: 0}
-  dropItem2: {fileID: 0}
-  isStunned: 0
-  stunDuration: 2
-  MaxHealthChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  _maxHealth: 100
-  _health: 100
-  _isAlive: 1
-  isInvincible: 0
-  invincibilityTime: 0.25
-  _isStun: 0
-  soulReward: 50
-  dropRateHealth1: 10
-  dropRateHealth2: 2
-  boostedDropRateHealth1: 100
-  boostedDropRateHealth2: 50
 --- !u!114 &4332968496349350974
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -500,7 +460,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce64ea0047bc12d44ba8cd329723181d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 421226511029679588, guid: 712bf81aae92a064a9ed08c64290d515, type: 3}
+  projectilePrefab: {fileID: 1046279769132067562, guid: 712bf81aae92a064a9ed08c64290d515, type: 3}
   projectilePos: {fileID: 2097253889301650963}
   cooldown: 3
   distance: 10
