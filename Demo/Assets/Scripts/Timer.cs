@@ -57,7 +57,7 @@ public class Timer : MonoBehaviour
         PlayerPrefs.Save();
 
         // Save the elapsed time as a formatted string
-        string formattedTime = $"{elapsedMilliseconds / 1000f:F2} seconds"; // Convert to seconds for display
+        string formattedTime = $"{elapsedMilliseconds / 1000f:F2} s"; // Convert to seconds for display
         PlayerPrefs.SetString(ElapsedTimeKey, formattedTime);
         PlayerPrefs.Save();
 
@@ -87,25 +87,26 @@ public class Timer : MonoBehaviour
 
         // Convert milliseconds to seconds (1 second = 1000 milliseconds)
         float elapsedSeconds = elapsedMilliseconds / 1000f;
-
-        // Calculate currency: 1 second = 2 currency
-        int currencyToAdd = (int)(elapsedSeconds * 2); // Multiply seconds by 2
-
-        // Check if PremiumCurrency key exists, if not set it to 0
-        if (!PlayerPrefs.HasKey("PremiumCurrency"))
+        if (PlayerPrefs.GetInt("PlayerDied", 0) == 1) // Check the key
         {
-            PlayerPrefs.SetInt("PremiumCurrency", 0);
+            // Calculate currency: 1 second = 2 currency
+            int currencyToAdd = (int)(elapsedSeconds * 2); // Multiply seconds by 2
+
+            // Check if PremiumCurrency key exists, if not set it to 0
+            if (!PlayerPrefs.HasKey("PremiumCurrency"))
+            {
+                PlayerPrefs.SetInt("PremiumCurrency", 0);
+            }
+
+            // Retrieve the current currency and update it
+            int currentCurrency = PlayerPrefs.GetInt("PremiumCurrency");
+
+            PlayerPrefs.SetInt("PremiumCurrency", currentCurrency + currencyToAdd);
+            PlayerPrefs.Save(); // Save the changes to PlayerPrefs
+            // Optionally, you can log the current currency
+            UnityEngine.Debug.Log($"Updated Premium Currency: {currentCurrency + currencyToAdd}");
         }
 
-        // Retrieve the current currency and update it
-        int currentCurrency = PlayerPrefs.GetInt("PremiumCurrency");
-        PlayerPrefs.SetInt("PremiumCurrency", currentCurrency + currencyToAdd);
-        PlayerPrefs.Save(); // Save the changes to PlayerPrefs
-
-        UnityEngine.Debug.Log($"Updated Premium Currency: {currentCurrency + currencyToAdd}");
-
-        // Reset the PlayerDied key
-        PlayerPrefs.SetInt("PlayerDied", 0);
     }
 
     // Handle game focus loss (Alt-Tab out) and pause
