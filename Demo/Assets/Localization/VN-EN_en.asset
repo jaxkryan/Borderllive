@@ -188,6 +188,10 @@ MonoBehaviour:
     m_Localized: You have not received any power-ups!
     m_Metadata:
       m_Items: []
+  - m_Id: 4711348012040192
+    m_Localized: and movement key to dash
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

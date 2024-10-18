@@ -192,6 +192,11 @@ MonoBehaviour:
     m_Localized: "Ch\u01B0a nh\u1EADn b\u1EA5t k\xEC ch\xFAc ph\xFAc n\xE0o."
     m_Metadata:
       m_Items: []
+  - m_Id: 4711348012040192
+    m_Localized: "v\xE0 ph\xEDm di chuy\u1EC3n \u0111\u1EC3 l\u01B0\u1EDBt theo h\u01B0\u1EDBng
+      ch\u1EC9 \u0111\u1ECBnh"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
