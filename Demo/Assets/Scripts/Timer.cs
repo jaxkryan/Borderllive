@@ -10,6 +10,7 @@ public class Timer : MonoBehaviour
     private const string TimerKey = "SavedTime";  // Key for storing saved time
     private const string ElapsedTimeKey = "ElapsedTime"; // Key for storing elapsed time as string
     private long savedTime = 0;  // Time loaded from PlayerPrefs
+    private bool isPaused = false; // Track if the game is paused
 
     void Start()
     {
@@ -27,6 +28,8 @@ public class Timer : MonoBehaviour
 
     void Update()
     {
+        if (isPaused) return; // Skip updating when paused
+
         // Get the current stopwatch elapsed time + previously saved time
         long elapsedMilliseconds = savedTime + stopwatch.ElapsedMilliseconds;
 
@@ -74,6 +77,7 @@ public class Timer : MonoBehaviour
         UnityEngine.Debug.Log("Time reset");
     }
 
+    // Method triggered when the player dies
     public void OnPlayerDie()
     {
         SaveTime(); // Save the time when the player dies
@@ -83,29 +87,72 @@ public class Timer : MonoBehaviour
 
         // Convert milliseconds to seconds (1 second = 1000 milliseconds)
         float elapsedSeconds = elapsedMilliseconds / 1000f;
-        if (PlayerPrefs.GetInt("PlayerDied", 0) == 1) // Check the key
+
+        // Calculate currency: 1 second = 2 currency
+        int currencyToAdd = (int)(elapsedSeconds * 2); // Multiply seconds by 2
+
+        // Check if PremiumCurrency key exists, if not set it to 0
+        if (!PlayerPrefs.HasKey("PremiumCurrency"))
         {
-            // Calculate currency: 1 second = 2 currency
-            int currencyToAdd = (int)(elapsedSeconds * 2); // Multiply seconds by 2
-
-            // Check if PremiumCurrency key exists, if not set it to 0
-            if (!PlayerPrefs.HasKey("PremiumCurrency"))
-            {
-                PlayerPrefs.SetInt("PremiumCurrency", 0);
-            }
-
-            // Retrieve the current currency and update it
-            int currentCurrency = PlayerPrefs.GetInt("PremiumCurrency");
-
-            PlayerPrefs.SetInt("PremiumCurrency", currentCurrency + currencyToAdd);
-            PlayerPrefs.Save(); // Save the changes to PlayerPrefs
-            // Optionally, you can log the current currency
-            UnityEngine.Debug.Log($"Updated Premium Currency: {currentCurrency + currencyToAdd}");
+            PlayerPrefs.SetInt("PremiumCurrency", 0);
         }
 
-        // After processing the player death, reset the key
-        PlayerPrefs.SetInt("PlayerDied", 0); // Reset the key for the next event
+        // Retrieve the current currency and update it
+        int currentCurrency = PlayerPrefs.GetInt("PremiumCurrency");
+        PlayerPrefs.SetInt("PremiumCurrency", currentCurrency + currencyToAdd);
+        PlayerPrefs.Save(); // Save the changes to PlayerPrefs
+
+        UnityEngine.Debug.Log($"Updated Premium Currency: {currentCurrency + currencyToAdd}");
+
+        // Reset the PlayerDied key
+        PlayerPrefs.SetInt("PlayerDied", 0);
     }
 
+    // Handle game focus loss (Alt-Tab out) and pause
+    void OnApplicationPause(bool isPaused)
+    {
+        if (isPaused)
+        {
+            PauseTimer();
+        }
+        else
+        {
+            ResumeTimer();
+        }
+    }
 
+    // Handle when the application gains or loses focus
+    void OnApplicationFocus(bool hasFocus)
+    {
+        if (!hasFocus)
+        {
+            PauseTimer(); // Pause when losing focus
+        }
+        else
+        {
+            ResumeTimer(); // Resume when focus is regained
+        }
+    }
+
+    // Pauses the stopwatch
+    private void PauseTimer()
+    {
+        if (!isPaused)
+        {
+            stopwatch.Stop();
+            isPaused = true;
+            UnityEngine.Debug.Log("Timer paused");
+        }
+    }
+
+    // Resumes the stopwatch
+    private void ResumeTimer()
+    {
+        if (isPaused)
+        {
+            stopwatch.Start();
+            isPaused = false;
+            UnityEngine.Debug.Log("Timer resumed");
+        }
+    }
 }
