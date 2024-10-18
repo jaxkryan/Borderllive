@@ -1226,6 +1226,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boss
       objectReference: {fileID: 0}
+    - target: {fileID: 5407421217745665892, guid: 11938f2e35f943744a4874dcbc5a45fd, type: 3}
+      propertyPath: BaseStrength_PerLevel
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5407421217745665892, guid: 11938f2e35f943744a4874dcbc5a45fd, type: 3}
+      propertyPath: StrengthToDamageConversion
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6137101562887568847, guid: 11938f2e35f943744a4874dcbc5a45fd, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
