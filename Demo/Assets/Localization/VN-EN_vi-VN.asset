@@ -188,6 +188,10 @@ MonoBehaviour:
     m_Localized: "V\u1EADt ph\u1EA9m \u0111\u1EB7c bi\u1EC7t"
     m_Metadata:
       m_Items: []
+  - m_Id: 4706352533061632
+    m_Localized: "Ch\u01B0a nh\u1EADn b\u1EA5t k\xEC ch\xFAc ph\xFAc n\xE0o."
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
