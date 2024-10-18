@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class FlyingEyeShooting : MonoBehaviour
@@ -47,15 +48,20 @@ public class FlyingEyeShooting : MonoBehaviour
         timer += Time.deltaTime;
 
         // Check if the player is within the detection zone
-        HasTarget = shootingDetectionZone.detectedColliders.Count > 0;
+        Collider2D playerCollider = shootingDetectionZone.detectedColliders.FirstOrDefault(collider => collider.CompareTag("Player"));
+        HasTarget = playerCollider != null; // True if player is found in detected colliders
+
+        // Check cooldown before shooting
         if (timer > cooldown)
         {
             if (HasTarget)
             {
+                // Reset the timer when a player is detected and cooldown is met
                 timer = 0;
             }
         }
     }
+
 
     void ShootProjectile()
     {
