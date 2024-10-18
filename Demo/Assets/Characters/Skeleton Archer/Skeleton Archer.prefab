@@ -212,7 +212,7 @@ Animator:
   m_GameObject: {fileID: 2878712719979127204}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 44bba283814029c4f9553fa786bd82bb, type: 2}
+  m_Controller: {fileID: 9100000, guid: 14503e19cca43964ab9a73e56e0ae6a7, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -366,8 +366,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15b13fa5f0f8e5949b0bc8094b9d04e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackZone: {fileID: 477284626354402339, guid: 31aaaa7db57d06b46a3cd5f3cf3d4a41, type: 3}
-  cliffDetectionZone: {fileID: 2918008427032465300, guid: 31aaaa7db57d06b46a3cd5f3cf3d4a41, type: 3}
+  attackZone: {fileID: 2788638357854697970}
+  cliffDetectionZone: {fileID: 444416490382435070}
   walkStopRate: 0.05
   isBoss: 0
   chaseZone: {fileID: 6081551748889862786, guid: 31aaaa7db57d06b46a3cd5f3cf3d4a41, type: 3}
@@ -500,7 +500,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce64ea0047bc12d44ba8cd329723181d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 1338527739506778704, guid: e3288aeb01c74b24f92e08694114c631, type: 3}
+  projectilePrefab: {fileID: 421226511029679588, guid: 712bf81aae92a064a9ed08c64290d515, type: 3}
   projectilePos: {fileID: 2097253889301650963}
   cooldown: 3
   distance: 10
@@ -531,7 +531,7 @@ Transform:
   m_GameObject: {fileID: 4278181710429041646}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 53, y: 24, z: 0}
+  m_LocalPosition: {x: 132, y: 24, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -630,16 +630,9 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.56551415, y: 2.8850477}
-      - {x: -2.069518, y: 2.6339092}
-      - {x: -2.1272404, y: 1.641545}
-      - {x: -1.7970058, y: 1.5462787}
-      - {x: -1.8060981, y: 2.5034583}
-      - {x: -0.888577, y: 2.3777752}
-      - {x: -0.31667724, y: 2.405416}
-      - {x: -0.33810216, y: 1.7003285}
-      - {x: -0.009146139, y: 1.4216229}
-      - {x: -0.04173486, y: 2.822414}
+    - - {x: -1.1684008, y: 1.8527075}
+      - {x: -1.2147403, y: 2.365501}
+      - {x: -1.1733582, y: 0.1962688}
   m_UseDelaunayMesh: 0
 --- !u!1 &5856991334790655908
 GameObject:
@@ -668,7 +661,7 @@ Transform:
   m_GameObject: {fileID: 5856991334790655908}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.5, y: 0, z: 0}
+  m_LocalPosition: {x: 173, y: 0, z: 0}
   m_LocalScale: {x: 120, y: 30, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -706,7 +699,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.16052938, y: 0.47479194}
+  m_Offset: {x: 3.8899117, y: 0.47479194}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -717,7 +710,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.0032353, y: 0.87917864}
+  m_Size: {x: 6.865526, y: 0.87917864}
   m_EdgeRadius: 0
 --- !u!114 &2788638357854697970
 MonoBehaviour:

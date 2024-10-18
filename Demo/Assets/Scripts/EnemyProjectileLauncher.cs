@@ -1,7 +1,5 @@
 using UnityEngine;
 using System.Collections;
-using Unity.Mathematics;
-
 
 public class EnemyProjectileLauncher : MonoBehaviour
 {
@@ -10,6 +8,11 @@ public class EnemyProjectileLauncher : MonoBehaviour
     public GameObject warningLinePrefab; // Reference to the warning line prefab
     public float warningDuration = 1f;   // Duration the warning will be shown before firing
     public bool isVerticalShooter = false; // Set to true for vertical shooting (up/down), false for horizontal
+
+    public bool isLeftShooter = false; // Set to true for left shooter, false for right shooter
+
+    public float minSpeed = 3f;  // Minimum speed for projectile
+    public float maxSpeed = 7.5f; // Maximum speed for projectile
 
     public void FireProjectile()
     {
@@ -38,17 +41,31 @@ public class EnemyProjectileLauncher : MonoBehaviour
         GameObject projectileInstance = Instantiate(projectilePrefab, launchPoint.position, Quaternion.identity);
 
         EnemyProjectile projectile = projectileInstance.GetComponent<EnemyProjectile>();
-        projectile.speed = UnityEngine.Random.Range(2.8f, 8.5f) * 10;
+
         if (projectile != null)
         {
-            // Set direction based on whether it's vertical or horizontal
+            // Step 4: Determine speed for the projectile
+            float speed;
+            if (Random.value < 0.05f) // 5% chance
+            {
+                speed = 20f; // Extremely slow speed
+            }
+            else
+            {
+                speed = UnityEngine.Random.Range(minSpeed, maxSpeed);
+                speed = Mathf.Min(speed * 10, 85); // Set the speed, ensuring it does not exceed 85
+            }
+            projectile.speed = speed;
+
+            // Step 5: Set direction based on whether it's vertical or horizontal
             if (isVerticalShooter)
             {
                 projectile.direction = Vector2.down; // Shoot downward (for top-to-bottom shooting)
             }
             else
             {
-                projectile.direction = Vector2.right * (transform.localScale.x > 0 ? 1f : -1f); // Shoot horizontally
+                // Shoot left for left shooter, right for right shooter
+                projectile.direction = isLeftShooter ? Vector2.left : Vector2.right;
             }
         }
     }

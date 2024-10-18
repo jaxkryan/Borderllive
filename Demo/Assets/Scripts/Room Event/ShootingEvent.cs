@@ -3,10 +3,12 @@ using UnityEngine.UI; // For working with UI elements
 using System.Collections.Generic;
 using System.Collections;
 using TMPro;
+using System.Linq;
 
 public class ShootingEvent : MonoBehaviour
 {
-    public List<GameObject> horizontalShooters; // List of horizontal shooters
+    public List<GameObject> leftShooters; // List of left shooters
+    public List<GameObject> rightShooters; // List of right shooters
     public List<GameObject> verticalShooters;   // List of vertical shooters
     public GameObject portal;                   // Portal GameObject that will appear after waves are completed
     public TMP_Text messageText;                // UI Text to display messages
@@ -18,6 +20,8 @@ public class ShootingEvent : MonoBehaviour
     private int currentWave = 0;                // Track the current wave number
     private bool firstWaveStarted = false;      // Check if the first wave has started
     public float firstWaveDelay = 8f;           // Delay before the first wave
+
+    private float projectileSpeedIncrement = 0f; // Cumulative increase in projectile speed
 
     void Start()
     {
@@ -41,7 +45,7 @@ public class ShootingEvent : MonoBehaviour
                 FireRandomPattern();
                 currentWave++;
 
-                timer = 3f;               // Set timer for next wave to normal interval
+                timer = 3f; // Set timer for next wave to normal interval
                 if (messageText != null)
                 {
                     messageText.gameObject.SetActive(false); // Deactivate the messageText after the first wave starts
@@ -52,13 +56,14 @@ public class ShootingEvent : MonoBehaviour
             if (firstWaveStarted && timer <= 0f)
             {
                 FireRandomPattern();
-                timer = Random.Range(2, 5);
+                timer = Random.Range(2, 5); // Normal interval between waves
                 currentWave++;
 
-                // Check if 5 rounds have been completed, then heal
+                // Increase projectile speed after every 5 rounds
                 if (currentWave % 5 == 0)
                 {
-                    HealDamageable(); // Call healing after every 5 rounds
+                    projectileSpeedIncrement += 1f; // Increase speed by 1f after every 5 waves
+                    HealDamageable();        // Heal the damageable target
                 }
 
                 // If the last wave has been reached, wait and then activate the portal
@@ -72,32 +77,78 @@ public class ShootingEvent : MonoBehaviour
 
     void FireRandomPattern()
     {
-        int pattern = Random.Range(0, 5); // There are 4 possible patterns
+        // Define patterns and their associated weights
+        Dictionary<string, int> patterns = new Dictionary<string, int>
+    {
+        { "1L 1R", 10 },
+        { "1L 2V", 20 },
+        { "1R 2V", 20 },
+        { "3V", 15 },
+        { "2V", 15 },
+        { "1L 1R 1V", 10 },
+        { "1L 1R 2V", 10 }
+    };
 
-        switch (pattern)
+        string selectedPattern = SelectPattern(patterns);
+
+        // Parse the selected pattern and fire projectiles accordingly
+        string[] commands = selectedPattern.Split(' ');
+
+        foreach (string command in commands)
         {
-            case 0: // 1 horizontal
-                FireHorizontal(1);
-                break;
-            case 1: // 2 vertical
-                FireVertical(2);
-                break;
-            case 2: // 1 horizontal and 1 vertical
-                FireHorizontal(1);
-                FireVertical(1);
-                break;
-            case 3: // 1 horizontal and 2 vertical
-                FireHorizontal(1);
-                FireVertical(2);
-                break;
-            case 4: // 3 vertical
-                FireVertical(3);
-                break;
+            if (command == "1L")
+            {
+                FireLeft(1);
+            }
+            else if (command == "1R")
+            {
+                FireRight(1);
+            }
+            else if (command.StartsWith("2V"))
+            {
+                int count = int.Parse(command[0].ToString());
+                FireVertical(count);
+            }
+            else if (command.StartsWith("3V"))
+            {
+                int count = int.Parse(command[0].ToString());
+                FireVertical(count);
+            }
         }
     }
 
+    // Method to select a pattern based on weighted probabilities
+    private string SelectPattern(Dictionary<string, int> patterns)
+    {
+        int totalWeight = 0;
+
+        // Calculate the total weight
+        foreach (var weight in patterns.Values)
+        {
+            totalWeight += weight;
+        }
+
+        // Select a random value
+        int randomValue = Random.Range(0, totalWeight);
+        int cumulativeWeight = 0;
+
+        // Find which pattern corresponds to the random value
+        foreach (var pattern in patterns)
+        {
+            cumulativeWeight += pattern.Value;
+            if (randomValue < cumulativeWeight)
+            {
+                return pattern.Key; // Return the selected pattern
+            }
+        }
+
+        return patterns.Keys.First(); // Fallback in case something goes wrong
+    }
+
+
     private BuffSelectionUI buffSelectionUI; // Reference to the buff selection UI
     private CurrencyManager currencyManager;
+
     void Reward()
     {
         if (buffSelectionUI != null)
@@ -110,15 +161,33 @@ public class ShootingEvent : MonoBehaviour
         }
     }
 
-    void FireHorizontal(int count)
+    void FireLeft(int count)
     {
-        List<GameObject> selectedShooters = GetRandomShooters(horizontalShooters, count);
+        List<GameObject> selectedShooters = GetRandomShooters(leftShooters, count);
         foreach (GameObject shooter in selectedShooters)
         {
             EnemyProjectileLauncher launcher = shooter.GetComponent<EnemyProjectileLauncher>();
             if (launcher != null)
             {
                 launcher.isVerticalShooter = false; // Ensure it's set to horizontal
+                launcher.minSpeed += projectileSpeedIncrement; // Apply the speed increment
+                launcher.maxSpeed += projectileSpeedIncrement;
+                launcher.FireProjectile();
+            }
+        }
+    }
+
+    void FireRight(int count)
+    {
+        List<GameObject> selectedShooters = GetRandomShooters(rightShooters, count);
+        foreach (GameObject shooter in selectedShooters)
+        {
+            EnemyProjectileLauncher launcher = shooter.GetComponent<EnemyProjectileLauncher>();
+            if (launcher != null)
+            {
+                launcher.isVerticalShooter = false; // Ensure it's set to horizontal
+                launcher.minSpeed += projectileSpeedIncrement; // Apply the speed increment
+                launcher.maxSpeed += projectileSpeedIncrement;
                 launcher.FireProjectile();
             }
         }
@@ -133,6 +202,8 @@ public class ShootingEvent : MonoBehaviour
             if (launcher != null)
             {
                 launcher.isVerticalShooter = true; // Ensure it's set to vertical
+                launcher.minSpeed += projectileSpeedIncrement; // Apply the speed increment
+                launcher.maxSpeed += projectileSpeedIncrement;
                 launcher.FireProjectile();
             }
         }
@@ -177,7 +248,7 @@ public class ShootingEvent : MonoBehaviour
         }
     }
 
-    // Method to heal the Damageable GameObject after every 5 rounds
+    // Method to heal the Damageable GameObject
     void HealDamageable()
     {
         if (damageableTarget != null)
@@ -185,8 +256,7 @@ public class ShootingEvent : MonoBehaviour
             Damageable damageable = damageableTarget.GetComponent<Damageable>();
             if (damageable != null)
             {
-                damageable.Heal(20); // Heal the Damageable by 10
-                Debug.Log("Damageable target healed by 10 after 5 rounds.");
+                damageable.Heal(5);
             }
             else
             {

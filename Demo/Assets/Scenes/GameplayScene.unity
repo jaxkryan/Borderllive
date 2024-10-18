@@ -338,6 +338,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AttackBuff: {fileID: 11400000, guid: f13ea904223cc0a4d8464a21739d602a, type: 2}
+  attackDamage: 0
   knockback: {x: 0, y: 0}
 --- !u!1 &470314287
 GameObject:
@@ -1593,7 +1594,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!95 &713646001
 Animator:
   serializedVersion: 5
@@ -3399,6 +3400,63 @@ MonoBehaviour:
   m_BoundingShape2D: {fileID: 470314288}
   m_Damping: 0.5
   m_MaxWindowSize: -1
+--- !u!1001 &933276479
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2878712719979127204, guid: 351d650d7d9377d4fbf30aa8a226a0f2, type: 3}
+      propertyPath: m_Name
+      value: Skeleton Archer
+      objectReference: {fileID: 0}
+    - target: {fileID: 4073584757197811603, guid: 351d650d7d9377d4fbf30aa8a226a0f2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.639025
+      objectReference: {fileID: 0}
+    - target: {fileID: 4073584757197811603, guid: 351d650d7d9377d4fbf30aa8a226a0f2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.19247615
+      objectReference: {fileID: 0}
+    - target: {fileID: 4073584757197811603, guid: 351d650d7d9377d4fbf30aa8a226a0f2, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4073584757197811603, guid: 351d650d7d9377d4fbf30aa8a226a0f2, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4073584757197811603, guid: 351d650d7d9377d4fbf30aa8a226a0f2, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4073584757197811603, guid: 351d650d7d9377d4fbf30aa8a226a0f2, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4073584757197811603, guid: 351d650d7d9377d4fbf30aa8a226a0f2, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4073584757197811603, guid: 351d650d7d9377d4fbf30aa8a226a0f2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4073584757197811603, guid: 351d650d7d9377d4fbf30aa8a226a0f2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4073584757197811603, guid: 351d650d7d9377d4fbf30aa8a226a0f2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 351d650d7d9377d4fbf30aa8a226a0f2, type: 3}
 --- !u!1 &1114267726
 GameObject:
   m_ObjectHideFlags: 0
@@ -4211,6 +4269,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: KnightEnemy
       objectReference: {fileID: 0}
+    - target: {fileID: 4591734722486170938, guid: 5ea0cd0f740626640b66130558b1eff0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6175207653020644567, guid: 5ea0cd0f740626640b66130558b1eff0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.55
@@ -4324,6 +4386,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  XPTranslation: {fileID: 0}
 --- !u!114 &4346159239403606724
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4521,3 +4584,4 @@ SceneRoots:
   - {fileID: 1813182880}
   - {fileID: 2574980130917455699}
   - {fileID: 713646003}
+  - {fileID: 933276479}

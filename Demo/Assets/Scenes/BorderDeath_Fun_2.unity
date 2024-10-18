@@ -249,6 +249,11 @@ Transform:
   - {fileID: 1595273504}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &147955477 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 431463170276418454, guid: 8d26a985fcf7e1a4a8de84102342f10c, type: 3}
+  m_PrefabInstance: {fileID: 1794678739053651083}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &218672229
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1147,6 +1152,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &961692434 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7613844804092904790, guid: 8d26a985fcf7e1a4a8de84102342f10c, type: 3}
+  m_PrefabInstance: {fileID: 1794678739053651083}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1007981497
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2831,29 +2841,29 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1322608464178386488, guid: 8d26a985fcf7e1a4a8de84102342f10c, type: 3}
-      propertyPath: m_fontColor.b
-      value: 0
+    - target: {fileID: 163780958589230215, guid: 8d26a985fcf7e1a4a8de84102342f10c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 12.51
       objectReference: {fileID: 0}
-    - target: {fileID: 1322608464178386488, guid: 8d26a985fcf7e1a4a8de84102342f10c, type: 3}
-      propertyPath: m_fontColor.g
-      value: 0
+    - target: {fileID: 163780958589230215, guid: 8d26a985fcf7e1a4a8de84102342f10c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.03
       objectReference: {fileID: 0}
-    - target: {fileID: 1322608464178386488, guid: 8d26a985fcf7e1a4a8de84102342f10c, type: 3}
-      propertyPath: m_fontColor.r
+    - target: {fileID: 163780958589230215, guid: 8d26a985fcf7e1a4a8de84102342f10c, type: 3}
+      propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1322608464178386488, guid: 8d26a985fcf7e1a4a8de84102342f10c, type: 3}
-      propertyPath: m_fontColor32.rgba
-      value: 4278190335
+    - target: {fileID: 163780958589230215, guid: 8d26a985fcf7e1a4a8de84102342f10c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1322608464178386488, guid: 8d26a985fcf7e1a4a8de84102342f10c, type: 3}
-      propertyPath: m_VerticalAlignment
-      value: 512
+    - target: {fileID: 163780958589230215, guid: 8d26a985fcf7e1a4a8de84102342f10c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1322608464178386488, guid: 8d26a985fcf7e1a4a8de84102342f10c, type: 3}
-      propertyPath: m_HorizontalAlignment
-      value: 2
+    - target: {fileID: 201906828826464413, guid: 8d26a985fcf7e1a4a8de84102342f10c, type: 3}
+      propertyPath: isVerticalShooter
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2039085856820248502, guid: 8d26a985fcf7e1a4a8de84102342f10c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2895,6 +2905,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2782073201385326740, guid: 8d26a985fcf7e1a4a8de84102342f10c, type: 3}
+      propertyPath: isVerticalShooter
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2943025125205175334, guid: 8d26a985fcf7e1a4a8de84102342f10c, type: 3}
+      propertyPath: isVerticalShooter
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3042185084440046035, guid: 8d26a985fcf7e1a4a8de84102342f10c, type: 3}
+      propertyPath: isLeftShooter
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4633548767511022065, guid: 8d26a985fcf7e1a4a8de84102342f10c, type: 3}
+      propertyPath: isVerticalShooter
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5167073246253350396, guid: 8d26a985fcf7e1a4a8de84102342f10c, type: 3}
       propertyPath: m_Name
       value: ShootingEvent
@@ -2935,6 +2961,30 @@ PrefabInstance:
       propertyPath: damageableTarget
       value: 
       objectReference: {fileID: 218672230}
+    - target: {fileID: 7826515680685255673, guid: 8d26a985fcf7e1a4a8de84102342f10c, type: 3}
+      propertyPath: leftShooters.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7826515680685255673, guid: 8d26a985fcf7e1a4a8de84102342f10c, type: 3}
+      propertyPath: rightShooters.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7826515680685255673, guid: 8d26a985fcf7e1a4a8de84102342f10c, type: 3}
+      propertyPath: leftShooters.Array.data[0]
+      value: 
+      objectReference: {fileID: 147955477}
+    - target: {fileID: 7826515680685255673, guid: 8d26a985fcf7e1a4a8de84102342f10c, type: 3}
+      propertyPath: rightShooters.Array.data[0]
+      value: 
+      objectReference: {fileID: 961692434}
+    - target: {fileID: 8007457428536320734, guid: 8d26a985fcf7e1a4a8de84102342f10c, type: 3}
+      propertyPath: isLeftShooter
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8949597709701001621, guid: 8d26a985fcf7e1a4a8de84102342f10c, type: 3}
+      propertyPath: isVerticalShooter
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
