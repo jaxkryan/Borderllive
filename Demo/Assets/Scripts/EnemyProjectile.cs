@@ -4,9 +4,9 @@ public class EnemyProjectile : MonoBehaviour
 {
     public int baseDamage = 30; // Base damage of the projectile
     public int additionalDamage = 0; // Additional damage that can be modified externally
+    public bool maxHealthDamage = true; // Determines if the damage is based on max health
 
     public Vector2 direction = Vector2.right; // Default direction is to the right
-
     public float speed = 8f; // Speed of the projectile
     public Vector2 knockback = new Vector2(0, 0); // Knockback applied to hit objects
 
@@ -31,26 +31,31 @@ public class EnemyProjectile : MonoBehaviour
         if (damageable != null)
         {
             CharacterStat stat = collision.GetComponent<CharacterStat>();
-            if(stat != null)
+            if (stat != null)
             {
-                
-            // Calculate total damage (baseDamage + additionalDamage)
-            int totalDamage = baseDamage + additionalDamage + (int)stat.DEF +(int) (stat.MaxHealth * 0.2);
+                // Calculate total damage based on whether maxHealthDamage is true or false
+                int totalDamage = baseDamage + additionalDamage + (int)stat.DEF;
 
-            // Apply knockback in the same direction as the projectile's direction
-            Vector2 deliveredKnockback = direction.normalized * knockback.magnitude;
+                // Apply max health scaling if maxHealthDamage is true
+                if (maxHealthDamage)
+                {
+                    totalDamage += (int)(stat.MaxHealth * 0.2f);
+                }
 
-            // Apply the damage and knockback to the Damageable object
-            bool gotHit = damageable.Hit(totalDamage, deliveredKnockback);
+                // Apply knockback in the same direction as the projectile's direction
+                Vector2 deliveredKnockback = direction.normalized * knockback.magnitude;
 
-            // If the object got hit, log the damage dealt
-            if (gotHit)
-                Debug.Log(collision.name + " hit for " + totalDamage + " damage");
+                // Apply the damage and knockback to the Damageable object
+                bool gotHit = damageable.Hit(totalDamage, deliveredKnockback);
 
-            // Destroy the projectile after hitting
-            Destroy(gameObject);
+                // If the object got hit, log the damage dealt
+                if (gotHit)
+                    Debug.Log(collision.name + " hit for " + totalDamage + " damage");
+
+                // Destroy the projectile after hitting
+                Destroy(gameObject);
             }
-        } 
+        }
     }
 
     // Method to set additional damage from another script
@@ -63,5 +68,11 @@ public class EnemyProjectile : MonoBehaviour
     public void SetDirection(Vector2 newDirection)
     {
         direction = newDirection.normalized;
+    }
+
+    // Method to set whether max health scaling is applied
+    public void SetMaxHealthDamage(bool enableMaxHealthDamage)
+    {
+        maxHealthDamage = enableMaxHealthDamage;
     }
 }

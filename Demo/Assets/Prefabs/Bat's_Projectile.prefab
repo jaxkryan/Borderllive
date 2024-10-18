@@ -126,8 +126,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 906372502aa8afa44b50b642768002ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseDamage: 2
+  baseDamage: 22
   additionalDamage: 0
+  maxHealthDamage: 0
   direction: {x: 1, y: 0}
   speed: 4
   knockback: {x: 0, y: 0}
