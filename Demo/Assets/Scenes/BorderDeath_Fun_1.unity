@@ -682,6 +682,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c1ab7f72964dfb428b31ed4560b73c0, type: 3}
+--- !u!1 &218672230 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 353515804644235841, guid: 0c1ab7f72964dfb428b31ed4560b73c0, type: 3}
+  m_PrefabInstance: {fileID: 218672229}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &565919970
 GameObject:
   m_ObjectHideFlags: 0
@@ -3023,6 +3028,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: -9.47
       objectReference: {fileID: 0}
+    - target: {fileID: 7826515680685255673, guid: 8d26a985fcf7e1a4a8de84102342f10c, type: 3}
+      propertyPath: damageableTarget
+      value: 
+      objectReference: {fileID: 218672230}
     - target: {fileID: 7979402752491565646, guid: 8d26a985fcf7e1a4a8de84102342f10c, type: 3}
       propertyPath: m_FontData.m_Font
       value: 

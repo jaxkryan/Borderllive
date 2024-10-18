@@ -9,9 +9,10 @@ public class ShootingEvent : MonoBehaviour
     public List<GameObject> horizontalShooters; // List of horizontal shooters
     public List<GameObject> verticalShooters;   // List of vertical shooters
     public GameObject portal;                   // Portal GameObject that will appear after waves are completed
-    public TMP_Text messageText;                    // UI Text to display messages
+    public TMP_Text messageText;                // UI Text to display messages
     public int totalWaves = 5;                  // Total number of waves before the portal appears
     public float portalDelay = 3f;              // Delay before portal appears after final wave
+    public GameObject damageableTarget;         // Reference to the Damageable GameObject
 
     private float timer;
     private int currentWave = 0;                // Track the current wave number
@@ -51,8 +52,14 @@ public class ShootingEvent : MonoBehaviour
             if (firstWaveStarted && timer <= 0f)
             {
                 FireRandomPattern();
-                timer = Random.Range(2,5);
+                timer = Random.Range(2, 5);
                 currentWave++;
+
+                // Check if 5 rounds have been completed, then heal
+                if (currentWave % 5 == 0)
+                {
+                    HealDamageable(); // Call healing after every 5 rounds
+                }
 
                 // If the last wave has been reached, wait and then activate the portal
                 if (currentWave >= totalWaves)
@@ -97,7 +104,7 @@ public class ShootingEvent : MonoBehaviour
         {
             buffSelectionUI.ShowBuffChoices();
         }
-        if(currencyManager != null)
+        if (currencyManager != null)
         {
             currencyManager.AddCurrency(30);
         }
@@ -167,6 +174,28 @@ public class ShootingEvent : MonoBehaviour
             portal.SetActive(true);  // Activate the portal
             Reward();
             Debug.Log("Portal has been activated!");
+        }
+    }
+
+    // Method to heal the Damageable GameObject after every 5 rounds
+    void HealDamageable()
+    {
+        if (damageableTarget != null)
+        {
+            Damageable damageable = damageableTarget.GetComponent<Damageable>();
+            if (damageable != null)
+            {
+                damageable.Heal(20); // Heal the Damageable by 10
+                Debug.Log("Damageable target healed by 10 after 5 rounds.");
+            }
+            else
+            {
+                Debug.LogWarning("Damageable component not found on the target.");
+            }
+        }
+        else
+        {
+            Debug.LogWarning("No Damageable target assigned.");
         }
     }
 }
