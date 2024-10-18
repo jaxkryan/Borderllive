@@ -36,7 +36,7 @@ public class UIController : MonoBehaviour
     public void RestartBtn_Click()
     {
         LevelController.ResetStaticData();
-        if (PlayerPrefs.GetInt(doneTutorial, 0) == 0)
+        if (PlayerPrefs.GetInt(doneTutorial) == 0)
         {
             SceneManager.LoadScene("Room_Start_First");
         }

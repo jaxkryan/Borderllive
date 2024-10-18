@@ -11,7 +11,7 @@ public class Tutorial1 : MonoBehaviour
 
     void Update()
     {
-        if (!PlayerPrefs.HasKey(isFirstPlayKey) || PlayerPrefs.GetInt(isFirstPlayKey) == 0)
+        if (PlayerPrefs.HasKey(isFirstPlayKey) || PlayerPrefs.GetInt(isFirstPlayKey) == 1)
         {
             // Debug.Log("not first play");
             // First play, set the flag
@@ -21,6 +21,7 @@ public class Tutorial1 : MonoBehaviour
         }
         else
         {
+            PlayerPrefs.SetInt(isFirstPlayKey,1);
             // Debug.Log("yes first play");
             // Not the first play, show the game object
             gameObject.SetActive(true);

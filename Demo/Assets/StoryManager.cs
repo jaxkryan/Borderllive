@@ -160,8 +160,9 @@ public class StoryManager : MonoBehaviour
     public void LoadNextScene()
     {
         // Check if the player has interacted with a shop before
-        if (PlayerPrefs.GetInt(doneTutorial, 0) == 0)
+        if (PlayerPrefs.GetInt(doneTutorial) == 0)
         {
+            Debug.Log("Player pref: " + PlayerPrefs.GetInt(doneTutorial));
             SceneManager.LoadScene("Room_Start_First");  // Load first-time shop interaction room
         }
         else
