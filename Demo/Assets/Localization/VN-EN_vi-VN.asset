@@ -197,6 +197,28 @@ MonoBehaviour:
       ch\u1EC9 \u0111\u1ECBnh"
     m_Metadata:
       m_Items: []
+  - m_Id: 4716419139485696
+    m_Localized: "Ti\xEAu hao: {0} linh h\u1ED3n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4716439263756288
+    m_Localized: "\u0110\u1EC3 nh\u1EADn {0} XP?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4718208488292352
+    m_Localized: "Nh\u1EA5n Enter \u0111\u1EC3 x\xE1c nh\u1EADn."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4720870868893696
+    m_Localized: "B\u1EA1n c\xF3 th\u1EC3 \u0111\u1ED5i linh h\u1ED3n \u0111\u1EC3
+      l\u1EA5y kinh nghi\u1EC7m v\xE0 l\xEAn c\u1EA5p. Nh\u01B0ng \u0111\u1EEBng
+      qu\xEAn r\u1EB1ng linh h\u1ED3n c\u0169ng l\xE0 \u0111\u01A1n v\u1ECB \u0111\u1EC3
+      b\u1EA1n mua nh\u1EEFng v\u1EADt ph\u1EA9m h\u1ED7 tr\u1EE3 trong su\u1ED1t
+      chuy\u1EBFn h\xE0nh tr\xECnh. H\xE3y ti\xEAu d\xF9ng c\u1EA9n tr\u1ECDng, v\xEC
+      khi ch\u1EBFt, b\u1EA1n s\u1EBD m\u1EA5t to\xE0n b\u1ED9 c\u1EA5p \u0111\u1ED9,
+      linh h\u1ED3n v\xE0 v\u1EADt ph\u1EA9m."
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

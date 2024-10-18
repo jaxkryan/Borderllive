@@ -192,6 +192,25 @@ MonoBehaviour:
     m_Localized: and movement key to dash
     m_Metadata:
       m_Items: []
+  - m_Id: 4716419139485696
+    m_Localized: 'Spend: {0} souls'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4716439263756288
+    m_Localized: for {0} XP?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4718208488292352
+    m_Localized: Press Enter to confirm
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4720870868893696
+    m_Localized: You can exchange souls for experience and level up. But don't forget
+      that souls are also the currency used to purchase support items throughout
+      your journey. Spend wisely, because when you die, you will lose all levels,
+      souls, and items.
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

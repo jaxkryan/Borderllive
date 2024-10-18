@@ -189,6 +189,22 @@ MonoBehaviour:
     m_Key: Dash
     m_Metadata:
       m_Items: []
+  - m_Id: 4716419139485696
+    m_Key: AmountSoul
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4716439263756288
+    m_Key: AmountXP
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4718208488292352
+    m_Key: ConfirmAmount
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4720870868893696
+    m_Key: ConfirmAmtTutorial
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
