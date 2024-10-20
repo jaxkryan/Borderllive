@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class EnemySpawnerController : MonoBehaviour
 {
     public List<GameObject> enemyPrefabs; // List of enemy prefabs to spawn from
@@ -13,7 +13,9 @@ public class EnemySpawnerController : MonoBehaviour
     public float summonEffectDuration = 1f; // Duration of the summon effect animation
     public int totalWaves = 3; // Total number of waves (can be modified)
     public GameObject portal; // Portal GameObject to activate when waves are complete
+    private int remainingEnemy;
 
+    private int totalEnemies;
     private int waveNumber = 0; // Current wave number
     private int activeEnemies = 0; // Active enemy count
     private Coroutine spawnCoroutine; // Coroutine reference for spawning waves
@@ -37,7 +39,21 @@ public class EnemySpawnerController : MonoBehaviour
             spawnCoroutine = null;
         }
     }
-
+    // private void Update()
+    // {
+    //     if (SceneManager.GetActiveScene().name == "Endless")
+    //     {
+    //         if (Damageable.defeatedEnemyCount == totalEnemies)
+    //         {
+    //             // ShowBuffSelection();
+    //             ResetSpawner();
+    //             Debug.Log("total: " + totalEnemies);
+    //             Debug.Log("enemy per wave: " + totalEnemies);
+    //         }
+    //         // Debug.Log("Defeat: " + Damageable.defeatedEnemyCount);
+    //         //  Debug.Log("enemy per wave: " +totalWaves*spawnPointsPerWave);
+    //     }
+    // }
     void Start()
     {
         // Disable the portal at the start of the game
@@ -46,11 +62,12 @@ public class EnemySpawnerController : MonoBehaviour
             portal.SetActive(false); // Deactivate the portal initially
         }
 
-        
+        //remainingEnemy = totalWaves * spawnPointsPerWave;
     }
 
-    IEnumerator SpawnWaves()
+    public IEnumerator SpawnWaves()
     {
+        totalEnemies += totalWaves * spawnPointsPerWave;
         while (waveNumber < totalWaves)
         {
             // Spawn enemies for the current wave
@@ -62,7 +79,7 @@ public class EnemySpawnerController : MonoBehaviour
                     StartCoroutine(SpawnEnemyWithEffect(selectedSpawnPoints[i]));
 
                     // Optionally, add a small delay between spawning each enemy to stagger them
-                    yield return new WaitForSeconds(0.5f);
+                    yield return new WaitForSeconds(0.3f);
                 }
             }
 
@@ -84,6 +101,21 @@ public class EnemySpawnerController : MonoBehaviour
         {
             ActivatePortal();
             ShowBuffSelection();
+            Debug.Log(Damageable.defeatedEnemyCount + " " + totalEnemies);
+            if (SceneManager.GetActiveScene().name == "Endless")
+            {
+                if (Damageable.defeatedEnemyCount == totalEnemies)
+                {
+                    // ShowBuffSelection();
+                    ResetSpawner();
+                    Debug.Log("total: " + totalEnemies);
+                    Debug.Log("enemy per wave: " + totalEnemies);
+                }
+                // Debug.Log("Defeat: " + Damageable.defeatedEnemyCount);
+                //  Debug.Log("enemy per wave: " +totalWaves*spawnPointsPerWave);
+            }
+            Debug.Log("Done wave");
+            //ResetSpawner();
         }
     }
 
@@ -176,6 +208,16 @@ public class EnemySpawnerController : MonoBehaviour
         }
 
         return selectedPoints;
+    }
+    public void ResetSpawner()
+    {
+        // waveNumber = 0; // Reset the wave number
+        activeEnemies = 0; // Reset the active enemies count
+        totalWaves++;
+        waveNumber=0;
+        // remainingEnemy = totalWaves * spawnPointsPerWave; // Reset remaining enemies
+        // Optionally, restart the spawning process
+        StartCoroutine(SpawnWaves());
     }
 }
 

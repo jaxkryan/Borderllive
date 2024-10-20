@@ -219,6 +219,14 @@ MonoBehaviour:
       linh h\u1ED3n v\xE0 v\u1EADt ph\u1EA9m."
     m_Metadata:
       m_Items: []
+  - m_Id: 4835100155711488
+    m_Localized: "V\xF2ng l\u1EB7p v\xF4 h\u1EA1n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4841400755294208
+    m_Localized: "O\xE1n linh b\u1ECB h\u1EA1 g\u1EE5c {0}"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

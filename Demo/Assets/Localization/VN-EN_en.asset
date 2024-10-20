@@ -211,6 +211,14 @@ MonoBehaviour:
       souls, and items.
     m_Metadata:
       m_Items: []
+  - m_Id: 4835100155711488
+    m_Localized: Endless Horde
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4841400755294208
+    m_Localized: 'Wraith defeated: {0}'
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

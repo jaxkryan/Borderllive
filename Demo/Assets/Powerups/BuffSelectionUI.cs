@@ -37,8 +37,9 @@ public class BuffSelectionUI : MonoBehaviour
         {
             ownedPowerups = FindObjectOfType<OwnedPowerups>();
         }
-
         currentBuffChoices = buffPool.GetRandomBuffs(3); // Get 3 random buffs
+        Debug.Log(currentBuffChoices.Length);
+
         if (currentBuffChoices.Length != 0)
         {
             buffSelectionPanel.SetActive(true);
@@ -59,6 +60,7 @@ public class BuffSelectionUI : MonoBehaviour
                     // Assign the text values
                     nameText.text = currentBuffChoices[i].nameLocalization.GetLocalizedString();
                     descriptionText.text = currentBuffChoices[i].descriptionLocalization.GetLocalizedString();
+                    Debug.Log("name " + nameText.text);
                     buffButtons[i].onClick.RemoveAllListeners(); // Clear previous listeners
                     buffButtons[i].onClick.AddListener(() => SelectBuff(index));
                 }

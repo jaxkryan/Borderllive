@@ -7,6 +7,7 @@ using UnityEngine.Events;
 
 public class Damageable : MonoBehaviour
 {
+    public static int defeatedEnemyCount = 0;
     private bool metal3Active = false;
     private bool earth2Active = false;
 
@@ -163,10 +164,21 @@ public class Damageable : MonoBehaviour
                 DropWhenDeath();
                 GiveSoulReward();
                 damageableDeath.Invoke();
-
+                if (gameObject.CompareTag("Enemy"))
+                {
+                    Damageable.defeatedEnemyCount++; // Increment the counter here
+                    // Debug.Log("Enemies defeated: " + Damageable.defeatedEnemyCount);
+                }
+                else if (gameObject.CompareTag("Player"))
+                {
+                    Damageable.defeatedEnemyCount = 0; // Reset when the player dies
+                    Debug.Log("Player died, enemy counter reset.");
+                }
             }
         }
     }
+
+
 
     public int soulReward = 50;
     private CurrencyManager currencyManager;

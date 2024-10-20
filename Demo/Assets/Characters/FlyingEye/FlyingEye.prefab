@@ -229,7 +229,7 @@ GameObject:
   - component: {fileID: -4651440839720809575}
   m_Layer: 8
   m_Name: FlyingEye
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -527,6 +527,7 @@ MonoBehaviour:
   cooldown: 3
   distance: 10
   shootingDetectionZone: {fileID: 7679935463186052340}
+  isStraightShooter: 0
   _hasTarget: 0
 --- !u!1 &7886234287371785040
 GameObject:

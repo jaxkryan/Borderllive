@@ -16,6 +16,16 @@ public class UIController : MonoBehaviour
         PlayerPrefs.DeleteKey("ElapsedTime");
         SceneManager.LoadScene("StoryScene");
     }
+    public void EndlessBtn_Click()
+    {
+        // Set the PlayerDied key to true when the button is clicked
+        PlayerPrefs.SetInt(PlayerDiedKey, 1); // Set to 1 (true)
+        PlayerPrefs.Save(); // Save the changes
+
+        LevelController.ResetStaticData();
+        Damageable.defeatedEnemyCount = 0; 
+        SceneManager.LoadScene("Endless");
+    }
     private const string PlayerDiedKey = "PlayerDied"; // Key for tracking player death
 
     public void ExtraBtn_Click()
