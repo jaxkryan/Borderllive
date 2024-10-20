@@ -222,7 +222,7 @@ public class EnemySpawnerController : MonoBehaviour
         {
             characterStat = player.GetComponent<CharacterStat>();
         }
-        characterStat.Shield = 100;
+        characterStat.Shield = 37;
         // remainingEnemy = totalWaves * spawnPointsPerWave; // Reset remaining enemies
         // Optionally, restart the spawning process
         StartCoroutine(SpawnWaves());
