@@ -119,6 +119,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Shop.unity
     guid: e0cfdc8d5fcfab74eb7f0c0b8d4691ac
+  - enabled: 1
+    path: Assets/Scenes/GameOver_Endless.unity
+    guid: 220fa53123a4536458fb5ec309b47104
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: c4aa7708760815c408ac023870158f8f, type: 2}
     com.unity.localization.settings: {fileID: 11400000, guid: e4ff5f15e26bfdc4e8ece096a0810dae, type: 2}

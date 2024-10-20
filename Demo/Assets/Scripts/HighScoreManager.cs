@@ -41,16 +41,19 @@ public class HighScoreManager : MonoBehaviour
             }
         }
         UIController uIController = FindAnyObjectByType<UIController>();
-        // If the player is in an event, override the Restart button click listener
-        if (isInEvent)
+        if (restartButton != null && uIController != null)
         {
-            restartButton.onClick.RemoveAllListeners(); // Remove the default onClick listeners
-            restartButton.onClick.AddListener(() => uIController.ExtraBtn_Click()); // Add the ExtraBtn_Click listener
-        }
-        else
-        {
-            // Add the default Restart listener if not in an event
-            restartButton.onClick.AddListener(() => uIController.RestartBtn_Click());
+            // If the player is in an event, override the Restart button click listener
+            if (isInEvent)
+            {
+                restartButton.onClick.RemoveAllListeners(); // Remove the default onClick listeners
+                restartButton.onClick.AddListener(() => uIController.ExtraBtn_Click()); // Add the ExtraBtn_Click listener
+            }
+            else
+            {
+                // Add the default Restart listener if not in an event
+                restartButton.onClick.AddListener(() => uIController.RestartBtn_Click());
+            }
         }
 
         // After processing the player death, reset the PlayerDied key

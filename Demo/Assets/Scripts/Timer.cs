@@ -136,7 +136,7 @@ public class Timer : MonoBehaviour
     }
 
     // Pauses the stopwatch
-    private void PauseTimer()
+    public void PauseTimer()
     {
         if (!isPaused)
         {
@@ -147,7 +147,7 @@ public class Timer : MonoBehaviour
     }
 
     // Resumes the stopwatch
-    private void ResumeTimer()
+    public void ResumeTimer()
     {
         if (isPaused)
         {

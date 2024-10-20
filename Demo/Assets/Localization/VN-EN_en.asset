@@ -219,6 +219,27 @@ MonoBehaviour:
     m_Localized: 'Wraith defeated: {0}'
     m_Metadata:
       m_Items: []
+  - m_Id: 5538762331000832
+    m_Localized: You must fight against unlimited opponent.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5538826881339392
+    m_Localized: Each round has a number of wave, each wave has 4 random monsters.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5538884565602304
+    m_Localized: 'After complete a round, you can choose a new power-up, as well
+      as gain 100 shield.
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5538969089216512
+    m_Localized: 'Try to survive as long as you can.
+
+'
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

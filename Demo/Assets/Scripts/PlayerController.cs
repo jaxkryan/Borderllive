@@ -162,8 +162,10 @@ public class PlayerController : MonoBehaviour
         // Có thể thêm mã xử lý cái chết của người chơi ở đây
         Debug.Log("Player has died. Player data cleared.");
         // Load the Game Over screen
-        
-        SceneManager.LoadScene("GameOver_Screen");
+        if (SceneManager.GetActiveScene().name == "Endless"){
+             SceneManager.LoadScene("GameOver_Endless");
+        }
+        else SceneManager.LoadScene("GameOver_Screen");
     }
     void Start()
     {

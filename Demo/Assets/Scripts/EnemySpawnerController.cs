@@ -209,12 +209,20 @@ public class EnemySpawnerController : MonoBehaviour
 
         return selectedPoints;
     }
+    private GameObject player;
+    private CharacterStat characterStat;
     public void ResetSpawner()
     {
         // waveNumber = 0; // Reset the wave number
         activeEnemies = 0; // Reset the active enemies count
         totalWaves++;
-        waveNumber=0;
+        waveNumber = 0;
+        player = GameObject.FindGameObjectWithTag("Player");
+        if (player != null)
+        {
+            characterStat = player.GetComponent<CharacterStat>();
+        }
+        characterStat.Shield = 100;
         // remainingEnemy = totalWaves * spawnPointsPerWave; // Reset remaining enemies
         // Optionally, restart the spawning process
         StartCoroutine(SpawnWaves());

@@ -7,12 +7,11 @@ public class EnemyCounter : MonoBehaviour
 {
     public LocalizedString localizedCorpseDefeatedText; // Localized string reference
     [SerializeField] TMP_Text corpseDefeated;
+
     // [SerializeField] Canvas BuffSelectionUI;
     public EnemySpawnerController enemySpawnerController;
     private void Awake()
     {
-        // Set up the localized string to listen for changes
-        UpdateCorpseDefeatedText();
         localizedCorpseDefeatedText.StringChanged += UpdateUIText;
         // BuffSelectionUI.gameObject.SetActive(false);
     }

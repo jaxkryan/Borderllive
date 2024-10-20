@@ -213,6 +213,26 @@ MonoBehaviour:
     m_Key: CorpseCount
     m_Metadata:
       m_Items: []
+  - m_Id: 5538736456339456
+    m_Key: New Entry
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5538762331000832
+    m_Key: Endless_Rule1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5538826881339392
+    m_Key: Endless_Rule2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5538884565602304
+    m_Key: Endless_Rule3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5538969089216512
+    m_Key: Endless_Rule4
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
