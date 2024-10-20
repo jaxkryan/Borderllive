@@ -171,6 +171,9 @@ public class Damageable : MonoBehaviour
                 }
                 else if (gameObject.CompareTag("Player"))
                 {
+                    PlayerPrefs.SetInt("DefeatedEnemyCount", Damageable.defeatedEnemyCount);
+                    PlayerPrefs.Save();
+
                     Damageable.defeatedEnemyCount = 0; // Reset when the player dies
                     Debug.Log("Player died, enemy counter reset.");
                 }
