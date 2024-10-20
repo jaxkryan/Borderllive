@@ -139,6 +139,74 @@ MonoBehaviour:
     m_Key: Fire_NPC_04
     m_Metadata:
       m_Items: []
+  - m_Id: 1962222351851520
+    m_Key: Water_NPC_01
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1962643988455424
+    m_Key: Water_Commentor_01
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1962762695647232
+    m_Key: Water_NPC_02
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1962918614704128
+    m_Key: Water_Main_01
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1962942052474880
+    m_Key: Water_NPC_03
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1963122550153216
+    m_Key: Water_NPC_04
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1963333913714688
+    m_Key: Water_NPC_05
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1966563414548480
+    m_Key: Metal_Commentor_01
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1966572147089408
+    m_Key: Metal_Commentor_02
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1966735234211840
+    m_Key: Metal_Commentor_03
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1966862384537600
+    m_Key: Metal_Commentor_04
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1967373519200256
+    m_Key: Metal_Commentor_05
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1967526342860800
+    m_Key: Metal_NPC_01
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1967606554730496
+    m_Key: Metal_Commentor_06
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1967972956545024
+    m_Key: Metal_NPC_02
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1968095535079424
+    m_Key: Metal_Main_01
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1968342055297024
+    m_Key: Metal_NPC_03
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
