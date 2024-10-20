@@ -19,7 +19,7 @@ public class UIController : MonoBehaviour
     public void EndlessBtn_Click()
     {
         // Set the PlayerDied key to true when the button is clicked
-        PlayerPrefs.SetInt(PlayerDiedKey, 1); // Set to 1 (true)
+        PlayerPrefs.SetInt(PlayerDiedKey, 2); // Set to 1 (true)
         PlayerPrefs.Save(); // Save the changes
 
         LevelController.ResetStaticData();
