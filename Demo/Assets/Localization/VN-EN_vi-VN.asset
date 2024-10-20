@@ -227,6 +227,27 @@ MonoBehaviour:
     m_Localized: "O\xE1n linh b\u1ECB h\u1EA1 g\u1EE5c {0}"
     m_Metadata:
       m_Items: []
+  - m_Id: 5538762331000832
+    m_Localized: "B\u1EA1n s\u1EBD chi\u1EBFn \u0111\u1EA5u li\xEAn t\u1EE5c v\u1EDBi
+      qu\xE1i v\u1EADt"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5538826881339392
+    m_Localized: "M\u1ED7i v\xF2ng s\u1EBD c\xF3 s\u1ED1 \u0111\u1EE3t t\u1EA5n c\xF4ng,
+      m\u1ED7i \u0111\u1EE3t c\xF3 4 qu\xE1i v\u1EADt"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5538884565602304
+    m_Localized: "Sau khi ho\xE0n th\xE0nh m\u1ED9t v\xF2ng, b\u1EA1n s\u1EBD c\xF3
+      c\u01A1 h\u1ED9i \u0111\u01B0\u1EE3c ch\u1ECDn l\u1EF1a m\u1ED9t ch\xFAc ph\xFAc,
+      c\u0169ng nh\u01B0 nh\u1EADn 37 \u0111i\u1EC3m khi\xEAn."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5538969089216512
+    m_Localized: "H\xE3y c\u1ED1 g\u1EAFng s\u1ED1ng s\xF3t c\xE0ng l\xE2u c\xE0ng
+      t\u1ED1t."
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

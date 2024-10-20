@@ -4085,6 +4085,10 @@ PrefabInstance:
       value: -298
       objectReference: {fileID: 0}
     - target: {fileID: 3584017201174286107, guid: 0bbffc1ebfc046b408269f4b96c6c2f8, type: 3}
+      propertyPath: m_Text
+      value: Time Paused
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584017201174286107, guid: 0bbffc1ebfc046b408269f4b96c6c2f8, type: 3}
       propertyPath: m_Color.b
       value: 1
       objectReference: {fileID: 0}

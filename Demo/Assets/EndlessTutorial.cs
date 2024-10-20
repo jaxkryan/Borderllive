@@ -10,27 +10,30 @@ public class EndlessTutorial : MonoBehaviour
     public Timer Timer;
     private void Start()
     {
-        Timer.PauseTimer();
+        
         // Initialize the pause button's onClick event
         closeButton.onClick.AddListener(ResumeGame);
-
-        PauseGameAndShowCanvas();
-    }
-
-    public void PauseGameAndShowCanvas()
-    {
-        // Pause the game
-        Time.timeScale = 0;
-
-        // Show the pause canvas
         tutorial.enabled = true;
+        Time.timeScale = 0;
+        //Timer.PauseTimer();
+        // PauseGameAndShowCanvas();
     }
+
+    // public void PauseGameAndShowCanvas()
+    // {
+    //     // Pause the game
+    //     Time.timeScale = 0;
+
+    //     // Show the pause canvas
+        
+    // }
 
     public void ResumeGame()
     {
+        Logger.Log("clicked!!!");
         // Unpause the game
         Time.timeScale = 1;
-        Timer.ResumeTimer();
+        //Timer.ResumeTimer();
         // Hide the pause canvas
         tutorial.enabled = false;
     }

@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class HighScoreManager : MonoBehaviour
@@ -16,7 +17,7 @@ public class HighScoreManager : MonoBehaviour
 
     void Start()
     {
-       
+
         int playerDied = PlayerPrefs.GetInt(PlayerDiedKey, 0);
         // Check if PlayerDied key is present in PlayerPrefs
         bool isInEvent = playerDied == 1;
@@ -34,21 +35,6 @@ public class HighScoreManager : MonoBehaviour
 
                 // Display the time
                 elapsedTimeText.text = elapsedTime;
-                if (isEndlessMode)
-                {
-                    // Load the defeated enemy count from PlayerPrefs
-                    int defeatedEnemyCount = PlayerPrefs.GetInt(DefeatedEnemyCountKey, 0);
-
-                    // Display the defeated enemy count
-                    elapsedTimeText.text = $"Enemies Defeated: {defeatedEnemyCount}";
-
-                    // Reset the defeated enemy count after displaying it
-                    PlayerPrefs.SetInt(DefeatedEnemyCountKey, 0);
-                    PlayerPrefs.Save(); // Ensure the change is saved
-                }
-
-              
-
                 // Flip the image if the player is in an event
                 if (imageToFlip != null)
                 {
@@ -58,6 +44,18 @@ public class HighScoreManager : MonoBehaviour
                         : new Vector3(Mathf.Abs(currentScale.x), currentScale.y, currentScale.z); // Reset to normal
                 }
             }
+        }
+        if (isEndlessMode)
+        {
+            // Load the defeated enemy count from PlayerPrefs
+            int defeatedEnemyCount = PlayerPrefs.GetInt(DefeatedEnemyCountKey, 0);
+Debug.Log(defeatedEnemyCount);
+            // Display the defeated enemy count
+            elapsedTimeText.text = $"Enemies Defeated: {defeatedEnemyCount}";
+            
+            // Reset the defeated enemy count after displaying it
+            PlayerPrefs.SetInt(DefeatedEnemyCountKey, 0);
+            PlayerPrefs.Save(); // Ensure the change is saved
         }
         UIController uIController = FindAnyObjectByType<UIController>();
         if (restartButton != null && uIController != null)
