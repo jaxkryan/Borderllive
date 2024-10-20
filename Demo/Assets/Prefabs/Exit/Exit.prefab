@@ -157,6 +157,7 @@ MonoBehaviour:
   - BorderDeath_Event_1
   - BorderDeath_ElementalEvent_5
   - BorderDeath_ElementalEvent_3
+  - BorderDeath_ElementalEvent_1
   listShopRooms:
   - BorderDeath_Event_Shop
   listFunRooms:
@@ -164,6 +165,7 @@ MonoBehaviour:
   - BorderDeath_Event_2
   - BorderDeath_ElementalEvent_5
   - BorderDeath_ElementalEvent_3
+  - BorderDeath_ElementalEvent_1
 --- !u!1 &3694491652938188478
 GameObject:
   m_ObjectHideFlags: 0
