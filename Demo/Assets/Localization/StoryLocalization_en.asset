@@ -1,0 +1,215 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: StoryLocalization_en
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: b3a7ada3e91db7a4c8cd806d4b8ae990, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 6806298624
+    m_Localized: "The girl realizes that all the fish she has caught is gone, she
+      cries in seeing all her hard work disappear and the impending punishment that
+      will come from her stepmother. \n\n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5529966469120
+    m_Localized: 'At that time, Buddha was sitting on a lotus throne when he suddenly
+      heard the girl''s crying and immediately appeared to ask:
+
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5602645368832
+    m_Localized: '"Why are you crying, my child?"
+
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6309196849152
+    m_Localized: 'The girl told Buddha everything that had happened and he said:
+
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6527405514752
+    m_Localized: '"Try looking into the basket and see if there is anything left."
+
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7294900232192
+    m_Localized: '"There is only a goby fish."
+
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7835126587392
+    m_Localized: '"Take the goby fish home and release it into the well to raise
+      it. Each meal, instead of eating three bowls, eat two, and save one for the
+      fish. Every time you feed it, remember to call like this:
+
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10010326196224
+    m_Localized: "O goby, o goby\r\nGo up and eat my golden and silver rice\r\n\rDon't
+      eat those spoiled rice and porridge of theirs.\"\n\n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10126214815744
+    m_Localized: 'Buddha added:
+
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10219026374656
+    m_Localized: '"If you don''t call exactly like that, it won''t come up, so remember!"
+
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 400333678305280
+    m_Localized: 'You are walking down the road when you come across a group of will-o''-the-wisps
+      huddled together. Upon seeing you, they suddenly form a line and begin to chant
+      a nursery rhyme you have never heard before:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 404358180102144
+    m_Localized: "\"The dragon snake climbs the clouds, asking for help. \nThe healer
+      there, can you hear the yelp?\""
+    m_Metadata:
+      m_Items: []
+  - m_Id: 407137892163584
+    m_Localized: Answer them
+    m_Metadata:
+      m_Items: []
+  - m_Id: 407244804972544
+    m_Localized: Keep walking
+    m_Metadata:
+      m_Items: []
+  - m_Id: 408214314147840
+    m_Localized: Try to catch ghost at the tail of the line
+    m_Metadata:
+      m_Items: []
+  - m_Id: 411578074652672
+    m_Localized: These ghosts fell silent when you walked by. Just a moment later,
+      you felt a slight change in your body.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 412586968342528
+    m_Localized: 'These ghosts fell silent when you successfully catch the tail. '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 412871052746752
+    m_Localized: '"Wait, we haven''t even announced the rules yet"'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 413313627316224
+    m_Localized: When looking at your bewildered face, the ghosts burst out laughing.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 413831330258944
+    m_Localized: '"That way of playing is only for the living! If you''re free next
+      time, please play with us, and you''ll know what the rules of this world are
+      like."'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 415610113613824
+    m_Localized: Hearing your blunt answer, these ghosts stopped. Then, as if they
+      understood something, they dispersed.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 418209806147584
+    m_Localized: '"Sorry for trouble you!"'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 419312383811584
+    m_Localized: You quickly left. In your hand was a gift of apology from these
+      playful ghosts.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 487420549926912
+    m_Localized: '"I miss the feeling of swimming freely in the river by my hometown."'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 487946758918144
+    m_Localized: That was what the ghost in front of you said as you approached.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 488081383493632
+    m_Localized: Seeing that you seemed to be in a hurry, the ghost continued in
+      a melancholic tone.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 488325882056704
+    m_Localized: '"If you don''t mind, could you listen to an old man''s story?"'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 488611224752128
+    m_Localized: You thought for a moment. After all, time had no meaning in this
+      place, so why not sit and listen to a wandering ghost's story? Perhaps you'd
+      learn something interesting.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 488930428063744
+    m_Localized: '"So, do you want to hear about the mountain, the river, or the
+      sea?"'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 489706110062592
+    m_Localized: A story about the mountain might suit me.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 489869926993920
+    m_Localized: The river, huh, that wouldn't be bad either.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 489944711434240
+    m_Localized: This ghost had once been to the sea; there must be an interesting
+      story here.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 490197338558464
+    m_Localized: '"When I was alive, I once fought off two raging buffaloes with
+      just a wooden stick..." The ghost recounted with a nostalgic tone.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 490607075921920
+    m_Localized: '"When I was alive, I once climbed onto the back of a sacred fish..."
+      The ghost recounted with a nostalgic tone.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 490884239724544
+    m_Localized: '"When I was alive, a foreign maiden took her own life because of
+      me..." The ghost recounted with a nostalgic tone. Turns out, the ghost''s sea
+      referred to overseas lands.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 496395618095104
+    m_Localized: You become absorbed in the story told by the homesick ghost. Before
+      long, you feel like you've learned something new.
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

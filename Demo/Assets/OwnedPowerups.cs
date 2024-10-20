@@ -3,6 +3,37 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
+public class PowerUpData
+{
+    public int id;
+    public int elementId;
+    public Powerups.BuffType buffType;
+    public Powerups.TriggerCondition triggerCondition;
+    public Powerups.Effect effect;
+    public int weight;
+    public int berserkRateIncrease;
+    public int cooldown;
+    public int duration;
+    public bool isActive;
+    public float currentCooldown;
+    public string description;
+
+    // Add a field for the specific type
+    public string typeName; // This will store the name of the type, e.g., "Metal_1"
+}
+
+[System.Serializable]
+public class SerializationHelper<T>
+{
+    public List<T> list;
+
+    public SerializationHelper(List<T> list)
+    {
+        this.list = list;
+    }
+}
+
 public class OwnedPowerups : MonoBehaviour
 {
     public List<Powerups> activePowerups = new List<Powerups>();
@@ -33,6 +64,82 @@ public class OwnedPowerups : MonoBehaviour
         JsonUtility.FromJsonOverwrite(json, this);
     }
 
+    public void SavePowerups()
+    {
+        List<PowerUpData> powerUpDataList = new List<PowerUpData>();
+
+        foreach (Powerups powerup in activePowerups)
+        {
+            PowerUpData data = new PowerUpData()
+            {
+                id = powerup.id,
+                elementId = powerup.ElementId,
+                buffType = powerup.type,
+                triggerCondition = powerup.triggerCondition,
+                effect = powerup.effect,
+                weight = powerup.Weight,
+                berserkRateIncrease = powerup.BerserkRateIncrease,
+                cooldown = powerup.cooldown,
+                duration = powerup.duration,
+                isActive = powerup.isActive,
+                currentCooldown = powerup.currentCooldown,
+                description = powerup.description,
+                typeName = powerup.GetType().Name // Store the type name
+            };
+            powerUpDataList.Add(data);
+        }
+
+        string json = JsonUtility.ToJson(new SerializationHelper<PowerUpData>(powerUpDataList));
+        PlayerPrefs.SetString("ActivePowerups", json);
+        PlayerPrefs.Save();
+    }
+
+    public void LoadPowerups()
+    {
+        if (PlayerPrefs.HasKey("ActivePowerups"))
+        {
+            string json = PlayerPrefs.GetString("ActivePowerups");
+            List<PowerUpData> powerUpDataList = JsonUtility.FromJson<SerializationHelper<PowerUpData>>(json).list;
+
+            activePowerups.Clear(); // Clear current power-ups before loading new ones
+            foreach (PowerUpData data in powerUpDataList)
+            {
+                // Use reflection to create an instance of the correct type
+                Type powerupType = Type.GetType(data.typeName);
+                if (powerupType != null)
+                {
+                    Powerups powerup = (Powerups)Activator.CreateInstance(powerupType);
+                    powerup.id = data.id;
+                    powerup.ElementId = data.elementId;
+                    powerup.type = data.buffType;
+                    powerup.triggerCondition = data.triggerCondition;
+                    powerup.effect = data.effect;
+                    powerup.Weight = data.weight;
+                    powerup.BerserkRateIncrease = data.berserkRateIncrease;
+                    powerup.cooldown = data.cooldown;
+                    powerup.duration = data.duration;
+                    powerup.isActive = data.isActive;
+                    powerup.currentCooldown = data.currentCooldown;
+                    powerup.description = data.description;
+
+                    activePowerups.Add(powerup);
+                }
+                else
+                {
+                    Debug.LogWarning($"Powerup type {data.typeName} not found!");
+                }
+            }
+        }
+    }
+
+
+
+    // Clear powerups when the player dies or quits
+    public void ClearPowerups()
+    {
+        activePowerups.Clear();
+        PlayerPrefs.DeleteKey("ActivePowerups"); // Remove saved powerups from PlayerPrefs
+    }
     //check if the powerup in activePowerups or not
     public bool IsPowerupActive<T>() where T : Powerups
     {
@@ -104,7 +211,7 @@ public class OwnedPowerups : MonoBehaviour
         {
             earth2Powerup.ApplyEffect(playerController);
         }
-    
+
     }
 
     //condition debuff go here
@@ -114,7 +221,7 @@ public class OwnedPowerups : MonoBehaviour
         OwnedDebuff ownedDebuff = enemyKnightGameObject.GetComponent<OwnedDebuff>();
         //Debug.Log("number of pu : " + activePowerups.Count);
         foreach (Powerups p in activePowerups)
-        { 
+        {
             if (isHitEnemy)
             {
                 if (p is Metal_2 metalPowerup2)
@@ -154,7 +261,7 @@ public class OwnedPowerups : MonoBehaviour
                         hitCount = 0;
                     }
                 }
-                
+
                 if (p is Water_1 water)
                 {
                     {
@@ -224,8 +331,8 @@ public class OwnedPowerups : MonoBehaviour
     //buff w/ condition - wood 3
     internal void TriggerWood3Buff()
     {
-       Wood_3 wood_3 = new Wood_3();
-       wood_3.ApplyEffect(playerController);
+        Wood_3 wood_3 = new Wood_3();
+        wood_3.ApplyEffect(playerController);
     }
 
     internal void RemoveEarth2Buff()

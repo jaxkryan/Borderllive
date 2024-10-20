@@ -3,17 +3,17 @@ using UnityEngine.Events;
 
 public class EnemyXPTracker : MonoBehaviour
 {
-    private BaseXPTranslation XPTranslationType;
+    private EnemyXPTranslation_Table XPTranslationType;
     public UnityEvent<int, int> OnLevelChanged = new UnityEvent<int, int>();
 
-    private BaseXPTranslation XPTranslation;
+    public BaseXPTranslation XPTranslation;
 
     // Track the current XP separately in this class
     private int currentXP = 0;
 
     private void Awake()
     {
-        currentXP = PlayerPrefs.GetInt("CurrentXP", 0);
+        currentXP = PlayerPrefs.GetInt("EnemyXP", 0);
         // Instantiate the XPTranslation based on the assigned type
         if (XPTranslationType == null)
         {
@@ -28,10 +28,10 @@ public class EnemyXPTracker : MonoBehaviour
 
     public void AddXP(int amount)
     {
-        currentXP = PlayerPrefs.GetInt("CurrentXP", 0) + amount;
+        currentXP = PlayerPrefs.GetInt("EnemyXP", 0) + amount;
 
         // Save the currentXP to PlayerPrefs
-        PlayerPrefs.SetInt("CurrentXP", currentXP);
+        PlayerPrefs.SetInt("EnemyXP", currentXP);
         PlayerPrefs.Save();
 
         // Handle leveling up based on the amount added
@@ -54,11 +54,10 @@ public class EnemyXPTracker : MonoBehaviour
     {
         // Transfer the currentXP to the enemy when it spawns
         int xpToGrant = currentXP; // Store the XP to grant
-
         // Here you would implement the logic to apply xpToGrant to the enemy
         // For example:
         // enemy.SetCurrentXP(xpToGrant);
-        //Debug.Log("XP GRANTED SUCESSFULLY: " + xpToGrant);
+        // Debug.Log("XP GRANTED SUCESSFULLY: " + xpToGrant);
         // Optionally, set the enemy's level based on the total XP
         XPTranslation.AddXP(xpToGrant);
     }

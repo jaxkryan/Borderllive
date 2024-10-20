@@ -1,3 +1,5 @@
+using System;
+using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
@@ -12,13 +14,14 @@ public class Damageable : MonoBehaviour
     public UnityEvent damageableDeath;
 
     public UnityEvent<int, int> healthChanged;
-    public GameObject dropItem;
+    public GameObject dropItem1;
+    public GameObject dropItem2;
     Animator animator;
 
     public bool isStunned = false;
     public float stunDuration = 2f;
     private float stunEndTime;
-
+    public UnityEvent<int> MaxHealthChanged;
     [SerializeField]
     private int _maxHealth = 100;
     public int MaxHealth
@@ -30,7 +33,10 @@ public class Damageable : MonoBehaviour
         set
         {
             _maxHealth = value;
+            // Debug.Log("MaxHealth changed to: " + _maxHealth);
+            MaxHealthChanged?.Invoke(_maxHealth);
         }
+
     }
 
     [SerializeField]
@@ -40,7 +46,7 @@ public class Damageable : MonoBehaviour
     {
         get
         {
-            return _health;
+            return Math.Min(_health, MaxHealth);
         }
         set
         {
@@ -82,7 +88,20 @@ public class Damageable : MonoBehaviour
             }
             if (_health <= 0)
             {
-                IsAlive = false;
+                PlayerController playerController = GetComponent<PlayerController>();
+                if (playerController != null)
+                {
+                    OwnedActiveItem ownedActiveItem = FindObjectOfType<OwnedActiveItem>();
+                    if (ownedActiveItem.item1 is Item7 || ownedActiveItem.item2 is Item7)
+                    {
+                        IsAlive = true;
+                        //    Item7 item7 = new Item7();
+                        //    item7.Activate();
+
+                    }
+                    else IsAlive = false;
+                }
+                else IsAlive = false;
             }
         }
     }
@@ -125,7 +144,6 @@ public class Damageable : MonoBehaviour
                     LockVelocity = true;
                     stunEndTime = Time.time + stunDuration;
                     isStunned = true;
-                    //Debug.Log("Stunned for duration: " + stunDuration + ", stun end time: " + stunEndTime);
                 }
             }
         }
@@ -180,6 +198,20 @@ public class Damageable : MonoBehaviour
     private void Update()
     {
         OwnedPowerups ownedPowerups = GetComponent<OwnedPowerups>();
+        OwnedActiveItem ownedActiveItem = FindObjectOfType<OwnedActiveItem>();
+        PlayerController playerController = GetComponent<PlayerController>();
+
+        if (playerController != null)
+        {
+            Item7 item7 = ScriptableObject.CreateInstance<Item7>();
+            if (ownedActiveItem != null &&
+    ((ownedActiveItem.item1 is Item7 || ownedActiveItem.item2 is Item7) &&
+    item7.isEnable && Health <= 0))
+            {
+                Debug.Log("health: " + Health);
+                item7.Activate(); // Revive the character and destroy the item
+            }
+        }
         if (isInvincible)
         {
             if (timeSinceHit > invincibilityTime)
@@ -232,6 +264,8 @@ public class Damageable : MonoBehaviour
     }
     private void Awake()
     {
+        if (MaxHealthChanged == null)
+            MaxHealthChanged = new UnityEvent<int>();
         currencyManager = FindObjectOfType<CurrencyManager>();
         animator = GetComponent<Animator>();
         characterStat = GetComponent<CharacterStat>();
@@ -259,22 +293,25 @@ public class Damageable : MonoBehaviour
             float defense = characterStat != null ? characterStat.DEF : enemyStat.DEF; // Adjust based on actual DEF field name
             float reducedDamage = Mathf.Max(damage - Mathf.Floor(defense), 0); // Ensure damage doesn't go negative
 
-                // Apply the reduced damage
-                if (characterStat != null && characterStat.Shield > 0f)
+            // Apply the reduced damage
+            if (characterStat != null && characterStat.Shield > 0f)
+            {
+                Debug.Log("I HAVE SHIELDDDDDDD");
+                // Apply damage to shield
+                float remainDmg = characterStat.DecreaseShield(reducedDamage);
+                if (remainDmg > 0f)
                 {
-                    // Apply damage to shield
-                    characterStat.DecreaseShield(reducedDamage);
-                    if (characterStat.Shield <= 0f)
-                    {
-                        // If shield is depleted, apply remaining damage to health
-                        Health -= (int)(reducedDamage - characterStat.Shield);
-                    }
+                    // Debug.Log("The dmg to health is: " + (int)(remainDmg));
+                    // If shield is depleted, apply remaining damage to health
+                    Health -= (int)(remainDmg);
+
                 }
-                else 
-                {
-                    // If no shield, apply damage directly to health
-                    Health -= (int)reducedDamage;
-                }
+            }
+            else
+            {
+                // If no shield, apply damage directly to health
+                Health -= (int)reducedDamage;
+            }
             isInvincible = true;
 
             animator.SetTrigger(AnimationStrings.hitTrigger);
@@ -295,17 +332,65 @@ public class Damageable : MonoBehaviour
             int maxHeal = Mathf.Max(MaxHealth - Health, 0);
             int actualHeal = Mathf.Min(maxHeal, healthRestore);
             Health += actualHeal;
+
             CharacterEvents.characterHealed(gameObject, actualHeal);
             return true;
         }
         return false;
     }
 
-    private void DropWhenDeath()
+    public float dropRateHealth1 = 10f;
+    public float dropRateHealth2 = 2f;
+
+    private bool dropRateBoosted = false; // Flag to check if boost is active
+
+    public float boostedDropRateHealth1 = 100f; // Boosted drop rate for health item 1
+    public float boostedDropRateHealth2 = 50f; // Boosted drop rate for health item 2
+
+    // Coroutine to temporarily increase the drop rate
+    public IEnumerator BoostDropRate(float duration)
     {
-        if (dropItem != null)
+        if (!dropRateBoosted)
         {
-            Instantiate(dropItem, transform.position, Quaternion.identity);
+            dropRateBoosted = true;
+            float originalDropRate1 = dropRateHealth1;
+            float originalDropRate2 = dropRateHealth2;
+
+            // Apply boosted drop rates
+            dropRateHealth1 = boostedDropRateHealth1;
+            dropRateHealth2 = boostedDropRateHealth2;
+
+            // Wait for the duration (e.g., 3 seconds)
+            yield return new WaitForSeconds(duration);
+
+            // Revert to the original drop rates
+            dropRateHealth1 = originalDropRate1;
+            dropRateHealth2 = originalDropRate2;
+
+            dropRateBoosted = false;
         }
     }
+
+    private void DropWhenDeath()
+    {
+        // Generate a random number between 0 and 100
+        float randomValue = UnityEngine.Random.Range(0f, 100f);
+
+        // 10% chance to drop item 1
+        if (randomValue <= dropRateHealth1 && dropItem1 != null)
+        {
+            Instantiate(dropItem1, transform.position, Quaternion.identity);
+        }
+        // 2% chance to drop item 2 (within the remaining 90%)
+        else if (randomValue > 0 && randomValue <= dropRateHealth2 && dropItem2 != null)
+        {
+            Instantiate(dropItem2, transform.position, Quaternion.identity);
+        }
+        else
+        {
+            // No item drop
+            Debug.Log("No item dropped");
+        }
+    }
+
 }

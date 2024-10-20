@@ -9,9 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cabbe0bd1323d3444a69c43a32354a62, type: 3}
+  m_Script: {fileID: 11500000, guid: 600653545505d0e4a96f50e69caabdb3, type: 3}
   m_Name: Mystery Box
   m_EditorClassIdentifier: 
-  title: Mystery Box
-  description: Grants a random prize.
-  baseCost: 500
+  itemName: BerserkFillUp
+  itemDescription: Fill up your Berserk Bar immediately
+  image: {fileID: 21300000, guid: 3c2633600af1a4f4cae1b9505f0d5871, type: 3}
+  itemType: 0
+  cd: 30
+  cost: 100
+  code: daikalop12a
+  isEnable: 0
+  <DefaultParametersList>k__BackingField: []

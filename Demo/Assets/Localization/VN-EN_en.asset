@@ -1,0 +1,216 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: VN-EN_en
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: da8a0ea9d4e8caf4fa50d2268f56cfa3, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 12057490481152
+    m_Localized: Start
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15617745739776
+    m_Localized: Setting
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15668953997312
+    m_Localized: Exit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 34541610721280
+    m_Localized: Sound
+    m_Metadata:
+      m_Items: []
+  - m_Id: 34586200367104
+    m_Localized: Graphic
+    m_Metadata:
+      m_Items: []
+  - m_Id: 34637341515776
+    m_Localized: "Resolution\t"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 34698783875072
+    m_Localized: Permanent Stat
+    m_Metadata:
+      m_Items: []
+  - m_Id: 34791389913088
+    m_Localized: Fullscreen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 34834608021504
+    m_Localized: Back
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38575654559744
+    m_Localized: Low
+    m_Metadata:
+      m_Items: []
+  - m_Id: 57462982959104
+    m_Localized: Medium
+    m_Metadata:
+      m_Items: []
+  - m_Id: 57491130933248
+    m_Localized: High
+    m_Metadata:
+      m_Items: []
+  - m_Id: 63290473439232
+    m_Localized: Skip
+    m_Metadata:
+      m_Items: []
+  - m_Id: 63821984030720
+    m_Localized: Continue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 188106572554240
+    m_Localized: Language
+    m_Metadata:
+      m_Items: []
+  - m_Id: 463574701957120
+    m_Localized: Press F to interact
+    m_Metadata:
+      m_Items: []
+  - m_Id: 379586013601792
+    m_Localized: Restart
+    m_Metadata:
+      m_Items: []
+  - m_Id: 477640913887232
+    m_Localized: Reset Data
+    m_Metadata:
+      m_Items: []
+  - m_Id: 484153879470080
+    m_Localized: Yes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 484190034370560
+    m_Localized: No
+    m_Metadata:
+      m_Items: []
+  - m_Id: 484243746627584
+    m_Localized: Are You Sure?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 498314768326656
+    m_Localized: Main menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1567344816070656
+    m_Localized: Collection
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1552299138486272
+    m_Localized: Control
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1784924042469376
+    m_Localized: No buff can be choosen, +45 souls.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1785153227628544
+    m_Localized: Powerups
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1785318562897920
+    m_Localized: Items
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1901378133561344
+    m_Localized: Bargain
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3019275916546048
+    m_Localized: "Items\t"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3019326072033280
+    m_Localized: Power-ups
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3102842138923008
+    m_Localized: to move
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3110277956243456
+    m_Localized: "to jump\t"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3114295956869120
+    m_Localized: to dash in mid-air
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4327010427736064
+    m_Localized: to attack. Every attack increase Berserk Gauge.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4332812316184576
+    m_Localized: In Berserk Mode, all your damage dealt and taken is increase. Be
+      advised!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4332848219426816
+    m_Localized: You have completed tutorial hell. Good luck on Borderlive!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4490283555266560
+    m_Localized: Extra
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4502996763021312
+    m_Localized: Dodge the bullet! Each second you survive, you will receive 2 Eternal
+      souls.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4504616141852672
+    m_Localized: Eternal Soul
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4505650914398208
+    m_Localized: Back to main menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4506348410376192
+    m_Localized: Exclusive Item
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4706352533061632
+    m_Localized: You have not received any power-ups!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4711348012040192
+    m_Localized: and movement key to dash
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4716419139485696
+    m_Localized: 'Spend: {0} souls'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4716439263756288
+    m_Localized: for {0} XP?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4718208488292352
+    m_Localized: Press Enter to confirm
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4720870868893696
+    m_Localized: You can exchange souls for experience and level up. But don't forget
+      that souls are also the currency used to purchase support items throughout
+      your journey. Spend wisely, because when you die, you will lose all levels,
+      souls, and items.
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

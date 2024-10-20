@@ -23,10 +23,12 @@ public class Fire_1 : Powerups
         this.triggerCondition = TriggerCondition.EnemyLowHP;
 
         this.effect = Effect.DamageIncrease;
+        InitializeLocalization("Fire_1_Name", "Fire_1_Description");
     }
 
     public float CalculateDamageIncrease(Damageable target)
     {
+        if (target == null) return 0;
         if (target.Health <= 0.5f * target.MaxHealth)
         {
             return 1.15f; // 15% damage increase

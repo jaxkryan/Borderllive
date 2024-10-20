@@ -1,0 +1,224 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: VN-EN_vi-VN
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: vi-VN
+  m_SharedData: {fileID: 11400000, guid: da8a0ea9d4e8caf4fa50d2268f56cfa3, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 12057490481152
+    m_Localized: "B\u1EAFt \u0111\u1EA7u "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15617745739776
+    m_Localized: "C\xE0i \u0111\u1EB7t"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15668953997312
+    m_Localized: "Tho\xE1t"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 34541610721280
+    m_Localized: "\xC2m thanh"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 34586200367104
+    m_Localized: "\u0110\u1ED3 h\u1ECDa"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 34637341515776
+    m_Localized: "\u0110\u1ED9 ph\xE2n gi\u1EA3i"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 34698783875072
+    m_Localized: "L\u01B0u ch\u1EC9 s\u1ED1 v\u0129nh vi\u1EC5n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 34791389913088
+    m_Localized: "To\xE0n m\xE0n h\xECnh"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 34834608021504
+    m_Localized: "Quay l\u1EA1i"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38575654559744
+    m_Localized: "Th\u1EA5p"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 57462982959104
+    m_Localized: "Trung b\xECnh"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 57491130933248
+    m_Localized: Cao
+    m_Metadata:
+      m_Items: []
+  - m_Id: 63290473439232
+    m_Localized: "B\u1ECF qua"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 63821984030720
+    m_Localized: "Ti\u1EBFp t\u1EE5c"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 188106572554240
+    m_Localized: "Ng\xF4n ng\u1EEF"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 463574701957120
+    m_Localized: "\u1EA4n F \u0111\u1EC3 t\u01B0\u01A1ng t\xE1c"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 379586013601792
+    m_Localized: "Ch\u01A1i l\u1EA1i"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 477640913887232
+    m_Localized: "\u0110\u1EB7t l\u1EA1i d\u1EEF li\u1EC7u"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 484153879470080
+    m_Localized: "C\xF3"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 484190034370560
+    m_Localized: "Kh\xF4ng"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 484243746627584
+    m_Localized: "B\u1EA1n c\xF3 ch\u1EAFc kh\xF4ng?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 498314768326656
+    m_Localized: "M\xE0n h\xECnh ch\xEDnh"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1567344816070656
+    m_Localized: "B\u1ED9 s\u01B0u t\u1EADp"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1552299138486272
+    m_Localized: "\u0110i\u1EC1u khi\u1EC3n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1784924042469376
+    m_Localized: "Kh\xF4ng c\xF2n k\u0129 n\u0103ng b\u1ECB \u0111\u1ED9ng \u0111\u1EC3
+      ch\u1ECDn, +45 linh h\u1ED3n."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1785153227628544
+    m_Localized: "K\u0129 n\u0103ng b\u1ECB \u0111\u1ED9ng"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1785318562897920
+    m_Localized: "V\u1EADt ph\u1EA9m"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1901378133561344
+    m_Localized: "C\u1EEDa h\xE0ng "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3019275916546048
+    m_Localized: "V\u1EADt ph\u1EA9m"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3019326072033280
+    m_Localized: "S\u1EE9c m\u1EA1nh"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3102842138923008
+    m_Localized: "\u0111\u1EC3 di chuy\u1EC3n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3110277956243456
+    m_Localized: "\u0111\u1EC3 nh\u1EA3y "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3114295956869120
+    m_Localized: "\u0111\u1EC3 l\u01B0\u1EDBt gi\u1EEFa kh\xF4ng trung "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4327010427736064
+    m_Localized: "\u0111\u1EC3 t\u1EA5n c\xF4ng. T\u1EA5n c\xF4ng li\xEAn t\u1EE5c
+      t\xEDch l\u0169y tr\u1EA1ng th\xE1i \"T\u1EA9u h\u1ECFa nh\u1EADp ma\"."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4332812316184576
+    m_Localized: "Trong tr\u1EA1ng th\xE1i \"T\u1EA9u h\u1ECFa nh\u1EADp ma\", s\xE1t
+      th\u01B0\u01A1ng g\xE2y ra v\xE0 nh\u1EADn v\xE0o \u0111\u1EC1u t\u0103ng l\xEAn.
+      H\xE3y c\u1EA9n th\u1EADn!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4332848219426816
+    m_Localized: "H\u01B0\u1EDBng d\u1EABn \u0111\xE3 xong. Ch\xFAc b\u1EA1n c\xF3
+      nh\u1EEFng gi\u1EDD ph\xFAt vui v\u1EBB v\u1EDBi Sinh Kh\u1EDFi!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4490283555266560
+    m_Localized: "B\xED c\u1EA3nh"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4502996763021312
+    m_Localized: "Chu\u1EA9n b\u1ECB n\xE9 \u0111\u1EA1n! M\u1ED7i gi\xE2y s\u1ED1ng
+      s\xF3t s\u1EBD cho b\u1EA1n 2 Linh h\u1ED3n v\u0129nh c\u1EEDu."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4504616141852672
+    m_Localized: "Linh h\u1ED3n v\u0129nh c\u1EEDu"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4505650914398208
+    m_Localized: "V\u1EC1 m\xE0n h\xECnh ch\xEDnh"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4506348410376192
+    m_Localized: "V\u1EADt ph\u1EA9m \u0111\u1EB7c bi\u1EC7t"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4706352533061632
+    m_Localized: "Ch\u01B0a nh\u1EADn b\u1EA5t k\xEC ch\xFAc ph\xFAc n\xE0o."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4711348012040192
+    m_Localized: "v\xE0 ph\xEDm di chuy\u1EC3n \u0111\u1EC3 l\u01B0\u1EDBt theo h\u01B0\u1EDBng
+      ch\u1EC9 \u0111\u1ECBnh"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4716419139485696
+    m_Localized: "Ti\xEAu hao: {0} linh h\u1ED3n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4716439263756288
+    m_Localized: "\u0110\u1EC3 nh\u1EADn {0} XP?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4718208488292352
+    m_Localized: "Nh\u1EA5n Enter \u0111\u1EC3 x\xE1c nh\u1EADn."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4720870868893696
+    m_Localized: "B\u1EA1n c\xF3 th\u1EC3 \u0111\u1ED5i linh h\u1ED3n \u0111\u1EC3
+      l\u1EA5y kinh nghi\u1EC7m v\xE0 l\xEAn c\u1EA5p. Nh\u01B0ng \u0111\u1EEBng
+      qu\xEAn r\u1EB1ng linh h\u1ED3n c\u0169ng l\xE0 \u0111\u01A1n v\u1ECB \u0111\u1EC3
+      b\u1EA1n mua nh\u1EEFng v\u1EADt ph\u1EA9m h\u1ED7 tr\u1EE3 trong su\u1ED1t
+      chuy\u1EBFn h\xE0nh tr\xECnh. H\xE3y ti\xEAu d\xF9ng c\u1EA9n tr\u1ECDng, v\xEC
+      khi ch\u1EBFt, b\u1EA1n s\u1EBD m\u1EA5t to\xE0n b\u1ED9 c\u1EA5p \u0111\u1ED9,
+      linh h\u1ED3n v\xE0 v\u1EADt ph\u1EA9m."
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

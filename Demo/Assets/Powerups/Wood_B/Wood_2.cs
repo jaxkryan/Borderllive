@@ -20,6 +20,7 @@ public class Wood_2 : Powerups
         this.type = BuffType.Debuff;
         this.triggerCondition = TriggerCondition.Always;
         this.effect = Effect.EnemyDefReduction;
+        InitializeLocalization("Wood_2_Name", "Wood_2_Description");
     }
 
     public Boolean ApplyEffect(Knight target)

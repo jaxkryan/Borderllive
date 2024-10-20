@@ -19,6 +19,7 @@ public class Fire_2 : Powerups
         this.type = BuffType.DamageBuff;
         this.triggerCondition = TriggerCondition.Always;
         this.effect = Effect.DamageIncrease;
+        InitializeLocalization("Fire_2_Name", "Fire_2_Description");
     }
 
     public float CalculateDamageIncrease(Damageable target)

@@ -46,7 +46,7 @@ public class BossTrigger : MonoBehaviour
             // If player entered from left and exited to right, start boss battle
             if (playerEnteredFromLeft && playerExitedToRight)
             {
-                bossBattleManager.StartBossBattle();
+                //bossBattleManager.StartBossBattle();
                 triggerCollider.isTrigger = false; // Turn off the trigger for the collider
             }
         }

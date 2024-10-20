@@ -10,6 +10,7 @@ public class Attack : MonoBehaviour, IBuffable
     private CharacterStat characterStat; // Reference to CharacterStat
     private EnemyStat enemyStat; // Reference to EnemyStat
     private float attackDamage;
+    public float baseDamage = 5;
     public Vector2 knockback = Vector2.zero;
     private OwnedPowerups ownedPowerups;
 
@@ -22,6 +23,7 @@ public class Attack : MonoBehaviour, IBuffable
         // Check if this script is attached to the player by checking the tag
         if (transform.root.CompareTag("Player"))
         {
+
             ownedPowerups = GetComponentInParent<OwnedPowerups>();
             // Get the CharacterStat component from the parent object
             characterStat = GetComponentInParent<CharacterStat>();
@@ -53,10 +55,12 @@ public class Attack : MonoBehaviour, IBuffable
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        AudioManager.Instance.PlaySFX("PlayerAttack");
+
         // Determine attack damage based on whether it's a player or enemy attack
         if (characterStat != null)
         {
-            attackDamage = characterStat.Damage;
+            attackDamage = characterStat.Damage + baseDamage;
             if (ownedPowerups.IsPowerupActive<Fire_1>())
             {
                 Fire_1 f1 = new Fire_1();
@@ -74,7 +78,7 @@ public class Attack : MonoBehaviour, IBuffable
         }
         else
         {
-            attackDamage = enemyStat.Damage;
+            attackDamage = enemyStat.Damage + baseDamage;
         }
         Damageable damageable = collision.GetComponent<Damageable>();
         //Debug.Log("Trigger entered with: " + collision.gameObject.name);

@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class Wood_4 : Powerups
 {
-    public float healingPercentage = 0.001f;
+    public float healingPercentage = 0.01f;
     public Wood_4()
     {
         this.id = 12;
@@ -20,6 +20,7 @@ public class Wood_4 : Powerups
         this.type = BuffType.HpBuff;
         this.triggerCondition = TriggerCondition.Berserk;
         this.effect = Effect.HPRegen;
+        InitializeLocalization("Wood_4_Name", "Wood_4_Description");
     }
 
 

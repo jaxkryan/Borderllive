@@ -4,15 +4,18 @@ using UnityEngine.SceneManagement;
 
 public class LevelController : MonoBehaviour
 {
-    public List<string> listAction;
-    public List<string> listEvent;
-    private static List<string> tempAction;
-    private static List<string> tempEvent;
+    public List<string> listBattleRooms;
+    public List<string> listEventRooms;
+    public List<string> listShopRooms;
+    public List<string> listFunRooms;
+
     private static string previousScene;
-    private static string selectedActionRoom;
-    private static string selectedEventRoom;
+    private static string selectedPortal1;
+    private static string selectedPortal2;
+    public string SelectedPortal1 => selectedPortal1; // Getter for portal 1
+    public string SelectedPortal2 => selectedPortal2; // Getter for portal 2
+
     private static int roomsVisited = 0;
-    private static int bossCounter = 0;
 
     private PlayerController playerController; // Reference to PlayerController
 
@@ -27,106 +30,240 @@ public class LevelController : MonoBehaviour
         {
             Debug.LogWarning("PlayerController is null. Make sure it's in the scene.");
         }
-
-        if (tempAction == null || tempEvent == null)
-        {
-            InitializeLists();
-        }
     }
-
-
-    private void SavePlayerState()
-    {
-        playerController = FindObjectOfType<PlayerController>(); // Get PlayerController instance
-        Debug.Log(playerController);
-        Debug.Log("Savinggggg");
-        if (playerController != null)
-        {
-            playerController.SavePlayerState(); // Call PlayerController's SavePlayerState
-            Debug.Log("Player state saved from LevelController.");
-        }
-        else
-        {
-            Debug.LogWarning("PlayerController reference is null. Cannot save player state.");
-        }
-    }
-
     private void OnApplicationQuit()
     {
-        LevelController.ResetStaticData();
+        ResetStaticData();
         ClearPlayerData();
+
         Debug.Log("Player data cleared on application quit.");
     }
 
+    private static Timer timer;
     private void ClearPlayerData()
     {
-        PlayerPrefs.DeleteAll();
+        PlayerPrefs.DeleteKey("Health");
+        PlayerPrefs.DeleteKey("MaxHealth");
+        PlayerPrefs.DeleteKey("Shield");
+        PlayerPrefs.DeleteKey("XP");
+        PlayerPrefs.DeleteKey("Souls");
+        PlayerPrefs.DeleteKey("ActivePowerups");
+        PlayerPrefs.DeleteKey("Item1");
+        PlayerPrefs.DeleteKey("Item2");
+        timer = FindObjectOfType<Timer>();
+        timer.ResetTime();
+        PlayerPrefs.DeleteKey("EnemyXP");
+
         PlayerPrefs.Save();
+    }
+    public void ShowOption()
+    {
+
+        SceneManager.LoadScene("Option_Screen");
+
     }
 
     public void ShowRoomOptions()
     {
         roomsVisited++;
-        SavePlayerState();
-
-        if (roomsVisited % 5 == 0)
+        playerController = FindObjectOfType<PlayerController>(); // Get PlayerController instance
+        if (playerController != null)
         {
-            LoadBossRoom();
+            Debug.Log("PlayerController found successfully.");
+            playerController.SavePlayerState();
         }
         else
         {
-            if (tempAction.Count == 0 || tempEvent.Count == 0)
-            {
-                InitializeLists();
-            }
-            selectedActionRoom = tempAction[Random.Range(0, tempAction.Count)];
-            selectedEventRoom = tempEvent[Random.Range(0, tempEvent.Count)];
-            SceneManager.LoadScene("Option_Screen");
+            Debug.LogWarning("PlayerController is null. Make sure it's in the scene.");
+        }
+        
+        if (roomsVisited == 1 && PlayerPrefs.GetInt("DoneTutorial")!=1)
+        {
+            SceneManager.LoadScene("Tutorial");
+            // Room 1: Fixed battle or event room
+            // SpawnRoom("battle", "event");
+        }
+        else if (roomsVisited == 2&& PlayerPrefs.GetInt("DoneTutorial")!=1){
+            // Room 2: Fixed shop room
+            SceneManager.LoadScene("Tutorial 2");
+        }
+        else if (roomsVisited == 5)
+        {
+            // Room 5: Fixed battle room
+            //the illusion of free choice
+            SpawnRoom("battle", "battle");
+        }
+        else if (roomsVisited == 6 || roomsVisited == 9)
+        {
+            // Room 6: Fixed shop room
+            LoadSpecificRoom(listShopRooms);
+        }
+        else if (roomsVisited == 10)
+        {
+            // Room 10: Boss room
+            SceneManager.LoadScene("BorderDeath_Boss_1");
+        }
+        else
+        {
+            // Randomly select a spawn way
+            SpawnRandomWay();
         }
     }
 
-    private void LoadBossRoom()
+    private void SpawnRandomWay()
     {
-        string bossRoomName = (bossCounter % 2 == 0) ? "Room_Boss" : "Room_Boss2";
-        bossCounter++;
-        previousScene = bossRoomName;
-        SceneManager.LoadScene(bossRoomName);
+        // Possible combinations of portals with corresponding weights
+        (string combination, int weight)[] spawnWays = new (string, int)[]
+        {
+        ("battle or event", 30),  // High probability
+        ("battle or battle", 15), // High probability
+        ("event or event", 15),   // Medium probability
+        ("shop or battle", 7),   // Lower probability
+        ("shop or event", 7),    // Lower probability
+        ("fun or event", 10),      // Low probability
+        ("fun or battle", 10),     // Low probability
+        ("fun or shop", 5)        // Very low probability
+        };
+
+        // Calculate the total weight
+        int totalWeight = 0;
+        foreach (var way in spawnWays)
+        {
+            totalWeight += way.weight;
+        }
+
+        // Generate a random number between 0 and totalWeight
+        int randomValue = Random.Range(0, totalWeight);
+        string selectedWay = null;
+
+        // Select the spawn way based on the random value
+        int cumulativeWeight = 0;
+        foreach (var way in spawnWays)
+        {
+            cumulativeWeight += way.weight;
+            if (randomValue < cumulativeWeight)
+            {
+                selectedWay = way.combination;
+                break;
+            }
+        }
+
+        Debug.Log("Selected spawn way: " + selectedWay);
+
+        // Spawn rooms based on the selected way
+        switch (selectedWay)
+        {
+            case "battle or event":
+                SpawnRoom("battle", "event");
+                break;
+            case "battle or battle":
+                SpawnRoom("battle", "battle");
+                break;
+            case "event or event":
+                SpawnRoom("event", "event");
+                break;
+            case "shop or battle":
+                SpawnRoom("shop", "battle");
+                break;
+            case "shop or event":
+                SpawnRoom("shop", "event");
+                break;
+            case "fun or event":
+                SpawnRoom("fun", "event");
+                break;
+            case "fun or battle":
+                SpawnRoom("fun", "battle");
+                break;
+            case "fun or shop":
+                SpawnRoom("fun", "shop");
+                break;
+        }
     }
 
-    public void LoadSelectedScene(bool isAction)
+
+    private void SpawnRoom(string roomType1, string roomType2)
     {
-        string sceneName = isAction ? selectedActionRoom : selectedEventRoom;
-        List<string> list = isAction ? tempAction : tempEvent;
-        list.Remove(sceneName);
+        selectedPortal1 = GetRandomRoom(roomType1);
+        selectedPortal2 = GetRandomRoom(roomType2);
+
+        Debug.Log("Selected Portal 1: " + selectedPortal1);
+        Debug.Log("Selected Portal 2: " + selectedPortal2);
+
+        // Before loading the new scene, update the portal display
+        // Find the OptionScreenController to update the buttons
+        OptionScreenController optionScreen = FindObjectOfType<OptionScreenController>();
+        if (optionScreen != null)
+        {
+            optionScreen.UpdateButtonDisplay();
+        }
+
+        // Load the portal selection scene
+        SceneManager.LoadScene("Option_Screen");
+    }
+
+
+    private string GetRandomRoom(string roomType)
+    {
+        List<string> roomList = GetRoomList(roomType);
+        if (roomList.Count > 0)
+        {
+            return roomList[Random.Range(0, roomList.Count)];
+        }
+        else
+        {
+            Debug.LogWarning("Room list for type " + roomType + " is empty.");
+            return null;
+        }
+    }
+
+    private List<string> GetRoomList(string roomType)
+    {
+        switch (roomType)
+        {
+            case "battle": return listBattleRooms;
+            case "event": return listEventRooms;
+            case "shop": return listShopRooms;
+            case "fun": return listFunRooms;
+            default: return new List<string>();
+        }
+    }
+
+    private void LoadSpecificRoom(List<string> roomList)
+    {
+        if (roomList.Count > 0)
+        {
+            string roomName = roomList[Random.Range(0, roomList.Count)];
+            previousScene = roomName;
+            SceneManager.LoadScene(roomName);
+        }
+        else
+        {
+            Debug.LogWarning("Specified room list is empty.");
+        }
+    }
+
+    public void OnPortal1Selected()
+    {
+        LoadSelectedRoom(true);
+    }
+
+    public void OnPortal2Selected()
+    {
+        LoadSelectedRoom(false);
+    }
+
+    private void LoadSelectedRoom(bool isPortal1)
+    {
+        string sceneName = isPortal1 ? selectedPortal1 : selectedPortal2;
         previousScene = sceneName;
         SceneManager.LoadScene(sceneName);
     }
 
-    private void InitializeLists()
-    {
-        tempAction = new List<string>(listAction);
-        tempEvent = new List<string>(listEvent);
-    }
-
-    public void OnActionOptionClicked()
-    {
-        LoadSelectedScene(true);
-    }
-
-    public void OnEventOptionClicked()
-    {
-        LoadSelectedScene(false);
-    }
-
     public static void ResetStaticData()
     {
-        tempAction = null;
-        tempEvent = null;
         previousScene = null;
-        selectedActionRoom = null;
-        selectedEventRoom = null;
+        selectedPortal1 = null;
+        selectedPortal2 = null;
         roomsVisited = 0;
-        bossCounter = 0;
     }
-
 }

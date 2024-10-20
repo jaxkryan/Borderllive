@@ -1,0 +1,112 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: Elemental_Event Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: Elemental_Event
+  m_TableCollectionNameGuidString: c4a8ad77c62f63c488e35024ea9acc55
+  m_Entries:
+  - m_Id: 341359491850240
+    m_Key: Wood_Commentor_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 341906353594368
+    m_Key: Wood_NPC_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 342304703422464
+    m_Key: Wood_NPC_2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 342520596832256
+    m_Key: Wood_NPC_3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 342636858744832
+    m_Key: Wood_Player_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 401946527703040
+    m_Key: Wood_Commentor_1_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 402042900226048
+    m_Key: Wood_NPC_3_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 402660616347648
+    m_Key: Wood_NPC_2_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 402727200923648
+    m_Key: Wood_NPC_2_2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 402737707655168
+    m_Key: Wood_NPC_2_3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 403266961711104
+    m_Key: Wood_NPC_2_4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 437987204702208
+    m_Key: NPC_Blank
+    m_Metadata:
+      m_Items: []
+  - m_Id: 725329207402496
+    m_Key: Earth_Commentor_01
+    m_Metadata:
+      m_Items: []
+  - m_Id: 744413533872128
+    m_Key: Earth_NPC_01
+    m_Metadata:
+      m_Items: []
+  - m_Id: 744545734139904
+    m_Key: Earth_Commentor_02
+    m_Metadata:
+      m_Items: []
+  - m_Id: 744571009015808
+    m_Key: Earth_Main_01
+    m_Metadata:
+      m_Items: []
+  - m_Id: 744644421918720
+    m_Key: Earth_NPC_02
+    m_Metadata:
+      m_Items: []
+  - m_Id: 744787737092096
+    m_Key: Earth_Commentor_03
+    m_Metadata:
+      m_Items: []
+  - m_Id: 744826563764224
+    m_Key: Earth_NPC_03
+    m_Metadata:
+      m_Items: []
+  - m_Id: 744868871708672
+    m_Key: Earth_Commentor_04
+    m_Metadata:
+      m_Items: []
+  - m_Id: 744918104449024
+    m_Key: Earth_NPC_04
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 7238775886694318080
+  references:
+    version: 2
+    RefIds:
+    - rid: 7238775886694318080
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1728980933744

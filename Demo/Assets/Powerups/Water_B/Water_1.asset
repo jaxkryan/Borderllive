@@ -13,13 +13,36 @@ MonoBehaviour:
   m_Name: Water_1
   m_EditorClassIdentifier: 
   id: 6
+  name: Aqua Bind
   type: 5
   ElementId: 3
   triggerCondition: 0
   effect: 4
   Weight: 10
   BerserkRateIncrease: 0
-  cooldown: 10
-  duration: 1
+  cooldown: 7
+  duration: 3
   isActive: 0
   currentCooldown: 0
+  description: 
+  nameLocalization:
+    m_TableReference:
+      m_TableCollectionName: Powerups
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: Water_1_Name
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  descriptionLocalization:
+    m_TableReference:
+      m_TableCollectionName: Powerups
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: Water_1_Description
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  references:
+    version: 2
+    RefIds: []

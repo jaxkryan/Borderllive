@@ -22,6 +22,7 @@ public class Water_1 : Powerups
         this.type = BuffType.Debuff;
         this.triggerCondition = TriggerCondition.Always;
         this.effect = Effect.SpeedDecrease;
+        InitializeLocalization("Water_1_Name", "Water_1_Description");
     }
 
     public Boolean ApplyEffect(Knight target)

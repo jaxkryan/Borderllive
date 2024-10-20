@@ -21,6 +21,8 @@ public class Wood_3 : Powerups
         this.triggerCondition = TriggerCondition.LowHP;
 
         this.effect = Effect.HPRegen;
+
+        InitializeLocalization("Wood_3_Name", "Wood_3_Description");
     }
 
     internal void ApplyEffect(PlayerController player)

@@ -22,6 +22,7 @@ public class Fire_3 : Powerups
         this.type = BuffType.BerserkBuff;
         this.triggerCondition = TriggerCondition.Always;
         this.effect = Effect.BeserkRegen;
+        InitializeLocalization("Fire_3_Name", "Fire_3_Description");
     }
 
 

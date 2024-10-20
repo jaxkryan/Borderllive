@@ -12,14 +12,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c8e8ed258e3e2347a93045bb0c6e7b2, type: 3}
   m_Name: Wood_2
   m_EditorClassIdentifier: 
-  id: 2
+  id: 4
+  name: Nature's Decay
   type: 5
-  ElementId: 1
+  ElementId: 2
   triggerCondition: 0
-  effect: 4
+  effect: 5
   Weight: 10
   BerserkRateIncrease: 0
   cooldown: 10
-  duration: 1
+  duration: 2
   isActive: 0
   currentCooldown: 0
+  description: 
+  nameLocalization:
+    m_TableReference:
+      m_TableCollectionName: Powerups
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: Wood_2_Name
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  descriptionLocalization:
+    m_TableReference:
+      m_TableCollectionName: Powerups
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: Wood_2_Description
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  references:
+    version: 2
+    RefIds: []

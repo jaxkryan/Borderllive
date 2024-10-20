@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Localization-String-Tables-Vietnamese (Vietnam) (vi-VN)
+  m_EditorClassIdentifier: 
+  m_GroupName: Localization-String-Tables-Vietnamese (Vietnam) (vi-VN)
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 196a388801fad7b4a87eeb7f189f8684
+  m_SerializeEntries:
+  - m_GUID: d9fa9ba2394a5a048abcf017cd2dcb7e
+    m_Address: VN-EN_vi-VN
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-vi-VN
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 404aaa3a14cede749815cb9144e71ffa
+    m_Address: StoryLocalization_vi-VN
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-vi-VN
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 210220abe0ac35442bb3a347c89a60aa
+    m_Address: Powerups_vi-VN
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-vi-VN
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5f258d9dc8d164c4da886c7ab8461e5e
+    m_Address: FirstEncounterStory_vi-VN
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-vi-VN
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c3b56e6d81810fd4d98c1b171b7dd4e2
+    m_Address: Items_vi-VN
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-vi-VN
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4f906b769decda94d91230e1810f0c58
+    m_Address: Elemental_Event_vi-VN
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-vi-VN
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 1
+  m_Settings: {fileID: 11400000, guid: f5a5933921e1b134a9d81e43260f111a, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 70ba30b42b44d9e4091fdc4edb82e92e, type: 2}
+    - {fileID: 11400000, guid: 93cfaf4ccdffba945a07f726b61e8d49, type: 2}

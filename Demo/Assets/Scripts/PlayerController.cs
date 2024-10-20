@@ -11,18 +11,21 @@ using UnityEngine.SceneManagement;
 [RequireComponent(typeof(Rigidbody2D), typeof(TouchingDirection), typeof(Damageable))]
 public class PlayerController : MonoBehaviour
 {
+
+    public GameObject inventory;
     OwnedActiveItem ownedActiveItem;
     private CharacterStat characterStat;
     Rigidbody2D rb;
     Animator animator;
     public float walkSpeed = 5f;
     public float runSpeed = 10f;
-    public float jumpImpulse = 10f;
+    public float jumpImpulse = 17.2f;
     public float airWalkSpeed = 3f;
     TouchingDirection touchingDirection;
     OwnedPowerups ownedPowerups;
     Damageable damageable;
     BerserkGauge berserkGauge;
+
     public bool canMove
     {
         get
@@ -123,6 +126,11 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
+        if (!this.enabled)
+        {
+            // Logger.Log("PlayerController script is disabled in Awake, enabling it now.");
+            this.enabled = true; // Enable the script from Awake()
+        }
         ownedActiveItem = GetComponent<OwnedActiveItem>();
         berserkGauge = GetComponent<BerserkGauge>();
         rb = GetComponent<Rigidbody2D>();
@@ -135,48 +143,62 @@ public class PlayerController : MonoBehaviour
         // lockAttackCollider = GetComponent<CircleCollider2D>();
         // Subscribe to the damageableDeath event
         damageable.damageableDeath.AddListener(OnPlayerDeath);
-
     }
     private void OnPlayerDeath()
     {
-
+        // if (ownedActiveItem.item2 is Item7 || ownedActiveItem.item1 is Item7)
+        // {
+        //     Debug.Log("It suppose to revive");
+        //     return;
+        // }
+        // else{
+        //     Debug.Log("NOPE");
+        // }
         // Xóa dữ liệu khi người chơi chết
-        ClearPlayerData();
+        timer = FindObjectOfType<Timer>();
+        timer.OnPlayerDie();
 
+        ClearPlayerData();
         // Có thể thêm mã xử lý cái chết của người chơi ở đây
         Debug.Log("Player has died. Player data cleared.");
         // Load the Game Over screen
+        
         SceneManager.LoadScene("GameOver_Screen");
     }
     void Start()
     {
-        LoadPlayerData(); // Khôi phục dữ liệu khi bắt đầu trò chơi
+        LoadPlayerData();
 
     }
 
     void Update()
     {
+
         if (isDashing) { return; }
-    }
-
-    private void FixedUpdate()
-    {
-        if (isDashing) { return; }
-        if (!damageable.LockVelocity)
-            rb.velocity = new Vector2(moveInput.x * CurrentSpeed, rb.velocity.y);
-
-        animator.SetFloat(AnimationStrings.yVelocity, rb.velocity.y);
-
-        // Update running state based on movement
-        if (moveInput == Vector2.zero)
+        if (Input.GetKeyDown(KeyCode.Tab))
         {
-            IsRunning = false;
+            // Toggle the panel's active state
+            if (inventory != null)
+            {
+                inventory.SetActive(!inventory.activeSelf);
+            }
         }
     }
 
     public void OnMove(InputAction.CallbackContext context)
     {
+        //Logger.Log("OnMove called");
         moveInput = context.ReadValue<Vector2>();
+        //Logger.Log("OnMove: " + moveInput);
+        //Logger.Log("On move at stage " + SceneManager.GetActiveScene().name);
+        //Logger.Log("Is GameObject active after room change: " + gameObject.activeSelf);
+        //Logger.Log("Is script enabled after room change: " + this.enabled);
+        this.enabled = true;
+        //Logger.Log("PlayerController instance count: " + FindObjectsOfType<PlayerController>().Length);
+        //Logger.Log("Is Rigidbody kinematic: " + rb.isKinematic);
+        //Logger.Log("Rigidbody velocity: " + rb.velocity);
+
+
 
         if (IsAlive)
         {
@@ -189,6 +211,29 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void FixedUpdate()
+    {
+        //Logger.Log("FixedUpdate called");
+        if (isDashing) { return; }
+        if (!damageable.LockVelocity)
+        {
+            //Logger.Log("Updating velocity: " + moveInput * CurrentSpeed);
+            rb.velocity = new Vector2(moveInput.x * CurrentSpeed, rb.velocity.y);
+            //Logger.Log("Character velocity: " + rb.velocity);
+        }
+        else
+        {
+            //Logger.Log("Velocity locked: " + damageable.LockVelocity);
+        }
+
+        animator.SetFloat(AnimationStrings.yVelocity, rb.velocity.y);
+
+        // Update running state based on movement
+        if (moveInput == Vector2.zero)
+        {
+            IsRunning = false;
+        }
+    }
     private void SetFacingDirection(Vector2 moveInput)
     {
         if (moveInput.x > 0 && !isFacingRight)
@@ -206,9 +251,12 @@ public class PlayerController : MonoBehaviour
         if (context.started)
         {
             IsRunning = true;
+
+            jumpImpulse += 0.5f;
         }
         else if (context.canceled)
         {
+            jumpImpulse -= 0.5f;
             IsRunning = false;
         }
     }
@@ -262,6 +310,7 @@ public class PlayerController : MonoBehaviour
         if (context.started)
         {
             Item currentItem = ownedActiveItem.item1;
+            if (currentItem == null) return;
             GameObject Item1 = GameObject.Find("Item1");
             SpellCooldown sp = Item1.GetComponent<SpellCooldown>();
             sp.cooldownTime = currentItem.cd;
@@ -288,21 +337,25 @@ public class PlayerController : MonoBehaviour
         if (context.started)
         {
             Item currentItem = ownedActiveItem.item2;
+            if (currentItem == null) return;
             GameObject Item2 = GameObject.Find("Item2");
             SpellCooldown sp = Item2.GetComponent<SpellCooldown>();
+            sp.cooldownTime = currentItem.cd;
             if (sp != null)
             {
-                sp.cooldownTime = currentItem.cd;
-                sp.UseSpell();
-            }
-            // Check if the current item is not null
-            if (currentItem != null)
-            {
-                // Activate the item's effect
-                currentItem.Activate();
+                if (sp.UseSpell())
+                {
+                    // Check if the current item is not null
+                    if (currentItem != null)
+                    {
+                        // Activate the item's effect
+                        currentItem.Activate();
 
-                // Set the animator trigger
-                animator.SetTrigger(item1Trigger);
+
+                        // Set the animator trigger
+                        animator.SetTrigger(item1Trigger);
+                    }
+                }
             }
 
         }
@@ -354,7 +407,7 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            berserkGauge.DecreaseProgress(10f);
+            berserkGauge.DecreaseProgress(8f);
         }
         canDash = false;
         isDashing = true;
@@ -479,41 +532,58 @@ public class PlayerController : MonoBehaviour
         isEffectTriggered = false;
     }
 
-    private void ClearPlayerData()
+    public static void ClearPlayerData()
     {
-        // Xóa toàn bộ dữ liệu trong PlayerPrefs
-        PlayerPrefs.DeleteAll();
-        // Nếu bạn chỉ muốn xóa một khóa cụ thể
-        // PlayerPrefs.DeleteKey("YourKeyName");
+        PlayerPrefs.DeleteKey("Health");
+        PlayerPrefs.DeleteKey("MaxHealth");
+        PlayerPrefs.DeleteKey("Shield");
+        PlayerPrefs.DeleteKey("XP");
+        PlayerPrefs.DeleteKey("Souls");
+        PlayerPrefs.DeleteKey("ActivePowerups");
+        PlayerPrefs.DeleteKey("Item1");
+        PlayerPrefs.DeleteKey("Item2");
+        timer = FindObjectOfType<Timer>();
+        timer.ResetTime();
+        PlayerPrefs.DeleteKey("EnemyXP");
 
-        // Lưu lại để đảm bảo rằng dữ liệu được xóa ngay lập tức
         PlayerPrefs.Save();
     }
 
     private CurrencyManager currencyManager;
     private XPTracker xPTracker;
+    private static Timer timer;
     public void SavePlayerState()
     {
+        timer = FindObjectOfType<Timer>();
+        timer.SaveTime();
+        CharacterStat characterStat = GetComponent<CharacterStat>();
         // Save player health
         PlayerPrefs.SetInt("Health", damageable.Health);
         PlayerPrefs.SetInt("MaxHealth", damageable.MaxHealth);
+        Debug.Log("c mau: " + PlayerPrefs.GetInt("Health"));
+        Debug.Log("max mau: " + PlayerPrefs.GetInt("MaxHealth"));
+        PlayerPrefs.SetFloat("Shield", characterStat.Shield);
+
 
         // Save player XP
         PlayerPrefs.SetInt("XP", xPTracker.CurrentXP);
 
-        // Save player souls (currency)
+        // Save player souls (currency) - cong 30 la cdj the cac ban??
         if (currencyManager != null)
         {
-            PlayerPrefs.SetInt("Souls", currencyManager.currentAmount + 30); // Assuming CurrentMoney tracks souls
+            PlayerPrefs.SetInt("Souls", currencyManager.currentAmount); // Assuming CurrentMoney tracks souls
         }
 
         // Save active power-ups
         OwnedPowerups ownedPowerups = GetComponent<OwnedPowerups>();
         if (ownedPowerups != null)
         {
-            string powerupsJson = ownedPowerups.SerializeActivePowerups();
-            PlayerPrefs.SetString("ActivePowerups", powerupsJson);
-            Debug.Log("Buff:" + powerupsJson);
+            ownedPowerups.SavePowerups();
+        }
+        OwnedActiveItem ownedItems = GetComponent<OwnedActiveItem>();
+        if (ownedItems != null)
+        {
+            ownedItems.SaveItems();
         }
 
         // Save PlayerPrefs data
@@ -534,7 +604,11 @@ public class PlayerController : MonoBehaviour
             damageable.MaxHealth = PlayerPrefs.GetInt("MaxHealth");
             damageable.Health = PlayerPrefs.GetInt("Health");
         }
-
+        if (PlayerPrefs.HasKey("Shield"))
+        {
+            CharacterStat characterStat = GetComponent<CharacterStat>();
+            characterStat.IncreaseShield(PlayerPrefs.GetFloat("Shield"));
+        }
         // Load player XP
         if (PlayerPrefs.HasKey("XP"))
         {
@@ -550,11 +624,85 @@ public class PlayerController : MonoBehaviour
 
             currencyManager.SetCurrency(PlayerPrefs.GetInt("Souls")); // Assuming SetMoney sets the currency amount
         }
+        OwnedActiveItem ownedItems = GetComponent<OwnedActiveItem>();
+        if (ownedItems != null)
+        {
+            ownedItems.LoadItems();
+        }
 
-        // Load active power-ups
-        LoadPowerups();
+        OwnedPowerups ownedPowerups = GetComponent<OwnedPowerups>();
+        if (ownedPowerups != null)
+        {
+            ownedPowerups.LoadPowerups();
+        }
+
+        if (PlayerPrefs.HasKey("AnimatorController"))
+        {
+            string animatorControllerName = PlayerPrefs.GetString("AnimatorController");
+            Animator animator = GetComponent<Animator>();
+            RuntimeAnimatorController ac = Resources.Load<RuntimeAnimatorController>("Animator/" + animatorControllerName);
+
+
+            if (ac != null)
+            {
+                animator.runtimeAnimatorController = ac;
+               
+            }
+            else
+            {
+                Debug.LogWarning("Animator Controller not found: " + animatorControllerName);
+            }
+        }
+    }
+    private void OnApplicationQuit()
+    {
+        LevelController.ResetStaticData();
+        ClearPlayerData();
+
+        Debug.Log("Player data cleared on application quit.");
     }
 
+    public void SaveAnimatorChoice(string animatorControllerName)
+    {
+        PlayerPrefs.SetString("AnimatorController", animatorControllerName);
+        PlayerPrefs.Save();
+    }
+
+    public void OnStaffClick()
+    {
+        SaveAnimatorChoice("AC_Player");
+        string animatorControllerName = PlayerPrefs.GetString("AnimatorController");
+        Animator animator = GetComponent<Animator>();
+        RuntimeAnimatorController ac = Resources.Load<RuntimeAnimatorController>("Animator/" + animatorControllerName);
+
+
+        if (ac != null)
+        {
+            animator.runtimeAnimatorController = ac;
+        }
+        else
+        {
+            Debug.LogWarning("Animator Controller not found: " + animatorControllerName);
+        }
+    }
+
+    public void OnSwordClick()
+    {
+        SaveAnimatorChoice("AC_Player_Sword");
+        string animatorControllerName = PlayerPrefs.GetString("AnimatorController");
+        Animator animator = GetComponent<Animator>();
+        RuntimeAnimatorController ac = Resources.Load<RuntimeAnimatorController>("Animator/" + animatorControllerName);
+
+
+        if (ac != null)
+        {
+            animator.runtimeAnimatorController = ac;
+        }
+        else
+        {
+            Debug.LogWarning("Animator Controller not found: " + animatorControllerName);
+        }
+    }
 
     public void LoadPowerups()
     {
@@ -582,7 +730,7 @@ public class PlayerController : MonoBehaviour
             return;
         }
         float spdIncrease = characterStat.Speed * 0.1f;
-        dashingPower *= 0.1f;
+        dashingPower += dashingCd * 0.1f;
         //Debug.Log("Gia tri defIncrease: " + (int)defIncrease);
         characterStat.Speed += spdIncrease;
     }
@@ -596,7 +744,7 @@ public class PlayerController : MonoBehaviour
     internal void IncreaseBerserkRecharge(float increasePercent)
     {
         berserkGauge.berserkRegenIncrease = increasePercent;
-        Debug.Log("bs rg inc: " + berserkGauge.berserkRegenIncrease);
+        // Debug.Log("bs rg inc: " + berserkGauge.berserkRegenIncrease);
     }
 
     internal void IncreaseHp(float value)
@@ -607,9 +755,16 @@ public class PlayerController : MonoBehaviour
             Debug.LogError("CharacterStat component not found!");
             return;
         }
+
+
         int newMaxHealth = (int)(damageable.MaxHealth * (1 + value));
+        Debug.Log($"Old MaxHealth: {damageable.MaxHealth}, New MaxHealth: {newMaxHealth}");
         damageable.MaxHealth = newMaxHealth;
+
+        Debug.Log("Earth 1 active!: " + damageable.MaxHealth);
         damageable.Health += (int)(damageable.Health * value);
+        // Debug.Log("max health: " + damageable.MaxHealth);
+        // Debug.Log("c health " + damageable.Health);
     }
 
     //internal void IncreaseDefHighHp(float value)

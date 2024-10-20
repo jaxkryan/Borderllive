@@ -16,16 +16,18 @@ public class Earth_1 : Powerups
         this.Weight = 10;
         this.BerserkRateIncrease = 0;
         this.type = BuffType.HpBuff;
-
+    
         this.triggerCondition = TriggerCondition.Always;
 
         this.effect = Effect.HPIncrease;
+        InitializeLocalization("Earth_1_Name", "Earth_1_Description");
     }
 
     public void ApplyEffect(PlayerController player)
     {
         if (player != null)
         {
+
             player.IncreaseHp(staminaIncrease);
         }
     }

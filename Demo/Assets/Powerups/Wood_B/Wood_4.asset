@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Wood_4
   m_EditorClassIdentifier: 
   id: 12
+  name: Woodland Restoration
   type: 2
   ElementId: 2
   triggerCondition: 3
@@ -23,4 +24,26 @@ MonoBehaviour:
   duration: 0
   isActive: 0
   currentCooldown: 0
-  healingPercentage: 0.1
+  description: 
+  nameLocalization:
+    m_TableReference:
+      m_TableCollectionName: Powerups
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: Wood_4_Name
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  descriptionLocalization:
+    m_TableReference:
+      m_TableCollectionName: Powerups
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: Wood_4_Description
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  healingPercentage: 0.01
+  references:
+    version: 2
+    RefIds: []

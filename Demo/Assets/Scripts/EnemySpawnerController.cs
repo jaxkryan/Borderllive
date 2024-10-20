@@ -46,11 +46,7 @@ public class EnemySpawnerController : MonoBehaviour
             portal.SetActive(false); // Deactivate the portal initially
         }
 
-        buffSelectionUI = FindObjectOfType<BuffSelectionUI>(); // Find the BuffSelectionUI
-        if (buffSelectionUI == null)
-        {
-            Debug.LogError("BuffSelectionUI not found!");
-        }
+        
     }
 
     IEnumerator SpawnWaves()
@@ -153,6 +149,11 @@ public class EnemySpawnerController : MonoBehaviour
 
     void ShowBuffSelection()
     {
+        buffSelectionUI = FindObjectOfType<BuffSelectionUI>(); // Find the BuffSelectionUI
+        if (buffSelectionUI == null)
+        {
+            Debug.LogError("BuffSelectionUI not found!");
+        }
         if (buffSelectionUI != null)
         {
             buffSelectionUI.ShowBuffChoices();

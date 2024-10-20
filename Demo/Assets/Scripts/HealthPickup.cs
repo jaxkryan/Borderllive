@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class HealthPickup : MonoBehaviour
 {
-    public int healthRestore = 20;
+    public float healthRestore = 0.2f;
     public Vector3 spinRotationSpeed = new Vector3(0, 180, 0);
 
     AudioSource pickupSource;
@@ -19,12 +19,13 @@ public class HealthPickup : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log("pick up!");
         Damageable damageable = collision.GetComponent<Damageable>();
 
         if (damageable && damageable.Health < damageable.MaxHealth)
         {
-            bool wasHealed = damageable.Heal(healthRestore);
-
+            bool wasHealed = damageable.Heal((int)(healthRestore * damageable.MaxHealth));
+            Debug.Log("heal was: " + (int)(healthRestore * damageable.MaxHealth));
             if (wasHealed)
                 if (pickupSource)
                     AudioSource.PlayClipAtPoint(pickupSource.clip, gameObject.transform.position, pickupSource.volume);

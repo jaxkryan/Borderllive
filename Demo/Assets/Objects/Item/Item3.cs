@@ -15,10 +15,18 @@ public class Item3 : Item
         this.itemDescription = "Trade 5% hp for 10% shield. Can not use skill if under 20% hp.";
         this.itemType = ItemType.Active;
         this.cd = 20f;
+        this.cost = 80;
+                        this.code = "daikalop12a";
+        this.isEnable = true;
+        this.historyDescription = "Trade 5% hp for 10% shield. Can not use skill if under 20% hp.";
+
+        InitializeLocalization("Item3", "Item3_Description", "Item3_HistoryDescription");
+        LoadItemState();
     }
 
     public override void Activate()
     {
+         if (isEnable==false) return;
         playerController = FindAnyObjectByType<PlayerController>();
         CharacterStat characterStat = playerController.GetComponent<CharacterStat>();
         Damageable damageable = playerController.GetComponent<Damageable>();

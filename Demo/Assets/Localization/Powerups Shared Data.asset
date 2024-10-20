@@ -1,0 +1,148 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: Powerups Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: Powerups
+  m_TableCollectionNameGuidString: b20ae765e972d1e4d81287cce6cb8db4
+  m_Entries:
+  - m_Id: 6063906816
+    m_Key: Metal_1_Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21768591892480
+    m_Key: Metal_1_Description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22372156432384
+    m_Key: Metal_2_Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22445477060608
+    m_Key: Metal_2_Description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22804782112768
+    m_Key: Metal_3_Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22898428338176
+    m_Key: Metal_3_Description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23013553594368
+    m_Key: Earth_1_Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23475031891968
+    m_Key: Earth_1_Description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23649280057344
+    m_Key: Earth_2_Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23729781334016
+    m_Key: Earth_2_Description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23836748668928
+    m_Key: Earth_3_Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23881740967936
+    m_Key: Earth_3_Description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24125618774016
+    m_Key: Fire_1_Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24237753491456
+    m_Key: Fire_1_Description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24388551303168
+    m_Key: Fire_2_Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24532202020864
+    m_Key: Fire_2_Description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24662426771456
+    m_Key: Fire_3_Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24723281928192
+    m_Key: Fire_3_Description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24936692310016
+    m_Key: Water_1_Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26351112282112
+    m_Key: Water_1_Description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26513452818432
+    m_Key: Water_2_Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26603076706304
+    m_Key: Water_2_Description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26697930891264
+    m_Key: Water_3_Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26716490686464
+    m_Key: Water_3_Description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27317282791424
+    m_Key: Wood_2_Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27831168917504
+    m_Key: Wood_2_Description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28059540381696
+    m_Key: Wood_3_Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28197876916224
+    m_Key: Wood_3_Description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28633086287872
+    m_Key: Wood_4_Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28704221683712
+    m_Key: Wood_4_Description
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 7238775672408375298
+  references:
+    version: 2
+    RefIds:
+    - rid: 7238775672408375298
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1728164875856

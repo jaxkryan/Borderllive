@@ -15,18 +15,20 @@ public class Knight : MonoBehaviour
     Damageable damageable;
     Rigidbody2D rb;
 
+    public bool isBoss = false; // New boolean to distinguish between boss and knight
+
     public enum WalkableDirection { Right, Left }
     TouchingDirection touchingDirection;
 
     private Vector2 walkDirectionVector = Vector2.right;
     private WalkableDirection _walkDirection;
 
-    public DetectionZone chaseZone; // New chase detection zone
-    private bool isChasing = false; // Track whether the enemy is chasing
-    private Transform target; // Store the target player's transform
-
-    // New variable to track attack state
+    public DetectionZone chaseZone;
+    private bool isChasing = false;
+    private Transform target;
     private bool isAttacking = false;
+
+    private int attackCount = 4; // Number of attack variations for boss
 
     public WalkableDirection WalkDirection
     {
@@ -37,16 +39,8 @@ public class Knight : MonoBehaviour
             {
                 gameObject.transform.localScale =
                     new Vector2(gameObject.transform.localScale.x * -1, gameObject.transform.localScale.y);
-                if (value == WalkableDirection.Right)
-                {
-                    walkDirectionVector = Vector2.right;
-                }
-                else if (value == WalkableDirection.Left)
-                {
-                    walkDirectionVector = Vector2.left;
-                }
+                walkDirectionVector = (value == WalkableDirection.Right) ? Vector2.right : Vector2.left;
             }
-
             _walkDirection = value;
         }
     }
@@ -75,13 +69,11 @@ public class Knight : MonoBehaviour
     {
         HasTarget = attackZone.detectedColliders.Count > 0;
 
-        // Check if the player is in the chase zone
-        Collider2D playerCollider = chaseZone.detectedColliders
-            .FirstOrDefault(collider => collider.CompareTag("Player")); // Assuming the player has the tag "Player"
+        Collider2D playerCollider = chaseZone.detectedColliders.FirstOrDefault(collider => collider.CompareTag("Player"));
 
-        if (playerCollider != null) // If we found the player collider
+        if (playerCollider != null)
         {
-            target = playerCollider.transform; // Set the target to the player's transform
+            target = playerCollider.transform;
             StartChasing();
         }
         else if (isChasing)
@@ -89,7 +81,6 @@ public class Knight : MonoBehaviour
             StopChasing();
         }
 
-        // Attack cooldown logic
         if (AttackCooldown > 0)
         {
             AttackCooldown -= Time.deltaTime;
@@ -98,13 +89,12 @@ public class Knight : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (isChasing && !isAttacking) // Check if not attacking
+        if (isChasing && !isAttacking)
         {
             ChasePlayer();
         }
         else
         {
-            // Existing patrol logic...
             if (touchingDirection.IsOnWall && touchingDirection.IsGround)
             {
                 FlipDirection();
@@ -139,93 +129,77 @@ public class Knight : MonoBehaviour
     {
         if (target == null) return;
 
-        // Move towards the player's position
         Vector2 direction = (target.position - transform.position).normalized;
 
-        // Check if the player is to the left or right of the enemy
         if (direction.x < 0 && WalkDirection == WalkableDirection.Right)
         {
-            FlipDirection(); // Flip to face the player if they are behind
+            FlipDirection();
         }
         else if (direction.x > 0 && WalkDirection == WalkableDirection.Left)
         {
-            FlipDirection(); // Flip to face the player if they are behind
+            FlipDirection();
         }
 
-        // Update velocity to chase the player
         rb.velocity = new Vector2(direction.x * enemyStat.Speed, rb.velocity.y);
 
-        // Check if the enemy can attack
         if (HasTarget && AttackCooldown <= 0)
         {
-            AttackPlayer();
+            if (isBoss)
+            {
+                PerformRandomAttack();
+            }
+            else
+            {
+                AttackPlayer(); // Normal knight attack
+            }
         }
     }
 
+    private void PerformRandomAttack()
+    {
+        isAttacking = true;
+        int randomAttack = UnityEngine.Random.Range(1, attackCount + 1); // Randomly choose an attack (1, 2, or 3)
+        animator.SetInteger("AttackIndex", randomAttack); // Set the random attack animation
+        AttackCooldown = 1.0f;
+        StartCoroutine(ResetAttackStateAfterAnimation());
+    }
 
     private void AttackPlayer()
     {
-        isAttacking = true; // Set the attack state
-        animator.SetBool(AnimationStrings.attacking, true); // Trigger attack animation
-
-        // Attack logic...
-        AttackCooldown = 1.0f; // Set your desired cooldown duration
-
-        // You may want to reset isAttacking after the attack animation ends.
+        isAttacking = true;
+        animator.SetBool(AnimationStrings.attacking, true); // Trigger normal knight attack animation
+        AttackCooldown = 1.0f;
         StartCoroutine(ResetAttackStateAfterAnimation());
     }
 
     private IEnumerator ResetAttackStateAfterAnimation()
     {
-        // Assuming your attack animation length is defined elsewhere, wait for its duration.
         yield return new WaitForSeconds(1.0f); // Adjust based on your animation duration
-        isAttacking = false; // Reset the attacking state
-        animator.SetBool(AnimationStrings.attacking, false); // Stop the attack animation
+        isAttacking = false;
+        animator.SetBool(AnimationStrings.attacking, false);
     }
 
     public bool _hasTarget = false;
 
     private void FlipDirection()
     {
-        if (WalkDirection == WalkableDirection.Right)
-        {
-            WalkDirection = WalkableDirection.Left;
-        }
-        else if (WalkDirection == WalkableDirection.Left)
-        {
-            WalkDirection = WalkableDirection.Right;
-        }
-        else
-        {
-            Debug.LogError("ERROR");
-        }
+        WalkDirection = (WalkDirection == WalkableDirection.Right) ? WalkableDirection.Left : WalkableDirection.Right;
     }
 
     public void OnHit(int damage, Vector2 knockback)
     {
         rb.velocity = new Vector2(knockback.x, rb.velocity.y + knockback.y);
-        // Prevent movement when hit, or manage the hit state accordingly
-        // If necessary, you can set a separate hit state or delay further actions
     }
 
     public bool CanMove
     {
-        get
-        {
-            return animator.GetBool(AnimationStrings.canMove);
-        }
+        get { return animator.GetBool(AnimationStrings.canMove); }
     }
 
     public float AttackCooldown
     {
-        get
-        {
-            return animator.GetFloat(AnimationStrings.AttackCooldown);
-        }
-        private set
-        {
-            animator.SetFloat(AnimationStrings.AttackCooldown, Mathf.Max(0, value));
-        }
+        get { return animator.GetFloat(AnimationStrings.AttackCooldown); }
+        private set { animator.SetFloat(AnimationStrings.AttackCooldown, Mathf.Max(0, value)); }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

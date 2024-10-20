@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8303a5894c80162418b88949b0fef3fd, type: 3}
   m_Name: Water_2
   m_EditorClassIdentifier: 
-  id: 1
+  id: 7
+  name: 'Fluid Motion '
   type: 3
-  ElementId: 1
+  ElementId: 3
   triggerCondition: 0
   effect: 3
   Weight: 10
@@ -23,3 +24,25 @@ MonoBehaviour:
   duration: 0
   isActive: 0
   currentCooldown: 0
+  description: 
+  nameLocalization:
+    m_TableReference:
+      m_TableCollectionName: Powerups
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: Water_2_Name
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  descriptionLocalization:
+    m_TableReference:
+      m_TableCollectionName: Powerups
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: Water_2_Description
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  references:
+    version: 2
+    RefIds: []

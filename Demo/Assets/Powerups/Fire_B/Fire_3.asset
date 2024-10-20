@@ -13,13 +13,36 @@ MonoBehaviour:
   m_Name: Fire_3
   m_EditorClassIdentifier: 
   id: 11
-  type: 4
+  name: 'Inferno''s Wrath '
+  type: 1
   ElementId: 4
   triggerCondition: 0
-  effect: 0
+  effect: 7
   Weight: 10
   BerserkRateIncrease: 0
   cooldown: 0
   duration: 0
   isActive: 0
   currentCooldown: 0
+  description: 
+  nameLocalization:
+    m_TableReference:
+      m_TableCollectionName: Powerups
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: Fire_3_Name
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  descriptionLocalization:
+    m_TableReference:
+      m_TableCollectionName: Powerups
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: Fire_3_Description
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  references:
+    version: 2
+    RefIds: []

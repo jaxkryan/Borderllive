@@ -1,10 +1,9 @@
-using Inventory.Model;
-using Inventory.UI;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Inventory
 {
@@ -23,6 +22,10 @@ namespace Inventory
 
         [SerializeField]
         private AudioSource audioSource;
+
+        public string inventorySceneName = "Inventory";
+
+        public KeyCode openInventoryKey = KeyCode.I;
 
         private void Start()
         {
@@ -47,7 +50,7 @@ namespace Inventory
             inventoryUI.ResetAllItems();
             foreach (var item in inventoryState)
             {
-                inventoryUI.UpdateData(item.Key, item.Value.item.ItemImage, 
+                inventoryUI.UpdateData(item.Key, item.Value.item.image, 
                     item.Value.quantity);
             }
         }
@@ -63,23 +66,23 @@ namespace Inventory
 
         private void HandleItemActionRequest(int itemIndex)
         {
-            InventoryItem inventoryItem = inventoryData.GetItemAt(itemIndex);
-            if (inventoryItem.IsEmpty)
-                return;
+            //InventoryItem inventoryItem = inventoryData.GetItemAt(itemIndex);
+            //if (inventoryItem.IsEmpty)
+            //    return;
 
-            IItemAction itemAction = inventoryItem.item as IItemAction;
-            if(itemAction != null)
-            {
+            //IItemAction itemAction = inventoryItem.item as IItemAction;
+            //if(itemAction != null)
+            //{
                 
-                inventoryUI.ShowItemAction(itemIndex);
-                inventoryUI.AddAction(itemAction.ActionName, () => PerformAction(itemIndex));
-            }
+            //    inventoryUI.ShowItemAction(itemIndex);
+            //    inventoryUI.AddAction(itemAction.ActionName, () => PerformAction(itemIndex));
+            //}
 
-            IDestroyableItem destroyableItem = inventoryItem.item as IDestroyableItem;
-            if (destroyableItem != null)
-            {
-                inventoryUI.AddAction("Drop", () => DropItem(itemIndex, inventoryItem.quantity));
-            }
+            //IDestroyableItem destroyableItem = inventoryItem.item as IDestroyableItem;
+            //if (destroyableItem != null)
+            //{
+            //    inventoryUI.AddAction("Drop", () => DropItem(itemIndex, inventoryItem.quantity));
+            //}
 
         }
 
@@ -92,24 +95,24 @@ namespace Inventory
 
         public void PerformAction(int itemIndex)
         {
-            InventoryItem inventoryItem = inventoryData.GetItemAt(itemIndex);
-            if (inventoryItem.IsEmpty)
-                return;
+            //InventoryItem inventoryItem = inventoryData.GetItemAt(itemIndex);
+            //if (inventoryItem.IsEmpty)
+            //    return;
 
-            IDestroyableItem destroyableItem = inventoryItem.item as IDestroyableItem;
-            if (destroyableItem != null)
-            {
-                inventoryData.RemoveItem(itemIndex, 1);
-            }
+            //IDestroyableItem destroyableItem = inventoryItem.item as IDestroyableItem;
+            //if (destroyableItem != null)
+            //{
+            //    inventoryData.RemoveItem(itemIndex, 1);
+            //}
 
-            IItemAction itemAction = inventoryItem.item as IItemAction;
-            if (itemAction != null)
-            {
-                itemAction.PerformAction(gameObject, inventoryItem.itemState);
-                audioSource.PlayOneShot(itemAction.actionSFX);
-                if (inventoryData.GetItemAt(itemIndex).IsEmpty)
-                    inventoryUI.ResetSelection();
-            }
+            //IItemAction itemAction = inventoryItem.item as IItemAction;
+            //if (itemAction != null)
+            //{
+            //    itemAction.PerformAction(gameObject, inventoryItem.itemState);
+            //    audioSource.PlayOneShot(itemAction.actionSFX);
+            //    if (inventoryData.GetItemAt(itemIndex).IsEmpty)
+            //        inventoryUI.ResetSelection();
+            //}
         }
 
         private void HandleDragging(int itemIndex)
@@ -117,7 +120,7 @@ namespace Inventory
             InventoryItem inventoryItem = inventoryData.GetItemAt(itemIndex);
             if (inventoryItem.IsEmpty)
                 return;
-            inventoryUI.CreateDraggedItem(inventoryItem.item.ItemImage, inventoryItem.quantity);
+            inventoryUI.CreateDraggedItem(inventoryItem.item.image, inventoryItem.quantity);
         }
 
         private void HandleSwapItems(int itemIndex_1, int itemIndex_2)
@@ -133,16 +136,16 @@ namespace Inventory
                 inventoryUI.ResetSelection();
                 return;
             }
-            ItemSO item = inventoryItem.item;
+            Item item = inventoryItem.item;
             string description = PrepareDescription(inventoryItem);
-            inventoryUI.UpdateDescription(itemIndex, item.ItemImage,
+            inventoryUI.UpdateDescription(itemIndex, item.image,
                 item.name, description);
         }
 
         private string PrepareDescription(InventoryItem inventoryItem)
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append(inventoryItem.item.Description);
+            sb.Append(inventoryItem.item.itemDescription);
             sb.AppendLine();
             for (int i = 0; i < inventoryItem.itemState.Count; i++)
             {
@@ -156,7 +159,28 @@ namespace Inventory
 
         public void Update()
         {
-            if (Input.GetKeyDown(KeyCode.I))
+            //if (Input.GetKeyDown(openInventoryKey))
+            //{
+            //    // Check if the inventory scene is already loaded
+            //    Scene inventoryScene = SceneManager.GetSceneByName(inventorySceneName);
+            //    if (inventoryScene.isLoaded)
+            //    {
+            //        // Unload the inventory scene
+            //        SceneManager.UnloadSceneAsync(inventorySceneName);
+            //    }
+            //    else
+            //    {
+            //        // Load the inventory scene additively
+            //        SceneManager.LoadScene(inventorySceneName, LoadSceneMode.Additive);
+            //        foreach (var item in inventoryData.GetCurrentInventoryState())
+            //        {
+            //            inventoryUI.UpdateData(item.Key,
+            //                item.Value.item.image,
+            //                item.Value.quantity);
+            //        }
+            //    }
+            //}
+            if (Input.GetKeyDown(openInventoryKey))
             {
                 if (inventoryUI.isActiveAndEnabled == false)
                 {
@@ -164,7 +188,7 @@ namespace Inventory
                     foreach (var item in inventoryData.GetCurrentInventoryState())
                     {
                         inventoryUI.UpdateData(item.Key,
-                            item.Value.item.ItemImage,
+                            item.Value.item.image,
                             item.Value.quantity);
                     }
                 }
