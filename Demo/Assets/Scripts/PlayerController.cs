@@ -156,14 +156,16 @@ public class PlayerController : MonoBehaviour
         // }
         // Xóa dữ liệu khi người chơi chết
         timer = FindObjectOfType<Timer>();
-        timer.OnPlayerDie();
+        if (timer != null)
+            timer.OnPlayerDie();
 
         ClearPlayerData();
         // Có thể thêm mã xử lý cái chết của người chơi ở đây
         Debug.Log("Player has died. Player data cleared.");
         // Load the Game Over screen
-        if (SceneManager.GetActiveScene().name == "Endless"){
-             SceneManager.LoadScene("GameOver_Endless");
+        if (SceneManager.GetActiveScene().name == "Endless")
+        {
+            SceneManager.LoadScene("GameOver_Endless");
         }
         else SceneManager.LoadScene("GameOver_Screen");
     }
@@ -545,7 +547,7 @@ public class PlayerController : MonoBehaviour
         PlayerPrefs.DeleteKey("Item1");
         PlayerPrefs.DeleteKey("Item2");
         timer = FindObjectOfType<Timer>();
-        timer.ResetTime();
+        if (timer != null) timer.ResetTime();
         PlayerPrefs.DeleteKey("EnemyXP");
 
         PlayerPrefs.Save();
@@ -648,7 +650,7 @@ public class PlayerController : MonoBehaviour
             if (ac != null)
             {
                 animator.runtimeAnimatorController = ac;
-               
+
             }
             else
             {
