@@ -146,6 +146,67 @@ MonoBehaviour:
       l\u1EA7n m\u1ED7i n\u0103m m\xE0."
     m_Metadata:
       m_Items: []
+  - m_Id: 1947368954044416
+    m_Localized: "B\u1EA1n \u0111i qua m\u1ED9t con \u0111\u01B0\u1EDDng c\u1ED5
+      k\xEDnh trong r\u1EEBng, th\xEC b\u1EAFt g\u1EB7p m\u1ED9t chi\u1EBFc c\u1ED5ng
+      \u0111\xE1 l\u1EDBn. Ph\xEDa tr\u01B0\u1EDBc c\u1ED5ng l\xE0..."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1948866266046464
+    m_Localized: "Ng\u01B0\u01A1i c\xF3 bi\u1EBFt n\u01A1i \u0111\xE2y l\xE0 ch\u1ED1n
+      linh thi\xEAng kh\xF4ng? Kh\xF4ng ph\u1EA3i ai c\u0169ng c\xF3 th\u1EC3 \u0111i
+      qua. Ph\u1EA3i \u0111\u1ED1i \u0111\u01B0\u1EE3c c\xE2u c\u1EE7a ta, th\xEC
+      m\u1EDBi \u0111\u01B0\u1EE3c nh\u1EADn s\u1EE9c m\u1EA1nh v\xE0 ti\u1EBFp t\u1EE5c
+      h\xE0nh tr\xECnh."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1948981336776704
+    m_Localized: "Ta s\u1EBD ch\u1EA5p nh\u1EADn th\xE1ch th\u1EE9c c\u1EE7a ng\u01B0\u01A1i.
+      H\xE3y n\xF3i ra \u0111i!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1949048210759680
+    m_Localized: "C\xF4 g\xE1i n\u1EDF n\u1EE5 c\u01B0\u1EDDi, c\u1EA5t gi\u1ECDng
+      \u0111\u1ECDc c\xE2u \u0111\u1ED1i, g\u1EE3i l\u1EA1i b\u1EA7u kh\xED h\xE0o
+      h\xF9ng c\u1EE7a th\u1EDDi cha \xF4ng \u0111\xE3 \u0111\u1ED1i m\u1EB7t v\u1EDBi
+      gi\u1EB7c ngo\u1EA1i x\xE2m:"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1949183447703552
+    m_Localized: "C\xF3 b\u1EE5ng c\xF9ng nhau l\xF3t \u0111\u1EA5t c\u1ECF,\r\n\u0110em
+      l\xF2ng \u0111\u1EAFp l\u1EA1i l\u1ED7 tr\xE2u \u0111\xF9n."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1949433474359296
+    m_Localized: "B\u1EA1n nh\u1EADn ra \u0111\xE2y l\xE0 c\xE2u \u0111\u1ED1i m\xE0
+      Nguy\u1EC5n Tr\xE3i t\u1EEBng s\u1EED d\u1EE5ng, c\u1EA3m th\u1EA5y l\xF2ng
+      t\u1EF1 h\xE0o d\xE2n t\u1ED9c d\xE2ng tr\xE0o. B\u1EA1n \u0111\xE1p l\u1EA1i
+      v\u1EDBi gi\u1ECDng ki\xEAn \u0111\u1ECBnh:"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1949622494863360
+    m_Localized: "\u0110\u1ED9i tr\u1EDDi chung b\xF3ng n\u01B0\u1EDBc,\r\nC\xF9ng
+      \u0111\u1EA5t chia l\xE0n s\xF4ng."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1949691755405312
+    m_Localized: "C\xF4 g\xE1i c\u01B0\u1EDDi l\u1EDBn, t\u1ECF v\u1EBB h\xE0i l\xF2ng
+      tr\u01B0\u1EDBc s\u1EF1 nhanh tr\xED v\xE0 l\xF2ng d\u0169ng c\u1EA3m c\u1EE7a
+      b\u1EA1n."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1949795820281856
+    m_Localized: "T\u1ED1t! Ng\u01B0\u01A1i \u0111\xFAng l\xE0 ng\u01B0\u1EDDi c\xF3
+      tr\xED, x\u1EE9ng \u0111\xE1ng nh\u1EADn \u0111\u01B0\u1EE3c s\u1EE9c m\u1EA1nh
+      t\u1EEB ta. H\xE3y ch\u1ECDn m\u1ED9t trong hai s\u1EE9c m\u1EA1nh m\xE0 ta
+      s\u1EBD ban cho ng\u01B0\u01A1i:"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1949920202366976
+    m_Localized: "H\xE3y chi\u1EBFn \u0111\u1EA5u v\xEC gi\u1EA5c m\u01A1 c\u1EE7a
+      m\xECnh!"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

@@ -130,6 +130,58 @@ MonoBehaviour:
       After all, the Mid-Autumn Festival only comes once a year"
     m_Metadata:
       m_Items: []
+  - m_Id: 1947368954044416
+    m_Localized: You walk through an ancient path in the forest and come across a
+      large stone gate. In front of the gate is...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1948866266046464
+    m_Localized: Do you know this place is a sacred ground? Not everyone can pass
+      through. You must answer my riddle to receive power and continue your journey.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1948981336776704
+    m_Localized: I accept your challenge. Speak your riddle!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1949048210759680
+    m_Localized: 'The girl smiles and speaks, recalling the heroic atmosphere of
+      the time when our ancestors faced foreign invaders:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1949183447703552
+    m_Localized: 'There is a belly to cover the grass,
+
+      And a heart to fill
+      the hole left by the ox.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1949433474359296
+    m_Localized: 'You realize this is a riddle that Nguyen Trai once used, and a
+      sense of national pride surges within you. You respond with a firm voice:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1949622494863360
+    m_Localized: 'Under heaven, the shadow of water,
+
+      With the land, we share
+      the river.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1949691755405312
+    m_Localized: The girl laughs heartily, showing her satisfaction with your cleverness
+      and bravery.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1949795820281856
+    m_Localized: 'Good! You are indeed a wise person, worthy of receiving power from
+      me. Choose one of the two powers that I will grant you:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1949920202366976
+    m_Localized: Fight for your dreams!
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

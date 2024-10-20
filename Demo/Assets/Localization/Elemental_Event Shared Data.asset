@@ -99,6 +99,46 @@ MonoBehaviour:
     m_Key: Earth_NPC_04
     m_Metadata:
       m_Items: []
+  - m_Id: 1947368954044416
+    m_Key: Fire_Commentor_01
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1948866266046464
+    m_Key: Fire_NPC_01
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1948981336776704
+    m_Key: Fire_Main_01
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1949048210759680
+    m_Key: Fire_Commentor_02
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1949183447703552
+    m_Key: Fire_NPC_02
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1949433474359296
+    m_Key: Fire_Commentor_03
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1949622494863360
+    m_Key: Fire_Main_02
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1949691755405312
+    m_Key: Fire_Commentor_04
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1949795820281856
+    m_Key: Fire_NPC_03
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1949920202366976
+    m_Key: Fire_NPC_04
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
