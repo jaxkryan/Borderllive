@@ -3200,8 +3200,100 @@ PrefabInstance:
       value: Fire Suck!!
       objectReference: {fileID: 0}
     - target: {fileID: 1255763239430262725, guid: 3a5607b8c24ed394d96149de68267ce3, type: 3}
+      propertyPath: npcDialogue.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1255763239430262725, guid: 3a5607b8c24ed394d96149de68267ce3, type: 3}
+      propertyPath: dialogueTurns.Array.size
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1255763239430262725, guid: 3a5607b8c24ed394d96149de68267ce3, type: 3}
+      propertyPath: dialogueTurns.Array.data[2]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1255763239430262725, guid: 3a5607b8c24ed394d96149de68267ce3, type: 3}
+      propertyPath: dialogueTurns.Array.data[4]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1255763239430262725, guid: 3a5607b8c24ed394d96149de68267ce3, type: 3}
+      propertyPath: dialogueTurns.Array.data[5]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1255763239430262725, guid: 3a5607b8c24ed394d96149de68267ce3, type: 3}
+      propertyPath: dialogueTurns.Array.data[6]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1255763239430262725, guid: 3a5607b8c24ed394d96149de68267ce3, type: 3}
+      propertyPath: dialogueTurns.Array.data[7]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1255763239430262725, guid: 3a5607b8c24ed394d96149de68267ce3, type: 3}
+      propertyPath: dialogueTurns.Array.data[8]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1255763239430262725, guid: 3a5607b8c24ed394d96149de68267ce3, type: 3}
+      propertyPath: dialogueTurns.Array.data[9]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1255763239430262725, guid: 3a5607b8c24ed394d96149de68267ce3, type: 3}
+      propertyPath: commentorDialogue.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1255763239430262725, guid: 3a5607b8c24ed394d96149de68267ce3, type: 3}
+      propertyPath: dialogueTurns.Array.data[10]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1255763239430262725, guid: 3a5607b8c24ed394d96149de68267ce3, type: 3}
       propertyPath: buffChosenDialogue.Array.data[0]
       value: 200K
+      objectReference: {fileID: 0}
+    - target: {fileID: 1255763239430262725, guid: 3a5607b8c24ed394d96149de68267ce3, type: 3}
+      propertyPath: npcDialogue.Array.data[0].m_TableEntryReference.m_KeyId
+      value: 1967526342860800
+      objectReference: {fileID: 0}
+    - target: {fileID: 1255763239430262725, guid: 3a5607b8c24ed394d96149de68267ce3, type: 3}
+      propertyPath: npcDialogue.Array.data[1].m_TableEntryReference.m_KeyId
+      value: 744826563764224
+      objectReference: {fileID: 0}
+    - target: {fileID: 1255763239430262725, guid: 3a5607b8c24ed394d96149de68267ce3, type: 3}
+      propertyPath: playerDialogue.Array.data[0].m_TableEntryReference.m_KeyId
+      value: 1968095535079424
+      objectReference: {fileID: 0}
+    - target: {fileID: 1255763239430262725, guid: 3a5607b8c24ed394d96149de68267ce3, type: 3}
+      propertyPath: commentorDialogue.Array.data[1].m_TableEntryReference.m_KeyId
+      value: 1966563414548480
+      objectReference: {fileID: 0}
+    - target: {fileID: 1255763239430262725, guid: 3a5607b8c24ed394d96149de68267ce3, type: 3}
+      propertyPath: commentorDialogue.Array.data[2].m_TableEntryReference.m_KeyId
+      value: 1966572147089408
+      objectReference: {fileID: 0}
+    - target: {fileID: 1255763239430262725, guid: 3a5607b8c24ed394d96149de68267ce3, type: 3}
+      propertyPath: commentorDialogue.Array.data[3].m_TableEntryReference.m_KeyId
+      value: 1966735234211840
+      objectReference: {fileID: 0}
+    - target: {fileID: 1255763239430262725, guid: 3a5607b8c24ed394d96149de68267ce3, type: 3}
+      propertyPath: commentorDialogue.Array.data[4].m_TableEntryReference.m_KeyId
+      value: 1966862384537600
+      objectReference: {fileID: 0}
+    - target: {fileID: 1255763239430262725, guid: 3a5607b8c24ed394d96149de68267ce3, type: 3}
+      propertyPath: commentorDialogue.Array.data[5].m_TableEntryReference.m_KeyId
+      value: 1967373519200256
+      objectReference: {fileID: 0}
+    - target: {fileID: 1255763239430262725, guid: 3a5607b8c24ed394d96149de68267ce3, type: 3}
+      propertyPath: commentorDialogue.Array.data[6].m_TableEntryReference.m_KeyId
+      value: 1967606554730496
+      objectReference: {fileID: 0}
+    - target: {fileID: 1255763239430262725, guid: 3a5607b8c24ed394d96149de68267ce3, type: 3}
+      propertyPath: buffChosenDialogue.Array.data[0].m_TableEntryReference.m_KeyId
+      value: 1968342055297024
+      objectReference: {fileID: 0}
+    - target: {fileID: 1255763239430262725, guid: 3a5607b8c24ed394d96149de68267ce3, type: 3}
+      propertyPath: commentorDialogue.Array.data[5].m_TableReference.m_TableCollectionName
+      value: GUID:c4a8ad77c62f63c488e35024ea9acc55
+      objectReference: {fileID: 0}
+    - target: {fileID: 1255763239430262725, guid: 3a5607b8c24ed394d96149de68267ce3, type: 3}
+      propertyPath: commentorDialogue.Array.data[6].m_TableReference.m_TableCollectionName
+      value: GUID:c4a8ad77c62f63c488e35024ea9acc55
       objectReference: {fileID: 0}
     - target: {fileID: 1492049553762137410, guid: 3a5607b8c24ed394d96149de68267ce3, type: 3}
       propertyPath: m_FontData.m_Font
@@ -3235,6 +3327,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 4666500404810889478, guid: 3a5607b8c24ed394d96149de68267ce3, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 8030d8d587233564aa1c908f06476bbe, type: 3}
     - target: {fileID: 5135808368087923021, guid: 3a5607b8c24ed394d96149de68267ce3, type: 3}
       propertyPath: m_FontData.m_Font
       value: 

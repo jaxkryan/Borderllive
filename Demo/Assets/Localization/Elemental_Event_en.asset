@@ -182,6 +182,80 @@ MonoBehaviour:
     m_Localized: Fight for your dreams!
     m_Metadata:
       m_Items: []
+  - m_Id: 1962222351851520
+    m_Localized: "What are you looking at? Don\u2019t tell me you\u2019ve never seen
+      anyone shirtless before!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1962643988455424
+    m_Localized: 'He scratch his head, then looking you up and down with a curious
+      expression. '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1962762695647232
+    m_Localized: ' But are you here to admire my muscles or to ask for a buff?'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1962918614704128
+    m_Localized: ...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1962942052474880
+    m_Localized: Just teasing. There are three skills here; choose one.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1963122550153216
+    m_Localized: "If you need topto-up, just send money to 09******** to the mb bank.
+      I\u2019ll directly add 9999 souls to your account, okay?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1963333913714688
+    m_Localized: Helpless
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1966563414548480
+    m_Localized: You are walking down the road when you encounter a group of children
+      huddled together. Suddenly, they look up at you with strange eyes.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1966572147089408
+    m_Localized: 'They suddenly surround you in a circle and start singing a familiar
+      nursery rhyme you used to play as a child:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1966735234211840
+    m_Localized: "Tap tam vong,\nWhich hand doesn\u2019t?\nWhich hand does?\n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1966862384537600
+    m_Localized: "Tap tam vo,\nWhich hand does?\nWhich hand doesn\u2019t?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1967373519200256
+    m_Localized: You answer yes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1967526342860800
+    m_Localized: "Which hand does? Which hand doesn\u2019t, huh? You answered, but
+      do you know what you are choosing?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1967606554730496
+    m_Localized: He steps closer to you and extends a hand.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1967972956545024
+    m_Localized: I have two powers for you, but you can only choose one.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1968095535079424
+    m_Localized: You happily thank them and continue your unfinished journey.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1968342055297024
+    m_Localized: ' Goodbye and good luck on your journey!'
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
