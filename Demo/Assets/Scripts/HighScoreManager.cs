@@ -27,6 +27,7 @@ public class HighScoreManager : MonoBehaviour
         // Load the elapsed time string from PlayerPrefs
         if (PlayerPrefs.HasKey(ElapsedTimeKey))
         {
+            // Debug.Log("run at time");
             string elapsedTime = PlayerPrefs.GetString(ElapsedTimeKey);
             if (elapsedTimeText != null)
             {
@@ -49,10 +50,11 @@ public class HighScoreManager : MonoBehaviour
         {
             // Load the defeated enemy count from PlayerPrefs
             int defeatedEnemyCount = PlayerPrefs.GetInt(DefeatedEnemyCountKey, 0);
-Debug.Log(defeatedEnemyCount);
+            Debug.Log(defeatedEnemyCount);
+
             // Display the defeated enemy count
             elapsedTimeText.text = $"Enemies Defeated: {defeatedEnemyCount}";
-            
+
             // Reset the defeated enemy count after displaying it
             PlayerPrefs.SetInt(DefeatedEnemyCountKey, 0);
             PlayerPrefs.Save(); // Ensure the change is saved

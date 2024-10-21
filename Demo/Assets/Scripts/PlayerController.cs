@@ -599,7 +599,7 @@ public class PlayerController : MonoBehaviour
 
     public void LoadPlayerData()
     {
-        Debug.Log("Loading Player Data");
+        Logger.Log("Loading Player Data");
 
         // Load player health
         if (PlayerPrefs.HasKey("Health"))
@@ -607,6 +607,7 @@ public class PlayerController : MonoBehaviour
             // Debug.Log("Loading Player Data: Health = " + PlayerPrefs.GetInt("Health"));
             damageable.MaxHealth = PlayerPrefs.GetInt("MaxHealth");
             damageable.Health = PlayerPrefs.GetInt("Health");
+            Logger.Log("Loading Health success, max health: " + PlayerPrefs.GetInt("MaxHealth"));
         }
         if (PlayerPrefs.HasKey("Shield"))
         {
@@ -619,6 +620,7 @@ public class PlayerController : MonoBehaviour
             // Debug.Log("Loading Player Data: XP = " + PlayerPrefs.GetInt("XP"));
 
             xPTracker.AddXP(PlayerPrefs.GetInt("XP"));
+            Logger.Log("Loading exp success, exp: " + PlayerPrefs.GetInt("XP"));
         }
 
         // Load player souls (currency)
@@ -627,6 +629,7 @@ public class PlayerController : MonoBehaviour
             //Debug.Log("Loading Player Data: Soul = " + PlayerPrefs.GetInt("Souls"));
 
             currencyManager.SetCurrency(PlayerPrefs.GetInt("Souls")); // Assuming SetMoney sets the currency amount
+            Logger.Log("Loading soul success, exp: " + (PlayerPrefs.GetInt("Souls")));
         }
         OwnedActiveItem ownedItems = GetComponent<OwnedActiveItem>();
         if (ownedItems != null)
