@@ -130,6 +130,7 @@ public class PlayerController : MonoBehaviour
         {
             // Logger.Log("PlayerController script is disabled in Awake, enabling it now.");
             this.enabled = true; // Enable the script from Awake()
+            LoadPlayerData();
         }
         ownedActiveItem = GetComponent<OwnedActiveItem>();
         berserkGauge = GetComponent<BerserkGauge>();
@@ -564,8 +565,8 @@ public class PlayerController : MonoBehaviour
         // Save player health
         PlayerPrefs.SetInt("Health", damageable.Health);
         PlayerPrefs.SetInt("MaxHealth", damageable.MaxHealth);
-        Debug.Log("c mau: " + PlayerPrefs.GetInt("Health"));
-        Debug.Log("max mau: " + PlayerPrefs.GetInt("MaxHealth"));
+        Logger.Log("hp on save: " + PlayerPrefs.GetInt("Health"));
+        Logger.Log("max hp on save: " + PlayerPrefs.GetInt("MaxHealth"));
         PlayerPrefs.SetFloat("Shield", characterStat.Shield);
 
 
@@ -593,13 +594,13 @@ public class PlayerController : MonoBehaviour
         // Save PlayerPrefs data
         PlayerPrefs.Save();
 
-        Debug.Log("Saving Player Data: XP = " + xPTracker.CurrentXP + ", Souls = " + currencyManager.currentAmount);
+        Logger.Log("Saving Player Data: XP = " + xPTracker.CurrentXP + ", Souls = " + currencyManager.currentAmount);
         // Debug.Log("Saving Player Data: Health = " + damageable.Health);
     }
 
     public void LoadPlayerData()
     {
-        Logger.Log("Loading Player Data");
+        Logger.Log("Loading Player Data at scene " + SceneManager.GetActiveScene().name);
 
         // Load player health
         if (PlayerPrefs.HasKey("Health"))

@@ -30,3 +30,12 @@ clicked!!!
 clicked!!!
 clicked!!!
 room start go first smh
+room start go first smh
+Loading Player Data at scene Room_Start
+hp on save: 100
+max hp on save: 100
+Saving Player Data: XP = 400, Souls = 0
+Loading Player Data at scene BorderDeath_Battle_2
+Loading Health success, max health: 100
+Loading exp success, exp: 400
+Loading soul success, exp: 0
