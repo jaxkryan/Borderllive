@@ -473,7 +473,7 @@ MonoBehaviour:
   BaseStamina_PerLevel: 5
   BaseStamina_Offset: 5
   StaminaToHealthConversion: 5
-  BaseStrength_PerLevel: 4
+  BaseStrength_PerLevel: 2
   BaseStrength_Offset: 5
   StrengthToDamageConversion: 3
   BaseEndurance_PerLevel: 2
@@ -687,5 +687,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AttackBuff: {fileID: 11400000, guid: 410c884a747b1724aa23f1a6ebed359b, type: 2}
-  baseDamage: 5
+  baseDamage: -5
   knockback: {x: 0, y: 0}

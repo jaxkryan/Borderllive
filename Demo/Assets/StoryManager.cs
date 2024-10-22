@@ -167,7 +167,7 @@ public class StoryManager : MonoBehaviour
         }
         else
         {
-            Logger.Log("room start go first smh");
+            //Logger.Log("room start go first smh");
             SceneManager.LoadScene("Room_Start");  // Load regular start room
         }
     }

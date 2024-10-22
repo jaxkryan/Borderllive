@@ -98,7 +98,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AttackBuff: {fileID: 11400000, guid: f13ea904223cc0a4d8464a21739d602a, type: 2}
   baseDamage: 15
-  knockback: {x: 0, y: 0}
+  knockback: {x: 3, y: 0}
 --- !u!1 &130169560623644369
 GameObject:
   m_ObjectHideFlags: 0
@@ -253,7 +253,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AttackBuff: {fileID: 11400000, guid: f13ea904223cc0a4d8464a21739d602a, type: 2}
   baseDamage: 15
-  knockback: {x: 0, y: 0}
+  knockback: {x: 5.5, y: 0}
 --- !u!1 &353515804644235841
 GameObject:
   m_ObjectHideFlags: 0
@@ -1301,7 +1301,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AttackBuff: {fileID: 11400000, guid: f13ea904223cc0a4d8464a21739d602a, type: 2}
   baseDamage: 2
-  knockback: {x: 0, y: 0}
+  knockback: {x: 3, y: 0}
 --- !u!1 &1961238047600556337
 GameObject:
   m_ObjectHideFlags: 0
@@ -1475,7 +1475,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AttackBuff: {fileID: 11400000, guid: f13ea904223cc0a4d8464a21739d602a, type: 2}
   baseDamage: -3
-  knockback: {x: 0, y: 0}
+  knockback: {x: 1.5, y: 0}
 --- !u!1 &2494157327460931022
 GameObject:
   m_ObjectHideFlags: 0
@@ -2525,7 +2525,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AttackBuff: {fileID: 11400000, guid: f13ea904223cc0a4d8464a21739d602a, type: 2}
   baseDamage: 8
-  knockback: {x: 0, y: 0}
+  knockback: {x: 5, y: 0}
 --- !u!1 &5659080797273270887
 GameObject:
   m_ObjectHideFlags: 0
@@ -2669,7 +2669,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AttackBuff: {fileID: 11400000, guid: f13ea904223cc0a4d8464a21739d602a, type: 2}
   baseDamage: 17
-  knockback: {x: 0, y: 0}
+  knockback: {x: 2, y: 0}
 --- !u!1 &6589448070663564626
 GameObject:
   m_ObjectHideFlags: 0
@@ -3424,7 +3424,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AttackBuff: {fileID: 11400000, guid: f13ea904223cc0a4d8464a21739d602a, type: 2}
   baseDamage: 6
-  knockback: {x: 0, y: 0}
+  knockback: {x: 3, y: 0}
 --- !u!1 &8964478321177050342
 GameObject:
   m_ObjectHideFlags: 0

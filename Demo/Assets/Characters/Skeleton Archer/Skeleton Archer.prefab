@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AttackBuff: {fileID: 11400000, guid: f13ea904223cc0a4d8464a21739d602a, type: 2}
-  baseDamage: 5
+  baseDamage: 2
   knockback: {x: 1, y: 2}
 --- !u!1 &2878712719979127204
 GameObject:
@@ -396,13 +396,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BaseStamina_PerLevel: 3
-  BaseStamina_Offset: 14
-  StaminaToHealthConversion: 6.5
+  BaseStamina_Offset: 10
+  StaminaToHealthConversion: 5
   BaseStrength_PerLevel: 2.3
   BaseStrength_Offset: 8
   StrengthToDamageConversion: 2.2
   BaseEndurance_PerLevel: 2
-  BaseEndurance_Offset: 5
+  BaseEndurance_Offset: 3
   EnduranceToDefConversion: 0.7
   BaseSpeed: 5
   _endurance: 0
@@ -462,7 +462,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 1046279769132067562, guid: 712bf81aae92a064a9ed08c64290d515, type: 3}
   projectilePos: {fileID: 2097253889301650963}
-  cooldown: 3
+  cooldown: 5
   distance: 10
   shootingDetectionZone: {fileID: 2788638357854697970}
   isStraightShooter: 1

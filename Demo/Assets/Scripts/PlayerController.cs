@@ -565,8 +565,8 @@ public class PlayerController : MonoBehaviour
         // Save player health
         PlayerPrefs.SetInt("Health", damageable.Health);
         PlayerPrefs.SetInt("MaxHealth", damageable.MaxHealth);
-        Logger.Log("hp on save: " + PlayerPrefs.GetInt("Health"));
-        Logger.Log("max hp on save: " + PlayerPrefs.GetInt("MaxHealth"));
+        //Logger.Log("hp on save: " + PlayerPrefs.GetInt("Health"));
+        //Logger.Log("max hp on save: " + PlayerPrefs.GetInt("MaxHealth"));
         PlayerPrefs.SetFloat("Shield", characterStat.Shield);
 
 
@@ -594,21 +594,21 @@ public class PlayerController : MonoBehaviour
         // Save PlayerPrefs data
         PlayerPrefs.Save();
 
-        Logger.Log("Saving Player Data: XP = " + xPTracker.CurrentXP + ", Souls = " + currencyManager.currentAmount);
+        //Logger.Log("Saving Player Data: XP = " + xPTracker.CurrentXP + ", Souls = " + currencyManager.currentAmount);
         // Debug.Log("Saving Player Data: Health = " + damageable.Health);
     }
 
     public void LoadPlayerData()
     {
-        Logger.Log("Loading Player Data at scene " + SceneManager.GetActiveScene().name);
-
+       // Logger.Log("Loading Player Data at scene " + SceneManager.GetActiveScene().name);
+        
         // Load player health
         if (PlayerPrefs.HasKey("Health"))
         {
             // Debug.Log("Loading Player Data: Health = " + PlayerPrefs.GetInt("Health"));
             damageable.MaxHealth = PlayerPrefs.GetInt("MaxHealth");
             damageable.Health = PlayerPrefs.GetInt("Health");
-            Logger.Log("Loading Health success, max health: " + PlayerPrefs.GetInt("MaxHealth"));
+           // Logger.Log("Loading Health success, max health: " + PlayerPrefs.GetInt("MaxHealth"));
         }
         if (PlayerPrefs.HasKey("Shield"))
         {
@@ -620,8 +620,8 @@ public class PlayerController : MonoBehaviour
         {
             // Debug.Log("Loading Player Data: XP = " + PlayerPrefs.GetInt("XP"));
 
-            xPTracker.AddXP(PlayerPrefs.GetInt("XP"));
-            Logger.Log("Loading exp success, exp: " + PlayerPrefs.GetInt("XP"));
+            //xPTracker.AddXP(PlayerPrefs.GetInt("XP"));
+           // Logger.Log("Loading exp success, exp: " + PlayerPrefs.GetInt("XP"));
         }
 
         // Load player souls (currency)
@@ -629,8 +629,8 @@ public class PlayerController : MonoBehaviour
         {
             //Debug.Log("Loading Player Data: Soul = " + PlayerPrefs.GetInt("Souls"));
 
-            currencyManager.SetCurrency(PlayerPrefs.GetInt("Souls")); // Assuming SetMoney sets the currency amount
-            Logger.Log("Loading soul success, exp: " + (PlayerPrefs.GetInt("Souls")));
+            //currencyManager.SetCurrency(PlayerPrefs.GetInt("Souls")); // Assuming SetMoney sets the currency amount
+            //Logger.Log("Loading soul success, exp: " + (PlayerPrefs.GetInt("Souls")));
         }
         OwnedActiveItem ownedItems = GetComponent<OwnedActiveItem>();
         if (ownedItems != null)

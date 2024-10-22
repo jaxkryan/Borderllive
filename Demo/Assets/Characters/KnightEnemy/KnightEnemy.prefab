@@ -748,5 +748,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AttackBuff: {fileID: 11400000, guid: f13ea904223cc0a4d8464a21739d602a, type: 2}
-  baseDamage: 5
+  baseDamage: 2
   knockback: {x: 1, y: 2}
