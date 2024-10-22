@@ -272,6 +272,17 @@ public class CharacterStat : MonoBehaviour
 
         LoadPermanentIncreases();
         OnUpdateLevel(1, 1);  // Set initial level stats
+        if (PlayerPrefs.HasKey("XP"))
+        {
+            XPTracker xPTracker = FindObjectOfType<XPTracker>();
+            xPTracker.AddXP(PlayerPrefs.GetInt("XP"));
+        }
+        if (PlayerPrefs.HasKey("Souls"))
+        {
+            CurrencyManager currencyManager = FindObjectOfType<CurrencyManager>();
+            currencyManager.SetCurrency(PlayerPrefs.GetInt("Souls")); // Assuming SetMoney sets the currency amount
+            //Logger.Log("Loading soul success, exp: " + (PlayerPrefs.GetInt("Souls")));
+        }
         _endurance = BaseEndurance;
         _speed = BaseSpeed;
 

@@ -4333,7 +4333,7 @@ MonoBehaviour:
   gameCanvas: {fileID: 320011747}
   wordSpeed: 0
   playerIsClose: 0
-  interactableMessage: {fileID: 0}
+  interactableMessage: {fileID: 2023202475}
   dialogue:
   - m_TableReference:
       m_TableCollectionName: GUID:4acbc0afb511a054aa036a70e04c2ff4

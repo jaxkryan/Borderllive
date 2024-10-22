@@ -36,13 +36,13 @@ AnimationClip:
       value: {fileID: -613604278, guid: 4d23fc26e0cf444438553e9da1b814f1, type: 3}
     - time: 0.45
       value: {fileID: 398098264, guid: 4d23fc26e0cf444438553e9da1b814f1, type: 3}
-    - time: 0.55
+    - time: 0.8
       value: {fileID: 398098264, guid: 4d23fc26e0cf444438553e9da1b814f1, type: 3}
-    - time: 0.6
+    - time: 0.85
       value: {fileID: 1241956659, guid: ed47e7705b8d12f4e82651d91f4bfb34, type: 3}
-    - time: 0.7
+    - time: 0.95
       value: {fileID: -789802193, guid: 2531783190511774c86b45eddc4f7f21, type: 3}
-    - time: 0.75
+    - time: 1
       value: {fileID: 1723951591, guid: d764699e8cc558e4a97d5f942092e00f, type: 3}
     attribute: m_Sprite
     path: 
@@ -83,7 +83,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.8
+    m_StopTime: 1.05
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -103,7 +103,7 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 0.6
+  - time: 0.85
     functionName: ShootProjectile
     data: 
     objectReferenceParameter: {fileID: 0}
