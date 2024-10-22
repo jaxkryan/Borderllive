@@ -113,6 +113,7 @@ public class UIController : MonoBehaviour
 
     void TogglePause()
     {
+        Timer timer = FindObjectOfType<Timer>();
         if (controlGuidelineImage.activeSelf)
         {
             // If the control guideline image is up, just turn it off
@@ -132,7 +133,17 @@ public class UIController : MonoBehaviour
                 }
             }
 
-            Time.timeScale = isPaused ? 0 : 1;
+            // Pause or resume the game and timer
+            if (isPaused)
+            {
+                Time.timeScale = 0;
+                if(timer != null) timer.PauseTimer();  // Call PauseTimer() from the Timer script
+            }
+            else
+            {
+                Time.timeScale = 1;
+                if (timer != null) timer.ResumeTimer();  // Call ResumeTimer() from the Timer script
+            }
         }
     }
 
