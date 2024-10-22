@@ -30,7 +30,7 @@ public class EndlessTutorial : MonoBehaviour
 
     public void ResumeGame()
     {
-        Logger.Log("clicked!!!");
+        //Logger.Log("clicked!!!");
         // Unpause the game
         Time.timeScale = 1;
         //Timer.ResumeTimer();
