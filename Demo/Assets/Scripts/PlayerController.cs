@@ -221,6 +221,26 @@ public class PlayerController : MonoBehaviour
     {
         //Logger.Log("FixedUpdate called");
         if (isDashing) { return; }
+
+        bool isAttacking = animator.GetCurrentAnimatorStateInfo(0).IsName("player_air_attack_1");
+        if (!isAttacking) isAttacking= animator.GetCurrentAnimatorStateInfo(0).IsName("player_air_attack2");
+        if (!isAttacking) isAttacking= animator.GetCurrentAnimatorStateInfo(0).IsName("player_air_attack3");
+        bool isGrounded = touchingDirection.IsGround;
+
+        // Set the isGrounded bool in the animator
+        animator.SetBool(AnimationStrings.isGrounded, isGrounded);
+
+        if (isAttacking && !isGrounded)
+        {
+            // Player is attacking and in the air, so canMove should be true
+            animator.SetBool(AnimationStrings.canMove, false);
+        }
+        else
+        {
+            // Otherwise, player can't move during an attack or on the ground
+            animator.SetBool(AnimationStrings.canMove, true);
+        }
+
         if (!damageable.LockVelocity)
         {
             //Logger.Log("Updating velocity: " + moveInput * CurrentSpeed);
@@ -239,8 +259,8 @@ public class PlayerController : MonoBehaviour
         {
             IsRunning = false;
         }
-        
     }
+
     private void SetFacingDirection(Vector2 moveInput)
     {
         if (moveInput.x > 0 && !isFacingRight)
