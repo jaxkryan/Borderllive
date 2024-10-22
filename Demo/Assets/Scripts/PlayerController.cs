@@ -170,10 +170,11 @@ public class PlayerController : MonoBehaviour
         }
         else SceneManager.LoadScene("GameOver_Screen");
     }
+    private float originalGravityScale;
     void Start()
     {
         LoadPlayerData();
-
+        originalGravityScale = rb.gravityScale;
     }
 
     void Update()
@@ -238,6 +239,7 @@ public class PlayerController : MonoBehaviour
         {
             IsRunning = false;
         }
+        
     }
     private void SetFacingDirection(Vector2 moveInput)
     {
@@ -273,15 +275,42 @@ public class PlayerController : MonoBehaviour
             StartCoroutine(Dash());
         }
     }
-
-    public void OnAttack(InputAction.CallbackContext context)
+    private Coroutine gravityRestoreCoroutine;
+    public float attackCooldown = 0.75f;
+public void OnAttack(InputAction.CallbackContext context)
     {
         if (context.started)
         {
+            // Trigger the attack animation
             animator.SetTrigger(AnimationStrings.attacking);
+
+            // If the player is airborne (y-velocity is not zero), freeze in the air
+            if (rb.velocity.y != 0)
+            {
+                // Stop vertical movement and disable gravity
+                rb.velocity = new Vector2(rb.velocity.x, 0f);
+                rb.gravityScale = 0f;
+
+                // If there is a pending coroutine to restore gravity, stop it
+                if (gravityRestoreCoroutine != null)
+                {
+                    StopCoroutine(gravityRestoreCoroutine);
+                }
+
+                // Start a new coroutine to restore gravity after x seconds
+                gravityRestoreCoroutine = StartCoroutine(RestoreGravityAfterDelay(attackCooldown));
+            }
         }
     }
 
+        private IEnumerator RestoreGravityAfterDelay(float delay)
+    {
+        // Wait for the specified time
+        yield return new WaitForSeconds(delay);
+
+        // Restore the original gravity scale
+        rb.gravityScale = originalGravityScale;
+    }
     public string skill1Trigger;
 
     public void OnSkill1(InputAction.CallbackContext context)
