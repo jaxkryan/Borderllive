@@ -15,22 +15,23 @@ MonoBehaviour:
   id: 4
   nameLocalization:
     m_TableReference:
-      m_TableCollectionName: GUID:798697c02d0e7ed469683c485a9519cf
+      m_TableCollectionName: Elemental_NPC
     m_TableEntryReference:
-      m_KeyId: 28218694344704
-      m_Key: 
+      m_KeyId: 0
+      m_Key: Water_NPC_Name
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
   descriptionLocalization:
     m_TableReference:
-      m_TableCollectionName: GUID:798697c02d0e7ed469683c485a9519cf
+      m_TableCollectionName: Elemental_NPC
     m_TableEntryReference:
-      m_KeyId: 25685112430592
-      m_Key: 
+      m_KeyId: 0
+      m_Key: Water_NPC_Description
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
+  npcSprite: {fileID: 21300000, guid: d4e397d861594204197733bfacf3025f, type: 3}
   references:
     version: 2
     RefIds: []

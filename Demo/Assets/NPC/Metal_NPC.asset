@@ -15,22 +15,23 @@ MonoBehaviour:
   id: 3
   nameLocalization:
     m_TableReference:
-      m_TableCollectionName: GUID:798697c02d0e7ed469683c485a9519cf
+      m_TableCollectionName: Elemental_NPC
     m_TableEntryReference:
-      m_KeyId: 28744467128320
-      m_Key: 
+      m_KeyId: 0
+      m_Key: Metal_NPC_Name
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
   descriptionLocalization:
     m_TableReference:
-      m_TableCollectionName: GUID:798697c02d0e7ed469683c485a9519cf
+      m_TableCollectionName: Elemental_NPC
     m_TableEntryReference:
-      m_KeyId: 25752422621184
-      m_Key: 
+      m_KeyId: 0
+      m_Key: Metal_NPC_Description
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
+  npcSprite: {fileID: 21300000, guid: 8030d8d587233564aa1c908f06476bbe, type: 3}
   references:
     version: 2
     RefIds: []

@@ -15,22 +15,23 @@ MonoBehaviour:
   id: 5
   nameLocalization:
     m_TableReference:
-      m_TableCollectionName: GUID:798697c02d0e7ed469683c485a9519cf
+      m_TableCollectionName: Elemental_NPC
     m_TableEntryReference:
-      m_KeyId: 28306908946432
-      m_Key: 
+      m_KeyId: 0
+      m_Key: Wood_NPC_Name
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
   descriptionLocalization:
     m_TableReference:
-      m_TableCollectionName: GUID:798697c02d0e7ed469683c485a9519cf
+      m_TableCollectionName: Elemental_NPC
     m_TableEntryReference:
-      m_KeyId: 25719249870848
-      m_Key: 
+      m_KeyId: 0
+      m_Key: Wood_NPC_Description
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
+  npcSprite: {fileID: 21300000, guid: 6c28a38cdee597c4a944410d02cc308c, type: 3}
   references:
     version: 2
     RefIds: []

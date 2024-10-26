@@ -7,6 +7,7 @@ public class Elemental_NPC : ScriptableObject
     public int id;
     public LocalizedString nameLocalization;
     public LocalizedString descriptionLocalization;
+    public Sprite npcSprite;  // New Sprite field for the NPC's image
 
     public void InitializeLocalization(string nameKey, string descriptionKey)
     {

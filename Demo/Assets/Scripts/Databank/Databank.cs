@@ -48,7 +48,14 @@ public class Databank : MonoBehaviour
         npcPanel.SetActive(true);  // Show NPC button panel
         npcDescriptionPanel.SetActive(true);  // Show NPC description panel
         PopulateNPCButtons();
+
+        // Load the description for the first NPC if it exists
+        if (npcs.Count > 0)
+        {
+            ShowNPCDetails(npcs[0]); // Show details for the first NPC
+        }
     }
+
 
     private void HideAllPanels()
     {
@@ -140,5 +147,6 @@ public class Databank : MonoBehaviour
     {
         npcDescriptionPanel.transform.Find("NPCUIPrefab/NPCNameDetail").GetComponent<TextMeshProUGUI>().text = npc.nameLocalization.GetLocalizedString();
         npcDescriptionPanel.transform.Find("NPCUIPrefab/Scroll View/Viewport/Content/NPCDescriptionDetail").GetComponent<TextMeshProUGUI>().text = npc.descriptionLocalization.GetLocalizedString();
+        npcDescriptionPanel.transform.Find("NPCUIPrefab/NPCImage").GetComponent<Image>().sprite = npc.npcSprite;
     }
 }
