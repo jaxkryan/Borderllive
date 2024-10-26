@@ -103,6 +103,26 @@ MonoBehaviour:
     m_Localized: That's what I wanna hear! Now, go ahead!
     m_Metadata:
       m_Items: []
+  - m_Id: 6756770785267712
+    m_Localized: Here is the weapon i like most, the "Sword of Divine Will", which
+      was given to a Emperor to help them defeat enemies. Hope you can use it like
+      him.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7094002410852352
+    m_Localized: This one is a traditional garment, often worn by royalty and the
+      nobility during the dynastic periods. Hope you can take their spirit and fight
+      for your life.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7094033201238016
+    m_Localized: Here is an Ancient Temple, where life and death meet.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7105332576522240
+    m_Localized: Oh, before that, i must gave you something to help you on your journey
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
