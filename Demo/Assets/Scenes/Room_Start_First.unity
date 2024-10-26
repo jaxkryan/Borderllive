@@ -3590,6 +3590,38 @@ MonoBehaviour:
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
+  - m_TableReference:
+      m_TableCollectionName: GUID:4acbc0afb511a054aa036a70e04c2ff4
+    m_TableEntryReference:
+      m_KeyId: 2924780195840
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  - m_TableReference:
+      m_TableCollectionName: GUID:4acbc0afb511a054aa036a70e04c2ff4
+    m_TableEntryReference:
+      m_KeyId: 6756770785267712
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  - m_TableReference:
+      m_TableCollectionName: GUID:4acbc0afb511a054aa036a70e04c2ff4
+    m_TableEntryReference:
+      m_KeyId: 7094002410852352
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  - m_TableReference:
+      m_TableCollectionName: GUID:4acbc0afb511a054aa036a70e04c2ff4
+    m_TableEntryReference:
+      m_KeyId: 7094033201238016
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   choice1Button: {fileID: 30720107}
   choice2Button: {fileID: 1319429067}
   choice3Button: {fileID: 345176390}

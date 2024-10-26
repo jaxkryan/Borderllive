@@ -120,6 +120,34 @@ MonoBehaviour:
     m_Localized: "\u0110\xFAng v\u1EADy, ti\u1EBFn l\xEAn!"
     m_Metadata:
       m_Items: []
+  - m_Id: 6756770785267712
+    m_Localized: "\u0110\xE2y l\xE0 v\u0169 kh\xED m\xE0 ta th\xEDch nh\u1EA5t, \"Thu\u1EADn
+      Thi\xEAn Ki\u1EBFm\", thanh ki\u1EBFm \u0111\xE3 \u0111\u01B0\u1EE3c trao cho
+      m\u1ED9t v\u1ECB Ho\xE0ng \u0111\u1EBF \u0111\u1EC3 gi\xFAp \xF4ng \u0111\xE1nh
+      b\u1EA1i k\u1EBB th\xF9. Hy v\u1ECDng ng\u01B0\u01A1i c\xF3 th\u1EC3 s\u1EED
+      d\u1EE5ng n\xF3 nh\u01B0 \xF4ng \u1EA5y.\n\n\n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7094002410852352
+    m_Localized: "\u0110\xE2y l\xE0 m\u1ED9t trang ph\u1EE5c truy\u1EC1n th\u1ED1ng
+      \u1EDF \u0111\u1EA5t n\u01B0\u1EDBc ph\u01B0\u01A1ng xa, th\u01B0\u1EDDng \u0111\u01B0\u1EE3c
+      ho\xE0ng gia v\xE0 qu\xFD t\u1ED9c m\u1EB7c trong c\xE1c tri\u1EC1u \u0111\u1EA1i
+      x\u01B0a. Hy v\u1ECDng ng\u01B0\u01A1i c\xF3 th\u1EC3 ti\u1EBFp thu tinh th\u1EA7n
+      c\u1EE7a h\u1ECD v\xE0 chi\u1EBFn \u0111\u1EA5u v\xEC cu\u1ED9c s\u1ED1ng c\u1EE7a
+      m\xECnh.\n\n\n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7094033201238016
+    m_Localized: "\u0110\xE2y l\xE0 m\u1ED9t ng\xF4i \u0111\u1EC1n c\u1ED5, n\u01A1i
+      s\u1EF1 s\u1ED1ng v\xE0 c\xE1i ch\u1EBFt giao h\xF2a."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7105332576522240
+    m_Localized: "\xC0 tr\u01B0\u1EDBc \u0111\xF3, ta s\u1EBD ban cho ng\u01B0\u01A1i
+      v\xE0i th\u1EE9 \u0111\u1EC3 gi\xFAp ng\u01B0\u01A1i trong cu\u1ED9c h\xE0nh
+      tr\xECnh"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

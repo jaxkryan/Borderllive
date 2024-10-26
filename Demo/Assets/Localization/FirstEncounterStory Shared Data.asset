@@ -91,6 +91,22 @@ MonoBehaviour:
     m_Key: Sentence16_Answer
     m_Metadata:
       m_Items: []
+  - m_Id: 6756770785267712
+    m_Key: AboutWeapon
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7094002410852352
+    m_Key: AboutCostume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7094033201238016
+    m_Key: AboutBackground
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7105332576522240
+    m_Key: Sentence
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
