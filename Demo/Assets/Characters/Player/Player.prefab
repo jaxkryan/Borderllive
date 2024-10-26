@@ -313,6 +313,7 @@ Transform:
   - {fileID: 4256145303815175877}
   - {fileID: 7065591387606037924}
   - {fileID: 651349261314267512}
+  - {fileID: 4781742002143299878}
   - {fileID: 2353783590795032478}
   - {fileID: 3326559098262215292}
   - {fileID: 8531626099978101146}
@@ -434,6 +435,7 @@ MonoBehaviour:
   airWalkSpeed: 5
   _isMoving: 0
   _isRunning: 0
+  attackCooldown: 0.75
   skill1Trigger: 
   skill2Trigger: 
   skill3Trigger: 
@@ -694,7 +696,7 @@ Animator:
   m_GameObject: {fileID: 353515804644235841}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ef6bd7fb01fd6ee4c888b7e62aea53dc, type: 2}
+  m_Controller: {fileID: 9100000, guid: f4055b33b65f1204c9acf1e95af1c5cc, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -3110,6 +3112,105 @@ MonoBehaviour:
   AttackBuff: {fileID: 11400000, guid: f13ea904223cc0a4d8464a21739d602a, type: 2}
   baseDamage: 17
   knockback: {x: 2, y: 0}
+--- !u!1 &6379292087213085230
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4781742002143299878}
+  - component: {fileID: 4887237696846431292}
+  - component: {fileID: 457411801557777480}
+  m_Layer: 9
+  m_Name: SwordAttackAir
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4781742002143299878
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6379292087213085230}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 360, y: 94, z: 0}
+  m_LocalScale: {x: 100, y: 100, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4557862977418653240}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!60 &4887237696846431292
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6379292087213085230}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -2.5570226, y: -0.24657243}
+      - {x: -2.4704552, y: 0.14409757}
+      - {x: -3.1933095, y: 0.21626107}
+      - {x: -3.5083897, y: 0.27615607}
+      - {x: -4.1117325, y: 0.23173577}
+      - {x: -4.777845, y: -0.16696197}
+  m_UseDelaunayMesh: 0
+--- !u!114 &457411801557777480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6379292087213085230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd5646a7a629ed0488b96a7d57ea9393, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AttackBuff: {fileID: 11400000, guid: f13ea904223cc0a4d8464a21739d602a, type: 2}
+  baseDamage: 15
+  knockback: {x: 3, y: 0}
 --- !u!1 &6589448070663564626
 GameObject:
   m_ObjectHideFlags: 0
