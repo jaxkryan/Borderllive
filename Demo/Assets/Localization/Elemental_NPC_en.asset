@@ -1,0 +1,84 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Elemental_NPC_en
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: 798697c02d0e7ed469683c485a9519cf, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 20602462208
+    m_Localized: Fire Phoenix Hien
+    m_Metadata:
+      m_Items: []
+  - m_Id: 51413819392
+    m_Localized: "\nFire Phoenix Hien is a deity with a mysterious and regal beauty,
+      her dusky skin glowing with the warm hues of sacred fire. Clad in a black robe
+      adorned with flame patterns, she exudes an aura that is both enigmatic and
+      alluring. Her deep red hair is braided to one side, and her hand is outstretched,
+      ready to receive a small phoenix\u2014a symbol of rebirth and eternal strength
+      in Vietnamese folklore."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25685112430592
+    m_Localized: "Water Tyde Tu has a large black dragon tattoo, symbolizing the
+      Vietnamese legend of \"The Dragon and the Fairy\u2019s Descendants.\" His attire
+      reflects the style of the Hung Kings era, with a combination of blue and red
+      robes, a gold-adorned belt, and traditional garment details."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25719249870848
+    m_Localized: Evergreen Linh is the goddess protector of the green forest, draped
+      in a flowing robe with bamboo leaf patterns, evoking a pure beauty and deep
+      connection to Vietnamese nature. Wearing a graceful floral crown in her hair,
+      she radiates gentleness and serenity, bringing a sense of peace to all creatures
+      within the forest she guards.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25752422621184
+    m_Localized: "Steel Huy is a mighty and formidable warrior, donned in sturdy
+      golden armor inspired by the shell of a turtle\u2014a symbol of resilience
+      and longevity in Vietnamese culture. With a gleaming golden sword in hand,
+      he stands ready to defend his homeland, embodying the valiant spirit of the
+      Vietnamese people during the era of resistance against foreign invaders."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25811038019584
+    m_Localized: "Meadow Anh, with a blend of the Vietnamese ao tu than tunic and
+      iconic leaf hat, exudes an air of mystery and quiet presence. In her arms,
+      she holds a bundle of ripe rice stalks\u2014a symbol of abundance and prosperity
+      that represents the agricultural essence of Vietnam. Each rice stalk may be
+      small on its own, but together they form a resilient and steadfast strength,
+      mirroring the spirit of unity among the Vietnamese people.\n\n\n\n\n\n\n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28218694344704
+    m_Localized: Water Tyde Tu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28306908946432
+    m_Localized: Evergreen Linh
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28574241300480
+    m_Localized: Medow Anh
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28744467128320
+    m_Localized: Steel Huy
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []
