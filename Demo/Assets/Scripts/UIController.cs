@@ -13,6 +13,8 @@ public class UIController : MonoBehaviour
     public void StartBtn_Click()
     {
         LevelController.ResetStaticData();
+        PlayerPrefs.SetInt(PlayerDiedKey, 0); // Set to 1 (true)
+
         PlayerPrefs.DeleteKey("ElapsedTime");
         SceneManager.LoadScene("StoryScene");
     }

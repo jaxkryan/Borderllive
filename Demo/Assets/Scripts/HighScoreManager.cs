@@ -63,7 +63,7 @@ public class HighScoreManager : MonoBehaviour
         if (restartButton != null && uIController != null)
         {
             // If the player is in an event or endless mode, override the Restart button click listener
-            if (playerDied == 1)
+            if (isInEvent)
             {
                 restartButton.onClick.RemoveAllListeners(); // Remove the default onClick listeners
                 restartButton.onClick.AddListener(() => uIController.ExtraBtn_Click()); // Add the ExtraBtn_Click listener
