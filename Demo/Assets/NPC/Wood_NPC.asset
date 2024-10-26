@@ -31,7 +31,7 @@ MonoBehaviour:
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
-  npcSprite: {fileID: 21300000, guid: 6c28a38cdee597c4a944410d02cc308c, type: 3}
+  npcSprite: {fileID: 21300000, guid: aecf741872b9f3340bff3c8a94ed1f96, type: 3}
   references:
     version: 2
     RefIds: []

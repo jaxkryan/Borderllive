@@ -2167,12 +2167,20 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 916918190457173940, guid: 999c2382a7c997d4da36a3a75395c46f, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1259371716843894018, guid: 999c2382a7c997d4da36a3a75395c46f, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1259371716843894018, guid: 999c2382a7c997d4da36a3a75395c46f, type: 3}
       propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1569708068764574503, guid: 999c2382a7c997d4da36a3a75395c46f, type: 3}
+      propertyPath: m_hasFontAssetChanged
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1625333788377433080, guid: 999c2382a7c997d4da36a3a75395c46f, type: 3}
@@ -2283,6 +2291,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5812922363951744607, guid: 999c2382a7c997d4da36a3a75395c46f, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6010274086238096324, guid: 999c2382a7c997d4da36a3a75395c46f, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -2301,7 +2313,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6777490374105659647, guid: 999c2382a7c997d4da36a3a75395c46f, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.0000667572
+      value: -0.000061035156
+      objectReference: {fileID: 0}
+    - target: {fileID: 7479751317157033624, guid: 999c2382a7c997d4da36a3a75395c46f, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.0005340576
       objectReference: {fileID: 0}
     - target: {fileID: 8850723291314582699, guid: 999c2382a7c997d4da36a3a75395c46f, type: 3}
       propertyPath: m_hasFontAssetChanged
@@ -2309,7 +2325,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8860264514764476670, guid: 999c2382a7c997d4da36a3a75395c46f, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.00002670288
+      value: -0.00026181704
       objectReference: {fileID: 0}
     - target: {fileID: 8949820268284718029, guid: 999c2382a7c997d4da36a3a75395c46f, type: 3}
       propertyPath: m_AnchorMax.y
