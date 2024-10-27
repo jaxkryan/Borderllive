@@ -22,6 +22,11 @@ public class BossBattleManager : MonoBehaviour
 
     void Awake()
     {
+       
+    }
+
+    void Start()
+    {
         // Get the EnemyXpTracker component from the boss and immediately add XP
         if (boss != null)
         {
@@ -32,10 +37,6 @@ public class BossBattleManager : MonoBehaviour
                 Debug.Log("Add " + bossXpTracker.XPTranslation.CurrentXP);
             }
         }
-    }
-
-    void Start()
-    {
         // Ensure the exit is initially disabled
         if (exit != null)
         {
